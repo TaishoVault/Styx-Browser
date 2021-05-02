@@ -153,7 +153,7 @@
     <string name="export_bookmarks">Lesezeichen exportieren</string>
     <string name="export_settings">Einstellungen exportieren</string>
     <string name="five">Fünf (5)</string>
-    <string name="folder_custom">Andere</string>
+    <string name="folder_custom">Benutzerdefiniert</string>
     <string name="folder_default">Standard</string>
     <string name="folder">Ordnername</string>
     <string name="force_zoom_summary">(JavaScript muss aktiviert sein)</string>
