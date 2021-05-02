@@ -187,7 +187,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
     private fun setBookmarkDataSet(items: List<Bookmark>, animate: Boolean) {
         iAdapter.updateItems(items.map { BookmarksViewModel(it) })
         val resource = if (uiModel.isCurrentFolderRoot()) {
-            R.drawable.ic_bookmark_border
+            R.drawable.round_star_border_24
         } else {
             R.drawable.ic_action_back
         }
@@ -261,7 +261,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
 
         BrowserDialog.showWithIcons(context, context.getString(R.string.dialog_tools_title),
                 DialogItem(
-                        icon = context.drawable(R.drawable.ic_block),
+                        icon = context.drawable(R.drawable.outline_remove_circle_outline_24),
                         colorTint = context.color(R.color.error_red).takeIf { isAllowedAds },
                         title = whitelistString
                 ) {
@@ -317,7 +317,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
                     builder.show()
                 },
                 DialogItem(
-                        icon = context.drawable(R.drawable.ic_script_key),
+                        icon = context.drawable(R.drawable.outline_script_text_key_outline),
                         colorTint = context.color(R.color.error_red).takeIf { userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs) },
                         title = jsEnabledString
                 ) {
@@ -345,7 +345,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
                     }, 250)
                 },
                 DialogItem(
-                        icon = context.drawable(R.drawable.ic_cookie),
+                        icon = context.drawable(R.drawable.cookie_outline),
                         title = R.string.edit_cookies
                 ) {
 

@@ -46,9 +46,9 @@ class SuggestionsAdapter(
     private var allBookmarks: List<Bookmark.Entry> = emptyList()
     private val searchFilter = SearchFilter(this)
 
-    private val searchIcon = context.drawable(R.drawable.ic_search)
-    private val webPageIcon = context.drawable(R.drawable.ic_history)
-    private val bookmarkIcon = context.drawable(R.drawable.ic_bookmark_border)
+    private val searchIcon = context.drawable(R.drawable.ic_find)
+    private val webPageIcon = context.drawable(R.drawable.round_history_24)
+    private val bookmarkIcon = context.drawable(R.drawable.round_star_border_24)
     private var suggestionsRepository: SuggestionsRepository
 
     /**

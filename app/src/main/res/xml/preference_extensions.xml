@@ -10,7 +10,7 @@
             android:title="@string/scripts_store"
             android:summary="@string/force_zoom_summary"
             android:key="scripts_store"
-            app:icon="@drawable/ic_script">
+            app:icon="@drawable/ic_script_oval">
 
             <intent
 
@@ -29,7 +29,7 @@
 
             android:title="@string/remove_userscript"
             android:key="remove_userscript"
-            app:icon="@drawable/ic_action_delete" />
+            app:icon="@drawable/ic_action_delete_oval" />
 
     </PreferenceCategory>
 

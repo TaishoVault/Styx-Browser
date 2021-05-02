@@ -59,7 +59,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/close_tab"
-                    app:srcCompat="@drawable/ic_action_delete" />
+                    app:srcCompat="@drawable/round_clear_24" />
             </FrameLayout>
 
         </LinearLayout>

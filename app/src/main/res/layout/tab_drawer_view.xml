@@ -60,7 +60,7 @@
             android:contentDescription="@string/action_restore_tab"
             app:tooltipText="@{@string/action_restore_tab}"
             android:scaleType="center"
-            app:srcCompat="@drawable/ic_restore_page"
+            app:srcCompat="@drawable/outline_restore_page_24"
             android:onClick="@{(view) -> uiController.executeAction(view.id)}" />
 
         <ImageButton

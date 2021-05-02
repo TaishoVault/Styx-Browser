@@ -35,7 +35,7 @@ class  BookmarksAdapter(
 
     private var bookmarks: List<BookmarksViewModel> = listOf()
     private val faviconFetchSubscriptions = ConcurrentHashMap<String, Disposable>()
-    private val folderIcon = context.drawable(R.drawable.ic_folder)
+    private val folderIcon = context.drawable(R.drawable.outline_folder_special_24)
     private val webpageIcon = context.drawable(R.drawable.ic_webpage)
 
     @Inject

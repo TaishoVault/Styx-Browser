@@ -9,19 +9,19 @@
         <Preference
             android:summary="@string/name"
             android:title="@string/developer"
-            app:icon="@drawable/ic_dev">
+            app:icon="@drawable/ic_dev_oval">
         </Preference>
 
         <Preference
             android:key="pref_version"
             android:title="@string/version"
-            app:icon="@drawable/ic_about">
+            app:icon="@drawable/ic_info_oval">
         </Preference>
 
         <Preference
             android:key="pref_webview"
             android:title="@string/webview_version"
-            app:icon="@drawable/ic_settings">
+            app:icon="@drawable/ic_settings_oval">
         </Preference>
 
         <PreferenceCategory
@@ -30,7 +30,7 @@
             <Preference
                 android:summary="@string/pref_translation_summary"
                 android:title="@string/pref_translation_title"
-                app:icon="@drawable/ic_translate">
+                app:icon="@drawable/ic_translate_oval">
 
                 <intent
                     android:action="android.intent.action.VIEW"
@@ -44,7 +44,7 @@
             <Preference
                 android:summary="@string/pref_report_issue_summary"
                 android:title="@string/pref_report_issue_title"
-                app:icon="@drawable/ic_github">
+                app:icon="@drawable/ic_github_oval">
 
                 <intent
                     android:action="android.intent.action.VIEW"
@@ -65,7 +65,7 @@
         <Preference
             android:summary="@string/mpl_license"
             android:title="@string/app_name"
-            app:icon="@drawable/ic_library">
+            app:icon="@drawable/ic_library_oval">
 
             <intent
                 android:action="android.intent.action.VIEW"
@@ -79,7 +79,7 @@
         <Preference
             android:summary="@string/apache"
             android:title="@string/android_open_source_project"
-            app:icon="@drawable/ic_library">
+            app:icon="@drawable/ic_library_oval">
 
             <intent
                 android:action="android.intent.action.VIEW"
@@ -93,7 +93,7 @@
         <Preference
             android:summary="@string/license_gnu"
             android:title="@string/ad_server_list"
-            app:icon="@drawable/ic_library">
+            app:icon="@drawable/ic_library_oval">
 
             <intent
                 android:action="android.intent.action.VIEW"
@@ -107,7 +107,7 @@
         <Preference
             android:summary="@string/license_gnu"
             android:title="@string/library_netcipher"
-            app:icon="@drawable/ic_library">
+            app:icon="@drawable/ic_library_oval">
 
             <intent
                 android:action="android.intent.action.VIEW"
@@ -121,7 +121,7 @@
         <Preference
             android:summary="@string/mit_license"
             android:title="@string/jsoup"
-            app:icon="@drawable/ic_library">
+            app:icon="@drawable/ic_library_oval">
 
             <intent
                 android:action="android.intent.action.VIEW"

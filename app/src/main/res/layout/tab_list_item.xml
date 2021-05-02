@@ -54,7 +54,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/close_tab"
                 android:scaleType="center"
-                app:srcCompat="@drawable/ic_action_delete" />
+                app:srcCompat="@drawable/round_clear_24" />
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

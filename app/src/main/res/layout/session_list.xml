@@ -60,7 +60,7 @@
                     android:contentDescription="@string/action_save_session"
                     app:tooltipText="@{@string/action_save_session}"
                     android:scaleType="center"
-                    app:srcCompat="@drawable/ic_save" />
+                    app:srcCompat="@drawable/outline_save_24" />
 
 
                 <ImageButton

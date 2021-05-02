@@ -72,7 +72,7 @@ class BookmarkPageFactory @Inject constructor(
         }
         .ignoreElements()
         .toSingle {
-            cacheIcon(ThemeUtils.createThemedBitmap(application, R.drawable.ic_folder, false), folderIconFile)
+            cacheIcon(ThemeUtils.createThemedBitmap(application, R.drawable.outline_folder_special_24, false), folderIconFile)
             cacheIcon(faviconModel.createDefaultBitmapForTitle(null), defaultIconFile)
 
             "$FILE${createBookmarkPage(null)}"

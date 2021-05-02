@@ -37,7 +37,7 @@
                 style="?android:attr/actionButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_search"
+                app:srcCompat="@drawable/ic_find"
                 android:contentDescription="@null" />
 
             <ImageButton
@@ -61,7 +61,7 @@
                 style="?android:attr/actionButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_action_delete"
+                app:srcCompat="@drawable/round_clear_24"
                 android:contentDescription="@null" />
         </LinearLayout>
 

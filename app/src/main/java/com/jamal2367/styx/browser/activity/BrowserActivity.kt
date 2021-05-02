@@ -584,7 +584,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         // Show incognito icon in more menu button
         if (isIncognito()) {
-            iBindingToolbarContent.buttonMore.setImageResource(R.drawable.ic_incognito)
+            iBindingToolbarContent.buttonMore.setImageResource(R.drawable.ic_incognito_24)
         }
 
         iBindingToolbarContent.tabsButton.setOnClickListener(this)
@@ -3175,7 +3175,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         // Set stop or reload icon according to current load status
         //setMenuItemIcon(R.id.action_reload, if (isLoading) R.drawable.ic_action_delete else R.drawable.ic_action_refresh)
-        iBindingToolbarContent.buttonReload.setImageResource(if (isLoading) R.drawable.ic_action_delete else R.drawable.ic_action_refresh)
+        iBindingToolbarContent.buttonReload.setImageResource(if (isLoading) R.drawable.round_clear_24 else R.drawable.round_refresh_24)
 
         // That fancy animation would be great but somehow it looks like it is causing issues making the button unresponsive.
         // I'm guessing it is conflicting with animations from layout change.
