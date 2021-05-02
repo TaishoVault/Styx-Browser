@@ -345,8 +345,14 @@
     <string name="settings_reseted">All settings restored</string>
     <string name="settings_security">Security</string>
     <string name="settings_summary_apps">Enable third-party apps</string>
+    <string name="settings_summary_adblock">Block advertising, tracking, malware…</string>
     <string name="settings_summary_dark_mode_default">Define if new tabs use force dark mode by default</string>
     <string name="settings_summary_desktop_mode_default">Define if new tabs use desktop mode by default</string>
+    <string name="settings_summary_display">App design, color mode, pull-to-refresh…</string>
+    <string name="settings_summary_extensions">Download extensions</string>
+    <string name="settings_summary_general">Home page, search services, tabs…</string>
+    <string name="settings_summary_import_export">Backup and restore settings and bookmarks</string>
+    <string name="settings_summary_privacy">Cache, history, cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Disable it to use tabs in navigation drawer</string>
     <string name="settings_title_apps">Apps</string>
     <string name="settings_title_dark_mode_default">Force dark mode</string>

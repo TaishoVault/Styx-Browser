@@ -324,7 +324,7 @@
     <string name="session_prompt_confirm_deletion_message">Sind Sie sicher, dass Sie die Sitzung \"%s\" löschen möchten?</string>
     <string name="session_prompt_confirm_deletion_title">Löschung bestätigen</string>
     <string name="session_switched">Zu \"%s\" gewechselt</string>
-    <string name="settings_about_explain">Details über Autor und Lizenz</string>
+    <string name="settings_about_explain">Details über Autor und Lizenzen</string>
     <string name="settings_about">Über</string>
     <string name="settings_adblock">Werbeblocker</string>
     <string name="settings_admalwareblocker">Werbe &amp; Malwareblocker</string>
@@ -344,8 +344,14 @@
     <string name="settings_reseted">Alle Einstellungen wiederhergestellt</string>
     <string name="settings_security">Sicherheit</string>
     <string name="settings_summary_apps">Anwendungen von Drittanbietern</string>
+    <string name="settings_summary_adblock">Blockieren von Werbung, Tracking, Malware…</string>
     <string name="settings_summary_dark_mode_default">Neue Tabs standardmäßig im Dunkel Modus verwenden</string>
     <string name="settings_summary_desktop_mode_default">Neue Tabs standardmäßig im Desktop Modus verwenden</string>
+    <string name="settings_summary_display">App-Design, Farbmodus, Pull-to-Refresh…</string>
+    <string name="settings_summary_extensions">Erweiterungen herunterladen</string>
+    <string name="settings_summary_general">Startseite, Suchdienste, Tabs…</string>
+    <string name="settings_summary_import_export">Sichern / Wiederherstellen von Einstellungen und Lesezeichen</string>
+    <string name="settings_summary_privacy">Cache, Verlauf, Cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Ausschalten um Desktop Tab-Drawer zu nutzen</string>
     <string name="settings_title_apps">Apps</string>
     <string name="settings_title_dark_mode_default">Dunkel-Modus für Webseiten</string>
