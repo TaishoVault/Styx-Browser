@@ -348,7 +348,7 @@
     <string name="settings_summary_dark_mode_default">Neue Tabs standardmäßig im Dunkel Modus verwenden</string>
     <string name="settings_summary_desktop_mode_default">Neue Tabs standardmäßig im Desktop Modus verwenden</string>
     <string name="settings_summary_display">App-Design, Farbmodus, Pull-to-Refresh…</string>
-    <string name="settings_summary_extensions">Erweiterungen herunterladen</string>
+    <string name="settings_summary_extensions">Erweiterungen installieren</string>
     <string name="settings_summary_general">Startseite, Suchdienste, Tabs…</string>
     <string name="settings_summary_import_export">Sichern / Wiederherstellen von Einstellungen und Lesezeichen</string>
     <string name="settings_summary_privacy">Cache, Verlauf, Cookies…</string>
