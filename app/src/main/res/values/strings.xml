@@ -349,7 +349,7 @@
     <string name="settings_summary_dark_mode_default">Define if new tabs use force dark mode by default</string>
     <string name="settings_summary_desktop_mode_default">Define if new tabs use desktop mode by default</string>
     <string name="settings_summary_display">App design, color mode, pull-to-refresh…</string>
-    <string name="settings_summary_extensions">Download extensions</string>
+    <string name="settings_summary_extensions">Install extensions</string>
     <string name="settings_summary_general">Home page, search services, tabs…</string>
     <string name="settings_summary_import_export">Backup and restore settings and bookmarks</string>
     <string name="settings_summary_privacy">Cache, history, cookies…</string>
