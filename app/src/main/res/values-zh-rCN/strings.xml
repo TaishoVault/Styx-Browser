@@ -59,7 +59,6 @@
     <string name="allow_javascript">允许此网站使用 JavaScript</string>
     <string name="android_open_source_project">Android开源项目</string>
     <string name="apache">Apache许可2.0</string>
-    <string name="app_restart">重新启动应用以使更改生效</string>
     <string name="black_theme">黑色 (AMOLED)</string>
     <string name="block_ad_refresh_hosts">刷新主机文件…</string>
     <string name="block_ad_refresh_now">立即更新 Hosts</string>
@@ -124,15 +123,10 @@
     <string name="dialog_title_close_browser">关闭浏览器</string>
     <string name="dialog_title_share">分享此页面</string>
     <string name="dialog_title_third_party_app">第三方应用程序可用</string>
-    <string name="dialog_toggle_desktop">切换桌面用户代理</string>
     <string name="dialog_tools_title">页面工具</string>
     <string name="do_not_track">请求“Do Not Track”</string>
     <string name="domain">域名</string>
     <string name="dont_ask_again">不要再询问</string>
-    <string name="download_channel">下载</string>
-    <string name="download_complete">下载完毕</string>
-    <string name="download_description">下载进度信息</string>
-    <string name="download_failed">下载失败</string>
     <string name="download_no_sdcard_dlg_msg">需要 USB 存储以下载文件</string>
     <string name="download_no_sdcard_dlg_title">没有 SD 卡</string>
     <string name="download_pending">正在开始下载</string>
@@ -194,7 +188,6 @@
     <string name="light_theme">亮色</string>
     <string name="listed_javascript">只允许列出的站点使用 JavaScript</string>
     <string name="load_images">载入图片</string>
-    <string name="loading_failed">无法从页面中加载任何内容</string>
     <string name="loading">加载中&#8230;</string>
     <string name="location">位置信息访问</string>
     <string name="manual_proxy">手动设置代理</string>
@@ -242,9 +235,7 @@
     <string name="orbot">Orbot</string>
     <string name="other">打开了 %1$d 隐身标签页</string>
     <string name="overViewMode">以概览模式加载页面</string>
-    <string name="page_source_title">页面源码</string>
     <string name="page_source">查看页面源代码</string>
-    <string name="pagespeed_error">此网站使用 PageSpeed。源编辑可能不会如预期那样工作。</string>
     <string name="password">保存密码</string>
     <string name="port">端口：</string>
     <string name="powered_by_baidu">由百度提供</string>
@@ -280,7 +271,6 @@
     <string name="recommended">推荐</string>
     <string name="reflow">启用文本重排</string>
     <string name="remove_identifying_headers">移除可用于识别的头部信息</string>
-    <string name="remove_userscript_description">你想要删除此 UserScript 吗？</string>
     <string name="remove_userscript">删除 UserScript</string>
     <string name="rendering_mode">渲染模式</string>
     <string name="reopening_recent_tab">重新打开了之前的标签页</string>
@@ -337,17 +327,14 @@
     <string name="settings_help_us">帮助我们</string>
     <string name="settings_imported">已导入备份设置</string>
     <string name="settings_malware">恶意软件</string>
-    <string name="settings_other">其他</string>
     <string name="settings_privacy">隐私设置</string>
     <string name="settings_reseted">所有设置已恢复</string>
-    <string name="settings_security">安全性</string>
     <string name="settings_summary_apps">允许第三方应用</string>
     <string name="settings_summary_dark_mode_default">定义新标签是否默认使用强制深色模式</string>
     <string name="settings_summary_desktop_mode_default">定义新选项卡是否默认使用桌面模式</string>
     <string name="settings_summary_vertical_tab_bar">禁用它在导航抽屉中使用选项卡</string>
     <string name="settings_title_apps">应用</string>
     <string name="settings_title_dark_mode_default">强制深色模式</string>
-    <string name="settings_title_debug">调试</string>
     <string name="settings_title_desktop_mode_default">桌面模式:</string>
     <string name="settings_title_toolbars_bottom">工具栏在底部</string>
     <string name="settings">设置</string>
@@ -355,7 +342,6 @@
     <string name="shortcut_message_failed_to_add">抱歉，你的桌面应用不支持快捷方式</string>
     <string name="show_second_bar">显示辅助导航栏</string>
     <string name="show_ssl">显示 SSL 警告对话框</string>
-    <string name="show">显示</string>
     <string name="site_cookies">站点 cookie</string>
     <string name="six">六</string>
     <string name="size">文本大小</string>

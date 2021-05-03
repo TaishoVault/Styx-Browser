@@ -33,7 +33,6 @@
     <string name="agent_desktop">שולחן עבודה</string>
     <string name="agent">סוכן משתמש</string>
     <string name="android_open_source_project">פרויקט קוד פתוח אנדרואיד</string>
-    <string name="app_restart">אנא הפעל מחדש את האפליקציה כדי שהשינוי ייכנס לתוקף.</string>
     <string name="black_theme">נושא שחור</string>
     <string name="block_ad_refresh_now">רענן מארחים עכשיו</string>
     <string name="block_ad_remote_refresh_frequency_description">עבור קובץ מארחים מרוחק</string>
@@ -82,7 +81,6 @@
     <string name="dialog_rename_folder">שנה שם תיקיה</string>
     <string name="dialog_title_close_browser">Close tabs</string>
     <string name="dialog_title_share">שתף דף זה</string>
-    <string name="dialog_toggle_desktop">החלף את סוכן המשתמש בשולחן העבודה</string>
     <string name="dialog_tools_title">כלי עמוד</string>
     <string name="do_not_track">בקשה \'אל תעקוב אחר \'</string>
     <string name="download_no_sdcard_dlg_msg">יש צורך באחסון USB כדי להוריד את הקובץ.</string>
@@ -115,7 +113,6 @@
     <string name="license_gnu">רישיון ציבורי קטן יותר של גנו</string>
     <string name="licenses">רישיונות קוד פתוח</string>
     <string name="light_theme">נושא קל</string>
-    <string name="loading_failed">לא ניתן היה לטעון דבר מהדף.</string>
     <string name="loading">טוען…</string>
     <string name="location">גישה למיקום</string>
     <string name="manual_proxy">פרוקסי ידני</string>

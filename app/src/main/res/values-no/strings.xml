@@ -33,7 +33,6 @@
     <string name="agent">Bruker agent</string>
     <string name="android_open_source_project">Android åpen kildekode-prosjekt</string>
     <string name="apache">Apache lisens 2.0</string>
-    <string name="app_restart">Start programmet på nytt for at endringene skal tre i kraft.</string>
     <string name="black_theme">Svart tema</string>
     <string name="block_ad_refresh_now">Oppdater verter nå</string>
     <string name="block_ad_remote_refresh_frequency_description">For eksterne verts-fil</string>
@@ -83,7 +82,6 @@
     <string name="dialog_rename_folder">Endre mappenavn</string>
     <string name="dialog_title_close_browser">Lukk faner</string>
     <string name="dialog_title_share">Del denne siden</string>
-    <string name="dialog_toggle_desktop">Slå av/på skrivebordsbrukeragent</string>
     <string name="dialog_tools_title">Verktøy på siden</string>
     <string name="do_not_track">Forespørsel «Ikke spor»</string>
     <string name="download_no_sdcard_dlg_msg">USB-lagring er påkrevd for å laste ned filen.</string>
@@ -117,7 +115,6 @@
     <string name="licenses">Åpen kildekode-lisenser</string>
     <string name="light_theme">Lyst tema</string>
     <string name="listed_javascript">Tillat bare JavaScript for opplistede sider</string>
-    <string name="loading_failed">Kunne ikke laste noe fra siden.</string>
     <string name="loading">Laster&#8230;</string>
     <string name="location">Posisjon tilgang</string>
     <string name="manual_proxy">Manuell proxy</string>

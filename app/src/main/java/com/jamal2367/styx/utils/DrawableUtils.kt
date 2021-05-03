@@ -10,6 +10,7 @@ import com.jamal2367.styx.R
 import com.jamal2367.styx.utils.ThemeUtils.getBitmapFromVectorDrawable
 import com.jamal2367.styx.utils.Utils.dpToPx
 import kotlin.math.abs
+import kotlin.math.roundToInt
 
 object DrawableUtils {
     /**
@@ -34,7 +35,7 @@ object DrawableUtils {
         val radius = dpToPx(2f)
         val outer = RectF(0F, 0F, canvas.width.toFloat(), canvas.height.toFloat())
         canvas.drawRoundRect(outer, radius.toFloat(), radius.toFloat(), paint)
-        val dest = Rect(Math.round(outer.left + radius), Math.round(outer.top + radius), Math.round(outer.right - radius), Math.round(outer.bottom - radius))
+        val dest = Rect((outer.left + radius).roundToInt(), (outer.top + radius).roundToInt(), (outer.right - radius).roundToInt(), (outer.bottom - radius).roundToInt())
         paint.color = Color.WHITE
         canvas.drawBitmap(icon, null, dest, paint)
         return image
@@ -66,7 +67,7 @@ object DrawableUtils {
         paint.isAntiAlias = true
         paint.textAlign = Paint.Align.CENTER
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_OVER)
-        val radius = dpToPx(2f)
+        val radius = dpToPx(8f)
         val outer = RectF(0F, 0F, canvas.width.toFloat(), canvas.height.toFloat())
         canvas.drawRoundRect(outer, radius.toFloat(), radius.toFloat(), paint)
         val xPos = canvas.width / 2
@@ -86,10 +87,21 @@ object DrawableUtils {
      */
     @ColorInt
     fun characterToColorHash(character: Char, app: Application): Int {
-        val smallHash = Character.getNumericValue(character) % 2
+        val smallHash = Character.getNumericValue(character) % 13
         return when (abs(smallHash)) {
-            0 -> ContextCompat.getColor(app, R.color.bookmark_default_blue)
-            1 -> ContextCompat.getColor(app, R.color.bookmark_default_red)
+            0 -> ContextCompat.getColor(app, R.color.bookmark_red)
+            1 -> ContextCompat.getColor(app, R.color.bookmark_pink)
+            2 -> ContextCompat.getColor(app, R.color.bookmark_purple)
+            3 -> ContextCompat.getColor(app, R.color.bookmark_deep_purple)
+            4 -> ContextCompat.getColor(app, R.color.bookmark_indigo)
+            5 -> ContextCompat.getColor(app, R.color.bookmark_blue)
+            6 -> ContextCompat.getColor(app, R.color.bookmark_light_blue)
+            7 -> ContextCompat.getColor(app, R.color.bookmark_cyan)
+            8 -> ContextCompat.getColor(app, R.color.bookmark_teal)
+            9 -> ContextCompat.getColor(app, R.color.bookmark_green)
+            10 -> ContextCompat.getColor(app, R.color.bookmark_deep_orange)
+            11 -> ContextCompat.getColor(app, R.color.bookmark_brown)
+            12 -> ContextCompat.getColor(app, R.color.bookmark_blue_grey)
             else -> Color.BLACK
         }
     }

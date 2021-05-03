@@ -30,7 +30,6 @@
     <string name="agent_desktop">Bureaublad</string>
     <string name="agent">Gebruikersagent</string>
     <string name="apache">Apache-licentie 2.0</string>
-    <string name="app_restart">Start de app opnieuw om de wijziging van kracht te laten worden.</string>
     <string name="black_theme">Zwart Thema (AMOLED)</string>
     <string name="block_ad_refresh_now">Vernieuw nu hosts</string>
     <string name="block_ad_remote_refresh_frequency_description">Voor externe hosts-bestand</string>
@@ -80,7 +79,6 @@
     <string name="dialog_rename_folder">Naam map wijzigen</string>
     <string name="dialog_title_close_browser">Tabbladen sluiten</string>
     <string name="dialog_title_share">Deel deze pagina</string>
-    <string name="dialog_toggle_desktop">Schakel desktop user-agent in</string>
     <string name="dialog_tools_title">Pagina hulpmiddelen</string>
     <string name="do_not_track">Vraag \'Niet Volgen\'</string>
     <string name="download_no_sdcard_dlg_msg">USB opslag is vereist om bestand te downloaden.</string>
@@ -115,7 +113,6 @@
     <string name="licenses">Open source licenties</string>
     <string name="light_theme">Licht thema</string>
     <string name="listed_javascript">Alleen JavaScript toestaan voor vermelde websites</string>
-    <string name="loading_failed">Kon niets van deze pagina laden.</string>
     <string name="loading">Laden&#8230;</string>
     <string name="location">Locatie toegang</string>
     <string name="manual_proxy">Manuele proxy</string>

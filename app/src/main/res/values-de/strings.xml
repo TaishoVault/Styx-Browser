@@ -59,7 +59,6 @@
     <string name="allow_javascript">JavaScript für diese Webseite zulassen</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Apache License 2.0</string>
-    <string name="app_restart">Bitte starte die App neu, um die Änderungen zu übernehmen</string>
     <string name="black_theme">Schwarzes Design (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Hosts-Liste wird aktualisiert…</string>
     <string name="block_ad_refresh_now">Hosts aktualisieren</string>
@@ -124,15 +123,10 @@
     <string name="dialog_title_close_browser">Browser schließen</string>
     <string name="dialog_title_share">Diese Webseite teilen</string>
     <string name="dialog_title_third_party_app">App von Drittanbietern verfügbar</string>
-    <string name="dialog_toggle_desktop">Umschalten des Desktop-Benutzeragenten</string>
     <string name="dialog_tools_title">Seiten-Tools</string>
     <string name="do_not_track">\"Nicht verfolgen\"-Funktion anfordern</string>
     <string name="domain">Domain</string>
     <string name="dont_ask_again">Nicht noch einmal fragen</string>
-    <string name="download_channel">Downloads</string>
-    <string name="download_complete">Download abgeschlossen</string>
-    <string name="download_description">Informationen zum Download-Fortschritt</string>
-    <string name="download_failed">Download fehlgeschlagen</string>
     <string name="download_no_sdcard_dlg_msg">USB-Speicher ist für das Herunterladen der Datei notwendig!</string>
     <string name="download_no_sdcard_dlg_title">Keine SD-Karte</string>
     <string name="download_pending">Herunterladen:</string>
@@ -194,7 +188,6 @@
     <string name="light_theme">Helles Design</string>
     <string name="listed_javascript">JavaScript nur für diese Webseiten zulassen</string>
     <string name="load_images">Bilder laden</string>
-    <string name="loading_failed">Es konnte nichts von der Seite geladen werden.</string>
     <string name="loading">Lade…</string>
     <string name="location">Standortzugriff erlauben</string>
     <string name="manual_proxy">Manueller Proxy</string>
@@ -242,9 +235,7 @@
     <string name="orbot">Orbot</string>
     <string name="other">%1$d Inkognito-Tabs geöffnet</string>
     <string name="overViewMode">Seiten in der Übersicht öffnen</string>
-    <string name="page_source_title">Seitenquelltext</string>
     <string name="page_source">Seitenquelltext anzeigen</string>
-    <string name="pagespeed_error">Diese Website verwendet PageSpeed. Die Quellbearbeitung funktioniert möglicherweise nicht wie erwartet.</string>
     <string name="password">Passwörter speichern</string>
     <string name="port">Port:</string>
     <string name="powered_by_baidu">Unterstützt durch Baidu</string>
@@ -280,7 +271,6 @@
     <string name="recommended">(Empfohlen)</string>
     <string name="reflow">Textfluss anpassen</string>
     <string name="remove_identifying_headers">Identifizierbare Header entfernen</string>
-    <string name="remove_userscript_description">Möchten Sie dieses UserScript entfernen?</string>
     <string name="remove_userscript">UserScript entfernen</string>
     <string name="rendering_mode">Rendering Modus</string>
     <string name="reopening_recent_tab">Alten Tab geöffnet</string>
@@ -339,10 +329,8 @@
     <string name="settings_help_us">Hilf uns</string>
     <string name="settings_imported">Einstellungen wurden importiert</string>
     <string name="settings_malware">Malware</string>
-    <string name="settings_other">Sonstiges</string>
     <string name="settings_privacy">Privatsphäre</string>
     <string name="settings_reseted">Alle Einstellungen wiederhergestellt</string>
-    <string name="settings_security">Sicherheit</string>
     <string name="settings_summary_apps">Anwendungen von Drittanbietern</string>
     <string name="settings_summary_adblock">Blockieren von Werbung, Tracking, Malware…</string>
     <string name="settings_summary_dark_mode_default">Neue Tabs standardmäßig im Dunkel Modus verwenden</string>
@@ -355,7 +343,6 @@
     <string name="settings_summary_vertical_tab_bar">Ausschalten um Desktop Tab-Drawer zu nutzen</string>
     <string name="settings_title_apps">Apps</string>
     <string name="settings_title_dark_mode_default">Dunkel-Modus für Webseiten</string>
-    <string name="settings_title_debug">Debug</string>
     <string name="settings_title_desktop_mode_default">Desktop-Modus</string>
     <string name="settings_title_toolbars_bottom">Suchleiste nach unten</string>
     <string name="settings">Einstellungen</string>
@@ -363,7 +350,6 @@
     <string name="shortcut_message_failed_to_add">Ihr Launcher unterstützt keine Verknüpfungen!</string>
     <string name="show_second_bar">Zweite Navigationsleiste anzeigen</string>
     <string name="show_ssl">SSL-Warndialog anzeigen</string>
-    <string name="show">Zeigen</string>
     <string name="site_cookies">Webseiten-Cookies</string>
     <string name="six">Sechs (6)</string>
     <string name="size">Textgröße:</string>

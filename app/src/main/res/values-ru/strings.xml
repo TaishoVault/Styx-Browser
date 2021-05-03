@@ -59,7 +59,6 @@
     <string name="allow_javascript">Разрешить JavaScript для этого сайта</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Лицензия Apache 2.0</string>
-    <string name="app_restart">Чтобы изменения вступили в силу, необходимо перезапустить приложение.</string>
     <string name="black_theme">Чёрная тема (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Обновить host-файл…</string>
     <string name="block_ad_refresh_now">Обновить host-файл сейчас</string>
@@ -124,15 +123,10 @@
     <string name="dialog_title_close_browser">Закрыть браузер</string>
     <string name="dialog_title_share">Способ передачи</string>
     <string name="dialog_title_third_party_app">Стороннее приложение доступно</string>
-    <string name="dialog_toggle_desktop">Вкл/выкл агент пользователя рабочего стола</string>
     <string name="dialog_tools_title">Инструменты</string>
     <string name="do_not_track">Запрашивать \'Не отслеживать, DNT\'</string>
     <string name="domain">Домен</string>
     <string name="dont_ask_again">Больше не спрашивать</string>
-    <string name="download_channel">Загрузки</string>
-    <string name="download_complete">Загрузка завершена</string>
-    <string name="download_description">Информация о ходе загрузки</string>
-    <string name="download_failed">Сбой загрузки</string>
     <string name="download_no_sdcard_dlg_msg">Для загрузки файла необходима карта памяти</string>
     <string name="download_no_sdcard_dlg_title">Нет карты памяти</string>
     <string name="download_pending">Загрузка\u2026</string>
@@ -194,7 +188,6 @@
     <string name="light_theme">Светлая тема</string>
     <string name="listed_javascript">Разрешить JavaScript только для перечисленных сайтов</string>
     <string name="load_images">Загружать изображения</string>
-    <string name="loading_failed">Не удалось загрузить страницу.</string>
     <string name="loading">Загрузка&#8230;</string>
     <string name="location">Местоположение</string>
     <string name="manual_proxy">Прокси</string>
@@ -242,9 +235,7 @@
     <string name="orbot">Orbot</string>
     <string name="other">%1$d инкогнито вкладки открыто</string>
     <string name="overViewMode">Загружать обзор</string>
-    <string name="page_source_title">код страницы</string>
     <string name="page_source">Просмотр кода страницы</string>
-    <string name="pagespeed_error">Этот сайт использует PageSpeed. Редактирование исходного кода может работать не так, как ожидалось.</string>
     <string name="password">Сохранять пароли</string>
     <string name="port">Порт:</string>
     <string name="powered_by_baidu">Поиск Baidu</string>
@@ -280,7 +271,6 @@
     <string name="recommended">Рекомендуется</string>
     <string name="reflow">Перекомпоновка</string>
     <string name="remove_identifying_headers">Удалять идентифиц. заголовки</string>
-    <string name="remove_userscript_description">Вы действительно хотите удалить этот UserScript?</string>
     <string name="remove_userscript">Удаление UserScript</string>
     <string name="rendering_mode">Режим отображения страниц</string>
     <string name="reopening_recent_tab">Восстановить закрытую вкладку</string>
@@ -339,17 +329,14 @@
     <string name="settings_help_us">Помочь нам</string>
     <string name="settings_imported">Настройки из резервной копии импортированы</string>
     <string name="settings_malware">Вредоносный</string>
-    <string name="settings_other">Другое</string>
     <string name="settings_privacy">Настройки приватности</string>
     <string name="settings_reseted">Все настройки восстановлены</string>
-    <string name="settings_security">Безопасность</string>
     <string name="settings_summary_apps">Разрешить сторонние приложения</string>
     <string name="settings_summary_dark_mode_default">Определить, используют ли новые вкладки принудительный темный режим по умолчанию</string>
     <string name="settings_summary_desktop_mode_default">Определяет, будут ли новые вкладки использовать рабочий стол по умолчанию</string>
     <string name="settings_summary_vertical_tab_bar">Отключите, чтобы использовать вкладки в панели навигации</string>
     <string name="settings_title_apps">Приложения</string>
     <string name="settings_title_dark_mode_default">Принудительно использовать темную тему</string>
-    <string name="settings_title_debug">Отладка</string>
     <string name="settings_title_desktop_mode_default">Режим для настольного компьютера</string>
     <string name="settings_title_toolbars_bottom">Панель инструментов внизу</string>
     <string name="settings">Настройки</string>
@@ -357,7 +344,6 @@
     <string name="shortcut_message_failed_to_add">К сожалению, ваш лаунчер не поддерживает ярлыки.</string>
     <string name="show_second_bar">Показывать вторую панель навигации</string>
     <string name="show_ssl">Показать диалоги предупреждения SSL</string>
-    <string name="show">Показывать</string>
     <string name="site_cookies">Cookie сайта</string>
     <string name="six">Шесть (6)</string>
     <string name="size">Размер текста</string>

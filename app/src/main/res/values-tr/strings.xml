@@ -36,7 +36,6 @@
     <string name="algorithm">Algoritma</string>
     <string name="android_open_source_project">Android Açık Kaynak Projesi</string>
     <string name="apache">Apache Lisans 2.0</string>
-    <string name="app_restart">Değişikliklerin etkili olması için lütfen uygulamayı yeniden başlatın.</string>
     <string name="black_theme">Siyah Tema (AMOLED)</string>
     <string name="block_ad_refresh_now">Sunucuyu şimdi yenile</string>
     <string name="block_ad_remote_refresh_frequency_description">Uzak dosyalar için</string>
@@ -87,12 +86,9 @@
     <string name="dialog_rename_folder">Klasörü yeniden adlandır</string>
     <string name="dialog_title_close_browser">Tarayıcıyı kapat</string>
     <string name="dialog_title_share">Bu sayfayı paylaş</string>
-    <string name="dialog_toggle_desktop">Masaüstü görünümüne geçiş</string>
     <string name="dialog_tools_title">Sayfa araçları</string>
     <string name="do_not_track">\'İzleme isteği\' gönder</string>
     <string name="dont_ask_again">Bir daha sorma</string>
-    <string name="download_channel">İndirilenler</string>
-    <string name="download_description">İndirme ilerlemesi hakkında bilgi</string>
     <string name="download_no_sdcard_dlg_msg">Bu dosyayı indirmek için USB depolaması gereklidir.</string>
     <string name="download_no_sdcard_dlg_title">Hafıza kartı bulunamadı</string>
     <string name="download_sdcard_busy_dlg_msg">Depolama meşgul. İndirmeleri aktif etmek için bildirimler ekranından USB depolamasını kapatın.</string>
@@ -129,7 +125,6 @@
     <string name="licenses">Açık Kaynak Lisansları</string>
     <string name="light_theme">Açık tema</string>
     <string name="listed_javascript">Yalnızca listelenen siteler için JavaScript\'e izin ver</string>
-    <string name="loading_failed">Sayfadan bir şey yüklenemedi.</string>
     <string name="loading">Yükleniyor&#8230;</string>
     <string name="location">Konum erişimi</string>
     <string name="manual_proxy">Elle vekil sunucu</string>
@@ -164,7 +159,6 @@
     <string name="notification_incognito_running_message">Açmak için dokunun</string>
     <string name="overViewMode">Sayfaları önizleme modunda göster</string>
     <string name="page_source">Sayfa kaynağını göster</string>
-    <string name="pagespeed_error">Bu web sitesi PageSpeed kullanıyor. Kaynak düzenleme beklendiği gibi çalışmayabilir.</string>
     <string name="password">Şifrelerinizi kaydedin</string>
     <string name="port">Bağlantı noktası:</string>
     <string name="powered_by_baidu">Baidu tarafından desteklenmektedir</string>
@@ -180,7 +174,6 @@
     <string name="recommended">Önerilen</string>
     <string name="reflow">Yazıyı sayfaya göre ayarla</string>
     <string name="remove_identifying_headers">Tanımlayıcı başlıkları kaldır</string>
-    <string name="remove_userscript_description">Bu Kullanıcı Betiğini kaldırmak istiyor musunuz?</string>
     <string name="remove_userscript">Kullanıcı Betiğini Kaldır</string>
     <string name="rendering_mode">İşleme modu</string>
     <string name="reopening_recent_tab">Önceki sekmeler yeniden açıldı</string>

@@ -24,6 +24,14 @@ inline fun Context.dimen(@DimenRes dimenRes: Int): Int = resources.getDimensionP
 @ColorInt
 inline fun Context.color(@ColorRes colorRes: Int): Int = ContextCompat.getColor(this, colorRes)
 
+@ColorInt
+fun Context.attrColor( @AttrRes attrColor: Int): Int {
+    val typedArray = theme.obtainStyledAttributes(intArrayOf(attrColor))
+    val textColor = typedArray.getColor(0, 0)
+    typedArray.recycle()
+    return textColor
+}
+
 /**
  * Shows a toast with the provided [StringRes].
  */

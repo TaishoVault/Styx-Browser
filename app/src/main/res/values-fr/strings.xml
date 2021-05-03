@@ -34,7 +34,6 @@
     <string name="algorithm">Algorithme</string>
     <string name="android_open_source_project">Projet Open Source Android</string>
     <string name="apache">Licence Apache 2.0</string>
-    <string name="app_restart">Veuillez redémarrer l\'application pour prendre en compte les changements.</string>
     <string name="black_theme">Thème noir (AMOLED)</string>
     <string name="block_ad_refresh_now">Actualiser le fichier \'hosts\'</string>
     <string name="block_ad_remote_refresh_frequency_description">Pour le fichier \'hosts\' distant</string>
@@ -85,12 +84,9 @@
     <string name="dialog_rename_folder">Renommer de dossier</string>
     <string name="dialog_title_close_browser">Fermer le navigateur</string>
     <string name="dialog_title_share">Partager cette page</string>
-    <string name="dialog_toggle_desktop">Afficher la version ordinateur</string>
     <string name="dialog_tools_title">Outils de page</string>
     <string name="do_not_track">Demander de \'Ne pas pister\'</string>
     <string name="dont_ask_again">Ne plus demander</string>
-    <string name="download_channel">Téléchargements</string>
-    <string name="download_description">Informations sur la progression du téléchargement</string>
     <string name="download_no_sdcard_dlg_msg">Le stockage USB est nécessaire pour télécharger le fichier.</string>
     <string name="download_no_sdcard_dlg_title">Aucune carte SD</string>
     <string name="download_pending">Démarrage du téléchargement\u2026</string>
@@ -130,7 +126,6 @@
     <string name="licenses">Licences open source</string>
     <string name="light_theme">Thème clair</string>
     <string name="listed_javascript">N’autoriser JavaScript que pour les sites listés</string>
-    <string name="loading_failed">Impossible de charger quoi que ce soit depuis la page.</string>
     <string name="loading">Chargement&#8230;</string>
     <string name="location">Accéder à ma position</string>
     <string name="manual_proxy">Proxy manuel</string>
@@ -165,7 +160,6 @@
     <string name="notification_incognito_running_message">Appuyez pour ouvrir</string>
     <string name="overViewMode">Charger les pages en mode aperçu</string>
     <string name="page_source">Code source de la page</string>
-    <string name="pagespeed_error">Ce site utilise la technologie PageSpeed, ce qui peut causer des erreurs si vous modifiez le code source.</string>
     <string name="password">Enregistrer les mots de passe</string>
     <string name="port">Port :</string>
     <string name="powered_by_baidu">Baidu</string>
@@ -180,7 +174,6 @@
     <string name="recommended">Recommandé</string>
     <string name="reflow">Activer repositionnement du texte</string>
     <string name="remove_identifying_headers">Supprimer les en-têtes d\'dentification</string>
-    <string name="remove_userscript_description">Voulez-vous désinstaller cet userscript ?</string>
     <string name="remove_userscript">Désinstaller cet userscript</string>
     <string name="rendering_mode">Mode de rendu</string>
     <string name="reopening_recent_tab">Réouvrir l\'ancien onglet</string>

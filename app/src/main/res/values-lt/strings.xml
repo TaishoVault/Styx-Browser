@@ -35,7 +35,6 @@
     <string name="agent">Naudotojo agentas</string>
     <string name="android_open_source_project">„Android“ atvirojo kodo projektas</string>
     <string name="apache">„Apache“ licencija 2.0</string>
-    <string name="app_restart">Iš naujo paleiskite programą, kad pakeitimas įsigaliotų.</string>
     <string name="black_theme">Juodoji tema</string>
     <string name="block_ad_refresh_now">Atnaujinkite šeimininkus dabar</string>
     <string name="block_ad_remote_refresh_frequency_description">Nuotolinių kompiuterių failas</string>
@@ -83,7 +82,6 @@
     <string name="dialog_rename_folder">Pervardyti aplanką</string>
     <string name="dialog_title_close_browser">Uždaryti skirtukus</string>
     <string name="dialog_title_share">Dalinkis šiuo puslapiu</string>
-    <string name="dialog_toggle_desktop">Perjungti darbalaukio naršymo agentą</string>
     <string name="dialog_tools_title">Puslapio įrankiai</string>
     <string name="do_not_track">Prašyti \'Nestebėti \'</string>
     <string name="download_no_sdcard_dlg_msg">Norint atsisiųsti failą, reikia „USB“ atminties.</string>
@@ -121,7 +119,6 @@
     <string name="license_gnu">GNU Mažosios bendrosios visuomenės licencija</string>
     <string name="licenses">Atvirojo kodo licencijos</string>
     <string name="light_theme">Šviesos tema</string>
-    <string name="loading_failed">Nepavyko nieko įkelti iš puslapio.</string>
     <string name="loading">Įkeliama …</string>
     <string name="location">Prieiga prie vietovės</string>
     <string name="manual_proxy">Rankinis tarpinis serveris</string>

@@ -2,9 +2,6 @@
 <androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:title="@string/settings_general">
-
     <androidx.preference.Preference
         app:fragment="com.jamal2367.styx.settings.fragment.GeneralSettingsFragment"
         app:summary="@string/settings_summary_general"
@@ -16,11 +13,6 @@
         app:summary="@string/settings_summary_display"
         app:title="@string/settings_display"
         app:icon="@drawable/ic_palette_oval" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/settings_security">
 
     <androidx.preference.Preference
         app:fragment="com.jamal2367.styx.settings.fragment.PrivacySettingsFragment"
@@ -34,32 +26,17 @@
         app:title="@string/settings_admalwareblocker"
         app:icon="@drawable/ic_block_oval" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/settings_extensions">
-
     <androidx.preference.Preference
         app:fragment="com.jamal2367.styx.settings.fragment.ExtensionsSettingsFragment"
         app:summary="@string/settings_summary_extensions"
         app:title="@string/settings_extensions"
         app:icon="@drawable/ic_extension_oval" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/import_export_settings">
-
     <androidx.preference.Preference
         app:fragment="com.jamal2367.styx.settings.fragment.ImportExportSettingsFragment"
         app:summary="@string/settings_summary_import_export"
         app:title="@string/import_export_settings"
         app:icon="@drawable/ic_import_export_oval"  />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/settings_other">
 
     <androidx.preference.Preference
         app:fragment="com.jamal2367.styx.settings.fragment.AppsSettingsFragment"
@@ -72,7 +49,5 @@
         app:summary="@string/settings_about_explain"
         app:title="@string/settings_about"
         app:icon="@drawable/ic_about_oval" />
-
-    </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

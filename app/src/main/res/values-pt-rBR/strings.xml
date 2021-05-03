@@ -33,7 +33,6 @@
     <string name="agent">Agente</string>
     <string name="algorithm">Algoritmo</string>
     <string name="android_open_source_project">Projeto Android Open Source</string>
-    <string name="app_restart">Reinicie o aplicativo para aplicar as alterações.</string>
     <string name="black_theme">Tema preto</string>
     <string name="block_ad_refresh_now">Recarregar lista agora</string>
     <string name="block_ad_remote_refresh_frequency_description">Para arquivos remotos</string>
@@ -83,11 +82,9 @@
     <string name="dialog_rename_folder">Renomear pasta</string>
     <string name="dialog_title_close_browser">Fechar abas</string>
     <string name="dialog_title_share">Compartilhar esta página</string>
-    <string name="dialog_toggle_desktop">Mudar o agente de usuário para computador neste site</string>
     <string name="dialog_tools_title">Ferramentas de página</string>
     <string name="do_not_track">Solicitar \'Não Rastrear\'</string>
     <string name="dont_ask_again">Não perguntar novamente</string>
-    <string name="download_description">Informações sobre o progresso do download</string>
     <string name="download_no_sdcard_dlg_msg">Necessita-se de um cartão SD para salvar o arquivo transferido.</string>
     <string name="download_no_sdcard_dlg_title">Cartão SD não encontrado</string>
     <string name="download_sdcard_busy_dlg_msg">O cartão SD está ocupado. Para poder transferir arquivos, desative a opção Desativar armazenamento USB na notificação.</string>
@@ -123,7 +120,6 @@
     <string name="licenses">Licenças Open Source</string>
     <string name="light_theme">Tema claro</string>
     <string name="listed_javascript">Permitir JavaScript apenas nos sites listados</string>
-    <string name="loading_failed">A página não foi carregada.</string>
     <string name="loading">A carregar&#8230;</string>
     <string name="location">Acesso de localização</string>
     <string name="manual_proxy">Proxy manual</string>
@@ -157,7 +153,6 @@
     <string name="notification_incognito_running_message">Toque para abrir</string>
     <string name="overViewMode">Carregar páginas no modo panorâmico</string>
     <string name="page_source">Ver código-fonte da página</string>
-    <string name="pagespeed_error">Este site usa PageSpeed. A edição de código-fonte pode não funcionar como esperado.</string>
     <string name="password">Salvar senhas</string>
     <string name="port">Porta:</string>
     <string name="powered_by_baidu">Baidu</string>
@@ -172,7 +167,6 @@
     <string name="recommended">Recomendado</string>
     <string name="reflow">Ativar ajuste de texto</string>
     <string name="remove_identifying_headers">Remover identificação de cabeçalhos HTTP</string>
-    <string name="remove_userscript_description">Deseja remover este UserScript?</string>
     <string name="remove_userscript">Remover UserScript</string>
     <string name="rendering_mode">Modo de renderização</string>
     <string name="reopening_recent_tab">Reabrir última aba</string>

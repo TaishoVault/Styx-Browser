@@ -33,7 +33,6 @@
     <string name="agent">Клієнтський додаток</string>
     <string name="android_open_source_project">Android Open Source проект</string>
     <string name="apache">Apache Ліцензія 2.0</string>
-    <string name="app_restart">Перезапустіть програму, щоб зміни набрали сили.</string>
     <string name="black_theme">Чорна тема</string>
     <string name="block_ad_refresh_now">Оновити хости зараз</string>
     <string name="block_ad_remote_refresh_frequency_description">Файл віддалених хостів</string>
@@ -84,7 +83,6 @@
     <string name="dialog_rename_folder">Перейменувати папку</string>
     <string name="dialog_title_close_browser">Закрити вкладки</string>
     <string name="dialog_title_share">Поділитися цією сторінкою</string>
-    <string name="dialog_toggle_desktop">Увімкнути/вимкнути користувацький агент робочого столу</string>
     <string name="dialog_tools_title">Інструменти сторінки</string>
     <string name="do_not_track">Запит \'Do Not Track\'</string>
     <string name="download_no_sdcard_dlg_msg">Необхідний USB-накопичувач для завантаження файлу.</string>
@@ -120,7 +118,6 @@
     <string name="licenses">Ліцензії з відкритим кодом</string>
     <string name="light_theme">Світла тема</string>
     <string name="listed_javascript">Дозволити лише JavaScript для сайтів з списку сайтів</string>
-    <string name="loading_failed">Не вдалося нічого завантажити зі сторінки.</string>
     <string name="loading">Завантаження&#8230;</string>
     <string name="location">Доступ до місцезнаходження</string>
     <string name="manual_proxy">Ручний проксі</string>

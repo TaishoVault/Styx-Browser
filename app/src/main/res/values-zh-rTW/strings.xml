@@ -33,7 +33,6 @@
     <string name="agent">使用者代理</string>
     <string name="android_open_source_project">Android 開放原始碼計畫 (AOSP)</string>
     <string name="apache">Apache許可2.0</string>
-    <string name="app_restart">請重新啟動此應用程式以使變更生效</string>
     <string name="black_theme">深色主題 (AMOLED)</string>
     <string name="block_ad_refresh_now">立即刷新主機</string>
     <string name="block_ad_remote_refresh_frequency_description">對於遠程主機文件</string>
@@ -81,7 +80,6 @@
     <string name="dialog_rename_folder">重新命名資料夾</string>
     <string name="dialog_title_close_browser">關閉瀏覽器</string>
     <string name="dialog_title_share">分享此頁面</string>
-    <string name="dialog_toggle_desktop">切換成桌面版使用者代理</string>
     <string name="dialog_tools_title">頁面工具</string>
     <string name="do_not_track">要求不追蹤（Do Not Track）</string>
     <string name="download_no_sdcard_dlg_msg">下載此檔案需要 USB 儲存裝置。</string>
@@ -117,7 +115,6 @@
     <string name="license_gnu">GNU較小通用公共許可證</string>
     <string name="licenses">開放原始碼授權</string>
     <string name="light_theme">淺色主題</string>
-    <string name="loading_failed">無法載入頁面內容。</string>
     <string name="loading">正在載入&#8230;</string>
     <string name="location">允許網站存取地理位置</string>
     <string name="manual_proxy">手動設定代理</string>

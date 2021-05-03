@@ -34,7 +34,6 @@
     <string name="agent">Идентификација</string>
     <string name="android_open_source_project">Андроид пројекат отвореног кôда</string>
     <string name="apache">Апачи лиценца 2.0</string>
-    <string name="app_restart">Поново покрените апликацију да би промена ступила на снагу.</string>
     <string name="black_theme">Црна (АМОЛЕД)</string>
     <string name="block_ad_refresh_now">Освежите домаћине сада</string>
     <string name="block_ad_remote_refresh_frequency_description">За датотеку удаљених хостова</string>
@@ -83,7 +82,6 @@
     <string name="dialog_rename_folder">Преименуј мапу</string>
     <string name="dialog_title_close_browser">Close tabs</string>
     <string name="dialog_title_share">Подели ову страницу</string>
-    <string name="dialog_toggle_desktop">Укључите кориснички агент за радну површину</string>
     <string name="dialog_tools_title">Алати за странице</string>
     <string name="do_not_track">Захтевај „Не прати ме“</string>
     <string name="download_no_sdcard_dlg_msg">УСБ складиште је потребно за преузимање фајла.</string>
@@ -118,7 +116,6 @@
     <string name="license_gnu">Гнуова Мања општа јавна лиценца</string>
     <string name="licenses">Лиценце отвореног кôда</string>
     <string name="light_theme">Светла</string>
-    <string name="loading_failed">Нисам могао ништа да учитам са странице.</string>
     <string name="loading">Учитавам&#8230;</string>
     <string name="location">Приступ локацији</string>
     <string name="manual_proxy">Ручне поставке проксија</string>

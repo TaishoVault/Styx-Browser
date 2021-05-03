@@ -32,7 +32,6 @@
     <string name="agent_desktop">Skrivbord</string>
     <string name="agent">Användar agent</string>
     <string name="apache">Apache-licens 2.0</string>
-    <string name="app_restart">Starta om appen för att ändringen ska träda i kraft.</string>
     <string name="black_theme">Svart tema</string>
     <string name="block_ad_refresh_now">Uppdatera värdar nu</string>
     <string name="block_ad_remote_refresh_frequency_description">För remote hosts-fil</string>
@@ -82,7 +81,6 @@
     <string name="dialog_rename_folder">Döp om mapp</string>
     <string name="dialog_title_close_browser">Stäng flikar</string>
     <string name="dialog_title_share">Dela denna sida</string>
-    <string name="dialog_toggle_desktop">Växla skrivbords användaragent</string>
     <string name="dialog_tools_title">Verktyg för sidan</string>
     <string name="do_not_track">Begär \"Spåra inte\"</string>
     <string name="download_no_sdcard_dlg_msg">USB-lagring krävs för att ladda ner filen.</string>
@@ -115,7 +113,6 @@
     <string name="licenses">Licenser för öppen källkod</string>
     <string name="light_theme">Ljust tema</string>
     <string name="listed_javascript">Tillåt endast JavaScript för listade webbplatser</string>
-    <string name="loading_failed">Det gick inte att ladda något från sidan.</string>
     <string name="loading">Laddar&#8230;</string>
     <string name="location">Tillgång till plats</string>
     <string name="manual_proxy">Manuell proxy</string>

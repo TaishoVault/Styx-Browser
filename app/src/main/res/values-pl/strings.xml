@@ -35,7 +35,6 @@
     <string name="algorithm">Algorytm</string>
     <string name="android_open_source_project">Projekt Android Open Source</string>
     <string name="apache">Licencja Apache 2.0</string>
-    <string name="app_restart">Uruchom aplikację ponownie, aby uzyskać zmiany.</string>
     <string name="black_theme">Czarny motyw (AMOLED)</string>
     <string name="block_ad_refresh_now">Odśwież teraz hosty</string>
     <string name="block_ad_remote_refresh_frequency_description">Plik zdalnego hosta</string>
@@ -85,11 +84,8 @@
     <string name="dialog_rename_folder">Zmień nazwę katalogu</string>
     <string name="dialog_title_close_browser">Zamknij przeglądarkę</string>
     <string name="dialog_title_share">Udostępnij tę stronę</string>
-    <string name="dialog_toggle_desktop">Przełącz agenta użytkownika na pulpicie</string>
     <string name="dialog_tools_title">Narzędzia strony</string>
     <string name="do_not_track">Żądaj nieśledzenia</string>
-    <string name="download_channel">Pobieranie</string>
-    <string name="download_description">Informacje o postępie pobierania</string>
     <string name="download_no_sdcard_dlg_msg">Pamięć USB jest wymagana do pobrania tego pliku.</string>
     <string name="download_no_sdcard_dlg_title">Brak karty SD</string>
     <string name="download_sdcard_busy_dlg_msg">Pamięć USB jest zablokowana. By umożliwić pobieranie plików, dotknij \"Wyłącz pamięć USB\" w powiadomieniu.</string>
@@ -124,7 +120,6 @@
     <string name="licenses">Licencje Open Source</string>
     <string name="light_theme">Jasny motyw</string>
     <string name="listed_javascript">Zezwalaj tylko na obsługę JavaScript dla stron wymienionych na liście</string>
-    <string name="loading_failed">Nie udało się wczytać tekstu ze strony.</string>
     <string name="loading">Ładowanie…</string>
     <string name="location">Dostęp do geolokalizacji</string>
     <string name="manual_proxy">Ręczne ustawienia proxy</string>
@@ -160,7 +155,6 @@
     <string name="notification_incognito_running_message">Dotknij, aby otworzyć</string>
     <string name="overViewMode">Wyświetlaj strony nie-mobilne w pomniejszeniu</string>
     <string name="page_source">Pokaż źródło strony</string>
-    <string name="pagespeed_error">Ta strona używa strony PageSpeed. Edycja źródła może nie działać zgodnie z oczekiwaniami.</string>
     <string name="password">Zapisuj hasła</string>
     <string name="powered_by_baidu">Oparte o Baidu</string>
     <string name="powered_by_duck">Oparte o DuckDuckGo</string>

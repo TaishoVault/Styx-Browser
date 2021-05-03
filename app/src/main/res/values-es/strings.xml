@@ -53,7 +53,6 @@
     <string name="agent">Agente de usuario</string>
     <string name="android_open_source_project">Proyecto de código abierto de Android</string>
     <string name="apache">Licencia Apache 2.0</string>
-    <string name="app_restart">Reinicia la aplicación para que el cambio tenga efecto.</string>
     <string name="black_theme">Tema negro (AMOLED)</string>
     <string name="block_ad_refresh_now">Actualizar hosts ahora</string>
     <string name="block_ad_remote_refresh_frequency_description">Para el archivo de hosts remotos</string>
@@ -110,11 +109,8 @@
     <string name="dialog_title_close_browser">Cerrar navegador</string>
     <string name="dialog_title_share">Compartir esta página</string>
     <string name="dialog_title_third_party_app">Aplicación de terceros disponible</string>
-    <string name="dialog_toggle_desktop">Alternar agente de usuario de escritorio</string>
     <string name="dialog_tools_title">Herramientas de página</string>
     <string name="do_not_track">Solicitar \'Do Not Track\'</string>
-    <string name="download_channel">Descargas</string>
-    <string name="download_description">Información sobre el progreso de la descarga</string>
     <string name="download_no_sdcard_dlg_msg">Se requiere de almacenamiento USB para descargar el archivo.</string>
     <string name="download_no_sdcard_dlg_title">No hay tarjeta SD</string>
     <string name="download_sdcard_busy_dlg_msg">El almacenamiento está ocupado. Para permitir las descargar, desactiva el almacenamiento USB desde el área de notificación.</string>
@@ -149,7 +145,6 @@
     <string name="licenses">Licencias de código abierto (open source)</string>
     <string name="light_theme">Tema claro</string>
     <string name="listed_javascript">Sólo permitir JavaScript para sitios listados</string>
-    <string name="loading_failed">No se pudo cargar la página.</string>
     <string name="loading">Cargando&#8230;</string>
     <string name="location">Permitir acceso a tu ubicación</string>
     <string name="manual_proxy">Proxy manual</string>
@@ -183,7 +178,6 @@
     <string name="notification_incognito_running_message">Toca para abrir</string>
     <string name="overViewMode">Visualizar la página de lejos al cargar</string>
     <string name="page_source">Ver código fuente de la página</string>
-    <string name="pagespeed_error">Este sitio web utiliza PageSpeed. Es posible que la edición de fuentes no funcione como se esperaba.</string>
     <string name="password">Almacenar tus contraseñas</string>
     <string name="port">Puerto:</string>
     <string name="powered_by_baidu">Baidu</string>

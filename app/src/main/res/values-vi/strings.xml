@@ -32,7 +32,6 @@
     <string name="agent_desktop">Máy tính</string>
     <string name="agent">Tác nhân người dùng</string>
     <string name="apache">Giấy phép Apache 2.0</string>
-    <string name="app_restart">Vui lòng khởi động lại ứng dụng để thay đổi có hiệu lực.</string>
     <string name="black_theme">AMOLED theme</string>
     <string name="block_ad_refresh_now">Làm mới máy chủ ngay</string>
     <string name="block_ad_remote_refresh_frequency_description">Dành cho tệp máy chủ trên mạng</string>
@@ -74,7 +73,6 @@
     <string name="dialog_rename_folder">Đổi tên thư mục</string>
     <string name="dialog_title_close_browser">Đóng các tab</string>
     <string name="dialog_title_share">Chia sẻ trang này</string>
-    <string name="dialog_toggle_desktop">Bật/tắt tác nhân người dùng của máy tính</string>
     <string name="dialog_tools_title">Công cụ trang</string>
     <string name="download_no_sdcard_dlg_msg">Yêu cầu USB lưu trữ để tải tệp xuống.</string>
     <string name="download_no_sdcard_dlg_title">Không có thẻ SD</string>

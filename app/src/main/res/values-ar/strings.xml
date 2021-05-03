@@ -59,7 +59,6 @@
     <string name="allow_javascript">السماح بجافا سكريبت لهذا الموقع</string>
     <string name="android_open_source_project">مشروع أندرويد مفتوح المصدر</string>
     <string name="apache"> ترخيص اباتشي 2.0</string>
-    <string name="app_restart">الرجاء إعادة تشغيل التطبيق ليصبح التغيير نافذ المفعول.</string>
     <string name="black_theme">سمة سوداء</string>
     <string name="block_ad_refresh_hosts">تحديث ملف المضيف…</string>
     <string name="block_ad_refresh_now">تحديث المضيفين الآن</string>
@@ -124,15 +123,10 @@
     <string name="dialog_title_close_browser">إغلاق علامة التبويب</string>
     <string name="dialog_title_share">مشاركة هذه الصفحة</string>
     <string name="dialog_title_third_party_app">تطبيق الطرف الثالث متاح</string>
-    <string name="dialog_toggle_desktop">تبديل وكيل مستخدم سطح المكتب</string>
     <string name="dialog_tools_title">أدوات الصفحة</string>
     <string name="do_not_track">طلب \ \"لا تتبع \"</string>
     <string name="domain">النطـاق</string>
     <string name="dont_ask_again">لا تسأل مرة أخري</string>
-    <string name="download_channel">التنزيلات</string>
-    <string name="download_complete">إكتمل التحميل</string>
-    <string name="download_description">معلومات عن التقدم في التنزيل</string>
-    <string name="download_failed">فشل التحميل</string>
     <string name="download_no_sdcard_dlg_msg">مطلوب تخزين USB لتنزيل الملف.</string>
     <string name="download_no_sdcard_dlg_title">لا توجد بطاقة SD</string>
     <string name="download_pending">يتم التحميل:</string>
@@ -194,7 +188,6 @@
     <string name="light_theme">سمة فاتحة</string>
     <string name="listed_javascript">السماح فقط بجافا سكريبت للمواقع المدرجة</string>
     <string name="load_images">تحميل الصور</string>
-    <string name="loading_failed">لا يمكن تحميل أي شيء من الصفحة.</string>
     <string name="loading">جارٍ التحميل&#8230;</string>
     <string name="location">الوصول إلى موقعك</string>
     <string name="manual_proxy">الوكيل اليدوي</string>
@@ -242,9 +235,7 @@
     <string name="orbot">Orbot</string>
     <string name="other">%1$d تبويبات مخفية مفتوحة</string>
     <string name="overViewMode">تحميل الصفحات في نظرة عامة</string>
-    <string name="page_source_title">مصدر الصفحة</string>
     <string name="page_source">عرض مصدر الصفحة</string>
-    <string name="pagespeed_error">يستخدم هذا الموقع \"PageSped\". قد لا يعمل تعديل المصدر كما هو متوقع.</string>
     <string name="password">حفظ كلمات السر</string>
     <string name="port">المنفذ:</string>
     <string name="powered_by_baidu">Baidu</string>
@@ -280,7 +271,6 @@
     <string name="recommended">(مستحسن)</string>
     <string name="reflow">تفعيل إلتفاف النص</string>
     <string name="remove_identifying_headers">إزالة رؤوس التحديد HTTP</string>
-    <string name="remove_userscript_description">هل تريد حذف هذا البرنامج النصي للمستخدم؟</string>
     <string name="remove_userscript">إزالة البرنامج النصي المستخدم</string>
     <string name="rendering_mode">وضع التقديم</string>
     <string name="reopening_recent_tab">فتح علامة التبويب القديمة</string>
@@ -339,17 +329,14 @@
     <string name="settings_help_us">ساعدنا</string>
     <string name="settings_imported">تم استيراد الإعدادات من النسخة الاحتياطية</string>
     <string name="settings_malware">برمجيات خبيثة</string>
-    <string name="settings_other">اخرى</string>
     <string name="settings_privacy">إعدادات الخصوصية والأمان</string>
     <string name="settings_reseted">تم استعادة جميع الإعدادات</string>
-    <string name="settings_security">الحماية</string>
     <string name="settings_summary_apps">تمكين تطبيقات الطرف الثالث</string>
     <string name="settings_summary_dark_mode_default">تحديد إذا كانت علامات التبويب الجديدة تستخدم الوضع المظلم بشكل افتراضي</string>
     <string name="settings_summary_desktop_mode_default">تحديد ما إذا كانت علامات التبويب الجديدة تستخدم وضع سطح المكتب بشكل افتراضي</string>
     <string name="settings_summary_vertical_tab_bar">قم بتعطيله لاستخدام علامات التبويب في درج التنقل</string>
     <string name="settings_title_apps">التطبيقات</string>
     <string name="settings_title_dark_mode_default">فرض الوضع الداكن</string>
-    <string name="settings_title_debug">التصحيح</string>
     <string name="settings_title_desktop_mode_default">وضع سطح المكتب</string>
     <string name="settings_title_toolbars_bottom">شريط الأدوات في الأسفل</string>
     <string name="settings">إعدادات المتصفح</string>
@@ -357,7 +344,6 @@
     <string name="shortcut_message_failed_to_add">عذرًا ، لا تدعم واجهة المستخدم الاختصارات.</string>
     <string name="show_second_bar">إظهار شريط التنقل الثانوي</string>
     <string name="show_ssl">إظهار مربعات حوار تحذير SSL</string>
-    <string name="show">عرض</string>
     <string name="site_cookies">ملفات تعريف الارتباط</string>
     <string name="six">ستـة (٦)</string>
     <string name="size">حجم النص</string>

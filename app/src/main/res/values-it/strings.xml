@@ -59,7 +59,6 @@
     <string name="allow_javascript">Permetti JavaScript per questo sito</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Licenza Apache 2.0</string>
-    <string name="app_restart">Riavvia l\'applicazione per applicare le modifiche.</string>
     <string name="black_theme">Nero (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Aggiornamento file host…</string>
     <string name="block_ad_refresh_now">Aggiorna gli host ora</string>
@@ -124,15 +123,10 @@
     <string name="dialog_title_close_browser">Chiudi browser</string>
     <string name="dialog_title_share">Condividi questa pagina</string>
     <string name="dialog_title_third_party_app">Applicazione di terze parti disponibile</string>
-    <string name="dialog_toggle_desktop">Attiva user agent desktop</string>
     <string name="dialog_tools_title">Strumenti pagina</string>
     <string name="do_not_track">\"Non tenere traccia\"</string>
     <string name="domain">Dominio</string>
     <string name="dont_ask_again">Non chiedere di nuovo</string>
-    <string name="download_channel">Downloads</string>
-    <string name="download_complete">Download completato</string>
-    <string name="download_description">Informazioni sul download</string>
-    <string name="download_failed">Download fallito</string>
     <string name="download_no_sdcard_dlg_msg">È necessario un archivio per il download.</string>
     <string name="download_no_sdcard_dlg_title">Nessuna scheda SD trovata.</string>
     <string name="download_pending">Download in corso:</string>
@@ -194,7 +188,6 @@
     <string name="light_theme">Chiaro</string>
     <string name="listed_javascript">Permetti Javascript solo per siti indicati</string>
     <string name="load_images">Carica immagini</string>
-    <string name="loading_failed">Impossibile caricare la pagina web.</string>
     <string name="loading">Caricamento&#8230;</string>
     <string name="location">Posizione</string>
     <string name="manual_proxy">Proxy manuale</string>
@@ -242,9 +235,7 @@
     <string name="orbot">Orbot</string>
     <string name="other">%1$d apertura tab incognito</string>
     <string name="overViewMode">Visualizza le pagine alla massima larghezza</string>
-    <string name="page_source_title">sorgente pagina</string>
     <string name="page_source">Visualizza sorgente pagina</string>
-    <string name="pagespeed_error">Questo sito usa PageSpeed. La modifica del sorgente può non funzionare correttamente.</string>
     <string name="password">Salva password</string>
     <string name="port">Porta:</string>
     <string name="powered_by_baidu">Powered by Baidu</string>
@@ -280,7 +271,6 @@
     <string name="recommended">Consigliato</string>
     <string name="reflow">Abilità il reflow del testo</string>
     <string name="remove_identifying_headers">Rimuovi header di identificazione</string>
-    <string name="remove_userscript_description">Vuoi rimuovere questo UserScript?</string>
     <string name="remove_userscript">Rimuovi UserScript</string>
     <string name="rendering_mode">Modalità Rendering</string>
     <string name="reopening_recent_tab">Scheda precedente riaperta</string>
@@ -339,17 +329,14 @@
     <string name="settings_help_us">Aiutaci</string>
     <string name="settings_imported">Impostazioni da backup importate</string>
     <string name="settings_malware">Malware</string>
-    <string name="settings_other">Altro</string>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_reseted">Impostazioni ripristinate</string>
-    <string name="settings_security">Sicurezza</string>
     <string name="settings_summary_apps">Abilita app di terze parti</string>
     <string name="settings_summary_dark_mode_default">Definisci se i nuovi tab usano la modalità scura di default</string>
     <string name="settings_summary_desktop_mode_default">Definisci se i nuovi tab usano la modalità desktop di default</string>
     <string name="settings_summary_vertical_tab_bar">Disabilitalo per usare i tab nel drawer di navigazione</string>
     <string name="settings_title_apps">Applicazioni</string>
     <string name="settings_title_dark_mode_default">Forza modalità scura</string>
-    <string name="settings_title_debug">Debug</string>
     <string name="settings_title_desktop_mode_default">Modalità desktop</string>
     <string name="settings_title_toolbars_bottom">Toolbar in basso</string>
     <string name="settings">Impostazioni</string>
@@ -357,7 +344,6 @@
     <string name="shortcut_message_failed_to_add">Scusa, il tuo launcher non supporta gli shortcut.</string>
     <string name="show_second_bar">Mosta barra di navigazione secondaria</string>
     <string name="show_ssl">Mostra finestre avviso SSL</string>
-    <string name="show">Mostra</string>
     <string name="site_cookies">Cookie del sito</string>
     <string name="six">Sei (6)</string>
     <string name="size">Dimensione dei caratteri</string>

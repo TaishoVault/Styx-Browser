@@ -1,5 +1,6 @@
 package com.jamal2367.styx.browser.bookmarks
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.os.Handler
@@ -30,9 +31,7 @@ import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.dialog.StyxDialogBuilder
-import com.jamal2367.styx.extensions.color
-import com.jamal2367.styx.extensions.drawable
-import com.jamal2367.styx.extensions.inflater
+import com.jamal2367.styx.extensions.*
 import com.jamal2367.styx.favicon.FaviconModel
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.*
@@ -45,6 +44,7 @@ import javax.inject.Inject
 /**
  * The view that displays bookmarks in a list and some controls.
  */
+@SuppressLint("ViewConstructor")
 class BookmarksDrawerView @JvmOverloads constructor(
         context: Context,
         private val activity: Activity,
@@ -120,7 +120,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
         }
 
         // Enable drag & drop but not swipe
-        val callback: ItemTouchHelper.Callback = ItemDragDropSwipeHelper(iAdapter, true, false)
+        val callback: ItemTouchHelper.Callback = ItemDragDropSwipeHelper(iAdapter, aLongPressDragEnabled = true, aSwipeEnabled = false)
         iItemTouchHelper = ItemTouchHelper(callback)
         iItemTouchHelper?.attachToRecyclerView(iBinding.listBookmarks)
 
@@ -138,8 +138,6 @@ class BookmarksDrawerView @JvmOverloads constructor(
 
     private fun getTabsManager(): TabsManager = uiController.getTabModel()
 
-    // TODO: apply that logic to the add bookmark menu item from main pop-up menu
-    // SL: I guess this is of no use here anymore since we removed the add bookmark button
     private fun updateBookmarkIndicator(url: String) {
         bookmarkUpdateSubscription?.dispose()
         bookmarkUpdateSubscription = bookmarkModel.isBookmark(url)
@@ -226,7 +224,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
         is Bookmark.Entry -> uiController.bookmarkItemClicked(bookmark)
     }
 
-    fun stringContainsItemFromList(inputStr: String, items: Array<String>): Boolean {
+    private fun stringContainsItemFromList(inputStr: String, items: Array<String>): Boolean {
         for (i in items.indices) {
             if (inputStr.contains(items[i])) {
                 return true
@@ -247,13 +245,12 @@ class BookmarksDrawerView @JvmOverloads constructor(
             R.string.dialog_adblock_disable_for_site
         }
         val arrayOfURLs = userPreferences.javaScriptBlocked
-        val strgs: Array<String>
-        if (arrayOfURLs.contains(", ")) {
-            strgs = arrayOfURLs.split(", ".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+        val strgs: Array<String> = if (arrayOfURLs.contains(", ")) {
+            arrayOfURLs.split(", ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         } else {
-            strgs = arrayOfURLs.split(",".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+            arrayOfURLs.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         }
-        var jsEnabledString = if (userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs)) {
+        val jsEnabledString = if (userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs)) {
             R.string.allow_javascript
         } else{
             R.string.blocked_javascript
@@ -262,7 +259,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
         BrowserDialog.showWithIcons(context, context.getString(R.string.dialog_tools_title),
                 DialogItem(
                         icon = context.drawable(R.drawable.outline_remove_circle_outline_24),
-                        colorTint = context.color(R.color.error_red).takeIf { isAllowedAds },
+                        colorTint = context.attrColor(R.attr.colorPrimary).takeIf { isAllowedAds },
                         title = whitelistString
                 ) {
                     if (isAllowedAds) {
@@ -318,13 +315,13 @@ class BookmarksDrawerView @JvmOverloads constructor(
                 },
                 DialogItem(
                         icon = context.drawable(R.drawable.outline_script_text_key_outline),
-                        colorTint = context.color(R.color.error_red).takeIf { userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs) },
+                        colorTint = context.attrColor(R.attr.colorPrimary).takeIf { userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs) },
                         title = jsEnabledString
                 ) {
                     val url = URL(currentTab.url)
                     if (userPreferences.javaScriptChoice != JavaScriptChoice.NONE) {
                         if (!stringContainsItemFromList(currentTab.url, strgs)) {
-                            if (userPreferences.javaScriptBlocked.equals("")) {
+                            if (userPreferences.javaScriptBlocked == "") {
                                 userPreferences.javaScriptBlocked = url.host
                             } else {
                                 userPreferences.javaScriptBlocked = userPreferences.javaScriptBlocked + ", " + url.host

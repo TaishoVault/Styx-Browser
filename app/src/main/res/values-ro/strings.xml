@@ -33,7 +33,6 @@
     <string name="agent">Agent utilizator</string>
     <string name="android_open_source_project">Proiect Open Source Android</string>
     <string name="apache">Licență Apache 2.0</string>
-    <string name="app_restart">Te rugăm să repornești aplicația pentru ca schimbarea să aibă efect.</string>
     <string name="black_theme">Temă neagră</string>
     <string name="block_ad_refresh_now">Reîmprospătează gazdele acum</string>
     <string name="block_ad_remote_refresh_frequency_description">Pentru host-uri la distanţă</string>
@@ -83,7 +82,6 @@
     <string name="dialog_rename_folder">Redenumire folder</string>
     <string name="dialog_title_close_browser">Închide filele</string>
     <string name="dialog_title_share">Distribuie această pagină</string>
-    <string name="dialog_toggle_desktop">Comutare agent utilizator desktop</string>
     <string name="dialog_tools_title">Instrumente pagină</string>
     <string name="do_not_track">Solicită \'Nu Urmări\'</string>
     <string name="download_no_sdcard_dlg_msg">Pentru a descărca fişierul este necesară stocarea USB.</string>
@@ -118,7 +116,6 @@
     <string name="licenses">Licențe Open Source</string>
     <string name="light_theme">Temă luminoasă</string>
     <string name="listed_javascript">Permiteți doar JavaScript pentru site-urile listate</string>
-    <string name="loading_failed">Nu s-a putut încărca nimic din pagină.</string>
     <string name="loading">Se încarcă&#8230;</string>
     <string name="location">Acces locație</string>
     <string name="manual_proxy">Proxy manual</string>

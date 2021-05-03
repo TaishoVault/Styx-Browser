@@ -33,7 +33,6 @@
     <string name="agent">Felhasználó Ügynök</string>
     <string name="android_open_source_project">Android nyílt forráskódú projekt</string>
     <string name="apache">Apache Licenc 2.0</string>
-    <string name="app_restart">Indítsa újra az alkalmazást, hogy a változás hatályba lépjen.</string>
     <string name="black_theme">Fekete Téma (AMOLED)</string>
     <string name="block_ad_refresh_now">Frissítse a gazdagépeket most</string>
     <string name="block_ad_remote_refresh_frequency_description">Távoli gazdagép fájlhoz</string>
@@ -81,7 +80,6 @@
     <string name="dialog_rename_folder">Nevezze át a mappát</string>
     <string name="dialog_title_close_browser">Close tabs</string>
     <string name="dialog_title_share">Oldal megosztása</string>
-    <string name="dialog_toggle_desktop">Váltás az asztali felhasználói ügynök számára</string>
     <string name="dialog_tools_title">Lapeszközök</string>
     <string name="do_not_track">\'Ne kövessen nyomon\' kérése</string>
     <string name="download_no_sdcard_dlg_msg">USB tárolóra van szükség a fájl letöltéséhez.</string>
@@ -113,7 +111,6 @@
     <string name="license_gnu">GNU kisebb általános nyilvános licenc</string>
     <string name="licenses">Nyílt forráskódú licencek</string>
     <string name="light_theme">Világos Téma</string>
-    <string name="loading_failed">Nem sikerült semmit betölteni az oldalról.</string>
     <string name="loading">Betöltés&#8230;</string>
     <string name="location">Hely hozzáférés</string>
     <string name="manual_proxy">Manuális proxy</string>

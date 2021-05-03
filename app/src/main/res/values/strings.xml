@@ -60,7 +60,6 @@
     <string name="allow_javascript">Allow JavaScript for this site</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Apache License 2.0</string>
-    <string name="app_restart">Please restart the app to apply the changes</string>
     <string name="black_theme">Black (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Refresh hosts file…</string>
     <string name="block_ad_refresh_now">Refresh hosts now</string>
@@ -125,15 +124,10 @@
     <string name="dialog_title_close_browser">Close browser</string>
     <string name="dialog_title_share">Share this page</string>
     <string name="dialog_title_third_party_app">Third-party app available</string>
-    <string name="dialog_toggle_desktop">Toggle desktop user agent</string>
     <string name="dialog_tools_title">Page tools</string>
     <string name="do_not_track">Request \'Do Not Track\'</string>
     <string name="domain">Domain</string>
     <string name="dont_ask_again">Don\'t ask again</string>
-    <string name="download_channel">Downloads</string>
-    <string name="download_complete">Download complete</string>
-    <string name="download_description">Information about download progress</string>
-    <string name="download_failed">Download failed</string>
     <string name="download_no_sdcard_dlg_msg">USB storage is required to download the file.</string>
     <string name="download_no_sdcard_dlg_title">No SD card</string>
     <string name="download_pending">Downloading:</string>
@@ -195,7 +189,6 @@
     <string name="light_theme">Light</string>
     <string name="listed_javascript">Only allow JavaScript for listed sites</string>
     <string name="load_images">Load images</string>
-    <string name="loading_failed">Couldn\'t load anything from the page.</string>
     <string name="loading">Loading&#8230;</string>
     <string name="location">Location access</string>
     <string name="manual_proxy">Manual proxy</string>
@@ -243,9 +236,7 @@
     <string name="orbot">Orbot</string>
     <string name="other">%1$d incognito tabs open</string>
     <string name="overViewMode">Load pages in overview mode</string>
-    <string name="page_source_title">page source</string>
     <string name="page_source">View page source</string>
-    <string name="pagespeed_error">This website uses PageSpeed. Source editing may not work as expected.</string>
     <string name="password">Save your passwords</string>
     <string name="port">Port:</string>
     <string name="powered_by_baidu">Powered by Baidu</string>
@@ -281,7 +272,6 @@
     <string name="recommended">Recommended</string>
     <string name="reflow">Enable text reflow</string>
     <string name="remove_identifying_headers">Remove identifying headers</string>
-    <string name="remove_userscript_description">Do you want to remove this UserScript?</string>
     <string name="remove_userscript">Remove UserScript</string>
     <string name="rendering_mode">Rendering mode</string>
     <string name="reopening_recent_tab">Tab recovered</string>
@@ -340,10 +330,8 @@
     <string name="settings_help_us">Help us</string>
     <string name="settings_imported">Settings from backup imported</string>
     <string name="settings_malware">Malware</string>
-    <string name="settings_other">Other</string>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_reseted">All settings restored</string>
-    <string name="settings_security">Security</string>
     <string name="settings_summary_apps">Enable third-party apps</string>
     <string name="settings_summary_adblock">Block advertising, tracking, malware…</string>
     <string name="settings_summary_dark_mode_default">Define if new tabs use force dark mode by default</string>
@@ -356,7 +344,6 @@
     <string name="settings_summary_vertical_tab_bar">Disable it to use tabs in navigation drawer</string>
     <string name="settings_title_apps">Apps</string>
     <string name="settings_title_dark_mode_default">Force dark mode</string>
-    <string name="settings_title_debug">Debug</string>
     <string name="settings_title_desktop_mode_default">Desktop mode</string>
     <string name="settings_title_toolbars_bottom">Toolbars at the bottom</string>
     <string name="settings">Settings</string>
@@ -364,7 +351,6 @@
     <string name="shortcut_message_failed_to_add">Sorry, your launcher does not support shortcuts.</string>
     <string name="show_second_bar">Show secondary navigation bar</string>
     <string name="show_ssl">Show SSL warning dialogs</string>
-    <string name="show">Show</string>
     <string name="site_cookies">Site cookies</string>
     <string name="six">Six (6)</string>
     <string name="size">Text size</string>
@@ -403,7 +389,7 @@
     <string name="title_user_agent">User agent</string>
     <string name="title_warning">Warning</string>
     <string name="translator">Translate</string>
-    <string name="tts_initilization_failed">Initilization Failed</string>
+    <string name="tts_initilization_failed">Initilization failed</string>
     <string name="tts">Read page</string>
     <string name="unknown_size">Unknown size</string>
     <string name="unknown">Unknown</string>

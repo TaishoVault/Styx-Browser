@@ -38,22 +38,22 @@
     </style>
 
     <style name="Theme.App.Light" parent="Theme.MaterialComponents.Light">
-        <item name="colorPrimary">@color/md_red_500</item>
-        <item name="colorPrimaryVariant">@color/md_grey_300</item>
+        <item name="colorPrimary">@color/red_500</item>
+        <item name="colorPrimaryVariant">@color/grey_1</item>
         <item name="colorOnPrimary">@color/black</item>
-        <item name="colorSecondary">@color/md_red_500</item>
-        <item name="colorSecondaryVariant">@color/md_red_700</item>
+        <item name="colorSecondary">@color/red_500</item>
+        <item name="colorSecondaryVariant">@color/red_700</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:colorBackground">@color/white</item>
         <item name="colorOnBackground">@color/black</item>
-        <item name="trackColor">@color/md_grey_100</item>
+        <item name="trackColor">@color/grey_0</item>
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/black</item>
-        <item name="colorError">@color/md_red_500</item>
+        <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
-        <item name="appColorControlEnabled">@color/md_grey_650</item>
+        <item name="appColorControlEnabled">@color/grey_5</item>
         <item name="appColorControlSelected">?attr/colorOnPrimary</item>
-        <item name="appColorControlDisabled">@color/md_grey_400</item>
+        <item name="appColorControlDisabled">@color/grey_3</item>
         <item name="colorControlNormal">@color/state_color_control</item>
         <item name="haloColor">@color/white</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
@@ -79,25 +79,25 @@
     </style>
 
     <style name="Theme.App.Dark" parent="Theme.MaterialComponents">
-        <item name="colorPrimary">@color/md_red_300</item>
-        <item name="colorPrimaryVariant">@color/md_grey_850</item>
+        <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryVariant">@color/grey_6</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/md_red_300</item>
-        <item name="colorSecondaryVariant">@color/md_red_500</item>
+        <item name="colorSecondary">@color/red_300</item>
+        <item name="colorSecondaryVariant">@color/red_500</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="android:colorBackground">@color/md_grey_900</item>
-        <item name="android:navigationBarColor">@color/md_grey_900</item>
+        <item name="android:colorBackground">@color/grey_8</item>
+        <item name="android:navigationBarColor">@color/grey_8</item>
         <item name="colorOnBackground">@color/white</item>
-        <item name="trackColor">@color/md_grey_875</item>
-        <item name="colorSurface">@color/md_grey_850</item>
+        <item name="trackColor">@color/grey_7</item>
+        <item name="colorSurface">@color/grey_6</item>
         <item name="colorOnSurface">@color/white</item>
-        <item name="colorError">@color/md_red_500</item>
+        <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
-        <item name="appColorControlEnabled">@color/md_grey_350</item>
+        <item name="appColorControlEnabled">@color/grey_2</item>
         <item name="appColorControlSelected">?attr/colorOnPrimary</item>
-        <item name="appColorControlDisabled">@color/md_grey_600</item>
+        <item name="appColorControlDisabled">@color/grey_4</item>
         <item name="colorControlNormal">@color/state_color_control</item>
-        <item name="haloColor">@color/md_grey_900</item>
+        <item name="haloColor">@color/grey_8</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Dark</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentStatus">false</item>
@@ -118,25 +118,25 @@
         <item name="popupMenuBackground">@drawable/popup_menu_background</item>
         <item name="navigationViewStyle">@drawable/session_menu_background</item>
         <item name="enableEdgeToEdge">true</item>
-</style>
+    </style>
 
     <style name="Theme.App.Black" parent="Theme.MaterialComponents">
-        <item name="colorPrimary">@color/md_red_300</item>
-        <item name="colorPrimaryVariant">@color/md_grey_900</item>
+        <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryVariant">@color/grey_8</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/md_red_300</item>
-        <item name="colorSecondaryVariant">@color/md_red_500</item>
+        <item name="colorSecondary">@color/red_300</item>
+        <item name="colorSecondaryVariant">@color/red_500</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:colorBackground">@color/black</item>
         <item name="colorOnBackground">@color/white</item>
-        <item name="trackColor">@color/md_grey_950</item>
-        <item name="colorSurface">@color/md_grey_950</item>
+        <item name="trackColor">@color/grey_9</item>
+        <item name="colorSurface">@color/grey_9</item>
         <item name="colorOnSurface">@color/white</item>
-        <item name="colorError">@color/md_red_500</item>
+        <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
-        <item name="appColorControlEnabled">@color/md_grey_350</item>
+        <item name="appColorControlEnabled">@color/grey_2</item>
         <item name="appColorControlSelected">?attr/colorOnPrimary</item>
-        <item name="appColorControlDisabled">@color/md_grey_600</item>
+        <item name="appColorControlDisabled">@color/grey_4</item>
         <item name="colorControlNormal">@color/state_color_control</item>
         <item name="haloColor">@color/black</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog.Black</item>
@@ -209,30 +209,30 @@
     <style name="ThemeOverlay.App.MaterialAlertDialog.Dark" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
-        <item name="colorSurface">@color/md_grey_900</item>
+        <item name="colorSurface">@color/grey_8</item>
         <item name="elevationOverlayEnabled">false</item>
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog.Black" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
-        <item name="colorSurface">@color/md_grey_950</item>
+        <item name="colorSurface">@color/grey_9</item>
         <item name="elevationOverlayEnabled">false</item>
     </style>
 
     <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">?attr/colorSecondary</item>
-        <item name="rippleColor">@color/md_red_200</item>
+        <item name="rippleColor">@color/red_200</item>
     </style>
 
     <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@color/white</item>
-        <item name="rippleColor">@color/md_grey_650</item>
+        <item name="rippleColor">@color/grey_5</item>
     </style>
 
     <style name="NegativeButtonStyle.Light" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@color/black</item>
-        <item name="rippleColor">@color/md_grey_400</item>
+        <item name="rippleColor">@color/grey_3</item>
     </style>
 
     <style name="MaterialSnackbarTheme" parent="@style/Widget.MaterialComponents.Snackbar">
@@ -257,7 +257,7 @@
     </style>
 
     <style name="Widget.App.AppBarLayout.Light" parent="Widget.Design.AppBarLayout">
-        <item name="android:background">@color/md_grey_300</item>
+        <item name="android:background">@color/grey_1</item>
     </style>
 
     <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">

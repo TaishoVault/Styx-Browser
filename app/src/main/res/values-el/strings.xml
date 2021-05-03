@@ -33,7 +33,6 @@
     <string name="agent_desktop">Υπολογιστής</string>
     <string name="agent">User Agent</string>
     <string name="apache">Άδεια Apache 2.0</string>
-    <string name="app_restart">Κάντε επανεκκίνηση της εφαρμογής για να εφαρμοστεί η αλλαγή.</string>
     <string name="black_theme">Μαύρο θέμα</string>
     <string name="block_ad_refresh_now">Αναβαθμίστε τώρα τους hosts</string>
     <string name="block_ad_remote_refresh_frequency_description">Για το αρχείο απομακρυσμένων hosts</string>
@@ -83,11 +82,8 @@
     <string name="dialog_rename_folder">Μετονομάστε το φάκελο</string>
     <string name="dialog_title_close_browser">Κλείσιμο καρτελών</string>
     <string name="dialog_title_share">Διαμοιρασμός της σελίδας</string>
-    <string name="dialog_toggle_desktop">Εναλλαγή παράγοντα χρήστη υπολογιστή</string>
     <string name="dialog_tools_title">Εργαλεία σελίδας</string>
     <string name="do_not_track">Αποκλεισμός εντοπισμού</string>
-    <string name="download_channel">Λήψεις</string>
-    <string name="download_description">Πληροφορίες σχετικά με την πρόοδο λήψης</string>
     <string name="download_no_sdcard_dlg_msg">Είναι απαραίτητο το USB storage για λήψη του αρχείου.</string>
     <string name="download_no_sdcard_dlg_title">Δεν υπάρχει κάρτα SD</string>
     <string name="download_sdcard_busy_dlg_msg">Η συσκευή αποθήκευσης είναι απασχολημένη. Για να επιτρέψετε λήψεις πατήστε το Κλείσιμο USB Storage στις ειδοποιήσεις.</string>
@@ -120,7 +116,6 @@
     <string name="licenses">Άδειες ανοιχτού κώδικα</string>
     <string name="light_theme">Φως θέμα</string>
     <string name="listed_javascript">Η JavaScript επιτρέπετε μόνο για καταχωρημένους ιστότοπους</string>
-    <string name="loading_failed">Δεν μπορεί να φορτώσει τίποτα από τη σελίδα.</string>
     <string name="loading">Φόρτωση…</string>
     <string name="location">Πρόσβαση σε τοποθεσία</string>
     <string name="manual_proxy">Μη αυτόματο διακομιστή μεσολάβησης</string>
@@ -156,7 +151,6 @@
     <string name="notification_incognito_running_message">Πατήστε για να το ανοίξετε</string>
     <string name="overViewMode">Φόρτωση σελίδων σε προεπισκόπηση</string>
     <string name="page_source">Προβολή κώδικα σελίδας</string>
-    <string name="pagespeed_error">Αυτός ο ιστότοπος χρησιμοποιεί PageSpeed. Η επεξεργασία κώδικα ενδέχεται να μην λειτουργεί όπως αναμενόταν.</string>
     <string name="password">Αποθήκευση κωδικών</string>
     <string name="port">Λιμάνι:</string>
     <string name="powered_by_baidu">Baidu</string>

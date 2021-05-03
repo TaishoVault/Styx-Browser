@@ -32,7 +32,6 @@
     <string name="agent">Uživatelský agent</string>
     <string name="android_open_source_project">Open Source projekt Android</string>
     <string name="apache">Licence Apache 2.0</string>
-    <string name="app_restart">Prosím restartujte aplikaci, aby se změna projevila.</string>
     <string name="black_theme">Černý motiv</string>
     <string name="block_ad_refresh_now">Aktualizovat hostitele</string>
     <string name="block_ad_remote_refresh_frequency_description">Pro vzdálený soubor hosts</string>
@@ -83,7 +82,6 @@
     <string name="dialog_rename_folder">Přejmenovat složku</string>
     <string name="dialog_title_close_browser">Zavřít panely</string>
     <string name="dialog_title_share">Sdílet tuto stránku</string>
-    <string name="dialog_toggle_desktop">Přepnout aplikační agenta na plochu</string>
     <string name="dialog_tools_title">Nástroje stránky</string>
     <string name="do_not_track">Požádat o \'Do Not Track\'</string>
     <string name="download_no_sdcard_dlg_msg">Pro stažení souboru je vyžadováno úložiště USB.</string>
@@ -120,7 +118,6 @@
     <string name="licenses">Licence Open Source</string>
     <string name="light_theme">Světlý motiv</string>
     <string name="listed_javascript">Povolit JavaScript pouze pro uvedené stránky</string>
-    <string name="loading_failed">Nelze načíst nic ze stránky.</string>
     <string name="loading">Načítání&#8230;</string>
     <string name="location">Přístup k poloze</string>
     <string name="manual_proxy">Manuální proxy</string>

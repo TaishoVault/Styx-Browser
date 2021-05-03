@@ -33,7 +33,6 @@
     <string name="agent">ユーザーエージェント</string>
     <string name="android_open_source_project">Androidオープンソースプロジェクト</string>
     <string name="apache">Apacheライセンス2.0</string>
-    <string name="app_restart">変更を反映するにはアプリを再起動してください</string>
     <string name="black_theme">ブラック (AMOLED)</string>
     <string name="block_ad_refresh_now">今すぐホストを更新</string>
     <string name="block_ad_remote_refresh_frequency_description">リモートホストファイルの場合</string>
@@ -84,7 +83,6 @@
     <string name="dialog_rename_folder">フォルダ名を変更する</string>
     <string name="dialog_title_close_browser">タブの消去</string>
     <string name="dialog_title_share">このページを共有します</string>
-    <string name="dialog_toggle_desktop">デスクトップユーザーエージェントの切り替え</string>
     <string name="dialog_tools_title">ページツール</string>
     <string name="do_not_track">\'Do Not Track\' を有効にする</string>
     <string name="download_no_sdcard_dlg_msg">ファイルをダウンロードするには USB ストレージが必要です</string>
@@ -119,7 +117,6 @@
     <string name="licenses">オープンソース ライセンス</string>
     <string name="light_theme">ライト</string>
     <string name="listed_javascript">リストされたサイトの JavaScript のみを許可する</string>
-    <string name="loading_failed">このページから何も読み出せませんでした</string>
     <string name="loading">読み込み中&#8230;</string>
     <string name="location">位置情報の使用を許可する</string>
     <string name="manual_proxy">手動プロキシ</string>
