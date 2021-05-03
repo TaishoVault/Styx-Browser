@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="action_add_bookmark">新增書籤</string>
     <string name="action_add_to_homescreen">新增至主畫面</string>
@@ -192,7 +192,7 @@
     <string name="shortcut_message_failed_to_add">很抱歉，您的啟動器不支援捷徑功能。</string>
     <string name="size">文字大小</string>
     <string name="ssl_info_expires_on">到期</string>
-    <string name="ssl_info_issued_by">由...發出</string>
+    <string name="ssl_info_issued_by">由…發出</string>
     <string name="ssl_info_issued_on">發布</string>
     <string name="ssl_info_issued_to">發出給</string>
     <string name="ssl_warning_dont_ask_again">不要再詢問此瀏覽階段。</string>

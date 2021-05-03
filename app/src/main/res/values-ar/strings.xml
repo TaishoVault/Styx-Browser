@@ -332,8 +332,14 @@
     <string name="settings_privacy">إعدادات الخصوصية والأمان</string>
     <string name="settings_reseted">تم استعادة جميع الإعدادات</string>
     <string name="settings_summary_apps">تمكين تطبيقات الطرف الثالث</string>
+    <string name="settings_summary_adblock">حظر الإعلانات والتعقب والبرامج الضارة…</string>
     <string name="settings_summary_dark_mode_default">تحديد إذا كانت علامات التبويب الجديدة تستخدم الوضع المظلم بشكل افتراضي</string>
     <string name="settings_summary_desktop_mode_default">تحديد ما إذا كانت علامات التبويب الجديدة تستخدم وضع سطح المكتب بشكل افتراضي</string>
+    <string name="settings_summary_display">تصميم التطبيق، وضع الألوان، اسحب للتحديث…</string>
+    <string name="settings_summary_extensions">تثبيت الإضافات</string>
+    <string name="settings_summary_general">الصفحة الرئيسية، خدمات البحث، علامات التبويب…</string>
+    <string name="settings_summary_import_export">النسخ الاحتياطي واستعادة الإعدادات والإشارات المرجعية</string>
+    <string name="settings_summary_privacy">ذاكرة التخزين المؤقت، التاريخ، ملفات تعريف الارتباط…</string>
     <string name="settings_summary_vertical_tab_bar">قم بتعطيله لاستخدام علامات التبويب في درج التنقل</string>
     <string name="settings_title_apps">التطبيقات</string>
     <string name="settings_title_dark_mode_default">فرض الوضع الداكن</string>

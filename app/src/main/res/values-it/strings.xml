@@ -382,7 +382,7 @@
     <string name="title_user_agent">User Agent</string>
     <string name="title_warning">Attenzione</string>
     <string name="translator">Traduci</string>
-    <string name="tts_initilization_failed">Inizializzazione Fallita</string>
+    <string name="tts_initilization_failed">Inizializzazione fallita</string>
     <string name="tts">Leggi pagina</string>
     <string name="unknown_size">Dimensione sconosciuta</string>
     <string name="unknown">Sconosciuto</string>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="action_add_bookmark">Ajouter aux favoris</string>
     <string name="action_add_to_homescreen">Ajouter à l\'écran d\'accueil</string>
