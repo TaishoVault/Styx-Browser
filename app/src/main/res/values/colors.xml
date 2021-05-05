@@ -48,7 +48,6 @@
     <color name="icon_dark_theme">#FFFFFFFF</color>
     <color name="icon_light_theme">#8A000000</color>
 
-    <color name="red_200">#FFEF9A9A</color>
     <color name="red_300">#FFE57373</color>
     <color name="red_500">#FFF44336</color>
     <color name="red_700">#FFD32F2F</color>

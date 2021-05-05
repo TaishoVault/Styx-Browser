@@ -1,10 +1,12 @@
 package com.jamal2367.styx
 
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.ThemeUtils
@@ -45,6 +47,7 @@ abstract class ThemedActivity : AppCompatActivity() {
 
         // set the theme
         applyTheme(provideThemeOverride()?:themeId)
+        applyAccent()
         super.onCreate(savedInstanceState)
         resetPreferences()
     }
@@ -71,6 +74,50 @@ abstract class ThemedActivity : AppCompatActivity() {
                 || themeId == AppTheme.DARK // Dark is indeed a dark theme
                 // Check if we are using system default theme and it is currently set to dark
                 || (themeId == AppTheme.DEFAULT && mode == Configuration.UI_MODE_NIGHT_YES)
+    }
+
+    /**
+     *
+     */
+    protected fun applyAccent() {
+        val pref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val themeName = pref.getString("pref_key_accent_list", "Accent_Color")
+
+        if (themeName == "pref_key_accent_default") {
+            userPreferences.useTheme
+        } else if (themeName == "pref_key_accent_pink") {
+            theme.applyStyle(R.style.Accent_Pink, true)
+        } else if (themeName == "pref_key_accent_purple") {
+            theme.applyStyle(R.style.Accent_Puple, true)
+        } else if (themeName == "pref_key_accent_deep_purple") {
+            theme.applyStyle(R.style.Accent_Deep_Purple, true)
+        } else if (themeName == "pref_key_accent_indigo") {
+            theme.applyStyle(R.style.Accent_Indigo, true)
+        } else if (themeName == "pref_key_accent_blue") {
+            theme.applyStyle(R.style.Accent_Blue, true)
+        } else if (themeName == "pref_key_accent_light_blue") {
+            theme.applyStyle(R.style.Accent_Light_Blue, true)
+        } else if (themeName == "pref_key_accent_cyan") {
+            theme.applyStyle(R.style.Accent_Cyan, true)
+        } else if (themeName == "pref_key_accent_teal") {
+            theme.applyStyle(R.style.Accent_Teal, true)
+        } else if (themeName == "pref_key_accent_green") {
+            theme.applyStyle(R.style.Accent_Green, true)
+        } else if (themeName == "pref_key_accent_light_green") {
+            theme.applyStyle(R.style.Accent_Light_Green, true)
+        } else if (themeName == "pref_key_accent_lime") {
+            theme.applyStyle(R.style.Accent_Lime, true)
+        } else if (themeName == "pref_key_accent_yellow") {
+            theme.applyStyle(R.style.Accent_Yellow, true)
+        } else if (themeName == "pref_key_accent_amber") {
+            theme.applyStyle(R.style.Accent_Amber, true)
+        } else if (themeName == "pref_key_accent_orange") {
+            theme.applyStyle(R.style.Accent_Orange, true)
+        } else if (themeName == "pref_key_accent_deep_orange") {
+            theme.applyStyle(R.style.Accent_Deep_Orange, true)
+        } else if (themeName == "pref_key_accent_brown") {
+            theme.applyStyle(R.style.Accent_Brown, true)
+        }
     }
 
 }

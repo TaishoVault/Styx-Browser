@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="app_name">Styx</string>
+    <string name="accent_amber">Bernstein</string>
+    <string name="accent_blue">Blau</string>
+    <string name="accent_color">Akzentfarbe</string>
+    <string name="accent_cyan">Türkis</string>
+    <string name="accent_deep_orange">Dunkelorange</string>
+    <string name="accent_deep_purple">Dunkellila</string>
+    <string name="accent_default">Standard (Rot)</string>
+    <string name="accent_green">Grün</string>
+    <string name="accent_indigo">Indigo</string>
+    <string name="accent_light_blue">Hellblau</string>
+    <string name="accent_light_green">Hellgrün</string>
+    <string name="accent_lime">Limette</string>
+    <string name="accent_orange">Orange</string>
+    <string name="accent_pink">Pink</string>
+    <string name="accent_purple">Lila</string>
+    <string name="accent_teal">Türkisblau</string>
+    <string name="accent_yellow">Gelb</string>
+    <string name="accent_brown">Braun</string>
     <string name="action_add_bookmark">Lesezeichen hinzufügen</string>
     <string name="action_add_to_homescreen">Auf Startbildschirm legen</string>
     <string name="action_allow">Erlauben</string>
