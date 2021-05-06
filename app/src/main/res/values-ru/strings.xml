@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="app_name">Styx</string>
+    <string name="accent_amber">Янтарный</string>
+    <string name="accent_blue">Синий</string>
+    <string name="accent_color">Цветовой акцент</string>
+    <string name="accent_cyan">Голубой</string>
+    <string name="accent_deep_orange">Тёмно-оранжевый</string>
+    <string name="accent_deep_purple">Темно-фиолетовый</string>
+    <string name="accent_default">По умолчанию (красный)</string>
+    <string name="accent_green">Зелёный</string>
+    <string name="accent_indigo">Фиолетовый</string>
+    <string name="accent_light_blue">Светло-синий</string>
+    <string name="accent_light_green">Светло-зелёный</string>
+    <string name="accent_lime">Лаймовый</string>
+    <string name="accent_orange">Оранжевый</string>
+    <string name="accent_pink">Розовый</string>
+    <string name="accent_purple">Фиолетовый</string>
+    <string name="accent_teal">Сине-зеленый</string>
+    <string name="accent_yellow">Желтый</string>
+    <string name="accent_brown">Коричневый</string>
     <string name="action_add_bookmark">Добавить закладку</string>
     <string name="action_add_to_homescreen">Добавить на дом. экран</string>
     <string name="action_allow">Разрешить</string>
@@ -328,7 +346,7 @@
     <string name="settings_general">Основные настройки</string>
     <string name="settings_help_us">Помочь нам</string>
     <string name="settings_imported">Настройки из резервной копии импортированы</string>
-    <string name="settings_malware">Вредоносный</string>
+    <string name="settings_malware">Вредоносные ресурсы</string>
     <string name="settings_privacy">Настройки приватности</string>
     <string name="settings_reseted">Все настройки восстановлены</string>
     <string name="settings_summary_apps">Разрешить сторонние приложения</string>

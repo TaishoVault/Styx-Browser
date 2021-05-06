@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="app_name">Styx</string>
+    <string name="accent_amber">كهرمان اصفر</string>
+    <string name="accent_blue">أزرق</string>
+    <string name="accent_color">اللون الثانوي</string>
+    <string name="accent_cyan">سماوي</string>
+    <string name="accent_deep_orange">برتقالي عميق</string>
+    <string name="accent_deep_purple">بنفسجي داكن</string>
+    <string name="accent_default">الافتراضي (أحمر)</string>
+    <string name="accent_green">أخضر</string>
+    <string name="accent_indigo">نيلي</string>
+    <string name="accent_light_blue">أزرق فاتح</string>
+    <string name="accent_light_green">أخضر فاتح</string>
+    <string name="accent_lime">ليموني</string>
+    <string name="accent_orange">برتقالي</string>
+    <string name="accent_pink">وردي</string>
+    <string name="accent_purple">بنفسجي</string>
+    <string name="accent_teal">أزرق مخضّر</string>
+    <string name="accent_yellow">أصفر</string>
+    <string name="accent_brown">بنّي</string>
     <string name="action_add_bookmark">إضافة إلى العلامات المرجعية</string>
     <string name="action_add_to_homescreen">إضافة إلى الشاشة الرئيسية</string>
     <string name="action_allow">السماح</string>
