@@ -63,7 +63,7 @@ dependencies {
     implementation 'androidx.webkit:webkit:1.4.0'
 
     // Reading mode //
-    implementation 'net.dankito.readability4j:readability4j:1.0.5'
+    implementation 'net.dankito.readability4j:readability4j:1.0.6'
 
     // File Reading //
     implementation 'com.anthonycr.mezzanine:mezzanine:1.1.1'

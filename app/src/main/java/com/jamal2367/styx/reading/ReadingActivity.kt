@@ -8,8 +8,9 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
-import android.text.Html
+import android.speech.tts.UtteranceProgressListener
 import android.text.SpannableStringBuilder
+import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.URLSpan
@@ -23,6 +24,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.widget.Toolbar
+import androidx.core.text.HtmlCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.AppTheme
 import com.jamal2367.styx.R
@@ -35,7 +37,6 @@ import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.settings.activity.ThemedSettingsActivity
 import com.jamal2367.styx.utils.Utils
 import io.reactivex.Scheduler
-import io.reactivex.disposables.Disposable
 import net.dankito.readability4j.Readability4J
 import org.jsoup.Jsoup
 import java.io.BufferedReader
@@ -45,6 +46,7 @@ import java.io.InputStreamReader
 import java.net.URL
 import java.util.*
 import javax.inject.Inject
+
 
 open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListener {
 
@@ -71,8 +73,6 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
     private var file: Boolean = false
     private var mTextSize = 0
     private var mProgressDialog: AlertDialog? = null
-    private val mPageLoaderSubscription: Disposable? = null
-    private val originalHtml: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -87,9 +87,9 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         // Change our theme if inverted
         if (mInvert) {
             if (useDarkTheme) {
-                applyTheme(AppTheme.LIGHT);
+                applyTheme(AppTheme.LIGHT)
             } else {
-                applyTheme(AppTheme.BLACK);
+                applyTheme(AppTheme.BLACK)
             }
         }
 
@@ -111,7 +111,7 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         val intent = intent
         try {
             if (!loadPage(intent)) {
-                //setText(getString(R.string.untitled), getString(R.string.loading_failed))
+                setText(getString(R.string.untitled), getString(R.string.untitled))
             }
         } catch (e: IOException) {
             e.printStackTrace()
@@ -130,7 +130,8 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         return super.onCreateOptionsMenu(menu)
     }
 
-    private inner class loadData : AsyncTask<Void?, Void?, Void?>() {
+    @SuppressLint("StaticFieldLeak")
+    private inner class LoadData : AsyncTask<Void?, Void?, Void?>() {
         var extractedContentHtml: String? = null
         var extractedContentHtmlWithUtf8Encoding: String? = null
         var extractedContentPlainText: String? = null
@@ -192,13 +193,7 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
                 mTitle!!.text = getString(R.string.untitled)
                 mBody!!.text = getString(R.string.loading)
                 mUrl = span?.url
-                loadData().execute()
-                // TODO: somehow TTS is broken after following a link
-                // Restarting the activity does not help for some reason
-                // We ought to check TTS error codes and debug that at some point
-                //launch(this@ReadingActivity, mUrl!!, file)
-                //finish()
-
+                LoadData().execute()
             }
         }
         strBuilder.setSpan(clickable, start, end, flags)
@@ -206,9 +201,9 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
     }
 
     private fun setTextViewHTML(text: TextView, html: String?) {
-        val sequence: CharSequence = Html.fromHtml(html)
+        val sequence: Spanned? = html?.let { HtmlCompat.fromHtml(it, HtmlCompat.FROM_HTML_MODE_LEGACY) }
         val strBuilder = SpannableStringBuilder(sequence)
-        val urls: Array<URLSpan> = strBuilder.getSpans(0, sequence.length, URLSpan::class.java)
+        val urls: Array<URLSpan> = sequence?.let { strBuilder.getSpans(0, it.length, URLSpan::class.java) } as Array<URLSpan>
         for (span in urls) {
             makeLinkClickable(strBuilder, span)
         }
@@ -243,9 +238,7 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         val tv = progressView.findViewById<TextView>(R.id.text_progress_bar)
         tv.setText(R.string.loading)
         mProgressDialog!!.show()
-
-
-        loadData().execute()
+        LoadData().execute()
         return true
     }
 
@@ -293,14 +286,9 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
 
     override fun onStop() {
         super.onStop()
-        // Otherwise TTS goes on if we go background which is not always what we want
-        // TODO: Could have a setting to support that?
         iTtsEngine.stop()
     }
 
-    /**
-     *
-     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.invert_item -> {
@@ -338,7 +326,6 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
                 // Toggle TTS
                 if (!iTtsEngine.isSpeaking) {
                     val text: String = mBody?.text.toString()
-                    //TODO: check error codes
                     iTtsEngine.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
                 }
                 else {
@@ -346,16 +333,15 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
                 }
                 invalidateOptionsMenu()
             }
-            else -> finish()
+            else ->
+                finish()
         }
         return super.onOptionsItemSelected(item)
     }
 
-
-
     private fun loadFile(context: Context, name: String?): String? {
         return try {
-            val fis: FileInputStream = context.openFileInput(name + ".txt")
+            val fis: FileInputStream = context.openFileInput("$name.txt")
 
             fis.bufferedReader().use { it.readText() }
         } catch (e: IOException) {
@@ -367,7 +353,6 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             var result: Int = iTtsEngine.setLanguage(Locale.getDefault())
-            //iTtsEngine.stop()
 
             // Try falling back to US english then
             if (result == TextToSpeech.LANG_MISSING_DATA
@@ -381,16 +366,33 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
                 snackbar(R.string.no_tts)
             }
 
-            iTtsEngine.setOnUtteranceCompletedListener {
-                runOnUiThread {
-                    invalidateOptionsMenu()
-                }
-            }
+            mProgressListener
 
         } else {
             snackbar(R.string.tts_initilization_failed)
         }
     }
+
+    private val mProgressListener: UtteranceProgressListener =
+        object : UtteranceProgressListener() {
+            override fun onStart(utteranceId: String) {
+                // Speaking started.
+            }
+
+            override fun onError(utteranceId: String) {
+                // There was an error.
+            }
+
+            override fun onDone(utteranceId: String) {
+                object : Thread() {
+                    override fun run() {
+                        runOnUiThread {
+                            invalidateOptionsMenu()
+                        }
+                    }
+                }
+            }
+        }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         val item = menu.findItem(R.id.tts)
