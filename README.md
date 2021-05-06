@@ -1,14 +1,22 @@
+README
+======
+
 # Styx Browser
 
-[![GitHub license](https://img.shields.io/github/license/jamal2362/Styx)](https://github.com/jamal2362/Styx/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
+[![GitHub license](https://img.shields.io/github/license/jamal2362/Styx)](https://github.com/jamal2362/Styx/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
 
 
 ## Help to Translate
 To help us translate Styx, press the image below.  
-We would be very happy if you help us with the translation.  
-[<img src="https://user-images.githubusercontent.com/15986930/116214291-d8b19c80-a746-11eb-86fe-288332d9b06d.png" alt="Crowdin" height="60">](https://crowdin.com/project/styx-browser)  
-[![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser)
+We would be very happy if you help us with the translation.
 
+[<img src="https://user-images.githubusercontent.com/15986930/117266967-12c12380-ae56-11eb-8ae0-d7914c402e74.png" alt="Crowdin" height="60">](https://crowdin.com/project/styx-browser)  
+
+## Install Styx
+You can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
+or you can install Styx via IzzyOnDroid.
+
+[<img src="https://user-images.githubusercontent.com/15986930/117268282-67b16980-ae57-11eb-8dbb-ea5b4f974daa.png" alt="Get it on IzzyOnDroid" height="60">](https://android.izzysoft.de/repo/apk/com.jamal2367.styx)
 
 ## Features
 * Sessions.
