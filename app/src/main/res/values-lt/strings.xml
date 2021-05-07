@@ -140,7 +140,6 @@
     <string name="message_link_copied">Nuoroda nukopijuota į mainų sritį</string>
     <string name="message_location">\ nNorėtų naudoti jūsų vietovę</string>
     <string name="message_open_download_fail">Šis failas neegzistuoja</string>
-    <string name="message_permission_request">%1$s \n \n nnorėtų naudoti: \n \n %2 s</string>
     <string name="message_web_storage_cleared">Žiniatinklio saugykla išvalyta</string>
     <string name="mit_license">MIT licencija</string>
     <string name="name_grayscale">Pilka spalva</string>
