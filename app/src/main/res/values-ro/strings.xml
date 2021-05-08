@@ -107,7 +107,6 @@
     <string name="import_settings">Importă setările din copia de rezervă</string>
     <string name="incognito_cookies">Activează cookie-urile în filele private</string>
     <string name="inspect">Injectare JavaScript</string>
-    <string name="install_orbot">Instalați Orbot pentru a realiza proxy cu Tor.</string>
     <string name="invert_color">Inversează culoarea</string>
     <string name="java">Activează JavaScript</string>
     <string name="jsoup">Jsoup: Parser Java HTML</string>

@@ -105,7 +105,6 @@
     <string name="import_bookmark_error">파일로부터 즐겨찾기를 가져올 수 없습니다</string>
     <string name="incognito_cookies">사생활 보호 모드에서 쿠키 사용</string>
     <string name="inspect">자바 스크립트 삽입</string>
-    <string name="install_orbot">Tor를 사용하려면 Orbot을 설치하세요.</string>
     <string name="invert_color">색상 반전</string>
     <string name="java">JavaScript 사용</string>
     <string name="jsoup">jsoup : 자바 HTML 파서</string>

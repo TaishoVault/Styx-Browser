@@ -107,7 +107,6 @@
     <string name="import_bookmark_error">無法自檔案中匯入書籤</string>
     <string name="incognito_cookies">在無痕模式中啟用 Cookies</string>
     <string name="inspect">注入JavaScript</string>
-    <string name="install_orbot">請安裝 Orbot 以便透過 Tor 使用 Proxy。</string>
     <string name="invert_color">反轉色彩</string>
     <string name="java">啟用 JavaScript</string>
     <string name="jsoup">jsoup: Java HTML 解析器</string>

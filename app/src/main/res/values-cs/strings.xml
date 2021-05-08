@@ -109,7 +109,6 @@
     <string name="import_settings">Importovat nastavení ze zálohy</string>
     <string name="incognito_cookies">Povolit soubory cookie v soukromých kartách</string>
     <string name="inspect">Vložit JavaScript</string>
-    <string name="install_orbot">Nainstalujte Orbot pro proxy pomocí Tor.</string>
     <string name="invert_color">Převrátit barvu</string>
     <string name="java">Povolit JavaScript</string>
     <string name="jsoup">jsoup: Java HTML parametr</string>

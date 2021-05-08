@@ -109,7 +109,6 @@
     <string name="import_settings">Імпортувати налаштування з резервної копії</string>
     <string name="incognito_cookies">Увімкнути cookies в приватних вкладках</string>
     <string name="inspect">Ввести JavaScript</string>
-    <string name="install_orbot">Встановити Orbot для того, щоб з Tor.</string>
     <string name="invert_color">Інверсія кольорів</string>
     <string name="java">Увімкнути JavaScript</string>
     <string name="jsoup">jsoup: Java HTML аналізатор</string>

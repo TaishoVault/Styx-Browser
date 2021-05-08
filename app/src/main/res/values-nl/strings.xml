@@ -106,7 +106,6 @@
     <string name="import_settings">Instellingen importeren uit back-up</string>
     <string name="incognito_cookies">Cookies activeren in incognito modus</string>
     <string name="inspect">JavaScript injecteren</string>
-    <string name="install_orbot">Gelieve Orbot te installeren om proxies te doen met Tor.</string>
     <string name="invert_color">Keer kleur om</string>
     <string name="java">JavaScript activeren</string>
     <string name="label_realm">Serverbericht: %s</string>

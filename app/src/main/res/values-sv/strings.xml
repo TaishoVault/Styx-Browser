@@ -106,7 +106,6 @@
     <string name="import_settings">Importera inställningar från säkerhetskopia</string>
     <string name="incognito_cookies">Aktivera cookies i privata flikar</string>
     <string name="inspect">Infoga JavaScript</string>
-    <string name="install_orbot">Installera Orbot för att proxy med Tor.</string>
     <string name="invert_color">Invertera färg</string>
     <string name="java">Aktivera JavaScript</string>
     <string name="label_realm">Servermeddelande: %s</string>

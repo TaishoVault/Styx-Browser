@@ -191,7 +191,6 @@
     <string name="incognito_cookies_pie">O modo anônimo é executado em um processo separado que é reiniciado após cada sessão. Preferências de cookies no modo anônimo são agora gerenciados nas preferências de cookies padrão.</string>
     <string name="incognito_cookies">Permitir cookies no modo anônimo</string>
     <string name="inspect">Injetar JavaScript</string>
-    <string name="install_orbot">Por favor instale o Orbot para poder utilizar a rede Tor.</string>
     <string name="install_userscript_description">Deseja instalar este UserScript?</string>
     <string name="install_userscript">Instalar UserScript</string>
     <string name="invalid_character_removed">Caracter inválido removido!</string>

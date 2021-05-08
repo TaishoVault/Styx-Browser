@@ -136,7 +136,6 @@
     <string name="import_settings">Importar ajustes desde copia de seguridad</string>
     <string name="incognito_cookies">Habilitar cookies en el modo incógnito</string>
     <string name="inspect">Inyectar JavaScript</string>
-    <string name="install_orbot">Por favor, instala Orbot para usar Tor.</string>
     <string name="invert_color">Invertir color</string>
     <string name="java">Habilitar JavaScript</string>
     <string name="jsoup">jsoup: analizador de HTML Java</string>

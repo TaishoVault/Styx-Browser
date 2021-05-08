@@ -106,7 +106,6 @@
     <string name="import_bookmark_error">לא ניתן היה לייבא סימניות מהקובץ</string>
     <string name="incognito_cookies">אפשר קובצי Cookie במצב גלישה בסתר</string>
     <string name="inspect">הזרק JavaScript</string>
-    <string name="install_orbot">התקן את Orbot על מנת ליצור שרת באמצעות Tor.spac</string>
     <string name="invert_color">הפוך צבע</string>
     <string name="java">הפעל JavaScript</string>
     <string name="label_realm">הודעת שרת: %s</string>

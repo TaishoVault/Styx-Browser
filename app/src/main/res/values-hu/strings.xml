@@ -103,7 +103,6 @@
     <string name="import_bookmark_error">Nem sikerült importálni a könyvjelzőket a fájlból</string>
     <string name="incognito_cookies">Cookie-k engedélyezése inkognitó módban</string>
     <string name="inspect">Fecskendezze be a JavaScriptet</string>
-    <string name="install_orbot">Kérjük telepítse az Orbot-ot annak érdekében, hogy működjön a proxy a Tor-ral.</string>
     <string name="invert_color">Negatív szín</string>
     <string name="java">JavaScript bekapcsolása</string>
     <string name="jsoup">jsoup: Java HTML elemző</string>

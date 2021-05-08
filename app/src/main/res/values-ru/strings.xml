@@ -191,7 +191,8 @@
     <string name="incognito_cookies_pie">Режим инкогнито запускается в отдельном процессе, который будет сброшен после каждой сессии. Настройки cookie инкогнито теперь контролируются обычными настройками cookie.</string>
     <string name="incognito_cookies">Включить cookie в режиме инкогнито</string>
     <string name="inspect">Вставить Javascript</string>
-    <string name="install_orbot">Пожалуйста, установите Orbot для проксирования через Tor.</string>
+    <string name="install_i2p">Пожалуйста, установите I2P для использования прокси.</string>
+    <string name="install_orbot">Пожалуйста, установите Orbot для использования прокси.</string>
     <string name="install_userscript_description">Вы действительно хотите установить этот UserScript?</string>
     <string name="install_userscript">Установка UserScript</string>
     <string name="invalid_character_removed">Недопустимый символ удален!</string>

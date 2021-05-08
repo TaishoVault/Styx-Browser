@@ -107,7 +107,6 @@
     <string name="import_bookmark_error">Не могу да увезем обележиваче из фајла</string>
     <string name="incognito_cookies">Омогући колачиће у приватном режиму</string>
     <string name="inspect">Убризгајте ЈаваСцрипт</string>
-    <string name="install_orbot">Инсталирајте Орбот да бисте користили Тор.</string>
     <string name="invert_color">Обрнута боја</string>
     <string name="java">Омогући јаваскрипте</string>
     <string name="jsoup">jsoup: Јава ХТМЛ рашчлањивач</string>

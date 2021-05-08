@@ -108,7 +108,6 @@
     <string name="import_settings">Εισαγωγή ρυθμίσεων από αντίγραφο ασφαλείας</string>
     <string name="incognito_cookies">Ενεργοποίηση Cookies στην Ανώνυμη περιήγηση</string>
     <string name="inspect">Εισαγωγή JavaScript</string>
-    <string name="install_orbot">Παρακαλώ εγκαταστήστε το Orbot για να χρησιμοποιήσετε το Tor.</string>
     <string name="invert_color">Αναστρέψτε το χρώμα</string>
     <string name="java">Ενεργοποίηση JavaScript</string>
     <string name="label_realm">Μήνυμα διακομιστή: %s</string>

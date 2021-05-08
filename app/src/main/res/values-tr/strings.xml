@@ -114,7 +114,6 @@
     <string name="import_settings">Ayarları yedekten içe aktar</string>
     <string name="incognito_cookies">Gizli modda çerezleri etkinleştir</string>
     <string name="inspect">JavaScript enjekte et</string>
-    <string name="install_orbot">Tor proxy ağı ile gezinmek için Orbot yüklemelisiniz.</string>
     <string name="install_userscript_description">Bu Kullanıcı Betiğini kurmak istiyor musunuz?</string>
     <string name="install_userscript">Kullanıcı Betiği Kur</string>
     <string name="invert_color">Rengi ters çevir</string>

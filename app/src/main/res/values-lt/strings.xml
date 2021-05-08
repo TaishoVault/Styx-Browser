@@ -110,7 +110,6 @@
     <string name="import_settings">Importuoti nustatymus iš atsarginės kopijos</string>
     <string name="incognito_cookies">Įgalinti slapukus privačiame režime</string>
     <string name="inspect">Įšvirkškite „JavaScript“</string>
-    <string name="install_orbot">Įdiekite „Orbot“, kad galėtumėte naudotis tarpiniu serveriu su Tor.spac</string>
     <string name="invert_color">Apverskite spalvą</string>
     <string name="java">Įgalinti „JavaScript“</string>
     <string name="jsoup">„jsoup“: „Java HTML Parser“</string>

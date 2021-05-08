@@ -107,7 +107,6 @@
     <string name="import_settings">Importer innstillinger fra sikkerhetskopi</string>
     <string name="incognito_cookies">Aktiver informasjonskapsler i private faner</string>
     <string name="inspect">Injiser JavaScript</string>
-    <string name="install_orbot">Installer Orbot for proxy med Tor.</string>
     <string name="invert_color">Inverter farger</string>
     <string name="java">Aktiver JavaScript</string>
     <string name="jsoup">jsoup: Java HTML tolker</string>

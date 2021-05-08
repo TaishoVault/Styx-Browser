@@ -109,7 +109,6 @@
     <string name="import_settings">バックアップから設定をインポート</string>
     <string name="incognito_cookies">シークレットタブで Cookie を有効にする</string>
     <string name="inspect">JavaScriptを挿入する</string>
-    <string name="install_orbot">プロキシとして Tor を使用にするには Orbot をインストールしてください</string>
     <string name="invert_color">色を反転する</string>
     <string name="java">JavaScript を有効にする</string>
     <string name="jsoup">jsoup：Java HTMLパーサー</string>

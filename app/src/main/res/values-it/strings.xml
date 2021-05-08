@@ -173,7 +173,6 @@
     <string name="incognito_cookies_pie">La modalità incognito esegue un processo separato che è resettato dopo ogni sessione. Le preferenze dei cookie in incognito sono ora controllate dalle preferente dei cookie normali.</string>
     <string name="incognito_cookies">Abilita i cookie nella modalità incognito</string>
     <string name="inspect">Inietta Javascript</string>
-    <string name="install_orbot">È necessario installare Orbot per usare un proxy Tor.</string>
     <string name="install_userscript_description">Vuoi installare questo UserScript?</string>
     <string name="install_userscript">Installa UserScript</string>
     <string name="invalid_character_removed">Carattere invalido rimosso!</string>

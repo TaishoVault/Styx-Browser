@@ -115,7 +115,6 @@
     <string name="import_settings">Importer les paramètres</string>
     <string name="incognito_cookies">Activer les cookies en mode incognito</string>
     <string name="inspect">Exécuter du code JavaScript</string>
-    <string name="install_orbot">Veuillez installer Orbot comme proxy avec Tor.</string>
     <string name="install_userscript_description">Voulez-vous installer cet userscript ?</string>
     <string name="install_userscript">Installer un userscript</string>
     <string name="invert_color">Inverser les couleurs</string>

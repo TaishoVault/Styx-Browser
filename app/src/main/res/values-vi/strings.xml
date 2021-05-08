@@ -97,7 +97,6 @@
     <string name="import_settings">Nhập cài đặt từ bản sao lưu</string>
     <string name="incognito_cookies">Bật cookie trong các tab riêng tư</string>
     <string name="inspect">Inject JavaScript</string>
-    <string name="install_orbot">Hãy cài đặt Orbot để đi qua proxy của Tor.</string>
     <string name="java">Bật JavaScript</string>
     <string name="licenses">Giấy phép mã nguồn mở</string>
     <string name="light_theme">Light theme</string>
