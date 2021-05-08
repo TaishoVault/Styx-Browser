@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.github.ahmadaghazadeh.editor.widget.CodeEditor
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.allowlist.AllowListModel
@@ -35,11 +34,13 @@ import com.jamal2367.styx.extensions.*
 import com.jamal2367.styx.favicon.FaviconModel
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.*
+import com.jamal2367.styx.view.CodeView
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.disposables.Disposable
 import java.net.URL
 import javax.inject.Inject
+
 
 /**
  * The view that displays bookmarks in a list and some controls.
@@ -287,13 +288,13 @@ class BookmarksDrawerView @JvmOverloads constructor(
                         val inflater = activity.layoutInflater
                         builder.setTitle(R.string.page_source)
                         val dialogLayout = inflater.inflate(R.layout.dialog_view_source, null)
-                        val editText = dialogLayout.findViewById<CodeEditor>(R.id.dialog_multi_line)
-                        editText.setText(name, 1)
+                        val codeView: CodeView = dialogLayout.findViewById(R.id.dialog_multi_line)
+                        codeView.setText(name)
                         builder.setView(dialogLayout)
                         builder.setNegativeButton(R.string.action_cancel) { _, _ -> }
                         builder.setPositiveButton(R.string.action_ok) { _, _ ->
-                            editText.setText(editText.text?.toString()?.replace("\'", "\\\'"), 1)
-                            currentTab.loadUrl("javascript:(function() { document.documentElement.innerHTML = '" + editText.text.toString() + "'; })()")
+                            codeView.text?.toString()?.replace("\'", "\\\'")
+                            currentTab.loadUrl("javascript:(function() { document.documentElement.innerHTML = '" + codeView.text.toString() + "'; })()")
                         }
                         builder.show()
                     }
@@ -305,12 +306,12 @@ class BookmarksDrawerView @JvmOverloads constructor(
                     val builder = MaterialAlertDialogBuilder(context)
                     val inflater = activity.layoutInflater
                     builder.setTitle(R.string.inspect)
-                    val dialogLayout = inflater.inflate(R.layout.dialog_view_source, null)
-                    val editText = dialogLayout.findViewById<CodeEditor>(R.id.dialog_multi_line)
-                    editText.setText(editText.text.toString(),1)
+                    val dialogLayout = inflater.inflate(R.layout.dialog_code_editor, null)
+                    val codeView: CodeView = dialogLayout.findViewById(R.id.dialog_multi_line)
+                    codeView.text.toString()
                     builder.setView(dialogLayout)
                     builder.setNegativeButton(R.string.action_cancel) { _, _ -> }
-                    builder.setPositiveButton(R.string.action_ok) { _, _ -> currentTab.loadUrl("javascript:(function() {" + editText.text.toString() + "})()") }
+                    builder.setPositiveButton(R.string.action_ok) { _, _ -> currentTab.loadUrl("javascript:(function() {" + codeView.text.toString() + "})()") }
                     builder.show()
                 },
                 DialogItem(
@@ -351,13 +352,13 @@ class BookmarksDrawerView @JvmOverloads constructor(
                         val builder = MaterialAlertDialogBuilder(context)
                         val inflater = activity.layoutInflater
                         builder.setTitle(R.string.site_cookies)
-                        val dialogLayout = inflater.inflate(R.layout.dialog_view_source, null)
-                        val editText = dialogLayout.findViewById<CodeEditor>(R.id.dialog_multi_line)
-                        editText.setText(cookieManager.getCookie(currentTab.url), 1)
+                        val dialogLayout = inflater.inflate(R.layout.dialog_code_editor, null)
+                        val codeView: CodeView = dialogLayout.findViewById(R.id.dialog_multi_line)
+                        codeView.setText(cookieManager.getCookie(currentTab.url))
                         builder.setView(dialogLayout)
                         builder.setNegativeButton(R.string.action_cancel) { _, _ -> }
                         builder.setPositiveButton(R.string.action_ok) { _, _ ->
-                            val cookiesList = editText.text.toString().split(";")
+                            val cookiesList = codeView.text.toString().split(";")
                             cookiesList.forEach { item ->
                                 CookieManager.getInstance().setCookie(currentTab.url, item)
                             }

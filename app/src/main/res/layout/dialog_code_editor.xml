@@ -8,7 +8,7 @@
     <com.jamal2367.styx.view.CodeView
         android:id="@+id/dialog_multi_line"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="300dp"
         android:background="?attr/trackColor"
         android:gravity="top|start" />
 
