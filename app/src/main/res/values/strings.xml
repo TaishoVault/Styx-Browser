@@ -430,46 +430,6 @@
         <item quantity="other">@string/other</item>
     </plurals>
 
-    <string-array name="accent_color">
-        <item>@string/accent_default</item>
-        <item>@string/accent_pink</item>
-        <item>@string/accent_purple</item>
-        <item>@string/accent_deep_purple</item>
-        <item>@string/accent_indigo</item>
-        <item>@string/accent_blue</item>
-        <item>@string/accent_light_blue</item>
-        <item>@string/accent_cyan</item>
-        <item>@string/accent_teal</item>
-        <item>@string/accent_green</item>
-        <item>@string/accent_light_green</item>
-        <item>@string/accent_lime</item>
-        <item>@string/accent_yellow</item>
-        <item>@string/accent_amber</item>
-        <item>@string/accent_orange</item>
-        <item>@string/accent_deep_orange</item>
-        <item>@string/accent_brown</item>
-    </string-array>
-
-    <string-array name="accent_color_values">
-        <item>@string/pref_key_accent_default</item>
-        <item>@string/pref_key_accent_pink</item>
-        <item>@string/pref_key_accent_purple</item>
-        <item>@string/pref_key_accent_deep_purple</item>
-        <item>@string/pref_key_accent_indigo</item>
-        <item>@string/pref_key_accent_blue</item>
-        <item>@string/pref_key_accent_light_blue</item>
-        <item>@string/pref_key_accent_cyan</item>
-        <item>@string/pref_key_accent_teal</item>
-        <item>@string/pref_key_accent_green</item>
-        <item>@string/pref_key_accent_light_green</item>
-        <item>@string/pref_key_accent_lime</item>
-        <item>@string/pref_key_accent_yellow</item>
-        <item>@string/pref_key_accent_amber</item>
-        <item>@string/pref_key_accent_orange</item>
-        <item>@string/pref_key_accent_deep_orange</item>
-        <item>@string/pref_key_accent_brown</item>
-    </string-array>
-
     <string-array name="block_javascript">
         <item>@string/no</item>
         <item>@string/unlisted_javascript</item>
@@ -548,24 +508,7 @@
     <string name="new_tab_position_before_value" translatable="false">BEFORE_CURRENT_TAB</string>
     <string name="new_tab_position_end_value" translatable="false">END_OF_TAB_LIST</string>
     <string name="new_tab_position_start_value" translatable="false">START_OF_TAB_LIST</string>
-    <string name="pref_key_accent_amber" translatable="false">pref_key_accent_amber</string>
-    <string name="pref_key_accent_blue" translatable="false">pref_key_accent_blue</string>
-    <string name="pref_key_accent_brown" translatable="false">pref_key_accent_brown</string>
-    <string name="pref_key_accent_cyan" translatable="false">pref_key_accent_cyan</string>
-    <string name="pref_key_accent_deep_orange" translatable="false">pref_key_accent_deep_orange</string>
-    <string name="pref_key_accent_deep_purple" translatable="false">pref_key_accent_deep_purple</string>
-    <string name="pref_key_accent_default" translatable="false">pref_key_accent_default</string>
-    <string name="pref_key_accent_green" translatable="false">pref_key_accent_green</string>
-    <string name="pref_key_accent_indigo" translatable="false">pref_key_accent_indigo</string>
-    <string name="pref_key_accent_light_blue" translatable="false">pref_key_accent_light_blue</string>
-    <string name="pref_key_accent_light_green" translatable="false">pref_key_accent_light_green</string>
-    <string name="pref_key_accent_lime" translatable="false">pref_key_accent_lime</string>
-    <string name="pref_key_accent_list" translatable="false">pref_key_accent_list</string>
-    <string name="pref_key_accent_orange" translatable="false">pref_key_accent_orange</string>
-    <string name="pref_key_accent_pink" translatable="false">pref_key_accent_pink</string>
-    <string name="pref_key_accent_purple" translatable="false">pref_key_accent_purple</string>
-    <string name="pref_key_accent_teal" translatable="false">pref_key_accent_teal</string>
-    <string name="pref_key_accent_yellow" translatable="false">pref_key_accent_yellow</string>
+    <string name="pref_key_accent" translatable="false">pref_key_accent</string>
     <string name="pref_key_always_incognito" translatable="false">pref_key_always_incognito</string>
     <string name="pref_key_black_status_bar" translatable="false">pref_key_black_status_bar</string>
     <string name="pref_key_block_ads" translatable="false">pref_key_block_ads</string>

@@ -11,13 +11,9 @@
         android:title="@string/theme"
         app:icon="@drawable/ic_brush_oval" />
 
-    <ListPreference
-        app:key="@string/pref_key_accent_list"
-        android:defaultValue="@string/pref_key_accent_default"
+    <Preference
+        android:key="@string/pref_key_accent"
         android:title="@string/accent_color"
-        android:entries="@array/accent_color"
-        app:entryValues="@array/accent_color_values"
-        app:useSimpleSummaryProvider="true"
         app:icon="@drawable/ic_palette_oval" />
 
     <Preference

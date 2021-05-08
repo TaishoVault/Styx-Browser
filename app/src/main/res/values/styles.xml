@@ -290,6 +290,12 @@
         <item name="cornerSize">8dp</item>
     </style>
 
+    <style name="Accent_Red">
+        <item name="colorPrimary">#EF5350</item>
+        <item name="colorSecondary">#EF5350</item>
+        <item name="colorAccent">#EF5350</item>
+    </style>
+
     <style name="Accent_Pink">
         <item name="colorPrimary">#EC407A</item>
         <item name="colorSecondary">#EC407A</item>

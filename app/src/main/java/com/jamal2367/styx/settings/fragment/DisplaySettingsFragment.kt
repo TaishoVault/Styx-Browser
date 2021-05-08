@@ -14,6 +14,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.jamal2367.styx.AccentTheme
 import com.jamal2367.styx.AppTheme
 import com.jamal2367.styx.R
 import com.jamal2367.styx.browser.SearchBoxDisplayChoice
@@ -42,6 +43,12 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
             preference = getString(R.string.pref_key_theme),
             summary = userPreferences.useTheme.toDisplayString(),
             onClick = ::showThemePicker
+        )
+
+        clickableDynamicPreference(
+            preference = getString(R.string.pref_key_accent),
+            summary = userPreferences.useAccent.toDisplayString(),
+            onClick = ::showAccentPicker
         )
 
         // Setup web browser font size selector
@@ -204,6 +211,48 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
         AppTheme.LIGHT -> R.string.light_theme
         AppTheme.DARK -> R.string.dark_theme
         AppTheme.BLACK -> R.string.black_theme
+    })
+
+    private fun showAccentPicker(summaryUpdater: SummaryUpdater) {
+        val currentAccent = userPreferences.useAccent
+        MaterialAlertDialogBuilder(activity as AppCompatActivity).apply {
+            setTitle(resources.getString(R.string.accent_color))
+            val values = AccentTheme.values().map { Pair(it, it.toDisplayString()) }
+            withSingleChoiceItems(values, userPreferences.useAccent) {
+                userPreferences.useAccent = it
+                summaryUpdater.updateSummary(it.toDisplayString())
+            }
+            setPositiveButton(resources.getString(R.string.action_ok)) { _, _ ->
+                if (currentAccent != userPreferences.useAccent) {
+                    requireActivity().recreate()
+                }
+            }
+            setOnCancelListener {
+                if (currentAccent != userPreferences.useAccent) {
+                    (activity as AppCompatActivity).onBackPressed()
+                }
+            }
+        }.resizeAndShow()
+    }
+
+    private fun AccentTheme.toDisplayString(): String = getString(when (this) {
+        AccentTheme.DEFAULT_ACCENT -> R.string.accent_default
+        AccentTheme.PINK -> R.string.accent_pink
+        AccentTheme.PURPLE -> R.string.accent_purple
+        AccentTheme.DEEP_PURPLE -> R.string.accent_deep_purple
+        AccentTheme.INDIGO -> R.string.accent_indigo
+        AccentTheme.BLUE -> R.string.accent_blue
+        AccentTheme.LIGHT_BLUE -> R.string.accent_light_blue
+        AccentTheme.CYAN -> R.string.accent_cyan
+        AccentTheme.TEAL -> R.string.accent_teal
+        AccentTheme.GREEN -> R.string.accent_green
+        AccentTheme.LIGHT_GREEN -> R.string.accent_light_green
+        AccentTheme.LIME -> R.string.accent_lime
+        AccentTheme.YELLOW -> R.string.accent_yellow
+        AccentTheme.AMBER -> R.string.accent_amber
+        AccentTheme.ORANGE -> R.string.accent_orange
+        AccentTheme.DEEP_ORANGE -> R.string.accent_deep_orange
+        AccentTheme.BROWN -> R.string.accent_brown
     })
 
     private class TextSeekBarListener(

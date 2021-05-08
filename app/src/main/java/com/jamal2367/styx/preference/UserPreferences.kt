@@ -3,6 +3,7 @@ package com.jamal2367.styx.preference
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.content.res.Resources
+import com.jamal2367.styx.AccentTheme
 import com.jamal2367.styx.AppTheme
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.R
@@ -268,6 +269,8 @@ class UserPreferences @Inject constructor(
      * The index of the theme used by the application.
      */
     var useTheme by preferences.enumPreference(R.string.pref_key_theme, AppTheme.DEFAULT)
+
+    var useAccent by preferences.enumPreference(R.string.pref_key_accent, AccentTheme.DEFAULT_ACCENT)
 
     /**
      * The text encoding used by the browser.
