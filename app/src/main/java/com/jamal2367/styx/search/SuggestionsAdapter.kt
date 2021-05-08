@@ -1,5 +1,6 @@
 package com.jamal2367.styx.search
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +29,7 @@ import io.reactivex.subjects.PublishSubject
 import java.util.*
 import javax.inject.Inject
 
+@SuppressLint("CheckResult")
 class SuggestionsAdapter(
     context: Context,
     private val isIncognito: Boolean
@@ -152,11 +154,10 @@ class SuggestionsAdapter(
 
     private fun getBookmarksForQuery(query: String): Single<List<Bookmark.Entry>> =
             Single.fromCallable {
-                var choice = 5
-                choice = userPreferences.suggestionChoice.value + 3
+                val choice: Int = userPreferences.suggestionChoice.value + 3
 
             (allBookmarks.filter {
-                it.title.toLowerCase(Locale.getDefault()).startsWith(query)
+                it.title.lowercase(Locale.getDefault()).startsWith(query)
             } + allBookmarks.filter {
                 it.url.contains(query)
             }).distinct().take(choice)
@@ -164,7 +165,7 @@ class SuggestionsAdapter(
 
     private fun Observable<CharSequence>.results(): Flowable<List<WebPage>> = this
         .toFlowable(BackpressureStrategy.LATEST)
-        .map { it.toString().toLowerCase(Locale.getDefault()).trim() }
+        .map { it.toString().lowercase(Locale.getDefault()).trim() }
         .filter(String::isNotEmpty)
         .share()
         .compose { upstream ->
@@ -208,8 +209,7 @@ class SuggestionsAdapter(
                 }
         }
             .map { (bookmarks, history, searches) ->
-                var choice = 5
-                choice = userPreferences.suggestionChoice.value + 3
+                val choice: Int = userPreferences.suggestionChoice.value + 3
                 val bookmarkCount = choice - 2.coerceAtMost(history.size) - 1.coerceAtMost(searches.size)
                 val historyCount = choice - bookmarkCount.coerceAtMost(bookmarks.size) - 1.coerceAtMost(searches.size)
                 val searchCount = choice - bookmarkCount.coerceAtMost(bookmarks.size) - historyCount.coerceAtMost(history.size)

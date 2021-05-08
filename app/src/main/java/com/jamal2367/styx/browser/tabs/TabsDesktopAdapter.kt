@@ -1,7 +1,6 @@
 package com.jamal2367.styx.browser.tabs
 
 import android.content.res.ColorStateList
-import android.content.res.Resources
 import android.graphics.Color
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -21,8 +20,7 @@ import com.jamal2367.styx.view.BackgroundDrawable
  * The adapter for horizontal desktop style browser tabs.
  */
 class TabsDesktopAdapter(
-        private val resources: Resources,
-        uiController: UIController
+    uiController: UIController
 ) : TabsAdapter(uiController), ItemDragDropSwipeAdapter {
 
     private var textColor = Color.TRANSPARENT

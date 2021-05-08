@@ -1,5 +1,6 @@
 package com.jamal2367.styx.database.downloads
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.ContentValues
 import android.database.Cursor
@@ -44,6 +45,7 @@ class DownloadsDatabase @Inject constructor(
         onCreate(db)
     }
 
+    @SuppressLint("Recycle")
     override fun findDownloadForUrl(url: String): Maybe<DownloadEntry> = Maybe.fromCallable {
         database.query(
                 TABLE_DOWNLOADS,
@@ -115,6 +117,7 @@ class DownloadsDatabase @Inject constructor(
         }
     }
 
+    @SuppressLint("Recycle")
     override fun getAllDownloads(): Single<List<DownloadEntry>> = Single.fromCallable {
         return@fromCallable database.query(
                 TABLE_DOWNLOADS,

@@ -168,7 +168,7 @@ class StyxView(
     var darkMode = false
         set(aDarkMode) {
             field = aDarkMode
-            applyDarkMode();
+            applyDarkMode()
         }
 
     /**
@@ -236,7 +236,7 @@ class StyxView(
      * @return the title of the page, or an empty string if there is no title.
      */
     val title: String
-        get() = titleInfo.getTitle() ?: ""
+        get() = titleInfo.getTitle()
 
     /**
      * Get the current [SslCertificate] if there is any associated with the current page.
@@ -252,7 +252,6 @@ class StyxView(
      */
     val url: String
         get() {
-            //TODO: One day find a way to write this expression without !! and without duplicating iTargetUrl.toString(), Kotlin is so weird
             return if (iHideActualUrl || webView == null || webView!!.url.isNullOrBlank() || webView!!.url.isSpecialUrl()) {
                 iTargetUrl.toString()
             } else  {
@@ -274,11 +273,10 @@ class StyxView(
 
     /**
      * We had forgotten to unregisterReceiver our download listener thus leaking them all whenever we switched between sessions.
-     * It turns out android as a hardcoded limit of 1000 [BroadcastReceiver] per application.
+     * It turns out android as a hardcoded limit of 1000 per application.
      * So after a while switching between sessions with many tabs we would get an exception saying:
      * "Too many receivers, total of 1000, registered for pid"
      * See: https://stackoverflow.com/q/58179733/3969362
-     * TODO: Do we really need one of those per tab/WebView?
      */
     private var iDownloadListener: StyxDownloadListener? = null
 
@@ -317,10 +315,11 @@ class StyxView(
     /**
      * Create our WebView.
      */
+    @SuppressLint("InflateParams")
     private fun createWebView() {
         styxWebClient = StyxWebClient(activity, this)
         // Inflate our WebView as loading it from XML layout is needed to be able to set scrollbars color
-        webView = activity.layoutInflater.inflate(R.layout.webview, null) as WebView;
+        webView = activity.layoutInflater.inflate(R.layout.webview, null) as WebView
         webView?.apply {
             //id = this@StyxView.id
             gestureDetector = GestureDetector(activity, CustomGestureListener(this))
@@ -400,6 +399,7 @@ class StyxView(
      * Initialize the preference driven settings of the WebView. This method must be called whenever
      * the preferences are changed within SharedPreferences.
      */
+    @Suppress("DEPRECATION")
     @SuppressLint("NewApi", "SetJavaScriptEnabled")
     fun initializePreferences() {
         val settings = webView?.settings ?: return
@@ -476,7 +476,7 @@ class StyxView(
         CookieManager.getInstance().setAcceptThirdPartyCookies(webView,
             !userPreferences.blockThirdPartyCookiesEnabled)
 
-        applyDarkMode();
+        applyDarkMode()
     }
 
     /**
@@ -485,7 +485,6 @@ class StyxView(
     private fun applyDarkMode() {
         val settings = webView?.settings ?: return
 
-        // TODO: Have a settings option to have dark mode use specified render mode instead of WebView dark mode
         if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
             if (darkMode) {
                 WebSettingsCompat.setForceDark(settings,WebSettingsCompat.FORCE_DARK_ON)
@@ -506,6 +505,7 @@ class StyxView(
      * Initialize the settings of the WebView that are intrinsic to Styx and cannot be altered
      * by the user. Distinguish between Incognito and Regular tabs here.
      */
+    @Suppress("DEPRECATION")
     @SuppressLint("NewApi")
     private fun WebView.initializeSettings() {
         settings.apply {
@@ -639,15 +639,6 @@ class StyxView(
     }
 
     /**
-     * This method sets the layer type to none, which
-     * means that either the GPU and CPU can both compose
-     * the layers when necessary.
-     */
-    private fun setNormalRendering() {
-        webView?.setLayerType(View.LAYER_TYPE_NONE, null)
-    }
-
-    /**
      * This method forces the layer type to software, which
      * disables hardware rendering on the WebView instance
      * of the current StyxView and makes the CPU render
@@ -766,7 +757,7 @@ class StyxView(
      */
     fun reload() {
         // Check if configured proxy is available
-        if (!proxyUtils.isProxyReady(activity)) {
+        if (!proxyUtils.isProxyReady()) {
             // User has been notified
             return
         }
@@ -808,9 +799,7 @@ class StyxView(
      * the WebView cannot be recreated using the public
      * api.
      */
-    // TODO fix bug where WebView.destroy is being called before the tab
-    // is removed and would cause a memory leak if the parent check
-    // was not in place.
+    @Suppress("DEPRECATION")
     fun destroy() {
         networkDisposable.dispose()
         webView?.let {
@@ -931,25 +920,28 @@ class StyxView(
      * as it is necessary to have the settings initialized
      * before a load occurs.
      *
-     * @param url the non-null URL to attempt to load in
+     * @param "url" the non-null URL to attempt to load in
      * the WebView.
      */
     fun loadUrl(aUrl: String) {
         // Check if configured proxy is available
-        if (!proxyUtils.isProxyReady(activity)) {
+        if (!proxyUtils.isProxyReady()) {
             return
         }
 
         iTargetUrl = Uri.parse(aUrl)
 
         if (iTargetUrl.scheme == Schemes.Styx || iTargetUrl.scheme == Schemes.About) {
-            //TODO: support more of our custom URLs?
-            if (iTargetUrl.host == Hosts.Home) {
-                loadHomePage()
-            } else if (iTargetUrl.host == Hosts.Bookmarks) {
-                loadBookmarkPage()
-            } else if (iTargetUrl.host == Hosts.History) {
-                loadHistoryPage()
+            when (iTargetUrl.host) {
+                Hosts.Home -> {
+                    loadHomePage()
+                }
+                Hosts.Bookmarks -> {
+                    loadBookmarkPage()
+                }
+                Hosts.History -> {
+                    loadHistoryPage()
+                }
             }
         } else {
             webView?.loadUrl(aUrl, requestHeaders)
@@ -1080,10 +1072,8 @@ class StyxView(
         override fun onLongPress(e: MotionEvent) {
             if (canTriggerLongPress) {
                 val msg = webViewHandler.obtainMessage()
-                if (msg != null) {
                 msg.target = webViewHandler
                 webView?.requestFocusNodeHref(msg)
-                }
             }
         }
 
@@ -1117,12 +1107,9 @@ class StyxView(
 
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
-            // Fetch message data: url, text, image source
-            // See: https://developer.android.com/reference/android/webkit/WebView#requestFocusNodeHref(android.os.Message)
             val url = msg.data.getString("url")
 
             val title = msg.data.getString("title")
-            //
             reference.get()?.longClickPage(url, title)
         }
     }
@@ -1139,7 +1126,6 @@ class StyxView(
         private const val HEADER_DNT = "DNT"
         private const val HEADER_SAVEDATA = "Save-Data"
 
-        private val API = Build.VERSION.SDK_INT
         private val SCROLL_UP_THRESHOLD = Utils.dpToPx(10f)
         private val SCROLL_DOWN_THRESHOLD = Utils.dpToPx(30f)
 

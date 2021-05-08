@@ -1,45 +1,14 @@
 package com.jamal2367.styx.utils
 
 import android.app.Application
-import android.content.Context
 import android.graphics.*
 import androidx.annotation.ColorInt
-import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.jamal2367.styx.R
-import com.jamal2367.styx.utils.ThemeUtils.getBitmapFromVectorDrawable
 import com.jamal2367.styx.utils.Utils.dpToPx
 import kotlin.math.abs
-import kotlin.math.roundToInt
 
 object DrawableUtils {
-    /**
-     * Creates a white rounded drawable with an inset image of a different color.
-     *
-     * @param context     the context needed to work with resources.
-     * @param drawableRes the drawable to inset on the rounded drawable.
-     * @return a bitmap with the desired content.
-     */
-    fun createImageInsetInRoundedSquare(
-            context: Context?,
-            @DrawableRes drawableRes: Int
-    ): Bitmap {
-        val icon = getBitmapFromVectorDrawable(context!!, drawableRes)
-        val image = Bitmap.createBitmap(icon.width, icon.height, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(image)
-        val paint = Paint()
-        paint.color = Color.TRANSPARENT
-        paint.isAntiAlias = true
-        paint.isFilterBitmap = true
-        paint.isDither = true
-        val radius = dpToPx(2f)
-        val outer = RectF(0F, 0F, canvas.width.toFloat(), canvas.height.toFloat())
-        canvas.drawRoundRect(outer, radius.toFloat(), radius.toFloat(), paint)
-        val dest = Rect((outer.left + radius).roundToInt(), (outer.top + radius).roundToInt(), (outer.right - radius).roundToInt(), (outer.bottom - radius).roundToInt())
-        paint.color = Color.WHITE
-        canvas.drawBitmap(icon, null, dest, paint)
-        return image
-    }
 
     /**
      * Creates a rounded square of a certain color with

@@ -22,10 +22,6 @@ class MainActivity : BrowserActivity() {
             super.onNewIntent(intent)
         }
 
-    override fun onPause() {
-        super.onPause()
-    }
-
     /**
      * This is called once our activity is not visible anymore.
      * That's where we should save our data according to the docs.

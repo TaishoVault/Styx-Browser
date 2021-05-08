@@ -2,7 +2,6 @@ package com.jamal2367.styx.view
 
 import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
@@ -14,7 +13,6 @@ import android.net.http.SslError
 import android.os.Message
 import android.text.TextUtils
 import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.webkit.*
 import android.widget.CheckBox
@@ -63,7 +61,6 @@ import java.util.regex.Pattern
 import java.util.regex.PatternSyntaxException
 import javax.inject.Inject
 import kotlin.math.abs
-
 
 class StyxWebClient(
         private val activity: AppCompatActivity,
@@ -142,6 +139,8 @@ class StyxWebClient(
     var description: String? = null
     val include = ArrayList<Pattern>(0)
 
+
+    @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     @SuppressLint("CheckResult")
     private fun installExtension(text: String){
         val tx = text.replace("""\"""", """"""")
@@ -221,8 +220,8 @@ class StyxWebClient(
         }
     }
 
-    val TLD_REGEX = "^([^:]+://[^/]+)\\\\.tld(/.*)?\$".toRegex()
-    val schemeContainsPattern = Pattern.compile("^\\w+:", Pattern.CASE_INSENSITIVE)
+    private val tldregex = "^([^:]+://[^/]+)\\\\.tld(/.*)?\$".toRegex()
+    val schemeContainsPattern: Pattern = Pattern.compile("^\\w+:", Pattern.CASE_INSENSITIVE)
 
     private fun urlToPattern(patternUrl: String?): Pattern? {
         if (patternUrl == null) return null
@@ -232,7 +231,7 @@ class StyxWebClient(
             var converted = builder.toString()
 
             if (converted.contains(".tld", true)) {
-                converted = TLD_REGEX.replaceFirst(converted, "$1(.[a-z]{1,6}){1,3}$2")
+                converted = tldregex.replaceFirst(converted, "$1(.[a-z]{1,6}){1,3}$2")
             }
 
             return if (schemeContainsPattern.matcher(converted).find())
@@ -240,7 +239,7 @@ class StyxWebClient(
             else
                 Pattern.compile("^\\w+://$converted")
         } catch (e: PatternSyntaxException) {
-            Log.d(TAG, "Error: " + e)
+            Log.d(TAG, "Error: $e")
         }
 
         return null
@@ -249,13 +248,13 @@ class StyxWebClient(
     private fun urlToParsedPattern(patternUrl: String): Pattern? {
         try {
             val converted = if (patternUrl.contains(".tld", true)) {
-                TLD_REGEX.replaceFirst(patternUrl, "$1(.[a-z]{1,6}){1,3}$2")
+                tldregex.replaceFirst(patternUrl, "$1(.[a-z]{1,6}){1,3}$2")
             } else {
                 patternUrl
             }
             return Pattern.compile(converted)
         } catch (e: PatternSyntaxException) {
-            Log.d(TAG, "Error: " + e)
+            Log.d(TAG, "Error: $e")
         }
 
         return null
@@ -268,7 +267,6 @@ class StyxWebClient(
             // See: https://stackoverflow.com/a/60621350/3969362
             // See: https://stackoverflow.com/a/39642318/3969362
             // Note how we compute our initial scale to be zoomed out and fit the page
-            // TODO: Check if we really need this here in onLoadResource
             // Pick the proper settings desktop width according to current orientation
             (Resources.getSystem().configuration.orientation == Configuration.ORIENTATION_PORTRAIT).let{ portrait ->
                 view.evaluateJavascript(setMetaViewport.provideJs().replaceFirst("\$width\$", (if (portrait) userPreferences.desktopWidthInPortrait else userPreferences.desktopWidthInLandscape).toString()), null)
@@ -289,6 +287,7 @@ class StyxWebClient(
     /**
      * Overrides [WebViewClient.onPageFinished]
      */
+    @SuppressLint("CheckResult", "SetJavaScriptEnabled")
     override fun onPageFinished(view: WebView, url: String) {
         if (view.isShown) {
             updateUrlIfNeeded(url, false)
@@ -392,9 +391,10 @@ class StyxWebClient(
         if (userPreferences.javaScriptChoice === JavaScriptChoice.BLACKLIST) {
             if (userPreferences.javaScriptBlocked !== "" && userPreferences.javaScriptBlocked !== " ") {
                 val arrayOfURLs = userPreferences.javaScriptBlocked
-                var strgs: Array<String> = arrayOfURLs.split(",".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+                var strgs: Array<String> = arrayOfURLs.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                    .toTypedArray()
                 if (arrayOfURLs.contains(", ")) {
-                    strgs = arrayOfURLs.split(", ".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+                    strgs = arrayOfURLs.split(", ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
                 }
                 if (!stringContainsItemFromList(url, strgs)) {
                     if (url.contains("file:///android_asset") or url.contains("about:blank")) {
@@ -409,9 +409,10 @@ class StyxWebClient(
         else  if (userPreferences.javaScriptChoice === JavaScriptChoice.WHITELIST) run {
             if (userPreferences.javaScriptBlocked !== "" && userPreferences.javaScriptBlocked !== " ") {
                 val arrayOfURLs = userPreferences.javaScriptBlocked
-                var strgs: Array<String> = arrayOfURLs.split(",".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+                var strgs: Array<String> = arrayOfURLs.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                    .toTypedArray()
                 if (arrayOfURLs.contains(", ")) {
-                    strgs = arrayOfURLs.split(", ".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+                    strgs = arrayOfURLs.split(", ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
                 }
                 if (stringContainsItemFromList(url, strgs)) {
                     if (url.contains("file:///android_asset") or url.contains("about:blank")) {
@@ -441,6 +442,7 @@ class StyxWebClient(
     /**
      *
      */
+    @SuppressLint("InflateParams")
     override fun onReceivedHttpAuthRequest(
             view: WebView,
             handler: HttpAuthHandler,
@@ -471,6 +473,7 @@ class StyxWebClient(
         }.resizeAndShow()
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onReceivedError(webview: WebView, errorCode: Int, error: String, failingUrl: String) {
 
         // Not sure that's still needed then, sigh...
@@ -479,7 +482,7 @@ class StyxWebClient(
         if(errorCode != -1) {
             Thread.sleep(500)
            webview.settings.javaScriptEnabled = true
-            val reloadCode = "window.location.href = '" + failingUrl + "';"
+            val reloadCode = "window.location.href = '$failingUrl';"
             val title = activity.getString(R.string.error_title)
             val reload = activity.getString(R.string.error_reload)
             val tip = activity.getString(R.string.error_tip)
@@ -509,6 +512,7 @@ class StyxWebClient(
         }
     }
 
+    @SuppressLint("InflateParams")
     override fun onReceivedSslError(webView: WebView, handler: SslErrorHandler, error: SslError) {
         urlWithSslError = webView.url
         sslState = SslState.Invalid(error)
@@ -580,7 +584,7 @@ class StyxWebClient(
      */
     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
         // Check if configured proxy is available
-        if (!proxyUtils.isProxyReady(activity)) {
+        if (!proxyUtils.isProxyReady()) {
             // User has been notified
             return true
         }
@@ -607,13 +611,13 @@ class StyxWebClient(
             // Check if that external app is already known
             val prefKey = activity.getString(R.string.settings_app_prefix) + Uri.parse(url).host
             if (preferences.contains(prefKey)) {
-                if (preferences.getBoolean(prefKey, false)) {
+                return if (preferences.getBoolean(prefKey, false)) {
                     // Trusted app, just launch it on the stop and abort loading
                     intentUtils.startActivityForIntent(intent)
-                    return true
+                    true
                 } else {
                     // User does not want use to use this app
-                    return false
+                    false
                 }
             }
 
@@ -622,22 +626,22 @@ class StyxWebClient(
             (activity as BrowserActivity).mainHandler.postDelayed({
                 if (exAppLaunchDialog == null) {
                     exAppLaunchDialog = MaterialAlertDialogBuilder(activity).setTitle(R.string.dialog_title_third_party_app).setMessage(R.string.dialog_message_third_party_app)
-                            .setPositiveButton(activity.getText(R.string.yes), DialogInterface.OnClickListener { dialog, _ ->
+                            .setPositiveButton(activity.getText(R.string.yes)) { dialog, _ ->
                                 // Handle Ok
                                 intentUtils.startActivityForIntent(intent)
                                 dialog.dismiss()
                                 exAppLaunchDialog = null
                                 // Remember user choice
                                 preferences.edit().putBoolean(prefKey, true).apply()
-                            })
-                            .setNegativeButton(activity.getText(R.string.no), DialogInterface.OnClickListener { dialog, _ ->
-                                // Handle Cancel
-                                dialog.dismiss()
-                                exAppLaunchDialog = null
-                                // Remember user choice
-                                preferences.edit().putBoolean(prefKey, false).apply()
-                            })
-                            .create()
+                            }
+                        .setNegativeButton(activity.getText(R.string.no)) { dialog, _ ->
+                            // Handle Cancel
+                            dialog.dismiss()
+                            exAppLaunchDialog = null
+                            // Remember user choice
+                            preferences.edit().putBoolean(prefKey, false).apply()
+                        }
+                        .create()
                     exAppLaunchDialog?.show()
                 }
             }, 1000)

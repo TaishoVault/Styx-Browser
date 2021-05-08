@@ -1,5 +1,6 @@
 package com.jamal2367.styx.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Message
 import android.webkit.WebView
@@ -147,6 +148,7 @@ abstract class HtmlPageFactoryInitializer(
     @MainScheduler private val foregroundScheduler: Scheduler
 ) : TabInitializer {
 
+    @SuppressLint("CheckResult")
     override fun initialize(webView: WebView, headers: Map<String, String>) {
         htmlPageFactory
             .buildPage()
@@ -190,7 +192,6 @@ abstract class BundleInitializer(private val bundle: Bundle?) : TabInitializer {
 }
 
 /**
- * An initializer that can be delayed until the view is attached. [initialTitle] is the title that
  * should be initially set on the tab.
  */
 class FreezableBundleInitializer(

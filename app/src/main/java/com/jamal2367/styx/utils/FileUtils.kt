@@ -13,9 +13,10 @@ import java.io.*
  * A utility class containing helpful methods
  * pertaining to file storage.
  */
+@Suppress("DEPRECATION")
 object FileUtils {
     private const val TAG = "FileUtils"
-    val DEFAULT_DOWNLOAD_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).path
+    val DEFAULT_DOWNLOAD_PATH: String = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).path
 
     /**
      * Writes a bundle to persistent storage in the files directory
@@ -182,6 +183,7 @@ object FileUtils {
      * @param directory the directory to find the first existent parent
      * @return the first existent parent
      */
+    @Suppress("NAME_SHADOWING")
     private fun getFirstRealParentDirectory(directory: String?): String {
         var directory = directory
         while (true) {
@@ -209,9 +211,10 @@ object FileUtils {
         }
     }
 
+    @Suppress("NAME_SHADOWING")
     fun addNecessarySlashes(originalPath: String?): String {
         var originalPath = originalPath
-        if (originalPath == null || originalPath.length == 0) {
+        if (originalPath == null || originalPath.isEmpty()) {
             return "/"
         }
         if (originalPath[originalPath.length - 1] != '/') {

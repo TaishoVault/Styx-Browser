@@ -3,9 +3,7 @@ package com.jamal2367.styx.view
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
-
 import android.view.ViewConfiguration
-
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import kotlin.math.abs
 
@@ -26,7 +24,7 @@ class PullRefreshLayout(context: Context, attrs: AttributeSet?) : SwipeRefreshLa
             }
             MotionEvent.ACTION_MOVE -> {
                 if (!mIntercept) {
-                    return false;
+                    return false
                 }
                 // Check if we think user is scrolling vertically
                 val eventX = event.x
@@ -43,7 +41,7 @@ class PullRefreshLayout(context: Context, attrs: AttributeSet?) : SwipeRefreshLa
             return super.onInterceptTouchEvent(event)
         }
 
-        return false;
+        return false
     }
 
 }

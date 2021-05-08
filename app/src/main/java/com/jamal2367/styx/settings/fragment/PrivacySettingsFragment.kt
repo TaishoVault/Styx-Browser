@@ -170,10 +170,12 @@ class PrivacySettingsFragment : AbstractSettingsFragment() {
     private fun deleteDir(dir: File?): Boolean {
         return if (dir != null && dir.isDirectory) {
             val children = dir.list()
-            for (i in children.indices) {
-                val success = deleteDir(File(dir, children[i]))
-                if (!success) {
-                    return false
+            if (children != null) {
+                for (i in children.indices) {
+                    val success = deleteDir(File(dir, children[i]))
+                    if (!success) {
+                        return false
+                    }
                 }
             }
             dir.delete()
@@ -187,7 +189,6 @@ class PrivacySettingsFragment : AbstractSettingsFragment() {
     private fun clearHistory(): Completable = Completable.fromAction {
         val activity = activity
         if (activity != null) {
-            // TODO: 6/9/17 clearHistory is not synchronous
             WebUtils.clearHistory(activity, historyRepository, databaseScheduler)
         } else {
             throw RuntimeException("Activity was null in clearHistory")

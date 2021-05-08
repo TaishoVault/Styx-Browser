@@ -14,7 +14,6 @@ import javax.inject.Inject
 
 abstract class ThemedActivity : AppCompatActivity() {
 
-    // TODO reduce protected visibility
     @Inject lateinit var userPreferences: UserPreferences
 
     protected var themeId: AppTheme = AppTheme.LIGHT
@@ -81,42 +80,59 @@ abstract class ThemedActivity : AppCompatActivity() {
      */
     protected fun applyAccent() {
         val pref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val themeName = pref.getString("pref_key_accent_list", "Accent_Color")
 
-        if (themeName == "pref_key_accent_default") {
-            userPreferences.useTheme
-        } else if (themeName == "pref_key_accent_pink") {
-            theme.applyStyle(R.style.Accent_Pink, true)
-        } else if (themeName == "pref_key_accent_purple") {
-            theme.applyStyle(R.style.Accent_Puple, true)
-        } else if (themeName == "pref_key_accent_deep_purple") {
-            theme.applyStyle(R.style.Accent_Deep_Purple, true)
-        } else if (themeName == "pref_key_accent_indigo") {
-            theme.applyStyle(R.style.Accent_Indigo, true)
-        } else if (themeName == "pref_key_accent_blue") {
-            theme.applyStyle(R.style.Accent_Blue, true)
-        } else if (themeName == "pref_key_accent_light_blue") {
-            theme.applyStyle(R.style.Accent_Light_Blue, true)
-        } else if (themeName == "pref_key_accent_cyan") {
-            theme.applyStyle(R.style.Accent_Cyan, true)
-        } else if (themeName == "pref_key_accent_teal") {
-            theme.applyStyle(R.style.Accent_Teal, true)
-        } else if (themeName == "pref_key_accent_green") {
-            theme.applyStyle(R.style.Accent_Green, true)
-        } else if (themeName == "pref_key_accent_light_green") {
-            theme.applyStyle(R.style.Accent_Light_Green, true)
-        } else if (themeName == "pref_key_accent_lime") {
-            theme.applyStyle(R.style.Accent_Lime, true)
-        } else if (themeName == "pref_key_accent_yellow") {
-            theme.applyStyle(R.style.Accent_Yellow, true)
-        } else if (themeName == "pref_key_accent_amber") {
-            theme.applyStyle(R.style.Accent_Amber, true)
-        } else if (themeName == "pref_key_accent_orange") {
-            theme.applyStyle(R.style.Accent_Orange, true)
-        } else if (themeName == "pref_key_accent_deep_orange") {
-            theme.applyStyle(R.style.Accent_Deep_Orange, true)
-        } else if (themeName == "pref_key_accent_brown") {
-            theme.applyStyle(R.style.Accent_Brown, true)
+        when (pref.getString("pref_key_accent_list", "Accent_Color")) {
+            "pref_key_accent_default" -> {
+                userPreferences.useTheme
+            }
+            "pref_key_accent_pink" -> {
+                theme.applyStyle(R.style.Accent_Pink, true)
+            }
+            "pref_key_accent_purple" -> {
+                theme.applyStyle(R.style.Accent_Puple, true)
+            }
+            "pref_key_accent_deep_purple" -> {
+                theme.applyStyle(R.style.Accent_Deep_Purple, true)
+            }
+            "pref_key_accent_indigo" -> {
+                theme.applyStyle(R.style.Accent_Indigo, true)
+            }
+            "pref_key_accent_blue" -> {
+                theme.applyStyle(R.style.Accent_Blue, true)
+            }
+            "pref_key_accent_light_blue" -> {
+                theme.applyStyle(R.style.Accent_Light_Blue, true)
+            }
+            "pref_key_accent_cyan" -> {
+                theme.applyStyle(R.style.Accent_Cyan, true)
+            }
+            "pref_key_accent_teal" -> {
+                theme.applyStyle(R.style.Accent_Teal, true)
+            }
+            "pref_key_accent_green" -> {
+                theme.applyStyle(R.style.Accent_Green, true)
+            }
+            "pref_key_accent_light_green" -> {
+                theme.applyStyle(R.style.Accent_Light_Green, true)
+            }
+            "pref_key_accent_lime" -> {
+                theme.applyStyle(R.style.Accent_Lime, true)
+            }
+            "pref_key_accent_yellow" -> {
+                theme.applyStyle(R.style.Accent_Yellow, true)
+            }
+            "pref_key_accent_amber" -> {
+                theme.applyStyle(R.style.Accent_Amber, true)
+            }
+            "pref_key_accent_orange" -> {
+                theme.applyStyle(R.style.Accent_Orange, true)
+            }
+            "pref_key_accent_deep_orange" -> {
+                theme.applyStyle(R.style.Accent_Deep_Orange, true)
+            }
+            "pref_key_accent_brown" -> {
+                theme.applyStyle(R.style.Accent_Brown, true)
+            }
         }
     }
 

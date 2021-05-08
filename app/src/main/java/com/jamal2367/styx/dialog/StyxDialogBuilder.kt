@@ -1,5 +1,6 @@
 package com.jamal2367.styx.dialog
 
+import android.annotation.SuppressLint
 import android.content.ClipboardManager
 import android.view.View
 import android.webkit.MimeTypeMap
@@ -32,6 +33,7 @@ import com.jamal2367.styx.utils.isBookmarkUrl
 import dagger.Reusable
 import io.reactivex.Scheduler
 import io.reactivex.rxkotlin.subscribeBy
+import java.util.*
 import javax.inject.Inject
 
 /**
@@ -62,13 +64,13 @@ class StyxDialogBuilder @Inject constructor(
      * @param activity used to show the dialog
      * @param url      the long pressed url
      */
+    @SuppressLint("CheckResult")
     fun showLongPressedDialogForBookmarkUrl(
             activity: AppCompatActivity,
             uiController: UIController,
             url: String
     ) {
         if (url.isBookmarkUrl()) {
-            // TODO hacky, make a better bookmark mechanism in the future
             val uri = url.toUri()
             val filename = requireNotNull(uri.lastPathSegment) { "Last segment should always exist for bookmark file" }
             val folderTitle = filename.substring(0, filename.length - BookmarkPageFactory.FILENAME.length - 1)
@@ -78,7 +80,6 @@ class StyxDialogBuilder @Inject constructor(
                 .subscribeOn(databaseScheduler)
                 .observeOn(mainScheduler)
                 .subscribe { historyItem ->
-                    // TODO: 6/14/17 figure out solution to case where slashes get appended to root urls causing the item to not exist
                     showLongPressedDialogForBookmarkUrl(activity, uiController, historyItem)
                 }
         }
@@ -128,7 +129,6 @@ class StyxDialogBuilder @Inject constructor(
      *
      * @param activity used to show the dialog
      */
-    // TODO allow individual downloads to be deleted.
     fun showLongPressedDialogForDownloadUrl(
             activity: AppCompatActivity,
             uiController: UIController
@@ -143,6 +143,8 @@ class StyxDialogBuilder @Inject constructor(
     /**
      * Show the add bookmark dialog. Shows a dialog with the title and URL pre-populated.
      */
+    @SuppressLint("CheckResult")
+    @SuppressWarnings("unused")
     fun showAddBookmarkDialog(
             activity: AppCompatActivity,
             uiController: UIController,
@@ -159,7 +161,7 @@ class StyxDialogBuilder @Inject constructor(
         getFolder.setHint(R.string.folder)
         getFolder.setText(entry.folder.title)
 
-        val ignored = bookmarkManager.getFolderNames()
+        bookmarkManager.getFolderNames()
                 .subscribeOn(databaseScheduler)
                 .observeOn(mainScheduler)
                 .subscribe { folders ->
@@ -202,6 +204,7 @@ class StyxDialogBuilder @Inject constructor(
                 }
     }
 
+    @SuppressLint("CheckResult")
     private fun showEditBookmarkDialog(
             activity: AppCompatActivity,
             uiController: UIController,
@@ -218,7 +221,7 @@ class StyxDialogBuilder @Inject constructor(
         getFolder.setHint(R.string.folder)
         getFolder.setText(entry.folder.title)
 
-        val ignored = bookmarkManager.getFolderNames()
+        bookmarkManager.getFolderNames()
                 .subscribeOn(databaseScheduler)
                 .observeOn(mainScheduler)
                 .subscribe { folders ->
@@ -332,7 +335,6 @@ class StyxDialogBuilder @Inject constructor(
             (activity).snackbar(R.string.dialog_removed_from_history)
         })
 
-    // TODO There should be a way in which we do not need an activity reference to dowload a file
     fun showLongPressImageDialog(
             activity: AppCompatActivity,
             uiController: UIController,
@@ -360,7 +362,11 @@ class StyxDialogBuilder @Inject constructor(
             (activity).snackbar(R.string.message_link_copied)
         },
         DialogItem(title = R.string.dialog_download_image) {
-            val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(imageUrl).toLowerCase())
+            val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(
+                MimeTypeMap.getFileExtensionFromUrl(
+                            imageUrl
+                        ).lowercase(Locale.ROOT)
+            )
 
             if (mimeType != null) {
                 downloadHandler.legacyDownloadStart(activity, userPreferences, imageUrl, userAgent, "attachment", mimeType, "")

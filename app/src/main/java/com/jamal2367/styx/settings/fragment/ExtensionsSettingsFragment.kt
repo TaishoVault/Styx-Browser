@@ -1,5 +1,6 @@
 package com.jamal2367.styx.settings.fragment
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -42,6 +43,7 @@ class ExtensionsSettingsFragment : AbstractSettingsFragment() {
 
     }
 
+    @SuppressLint("CheckResult")
     private fun uninstallUserScript(){
         val builderSingle = MaterialAlertDialogBuilder(requireContext())
         builderSingle.setTitle(resources.getString(R.string.action_remove) + ":")

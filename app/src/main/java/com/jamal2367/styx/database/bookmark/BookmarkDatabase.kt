@@ -1,5 +1,6 @@
 package com.jamal2367.styx.database.bookmark
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.ContentValues
 import android.database.Cursor
@@ -190,6 +191,7 @@ class BookmarkDatabase @Inject constructor(
     /**
      * Notably used for suggestions search.
      */
+    @SuppressLint("Recycle")
     override fun getAllBookmarksSorted(): Single<List<Bookmark.Entry>> = Single.fromCallable {
         return@fromCallable database.query(
                 TABLE_BOOKMARK,
@@ -205,6 +207,7 @@ class BookmarkDatabase @Inject constructor(
     /**
      *
      */
+    @SuppressLint("Recycle")
     override fun getBookmarksFromFolderSorted(folder: String?): Single<List<Bookmark>> = Single.fromCallable {
         val finalFolder = folder ?: ""
         return@fromCallable database.query(
@@ -218,6 +221,7 @@ class BookmarkDatabase @Inject constructor(
         ).useMap { it.bindToBookmarkEntry() }
     }
 
+    @SuppressLint("Recycle")
     override fun getFoldersSorted(): Single<List<Bookmark.Folder>> = Single.fromCallable {
         return@fromCallable database
                 .query(
@@ -236,6 +240,7 @@ class BookmarkDatabase @Inject constructor(
                 .map(String::asFolder)
     }
 
+    @SuppressLint("Recycle")
     override fun getFolderNames(): Single<List<String>> = Single.fromCallable {
         return@fromCallable database.query(
                 true,

@@ -26,9 +26,6 @@ object MurmurHash {
      * Generates 32 bit hash from byte array of the given length and
      * seed.
      *
-     * @param data   byte array to hash
-     * @param length length of the array to hash
-     * @param seed   initial seed value
      * @return 32 bit hash of the given array
      */
     /**
@@ -105,9 +102,6 @@ object MurmurHash {
     /**
      * Generates 64 bit hash from byte array of the given length and seed.
      *
-     * @param data   byte array to hash
-     * @param length length of the array to hash
-     * @param seed   initial seed value
      * @return 64 bit hash of the given array
      */
     /**

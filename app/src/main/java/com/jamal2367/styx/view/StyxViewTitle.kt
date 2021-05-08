@@ -9,7 +9,6 @@ import com.jamal2367.styx.extensions.pad
  * [StyxViewTitle] acts as a container class
  * for the favicon and page title, the information used
  * by the tab adapters to show the tabs to the user.
- * TODO: Add HTML meta theme color?
  */
 class StyxViewTitle(context: Context) {
 
@@ -31,7 +30,7 @@ class StyxViewTitle(context: Context) {
      *
      * @return the non-null title.
      */
-    fun getTitle(): String? = title
+    fun getTitle(): String = title
 
     /**
      * Set the current title to a new title. If the title is null, an empty title will be used.

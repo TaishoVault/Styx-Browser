@@ -1,6 +1,3 @@
-/*
- * Copyright 2014 A.C.R. Development
- */
 package com.jamal2367.styx.utils
 
 import android.annotation.SuppressLint
@@ -104,6 +101,7 @@ object Utils {
      * could not be extracted. The domain name may include
      * HTTPS if the URL is an SSL supported URL.
      */
+    @Suppress("NAME_SHADOWING")
     fun getDisplayDomainName(url: String?): String {
         var url = url
         if (url == null || url.isEmpty()) return ""
@@ -137,6 +135,7 @@ object Utils {
         }
     }
 
+    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     private fun deleteDir(dir: File?): Boolean {
         if (dir != null && dir.isDirectory) {
             val children = dir.list()
@@ -151,42 +150,41 @@ object Utils {
         return dir != null && dir.delete()
     }
 
-    fun isColorTooDark(color: Int): Boolean {
-        val RED_CHANNEL: Byte = 16
-        val GREEN_CHANNEL: Byte = 8
-        //final byte BLUE_CHANNEL = 0;
-        val r = ((color shr RED_CHANNEL.toInt() and 0xff).toFloat() * 0.3f).toInt() and 0xff
-        val g = ((color shr GREEN_CHANNEL.toInt() and 0xff).toFloat() * 0.59).toInt() and 0xff
-        val b = ((color /* >> BLUE_CHANNEL */ and 0xff).toFloat() * 0.11).toInt() and 0xff
-        val gr = r + g + b and 0xff
-        val gray = gr /* << BLUE_CHANNEL */ + (gr shl GREEN_CHANNEL.toInt()) + (gr shl RED_CHANNEL.toInt())
-        return gray < 0x727272
-    }
-
     fun mixTwoColors(color1: Int, color2: Int, amount: Float): Int {
-        val ALPHA_CHANNEL: Byte = 24
-        val RED_CHANNEL: Byte = 16
-        val GREEN_CHANNEL: Byte = 8
-        //final byte BLUE_CHANNEL = 0;
+        val alphachannel: Byte = 24
+        val redchannel: Byte = 16
+        val greenchannel: Byte = 8
         val inverseAmount = 1.0f - amount
-        val r = ((color1 shr RED_CHANNEL.toInt() and 0xff).toFloat() * amount + (color2 shr RED_CHANNEL.toInt() and 0xff).toFloat() * inverseAmount).toInt() and 0xff
-        val g = ((color1 shr GREEN_CHANNEL.toInt() and 0xff).toFloat() * amount + (color2 shr GREEN_CHANNEL.toInt() and 0xff).toFloat() * inverseAmount).toInt() and 0xff
+        val r = ((color1 shr redchannel.toInt() and 0xff).toFloat() * amount + (color2 shr redchannel.toInt() and 0xff).toFloat() * inverseAmount).toInt() and 0xff
+        val g = ((color1 shr greenchannel.toInt() and 0xff).toFloat() * amount + (color2 shr greenchannel.toInt() and 0xff).toFloat() * inverseAmount).toInt() and 0xff
         val b = ((color1 and 0xff).toFloat() * amount + (color2 and 0xff).toFloat() * inverseAmount).toInt() and 0xff
-        return 0xff shl ALPHA_CHANNEL.toInt() or (r shl RED_CHANNEL.toInt()) or (g shl GREEN_CHANNEL.toInt()) or b
+        return 0xff shl alphachannel.toInt() or (r shl redchannel.toInt()) or (g shl greenchannel.toInt()) or b
     }
 
-    fun buildErrorPage(color: String?, title: String?, error: String?, tip: String?, tip2: String?, reload: String?, showButton: Boolean, reloadCode: String = "window.history.back();"): String {
-        var reloadButtonCode = "<button onclick=\"reload();\" id=\"reload-button\" class=\"blue-button text-button reload\">$reload</button>"
+    fun buildErrorPage(
+        color: String?,
+        title: String?,
+        error: String?,
+        tip: String?,
+        tip2: String?,
+        reload: String?,
+        showButton: Boolean,
+        reloadCode: String = "window.history.back();"
+    ): String {
+        var reloadButtonCode =
+            "<button onclick=\"reload();\" id=\"reload-button\" class=\"blue-button text-button reload\">$reload</button>"
         val background = htmlColor(ThemeUtils.getSurfaceColor(BrowserApp.currentContext()))
-        val text = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.colorOnPrimary))
-        val accent = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.colorAccent))
+        val text =
+            htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(), R.attr.colorOnPrimary))
+        val accent = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(), R.attr.colorAccent))
 
-        when(showButton){
+        when (showButton) {
             false -> reloadButtonCode = ""
         }
-        val page = "<html>" +
+
+        return "<html>" +
                 "<head>" +
-               "<script language=\"javascript\"> " +
+                "<script language=\"javascript\"> " +
                 "function reload(){setTimeout(function(){$reloadCode}, 500);" +
                 "};</script>" +
                 "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
@@ -208,21 +206,30 @@ object Utils {
                 "</div></div></div><div id=\"buttons\" class=\"nav-wrapper\"><div id=\"control-buttons\">$reloadButtonCode" +
                 "</div></div></div></body></center></html>" +
                 color
-
-        return page
     }
 
 
-    fun buildMalwarePage(color: String?, title: String?, error: String?, tip3: String?, reload: String?, showButton: Boolean, reloadCode: String = "window.history.back();"): String {
-        var reloadButtonCode = "<button onclick=\"reload();\" id=\"reload-button\" class=\"blue-button text-button reload\">$reload</button>"
+    fun buildMalwarePage(
+        color: String?,
+        title: String?,
+        error: String?,
+        tip3: String?,
+        reload: String?,
+        showButton: Boolean,
+        reloadCode: String = "window.history.back();"
+    ): String {
+        var reloadButtonCode =
+            "<button onclick=\"reload();\" id=\"reload-button\" class=\"blue-button text-button reload\">$reload</button>"
         val background = htmlColor(ThemeUtils.getSurfaceColor(BrowserApp.currentContext()))
-        val text = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.colorOnPrimary))
-        val accent = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.colorAccent))
+        val text =
+            htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(), R.attr.colorOnPrimary))
+        val accent = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(), R.attr.colorAccent))
 
-        when(showButton){
+        when (showButton) {
             false -> reloadButtonCode = ""
         }
-        val page = "<html>" +
+
+        return "<html>" +
                 "<head>" +
                 "<script language=\"javascript\"> " +
                 "function reload(){setTimeout(function(){$reloadCode}, 500);" +
@@ -244,19 +251,16 @@ object Utils {
                 "</div></div></div><div id=\"buttons\" class=\"nav-wrapper\"><div id=\"control-buttons\">$reloadButtonCode" +
                 "</div></div></div></body></center></html>" +
                 color
-
-        return page
     }
 
-
+    @Suppress("DEPRECATION")
     @SuppressLint("SimpleDateFormat")
     @Throws(IOException::class)
     fun createImageFile(): File {
         // Create an image file name
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "JPEG_" + timeStamp + '_'
-        val storageDir = Environment
-                .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+        val storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(imageFileName,  /* prefix */
                 ".jpg",  /* suffix */
                 storageDir /* directory */
@@ -291,6 +295,7 @@ object Utils {
      * the intent and show a snackbar message
      * @param historyEntry     the HistoryEntity to create the shortcut from
      */
+    @Suppress("DEPRECATION")
     fun createShortcut(activity: AppCompatActivity,
                        historyEntry: HistoryEntry,
                        favicon: Bitmap) {

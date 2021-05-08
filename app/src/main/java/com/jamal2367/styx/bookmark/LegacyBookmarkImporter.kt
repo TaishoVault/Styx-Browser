@@ -6,7 +6,7 @@ import java.io.InputStream
 import javax.inject.Inject
 
 /**
- * A [BookmarkImporter] that imports bookmark files that were produced by [BookmarkExporter].
+ * A [BookmarkImporter] that imports bookmark files that were produced by BookmarkExporter.
  */
 class LegacyBookmarkImporter @Inject constructor() : BookmarkImporter {
 

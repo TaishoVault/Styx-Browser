@@ -39,7 +39,7 @@ fun smartUrlFilter(url: String, canBeSearch: Boolean, searchUrl: String): Pair<S
     if (matcher.matches()) {
         // force scheme to lowercase
         val scheme = requireNotNull(matcher.group(1)) { "matches() implies this is non null" }
-        val lcScheme = scheme.toLowerCase(Locale.getDefault())
+        val lcScheme = scheme.lowercase(Locale.getDefault())
         if (lcScheme != scheme) {
             inUrl = lcScheme + matcher.group(2)
         }
@@ -95,7 +95,6 @@ fun String?.isSpecialUrl(): Boolean =
         || this.endsWith(DownloadPageFactory.FILENAME)
         || this.endsWith(HistoryPageFactory.FILENAME)
         || this.endsWith(HomePageFactory.FILENAME))
-        // TODO: That's somehow causing History page to be restored as Home page
         /*|| this.startsWith(Schemes.Styx + "://")*/)
 
 /**
@@ -167,6 +166,7 @@ private val GENERIC_CONTENT_TYPES = arrayOf(
         "application/unknown"
 )
 
+@Suppress("DEPRECATION")
 fun guessFileName(
         contentDisposition: String?,
         destinationDirectory: String?,
@@ -307,7 +307,7 @@ private fun decodeHeaderField(field: String, encoding: String): String {
         if (symbol.startsWith("%")) {
             stream.write(symbol.substring(1).toInt(radix = 16))
         } else {
-            stream.write(symbol[0].toInt())
+            stream.write(symbol[0].code)
         }
     }
 

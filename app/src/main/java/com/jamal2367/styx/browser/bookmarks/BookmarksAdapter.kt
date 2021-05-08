@@ -149,7 +149,7 @@ class  BookmarksAdapter(
 
         // Due to our database definition we need edit position of each bookmarks in current folder
         // Go through our list and edit position as needed
-        var position = 0;
+        var position = 0
         bookmarks.toList().forEach { b ->
             if (b.bookmark is Bookmark.Entry) {
                 if (b.bookmark.position != position || position==fromPosition || position==toPosition) {
@@ -180,7 +180,7 @@ class  BookmarksAdapter(
         // Tell base class an item was moved
         notifyItemMoved(fromPosition, toPosition)
 
-        return true;
+        return true
     }
 
     /**

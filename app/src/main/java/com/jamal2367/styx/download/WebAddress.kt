@@ -46,6 +46,8 @@ internal class WebAddress(address: String?) {
         private const val MATCH_GROUP_HOST = 3
         private const val MATCH_GROUP_PORT = 4
         private const val MATCH_GROUP_PATH = 5
+
+        @Suppress("DEPRECATION")
         private val sAddressPattern = Pattern.compile( /* scheme */
                 "(?:(http|https|file)://)?" +  /* authority */
                         "(?:([-A-Za-z0-9$string.+!*'(),;?&=]+(?::[-A-Za-z0-9$string.+!*'(),;?&=]+)?)@)?" +  /* host */
@@ -69,7 +71,7 @@ internal class WebAddress(address: String?) {
         require(m.matches()) { "Parsing of address '$address' failed" }
         var t: String? = m.group(MATCH_GROUP_SCHEME)
         if (t != null) {
-            scheme = t.toLowerCase(Locale.ROOT)
+            scheme = t.lowercase(Locale.ROOT)
         }
         t = m.group(MATCH_GROUP_AUTHORITY)
         if (t != null) {

@@ -1,5 +1,6 @@
 package com.jamal2367.styx.ssl
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.http.SslCertificate
 import android.text.format.DateFormat
@@ -13,6 +14,7 @@ import com.jamal2367.styx.extensions.resizeAndShow
 /**
  * Shows an informative dialog with the provided [SslCertificate] information.
  */
+@SuppressLint("CutPasteId")
 fun Context.showSslDialog(sslCertificate: SslCertificate, sslState: SslState) {
     val by = sslCertificate.issuedBy
     val to = sslCertificate.issuedTo

@@ -4,17 +4,12 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Environment;
 import android.util.Log;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.WorkerThread;
-
 import com.jamal2367.styx.database.Bookmark;
 import com.jamal2367.styx.database.WebPageKt;
 import com.jamal2367.styx.utils.Utils;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -24,14 +19,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
 import io.reactivex.Completable;
 
 /**
  * The class responsible for importing and exporting
  * bookmarks in the JSON format.
- * <p>
- * Created by anthonycr on 5/7/17.
  */
 public final class BookmarkExporter {
 
@@ -165,8 +157,6 @@ public final class BookmarkExporter {
      * @return a non null empty file that can be used
      * to export bookmarks to.
      */
-    @WorkerThread
-    @NonNull
     public static File createNewExportFile() {
         File bookmarksExport = new File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),

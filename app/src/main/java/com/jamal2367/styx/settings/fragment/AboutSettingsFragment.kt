@@ -8,7 +8,6 @@ import androidx.webkit.WebViewCompat
 import com.jamal2367.styx.BuildConfig
 import com.jamal2367.styx.R
 
-
 class AboutSettingsFragment : AbstractSettingsFragment() {
 
     override fun providePreferencesXmlResource() = R.xml.preference_about
@@ -19,8 +18,8 @@ class AboutSettingsFragment : AbstractSettingsFragment() {
         var webview = resources.getString(R.string.unknown)
 
         context?.let {
-            WebViewCompat.getCurrentWebViewPackage(it)?.versionName?.let {
-                webview = it
+            WebViewCompat.getCurrentWebViewPackage(it)?.versionName?.let { it1 ->
+                webview = it1
             }
         }
 
@@ -40,6 +39,5 @@ class AboutSettingsFragment : AbstractSettingsFragment() {
     companion object {
         private const val SETTINGS_VERSION = "pref_version"
         private const val WEBVIEW_VERSION = "pref_webview"
-        private const val TAG = "AboutSettingsFragment"
     }
 }

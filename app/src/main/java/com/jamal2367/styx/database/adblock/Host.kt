@@ -5,4 +5,5 @@ package com.jamal2367.styx.database.adblock
  *
  * @param name The name of the host.
  */
-inline class Host(val name: String)
+@JvmInline
+value class Host(val name: String)

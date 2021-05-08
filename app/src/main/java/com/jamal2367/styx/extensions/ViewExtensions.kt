@@ -10,13 +10,11 @@ import android.widget.ImageView
 import android.widget.PopupWindow
 import androidx.appcompat.widget.TooltipCompat
 import androidx.core.graphics.ColorUtils
-import androidx.databinding.BindingAdapter
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.jamal2367.styx.utils.getFilteredColor
-
 
 /**
  * Tells if this view can scroll vertically.
@@ -29,6 +27,7 @@ fun View.canScrollVertically() = this.let {
 /**
  * Removes a view from its parent if it has one.
  */
+@Suppress("IMPLICIT_NOTHING_TYPE_ARGUMENT_AGAINST_NOT_NOTHING_EXPECTED_TYPE")
 fun View?.removeFromParent() : ViewGroup? = this?.let {
     val parent = it.parent
     (parent as? ViewGroup)?.let { vg ->
@@ -115,13 +114,7 @@ inline fun View?.onceOnLayoutChange(crossinline runnable: () -> Unit) = this?.ap
  * @param runnable the runnable to run.
  */
 inline fun View?.onLayoutChange(crossinline runnable: () -> Unit) = this?.apply {
-    addOnLayoutChangeListener(object : View.OnLayoutChangeListener {
-        override fun onLayoutChange(v: View?, left: Int, top: Int, right: Int, bottom: Int,
-                                    oldLeft: Int, oldTop: Int, oldRight: Int, oldBottom: Int)
-        {
-            runnable();
-        }
-    })
+    addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ -> runnable(); }
 }
 
 /**
@@ -134,7 +127,7 @@ inline fun View?.onSizeChange(crossinline runnable: () -> Unit) = this?.apply {
         val rect = Rect(left, top, right, bottom)
         val oldRect = Rect(oldLeft, oldTop, oldRight, oldBottom)
         if (rect.width() != oldRect.width() || rect.height() != oldRect.height()) {
-            runnable();
+            runnable()
         }
     }
 }
@@ -190,7 +183,7 @@ fun SwipeRefreshLayout?.resetTarget() {
     val field = SwipeRefreshLayout::class.java.getDeclaredField("mTarget")
     field.isAccessible = true
     // Then reset it
-    field.set(this,null);
+    field.set(this,null)
     // Next time this is doing a layout ensureTarget() will be called and the target set properly again
 }
 

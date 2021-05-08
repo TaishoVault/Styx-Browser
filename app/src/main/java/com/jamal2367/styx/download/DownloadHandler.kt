@@ -93,9 +93,7 @@ class DownloadHandler @Inject constructor(
 
     class DownloadCancelReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            if (intent != null) {
-                Log.d("downloader", "cancel")
-            }
+            Log.d("downloader", "cancel")
             Log.d("downloader", "null")
         }
     }
@@ -112,6 +110,7 @@ class DownloadHandler @Inject constructor(
      * @param contentSize        The size of the content
      */
     /* package */
+    @Suppress("DEPRECATION")
     @SuppressLint("CheckResult")
     private fun onDownloadStartNoStream(
             context: Activity, preferences: UserPreferences,
@@ -192,7 +191,7 @@ class DownloadHandler @Inject constructor(
             }
             // We must have long pressed on a link or image to download it. We
             // are not sure of the mimetype in this case, so do a head request
-            val disposable = FetchUrlMimeType(downloadManager, request, addressString, cookies, userAgent)
+            FetchUrlMimeType(downloadManager, request, addressString, cookies, userAgent)
                     .create()
                     .subscribeOn(networkScheduler)
                     .observeOn(mainScheduler)
@@ -238,6 +237,7 @@ class DownloadHandler @Inject constructor(
         private const val REFERER_REQUEST_HEADER = "Referer"
         private const val USERAGENT_REQUEST_HEADER = "User-Agent"
 
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
         private fun isWriteAccessAvailable(fileUri: Uri): Boolean {
             if (fileUri.path == null) {
                 return false
@@ -274,7 +274,7 @@ class DownloadHandler @Inject constructor(
             for (c in chars) {
                 if (c == '[' || c == ']' || c == '|') {
                     sb.append('%')
-                    sb.append(Integer.toHexString(c.toInt()))
+                    sb.append(Integer.toHexString(c.code))
                 } else {
                     sb.append(c)
                 }

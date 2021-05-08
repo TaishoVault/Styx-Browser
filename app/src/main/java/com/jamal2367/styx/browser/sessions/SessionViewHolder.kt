@@ -1,5 +1,6 @@
 package com.jamal2367.styx.browser.sessions
 
+import android.annotation.SuppressLint
 import android.text.InputFilter
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,7 @@ import io.reactivex.disposables.Disposable
  * The [RecyclerView.ViewHolder] for both vertical and horizontal tabs.
  * That represents an item in our list, basically one tab.
  */
+@SuppressLint("InflateParams")
 class SessionViewHolder(
         view: View,
         private val iUiController: UIController
@@ -44,7 +46,6 @@ class SessionViewHolder(
         // Delete a session
         buttonDelete.setOnClickListener {
             // Just don't delete current session for now
-            // TODO: implement a solution to indeed delete current session
             if (iUiController.getTabModel().iCurrentSessionName == session().name) {
                 it.context.toast(R.string.session_cant_delete_current)
             } else {
@@ -107,23 +108,6 @@ class SessionViewHolder(
                     }
                 }
             }
-
-            /*
-            dialog.setOnShowListener {
-                val imm = dialog.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.showSoftInput(textView, InputMethodManager.SHOW_IMPLICIT);
-            }
-
-             */
-
-            //TODO: use on show listener?
-            // TODO: we need to review our dialog APIs
-            // See: https://stackoverflow.com/a/12997855/3969362
-            // Trying to make it so that virtual keyboard opens up as the dialog opens
-            //val imm = it.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            ////imm.showSoftInput(textView, InputMethodManager.SHOW_FORCED);
-            //imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
-
         }
 
         // Session item clicked
@@ -154,11 +138,11 @@ class SessionViewHolder(
 
     private fun session() = iUiController.getTabModel().session(textName.tag as String)
 
-    //TODO: should we have dedicated click handlers instead of a switch?
     override fun onClick(v: View) {
         if (v === buttonDelete) {
             //uiController.tabCloseClicked(adapterPosition)
         } else if (v === iCardView) {
+
         }
     }
 
@@ -185,9 +169,7 @@ class SessionViewHolder(
      */
     fun observeEditMode(observable: Observable<Boolean>): Disposable {
         return observable
-                //.debounce(SEARCH_TYPING_INTERVAL, TimeUnit.MILLISECONDS)
                 .distinctUntilChanged()
-                // TODO: Is that needed? Is it not the default somehow?
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { editMode ->
 

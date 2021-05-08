@@ -9,7 +9,7 @@ import java.util.*
  */
 class RecentTabsModel {
 
-    public val bundleStack: Stack<Bundle> = Stack()
+    val bundleStack: Stack<Bundle> = Stack()
 
     /**
      * Return the last closed tab as a [Bundle] or null if there is no previously opened tab.

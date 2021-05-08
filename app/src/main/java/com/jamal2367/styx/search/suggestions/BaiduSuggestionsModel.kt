@@ -26,7 +26,6 @@ class BaiduSuggestionsModel(
 ) : BaseSuggestionsModel(okHttpClient, requestFactory, UTF8, application.preferredLocale, logger, userPreferences) {
 
     private val searchSubtitle = application.getString(R.string.suggestion)
-    private val inputEncoding = "GBK"
 
     // see http://unionsug.baidu.com/su?wd={encodedQuery}
     // see http://suggestion.baidu.com/s?wd={encodedQuery}&action=opensearch

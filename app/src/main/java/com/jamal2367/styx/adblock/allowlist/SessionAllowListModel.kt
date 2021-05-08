@@ -1,5 +1,6 @@
 package com.jamal2367.styx.adblock.allowlist
 
+import android.annotation.SuppressLint
 import androidx.core.net.toUri
 import com.jamal2367.styx.database.allowlist.AdBlockAllowListRepository
 import com.jamal2367.styx.database.allowlist.AllowListEntry
@@ -13,6 +14,7 @@ import javax.inject.Singleton
 /**
  * An in memory representation of the ad blocking whitelist. Can be queried synchronously.
  */
+@SuppressLint("CheckResult")
 @Singleton
 class SessionAllowListModel @Inject constructor(
     private val adBlockAllowListModel: AdBlockAllowListRepository,

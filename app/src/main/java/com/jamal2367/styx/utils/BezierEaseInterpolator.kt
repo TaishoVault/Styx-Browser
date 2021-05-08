@@ -6,7 +6,7 @@ import androidx.core.view.animation.PathInterpolatorCompat
 
 internal class BezierEaseInterpolator : Interpolator {
     override fun getInterpolation(input: Float): Float {
-        return BezierEaseInterpolator.Companion.sBezierInterpolator.getInterpolation(input)
+        return sBezierInterpolator.getInterpolation(input)
     }
 
     companion object {

@@ -1,5 +1,6 @@
 package com.jamal2367.styx.browser.sessions
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
 import android.text.InputFilter
 import android.view.Gravity
@@ -27,42 +28,28 @@ import com.jamal2367.styx.utils.ItemDragDropSwipeHelper
 import com.jamal2367.styx.utils.Utils
 import javax.inject.Inject
 
-
-class SessionsPopupWindow : PopupWindow {
+@SuppressLint("InflateParams")
+class SessionsPopupWindow(
+    layoutInflater: LayoutInflater,
+    aBinding: SessionListBinding = SessionListBinding.inflate(layoutInflater)
+) : PopupWindow(aBinding.root, WRAP_CONTENT, WRAP_CONTENT, true) {
 
     var iUiController: UIController
     var iAdapter: SessionsAdapter
-    var iBinding: SessionListBinding
+    var iBinding: SessionListBinding = aBinding
     var iAnchor: View? = null
     private var iItemTouchHelper: ItemTouchHelper? = null
 
     @Inject lateinit var userPreferences: UserPreferences
 
-    constructor(layoutInflater: LayoutInflater,
-                aBinding: SessionListBinding = SessionListBinding.inflate(layoutInflater))
-            : super(aBinding.root, WRAP_CONTENT, WRAP_CONTENT, true) {
-
+    init {
         aBinding.root.context.injector.inject(this)
-
-        // Needed to make sure our bottom sheet shows below our session pop-up
-        PopupWindowCompat.setWindowLayoutType(this, WindowManager.LayoutParams.FIRST_SUB_WINDOW + 5);
-
-        // Elevation just need to be high enough not to cut the effect defined in our layout
+        PopupWindowCompat.setWindowLayoutType(this, WindowManager.LayoutParams.FIRST_SUB_WINDOW + 5)
         elevation = 100F
-
-        iBinding = aBinding
         iUiController = aBinding.root.context as UIController
         iAdapter = SessionsAdapter(iUiController)
-
         animationStyle = R.style.AnimationMenu
-        //animationStyle = android.R.style.Animation_Dialog
-
-        // Needed on Android 5 to make sure our pop-up can be dismissed by tapping outside and back button
-        // See: https://stackoverflow.com/questions/46872634/close-popupwindow-upon-tapping-outside-or-back-button
         setBackgroundDrawable(ColorDrawable())
-
-
-        // Handle click on "add session" button
         aBinding.buttonNewSession.setOnClickListener { view ->
             val dialogView = LayoutInflater.from(aBinding.root.context).inflate(R.layout.dialog_edit_text, null)
             val textView = dialogView.findViewById<EditText>(R.id.dialog_edit_text)
@@ -95,9 +82,6 @@ class SessionsPopupWindow : PopupWindow {
                 }
             }
         }
-
-        // Handle save as button
-        // TODO: reuse code between, new, save as and edit dialog
         aBinding.buttonSaveSession.setOnClickListener { view ->
             val dialogView = LayoutInflater.from(aBinding.root.context).inflate(R.layout.dialog_edit_text, null)
             val textView = dialogView.findViewById<EditText>(R.id.dialog_edit_text)
@@ -125,7 +109,6 @@ class SessionsPopupWindow : PopupWindow {
                                 // Switch to our newly added session
                                 (view.context as BrowserActivity).apply {
                                     // Close session dialog after creating and switching to new session
-                                    // TODO: not in edit mode?
                                     sessionsMenu.dismiss()
                                 }
 
@@ -145,14 +128,11 @@ class SessionsPopupWindow : PopupWindow {
                 }
             }
         }
-
-
         aBinding.buttonEditSessions.setOnClickListener {
 
             // Toggle edit mode
             iAdapter.iEditModeEnabledObservable.value?.let { editModeEnabled ->
                 // Change button icon
-                // TODO: change the text too?
                 if (!editModeEnabled) {
                     aBinding.buttonEditSessions.setImageResource(R.drawable.ic_secured)
                 } else {
@@ -170,23 +150,6 @@ class SessionsPopupWindow : PopupWindow {
                 // Android layout animation crap, just don't ask, sometimes it's a blessing other times it's a nightmare...
             }
         }
-
-        // Make sure Ctrl + Shift + S closes our menu so that toggle is working
-        // TODO: Somehow still not working
-        /*
-        contentView.isFocusableInTouchMode = true
-        contentView.setOnKeyListener { _, keyCode, event ->
-            val isCtrlShiftOnly  = KeyEvent.metaStateHasModifiers(event.metaState, KeyEvent.META_CTRL_ON or KeyEvent.META_SHIFT_ON)
-            //(isCtrlShiftOnly && keyCode == KeyEvent.KEYCODE_S).also { if (it) dismiss() }
-            if (isCtrlShiftOnly && keyCode == KeyEvent.KEYCODE_S) {
-                dismiss()
-                return@setOnKeyListener true
-            }
-            return@setOnKeyListener false
-        }
-        */
-
-        // Setup our recycler view
         aBinding.recyclerViewSessions.apply {
             //setLayerType(View.LAYER_TYPE_NONE, null)
             //(itemAnimator as DefaultItemAnimator).supportsChangeAnimations = false
@@ -194,9 +157,10 @@ class SessionsPopupWindow : PopupWindow {
             adapter = iAdapter
             setHasFixedSize(false)
         }
-
-        // Enable drag & drop but not swipe
-        val callback: ItemTouchHelper.Callback = ItemDragDropSwipeHelper(iAdapter, true, false)
+        val callback: ItemTouchHelper.Callback = ItemDragDropSwipeHelper(iAdapter,
+            aLongPressDragEnabled = true,
+            aSwipeEnabled = false
+        )
         iItemTouchHelper = ItemTouchHelper(callback)
         iItemTouchHelper?.attachToRecyclerView(iBinding.recyclerViewSessions)
     }
@@ -205,13 +169,14 @@ class SessionsPopupWindow : PopupWindow {
     /**
      *
      */
+    @SuppressLint("RtlHardcoded")
     fun show(aAnchor: View, aEdit: Boolean = false, aShowCurrent: Boolean = true) {
         // Disable edit mode when showing our menu
         iAdapter.iEditModeEnabledObservable.onNext(aEdit)
         if (aEdit) {
-            iBinding.buttonEditSessions.setImageResource(R.drawable.ic_secured);
+            iBinding.buttonEditSessions.setImageResource(R.drawable.ic_secured)
         } else {
-            iBinding.buttonEditSessions.setImageResource(R.drawable.ic_edit);
+            iBinding.buttonEditSessions.setImageResource(R.drawable.ic_edit)
         }
 
         iAnchor = aAnchor
@@ -244,9 +209,6 @@ class SessionsPopupWindow : PopupWindow {
      *
      */
     fun updateSessions() {
-        //See: https://stackoverflow.com/q/43221847/3969362
-        // I'm guessing isComputingLayout is not needed anymore since we moved our update after tab manager initialization
-        // TODO: remove it and switch quickly between sessions to see if that still works
         if (!iBinding.recyclerViewSessions.isComputingLayout) {
             iAdapter.showSessions(iUiController.getTabModel().iSessions)
         }

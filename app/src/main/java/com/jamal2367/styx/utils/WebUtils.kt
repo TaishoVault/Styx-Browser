@@ -23,6 +23,7 @@ object WebUtils {
         WebStorage.getInstance().deleteAllData()
     }
 
+    @Suppress("DEPRECATION")
     fun clearHistory(
             context: Context,
             historyRepository: HistoryRepository,
@@ -55,10 +56,12 @@ object WebUtils {
     private fun deleteDir(dir: File?): Boolean {
         return if (dir != null && dir.isDirectory) {
             val children = dir.list()
-            for (i in children.indices) {
-                val success = deleteDir(File(dir, children[i]))
-                if (!success) {
-                    return false
+            if (children != null) {
+                for (i in children.indices) {
+                    val success = deleteDir(File(dir, children[i]))
+                    if (!success) {
+                        return false
+                    }
                 }
             }
             dir.delete()
@@ -68,4 +71,5 @@ object WebUtils {
             false
         }
     }
+
 }

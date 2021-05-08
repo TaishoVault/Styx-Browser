@@ -17,7 +17,9 @@ private class StringPreferenceDelegate(
 ) : ReadWriteProperty<Any, String> {
     override fun getValue(thisRef: Any, property: KProperty<*>): String {
         // Catching exception here as we transition from storing enum as int to storing them as string
-         return try { preferences.getString(name, defaultValue)?:"" } catch (e: Throwable) { defaultValue.toString() }
+         return try { preferences.getString(name, defaultValue)?:"" } catch (e: Throwable) {
+             defaultValue
+         }
     }
 
     override fun setValue(thisRef: Any, property: KProperty<*>, value: String) {

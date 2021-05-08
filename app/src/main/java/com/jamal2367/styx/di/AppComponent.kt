@@ -82,6 +82,8 @@ interface AppComponent {
 
     fun inject(adBlockSettingsFragment: AdBlockSettingsFragment)
 
+    fun inject(aboutSettingsFragment: AboutSettingsFragment)
+
     fun inject(bookmarksView: BookmarksDrawerView)
 
     fun inject(popupMenu: BrowserPopupMenu)

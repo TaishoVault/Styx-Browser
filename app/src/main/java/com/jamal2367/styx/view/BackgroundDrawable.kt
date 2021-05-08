@@ -12,28 +12,17 @@ import com.jamal2367.styx.utils.ThemeUtils
  * Create a new transition drawable with the specified list of layers. At least
  * 2 layers are required for this drawable to work properly.
  */
-class BackgroundDrawable : TransitionDrawable
+class BackgroundDrawable(
+    context: Context,
+    @AttrRes first: Int = R.attr.haloColor,
+    @AttrRes second: Int = R.attr.colorSurface
+) : TransitionDrawable(
+    arrayOf<Drawable>(
+        ColorDrawable(ThemeUtils.getColor(context, first)),
+        ColorDrawable(ThemeUtils.getColor(context, second))
+    )
+)
 {
-
-    constructor(
-            context: Context,
-            @AttrRes first: Int = R.attr.haloColor,
-            @AttrRes second: Int = R.attr.colorSurface
-    ) : super (
-            arrayOf<Drawable>(
-                    ColorDrawable(ThemeUtils.getColor(context, first)),
-                    ColorDrawable(ThemeUtils.getColor(context, second))
-            )
-    )
-
-    constructor(
-            aFirst: Drawable,
-            aSecond: Drawable
-    ) : super (
-            arrayOf<Drawable>(
-                    aFirst,
-                    aSecond)
-    )
 
     var isSelected: Boolean = false
 

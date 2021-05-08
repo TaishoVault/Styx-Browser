@@ -10,8 +10,8 @@ android {
         applicationId 'com.jamal2367.styx'
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 97
-        versionName '9.7.0'
+        versionCode 98
+        versionName '9.8.0'
         resConfigs 'en', 'ar', 'cs', 'de', 'el', 'es', 'fr', 'hu', 'it', 'iw', 'ja', 'ko', 'lt', 'nl', 'no', 'pl', 'pt', 'pt-rBR', 'ro', 'ru', 'sr', 'sv', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rTW'
         setProperty("archivesBaseName", 'Styx_v' + versionName)
     }
@@ -55,9 +55,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
     // Google Stuff //
-    implementation "com.google.android.material:material:1.4.0-alpha02"
+    implementation "com.google.android.material:material:1.4.0-beta01"
 
     // AndroidX Stuff //
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.palette:palette-ktx:1.0.0'
     implementation 'androidx.preference:preference-ktx:1.1.1'
     implementation 'androidx.webkit:webkit:1.4.0'
@@ -66,24 +67,12 @@ dependencies {
     implementation 'net.dankito.readability4j:readability4j:1.0.6'
 
     // File Reading //
-    implementation 'com.anthonycr.mezzanine:mezzanine:1.1.1'
-    kapt 'com.anthonycr.mezzanine:mezzanine-compiler:1.1.1'
+    implementation 'com.github.anthonycr:Mezzanine:1.1.1'
+    kapt 'com.github.anthonycr.mezzanine:mezzanine-compiler:1.1.1'
 
     // Dependencies Injection //
     implementation 'com.google.dagger:dagger:2.34.1'
     kapt 'com.google.dagger:dagger-compiler:2.34.1'
-
-    // Permissions //
-    implementation 'com.anthonycr.grant:permissions:1.1.2'
-    implementation 'com.anthonycr.progress:animated-progress:1.0'
-
-    // Proxy Support //
-    implementation 'net.i2p.android:client:0.9.49'
-    implementation 'net.i2p.android:helper:0.9.5'
-
-    // Tor Proxy //
-    implementation 'info.guardianproject.netcipher:netcipher:2.1.0'
-    implementation 'info.guardianproject.netcipher:netcipher-webkit:2.0.0-alpha1'
 
     // OkHttp3 //
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
@@ -108,9 +97,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 
     kotlinOptions {
         jvmTarget = '1.8'
-        kotlinOptions {
-            freeCompilerArgs += ['-XXLanguage:+InlineClasses']
-            freeCompilerArgs += ['-progressive']
-        }
+
     }
 }

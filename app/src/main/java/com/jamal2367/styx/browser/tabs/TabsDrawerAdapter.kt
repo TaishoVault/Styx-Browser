@@ -39,7 +39,7 @@ class TabsDrawerAdapter(
         updateViewHolderFavicon(holder, tab.favicon)
         updateViewHolderBackground(holder, tab.isForeground)
         // Update our copy so that we can check for changes then
-        holder.tab = tab.copy();
+        holder.tab = tab.copy()
     }
 
     private fun updateViewHolderFavicon(viewHolder: TabViewHolder, favicon: Bitmap?) {

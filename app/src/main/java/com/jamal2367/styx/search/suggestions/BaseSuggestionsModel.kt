@@ -56,8 +56,7 @@ abstract class BaseSuggestionsModel internal constructor(
 
                     return@fromCallable emptyList<SearchSuggestion>()
                 }
-                var choice = 5
-                choice = userPreferences.suggestionChoice.value + 3
+                val choice: Int = userPreferences.suggestionChoice.value + 3
                 return@fromCallable client.downloadSuggestionsForQuery(query, language)
                         ?.body
                     ?.safeUse(::parseResults)
@@ -88,7 +87,6 @@ abstract class BaseSuggestionsModel internal constructor(
 
         private const val TAG = "BaseSuggestionsModel"
 
-        private const val MAX_RESULTS = 5
         private const val DEFAULT_LANGUAGE = "en"
 
     }

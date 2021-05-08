@@ -1,6 +1,5 @@
 package com.jamal2367.styx.browser.sessions
 
-
 import android.os.Parcel
 import android.os.Parcelable
 
@@ -14,13 +13,7 @@ data class Session (
     var isCurrent: Boolean = false
 ) : Parcelable {
     constructor(parcel: Parcel) : this() {
-        val n = parcel.readString();
-        if (n == null) {
-            name = ""
-        }
-        else {
-            name = n
-        }
+        name = parcel.readString() ?: ""
         tabCount = parcel.readInt()
     }
 

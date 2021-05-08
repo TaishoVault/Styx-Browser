@@ -16,7 +16,6 @@ abstract class TabsAdapter(val uiController: UIController): RecyclerView.Adapter
 
     /**
      * Show tabs and compute diffs.
-     * TODO: Though I wonder how that works without copying the list which we had to do in our SessionsAdapter.
      */
     fun showTabs(tabs: List<TabViewState>) {
         val oldList = tabList

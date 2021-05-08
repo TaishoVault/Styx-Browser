@@ -3,6 +3,7 @@
  */
 package com.jamal2367.styx.settings.fragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.Gravity
@@ -147,6 +148,7 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
         }
     }
 
+    @SuppressLint("InflateParams")
     private fun showTextSizePicker(summaryUpdater: SummaryUpdater) {
         MaterialAlertDialogBuilder(activity as AppCompatActivity).apply {
             val layoutInflater = (activity as AppCompatActivity).layoutInflater
@@ -228,8 +230,7 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
         private const val X_SMALL = 10.0f
 
         // I guess those are percent
-        const val MAX_BROWSER_TEXT_SIZE = 200
-        const val DEFAULT_BROWSER_TEXT_SIZE = 100
+        const val MAX_BROWSER_TEXT_SIZE = 250
         const val MIN_BROWSER_TEXT_SIZE = 50
 
         private fun getTextSize(size: Int): Float {

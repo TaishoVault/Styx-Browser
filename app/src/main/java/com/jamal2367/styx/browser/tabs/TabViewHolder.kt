@@ -25,7 +25,6 @@ class TabViewHolder(
     val exitButton: View = view.findViewById(R.id.deleteAction)
     val iCardView: MaterialCardView = view.findViewById(R.id.tab_item_background)
     // Keep a copy of our tab data to be able to understand what was changed on update
-    // TODO: Is that how we should do things?
     var tab: TabViewState = TabViewState()
 
     init {

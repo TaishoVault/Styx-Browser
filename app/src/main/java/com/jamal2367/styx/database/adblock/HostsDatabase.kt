@@ -1,5 +1,6 @@
 package com.jamal2367.styx.database.adblock
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.ContentValues
 import android.database.Cursor
@@ -66,6 +67,7 @@ class HostsDatabase @Inject constructor(
         }
     }
 
+    @SuppressLint("Recycle")
     override fun containsHost(host: Host): Boolean {
         database.query(
             TABLE_HOSTS,
@@ -85,6 +87,7 @@ class HostsDatabase @Inject constructor(
 
     override fun hasHosts(): Boolean = DatabaseUtils.queryNumEntries(database, TABLE_HOSTS) > 0
 
+    @SuppressLint("Recycle")
     override fun allHosts(): Single<List<Host>> = Single.fromCallable {
         return@fromCallable database.query(
             TABLE_HOSTS,

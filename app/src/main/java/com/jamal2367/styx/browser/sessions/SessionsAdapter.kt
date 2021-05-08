@@ -4,7 +4,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jamal2367.styx.R
 import com.jamal2367.styx.controller.UIController
@@ -16,15 +15,13 @@ import java.util.*
 
 /**
  * Sessions [RecyclerView.Adapter].
- *
- * TODO: consider using [ListAdapter] instead of [RecyclerView.Adapter]
  */
 class SessionsAdapter(
         private val uiController: UIController
 ) : RecyclerView.Adapter<SessionViewHolder>(), ItemDragDropSwipeAdapter {
 
     // Current sessions shown in our dialog
-    private var iSessions: ArrayList<Session> = arrayListOf<Session>()
+    private var iSessions: ArrayList<Session> = arrayListOf()
     // Collection of disposable subscriptions observing edit mode changes
     private var iEditModeSubscriptions: CompositeDisposable = CompositeDisposable()
     // Here comes some most certainly overkill way to notify our view holders that our edit mode has changed
@@ -40,7 +37,6 @@ class SessionsAdapter(
         DiffUtil.calculateDiff(SessionsDiffCallback(iSessions, aSessions)).dispatchUpdatesTo(this)
         iSessions.clear()
         // Do a deep copy for our diff to work
-        // TODO: Surely there must be a way to manage a recycler view without doing a copy of our data set
         aSessions.forEach { s -> iSessions.add(Session(s.name,s.tabCount,s.isCurrent)) }
     }
 

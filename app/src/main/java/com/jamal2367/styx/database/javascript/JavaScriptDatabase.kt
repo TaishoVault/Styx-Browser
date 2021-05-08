@@ -1,5 +1,6 @@
 package com.jamal2367.styx.database.javascript
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.ContentValues
 import android.database.Cursor
@@ -76,10 +77,11 @@ class JavaScriptDatabase @Inject constructor(
         }
     }
 
-    override fun deleteJavaScriptEntry(url: String): Completable = Completable.fromAction {
-        database.delete(TABLE_JAVASCRIPT, "$KEY_NAME = ?", arrayOf(url))
+    override fun deleteJavaScriptEntry(name: String): Completable = Completable.fromAction {
+        database.delete(TABLE_JAVASCRIPT, "$KEY_NAME = ?", arrayOf(name))
     }
 
+    @SuppressLint("Recycle")
     override fun findJavaScriptEntriesContaining(query: String): Single<List<JavaScriptEntry>> =
             Single.fromCallable {
                 val search = "%$query%"
@@ -96,6 +98,7 @@ class JavaScriptDatabase @Inject constructor(
                 ).useMap { it.bindToJavaScriptEntry() }
             }
 
+    @SuppressLint("Recycle")
     override fun lastHundredVisitedJavaScriptEntries(): Single<List<JavaScriptEntry>> =
             Single.fromCallable {
                 database.query(
@@ -135,6 +138,7 @@ class JavaScriptDatabase @Inject constructor(
         database.insert(TABLE_JAVASCRIPT, null, item.toContentValues())
     }
 
+    @SuppressLint("Recycle")
     @WorkerThread
     fun getJavaScriptEntry(url: String): String? =
             database.query(
@@ -149,6 +153,7 @@ class JavaScriptDatabase @Inject constructor(
             ).firstOrNullMap { it.getString(0) }
 
 
+    @SuppressLint("Recycle")
     fun getAllJavaScriptEntries(): List<JavaScriptEntry> {
         return database.query(
                 TABLE_JAVASCRIPT,

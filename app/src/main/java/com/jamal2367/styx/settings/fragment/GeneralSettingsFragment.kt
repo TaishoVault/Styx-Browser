@@ -1,5 +1,6 @@
 package com.jamal2367.styx.settings.fragment
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.os.Environment
@@ -43,7 +44,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
 
     @Inject lateinit var searchEngineProvider: SearchEngineProvider
     @Inject lateinit var userPreferences: UserPreferences
-
     private lateinit var proxyChoices: Array<String>
 
     override fun providePreferencesXmlResource() = R.xml.preference_general
@@ -158,11 +158,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         )
     }
 
-    /**
-     * Shows the dialog which allows the user to choose the browser's text encoding.
-     *
-     * @param summaryUpdater the command which allows the summary to be updated.
-     */
     private fun showTextEncodingDialogPicker(summaryUpdater: SummaryUpdater) {
         activity?.let {
             MaterialAlertDialogBuilder(it).apply {
@@ -178,7 +173,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             }.resizeAndShow()
         }
     }
-
 
     private fun showSuggestionNumPicker(summaryUpdater: SummaryUpdater) {
         BrowserDialog.showCustomDialog(activity as AppCompatActivity) {
@@ -248,6 +242,7 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         summaryUpdater.updateSummary(sanitizedChoice.toSummary())
     }
 
+    @SuppressLint("InflateParams")
     private fun showManualProxyPicker(activity: AppCompatActivity, summaryUpdater: SummaryUpdater) {
         val v = activity.layoutInflater.inflate(R.layout.dialog_manual_proxy, null)
         val eProxyHost = v.findViewById<TextView>(R.id.proxyHost)
@@ -282,11 +277,7 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         }
     }
 
-
-    private fun userAgentSummary() =
-            choiceToUserAgent(userPreferences.userAgentChoice) + activity?.application?.let { ":\n" + userPreferences.userAgent(it) }
-
-
+    private fun userAgentSummary() = choiceToUserAgent(userPreferences.userAgentChoice) + activity?.application?.let { ":\n" + userPreferences.userAgent(it) }
 
     private fun choiceToUserAgent(index: Int) = when (index) {
         1 -> resources.getString(R.string.agent_default)
@@ -359,14 +350,12 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         }
     }
 
-
+    @SuppressLint("InflateParams")
     private fun showCustomDownloadLocationPicker(summaryUpdater: SummaryUpdater) {
         activity?.let { activity ->
             val dialogView = LayoutInflater.from(activity).inflate(R.layout.dialog_edit_text, null)
             val getDownload = dialogView.findViewById<EditText>(R.id.dialog_edit_text)
-
             val errorColor = ContextCompat.getColor(activity, R.color.red_500)
-
             val regularColor = ThemeUtils.getTextColor(activity)
             getDownload.setTextColor(regularColor)
             getDownload.addTextChangedListener(DownloadLocationTextWatcher(getDownload, errorColor, regularColor))
@@ -559,6 +548,7 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         summaryUpdater.updateSummary(choice.toSummary())
     }
 
+    @SuppressLint("InflateParams")
     private fun showManualJavaScriptPicker(activity: Activity, summaryUpdater: SummaryUpdater, choice: JavaScriptChoice) {
         val v = activity.layoutInflater.inflate(R.layout.site_block, null)
         val blockedSites = v.findViewById<TextView>(R.id.siteBlock)

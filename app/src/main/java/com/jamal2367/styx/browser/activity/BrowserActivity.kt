@@ -1,7 +1,3 @@
-/*
- * Copyright 2015 Anthony Restaino
- */
-
 package com.jamal2367.styx.browser.activity
 
 import android.animation.LayoutTransition
@@ -54,7 +50,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.anthonycr.grant.PermissionsManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -87,6 +82,7 @@ import com.jamal2367.styx.html.history.HistoryPageFactory
 import com.jamal2367.styx.html.homepage.HomePageFactory
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.notifications.IncognitoNotification
+import com.jamal2367.styx.permissions.PermissionsManager
 import com.jamal2367.styx.reading.ReadingActivity
 import com.jamal2367.styx.search.SearchEngineProvider
 import com.jamal2367.styx.search.SuggestionsAdapter
@@ -115,7 +111,7 @@ import kotlin.system.exitProcess
 abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIController, OnClickListener, OnKeyboardVisibilityListener {
 
     // Notifications
-    private lateinit var CHANNEL_ID: String
+    private lateinit var channelid: String
 
     // Current tab view being displayed
     private var currentTabView: View? = null
@@ -519,14 +515,14 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      */
     private fun createNotificationChannel() {
         // Is that string visible in system UI somehow?
-        CHANNEL_ID = "Styx Channel ID"
+        channelid = "Styx Channel ID"
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = getString(R.string.downloads)
             val descriptionText = getString(R.string.downloads_notification_description)
             val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+            val channel = NotificationChannel(channelid, name, importance).apply {
                 description = descriptionText
             }
             // Register the channel with the system
@@ -1176,7 +1172,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 extraBar.menu.removeItem(R.id.tabs)
                 iBinding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, getTabDrawer())
             }
-            extraBar.setOnNavigationItemSelectedListener { item ->
+            extraBar.setOnItemSelectedListener { item ->
                 when(item.itemId) {
                     R.id.tabs -> {
                         openTabs()
@@ -2196,7 +2192,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      */
     override fun onStart() {
         super.onStart()
-        proxyUtils.onStart(this)
+        proxyUtils.onStart()
     }
 
     /**

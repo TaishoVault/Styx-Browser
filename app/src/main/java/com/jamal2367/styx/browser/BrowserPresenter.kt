@@ -15,7 +15,6 @@ import com.jamal2367.styx.html.bookmark.BookmarkPageFactory
 import com.jamal2367.styx.html.homepage.HomePageFactory
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.preference.UserPreferences
-import com.jamal2367.styx.ssl.SslState
 import com.jamal2367.styx.utils.isSpecialUrl
 import com.jamal2367.styx.view.FreezableBundleInitializer
 import com.jamal2367.styx.view.StyxView
@@ -129,7 +128,6 @@ class BrowserPresenter(
         }  else {
 
             currentTab?.let {
-                // TODO: Restore this when Google fixes the bug where the WebView is
                 // blank after calling onPause followed by onResume.
                 // it.onPause();
                 it.isForeground = false

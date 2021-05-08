@@ -3,6 +3,7 @@
  */
 package com.jamal2367.styx.database.history
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.ContentValues
 import android.database.Cursor
@@ -86,6 +87,7 @@ class HistoryDatabase @Inject constructor(
         }
     }
 
+    @SuppressLint("Recycle")
     override fun findHistoryEntriesContaining(query: String): Single<List<HistoryEntry>> =
         Single.fromCallable {
             val search = "%$query%"
@@ -102,6 +104,7 @@ class HistoryDatabase @Inject constructor(
             ).useMap { it.bindToHistoryEntry() }
         }
 
+    @SuppressLint("Recycle")
     override fun lastHundredVisitedHistoryEntries(): Single<List<HistoryEntry>> =
         Single.fromCallable {
             database.query(
@@ -121,6 +124,7 @@ class HistoryDatabase @Inject constructor(
         database.insert(TABLE_HISTORY, null, item.toContentValues())
     }
 
+    @SuppressLint("Recycle")
     @WorkerThread
     fun getHistoryEntry(url: String): String? =
         database.query(
@@ -135,6 +139,7 @@ class HistoryDatabase @Inject constructor(
         ).firstOrNullMap { it.getString(0) }
 
 
+    @SuppressLint("Recycle")
     fun getAllHistoryEntries(): List<HistoryEntry> {
         return database.query(
             TABLE_HISTORY,

@@ -36,7 +36,7 @@ class BrowserApp : Application() {
 
     lateinit var applicationComponent: AppComponent
 
-    var justStarted: Boolean = true;
+    var justStarted: Boolean = true
 
     override fun onCreate() {
         // SL: Use this to debug when launched from another app for instance
@@ -138,15 +138,7 @@ class BrowserApp : Application() {
          * Used to get current activity context in order to access current theme.
          */
         fun currentContext() : Context {
-            val act = resumedActivity
-            if (act!=null)
-            {
-                return act
-            }
-            else
-            {
-                return instance.applicationContext
-            }
+            return resumedActivity ?: instance.applicationContext
         }
     }
 }

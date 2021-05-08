@@ -71,7 +71,6 @@ class TabsDrawerView @JvmOverloads constructor(
 
     /**
      * Enable tool bar buttons according to current state of things
-     * * TODO: Find a way to share that code with TabsDesktopView
      */
     private fun updateTabActionButtons() {
         // If more than one tab, enable close all tabs button

@@ -35,7 +35,6 @@ import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import net.i2p.android.ui.I2PAndroidHelper
 import okhttp3.*
 import java.io.File
 import java.util.concurrent.Executors
@@ -57,7 +56,6 @@ class AppModule {
 
     @Provides
     @UserPrefs
-    // Access default shared preferences to make sure preferences framework binding is working from XML
     fun provideUserPreferences(application: Application): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
 
     @Provides
@@ -167,10 +165,6 @@ class AppModule {
     } else {
         NoOpLogger()
     }
-
-    @Provides
-    @Singleton
-    fun provideI2PAndroidHelper(application: Application): I2PAndroidHelper = I2PAndroidHelper(application)
 
     @Provides
     fun providesListPageReader(): ListPageReader = MezzanineGenerator.ListPageReader()

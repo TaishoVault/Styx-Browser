@@ -1,5 +1,6 @@
 package com.jamal2367.styx.browser
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -52,6 +53,7 @@ class BrowserPopupMenu
         }
     }
 
+    @SuppressLint("RtlHardcoded")
     fun show(aAnchor: View) {
 
         (contentView.context as BrowserActivity).tabsManager.let {

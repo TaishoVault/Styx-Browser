@@ -44,8 +44,7 @@ class TabsManager @Inject constructor(
     val savedRecentTabsIndices = mutableSetOf<Int>()
 
     // Our persisted list of sessions
-    // TODO: Consider using a map instead of an array
-    var iSessions: ArrayList<Session> = arrayListOf<Session>()
+    var iSessions: ArrayList<Session> = arrayListOf()
     var iCurrentSessionName: String = ""
         set(value) {
             // Most unoptimized way to maintain our current item but that should do for now
@@ -69,12 +68,7 @@ class TabsManager @Inject constructor(
 
     init {
         addTabNumberChangedListener {
-            // Update current session tab count
-            //TODO: Have a getCurrentSession function
-            //TODO: during shutdown initiated by session switch we get stray events here not matching the proper session since it current session name was changed
-            //TODO: it's no big deal and does no harm at all but still not consistent, we may want to fix it at some point
-            //TODO: after shutdown our tab counts are fixed by [loadSessions]
-            var session=iSessions.filter { s -> s.name == iCurrentSessionName }
+            val session=iSessions.filter { s -> s.name == iCurrentSessionName }
             if (!session.isNullOrEmpty()) {
                 session[0].tabCount = it
             }
@@ -96,17 +90,14 @@ class TabsManager @Inject constructor(
 
     /**
      * Provide the session matching the given name
-     * TODO: have a better implementation
      */
     fun session(aName: String) : Session {
         if (iSessions.isNullOrEmpty()) {
-            // TODO: Return session with Default name
             return Session()
         }
 
         val list = iSessions.filter { s -> s.name == aName }
         if (list.isNullOrEmpty()) {
-            // TODO: Return session with Default name
             return Session()
         }
 
@@ -119,7 +110,7 @@ class TabsManager @Inject constructor(
      * Adds a listener to be notified when the number of tabs changes.
      */
     fun addTabNumberChangedListener(listener: ((Int) -> Unit)) {
-        tabNumberListeners += listener
+        tabNumberListeners = tabNumberListeners + listener
     }
 
     /**
@@ -245,18 +236,18 @@ class TabsManager @Inject constructor(
     /**
      * Returns an [Observable] that emits the [TabInitializer] for normal operation mode.
      */
-    private fun initializeRegularMode(initialUrl: String?, activity: AppCompatActivity): Observable<TabInitializer> =
-            restorePreviousTabs()
-                    .concatWith(Maybe.fromCallable<TabInitializer> {
-                        return@fromCallable initialUrl?.let {
-                            if (URLUtil.isFileUrl(it)) {
-                                PermissionInitializer(it, activity, homePageInitializer)
-                            } else {
-                                UrlInitializer(it)
-                            }
-                        }
-                    })
-                    .defaultIfEmpty(homePageInitializer)
+    private fun initializeRegularMode(initialUrl: String?, activity: AppCompatActivity): Observable<TabInitializer>? =
+        restorePreviousTabs()
+            ?.concatWith(Maybe.fromCallable {
+                return@fromCallable initialUrl?.let {
+                    if (URLUtil.isFileUrl(it)) {
+                        PermissionInitializer(it, activity, homePageInitializer)
+                    } else {
+                        UrlInitializer(it)
+                    }
+                }
+            })
+            ?.defaultIfEmpty(homePageInitializer)
 
     /**
      * Returns the URL for a search [Intent]. If the query is empty, then a null URL will be
@@ -276,7 +267,7 @@ class TabsManager @Inject constructor(
     /**
      * Load tabs from the given file
      */
-    private fun loadSession(aFilename: String): Observable<TabInitializer>
+    private fun loadSession(aFilename: String): Observable<TabInitializer>?
     {
         val bundle = FileUtils.readBundleFromStorage(application, aFilename)
 
@@ -287,13 +278,13 @@ class TabsManager @Inject constructor(
         }
 
         return readSavedStateFromDisk(bundle)
-                .map { tabModel ->
-                    return@map if (tabModel.url.isSpecialUrl()) {
-                        tabInitializerForSpecialUrl(tabModel.url)
-                    } else {
-                        FreezableBundleInitializer(tabModel)
-                    }
+            ?.map { tabModel ->
+                return@map if (tabModel.url.isSpecialUrl()) {
+                    tabInitializerForSpecialUrl(tabModel.url)
+                } else {
+                    FreezableBundleInitializer(tabModel)
                 }
+            }
     }
 
     /**
@@ -338,16 +329,16 @@ class TabsManager @Inject constructor(
      */
     fun isValidSessionName(aName: String): Boolean {
         // Empty strings are not valid names
-        if (aName.isNullOrBlank()) {
+        if (aName.isBlank()) {
             return false
         }
 
-        if (iSessions.isNullOrEmpty()) {
+        return if (iSessions.isNullOrEmpty()) {
             // Null or empty session list so that name is valid
-            return true
+            true
         } else {
             // That name is valid if not already in use
-            return iSessions.filter { s -> s.name == aName }.isNullOrEmpty()
+            iSessions.filter { s -> s.name == aName }.isNullOrEmpty()
         }
     }
 
@@ -358,12 +349,12 @@ class TabsManager @Inject constructor(
      * Returns an observable that emits the [TabInitializer] for each previously opened tab as
      * saved on disk. Can potentially be empty.
      */
-    private fun restorePreviousTabs(): Observable<TabInitializer>
+    private fun restorePreviousTabs(): Observable<TabInitializer>?
     {
         // First load our sessions
         loadSessions()
         // Check if we have a current session
-        return if (iCurrentSessionName.isNullOrBlank()) {
+        return if (iCurrentSessionName.isBlank()) {
             // No current session name meaning first load with version support
             // Add our default session
             iCurrentSessionName = application.getString(R.string.session_default)
@@ -371,7 +362,6 @@ class TabsManager @Inject constructor(
             iSessions.add(Session(iCurrentSessionName))
             // Than load legacy session file to make sure tabs from earlier version are preserved
             loadSession(FILENAME_SESSION_DEFAULT)
-            // TODO: delete legacy session file at some point
         } else {
             // Load current session then
             loadSession(fileNameFromSessionName(iCurrentSessionName))
@@ -564,7 +554,6 @@ class TabsManager @Inject constructor(
         // Save sessions info
         saveSessions()
         // Delete legacy session file if any, could not think of a better place to do that
-        // TODO: Just remove that a few version down the road I guess
         FileUtils.deleteBundleInStorage(application, FILENAME_SESSION_DEFAULT)
         // Save our session
         saveCurrentSession(fileNameFromSessionName(iCurrentSessionName))
@@ -614,7 +603,6 @@ class TabsManager @Inject constructor(
      */
     fun deleteSession(aSessionName: String) {
 
-        // TODO: handle case where we delete current session
         if (aSessionName == iCurrentSessionName) {
             // Can't do that for now
             return
@@ -655,7 +643,6 @@ class TabsManager @Inject constructor(
 
         // Somehow we lost that file again :)
         // That crazy bug we keep chasing after
-        // TODO: consider running recovery even when our session list was loaded
         if (iSessions.isNullOrEmpty()) {
             // Search for session files
             val files = application.filesDir?.let{it.listFiles { _, name -> name.startsWith(FILENAME_SESSION_PREFIX) }}
@@ -674,13 +661,13 @@ class TabsManager @Inject constructor(
      * on disk.
      * Can potentially be empty.
      */
-    private fun readSavedStateFromDisk(aBundle: Bundle?): Observable<TabModel> = Maybe
+    private fun readSavedStateFromDisk(aBundle: Bundle?): Observable<TabModelFromBundle>? = Maybe
             .fromCallable { aBundle }
             .flattenAsObservable { bundle ->
                 bundle.keySet()
                         .filter { it.startsWith(TAB_KEY_PREFIX) }
                         .mapNotNull { bundleKey ->
-                            bundle.getBundle(bundleKey)?.let { TabModelFromBundle(it) as TabModel }
+                            bundle.getBundle(bundleKey)?.let { TabModelFromBundle(it) }
                         }
             }
             .doOnNext { logger.log(TAG, "Restoring previous WebView state now") }

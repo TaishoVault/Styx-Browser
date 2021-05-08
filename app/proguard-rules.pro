@@ -85,3 +85,6 @@
 -dontwarn org.apache.http.HttpHost
 -dontwarn org.conscrypt.**
 -dontwarn javax.annotation.**
+-dontwarn javax.lang.model.util.**
+-dontwarn javax.tools.**
+-dontwarn java.lang.**

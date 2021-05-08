@@ -13,8 +13,6 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
-import com.anthonycr.grant.PermissionsManager
-import com.anthonycr.grant.PermissionsResultAction
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
 import com.jamal2367.styx.bookmark.LegacyBookmarkImporter
@@ -29,6 +27,8 @@ import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.extensions.snackbar
 import com.jamal2367.styx.log.Logger
+import com.jamal2367.styx.permissions.PermissionsManager
+import com.jamal2367.styx.permissions.PermissionsResultAction
 import com.jamal2367.styx.utils.Utils
 import io.reactivex.Scheduler
 import io.reactivex.Single
@@ -95,7 +95,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
             (activity as AppCompatActivity).snackbar(R.string.settings_reseted)
 
             val handler = Handler()
-            handler.postDelayed(Runnable {
+            handler.postDelayed({
                 (activity?.getSystemService(ACTIVITY_SERVICE) as ActivityManager)
                         .clearApplicationUserData()
             }, 500)
@@ -108,24 +108,24 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         alertDialog.show()
     }
 
+    @Suppress("DEPRECATION")
     private fun exportSettings() {
         PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(activity, REQUIRED_PERMISSIONS,
                 object : PermissionsResultAction() {
                     override fun onGranted() {
                         var bookmarksExport = File(
-                                Environment.getExternalStorageDirectory(),
+                            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                                 "StyxSettingsExport.txt")
                         var counter = 0
                         while (bookmarksExport.exists()) {
                             counter++
                             bookmarksExport = File(
-                                    Environment.getExternalStorageDirectory(),
+                                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                                     "StyxSettingsExport-$counter.txt")
                         }
                         val exportFile = bookmarksExport
-
                         val userPref = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
-                        val allEntries: Map<String, *> = userPref!!.getAll()
+                        val allEntries: Map<String, *> = userPref!!.all
                         var string = "{"
                         for (entry in allEntries.entries) {
                             string = string + '"' + entry.key + '"' + "=" + '"' + entry.value + '"' + ","
@@ -134,16 +134,15 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                         string = string.substring(0, string.length - 1) + "}"
 
                         try {
-                            val datfile = exportFile
                             val fileIs = resources.getString(R.string.settings_exported)
-                            (activity as AppCompatActivity).snackbar("$fileIs $datfile")
-                            val fOut = FileOutputStream(datfile)
+                            (activity as AppCompatActivity).snackbar("$fileIs $exportFile")
+                            val fOut = FileOutputStream(exportFile)
                             val myOutWriter = OutputStreamWriter(fOut)
                             myOutWriter.append(string)
                             myOutWriter.close()
                             fOut.close()
                         } catch (e: IOException) {
-                            Log.e("Exception", "File write failed: " + e.toString())
+                            Log.e("Exception", "File write failed: $e")
                         }
                     }
 
@@ -213,7 +212,6 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                     }
 
                     override fun onDenied(permission: String) {
-                        //TODO Show message
                     }
                 })
     }
@@ -226,7 +224,6 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                     }
 
                     override fun onDenied(permission: String) {
-                        //TODO Show message
                     }
                 })
     }
@@ -254,6 +251,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         }
     }
 
+    @Suppress("DEPRECATION")
     private fun loadFileList(path: File?): Array<File> {
         val file: File = path ?: File(Environment.getExternalStorageDirectory().toString())
 
@@ -289,6 +287,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         }
     }
 
+    @Suppress("DEPRECATION", "NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     private fun showImportSettingsDialog(path: File?) {
         val builder = MaterialAlertDialogBuilder(activity as AppCompatActivity)
 
@@ -306,14 +305,12 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                         .map {
                             val reader = BufferedReader(it.reader())
                             val content = StringBuilder()
-                            try {
+                            reader.use {
                                 var line = reader.readLine()
                                 while (line != null) {
                                     content.append(line)
                                     line = reader.readLine()
                                 }
-                            } finally {
-                                reader.close()
                             }
 
                             val answer = JSONObject(content.toString())
@@ -326,7 +323,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                                     if(value.matches("-?\\d+".toRegex())){
                                         putInt(key, value.toInt())
                                     }
-                                    else if(value.equals("true") || value.equals("false")){
+                                    else if(value == "true" || value == "false"){
                                         putBoolean(key, value.toBoolean())
                                     }
                                     else{
@@ -360,6 +357,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         builder.resizeAndShow()
     }
 
+    @Suppress("DEPRECATION")
     private fun showImportBookmarkDialog(path: File?) {
         val builder = MaterialAlertDialogBuilder(activity as AppCompatActivity)
 

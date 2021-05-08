@@ -22,13 +22,6 @@ class WebViewEx : WebView {
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
-
-        /*
-        if (event?.keyCode == KeyEvent.KEYCODE_TAB) {
-            Log.v("WebViewEx","Tab: " + event.action.toString())
-        }
-        */
-
         return super.dispatchKeyEvent(event)
     }
 

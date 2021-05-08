@@ -39,7 +39,7 @@ class TabsDesktopView @JvmOverloads constructor(
 
         val layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
 
-        tabsAdapter = TabsDesktopAdapter(context.resources, uiController)
+        tabsAdapter = TabsDesktopAdapter(uiController)
 
         tabList = findViewById<RecyclerView>(R.id.tabs_list).apply {
             setLayerType(View.LAYER_TYPE_NONE, null)
@@ -51,14 +51,17 @@ class TabsDesktopView @JvmOverloads constructor(
         }
 
         // Enable drag & drop but not swipe
-        val callback: ItemTouchHelper.Callback = ItemDragDropSwipeHelper(tabsAdapter, true, false, ItemTouchHelper.END or ItemTouchHelper.START)
+        val callback: ItemTouchHelper.Callback = ItemDragDropSwipeHelper(tabsAdapter,
+            aLongPressDragEnabled = true,
+            aSwipeEnabled = false,
+            aDragFlags = ItemTouchHelper.END or ItemTouchHelper.START
+        )
         iItemTouchHelper = ItemTouchHelper(callback)
         iItemTouchHelper?.attachToRecyclerView(iBinding.tabsList)
     }
 
     /**
      * Enable tool bar buttons according to current state of things
-     * * TODO: Find a way to share that code with TabsDrawerView
      */
     private fun updateTabActionButtons() {
         // If we have at least one tab in our closed tabs list enable restore page button

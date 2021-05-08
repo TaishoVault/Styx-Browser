@@ -1,5 +1,6 @@
 package com.jamal2367.styx.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
@@ -22,6 +23,7 @@ class SearchView @JvmOverloads constructor(
     private var isBeingClicked: Boolean = false
     private var timePressedNs: Long = 0
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {

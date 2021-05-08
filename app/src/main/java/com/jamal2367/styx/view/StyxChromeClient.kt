@@ -1,6 +1,7 @@
 package com.jamal2367.styx.view
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -11,8 +12,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
-import com.anthonycr.grant.PermissionsManager
-import com.anthonycr.grant.PermissionsResultAction
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
 import com.jamal2367.styx.controller.UIController
@@ -22,6 +21,8 @@ import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.favicon.FaviconModel
+import com.jamal2367.styx.permissions.PermissionsManager
+import com.jamal2367.styx.permissions.PermissionsResultAction
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.view.webrtc.WebRtcPermissionsModel
 import com.jamal2367.styx.view.webrtc.WebRtcPermissionsView
@@ -131,7 +132,7 @@ class StyxChromeClient(
                 object : PermissionsResultAction() {
                     override fun onGranted() = onGrant(true)
 
-                    override fun onDenied(permission: String?) = onGrant(false)
+                    override fun onDenied(permission: String) = onGrant(false)
                 }
             )
         }
@@ -189,7 +190,7 @@ class StyxChromeClient(
                 }.resizeAndShow()
             }
 
-            override fun onDenied(permission: String) =//TODO show message and/or turn off setting
+            override fun onDenied(permission: String) =
                 Unit
         })
 
@@ -236,6 +237,7 @@ class StyxChromeClient(
      * @return A view that should be used to display the state
      * of a video's loading progress.
      */
+    @SuppressLint("InflateParams")
     override fun getVideoLoadingProgressView(): View =
         LayoutInflater.from(activity).inflate(R.layout.video_loading_progress, null)
 

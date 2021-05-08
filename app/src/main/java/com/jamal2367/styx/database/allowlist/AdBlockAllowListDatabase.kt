@@ -1,5 +1,6 @@
 package com.jamal2367.styx.database.allowlist
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.ContentValues
 import android.database.Cursor
@@ -50,6 +51,7 @@ class AdBlockAllowListDatabase @Inject constructor(
         timeCreated = getLong(2)
     )
 
+    @SuppressLint("Recycle")
     override fun allAllowListItems(): Single<List<AllowListEntry>> = Single.fromCallable {
         database.query(
             TABLE_WHITELIST,
@@ -62,6 +64,7 @@ class AdBlockAllowListDatabase @Inject constructor(
         ).useMap { it.bindToAllowListItem() }
     }
 
+    @SuppressLint("Recycle")
     override fun allowListItemForUrl(url: String): Maybe<AllowListEntry> = Maybe.fromCallable {
         database.query(
             TABLE_WHITELIST,
