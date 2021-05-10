@@ -2,6 +2,7 @@ package com.jamal2367.styx.settings.fragment
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.text.Editable
@@ -71,7 +72,7 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             preference = SETTINGS_DOWNLOAD,
             summary = userPreferences.downloadDirectory,
             onClick = ::showDownloadLocationDialog
-        )
+        ).isVisible = Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q
 
         clickableDynamicPreference(
             preference = SETTINGS_HOME,
