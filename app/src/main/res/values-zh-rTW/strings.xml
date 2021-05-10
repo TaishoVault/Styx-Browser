@@ -191,7 +191,7 @@
     <string name="shortcut_message_failed_to_add">很抱歉，您的啟動器不支援捷徑功能。</string>
     <string name="size">文字大小</string>
     <string name="ssl_info_expires_on">到期</string>
-    <string name="ssl_info_issued_by">由…發出</string>
+    <string name="ssl_info_issued_by">由...發出</string>
     <string name="ssl_info_issued_on">發布</string>
     <string name="ssl_info_issued_to">發出給</string>
     <string name="ssl_warning_dont_ask_again">不要再詢問此瀏覽階段。</string>

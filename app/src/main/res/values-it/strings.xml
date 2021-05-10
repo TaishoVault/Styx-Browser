@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="app_name">Styx</string>
+    <string name="accent_amber">Anbra</string>
+    <string name="accent_blue">Blu</string>
+    <string name="accent_color">Colore d\'accento</string>
+    <string name="accent_cyan">Ciano</string>
+    <string name="accent_deep_orange">Arancione scuro</string>
+    <string name="accent_deep_purple">Viola scuro</string>
+    <string name="accent_default">Default (Rosso)</string>
+    <string name="accent_green">Verde</string>
+    <string name="accent_indigo">Indaco</string>
+    <string name="accent_light_blue">Azzurro</string>
+    <string name="accent_light_green">Verde chiaro</string>
+    <string name="accent_lime">Lime</string>
+    <string name="accent_orange">Arancione</string>
+    <string name="accent_pink">Rosa</string>
+    <string name="accent_purple">Viola</string>
+    <string name="accent_teal">Verde acqua</string>
+    <string name="accent_yellow">Giallo</string>
+    <string name="accent_brown">Marrone</string>
     <string name="action_add_bookmark">Aggiungi segnalibro</string>
     <string name="action_add_to_homescreen">Aggiungi a schermata Home</string>
     <string name="action_allow">Consenti</string>
@@ -173,6 +191,8 @@
     <string name="incognito_cookies_pie">La modalità incognito esegue un processo separato che è resettato dopo ogni sessione. Le preferenze dei cookie in incognito sono ora controllate dalle preferente dei cookie normali.</string>
     <string name="incognito_cookies">Abilita i cookie nella modalità incognito</string>
     <string name="inspect">Inietta Javascript</string>
+    <string name="install_i2p">Installa I2P per usare il Proxy.</string>
+    <string name="install_orbot">Installa Orbot per usare il Proxy.</string>
     <string name="install_userscript_description">Vuoi installare questo UserScript?</string>
     <string name="install_userscript">Installa UserScript</string>
     <string name="invalid_character_removed">Carattere invalido rimosso!</string>

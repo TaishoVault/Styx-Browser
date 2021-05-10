@@ -55,6 +55,7 @@
     <string name="action_save_session">Zapisz sesję jako</string>
     <string name="action_sessions">Sesje</string>
     <string name="action_share">Udostępnij</string>
+    <string name="action_show_homepage">Strona główna</string>
     <string name="action_webpage">Własny adres</string>
     <string name="action_yes">Tak</string>
     <string name="ad_block_load_failure">Nie udało się załadować hostów ze źródła blokującego reklamy.</string>
@@ -63,8 +64,10 @@
     <string name="agent_custom">Własny identyfikator</string>
     <string name="agent_default">Domyślne</string>
     <string name="agent_desktop">Przeglądarka desktopowa</string>
+    <string name="agent_ios_mobile">iOS (Mobilne)</string>
     <string name="agent_linux_desktop">Linux (Komputer)</string>
     <string name="agent_macos_desktop">macOS (Komputer)</string>
+    <string name="agent_system">Systemowe</string>
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Windows (Komputer)</string>
     <string name="agent">Przedstawiaj się jako</string>
@@ -73,6 +76,7 @@
     <string name="android_open_source_project">Projekt Android Open Source</string>
     <string name="apache">Licencja Apache 2.0</string>
     <string name="black_theme">Czarny motyw (AMOLED)</string>
+    <string name="block_ad_refresh_hosts">Odśwież plik hosts…</string>
     <string name="block_ad_refresh_now">Odśwież teraz hosty</string>
     <string name="block_ad_remote_refresh_frequency_description">Plik zdalnego hosta</string>
     <string name="block_ad_source">Źródło pliku hosta</string>
@@ -91,6 +95,7 @@
     <string name="bookmark_settings">Zakładki</string>
     <string name="cache">Wyczyść pamięć podręczną po zamknięciu</string>
     <string name="cannot_download">Pliki mogą być pobierane tylko z linków zaczynających się od \"http\" lub \"https\".</string>
+    <string name="clean_settings">Usunie to wszystkie dane przechowywane przez Styx na Twoim urządzeniu! Aplikacja zostanie zamknięta po potwierdzeniu.</string>
     <string name="clear_cache">Wyczyść pamięć podręczną</string>
     <string name="clear_cookies_exit">Wyczyść ciasteczka po zamknięciu</string>
     <string name="clear_cookies">Wyczyść ciasteczka</string>
@@ -106,6 +111,7 @@
     <string name="cookies">Włącz ciasteczka</string>
     <string name="dark_mode">Ciemny motyw</string>
     <string name="dark_theme">Ciemny motyw</string>
+    <string name="default_theme">Zgodnie z systemem</string>
     <string name="delete_all_bookmarks">Usunąć wszystkie zakładki?</string>
     <string name="developer">Programista</string>
     <string name="dialog_adblock_disable_for_site">Wyłącz blokowanie reklam dla tej witryny</string>
@@ -118,6 +124,7 @@
     <string name="dialog_download">Czy chcesz pobrać ten plik? (%1$s)</string>
     <string name="dialog_edit_bookmark">Edytuj zakładkę</string>
     <string name="dialog_history">Czy chciałbyś wyczyścić całą historię przeglądarki?</string>
+    <string name="dialog_message_third_party_app">Czy chcesz uruchomić aplikację powiązaną z tą witryną?</string>
     <string name="dialog_open_background_tab">Otwórz w nowej karcie w tle</string>
     <string name="dialog_open_incognito_tab">Otwórz w nowej karcie prywatnej</string>
     <string name="dialog_open_new_tab">Otwórz w nowej karcie</string>
@@ -154,12 +161,15 @@
     <string name="folder_custom">Własna lokalizacja</string>
     <string name="folder_default">Domyślne</string>
     <string name="folder">Nazwa folderu</string>
+    <string name="force_zoom_summary">Nie działa, gdy JavaScript jest wyłączony</string>
+    <string name="force_zoom">Wymuś powiększenie dla witryn</string>
     <string name="four">Cztery (4)</string>
     <string name="hint_password">Hasło</string>
     <string name="hint_title">Tytuł</string>
     <string name="hint_url">URL</string>
     <string name="hint_username">Nazwa użytkownika</string>
     <string name="home">Strona domowa</string>
+    <string name="homepage_in_new_tab">Strona główna w nowej karcie</string>
     <string name="host">Gospodarz:</string>
     <string name="http_proxy">Konfiguracja serwera proxy</string>
     <string name="i2p_not_running">I2P nie jest uruchomiony.</string>
@@ -168,13 +178,17 @@
     <string name="image_url">Ustaw obraz tła strony startowej</string>
     <string name="import_backup">Importuj zakładki</string>
     <string name="import_bookmark_error">Nie udało się zaimportować zakładek z</string>
+    <string name="import_export_settings">Import i eksport</string>
+    <string name="import_settings_error">Błąd importowania ustawień z pliku</string>
     <string name="import_settings">Zaimportuj ustawienia z pliku</string>
     <string name="incognito_cookies">Włącz ciasteczka w trybie Incognito</string>
     <string name="inspect">Włącz JavaScript</string>
+    <string name="install_userscript">Zainstaluj UserScript</string>
     <string name="invert_color">Odwróć kolory</string>
     <string name="java">Włącz Javascript</string>
     <string name="jsoup">jsoup: parser HTML HTML</string>
     <string name="label_realm">Wiadomość serwera: %s</string>
+    <string name="library_netcipher">NetCipher</string>
     <string name="license_gnu">Mniejsza ogólna licencja publiczna GNU</string>
     <string name="licenses">Licencje Open Source</string>
     <string name="light_theme">Jasny motyw</string>
@@ -203,11 +217,14 @@
     <string name="message_permission_request">%1$s \n \n chciałby użyć: \n \n %2$s</string>
     <string name="message_web_storage_cleared">Dane i ustawienia witryn zostały wyczyszczone</string>
     <string name="mit_license">Licencja MIT</string>
+    <string name="mpl_license">Mozilla Public License v2.0</string>
     <string name="name_grayscale">Odcienie szarości</string>
     <string name="name_increase_contrast">Zwiększ kontrast</string>
     <string name="name_inverted_grayscale">Odwrócone odcienie szarości</string>
     <string name="name_inverted">Odwrócony</string>
     <string name="name_normal">Normalny</string>
+    <string name="name">Jamal2367</string>
+    <string name="no_tts">Język nie jest wspierany</string>
     <string name="no">Nie</string>
     <string name="none">Żaden</string>
     <string name="notification_incognito_running_description">Powiadomienie o trybie prywatnym</string>
@@ -219,6 +236,7 @@
     <string name="powered_by_duck">Oparte o DuckDuckGo</string>
     <string name="powered_by_google">Dostarczane przez Google</string>
     <string name="powered_by_naver">Naver</string>
+    <string name="pref_app_version_summary">Wersja:</string>
     <string name="problem_download">Nie można pobrać - nieprawidłowy URL</string>
     <string name="problem_location_download">Nie można pobrać pliku do wskazanej lokalizacji</string>
     <string name="reading_mode_image_caption">Obraz z podpisem</string>

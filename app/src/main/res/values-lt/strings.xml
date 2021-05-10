@@ -118,7 +118,7 @@
     <string name="license_gnu">GNU Mažosios bendrosios visuomenės licencija</string>
     <string name="licenses">Atvirojo kodo licencijos</string>
     <string name="light_theme">Šviesos tema</string>
-    <string name="loading">Įkeliama …</string>
+    <string name="loading">Įkeliama ...</string>
     <string name="location">Prieiga prie vietovės</string>
     <string name="manual_proxy">Rankinis tarpinis serveris</string>
     <string name="message_added_to_homescreen">Spartusis klavišas pridėtas prie pagrindinio ekrano</string>
