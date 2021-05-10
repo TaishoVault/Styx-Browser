@@ -28,12 +28,12 @@ class WebViewEx : WebView {
     /**
      * Start a print job, thus notably enabling saving a web page as PDF.
      */
-    fun print() : PrintJob {
+    fun print() : PrintJob? {
         val printManager: PrintManager = context.getSystemService(Context.PRINT_SERVICE) as PrintManager
-        val printAdapter: PrintDocumentAdapter = createPrintDocumentAdapter(title)
+        val printAdapter: PrintDocumentAdapter? = title?.let { createPrintDocumentAdapter(it) }
         val jobName = title
         val builder: PrintAttributes.Builder = PrintAttributes.Builder()
         builder.setMediaSize(PrintAttributes.MediaSize.ISO_A4)
-        return printManager.print(jobName, printAdapter, builder.build())
+        return jobName?.let { printManager.print(it, printAdapter!!, builder.build()) }
     }
 }

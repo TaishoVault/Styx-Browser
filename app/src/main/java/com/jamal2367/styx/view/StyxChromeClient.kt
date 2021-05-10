@@ -108,7 +108,7 @@ class StyxChromeClient(
         }
         uiController.tabChanged(styxView)
         if (view != null && view.url != null) {
-            uiController.updateHistory(title, view.url)
+            uiController.updateHistory(title, view.url!!)
         }
 
     }

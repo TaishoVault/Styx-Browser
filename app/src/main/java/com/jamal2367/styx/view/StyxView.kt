@@ -254,9 +254,9 @@ class StyxView(
         get() {
             return if (iHideActualUrl || webView == null || webView!!.url.isNullOrBlank() || webView!!.url.isSpecialUrl()) {
                 iTargetUrl.toString()
-            } else  {
+            } else {
                 webView!!.url
-            }
+            }!!
         }
 
     /**
@@ -1101,6 +1101,7 @@ class StyxView(
      * reference to the WebView and therefore will not
      * leak it if the WebView is garbage collected.
      */
+    @Suppress("DEPRECATION")
     private class WebViewHandler(view: StyxView) : Handler() {
 
         private val reference: WeakReference<StyxView> = WeakReference(view)

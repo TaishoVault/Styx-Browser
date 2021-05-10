@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.app.Dialog
 import android.content.DialogInterface
+import android.os.Build
 import android.text.format.Formatter
 import android.view.View
 import android.webkit.DownloadListener
@@ -42,6 +43,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
 
     override fun onDownloadStart(url: String, userAgent: String,
                                  contentDisposition: String, mimetype: String, contentLength: Long) {
+        if (Build.VERSION.SDK_INT <= 29) {
         PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(mActivity, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE),
                 object : PermissionsResultAction() {
                     override fun onGranted() {
@@ -84,6 +86,41 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                         //
                     }
                 })
+        } else {
+            val fileName = guessFileName(contentDisposition, null, url, mimetype)
+            val downloadSize: String = if (contentLength > 0) {
+                Formatter.formatFileSize(mActivity, contentLength)
+            } else {
+                mActivity.getString(R.string.unknown_size)
+            }
+            val checkBoxView = View.inflate(mActivity, R.layout.download_dialog, null)
+            val checkBox = checkBoxView.findViewById<View>(R.id.checkbox) as CheckBox
+            checkBox.setOnCheckedChangeListener { _, isChecked -> userPreferences!!.showDownloadConfirmation = !isChecked }
+            checkBox.text = mActivity.resources.getString(R.string.dont_ask_again)
+            val dialogClickListener = DialogInterface.OnClickListener { _: DialogInterface?, which: Int ->
+                when (which) {
+                    DialogInterface.BUTTON_POSITIVE ->
+                        downloadHandler?.legacyDownloadStart(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype, downloadSize)
+                    DialogInterface.BUTTON_NEGATIVE -> {
+                    }
+                }
+            }
+            if (userPreferences!!.showDownloadConfirmation) {
+                val builder = MaterialAlertDialogBuilder(mActivity) // dialog
+                val message = mActivity.getString(R.string.dialog_download, downloadSize)
+                val dialog: Dialog = builder.setTitle(fileName)
+                    .setMessage(message)
+                    .setView(checkBoxView)
+                    .setPositiveButton(mActivity.resources.getString(R.string.action_download),
+                        dialogClickListener)
+                    .setNegativeButton(mActivity.resources.getString(R.string.action_cancel),
+                        dialogClickListener).show()
+                setDialogSize(mActivity, dialog)
+                logger!!.log(TAG, "Downloading: $fileName")
+            } else {
+                downloadHandler!!.legacyDownloadStart(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype, downloadSize)
+            }
+        }
     }
 
     companion object {

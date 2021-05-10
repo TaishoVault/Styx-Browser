@@ -363,11 +363,8 @@ class StyxDialogBuilder @Inject constructor(
         },
         DialogItem(title = R.string.dialog_download_image) {
             val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(
-                MimeTypeMap.getFileExtensionFromUrl(
-                            imageUrl
-                        ).lowercase(Locale.ROOT)
+                MimeTypeMap.getFileExtensionFromUrl(imageUrl).lowercase(Locale.ROOT)
             )
-
             if (mimeType != null) {
                 downloadHandler.legacyDownloadStart(activity, userPreferences, imageUrl, userAgent, "attachment", mimeType, "")
             } else {

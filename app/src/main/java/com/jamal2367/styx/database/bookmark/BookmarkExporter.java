@@ -157,7 +157,7 @@ public final class BookmarkExporter {
      * @return a non null empty file that can be used
      * to export bookmarks to.
      */
-    public static File createNewExportFile() {
+    public static File createNewBookmarksExportFile() {
         File bookmarksExport = new File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                 "StyxBookmarksExport.txt");
@@ -170,6 +170,21 @@ public final class BookmarkExporter {
         }
 
         return bookmarksExport;
+    }
+
+    public static File createNewSettingsExportFile() {
+        File settingsExport = new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                "StyxSettingsExport.txt");
+        int counter = 0;
+        while (settingsExport.exists()) {
+            counter++;
+            settingsExport = new File(
+                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                    "StyxSettingsExport-" + counter + ".txt");
+        }
+
+        return settingsExport;
     }
 
 }

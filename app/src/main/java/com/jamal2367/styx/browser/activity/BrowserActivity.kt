@@ -18,10 +18,7 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
 import android.media.MediaPlayer
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
-import android.os.Handler
-import android.os.Message
+import android.os.*
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
@@ -341,6 +338,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      * Used for both tabs and bookmarks.
      */
+    @Suppress("DEPRECATION")
     private fun createBottomSheetDialog(aContentView: View) : BottomSheetDialog {
         val dialog = BottomSheetDialog(this)
 
@@ -381,6 +379,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      *
      */
+    @Suppress("DEPRECATION")
     private fun createTabsDialog()
     {
         tabsDialog.dismiss() // Defensive
@@ -424,6 +423,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      *
      */
+    @Suppress("DEPRECATION")
     private fun createBookmarksDialog()
     {
         bookmarksDialog.dismiss() // Defensive
@@ -1558,9 +1558,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             R.id.menuItemAddToHome -> {
                 if (currentView != null) {
-                    HistoryEntry(currentView.url, currentView.title).also {
-                        Utils.createShortcut(this, it, currentView.favicon ?: webPageBitmap!!)
-                        logger.log(TAG, "Creating shortcut: ${it.title} ${it.url}")
+                    currentView.url?.let { it ->
+                        HistoryEntry(it, currentView.title).also {
+                            Utils.createShortcut(this, it, currentView.favicon ?: webPageBitmap!!)
+                            logger.log(TAG, "Creating shortcut: ${it.title} ${it.url}")
+                        }
                     }
                 }
                 return true
@@ -2989,6 +2991,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      *
      */
+    @Suppress("DEPRECATION")
     private val fullScreenFlags = (SYSTEM_UI_FLAG_LAYOUT_STABLE
             or SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
             or SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -3022,6 +3025,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      * @param enabled   true to enable full-screen, false otherwise
      * @param immersive true to enable immersive mode, false otherwise
      */
+    @Suppress("DEPRECATION")
     private fun setFullscreen(enabled: Boolean, immersive: Boolean) {
         hideStatusBar = enabled
         isImmersiveMode = immersive
@@ -3115,7 +3119,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             currentTab.loadBookmarkPage()
         }
         if (currentTab != null) {
-            bookmarksView?.handleUpdatedUrl(currentTab.url)
+            currentTab.url?.let { bookmarksView?.handleUpdatedUrl(it) }
         }
         suggestionsAdapter?.refreshBookmarks()
     }
