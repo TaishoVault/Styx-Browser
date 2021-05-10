@@ -237,6 +237,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
     /**
      * Show the page tools dialog.
      */
+    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "DEPRECATION")
     fun showPageToolsDialog(context: Context, userPreferences: UserPreferences) {
         val currentTab = getTabsManager().currentTab ?: return
         val isAllowedAds = allowListModel.isUrlAllowedAds(currentTab.url)

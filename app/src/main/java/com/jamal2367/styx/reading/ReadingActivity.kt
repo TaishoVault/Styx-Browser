@@ -130,6 +130,7 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         return super.onCreateOptionsMenu(menu)
     }
 
+    @Suppress("DEPRECATION")
     @SuppressLint("StaticFieldLeak")
     private inner class LoadData : AsyncTask<Void?, Void?, Void?>() {
         var extractedContentHtml: String? = null
@@ -184,6 +185,7 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         }
     }
 
+    @Suppress("DEPRECATION")
     protected fun makeLinkClickable(strBuilder: SpannableStringBuilder, span: URLSpan?) {
         val start: Int = strBuilder.getSpanStart(span)
         val end: Int = strBuilder.getSpanEnd(span)
@@ -211,6 +213,7 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         text.movementMethod = LinkMovementMethod.getInstance()
     }
 
+    @Suppress("DEPRECATION")
     @Throws(IOException::class)
     private fun loadPage(intent: Intent?): Boolean {
         if (intent == null) {

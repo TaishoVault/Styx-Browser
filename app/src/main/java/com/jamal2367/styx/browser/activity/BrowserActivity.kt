@@ -1557,12 +1557,10 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 return true
             }
             R.id.menuItemAddToHome -> {
-                if (currentView != null) {
-                    currentView.url?.let { it ->
-                        HistoryEntry(it, currentView.title).also {
-                            Utils.createShortcut(this, it, currentView.favicon ?: webPageBitmap!!)
-                            logger.log(TAG, "Creating shortcut: ${it.title} ${it.url}")
-                        }
+                currentView?.url?.let { it ->
+                    HistoryEntry(it, currentView.title).also {
+                        Utils.createShortcut(this, it, currentView.favicon ?: webPageBitmap!!)
+                        logger.log(TAG, "Creating shortcut: ${it.title} ${it.url}")
                     }
                 }
                 return true
@@ -3118,9 +3116,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         if (currentTab != null && currentTab.url.isBookmarkUrl()) {
             currentTab.loadBookmarkPage()
         }
-        if (currentTab != null) {
-            currentTab.url?.let { bookmarksView?.handleUpdatedUrl(it) }
-        }
+        currentTab?.url?.let { bookmarksView?.handleUpdatedUrl(it) }
         suggestionsAdapter?.refreshBookmarks()
     }
 

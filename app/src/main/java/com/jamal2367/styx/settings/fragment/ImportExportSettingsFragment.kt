@@ -90,6 +90,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         importSubscription?.dispose()
     }
 
+    @Suppress("DEPRECATION")
     private fun clearSettings() {
         val builder = MaterialAlertDialogBuilder(activity as Activity)
         builder.setTitle(getString(R.string.action_delete))

@@ -15,6 +15,7 @@ object DeviceUtils {
      *
      * @param context the context used to access the [WindowManager].
      */
+    @Suppress("DEPRECATION")
     @JvmStatic
     fun getScreenWidth(context: Context): Int {
         val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
@@ -29,6 +30,7 @@ object DeviceUtils {
      *
      * @param context the context used to access the [WindowManager].
      */
+    @Suppress("DEPRECATION")
     @JvmStatic
     fun getAvailableScreenWidth(context: Context): Int {
         val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager

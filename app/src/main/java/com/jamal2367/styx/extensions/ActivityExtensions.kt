@@ -74,6 +74,7 @@ fun Activity.makeSnackbar(message: String, aDuration: Int, aGravity: Int): Snack
 /**
  *
  */
+@Suppress("DEPRECATION")
 fun Window.setStatusBarIconsColor(dark: Boolean)
 {
         if (dark) {

@@ -27,6 +27,7 @@ class CodeView : AppCompatMultiAutoCompleteTextView {
     private var modified = true
     private var hasErrors = false
     private var mRemoveErrorsWhenTextChanged = false
+    @Suppress("DEPRECATION")
     private val mUpdateHandler = Handler()
     private var mAutoCompleteTokenizer: Tokenizer? = null
     private val displayDensity = resources.displayMetrics.density
