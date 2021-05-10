@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.jamal2367.styx.reading
 
 import android.annotation.SuppressLint

@@ -73,8 +73,7 @@ class IntentUtils(private val mActivity: AppCompatActivity) {
      */
     private fun isSpecializedHandlerAvailable(intent: Intent): Boolean {
         val pm = mActivity.packageManager
-        val handlers = pm.queryIntentActivities(intent,
-                PackageManager.GET_RESOLVED_FILTER)
+        val handlers = pm.queryIntentActivities(intent, PackageManager.GET_RESOLVED_FILTER)
         if (handlers.isEmpty()) {
             return false
         }
