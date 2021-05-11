@@ -60,7 +60,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                         val dialogClickListener = DialogInterface.OnClickListener { _: DialogInterface?, which: Int ->
                             when (which) {
                                 DialogInterface.BUTTON_POSITIVE ->
-                                    downloadHandler?.legacyDownloadStart(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype, downloadSize)
+                                    downloadHandler?.onDownloadStartNoStream(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype)
                                 DialogInterface.BUTTON_NEGATIVE -> {
                                 }
                             }
@@ -78,7 +78,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                             setDialogSize(mActivity, dialog)
                             logger!!.log(TAG, "Downloading: $fileName")
                         } else {
-                            downloadHandler!!.legacyDownloadStart(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype, downloadSize)
+                            downloadHandler!!.onDownloadStartNoStream(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype)
                         }
                     }
 
@@ -100,7 +100,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
             val dialogClickListener = DialogInterface.OnClickListener { _: DialogInterface?, which: Int ->
                 when (which) {
                     DialogInterface.BUTTON_POSITIVE ->
-                        downloadHandler?.legacyDownloadStart(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype, downloadSize)
+                        downloadHandler?.onDownloadStartNoStream(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype)
                     DialogInterface.BUTTON_NEGATIVE -> {
                     }
                 }
@@ -118,7 +118,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                 setDialogSize(mActivity, dialog)
                 logger!!.log(TAG, "Downloading: $fileName")
             } else {
-                downloadHandler!!.legacyDownloadStart(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype, downloadSize)
+                downloadHandler!!.onDownloadStartNoStream(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype)
             }
         }
     }

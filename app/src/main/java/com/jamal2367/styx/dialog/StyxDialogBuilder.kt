@@ -366,9 +366,9 @@ class StyxDialogBuilder @Inject constructor(
                 MimeTypeMap.getFileExtensionFromUrl(imageUrl).lowercase(Locale.ROOT)
             )
             if (mimeType != null) {
-                downloadHandler.legacyDownloadStart(activity, userPreferences, imageUrl, userAgent, "attachment", mimeType, "")
+                downloadHandler.onDownloadStartNoStream(activity, userPreferences, imageUrl, userAgent, "attachment", mimeType)
             } else {
-                downloadHandler.legacyDownloadStart(activity, userPreferences, imageUrl, userAgent, "attachment", "image/png", "")
+                downloadHandler.onDownloadStartNoStream(activity, userPreferences, imageUrl, userAgent, "attachment", "image/png")
             }
         })
 
