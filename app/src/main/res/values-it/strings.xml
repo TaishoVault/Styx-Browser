@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="app_name">Styx</string>
-    <string name="accent_amber">Anbra</string>
+    <string name="accent_amber">Ambra</string>
     <string name="accent_blue">Blu</string>
     <string name="accent_color">Colore d\'accento</string>
     <string name="accent_cyan">Ciano</string>
