@@ -295,7 +295,7 @@
     <string name="reopening_recent_tab">Alten Tab geöffnet</string>
     <string name="reset_settings">Einstellungen zurücksetzen</string>
     <string name="restore_tabs_on_startup">Tab beim Start wiederherstellen</string>
-    <string name="save_data">\'Save-Data\' anfragen</string>
+    <string name="save_data">\'Daten sparen\' anfragen</string>
     <string name="scripts_store">UserScript Store</string>
     <string name="scripts">UserScripts</string>
     <string name="search_engine_ask">Ask</string>
