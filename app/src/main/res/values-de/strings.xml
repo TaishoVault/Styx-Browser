@@ -239,6 +239,7 @@
     <string name="new_tab_position_end">Am Ende der Tabliste</string>
     <string name="new_tab_position_start">Am Start der Tabliste</string>
     <string name="new_tab_position">Neue Tabposition</string>
+    <string name="nine">9</string>
     <string name="no_tts">Sprache wird nicht unterstützt</string>
     <string name="no">Nein</string>
     <string name="none">Kein (Standard)</string>
@@ -379,6 +380,7 @@
     <string name="swap_bookmarks_and_tabs">Lesezeichen und Tab-Drawer tauschen</string>
     <string name="tabs_in_drawer">Desktop Tab-Drawer</string>
     <string name="tabs">Tabs</string>
+    <string name="ten">10</string>
     <string name="text_encoding">Text Enkodierung</string>
     <string name="theme">App-Design</string>
     <string name="third_party">Drittanbieter Cookies blockieren</string>
@@ -403,6 +405,7 @@
     <string name="translator">Übersetzen</string>
     <string name="tts_initilization_failed">Initilisierung fehlgeschlagen</string>
     <string name="tts">Seite lesen</string>
+    <string name="two">2</string>
     <string name="unknown_size">Unbekannte Größe</string>
     <string name="unknown">Unbekannt</string>
     <string name="unlisted_javascript">JavaScript für diese Webseiten blockieren</string>

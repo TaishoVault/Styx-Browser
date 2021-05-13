@@ -239,6 +239,7 @@
     <string name="new_tab_position_end">В конце списка вкладок</string>
     <string name="new_tab_position_start">В начале списка вкладок</string>
     <string name="new_tab_position">Положение новой вкладки</string>
+    <string name="nine">9</string>
     <string name="no_tts">Язык не поддерживается</string>
     <string name="no">Нет</string>
     <string name="none">Ничего</string>
@@ -379,6 +380,7 @@
     <string name="swap_bookmarks_and_tabs">Поменять местами закладки и меню вкладок</string>
     <string name="tabs_in_drawer">Показывать вкладки в панели навигации</string>
     <string name="tabs">Вкладки</string>
+    <string name="ten">10</string>
     <string name="text_encoding">Кодировка текста</string>
     <string name="theme">Тема приложения</string>
     <string name="third_party">Блокировать cookie со сторонних сайтов</string>
@@ -403,6 +405,7 @@
     <string name="translator">Перевод</string>
     <string name="tts_initilization_failed">Сбой инициализации</string>
     <string name="tts">Читать страницу</string>
+    <string name="two">2</string>
     <string name="unknown_size">Неизвестный размер</string>
     <string name="unknown">Неизвестно</string>
     <string name="unlisted_javascript">Блокировать JavaScript для сайтов из списка</string>

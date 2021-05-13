@@ -237,6 +237,7 @@
     <string name="new_tab_position_end">Fim da lista de abas</string>
     <string name="new_tab_position_start">Início da lista de abas</string>
     <string name="new_tab_position">Posição da nova aba</string>
+    <string name="nine">9</string>
     <string name="no_tts">Idioma não suportado</string>
     <string name="no">Não</string>
     <string name="none">Não bloquear</string>
@@ -320,9 +321,11 @@
     <string name="settings_general">Configurações gerais</string>
     <string name="settings_privacy">Configurações de privacidade</string>
     <string name="settings">Configurações</string>
+    <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Desculpe, seu launcher não suporta atalhos.</string>
     <string name="show_second_bar">Mostrar barra de navegação secundária</string>
     <string name="show_ssl">Mostrar diálogos de alerta de SSL</string>
+    <string name="six">6</string>
     <string name="size">Tamanho do texto</string>
     <string name="ssl_info_expires_on">Expira em</string>
     <string name="ssl_info_issued_by">Emitido por</string>
@@ -335,9 +338,11 @@
     <string name="swap_bookmarks_and_tabs">Inverter os menus de abas e favoritos</string>
     <string name="tabs_in_drawer">Mostrar abas no menu de navegação</string>
     <string name="tabs">Abas</string>
+    <string name="ten">10</string>
     <string name="text_encoding">Codificação de texto</string>
     <string name="theme">Tema do aplicativo</string>
     <string name="third_party">Bloquear cookies de terceiros</string>
+    <string name="three">3</string>
     <string name="title_chooser">Escolha um arquivo</string>
     <string name="title_clear_cookies">Limpar cookies</string>
     <string name="title_clear_history">Limpar histórico</string>
@@ -355,6 +360,7 @@
     <string name="title_user_agent">Agente de utilizador</string>
     <string name="title_warning">Aviso</string>
     <string name="tts">Ler página</string>
+    <string name="two">2</string>
     <string name="unknown_size">Tamanho desconhecido</string>
     <string name="unknown">Desconhecido</string>
     <string name="unlisted_javascript">Bloquear JavaScript nos sites listados</string>

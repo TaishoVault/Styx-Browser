@@ -239,6 +239,7 @@
     <string name="new_tab_position_end">نهاية قائمة علامات التبويب</string>
     <string name="new_tab_position_start">بدء قائمة التبويب</string>
     <string name="new_tab_position">موضع علامة التبويب الجديدة</string>
+    <string name="nine">٩</string>
     <string name="no_tts">اللغة غير مدعومة</string>
     <string name="no">لا</string>
     <string name="none">لا يوجد</string>
@@ -379,6 +380,7 @@
     <string name="swap_bookmarks_and_tabs">تبديل درج الإشارات المرجعية وعلامات التبويب</string>
     <string name="tabs_in_drawer">إظهار علامات التبويب في قائمة التنقل</string>
     <string name="tabs">تبويبات</string>
+    <string name="ten">١٠</string>
     <string name="text_encoding">ترميز النص</string>
     <string name="theme">ثيم التطبيق</string>
     <string name="third_party">حظر ملفات تعريف ارتباط الخاصة بطرف ثالث</string>
@@ -403,6 +405,7 @@
     <string name="translator">ترجمة</string>
     <string name="tts_initilization_failed">فشل البدء</string>
     <string name="tts">قراءة الصفحة</string>
+    <string name="two">٢</string>
     <string name="unknown_size">حجم غير معروف</string>
     <string name="unknown">غير معروف</string>
     <string name="unlisted_javascript">حظر جافا سكريبت للمواقع المدرجة</string>

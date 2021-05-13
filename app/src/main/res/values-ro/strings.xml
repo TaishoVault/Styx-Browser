@@ -239,6 +239,7 @@
     <string name="new_tab_position_end">Sfârșitul listei de file</string>
     <string name="new_tab_position_start">Începutul listei de file</string>
     <string name="new_tab_position">Poziția filei noi</string>
+    <string name="nine">9</string>
     <string name="no_tts">Limba nu este suportată</string>
     <string name="no">Nr</string>
     <string name="none">Niciunul</string>
@@ -379,6 +380,7 @@
     <string name="swap_bookmarks_and_tabs">Schimbați marcajul și sertarul de file</string>
     <string name="tabs_in_drawer">Arată filele în sertarul de navigare</string>
     <string name="tabs">File</string>
+    <string name="ten">10</string>
     <string name="text_encoding">Codare text</string>
     <string name="theme">Tema aplicației</string>
     <string name="third_party">Blochează cookie-urile terțe</string>
@@ -403,6 +405,7 @@
     <string name="translator">Traducere</string>
     <string name="tts_initilization_failed">Inițializare eșuată</string>
     <string name="tts">Citește pagina</string>
+    <string name="two">2</string>
     <string name="unknown_size">Dimensiune necunoscută</string>
     <string name="unknown">Necunoscut</string>
     <string name="unlisted_javascript">Blochează JavaScript pentru site-urile listate</string>

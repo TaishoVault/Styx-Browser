@@ -239,6 +239,7 @@
     <string name="new_tab_position_end">Fine lista tab</string>
     <string name="new_tab_position_start">Inizio lista tab</string>
     <string name="new_tab_position">Nuova posizione tab</string>
+    <string name="nine">9</string>
     <string name="no_tts">La lingua non è supportata</string>
     <string name="no">No</string>
     <string name="none">Nessuno</string>
@@ -364,7 +365,7 @@
     <string name="show_second_bar">Mosta barra di navigazione secondaria</string>
     <string name="show_ssl">Mostra finestre avviso SSL</string>
     <string name="site_cookies">Cookie del sito</string>
-    <string name="six">Sei (6)</string>
+    <string name="six">6</string>
     <string name="size">Dimensione dei caratteri</string>
     <string name="ssl_info_expires_on">Scade il:</string>
     <string name="ssl_info_issued_by">Emesso da:</string>
@@ -379,6 +380,7 @@
     <string name="swap_bookmarks_and_tabs">Scambia drawer tab e segnalibri</string>
     <string name="tabs_in_drawer">Mostra tab nel drawer di navigazione</string>
     <string name="tabs">Schede</string>
+    <string name="ten">10</string>
     <string name="text_encoding">Codifica del testo</string>
     <string name="theme">Tema app</string>
     <string name="third_party">Blocca cookies di terze parti</string>
@@ -403,6 +405,7 @@
     <string name="translator">Traduci</string>
     <string name="tts_initilization_failed">Inizializzazione fallita</string>
     <string name="tts">Leggi pagina</string>
+    <string name="two">2</string>
     <string name="unknown_size">Dimensione sconosciuta</string>
     <string name="unknown">Sconosciuto</string>
     <string name="unlisted_javascript">Blocca JavaScript per i siti indicati</string>
