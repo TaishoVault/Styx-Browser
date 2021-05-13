@@ -56,7 +56,7 @@ abstract class BaseSuggestionsModel internal constructor(
 
                     return@fromCallable emptyList<SearchSuggestion>()
                 }
-                val choice: Int = userPreferences.suggestionChoice.value + 3
+                val choice: Int = userPreferences.suggestionChoice.value + 2
                 return@fromCallable client.downloadSuggestionsForQuery(query, language)
                         ?.body
                     ?.safeUse(::parseResults)

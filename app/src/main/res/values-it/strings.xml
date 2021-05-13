@@ -150,7 +150,7 @@
     <string name="downloads_notification_description">Attivato in seguito al completamento del download</string>
     <string name="downloads">Downloads</string>
     <string name="edit_cookies">Mostra i cookie del sito</string>
-    <string name="eight">Otto (8)</string>
+    <string name="eight">8</string>
     <string name="error_reload">Ricarica</string>
     <string name="error_tip">• Controlla l\'indirizzo per errori di scrittura come ww.example.com invece di www.example.com</string>
     <string name="error_tip2">• Se le pagine non si caricano controlla i la connessione dati o Wi-Fi del cellulare.</string>
@@ -160,13 +160,13 @@
     <string name="example_text">Testo di esempio</string>
     <string name="export_bookmarks">Esporta i segnalibri in un backup</string>
     <string name="export_settings">Esporta backup impostazioni</string>
-    <string name="five">Cinque (5)</string>
+    <string name="five">5</string>
     <string name="folder_custom">Personalizzato</string>
     <string name="folder_default">Predefinito</string>
     <string name="folder">Nome cartella</string>
     <string name="force_zoom_summary">Non funziona se JavaScript non è abilitato</string>
     <string name="force_zoom">Zoom forzato per i siti</string>
-    <string name="four">Quattro (4)</string>
+    <string name="four">4</string>
     <string name="hint_password">Password</string>
     <string name="hint_title">Titolo</string>
     <string name="hint_url">URL</string>
@@ -359,7 +359,7 @@
     <string name="settings_title_desktop_mode_default">Modalità desktop</string>
     <string name="settings_title_toolbars_bottom">Toolbar in basso</string>
     <string name="settings">Impostazioni</string>
-    <string name="seven">Sette (7)</string>
+    <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Scusa, il tuo launcher non supporta gli shortcut.</string>
     <string name="show_second_bar">Mosta barra di navigazione secondaria</string>
     <string name="show_ssl">Mostra finestre avviso SSL</string>
@@ -382,7 +382,7 @@
     <string name="text_encoding">Codifica del testo</string>
     <string name="theme">Tema app</string>
     <string name="third_party">Blocca cookies di terze parti</string>
-    <string name="three">Tre (3)</string>
+    <string name="three">3</string>
     <string name="title_chooser">Scegli un file</string>
     <string name="title_clear_cookies">Cancella i cookie</string>
     <string name="title_clear_history">Cancella la cronologia</string>

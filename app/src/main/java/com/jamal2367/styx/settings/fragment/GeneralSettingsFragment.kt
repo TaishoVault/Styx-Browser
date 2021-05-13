@@ -181,12 +181,15 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             val stringArray = resources.getStringArray(R.array.suggestion_name_array)
             val values = SuggestionNumChoice.values().map {
                 Pair(it, when (it) {
-                    SuggestionNumChoice.THREE -> stringArray[0]
-                    SuggestionNumChoice.FOUR -> stringArray[1]
-                    SuggestionNumChoice.FIVE -> stringArray[2]
-                    SuggestionNumChoice.SIX -> stringArray[3]
-                    SuggestionNumChoice.SEVEN -> stringArray[4]
-                    SuggestionNumChoice.EIGHT -> stringArray[5]
+                    SuggestionNumChoice.TWO -> stringArray[0]
+                    SuggestionNumChoice.THREE -> stringArray[1]
+                    SuggestionNumChoice.FOUR -> stringArray[2]
+                    SuggestionNumChoice.FIVE -> stringArray[3]
+                    SuggestionNumChoice.SIX -> stringArray[4]
+                    SuggestionNumChoice.SEVEN -> stringArray[5]
+                    SuggestionNumChoice.EIGHT -> stringArray[6]
+                    SuggestionNumChoice.NINE -> stringArray[7]
+                    SuggestionNumChoice.TEN -> stringArray[8]
                 })
             }
             withSingleChoiceItems(values, userPreferences.suggestionChoice) {

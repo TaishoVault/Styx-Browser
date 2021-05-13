@@ -150,7 +150,7 @@
     <string name="downloads_notification_description">Disparado ao concluir o download</string>
     <string name="downloads">Downloads</string>
     <string name="edit_cookies">Exibir cookies do site</string>
-    <string name="eight">Oito (8)</string>
+    <string name="eight">8</string>
     <string name="error_reload">Recarregar</string>
     <string name="error_tip">• Verifique se existem erros de digitação no endereço, como ww.exemplo.com ao invés de www.exemplo.com</string>
     <string name="error_tip2">• Caso não consiga carregar nenhuma página, verifique o armazenamento do seu dispositivo ou a conexão Wi-Fi.</string>
@@ -160,13 +160,13 @@
     <string name="example_text">Texto de exemplo</string>
     <string name="export_bookmarks">Exportar favoritos para backup</string>
     <string name="export_settings">Exportar backup de configurações</string>
-    <string name="five">Cinco (5)</string>
+    <string name="five">5</string>
     <string name="folder_custom">Personalizado</string>
     <string name="folder_default">Padrão</string>
     <string name="folder">Nome da pasta</string>
     <string name="force_zoom_summary">Não funciona se o JavaScript não estiver habilitado</string>
     <string name="force_zoom">Forçar zoom para sites</string>
-    <string name="four">Quatro (4)</string>
+    <string name="four">4</string>
     <string name="hint_password">Senha</string>
     <string name="hint_title">Título</string>
     <string name="hint_url">Endereço</string>

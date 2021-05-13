@@ -150,7 +150,7 @@
     <string name="downloads_notification_description">Triggers upon download completion</string>
     <string name="downloads">Downloads</string>
     <string name="edit_cookies">Wyświetl pliki cookie witryny</string>
-    <string name="eight">Osiem (8)</string>
+    <string name="eight">8</string>
     <string name="error_reload">Przeładować</string>
     <string name="error_tip">• Sprawdź adres witryny pod kątem błędów, takich jak ww.strona.pl zamiast www.strona.pl</string>
     <string name="error_tip2">• Jeśli nie możesz wczytać żadnej strony, sprawdź połączenie z siecią Wi-Fi lub dane komórkowe.</string>
@@ -160,13 +160,13 @@
     <string name="example_text">Przykładowy tekst</string>
     <string name="export_bookmarks">Eksportuj zakładki</string>
     <string name="export_settings">Wyeksportuj ustawienia do pliku</string>
-    <string name="five">Pięć (5)</string>
+    <string name="five">5</string>
     <string name="folder_custom">Własna lokalizacja</string>
     <string name="folder_default">Domyślne</string>
     <string name="folder">Nazwa folderu</string>
     <string name="force_zoom_summary">Nie działa, gdy JavaScript jest wyłączony</string>
     <string name="force_zoom">Wymuś powiększenie dla witryn</string>
-    <string name="four">Cztery (4)</string>
+    <string name="four">4</string>
     <string name="hint_password">Hasło</string>
     <string name="hint_title">Tytuł</string>
     <string name="hint_url">URL</string>
@@ -359,7 +359,7 @@
     <string name="settings_title_desktop_mode_default">Desktop mode</string>
     <string name="settings_title_toolbars_bottom">Przybornik na dole</string>
     <string name="settings">Ustawienia</string>
-    <string name="seven">Siedem (7)</string>
+    <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Twój launcher nie obsługuje skrótów.</string>
     <string name="show_second_bar">Pokaż dodatkowy pasek nawigacji</string>
     <string name="show_ssl">Pokaż dialogi ostrzegawcze SSL</string>
@@ -382,7 +382,7 @@
     <string name="text_encoding">Kodowanie tekstu</string>
     <string name="theme">Wygląd aplikacji</string>
     <string name="third_party">Blokuj ciasteczka z innych witryn</string>
-    <string name="three">Trzy (3)</string>
+    <string name="three">3</string>
     <string name="title_chooser">Wybierz plik</string>
     <string name="title_clear_cookies">Wyczyść ciasteczka</string>
     <string name="title_clear_history">Wyczyść historię</string>

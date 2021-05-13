@@ -6,10 +6,13 @@ import com.jamal2367.styx.preference.IntEnum
  * The available Suggestion number choices.
  */
 enum class SuggestionNumChoice(override val value: Int) : IntEnum {
-    THREE(0),
-    FOUR(1),
-    FIVE(2),
-    SIX(3),
-    SEVEN(4),
-    EIGHT(5)
+    TWO(0),
+    THREE(1),
+    FOUR(2),
+    FIVE(3),
+    SIX(4),
+    SEVEN(5),
+    EIGHT(6),
+    NINE(7),
+    TEN(8)
 }

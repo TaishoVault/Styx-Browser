@@ -154,7 +154,7 @@ class SuggestionsAdapter(
 
     private fun getBookmarksForQuery(query: String): Single<List<Bookmark.Entry>> =
             Single.fromCallable {
-                val choice: Int = userPreferences.suggestionChoice.value + 3
+                val choice: Int = userPreferences.suggestionChoice.value + 2
 
             (allBookmarks.filter {
                 it.title.lowercase(Locale.getDefault()).startsWith(query)
@@ -209,7 +209,7 @@ class SuggestionsAdapter(
                 }
         }
             .map { (bookmarks, history, searches) ->
-                val choice: Int = userPreferences.suggestionChoice.value + 3
+                val choice: Int = userPreferences.suggestionChoice.value + 2
                 val bookmarkCount = choice - 2.coerceAtMost(history.size) - 1.coerceAtMost(searches.size)
                 val historyCount = choice - bookmarkCount.coerceAtMost(bookmarks.size) - 1.coerceAtMost(searches.size)
                 val searchCount = choice - bookmarkCount.coerceAtMost(bookmarks.size) - historyCount.coerceAtMost(history.size)
