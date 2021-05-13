@@ -333,7 +333,6 @@
     <string name="settings_adblock">Настройки блокировки рекламы</string>
     <string name="settings_admalwareblocker">Блокировка рекламы и вредоносных ресурсов</string>
     <string name="settings_advanced">Дополнительно</string>
-    <string name="settings_app_prefix">app_for_</string>
     <string name="settings_black_status_bar">Тёмная строка состояния</string>
     <string name="settings_display">Настройки отображения</string>
     <string name="settings_export_failure">К сожалению, настройки не могут быть экспортированы!</string>

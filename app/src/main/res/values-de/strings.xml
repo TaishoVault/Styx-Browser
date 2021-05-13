@@ -333,7 +333,6 @@
     <string name="settings_adblock">Werbeblocker</string>
     <string name="settings_admalwareblocker">Werbe &amp; Malwareblocker</string>
     <string name="settings_advanced">Erweitert</string>
-    <string name="settings_app_prefix">app_for_</string>
     <string name="settings_black_status_bar">Schwarze Statusleiste</string>
     <string name="settings_display">Darstellung</string>
     <string name="settings_export_failure">Einstellungen konnten nicht exportiert werden</string>

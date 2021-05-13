@@ -333,7 +333,6 @@
     <string name="settings_adblock">广告屏蔽设置</string>
     <string name="settings_admalwareblocker">广告 &amp; 恶意软件拦截器</string>
     <string name="settings_advanced">高级设置</string>
-    <string name="settings_app_prefix">app_for_</string>
     <string name="settings_black_status_bar">黑色状态栏</string>
     <string name="settings_display">显示设置</string>
     <string name="settings_export_failure">对不起，设置无法导出！</string>

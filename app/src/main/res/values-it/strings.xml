@@ -333,7 +333,6 @@
     <string name="settings_adblock">Impostazioni del blocco annunci</string>
     <string name="settings_admalwareblocker">Blocco Ad &amp; Malware</string>
     <string name="settings_advanced">Avanzate</string>
-    <string name="settings_app_prefix">app_for_</string>
     <string name="settings_black_status_bar">Barra status nera</string>
     <string name="settings_display">Visualizzazione</string>
     <string name="settings_export_failure">Scusa, le impostazioni non possono essere esportate!</string>

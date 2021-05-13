@@ -333,7 +333,6 @@
     <string name="settings_adblock">إعدادات حجب المحتوى</string>
     <string name="settings_admalwareblocker">منع الإعلانات &amp; البرمجيات الخبيثة</string>
     <string name="settings_advanced">الإعدادات المتقدمة</string>
-    <string name="settings_app_prefix">تطبيق_لـ_</string>
     <string name="settings_black_status_bar">شريط الحالة الأسود</string>
     <string name="settings_display">اعدادات العرض</string>
     <string name="settings_export_failure">عذراً، لا يمكن تصدير الإعدادات!</string>

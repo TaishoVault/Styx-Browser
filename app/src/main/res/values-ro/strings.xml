@@ -333,7 +333,6 @@
     <string name="settings_adblock">Setări bloc de conținut</string>
     <string name="settings_admalwareblocker">Reclame &amp; Blocare Malware</string>
     <string name="settings_advanced">Setări avansate</string>
-    <string name="settings_app_prefix">app_for_</string>
     <string name="settings_black_status_bar">Bară de stare neagră</string>
     <string name="settings_display">Setări de afișare</string>
     <string name="settings_export_failure">Ne pare rău, setările nu au putut fi exportate!</string>
