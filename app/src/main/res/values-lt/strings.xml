@@ -84,10 +84,6 @@
     <string name="dialog_title_share">Dalinkis šiuo puslapiu</string>
     <string name="dialog_tools_title">Puslapio įrankiai</string>
     <string name="do_not_track">Prašyti \'Nestebėti \'</string>
-    <string name="download_no_sdcard_dlg_msg">Norint atsisiųsti failą, reikia „USB“ atminties.</string>
-    <string name="download_no_sdcard_dlg_title">Nėra SD kortelės</string>
-    <string name="download_sdcard_busy_dlg_msg">Saugykla užimta. Norėdami leisti atsisiuntimus, paspauskite „Išjungti USB laikmeną“ pranešimų skiltyje.</string>
-    <string name="download_sdcard_busy_dlg_title">„USB“ atmintinė neprieinama arba nepasiekiama</string>
     <string name="download">Atsisiuntimo vietą</string>
     <string name="error_reload">Perkrauti iš naujo</string>
     <string name="export_bookmarks">Eksportuoti žymes į atsarginę kopiją</string>
@@ -102,8 +98,6 @@
     <string name="home">Pradinis puslapis</string>
     <string name="host">Pagrindinis kompiuteris:</string>
     <string name="http_proxy">„HTTP proxy“</string>
-    <string name="i2p_not_running">I2P neveikia.</string>
-    <string name="i2p_tunnels_not_ready">„I2P“ tuneliai dar nėra paruošti.</string>
     <string name="image_url">Nustatyti pagrindinio puslapio fono nuotrauką</string>
     <string name="import_backup">Importuokite žymes iš atsarginės kopijos</string>
     <string name="import_bookmark_error">Nepavyko importuoti žymių iš failo</string>

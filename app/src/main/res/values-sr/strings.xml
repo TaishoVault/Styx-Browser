@@ -84,10 +84,6 @@
     <string name="dialog_title_share">Подели ову страницу</string>
     <string name="dialog_tools_title">Алати за странице</string>
     <string name="do_not_track">Захтевај „Не прати ме“</string>
-    <string name="download_no_sdcard_dlg_msg">УСБ складиште је потребно за преузимање фајла.</string>
-    <string name="download_no_sdcard_dlg_title">Нема СД картице</string>
-    <string name="download_sdcard_busy_dlg_msg">Складиште је заузето. Да дозволите преузимања, додирните „Искључи УСБ складиште“ у обавештењу.</string>
-    <string name="download_sdcard_busy_dlg_title">УСБ складиште није доступно</string>
     <string name="download">Фасцикла преузимања</string>
     <string name="error_reload">Освежи</string>
     <string name="export_bookmarks">Извези обележиваче у резерву</string>
@@ -101,8 +97,6 @@
     <string name="home">Почетна страница</string>
     <string name="host">Домаћин:</string>
     <string name="http_proxy">ХТТП прокси</string>
-    <string name="i2p_not_running">I2P није покренут.</string>
-    <string name="i2p_tunnels_not_ready">I2P тунели још нису спремни.</string>
     <string name="import_backup">Увези обележиваче из резерве</string>
     <string name="import_bookmark_error">Не могу да увезем обележиваче из фајла</string>
     <string name="incognito_cookies">Омогући колачиће у приватном режиму</string>

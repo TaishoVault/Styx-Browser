@@ -87,11 +87,7 @@
     <string name="dialog_tools_title">Outils de page</string>
     <string name="do_not_track">Demander de \'Ne pas pister\'</string>
     <string name="dont_ask_again">Ne plus demander</string>
-    <string name="download_no_sdcard_dlg_msg">Le stockage USB est nécessaire pour télécharger le fichier.</string>
-    <string name="download_no_sdcard_dlg_title">Aucune carte SD</string>
     <string name="download_pending">Démarrage du téléchargement\u2026</string>
-    <string name="download_sdcard_busy_dlg_msg">Le stockage est occupé. Pour autoriser les téléchargements, appuyez sur Désactiver le stockage USB dans la notification.</string>
-    <string name="download_sdcard_busy_dlg_title">Stockage USB indisponible</string>
     <string name="download">Téléchargement</string>
     <string name="error_reload">Recharger</string>
     <string name="error_title">Miettes alors ! &lt;br&gt; Impossible de charger la page.</string>
@@ -107,8 +103,6 @@
     <string name="home">Page d\'accueil</string>
     <string name="host">Host :</string>
     <string name="http_proxy">Proxy HTTP</string>
-    <string name="i2p_not_running">I2P n\'est pas exécution.</string>
-    <string name="i2p_tunnels_not_ready">Les tunnels I2P ne sont pas encore prêts.</string>
     <string name="image_url">Définir une image de fond pour la page d’accueil</string>
     <string name="import_backup">Importer les favoris depuis une sauvegarde</string>
     <string name="import_bookmark_error">Impossible d\'importer les favoris depuis le fichier</string>

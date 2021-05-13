@@ -84,10 +84,6 @@
     <string name="dialog_title_share">Del denne siden</string>
     <string name="dialog_tools_title">Verktøy på siden</string>
     <string name="do_not_track">Forespørsel «Ikke spor»</string>
-    <string name="download_no_sdcard_dlg_msg">USB-lagring er påkrevd for å laste ned filen.</string>
-    <string name="download_no_sdcard_dlg_title">Ingen SD-kort</string>
-    <string name="download_sdcard_busy_dlg_msg">Lagring er opptatt. Velg alternativet for å slå av USB lagring for å tillate nedlastinger.</string>
-    <string name="download_sdcard_busy_dlg_title">USB-lagring utilgjengelig</string>
     <string name="download">Last ned lokasjon</string>
     <string name="export_bookmarks">Eksporter bokmerker som backup</string>
     <string name="export_settings">Eksporter innstillinger som backup</string>
@@ -100,8 +96,6 @@
     <string name="hint_username">Brukernavn</string>
     <string name="home">Hjemmeside</string>
     <string name="host">Vert:</string>
-    <string name="i2p_not_running">I2P kjører ikke.</string>
-    <string name="i2p_tunnels_not_ready">I2P tunneler er ikke klare enda.</string>
     <string name="import_backup">Importer bokmerker fra sikkerhetskopi</string>
     <string name="import_bookmark_error">Kan ikke importere bokmerker fra fil</string>
     <string name="import_settings">Importer innstillinger fra sikkerhetskopi</string>

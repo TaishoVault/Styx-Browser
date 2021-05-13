@@ -145,11 +145,7 @@
     <string name="do_not_track">Żądaj nieśledzenia</string>
     <string name="domain">Domena</string>
     <string name="dont_ask_again">Nie pytaj ponownie</string>
-    <string name="download_no_sdcard_dlg_msg">Pamięć USB jest wymagana do pobrania tego pliku.</string>
-    <string name="download_no_sdcard_dlg_title">Brak karty SD</string>
     <string name="download_pending">Pobieranie:</string>
-    <string name="download_sdcard_busy_dlg_msg">Pamięć USB jest zablokowana. By umożliwić pobieranie plików, dotknij \"Wyłącz pamięć USB\" w powiadomieniu.</string>
-    <string name="download_sdcard_busy_dlg_title">Pamięć USB niedostępna</string>
     <string name="download">Miejsce zapisu pobieranych plików</string>
     <string name="downloads_notification_description">Triggers upon download completion</string>
     <string name="downloads">Downloads</string>
@@ -179,8 +175,6 @@
     <string name="homepage_in_new_tab">Strona główna w nowej karcie</string>
     <string name="host">Gospodarz:</string>
     <string name="http_proxy">Konfiguracja serwera proxy</string>
-    <string name="i2p_not_running">I2P nie jest uruchomiony.</string>
-    <string name="i2p_tunnels_not_ready">Tunele I2P nie są jeszcze gotowe.</string>
     <string name="i2p">I2P</string>
     <string name="image_url">Ustaw obraz tła strony startowej</string>
     <string name="import_backup">Importuj zakładki</string>

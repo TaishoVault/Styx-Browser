@@ -112,10 +112,6 @@
     <string name="dialog_tools_title">Ferramentas da página</string>
     <string name="do_not_track">Pedidos \'Do Not Track\'</string>
     <string name="dont_ask_again">Não perguntar novamente</string>
-    <string name="download_no_sdcard_dlg_msg">Necessita de um cartão SD para guardar o ficheiro descarregado.</string>
-    <string name="download_no_sdcard_dlg_title">Cartão SD não encontrado</string>
-    <string name="download_sdcard_busy_dlg_msg">O cartão SD está ocupado. Para poder descarregar ficheiros, desative a opção Desativar armazenamento USB na notificação.</string>
-    <string name="download_sdcard_busy_dlg_title">Cartão SD não disponível</string>
     <string name="download">Local para descargas</string>
     <string name="error_reload">Recarregar</string>
     <string name="export_bookmarks">Exportar marcadores para backup</string>
@@ -129,8 +125,6 @@
     <string name="home">Página inicial</string>
     <string name="host">Servidor:</string>
     <string name="http_proxy">Proxy HTTP</string>
-    <string name="i2p_not_running">I2P não está a ser executado.</string>
-    <string name="i2p_tunnels_not_ready">Os canais I2P ainda não estão prontos.</string>
     <string name="image_url">Definir uma imagem para a página inicial</string>
     <string name="import_backup">Importar marcadores de um backup</string>
     <string name="import_bookmark_error">Não foi possível importar os marcadores do ficheiro</string>

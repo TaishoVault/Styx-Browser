@@ -81,10 +81,6 @@
     <string name="dialog_title_share">Deel deze pagina</string>
     <string name="dialog_tools_title">Pagina hulpmiddelen</string>
     <string name="do_not_track">Vraag \'Niet Volgen\'</string>
-    <string name="download_no_sdcard_dlg_msg">USB opslag is vereist om bestand te downloaden.</string>
-    <string name="download_no_sdcard_dlg_title">Geen SD kaart</string>
-    <string name="download_sdcard_busy_dlg_msg">Opslag is bezet. Om downloads toe te laten, gelieve USB opslag uit te zetten in het notificatiecentrum.</string>
-    <string name="download_sdcard_busy_dlg_title">USB opslag niet beschikbaar</string>
     <string name="download">Download naar locatie</string>
     <string name="error_reload">vernieuwen</string>
     <string name="error_title">Oh kruimels!</string>
@@ -99,8 +95,6 @@
     <string name="home">Startpagina</string>
     <string name="host">Gastheer:</string>
     <string name="http_proxy">HTTP Proxy</string>
-    <string name="i2p_not_running">I2P draait niet.</string>
-    <string name="i2p_tunnels_not_ready">I2P tunnels zijn niet klaar.</string>
     <string name="import_backup">Importeer bladwijzers van backup</string>
     <string name="import_bookmark_error">Kon bladwijzers niet van bestand laden</string>
     <string name="import_settings">Instellingen importeren uit back-up</string>

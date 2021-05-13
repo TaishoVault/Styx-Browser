@@ -84,11 +84,7 @@
     <string name="dialog_title_share">Sdílet tuto stránku</string>
     <string name="dialog_tools_title">Nástroje stránky</string>
     <string name="do_not_track">Požádat o \'Do Not Track\'</string>
-    <string name="download_no_sdcard_dlg_msg">Pro stažení souboru je vyžadováno úložiště USB.</string>
-    <string name="download_no_sdcard_dlg_title">Žádná SD karta</string>
     <string name="download_pending">Stáhnout:</string>
-    <string name="download_sdcard_busy_dlg_msg">Úložiště je zaneprázdněno. Chcete-li povolit stahování, klepněte v oznámení na \'Vypnout úložiště USB\'.</string>
-    <string name="download_sdcard_busy_dlg_title">Úložiště USB není k dispozici</string>
     <string name="download">Umístění stahování</string>
     <string name="error_title">Ale rozdrobit!</string>
     <string name="export_bookmarks">Exportovat záložky do zálohy</string>
@@ -101,8 +97,6 @@
     <string name="hint_username">Uživatelské jméno</string>
     <string name="home">Domovská stránka</string>
     <string name="host">Hostitel:</string>
-    <string name="i2p_not_running">I2P není spuštěn.</string>
-    <string name="i2p_tunnels_not_ready">I2P tunely ještě nejsou připraveny.</string>
     <string name="image_url">Nastavit vlastní obrázek na pozadí</string>
     <string name="import_backup">Importovat záložky ze zálohy</string>
     <string name="import_bookmark_error">Nelze importovat záložky ze souboru</string>

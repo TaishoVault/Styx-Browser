@@ -82,10 +82,6 @@
     <string name="dialog_title_share">Oldal megosztása</string>
     <string name="dialog_tools_title">Lapeszközök</string>
     <string name="do_not_track">\'Ne kövessen nyomon\' kérése</string>
-    <string name="download_no_sdcard_dlg_msg">USB tárolóra van szükség a fájl letöltéséhez.</string>
-    <string name="download_no_sdcard_dlg_title">Nincs SD kártya</string>
-    <string name="download_sdcard_busy_dlg_msg">A tároló dolgozik.Hogy engedélyezze a letöltéseket , érintse meg az USB-tár kikapcsolását az értesítésnél.</string>
-    <string name="download_sdcard_busy_dlg_title">USB-tár nem elérhető</string>
     <string name="download">Letöltési hely</string>
     <string name="export_bookmarks">Könyvjelzők exportálása biztonsági mentésbe</string>
     <string name="folder_custom">Egyéni</string>
@@ -97,8 +93,6 @@
     <string name="home">Főoldal</string>
     <string name="host">Hoszt:</string>
     <string name="http_proxy">HTTP Proxy</string>
-    <string name="i2p_not_running">I2P, nem fut.</string>
-    <string name="i2p_tunnels_not_ready">I2P alagútak, nem állnak készen még.</string>
     <string name="import_backup">Könyvjelzők importálása biztonsági mentésből</string>
     <string name="import_bookmark_error">Nem sikerült importálni a könyvjelzőket a fájlból</string>
     <string name="incognito_cookies">Cookie-k engedélyezése inkognitó módban</string>

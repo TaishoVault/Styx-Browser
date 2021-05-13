@@ -84,10 +84,6 @@
     <string name="dialog_title_share">Διαμοιρασμός της σελίδας</string>
     <string name="dialog_tools_title">Εργαλεία σελίδας</string>
     <string name="do_not_track">Αποκλεισμός εντοπισμού</string>
-    <string name="download_no_sdcard_dlg_msg">Είναι απαραίτητο το USB storage για λήψη του αρχείου.</string>
-    <string name="download_no_sdcard_dlg_title">Δεν υπάρχει κάρτα SD</string>
-    <string name="download_sdcard_busy_dlg_msg">Η συσκευή αποθήκευσης είναι απασχολημένη. Για να επιτρέψετε λήψεις πατήστε το Κλείσιμο USB Storage στις ειδοποιήσεις.</string>
-    <string name="download_sdcard_busy_dlg_title">USB storage μη διαθέσιμο</string>
     <string name="download">Κατέβασμα τοποθεσίας</string>
     <string name="error_reload">Φορτώνω πάλι</string>
     <string name="export_bookmarks">Εξαγωγή σελιδοδεικτών σε αρχείο</string>
@@ -100,8 +96,6 @@
     <string name="hint_username">Όνομα χρήστη</string>
     <string name="home">Αρχική σελίδα</string>
     <string name="host">Πλήθος:</string>
-    <string name="i2p_not_running">Το I2P δεν εκτελείται.</string>
-    <string name="i2p_tunnels_not_ready">Οι σήραγγες I2P δεν είναι ακόμα έτοιμες.</string>
     <string name="image_url">Ορίστε μια εικόνα φόντου αρχικής σελίδας</string>
     <string name="import_backup">Εισαγωγή σελιδοδεικτών απο αρχείο</string>
     <string name="import_bookmark_error">Δεν ηταν δυνατή η φόρτωση σελιδοδεικτών απο αρχείο</string>

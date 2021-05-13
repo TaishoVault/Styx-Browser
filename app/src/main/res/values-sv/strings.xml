@@ -83,10 +83,6 @@
     <string name="dialog_title_share">Dela denna sida</string>
     <string name="dialog_tools_title">Verktyg för sidan</string>
     <string name="do_not_track">Begär \"Spåra inte\"</string>
-    <string name="download_no_sdcard_dlg_msg">USB-lagring krävs för att ladda ner filen.</string>
-    <string name="download_no_sdcard_dlg_title">Inget SD-kort</string>
-    <string name="download_sdcard_busy_dlg_msg">Lagringen är upptagen. För att tillåta hämtningar trycker du på \"Stäng av USB-lagring\" i meddelandet.</string>
-    <string name="download_sdcard_busy_dlg_title">USB-lagringsenhet ej tillgänglig</string>
     <string name="download">Ladda ner plats</string>
     <string name="export_bookmarks">Exportera bokmärken till säkerhetskopiering</string>
     <string name="export_settings">Exportera inställningar till säkerhetskopia</string>
@@ -99,8 +95,6 @@
     <string name="home">Hemsida</string>
     <string name="host">Värd:</string>
     <string name="http_proxy">HTTP-proxy</string>
-    <string name="i2p_not_running">I2P körs inte.</string>
-    <string name="i2p_tunnels_not_ready">I2P-tunnlar är ännu inte klara.</string>
     <string name="import_backup">Importera bokmärken från backup</string>
     <string name="import_bookmark_error">Kunde inte importera bokmärken från fil</string>
     <string name="import_settings">Importera inställningar från säkerhetskopia</string>

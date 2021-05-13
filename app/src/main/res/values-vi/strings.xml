@@ -74,10 +74,6 @@
     <string name="dialog_title_close_browser">Đóng các tab</string>
     <string name="dialog_title_share">Chia sẻ trang này</string>
     <string name="dialog_tools_title">Công cụ trang</string>
-    <string name="download_no_sdcard_dlg_msg">Yêu cầu USB lưu trữ để tải tệp xuống.</string>
-    <string name="download_no_sdcard_dlg_title">Không có thẻ SD</string>
-    <string name="download_sdcard_busy_dlg_msg">Kho lưu trữ đang bận. Để cho phép tải xuống, hãy chạm vào \'Tắt USB lưu trữ\' trong thông báo.</string>
-    <string name="download_sdcard_busy_dlg_title">USB lưu trữ không có sẵn</string>
     <string name="download">Vị trí tải xuống</string>
     <string name="export_bookmarks">Xuất dấu trang ra bản sao lưu</string>
     <string name="export_settings">Xuất cài đặt ra bản sao lưu</string>
@@ -89,8 +85,6 @@
     <string name="home">Trang chủ</string>
     <string name="host">Máy chủ:</string>
     <string name="http_proxy">Proxy HTTP</string>
-    <string name="i2p_not_running">I2P đang không chạy.</string>
-    <string name="i2p_tunnels_not_ready">Các đường hầm I2P chưa sẵn sàng.</string>
     <string name="image_url">Đặt một hình ảnh làm hình nền trang chủ</string>
     <string name="import_backup">Nhập dấu trang từ bản sao lưu</string>
     <string name="import_bookmark_error">Không thể nhập dấu trang từ tệp</string>

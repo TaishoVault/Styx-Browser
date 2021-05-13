@@ -145,11 +145,7 @@
     <string name="do_not_track">طلب \ \"لا تتبع \"</string>
     <string name="domain">النطـاق</string>
     <string name="dont_ask_again">لا تسأل مرة أخري</string>
-    <string name="download_no_sdcard_dlg_msg">مطلوب تخزين USB لتنزيل الملف.</string>
-    <string name="download_no_sdcard_dlg_title">لا توجد بطاقة SD</string>
     <string name="download_pending">يتم التحميل:</string>
-    <string name="download_sdcard_busy_dlg_msg">التخزين مشغول. للسماح بالتحميلات، اضغط على \'إيقاف تخزين USB\' في الإشعار.</string>
-    <string name="download_sdcard_busy_dlg_title">وحدة تخزين USB غير متوفرة</string>
     <string name="download">مسار التحميلات</string>
     <string name="downloads_notification_description">تشغيل عند اكتمال التحميل</string>
     <string name="downloads">التحميلات</string>
@@ -179,8 +175,6 @@
     <string name="homepage_in_new_tab">الصفحة الرئيسية في علامة التبويب الجديدة</string>
     <string name="host">المضيف:</string>
     <string name="http_proxy">وكيل HTTP</string>
-    <string name="i2p_not_running">I2P لا يعمل.</string>
-    <string name="i2p_tunnels_not_ready">أنفاق I2P ليست جاهزة بعد.</string>
     <string name="i2p">I2P</string>
     <string name="image_url">تعيين صورة خلفية الصفحة الرئيسية</string>
     <string name="import_backup">استيراد الإشارات المرجعية من النسخ الاحتياطي</string>

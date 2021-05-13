@@ -145,11 +145,7 @@
     <string name="do_not_track">Запрашивать \'Не отслеживать, DNT\'</string>
     <string name="domain">Домен</string>
     <string name="dont_ask_again">Больше не спрашивать</string>
-    <string name="download_no_sdcard_dlg_msg">Для загрузки файла необходима карта памяти</string>
-    <string name="download_no_sdcard_dlg_title">Нет карты памяти</string>
     <string name="download_pending">Загрузка\u2026</string>
-    <string name="download_sdcard_busy_dlg_msg">Карта памяти подключена к ПК. Для начала загрузки отключите её от ПК, нажав на уведомление.</string>
-    <string name="download_sdcard_busy_dlg_title">Карта памяти недоступна</string>
     <string name="download">Путь загрузки</string>
     <string name="downloads_notification_description">Триггеры после окончания загрузки</string>
     <string name="downloads">Загрузки</string>
@@ -179,8 +175,6 @@
     <string name="homepage_in_new_tab">Домашняя страница в новой вкладке</string>
     <string name="host">Хост:</string>
     <string name="http_proxy">HTTP прокси</string>
-    <string name="i2p_not_running">I2P не запущен.</string>
-    <string name="i2p_tunnels_not_ready">I2P туннели ещё не готовы.</string>
     <string name="i2p">I2P</string>
     <string name="image_url">Установка фонового изображения домашней страницы</string>
     <string name="import_backup">Восстановить закладки из резервной копии</string>

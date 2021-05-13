@@ -83,10 +83,6 @@
     <string name="dialog_title_share">이 페이지 공유</string>
     <string name="dialog_tools_title">페이지 도구</string>
     <string name="do_not_track">\'추적 금지\' 요청</string>
-    <string name="download_no_sdcard_dlg_msg">파일을 다운로드하기 위해서는 USB 저장소가 필요합니다.</string>
-    <string name="download_no_sdcard_dlg_title">SD 카드 없음</string>
-    <string name="download_sdcard_busy_dlg_msg">저장소가 사용중입니다. 다운로드를 하려면 USB 저장소를 끄세요.</string>
-    <string name="download_sdcard_busy_dlg_title">USB 저장소 사용할 수 없음</string>
     <string name="download">다운로드 위치</string>
     <string name="error_reload">새로 고침</string>
     <string name="export_bookmarks">즐겨찾기를 백업으로 내보내기</string>
@@ -99,8 +95,6 @@
     <string name="home">홈페이지</string>
     <string name="host">호스트:</string>
     <string name="http_proxy">HTTP 프록시</string>
-    <string name="i2p_not_running">I2P가 실행 중이지 않습니다.</string>
-    <string name="i2p_tunnels_not_ready">I2P 터널이 준비되지 않았습니다.</string>
     <string name="import_backup">즐겨찾기를 백업으로부터 가져오기</string>
     <string name="import_bookmark_error">파일로부터 즐겨찾기를 가져올 수 없습니다</string>
     <string name="incognito_cookies">사생활 보호 모드에서 쿠키 사용</string>

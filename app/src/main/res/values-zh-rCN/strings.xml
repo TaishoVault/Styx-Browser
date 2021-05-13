@@ -145,11 +145,7 @@
     <string name="do_not_track">请求“Do Not Track”</string>
     <string name="domain">域名</string>
     <string name="dont_ask_again">不要再询问</string>
-    <string name="download_no_sdcard_dlg_msg">需要 USB 存储以下载文件</string>
-    <string name="download_no_sdcard_dlg_title">没有 SD 卡</string>
     <string name="download_pending">正在开始下载</string>
-    <string name="download_sdcard_busy_dlg_msg">存储设备正忙。要允许下载，请轻触通知中的“关闭 USB 存储”</string>
-    <string name="download_sdcard_busy_dlg_title">USB 存储不可用</string>
     <string name="download">下载位置</string>
     <string name="downloads_notification_description">下载完成时触发</string>
     <string name="downloads">下载</string>
@@ -179,8 +175,6 @@
     <string name="homepage_in_new_tab">新标签页中的主页</string>
     <string name="host">主机：</string>
     <string name="http_proxy">HTTP 代理</string>
-    <string name="i2p_not_running">I2P 未在运行</string>
-    <string name="i2p_tunnels_not_ready">I2P 隧道尚未就绪</string>
     <string name="i2p">I2P</string>
     <string name="image_url">设置主页背景图像</string>
     <string name="import_backup">从备份中导入书签</string>

@@ -82,11 +82,7 @@
     <string name="dialog_title_share">分享此頁面</string>
     <string name="dialog_tools_title">頁面工具</string>
     <string name="do_not_track">要求不追蹤（Do Not Track）</string>
-    <string name="download_no_sdcard_dlg_msg">下載此檔案需要 USB 儲存裝置。</string>
-    <string name="download_no_sdcard_dlg_title">未插入 SD 卡</string>
     <string name="download_pending">正在開始下載\u2026</string>
-    <string name="download_sdcard_busy_dlg_msg">此儲存裝置處於忙碌中，若要下載請點觸通知中的「關閉 USB 儲存裝置」。</string>
-    <string name="download_sdcard_busy_dlg_title">USB 儲存裝置無法使用</string>
     <string name="download">下載位置</string>
     <string name="error_reload">刷新</string>
     <string name="error_title">哦，碎！ &lt;br&gt;無法加載該網站。</string>
@@ -101,8 +97,6 @@
     <string name="home">首頁</string>
     <string name="host">主機位址：</string>
     <string name="http_proxy">HTTP 代理伺服器</string>
-    <string name="i2p_not_running">I2P 非執行中</string>
-    <string name="i2p_tunnels_not_ready">尚未準備好 I2P Tunnel。</string>
     <string name="import_backup">自備份檔匯入書籤</string>
     <string name="import_bookmark_error">無法自檔案中匯入書籤</string>
     <string name="incognito_cookies">在無痕模式中啟用 Cookies</string>

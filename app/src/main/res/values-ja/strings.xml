@@ -85,10 +85,6 @@
     <string name="dialog_title_share">このページを共有します</string>
     <string name="dialog_tools_title">ページツール</string>
     <string name="do_not_track">\'Do Not Track\' を有効にする</string>
-    <string name="download_no_sdcard_dlg_msg">ファイルをダウンロードするには USB ストレージが必要です</string>
-    <string name="download_no_sdcard_dlg_title">SD カードがありません</string>
-    <string name="download_sdcard_busy_dlg_msg">ストレージがビジー状態です。ダウンロードするには、ステータスバーの \"USB ストレージをオフにする\" をタップしてください</string>
-    <string name="download_sdcard_busy_dlg_title">USB ストレージが使用できません</string>
     <string name="download">ダウンロードフォルダ</string>
     <string name="error_reload">リロード</string>
     <string name="export_bookmarks">ブックマークをエクスポートする</string>
@@ -102,8 +98,6 @@
     <string name="home">ホームページ</string>
     <string name="host">ホスト:</string>
     <string name="http_proxy">HTTP プロキシ</string>
-    <string name="i2p_not_running">I2P が動作していません</string>
-    <string name="i2p_tunnels_not_ready">I2P トンネルの使用準備が整っていません</string>
     <string name="import_backup">ブックマークをインポートする</string>
     <string name="import_bookmark_error">ブックマークのインポートに失敗しました</string>
     <string name="import_settings">バックアップから設定をインポート</string>

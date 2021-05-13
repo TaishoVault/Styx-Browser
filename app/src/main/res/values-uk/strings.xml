@@ -85,10 +85,6 @@
     <string name="dialog_title_share">Поділитися цією сторінкою</string>
     <string name="dialog_tools_title">Інструменти сторінки</string>
     <string name="do_not_track">Запит \'Do Not Track\'</string>
-    <string name="download_no_sdcard_dlg_msg">Необхідний USB-накопичувач для завантаження файлу.</string>
-    <string name="download_no_sdcard_dlg_title">Немає карти SD</string>
-    <string name="download_sdcard_busy_dlg_msg">Накопичувач зайнятий. Щоб дозволити завантаження, торкніться в сповіщенні опції \"Вимкнути носій USB\".</string>
-    <string name="download_sdcard_busy_dlg_title">USB-носій недоступний</string>
     <string name="download">Тека завантаження</string>
     <string name="export_bookmarks">Зробити резервну копію закладок</string>
     <string name="export_settings">Експортувати налаштування в резервну копію</string>
@@ -102,8 +98,6 @@
     <string name="home">Домашня сторінка</string>
     <string name="host">Хост:</string>
     <string name="http_proxy">HTTP-проксі</string>
-    <string name="i2p_not_running">I2P не виконується.</string>
-    <string name="i2p_tunnels_not_ready">Тунелі I2P ще не готові.</string>
     <string name="import_backup">Відновити закладки з резервної копії</string>
     <string name="import_bookmark_error">Не вдалося імпортувати закладки з файлу</string>
     <string name="import_settings">Імпортувати налаштування з резервної копії</string>

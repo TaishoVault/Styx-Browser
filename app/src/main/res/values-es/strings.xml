@@ -111,10 +111,6 @@
     <string name="dialog_title_third_party_app">Aplicación de terceros disponible</string>
     <string name="dialog_tools_title">Herramientas de página</string>
     <string name="do_not_track">Solicitar \'Do Not Track\'</string>
-    <string name="download_no_sdcard_dlg_msg">Se requiere de almacenamiento USB para descargar el archivo.</string>
-    <string name="download_no_sdcard_dlg_title">No hay tarjeta SD</string>
-    <string name="download_sdcard_busy_dlg_msg">El almacenamiento está ocupado. Para permitir las descargar, desactiva el almacenamiento USB desde el área de notificación.</string>
-    <string name="download_sdcard_busy_dlg_title">Almacenamiento USB no disponible</string>
     <string name="download">Ruta de descargas</string>
     <string name="error_reload">Recargar</string>
     <string name="export_bookmarks">Exportar marcadores a una copia de seguridad</string>
@@ -129,8 +125,6 @@
     <string name="home">Página de inicio</string>
     <string name="host">Anfitrión:</string>
     <string name="http_proxy">Proxy HTTP</string>
-    <string name="i2p_not_running">I2P no está corriendo.</string>
-    <string name="i2p_tunnels_not_ready">Los túneles I2P no están preparados aún.</string>
     <string name="import_backup">Importar marcadores desde una copia de seguridad</string>
     <string name="import_bookmark_error">No se pudo importar los marcadores del archivo</string>
     <string name="import_settings">Importar ajustes desde copia de seguridad</string>

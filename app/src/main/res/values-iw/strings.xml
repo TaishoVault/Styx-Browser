@@ -83,10 +83,6 @@
     <string name="dialog_title_share">שתף דף זה</string>
     <string name="dialog_tools_title">כלי עמוד</string>
     <string name="do_not_track">בקשה \'אל תעקוב אחר \'</string>
-    <string name="download_no_sdcard_dlg_msg">יש צורך באחסון USB כדי להוריד את הקובץ.</string>
-    <string name="download_no_sdcard_dlg_title">אין כרטיס SD</string>
-    <string name="download_sdcard_busy_dlg_msg">האחסון עמוס. כדי לאפשר הורדות, גע ב \'כבה את אחסון ה- USB \' בהתראה.</string>
-    <string name="download_sdcard_busy_dlg_title">אחסון USB אינו זמין</string>
     <string name="download">הורד מיקום</string>
     <string name="error_reload">טען מחדש</string>
     <string name="export_bookmarks">ייצא סימניות לגיבוי</string>
@@ -100,8 +96,6 @@
     <string name="home">דף הבית</string>
     <string name="host">מנחה:</string>
     <string name="http_proxy">פרוקסי HTTP</string>
-    <string name="i2p_not_running">I2P אינו פועל.</string>
-    <string name="i2p_tunnels_not_ready">מנהרות I2P עדיין אינן מוכנות.</string>
     <string name="import_backup">ייבא סימניות מגיבוי</string>
     <string name="import_bookmark_error">לא ניתן היה לייבא סימניות מהקובץ</string>
     <string name="incognito_cookies">אפשר קובצי Cookie במצב גלישה בסתר</string>

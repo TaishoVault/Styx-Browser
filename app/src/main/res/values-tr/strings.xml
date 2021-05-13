@@ -89,10 +89,6 @@
     <string name="dialog_tools_title">Sayfa araçları</string>
     <string name="do_not_track">\'İzleme isteği\' gönder</string>
     <string name="dont_ask_again">Bir daha sorma</string>
-    <string name="download_no_sdcard_dlg_msg">Bu dosyayı indirmek için USB depolaması gereklidir.</string>
-    <string name="download_no_sdcard_dlg_title">Hafıza kartı bulunamadı</string>
-    <string name="download_sdcard_busy_dlg_msg">Depolama meşgul. İndirmeleri aktif etmek için bildirimler ekranından USB depolamasını kapatın.</string>
-    <string name="download_sdcard_busy_dlg_title">USB depolamasına erişilemez</string>
     <string name="download">İndirme konumu</string>
     <string name="error_reload">Yeniden yükle</string>
     <string name="export_bookmarks">Yer işaretlerini yedekle</string>
@@ -106,8 +102,6 @@
     <string name="home">Ana sayfa</string>
     <string name="host">Ana bilgisayar:</string>
     <string name="http_proxy">HTTP vekil sunucu</string>
-    <string name="i2p_not_running">I2P çalışmıyor.</string>
-    <string name="i2p_tunnels_not_ready">I2P tünelleri henüz hazır değil.</string>
     <string name="image_url">Ana sayfa arka plan resmi ayarla</string>
     <string name="import_backup">Yer işaretlerini geri yükle</string>
     <string name="import_bookmark_error">Yer işaretleri dosyadan yüklenemedi</string>

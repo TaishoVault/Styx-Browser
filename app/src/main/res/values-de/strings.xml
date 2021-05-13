@@ -145,11 +145,7 @@
     <string name="do_not_track">\"Nicht verfolgen\"-Funktion anfordern</string>
     <string name="domain">Domain</string>
     <string name="dont_ask_again">Nicht noch einmal fragen</string>
-    <string name="download_no_sdcard_dlg_msg">USB-Speicher ist für das Herunterladen der Datei notwendig!</string>
-    <string name="download_no_sdcard_dlg_title">Keine SD-Karte</string>
     <string name="download_pending">Herunterladen:</string>
-    <string name="download_sdcard_busy_dlg_msg">Speicher in Benutzung. Um das Herunterladen zu ermöglichen, schalten Sie den USB-Speicher in der Benachrichtigung aus.</string>
-    <string name="download_sdcard_busy_dlg_title">USB-Speicher nicht verfügbar</string>
     <string name="download">Download-Verzeichnis</string>
     <string name="downloads_notification_description">Auslöser bei Abschluss des Downloads</string>
     <string name="downloads">Downloads</string>
@@ -179,8 +175,6 @@
     <string name="homepage_in_new_tab">Startseite in neuem Tab öffnen</string>
     <string name="host">Host:</string>
     <string name="http_proxy">HTTP Proxy</string>
-    <string name="i2p_not_running">I2P ist nicht gestartet.</string>
-    <string name="i2p_tunnels_not_ready">I2P Tunnel sind noch nicht bereit.</string>
     <string name="i2p">I2P</string>
     <string name="image_url">Hintergrundbild der Startseite festlegen</string>
     <string name="import_backup">Lesezeichen importieren</string>
