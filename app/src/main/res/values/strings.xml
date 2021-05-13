@@ -334,7 +334,7 @@
     <string name="settings_adblock">Ad Block</string>
     <string name="settings_admalwareblocker">Ad &amp; Malware Blocker</string>
     <string name="settings_advanced">Advanced</string>
-    <string name="settings_app_prefix">app_for_</string>
+    <string name="settings_app_prefix" translatable="false">app_for_</string>
     <string name="settings_black_status_bar">Black status bar</string>
     <string name="settings_display">Look &amp; feel</string>
     <string name="settings_export_failure">Sorry, settings could not be exported!</string>
