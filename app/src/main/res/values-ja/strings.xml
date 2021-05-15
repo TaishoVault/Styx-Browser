@@ -160,16 +160,7 @@
     <string name="reopening_recent_tab">閉じたタブを元に戻す</string>
     <string name="restore_tabs_on_startup">前回終了時のタブをアプリ起動時に復元する</string>
     <string name="save_data">リクエスト \'Save-Data \'</string>
-    <string name="search_engine_ask">頼む</string>
-    <string name="search_engine_baidu">バイドゥ</string>
-    <string name="search_engine_bing">ビング</string>
     <string name="search_engine_custom">カスタム URL</string>
-    <string name="search_engine_duckduckgo">ダックダックゴー</string>
-    <string name="search_engine_google">グーグル</string>
-    <string name="search_engine_naver">ネイバー</string>
-    <string name="search_engine_yahoo">ヤフー</string>
-    <string name="search_engine_yandex">ヤンデックス</string>
-    <string name="search_hint">検索</string>
     <string name="search_suggestions_off">検索候補を表示しない</string>
     <string name="search_suggestions">検索候補表示</string>
     <string name="search">検索エンジン</string>

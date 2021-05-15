@@ -152,9 +152,7 @@
     <string name="rendering_mode">Renderar läge</string>
     <string name="reopening_recent_tab">Återöppnade gammal flik</string>
     <string name="save_data">Begär \'Spardata\'</string>
-    <string name="search_engine_ask">Fråga</string>
     <string name="search_engine_custom">Anpassad URL</string>
-    <string name="search_hint">Sök eller ange webbadress</string>
     <string name="search_suggestions_off">Inga sökförslag</string>
     <string name="search_suggestions">Sök förslag</string>
     <string name="search">Sökmotor</string>

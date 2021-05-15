@@ -96,7 +96,6 @@
     <string name="hint_username">Όνομα χρήστη</string>
     <string name="home">Αρχική σελίδα</string>
     <string name="host">Πλήθος:</string>
-    <string name="image_url">Ορίστε μια εικόνα φόντου αρχικής σελίδας</string>
     <string name="import_backup">Εισαγωγή σελιδοδεικτών απο αρχείο</string>
     <string name="import_bookmark_error">Δεν ηταν δυνατή η φόρτωση σελιδοδεικτών απο αρχείο</string>
     <string name="import_settings">Εισαγωγή ρυθμίσεων από αντίγραφο ασφαλείας</string>
@@ -160,10 +159,8 @@
     <string name="reopening_recent_tab">Άνοιγμα παλιάς καρτέλας</string>
     <string name="restore_tabs_on_startup">Επαναφορά χαμένων καρτελών στην εκκίνηση</string>
     <string name="save_data">Αίτηση \'Αποθήκευση δεδομένων \'</string>
-    <string name="search_engine_ask">Παρακαλώ</string>
     <string name="search_engine_custom">Ειδικό URL</string>
     <string name="search_engine_startpage_mobile">Startpage Mobile</string>
-    <string name="search_hint">Αναζήτηση</string>
     <string name="search_suggestions_off">Δεν υπάρχουν προτάσεις αναζήτησης</string>
     <string name="search_suggestions">Προτάσεις αναζήτησης</string>
     <string name="search">Μηχανή αναζήτησης</string>

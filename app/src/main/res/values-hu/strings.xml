@@ -154,10 +154,7 @@
     <string name="reopening_recent_tab">Régi lapok megnyitása</string>
     <string name="restore_tabs_on_startup">Elvesztett lapok visszaállítása induláskor</string>
     <string name="save_data">\ \'Adatok mentése\' kérés</string>
-    <string name="search_engine_ask">Kérdez</string>
     <string name="search_engine_custom">Egyéni URL</string>
-    <string name="search_engine_yahoo">Jehu</string>
-    <string name="search_hint">Keresés</string>
     <string name="search_suggestions_off">Nincsenek keresési javaslatok</string>
     <string name="search_suggestions">Keresési javaslatok</string>
     <string name="search">Keresőmotor</string>

@@ -186,10 +186,7 @@
     <string name="reopening_recent_tab">Pestaña reabierta</string>
     <string name="restore_tabs_on_startup">Restaurar pestañas cerradas al iniciar</string>
     <string name="save_data">Solicitar \'Guardar datos \'</string>
-    <string name="search_engine_ask">Pedir</string>
     <string name="search_engine_custom">Dirección personalizada</string>
-    <string name="search_engine_duckduckgo">Pato Pato a ganar</string>
-    <string name="search_hint">Buscar</string>
     <string name="search_suggestions_off">Sin sugerencias de búsqueda</string>
     <string name="search_suggestions">Sugerencias de búsqueda</string>
     <string name="search">Motor de búsqueda</string>

@@ -155,11 +155,7 @@
     <string name="rendering_mode">Gjengir modus</string>
     <string name="reopening_recent_tab">Gjenåpnet gammel fane</string>
     <string name="save_data">Be om \"Spara-data\"</string>
-    <string name="search_engine_ask">Spør</string>
-    <string name="search_engine_bing">Senging</string>
     <string name="search_engine_custom">Egendefinert URL</string>
-    <string name="search_engine_duckduckgo">And</string>
-    <string name="search_hint">Søk eller oppgi nettadresse</string>
     <string name="search_suggestions_off">Ingen forslag til søk</string>
     <string name="search_suggestions">Søk forslag</string>
     <string name="search">Søkemotor</string>

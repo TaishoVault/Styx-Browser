@@ -98,7 +98,6 @@
     <string name="home">Pradinis puslapis</string>
     <string name="host">Pagrindinis kompiuteris:</string>
     <string name="http_proxy">„HTTP proxy“</string>
-    <string name="image_url">Nustatyti pagrindinio puslapio fono nuotrauką</string>
     <string name="import_backup">Importuokite žymes iš atsarginės kopijos</string>
     <string name="import_bookmark_error">Nepavyko importuoti žymių iš failo</string>
     <string name="import_settings">Importuoti nustatymus iš atsarginės kopijos</string>
@@ -160,17 +159,9 @@
     <string name="rendering_mode">Atvaizdavimo režimas</string>
     <string name="reopening_recent_tab">Vėl atidarytas senas skirtukas</string>
     <string name="save_data">Prašyti \'Išsaugoti duomenis \'</string>
-    <string name="search_engine_ask">Klauskite</string>
-    <string name="search_engine_bing">Bingas</string>
     <string name="search_engine_custom">Tinkintas URL</string>
     <string name="search_engine_duckduckgo_lite">„DuckDuckGo Lite“</string>
-    <string name="search_engine_duckduckgo">„DuckDuckGo“</string>
-    <string name="search_engine_google">„Google“</string>
-    <string name="search_engine_naver">„Naver“</string>
     <string name="search_engine_startpage_mobile">„StartPage Mobile“</string>
-    <string name="search_engine_yahoo">„Yahoo“</string>
-    <string name="search_engine_yandex">„Yandex“</string>
-    <string name="search_hint">Paieška</string>
     <string name="search_suggestions_off">Paieškos pasiūlymų nėra</string>
     <string name="search_suggestions">Ieškokite pasiūlymų</string>
     <string name="search">Ieškyklė</string>

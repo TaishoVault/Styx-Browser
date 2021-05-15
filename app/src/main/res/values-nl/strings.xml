@@ -157,9 +157,7 @@
     <string name="reopening_recent_tab">Oud tabblad heropend</string>
     <string name="restore_tabs_on_startup">Herstel tabbladen bij opstart</string>
     <string name="save_data">Verzoek \'Gegevens opslaan \'</string>
-    <string name="search_engine_ask">Vragen</string>
     <string name="search_engine_custom">Aangepaste URL</string>
-    <string name="search_hint">Zoek</string>
     <string name="search_suggestions_off">Geen zoeksuggesties</string>
     <string name="search_suggestions">Suggesties zoeken</string>
     <string name="search">Zoekmachine</string>

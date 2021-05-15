@@ -125,7 +125,6 @@
     <string name="home">Página inicial</string>
     <string name="host">Servidor:</string>
     <string name="http_proxy">Proxy HTTP</string>
-    <string name="image_url">Definir uma imagem para a página inicial</string>
     <string name="import_backup">Importar marcadores de um backup</string>
     <string name="import_bookmark_error">Não foi possível importar os marcadores do ficheiro</string>
     <string name="import_settings">Importar definições de um backup</string>
@@ -193,7 +192,6 @@
     <string name="restore_tabs_on_startup">Restaurar separadores ao iniciar</string>
     <string name="save_data">Solicitar \'Save-Data\'</string>
     <string name="search_engine_custom">URL personalizado</string>
-    <string name="search_hint">Pesquisa</string>
     <string name="search_suggestions_off">Sem sugestões de pesquisa</string>
     <string name="search_suggestions">Sugestões de pesquisa</string>
     <string name="search">Motor de pesquisa</string>

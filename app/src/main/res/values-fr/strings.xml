@@ -103,7 +103,6 @@
     <string name="home">Page d\'accueil</string>
     <string name="host">Host :</string>
     <string name="http_proxy">Proxy HTTP</string>
-    <string name="image_url">Définir une image de fond pour la page d’accueil</string>
     <string name="import_backup">Importer les favoris depuis une sauvegarde</string>
     <string name="import_bookmark_error">Impossible d\'importer les favoris depuis le fichier</string>
     <string name="import_settings">Importer les paramètres</string>
@@ -174,7 +173,6 @@
     <string name="save_data">Envoyer l’en-tête \'Save-Data\'</string>
     <string name="scripts">Userscripts / Scripts utilisateur</string>
     <string name="search_engine_custom">Adresse personnalisée</string>
-    <string name="search_hint">Rechercher</string>
     <string name="search_suggestions_off">Pas de suggestions de recherche</string>
     <string name="search_suggestions">Suggestions de recherche</string>
     <string name="search">Moteur de recherche</string>

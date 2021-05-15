@@ -157,16 +157,8 @@
     <string name="reopening_recent_tab">다시 열어놓은 기존의 탭</string>
     <string name="restore_tabs_on_startup">시작할 때 잃어버린 탭 복원</string>
     <string name="save_data">\'저장-데이터 \'요청</string>
-    <string name="search_engine_ask">물어보기</string>
-    <string name="search_engine_baidu">바이두</string>
-    <string name="search_engine_bing">빙</string>
     <string name="search_engine_custom">임의의 URL</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo 라이트</string>
-    <string name="search_engine_google">구글</string>
-    <string name="search_engine_naver">네이버</string>
-    <string name="search_engine_yahoo">야후</string>
-    <string name="search_engine_yandex">얀 덱스</string>
-    <string name="search_hint">검색</string>
     <string name="search_suggestions_off">검색 제안 없음</string>
     <string name="search_suggestions">검색 제안</string>
     <string name="search">검색 엔진</string>

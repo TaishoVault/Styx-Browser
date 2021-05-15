@@ -102,7 +102,6 @@
     <string name="home">Ana sayfa</string>
     <string name="host">Ana bilgisayar:</string>
     <string name="http_proxy">HTTP vekil sunucu</string>
-    <string name="image_url">Ana sayfa arka plan resmi ayarla</string>
     <string name="import_backup">Yer işaretlerini geri yükle</string>
     <string name="import_bookmark_error">Yer işaretleri dosyadan yüklenemedi</string>
     <string name="import_settings">Ayarları yedekten içe aktar</string>
@@ -175,7 +174,6 @@
     <string name="scripts">Kullanıcı Betiği</string>
     <string name="search_engine_custom">Özel URL</string>
     <string name="search_engine_startpage_mobile">StartPage Mobil</string>
-    <string name="search_hint">Ara</string>
     <string name="search_suggestions_off">Arama önerisi yok</string>
     <string name="search_suggestions">Önerilenleri ara</string>
     <string name="search">Arama motoru</string>

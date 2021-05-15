@@ -159,13 +159,7 @@
     <string name="rendering_mode">Режим відображення</string>
     <string name="reopening_recent_tab">Перевідкрито стару вкладку</string>
     <string name="save_data">Замовити «Зберегти дані»</string>
-    <string name="search_engine_ask">Запитати</string>
-    <string name="search_engine_bing">Бінг</string>
     <string name="search_engine_custom">Авторські URL</string>
-    <string name="search_engine_duckduckgo">Даккаго</string>
-    <string name="search_engine_google">Гугл</string>
-    <string name="search_engine_yandex">Яндекс</string>
-    <string name="search_hint">Пошук або введіть веб-адресу</string>
     <string name="search_suggestions_off">Немає пошукових пропозицій</string>
     <string name="search_suggestions">Пошук пропозицій</string>
     <string name="search">Пошукова система</string>

@@ -155,14 +155,7 @@
     <string name="rendering_mode">מצב טיוח</string>
     <string name="reopening_recent_tab">נפתח מחדש לשונית ישנה</string>
     <string name="save_data">בקש \'שמור נתונים \'</string>
-    <string name="search_engine_ask">תשאלו</string>
-    <string name="search_engine_baidu">באידו</string>
-    <string name="search_engine_bing">בינג</string>
     <string name="search_engine_custom">כתובת אתר מותאם אישית</string>
-    <string name="search_engine_google">גוגל</string>
-    <string name="search_engine_yahoo">יאהו</string>
-    <string name="search_engine_yandex">יאנדקס</string>
-    <string name="search_hint">לחפש</string>
     <string name="search_suggestions_off">אין הצעות חיפוש</string>
     <string name="search_suggestions">הצעות חיפוש</string>
     <string name="search">מנוע חיפוש</string>

@@ -97,7 +97,6 @@
     <string name="hint_username">Uživatelské jméno</string>
     <string name="home">Domovská stránka</string>
     <string name="host">Hostitel:</string>
-    <string name="image_url">Nastavit vlastní obrázek na pozadí</string>
     <string name="import_backup">Importovat záložky ze zálohy</string>
     <string name="import_bookmark_error">Nelze importovat záložky ze souboru</string>
     <string name="import_settings">Importovat nastavení ze zálohy</string>
@@ -160,9 +159,7 @@
     <string name="rendering_mode">Režim vykreslení</string>
     <string name="reopening_recent_tab">Znovu otevřen starý panel</string>
     <string name="save_data">Požádat o \'Uložit\'</string>
-    <string name="search_engine_ask">Zeptat se</string>
     <string name="search_engine_custom">Vlastní URL</string>
-    <string name="search_hint">Hledat nebo zadat webovou adresu</string>
     <string name="search_suggestions_off">Žádné návrhy hledání</string>
     <string name="search_suggestions">Hledat návrhy</string>
     <string name="search">Vyhledávač</string>
