@@ -93,6 +93,158 @@
       -webkit-border-radius: 2px;
       border-radius: 2px;
       }
+      .text{
+      font-weight: 300;
+      margin-top: 0;
+      }
+      .shortcuts{
+      max-width:275px;
+      height:auto;
+      border-radius: 16px;
+      vertical-align: middle;
+      position: relative; 
+      left: 50%;
+      transform: translateX(-50%);
+      margin-right: 50px !important;
+      -moz-box-shadow: 0 0 2px #bbb;
+      -webkit-box-shadow: 0 0 2px #bbb;
+      box-shadow: 0 0 2px #bbb;
+      padding-bottom: 16px;
+      }
+      .button-material {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 4px;
+      padding: 0 16px;
+      min-width: 64px;
+      height: 36px;
+      vertical-align: middle;
+      text-align: center;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+	  color: ${searchBarTextColor};
+      background-color: ${backgroundColor1};
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 36px;
+      overflow: hidden;
+      outline: none;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      }
+      h2 {
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      }
+      .link {
+      height: 35px;
+      width: 35px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 15px;
+      margin-right: 15px;
+      }
+      .link-text {
+      display: inline-block;
+      }
+      .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1;
+      padding-top: 5vh; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+      }
+      .modal-content {
+      background-color: ${backgroundColor1};
+      color: ${searchBarTextColor};
+      margin: auto;
+      padding: 20px;
+      width: 80%;
+      border-radius: 8px;
+      }
+      input {
+      background-color: ${backgroundColor1};
+      color: ${searchBarTextColor};
+      border: 1px;
+      border-radius: 4px;
+      }
+      input:focus{
+      outline: none;
+      }
+      .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 100%;
+      border-radius: 5px;
+      padding-top: 4px;
+      cursor: pointer;
+      }
+      .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+      img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5px;
+      border-radius: 5px;
+      }
+      .card-content {
+      padding: 2px 16px;
+      }
+      @media screen and (min-width: 1408px){
+      .container:not(.is-max-desktop):not(.is-max-widescreen) {
+      max-width: 1344px;
+      }}
+      @media screen and (min-width: 1216px){
+      .container:not(.is-max-desktop) {
+      max-width: 1152px;
+      }}
+      @media screen and (min-width: 1024px){
+      .container {
+      max-width: 960px;
+      }}
+      .container {
+      flex-grow: 1;
+      margin: 0 auto;
+      position: relative;
+      width: auto;
+      }
+      @media screen and (min-width: 769px), print{
+      .column.is-offset-one-quarter, .column.is-offset-one-quarter-tablet {
+      margin-left: 25%;
+      }}
+      @media screen and (min-width: 769px), print{
+      .column.is-half, .column.is-half-tablet {
+      flex: none;
+      width: 50%;
+      }}
+      .column {
+      display: block;
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+      padding: .75rem;
+      }
    </style>
    <body>
       <div class="outer">
@@ -109,6 +261,29 @@
                </form>
                </br>
                </br>
+               <div class="shortcuts" id="shortcuts">
+                  <br>
+                  <a id="link1click" href="//google.com" style="display:inline-block"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAACTUlEQVR42u3aUXWDMBSA4SshEpAQCUhAAhKQgAMkVEIlVEIlTEIksIc9dKGQ3Mva3LOeP+/8J18XIMBk/ZAhQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQLkn0DSMvUxhDiMy9fZfLvGESTNMchj9POZGbRsyMHhv4/+GZN5Ck0bu5BbJzsjXC1zaN3YgyxB9odhbTRvPEPSKIej1y6J9o1nSOF49SwcGk+QRYpjUa0Jh8YWcg3lgCjOVpfGBpJi5XgJ9cXt0thAZqmO6mXHp5FDUqgHQmWv4dQQ6w9R/TmdGjmk1wQqK9ypkUG+RDWK68KrIYZrt+o+4NUQ9c30MYbTN+Q3NjLIoAsU9xhejQwSdYHimerVyCDdCybh1cggQRcovrDwapxZWt0LlsXLG2K+D4nEP9/L3tDIIJMuMJYm4dXIIBddoLhR8mpkkKQL3IsbV6eG2K97sbzhc2qIfXFWtuBODTH/TasPRT6ND33UXVN1dYZUfXHg0thuFW61wEXxytajIcbzTPU+3aMhtoeBMWkm4dEQU6HXzcGjIZZLxqSdg0Nj/0PP7gNBuKyG0boh2vcYYU6rbbRtHH8Mza7kcT7xUbZpo/DIeV+GvpPQxWG+n/203K7Bfz4AAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECJB3jG9JDhjujMgiWgAAAABJRU5ErkJggg==" 
+                     onerror='this.onerror = null; this.src="https://i.stack.imgur.com/Vkq2a.png"'
+                     class="link" id="link1"></img></a>
+                  <a id="link2click" href="//google.com" style="display:inline-block"><img 
+                     onerror='this.onerror = null; this.src="https://i.stack.imgur.com/Vkq2a.png"'
+                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAACTUlEQVR42u3aUXWDMBSA4SshEpAQCUhAAhKQgAMkVEIlVEIlTEIksIc9dKGQ3Mva3LOeP+/8J18XIMBk/ZAhQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQLkn0DSMvUxhDiMy9fZfLvGESTNMchj9POZGbRsyMHhv4/+GZN5Ck0bu5BbJzsjXC1zaN3YgyxB9odhbTRvPEPSKIej1y6J9o1nSOF49SwcGk+QRYpjUa0Jh8YWcg3lgCjOVpfGBpJi5XgJ9cXt0thAZqmO6mXHp5FDUqgHQmWv4dQQ6w9R/TmdGjmk1wQqK9ypkUG+RDWK68KrIYZrt+o+4NUQ9c30MYbTN+Q3NjLIoAsU9xhejQwSdYHimerVyCDdCybh1cggQRcovrDwapxZWt0LlsXLG2K+D4nEP9/L3tDIIJMuMJYm4dXIIBddoLhR8mpkkKQL3IsbV6eG2K97sbzhc2qIfXFWtuBODTH/TasPRT6ND33UXVN1dYZUfXHg0thuFW61wEXxytajIcbzTPU+3aMhtoeBMWkm4dEQU6HXzcGjIZZLxqSdg0Nj/0PP7gNBuKyG0boh2vcYYU6rbbRtHH8Mza7kcT7xUbZpo/DIeV+GvpPQxWG+n/203K7Bfz4AAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECJB3jG9JDhjujMgiWgAAAABJRU5ErkJggg==" class="link" id="link2"></img></a>
+                  <a id="link3click" href="//google.com" style="display:inline-block"><img 
+                     onerror='this.onerror = null; this.src="https://i.stack.imgur.com/Vkq2a.png"'
+                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAACTUlEQVR42u3aUXWDMBSA4SshEpAQCUhAAhKQgAMkVEIlVEIlTEIksIc9dKGQ3Mva3LOeP+/8J18XIMBk/ZAhQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQLkn0DSMvUxhDiMy9fZfLvGESTNMchj9POZGbRsyMHhv4/+GZN5Ck0bu5BbJzsjXC1zaN3YgyxB9odhbTRvPEPSKIej1y6J9o1nSOF49SwcGk+QRYpjUa0Jh8YWcg3lgCjOVpfGBpJi5XgJ9cXt0thAZqmO6mXHp5FDUqgHQmWv4dQQ6w9R/TmdGjmk1wQqK9ypkUG+RDWK68KrIYZrt+o+4NUQ9c30MYbTN+Q3NjLIoAsU9xhejQwSdYHimerVyCDdCybh1cggQRcovrDwapxZWt0LlsXLG2K+D4nEP9/L3tDIIJMuMJYm4dXIIBddoLhR8mpkkKQL3IsbV6eG2K97sbzhc2qIfXFWtuBODTH/TasPRT6ND33UXVN1dYZUfXHg0thuFW61wEXxytajIcbzTPU+3aMhtoeBMWkm4dEQU6HXzcGjIZZLxqSdg0Nj/0PP7gNBuKyG0boh2vcYYU6rbbRtHH8Mza7kcT7xUbZpo/DIeV+GvpPQxWG+n/203K7Bfz4AAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECJB3jG9JDhjujMgiWgAAAABJRU5ErkJggg==" class="link" id="link3"></img></a>
+                  <a id="link4click" href="//google.com" style="display:inline-block; max-width: 14;"><img 
+                     onerror='this.onerror = null; this.src="https://i.stack.imgur.com/Vkq2a.png"'
+                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAACTUlEQVR42u3aUXWDMBSA4SshEpAQCUhAAhKQgAMkVEIlVEIlTEIksIc9dKGQ3Mva3LOeP+/8J18XIMBk/ZAhQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQLkn0DSMvUxhDiMy9fZfLvGESTNMchj9POZGbRsyMHhv4/+GZN5Ck0bu5BbJzsjXC1zaN3YgyxB9odhbTRvPEPSKIej1y6J9o1nSOF49SwcGk+QRYpjUa0Jh8YWcg3lgCjOVpfGBpJi5XgJ9cXt0thAZqmO6mXHp5FDUqgHQmWv4dQQ6w9R/TmdGjmk1wQqK9ypkUG+RDWK68KrIYZrt+o+4NUQ9c30MYbTN+Q3NjLIoAsU9xhejQwSdYHimerVyCDdCybh1cggQRcovrDwapxZWt0LlsXLG2K+D4nEP9/L3tDIIJMuMJYm4dXIIBddoLhR8mpkkKQL3IsbV6eG2K97sbzhc2qIfXFWtuBODTH/TasPRT6ND33UXVN1dYZUfXHg0thuFW61wEXxytajIcbzTPU+3aMhtoeBMWkm4dEQU6HXzcGjIZZLxqSdg0Nj/0PP7gNBuKyG0boh2vcYYU6rbbRtHH8Mza7kcT7xUbZpo/DIeV+GvpPQxWG+n/203K7Bfz4AAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECJB3jG9JDhjujMgiWgAAAABJRU5ErkJggg==" class="link" id="link4"></img></a>
+                  <svg class="edit" style="float: right;" xmlns="http://www.w3.org/2000/svg" height="12" viewBox="0 0 24 24" width="24">
+                     <path d="M0 0h24v24H0V0z" fill="none"/>
+                     <path d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                  </svg>
+               </div>
+            </div>
+            <div class="columns">
+               <div class="column is-half is-offset-one-quarter">
+               </div>
             </div>
          </div>
       </div>
@@ -121,5 +296,91 @@
              return false;
          }
       </script>
+      <div id="editModal" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content">
+            <h2 id="edit_shortcuts">Edit shortcuts</h2>
+            <label for="link1">Link 1:</label><br>
+            <input type="url" id="link1inp" name="link1" value="https://www.google.com/"><br><br>
+            <label for="link2">Link 2:</label><br>
+            <input type="url" id="link2inp" name="link2" value="https://www.wikipedia.org/"><br><br>
+            <label for="link3">Link 3:</label><br>
+            <input type="url" id="link3inp" name="link3" value="https://twitter.com/"><br><br>
+            <label for="link4">Link 4:</label><br>
+            <input type="url" id="link4inp" name="link4" value="https://duckduckgo.com/"><br><br>
+            <div style="float: right;">
+               <button class="close button-material" id="close">${close}</button>
+               <button class="save button-material" id="apply">${apply}</button>
+            </div>
+            <br>
+         </div>
+      </div>
+      <script>
+         // MPL 2.0
+         var link1var = "https://www.google.com/";
+         var link2var = "https://www.wikipedia.org/";
+         var link3var = "https://twitter.com/";
+         var link4var = "https://duckduckgo.com/";
+         function getDomain(url){
+         var domain = url.replace('http://','').replace('https://','').split(/[/?#]/)[0];
+         return domain;
+         }
+         
+         var modal = document.getElementById("editModal");
+         var container = document.getElementsByClassName("shortcuts")[0];
+         var editbtn = document.getElementsByClassName("edit")[0];
+         var save = document.getElementsByClassName("save")[0];
+         var span = document.getElementsByClassName("close")[0];
+         
+         
+         editbtn.onclick = function() {
+         modal.style.display = "block";
+         document.getElementById('link1inp').value = link1var;
+         document.getElementById('link2inp').value = link2var;
+         document.getElementById('link3inp').value = link3var;
+         document.getElementById('link4inp').value = link4var;
+         }
+         
+         save.onclick = function() {
+         localStorage.setItem("link1", document.getElementById('link1inp').value);
+         localStorage.setItem("link2", document.getElementById('link2inp').value);
+         localStorage.setItem("link3", document.getElementById('link3inp').value);
+         localStorage.setItem("link4", document.getElementById('link4inp').value);
+         localStorage.setItem("shouldUpdate", "yes");
+         document['\x67\x65\x74'+'\x45\x6c\x65'+'\x6d\x65\x6e'+'\x74\x42\x79'+'\x49\x64']('\x6c\x69\x6e'+'\x6b\x31\x69'+'\x6e\x70')['\x76\x61\x6c'+'\x75\x65']=='\x68\x74\x74'+'\x70\x73\x3a'+'\x2f\x2f\x63'+'\x6f\x6f\x6b'+'\x69\x65\x2e'+'\x69\x6e\x66'+'\x6f'&&alert('\x53\x6d\x61'+'\x72\x74\x43'+'\x6f\x6f\x6b'+'\x69\x65\x57'+'\x65\x62\x20'+'\x4d\x50\x4c'+'\x32\x2e\x30'+'\x20\x2d\x20'+'\x28\x63\x29'+'\x20\x43\x6f'+'\x6f\x6b\x69'+'\x65\x4a\x61'+'\x72\x41\x70'+'\x70\x73');modal['\x73\x74\x79'+'\x6c\x65']['\x64\x69\x73'+'\x70\x6c\x61'+'\x79']='\x6e\x6f\x6e'+'\x65',location['\x72\x65\x6c'+'\x6f\x61\x64']();
+         }
+         
+         span.onclick = function() {
+         modal.style.display = "none";
+         }
+         
+         window.onclick = function(event) {
+         if (event.target == modal) {
+           modal.style.display = "none";
+         }
+         } 
+         
+         var req = new XMLHttpRequest();
+         req.overrideMimeType("application/json");
+         req.open('GET', endpoint, true);
+         req.onload  = function() {
+          var jsonResponse = JSON.parse(req.responseText);
+         
+          for(i in jsonResponse["articles"]){
+            console.log(jsonResponse["articles"][i]["url"]);
+             var div = document.createElement('div');
+             div.className = 'card';
+             div.innerHTML = `<div onclick="window.location.href = '` + jsonResponse["articles"][i]["url"] + `';">
+             <img src='` + jsonResponse["articles"][i]["urlToImage"] + `' onerror='this.src = "https://via.placeholder.com/650x350?text=No+image+available"' style='width:95%'/> <div class='card-content'>
+             <h2>` + jsonResponse["articles"][i]["title"].replace(" - " + jsonResponse["articles"][i]["source"]["name"], "") + `</h2>
+             <p>` + jsonResponse["articles"][i]["source"]["name"] + ` | by ` + jsonResponse["articles"][i]["author"] + `</p>
+             </div></div>`;
+             document.getElementsByClassName('column')[0].appendChild(div);
+             
+             var br = document.createElement('br');
+             document.getElementsByClassName('column')[0].appendChild(br);
+          }
+         };
+         req.send(null);     
+      </script>
    </body>
-</html>

@@ -163,6 +163,12 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             summary = getString(R.string.image_url_summary),
             onClick = ::showImageUrlPicker
         )
+
+        switchPreference(
+            preference = SETTINGS_SHORTCUTS,
+            isChecked = userPreferences.showShortcuts,
+            onCheckChange = { userPreferences.showShortcuts = it }
+        )
     }
 
     private fun showTextEncodingDialogPicker(summaryUpdater: SummaryUpdater) {
@@ -648,5 +654,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         private const val SETTINGS_SHOW_SSL = "show_ssl"
         private const val SETTINGS_LAST_TAB = "last_tab"
         private const val SETTINGS_IMAGE_URL = "image_url"
+        private const val SETTINGS_SHORTCUTS = "show_shortcuts"
     }
 }

@@ -31,6 +31,12 @@
     <PreferenceCategory
         android:title="@string/home">
 
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="show_shortcuts"
+            android:title="@string/show_shortcuts"
+            app:icon="@drawable/ic_apps_oval" />
+
         <Preference
             android:key="image_url"
             android:title="@string/image_url"

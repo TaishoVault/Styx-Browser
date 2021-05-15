@@ -10,6 +10,8 @@ import android.graphics.Bitmap
 import android.net.MailTo
 import android.net.Uri
 import android.net.http.SslError
+import android.os.Handler
+import android.os.Looper
 import android.os.Message
 import android.text.TextUtils
 import android.util.Log
@@ -303,6 +305,12 @@ class StyxWebClient(
         if (styxView.invertPage) {
             view.evaluateJavascript(invertPageJs.provideJs(), null)
         }
+        if (url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")) {
+            view.evaluateJavascript("javascript:(function() {" + "link1var = '" + userPreferences.link1  + "';" + "})();", null)
+            view.evaluateJavascript("javascript:(function() {" + "link2var = '" + userPreferences.link2 + "';" + "})();", null)
+            view.evaluateJavascript("javascript:(function() {" + "link3var = '" + userPreferences.link3 + "';" + "})();", null)
+            view.evaluateJavascript("javascript:(function() {" + "link4var = '" + userPreferences.link4  + "';" + "})();", null)
+        }
         if (userPreferences.forceZoom){
             view.loadUrl(
                     "javascript:(function() { document.querySelector('meta[name=\"viewport\"]').setAttribute(\"content\",\"width=device-width\"); })();"
@@ -387,6 +395,33 @@ class StyxWebClient(
 
         // Try to fetch meta theme color a few times
         styxView.fetchMetaThemeColorTries = KFetchMetaThemeColorTries
+
+        if(url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")){
+            view.evaluateJavascript("""(function() {
+                return localStorage.getItem("shouldUpdate");})()""".trimMargin()) { it ->
+                if(it.substring(1, it.length - 1) == "yes"){
+                    view.evaluateJavascript("""(function() {return localStorage.getItem("link1");})()""".trimMargin()) {
+                        userPreferences.link1 = it.substring(1, it.length - 1)
+                        view.evaluateJavascript("""(function() {localStorage.setItem("shouldUpdate", "no");})()"""){}
+                    }
+                    view.evaluateJavascript("""(function() {return localStorage.getItem("link2");})()""".trimMargin()) {
+                        userPreferences.link2 = it.substring(1, it.length - 1)
+                        view.evaluateJavascript("""(function() {localStorage.setItem("shouldUpdate", "no");})()"""){}
+                    }
+                    view.evaluateJavascript("""(function() {return localStorage.getItem("link3");})()""".trimMargin()) {
+                        userPreferences.link3 = it.substring(1, it.length - 1)
+                        view.evaluateJavascript("""(function() {localStorage.setItem("shouldUpdate", "no");})()"""){}
+                    }
+                    view.evaluateJavascript("""(function() {return localStorage.getItem("link4");})()""".trimMargin()) {
+                        userPreferences.link4 = it.substring(1, it.length - 1)
+                        view.evaluateJavascript("""(function() {localStorage.setItem("shouldUpdate", "no");})()"""){}
+                    }
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        uiController.newTabButtonClicked()
+                    }, 100)
+                }
+            }
+        }
 
         if (userPreferences.javaScriptChoice === JavaScriptChoice.BLACKLIST) {
             if (userPreferences.javaScriptBlocked !== "" && userPreferences.javaScriptBlocked !== " ") {

@@ -77,6 +77,7 @@
     <string name="allow_javascript">JavaScript für diese Webseite zulassen</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Apache License 2.0</string>
+    <string name="apply">Anwenden</string>
     <string name="black_theme">Schwarzes Design (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Hosts-Liste wird aktualisiert…</string>
     <string name="block_ad_refresh_now">Hosts aktualisieren</string>
@@ -108,6 +109,7 @@
     <string name="clear_history">Verlauf löschen</string>
     <string name="clear_web_storage_exit">Webinhalte beim Beenden löschen</string>
     <string name="clear_web_storage">Webinhalte löschen</string>
+    <string name="close">Schließen</string>
     <string name="close_all_tabs">Alle Tabs schließen</string>
     <string name="close_on_last_tab">Browser mit letztem Tab beenden</string>
     <string name="close_other_tabs">Andere Tabs schließen</string>
@@ -150,6 +152,7 @@
     <string name="downloads_notification_description">Auslöser bei Abschluss des Downloads</string>
     <string name="downloads">Downloads</string>
     <string name="edit_cookies">Webseiten-Cookies anzeigen</string>
+    <string name="edit_shortcuts">Verknüpfungen bearbeiten</string>
     <string name="eight">8</string>
     <string name="error_reload">Neu laden</string>
     <string name="error_tip">• Bitte überprüfen Sie die Adresse auf Tippfehler, wie ww.example.com statt www.example.com</string>
@@ -348,6 +351,7 @@
     <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Ihr Launcher unterstützt keine Verknüpfungen!</string>
     <string name="show_second_bar">Zweite Navigationsleiste anzeigen</string>
+    <string name="show_shortcuts">Verknüpfungen auf der Startseite anzeigen</string>
     <string name="show_ssl">SSL-Warndialog anzeigen</string>
     <string name="site_cookies">Webseiten-Cookies</string>
     <string name="six">6</string>

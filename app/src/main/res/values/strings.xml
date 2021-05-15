@@ -78,6 +78,7 @@
     <string name="allow_javascript">Allow JavaScript for this site</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Apache License 2.0</string>
+    <string name="apply">Apply</string>
     <string name="black_theme">Black (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Refresh hosts file…</string>
     <string name="block_ad_refresh_now">Refresh hosts now</string>
@@ -109,6 +110,7 @@
     <string name="clear_history">Clear browser history</string>
     <string name="clear_web_storage_exit">Clear web storage on exit</string>
     <string name="clear_web_storage">Clear web storage</string>
+    <string name="close">Close</string>
     <string name="close_all_tabs">Close all tabs</string>
     <string name="close_on_last_tab">Close browser with last tab</string>
     <string name="close_other_tabs">Close other tabs</string>
@@ -151,6 +153,7 @@
     <string name="downloads_notification_description">Triggers upon download completion</string>
     <string name="downloads">Downloads</string>
     <string name="edit_cookies">Show site cookies</string>
+    <string name="edit_shortcuts">Edit Shortcuts</string>
     <string name="eight">8</string>
     <string name="error_reload">Reload</string>
     <string name="error_tip">• Check the Address for typing errors such as ww.example.com instead of www.example.com</string>
@@ -364,6 +367,7 @@
     <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Sorry, your launcher does not support shortcuts.</string>
     <string name="show_second_bar">Show secondary navigation bar</string>
+    <string name="show_shortcuts">Show shortcuts on homepage</string>
     <string name="show_ssl">Show SSL warning dialogs</string>
     <string name="site_cookies">Site cookies</string>
     <string name="six">6</string>
@@ -548,6 +552,10 @@
     <string name="pref_key_landscape_show_tool_bar_on_scroll_up" translatable="false">pref_key_landscape_show_tool_bar_when_scroll_up</string>
     <string name="pref_key_landscape_tab_bar_vertical" translatable="false">pref_key_landscape_tab_bar_vertical</string>
     <string name="pref_key_landscape_toolbars_bottom" translatable="false">pref_key_landscape_toolbars_bottom</string>
+    <string name="pref_key_link1" translatable="false">pref_key_link1</string>
+    <string name="pref_key_link2" translatable="false">pref_key_link2</string>
+    <string name="pref_key_link3" translatable="false">pref_key_link3</string>
+    <string name="pref_key_link4" translatable="false">pref_key_link4</string>
     <string name="pref_key_load_images" translatable="false">pref_key_load_images</string>
     <string name="pref_key_location" translatable="false">pref_key_location</string>
     <string name="pref_key_locked_drawers" translatable="false">pref_key_locked_drawers</string>
@@ -575,6 +583,7 @@
     <string name="pref_key_search" translatable="false">pref_key_search</string>
     <string name="pref_key_second_nav_bar" translatable="false">pref_key_second_nav_bar</string>
     <string name="pref_key_show_download_confirmation" translatable="false">pref_key_show_download_confirmation</string>
+    <string name="pref_key_show_shortcuts" translatable="false">pref_key_show_shortcuts</string>
     <string name="pref_key_ssl_dialog" translatable="false">pref_key_ssl_dialog</string>
     <string name="pref_key_support_multiple_window" translatable="false">pref_key_support_multiple_window</string>
     <string name="pref_key_swap_tabs_and_bookmarks" translatable="false">pref_key_swap_tabs_and_bookmarks</string>

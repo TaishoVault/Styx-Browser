@@ -460,4 +460,17 @@ class UserPreferences @Inject constructor(
      * Show download dialog before downloading a file
      */
     var showDownloadConfirmation by preferences.booleanPreference(R.string.pref_key_show_download_confirmation, R.bool.pref_default_show_download_confirmation)
+
+    /**
+     * Show homepage shortcuts
+     */
+    var showShortcuts by preferences.booleanPreference(R.string.pref_key_show_shortcuts, true)
+
+    /**
+     * Homepage shortcuts
+     */
+    var link1 by preferences.stringPreference(R.string.pref_key_link1, "https://www.google.com/")
+    var link2 by preferences.stringPreference(R.string.pref_key_link2, "https://www.wikipedia.org/")
+    var link3 by preferences.stringPreference(R.string.pref_key_link3, "https://twitter.com/")
+    var link4 by preferences.stringPreference(R.string.pref_key_link4, "https://duckduckgo.com/")
 }
