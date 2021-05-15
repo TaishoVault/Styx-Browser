@@ -1,24 +1,28 @@
 package com.jamal2367.styx.utils
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.util.Log
 import android.webkit.WebView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.annotation.NonNull
+import androidx.annotation.Nullable
 import com.jamal2367.styx.R
 import com.jamal2367.styx.constant.INTENT_ORIGIN
 import java.net.URISyntaxException
+import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-class IntentUtils(private val mActivity: AppCompatActivity) {
+
+class IntentUtils(@field:NonNull @param:NonNull private val mActivity: Activity) {
     /**
      *
      * @param tab
      * @param url
      * @return
      */
-    fun intentForUrl(tab: WebView?, url: String): Intent? {
+    fun intentForUrl(@Nullable tab: WebView?, @NonNull url: String): Intent? {
         var intent: Intent
         intent = try {
             Intent.parseUri(url, Intent.URI_INTENT_SCHEME)
@@ -33,8 +37,12 @@ class IntentUtils(private val mActivity: AppCompatActivity) {
             // SL: Not sure what that special case is for
             val packagename = intent.getPackage()
             return if (packagename != null) {
-                intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pname:"
-                        + packagename))
+                intent = Intent(
+                    Intent.ACTION_VIEW, Uri.parse(
+                        "market://search?q=pname:"
+                                + packagename
+                    )
+                )
                 intent.addCategory(Intent.CATEGORY_BROWSABLE)
                 //mActivity.startActivity(intent);
                 intent
@@ -45,15 +53,15 @@ class IntentUtils(private val mActivity: AppCompatActivity) {
         if (tab != null) {
             intent.putExtra(INTENT_ORIGIN, tab.hashCode())
         }
-        val m = ACCEPTED_URI_SCHEMA.matcher(url)
+        val m: Matcher = ACCEPTED_URI_SCHEMA.matcher(url)
         return if (m.matches() && !isSpecializedHandlerAvailable(intent)) {
             null
         } else intent
     }
 
-    fun startActivityForIntent(aIntent: Intent?): Boolean {
+    fun startActivityForIntent(aIntent: Intent): Boolean {
         try {
-            if (mActivity.startActivityIfNeeded(aIntent!!, -1)) {
+            if (mActivity.startActivityIfNeeded(aIntent, -1)) {
                 return true
             }
         } catch (exception: Exception) {
@@ -62,26 +70,29 @@ class IntentUtils(private val mActivity: AppCompatActivity) {
         return false
     }
 
-    fun startActivityForUrl(tab: WebView?, url: String): Boolean {
+    fun startActivityForUrl(@Nullable tab: WebView?, @NonNull url: String): Boolean? {
         val intent = intentForUrl(tab, url)
-        return startActivityForIntent(intent)
+        return intent?.let { startActivityForIntent(it) }
     }
 
     /**
      * Search for intent handlers that are specific to this URL aka, specialized
      * apps like google maps or youtube
      */
-    private fun isSpecializedHandlerAvailable(intent: Intent): Boolean {
+    private fun isSpecializedHandlerAvailable(@NonNull intent: Intent): Boolean {
         val pm = mActivity.packageManager
-        val handlers = pm.queryIntentActivities(intent, PackageManager.GET_RESOLVED_FILTER)
+        val handlers = pm.queryIntentActivities(
+            intent,
+            PackageManager.GET_RESOLVED_FILTER
+        )
         if (handlers.isEmpty()) {
             return false
         }
         for (resolveInfo in handlers) {
             val filter = resolveInfo.filter
-                    ?: // No intent filter matches this intent?
-                    // Error on the side of staying in the browser, ignore
-                    continue
+                ?: // No intent filter matches this intent?
+                // Error on the side of staying in the browser, ignore
+                continue
             // NOTICE: Use of && instead of || will cause the browser
             // to launch a new intent for every URL, using OR only
             // launches a new one if there is a non-browser app that
@@ -105,7 +116,7 @@ class IntentUtils(private val mActivity: AppCompatActivity) {
      * @param title the title of the URL to share. This
      * is optional.
      */
-    fun shareUrl(url: String?, title: String?) {
+    fun shareUrl(@Nullable url: String?, @Nullable title: String?) {
         if (url != null && !url.isSpecialUrl()) {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"
@@ -113,16 +124,23 @@ class IntentUtils(private val mActivity: AppCompatActivity) {
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, title)
             }
             shareIntent.putExtra(Intent.EXTRA_TEXT, url)
-            mActivity.startActivity(Intent.createChooser(shareIntent, mActivity.getString(R.string.dialog_title_share)))
+            mActivity.startActivity(
+                Intent.createChooser(
+                    shareIntent,
+                    mActivity.getString(R.string.dialog_title_share)
+                )
+            )
         }
     }
 
     companion object {
-        private val ACCEPTED_URI_SCHEMA = Pattern.compile("(?i)"
-                +  // switch on case insensitive matching
-                '('
-                +  // begin group for schema
-                "(?:http|https|file)://" + "|(?:inline|data|about|javascript):" + "|(?:.*:.*@)"
-                + ')' + "(.*)")
+        private val ACCEPTED_URI_SCHEMA = Pattern.compile(
+            "(?i)"
+                    +  // switch on case insensitive matching
+                    '('
+                    +  // begin group for schema
+                    "(?:http|https|file)://" + "|(?:inline|data|about|javascript):" + "|(?:.*:.*@)"
+                    + ')' + "(.*)"
+        )
     }
 }
