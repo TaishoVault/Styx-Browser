@@ -40,7 +40,7 @@
             android:dropDownAnchor="@id/toolbar_include"
             android:dropDownWidth="match_parent"
             android:gravity="start|center_vertical"
-            android:hint="@string/search_hint"
+            android:hint="@string/search_homepage"
             android:imeOptions="actionGo"
             android:importantForAutofill="no"
             android:inputType="textUri"

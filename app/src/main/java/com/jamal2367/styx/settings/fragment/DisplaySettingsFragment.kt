@@ -78,11 +78,6 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
                 onCheckChange = { userPreferences.navbar = it }
         )
 
-        clickablePreference(
-                preference = SETTINGS_IMAGE_URL,
-                onClick = ::showImageUrlPicker
-        )
-
     }
 
 
@@ -142,18 +137,6 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
         RenderingMode.INVERTED_GRAYSCALE -> R.string.name_inverted_grayscale
         RenderingMode.INCREASE_CONTRAST -> R.string.name_increase_contrast
     })
-
-    private fun showImageUrlPicker() {
-        activity?.let {
-            BrowserDialog.showEditText(it as AppCompatActivity,
-                    R.string.image_url,
-                    R.string.hint_url,
-                    userPreferences.imageUrlString,
-                    R.string.action_ok) { s ->
-                userPreferences.imageUrlString = s
-            }
-        }
-    }
 
     @SuppressLint("InflateParams")
     private fun showTextSizePicker(summaryUpdater: SummaryUpdater) {
@@ -273,7 +256,6 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
     companion object {
 
         private const val SETTINGS_NAVBAR = "second_bar"
-        private const val SETTINGS_IMAGE_URL = "image_url"
 
         private const val XX_LARGE = 30.0f
         private const val X_SMALL = 10.0f

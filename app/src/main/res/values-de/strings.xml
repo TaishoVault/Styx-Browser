@@ -176,7 +176,8 @@
     <string name="host">Host:</string>
     <string name="http_proxy">HTTP Proxy</string>
     <string name="i2p">I2P</string>
-    <string name="image_url">Hintergrundbild der Startseite festlegen</string>
+    <string name="image_url">Hintergrundbild für Suchmaschine festlegen</string>
+    <string name="image_url_summary">Nur für benutzerdefinierte URL</string>
     <string name="import_backup">Lesezeichen importieren</string>
     <string name="import_bookmark_error">Lesezeichen konnten nicht importiert werden</string>
     <string name="import_export_settings">Importieren &amp; Exportieren</string>

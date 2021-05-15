@@ -9,6 +9,8 @@ import com.jamal2367.styx.html.HtmlPageFactory
 import com.jamal2367.styx.html.jsoup.*
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.search.SearchEngineProvider
+import com.jamal2367.styx.search.engine.CustomSearch
+import com.jamal2367.styx.search.engine.GoogleSearch
 import com.jamal2367.styx.utils.ThemeUtils
 import com.jamal2367.styx.utils.htmlColor
 import dagger.Reusable
@@ -40,19 +42,9 @@ class HomePageFactory @Inject constructor(
                 ) andBuild {
                     charset { UTF8 }
                     body {
-                        if (userPreferences.imageUrlString != "") {
-                            tag("body") {
-                                attr("style", "background: url('" + userPreferences.imageUrlString + "') no-repeat scroll; background-size: 100%; ") }
-
-                            tag("img") {
-                                attr("style", "display: none") }
-
-                            tag("form") {
-                                attr("style", "opacity: 0.7;") }
-                        }
-
-                        id("image_url") {
-                            attr("src", iconUrl)
+                        when (userPreferences.searchChoice) {
+                            0 -> id("image_url") { attr("src", userPreferences.imageUrlString) }
+                            else -> id("image_url") { attr("src", iconUrl) }
                         }
                         tag("script") {
                             html(

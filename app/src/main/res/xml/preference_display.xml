@@ -107,16 +107,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/home">
-
-    <Preference
-        android:key="image_url"
-        android:title="@string/image_url"
-        app:icon="@drawable/ic_image_oval" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/pref_category_portrait">
 
         <SwitchPreferenceCompat

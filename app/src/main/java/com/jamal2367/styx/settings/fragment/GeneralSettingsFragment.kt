@@ -157,6 +157,12 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
                 isChecked = userPreferences.closeOnLastTab,
                 onCheckChange = { userPreferences.closeOnLastTab = it }
         )
+
+        clickablePreference(
+            preference = SETTINGS_IMAGE_URL,
+            summary = getString(R.string.image_url_summary),
+            onClick = ::showImageUrlPicker
+        )
     }
 
     private fun showTextEncodingDialogPicker(summaryUpdater: SummaryUpdater) {
@@ -206,6 +212,17 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         summaryUpdater.updateSummary(stringArray[choice.value])
     }
 
+    private fun showImageUrlPicker() {
+        activity?.let {
+            BrowserDialog.showEditText(it as AppCompatActivity,
+                R.string.image_url,
+                R.string.hint_url,
+                userPreferences.imageUrlString,
+                R.string.action_ok) { s ->
+                userPreferences.imageUrlString = s
+            }
+        }
+    }
 
     private fun ProxyChoice.toSummary(): String {
         val stringArray = resources.getStringArray(R.array.proxy_choices_array)
@@ -630,5 +647,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         private const val SETTINGS_FORCE_ZOOM = "force_zoom"
         private const val SETTINGS_SHOW_SSL = "show_ssl"
         private const val SETTINGS_LAST_TAB = "last_tab"
+        private const val SETTINGS_IMAGE_URL = "image_url"
     }
 }
