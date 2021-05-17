@@ -77,6 +77,7 @@
     <string name="allow_javascript">Разрешить JavaScript для этого сайта</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Лицензия Apache 2.0</string>
+    <string name="apply">Применить</string>
     <string name="black_theme">Чёрная тема (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Обновить host-файл…</string>
     <string name="block_ad_refresh_now">Обновить host-файл сейчас</string>
@@ -108,6 +109,7 @@
     <string name="clear_history">Очистить историю</string>
     <string name="clear_web_storage_exit">Очищать интернет-хранилище при выходе</string>
     <string name="clear_web_storage">Очистить интернет-хранилище</string>
+    <string name="close">Закрыть</string>
     <string name="close_all_tabs">Закрыть все вкладки</string>
     <string name="close_on_last_tab">Закрыть браузер с последней вкладкой</string>
     <string name="close_other_tabs">Закрыть остальные вкладки</string>
@@ -150,6 +152,7 @@
     <string name="downloads_notification_description">Триггеры после окончания загрузки</string>
     <string name="downloads">Загрузки</string>
     <string name="edit_cookies">Показывать cookie сайта</string>
+    <string name="edit_shortcuts">Редактировать ярлык</string>
     <string name="eight">8</string>
     <string name="error_reload">Обновить</string>
     <string name="error_tip">• Проверьте адрес на наличие ошибок, таких как ww.example.com вместо www.example.com</string>
@@ -176,6 +179,8 @@
     <string name="host">Хост:</string>
     <string name="http_proxy">HTTP прокси</string>
     <string name="i2p">I2P</string>
+    <string name="image_url">Установить фоновое изображение для поисковой системы</string>
+    <string name="image_url_summary">Только для пользовательских URL</string>
     <string name="import_backup">Восстановить закладки из резервной копии</string>
     <string name="import_bookmark_error">Не удалось импортировать закладки из файла</string>
     <string name="import_export_settings">Импорт и экспорт</string>
@@ -346,6 +351,7 @@
     <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">К сожалению, ваш лаунчер не поддерживает ярлыки.</string>
     <string name="show_second_bar">Показывать вторую панель навигации</string>
+    <string name="show_shortcuts">Показывать ярлыки на домашней странице</string>
     <string name="show_ssl">Показать диалоги предупреждения SSL</string>
     <string name="site_cookies">Cookie сайта</string>
     <string name="six">6</string>

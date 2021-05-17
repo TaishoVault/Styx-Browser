@@ -77,6 +77,7 @@
     <string name="allow_javascript">Permetti JavaScript per questo sito</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache">Licenza Apache 2.0</string>
+    <string name="apply">Applica</string>
     <string name="black_theme">Nero (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Aggiornamento file host…</string>
     <string name="block_ad_refresh_now">Aggiorna gli host ora</string>
@@ -108,6 +109,7 @@
     <string name="clear_history">Cancella la cronologia</string>
     <string name="clear_web_storage_exit">Cancella memoria siti in chiusura</string>
     <string name="clear_web_storage">Cancella memoria siti</string>
+    <string name="close">Chiudi</string>
     <string name="close_all_tabs">Chiudi tutte le schede</string>
     <string name="close_on_last_tab">Chiudi il browser con l\'ultimo tab</string>
     <string name="close_other_tabs">Chiudi le altre schede</string>
@@ -150,6 +152,7 @@
     <string name="downloads_notification_description">Attivato in seguito al completamento del download</string>
     <string name="downloads">Downloads</string>
     <string name="edit_cookies">Mostra i cookie del sito</string>
+    <string name="edit_shortcuts">Modifica scorciatoie</string>
     <string name="eight">8</string>
     <string name="error_reload">Ricarica</string>
     <string name="error_tip">• Controlla l\'indirizzo per errori di scrittura come ww.example.com invece di www.example.com</string>
@@ -176,6 +179,8 @@
     <string name="host">Host:</string>
     <string name="http_proxy">Proxy HTTP</string>
     <string name="i2p">I2P</string>
+    <string name="image_url">Imposta un\' immagine di sfondo per il motore di ricerca</string>
+    <string name="image_url_summary">Solo per URL personalizzato</string>
     <string name="import_backup">Importa i segnalibri da un backup</string>
     <string name="import_bookmark_error">Impossibile importare i segnalibri dal file</string>
     <string name="import_export_settings">Importa &amp; Esporta</string>
@@ -346,6 +351,7 @@
     <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Scusa, il tuo launcher non supporta gli shortcut.</string>
     <string name="show_second_bar">Mosta barra di navigazione secondaria</string>
+    <string name="show_shortcuts">Mostra scorciatoie sulla pagina iniziale</string>
     <string name="show_ssl">Mostra finestre avviso SSL</string>
     <string name="site_cookies">Cookie del sito</string>
     <string name="six">6</string>
