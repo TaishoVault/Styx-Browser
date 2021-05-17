@@ -46,6 +46,7 @@ class HomePageFactory @Inject constructor(
                         .replace("\${searchBarColor}", htmlColor(ThemeUtils.getSearchBarColor(ThemeUtils.getSurfaceColor(BrowserApp.currentContext()))))
                         .replace("\${searchBarTextColor}", htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.colorOnPrimary)))
                         .replace("\${backgroundColor1}", htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.trackColor)))
+                        .replace("\${backgroundColor2}", htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.appColorControlEnabled)))
                         .replace("\${search}", application.getString(R.string.search_homepage))
                 ) andBuild {
                     charset { UTF8 }
