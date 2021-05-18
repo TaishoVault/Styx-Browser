@@ -61,9 +61,9 @@ abstract class ThemedBrowserActivity : ThemedActivity() {
         }
     }
 
-    override fun accentStyle(accentTheme: AccentTheme): Int {
+    override fun accentStyle(accentTheme: AccentTheme): Int? {
         return when (accentTheme) {
-            AccentTheme.DEFAULT_ACCENT -> R.style.Accent_Red
+            AccentTheme.DEFAULT_ACCENT -> null
             AccentTheme.PINK -> R.style.Accent_Pink
             AccentTheme.PURPLE ->  R.style.Accent_Puple
             AccentTheme.DEEP_PURPLE -> R.style.Accent_Deep_Purple

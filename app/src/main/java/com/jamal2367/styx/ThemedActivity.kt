@@ -42,7 +42,7 @@ abstract class ThemedActivity : AppCompatActivity() {
     abstract fun themeStyle(aTheme: AppTheme): Int
 
     @StyleRes
-    protected abstract fun accentStyle(accentTheme: AccentTheme): Int
+    protected abstract fun accentStyle(accentTheme: AccentTheme): Int?
 
     override fun onCreate(savedInstanceState: Bundle?) {
         injector.inject(this)
@@ -83,7 +83,7 @@ abstract class ThemedActivity : AppCompatActivity() {
      *
      */
     protected fun applyAccent() {
-        setTheme(accentStyle(accentId))
+        accentStyle(accentId)?.let { setTheme(it) }
     }
 
 }
