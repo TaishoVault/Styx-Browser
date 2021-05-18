@@ -35,6 +35,7 @@
             android:defaultValue="true"
             android:key="show_shortcuts"
             android:title="@string/show_shortcuts"
+            android:summary="@string/recommended"
             app:icon="@drawable/ic_apps_oval" />
 
         <Preference
