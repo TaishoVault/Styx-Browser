@@ -291,98 +291,98 @@
     </style>
 
     <style name="Accent_Pink">
-        <item name="colorPrimary">#EC407A</item>
-        <item name="colorSecondary">#EC407A</item>
-        <item name="colorAccent">#EC407A</item>
+        <item name="colorPrimary">#F06292</item>
+        <item name="colorSecondary">#F06292</item>
+        <item name="colorAccent">#F06292</item>
     </style>
 
     <style name="Accent_Puple">
-        <item name="colorPrimary">#AB47BC</item>
-        <item name="colorSecondary">#AB47BC</item>
-        <item name="colorAccent">#AB47BC</item>
+        <item name="colorPrimary">#BA68C8</item>
+        <item name="colorSecondary">#BA68C8</item>
+        <item name="colorAccent">#BA68C8</item>
     </style>
 
     <style name="Accent_Deep_Purple">
-        <item name="colorPrimary">#7E57C2</item>
-        <item name="colorSecondary">#7E57C2</item>
-        <item name="colorAccent">#7E57C2</item>
+        <item name="colorPrimary">#9575CD</item>
+        <item name="colorSecondary">#9575CD</item>
+        <item name="colorAccent">#9575CD</item>
     </style>
 
     <style name="Accent_Indigo">
-        <item name="colorPrimary">#5C6BC0</item>
-        <item name="colorSecondary">#5C6BC0</item>
-        <item name="colorAccent">#5C6BC0</item>
+        <item name="colorPrimary">#7986CB</item>
+        <item name="colorSecondary">#7986CB</item>
+        <item name="colorAccent">#7986CB</item>
     </style>
 
     <style name="Accent_Blue">
-        <item name="colorPrimary">#42A5F5</item>
-        <item name="colorSecondary">#42A5F5</item>
-        <item name="colorAccent">#42A5F5</item>
+        <item name="colorPrimary">#64B5F6</item>
+        <item name="colorSecondary">#64B5F6</item>
+        <item name="colorAccent">#64B5F6</item>
     </style>
 
     <style name="Accent_Light_Blue">
-        <item name="colorPrimary">#29B6F6</item>
-        <item name="colorSecondary">#29B6F6</item>
-        <item name="colorAccent">#29B6F6</item>
+        <item name="colorPrimary">#4FC3F7</item>
+        <item name="colorSecondary">#4FC3F7</item>
+        <item name="colorAccent">#4FC3F7</item>
     </style>
 
     <style name="Accent_Cyan">
-        <item name="colorPrimary">#26C6DA</item>
-        <item name="colorSecondary">#26C6DA</item>
-        <item name="colorAccent">#26C6DA</item>
+        <item name="colorPrimary">#4DD0E1</item>
+        <item name="colorSecondary">#4DD0E1</item>
+        <item name="colorAccent">#4DD0E1</item>
     </style>
 
     <style name="Accent_Teal">
-        <item name="colorPrimary">#26A69A</item>
-        <item name="colorSecondary">#26A69A</item>
-        <item name="colorAccent">#26A69A</item>
+        <item name="colorPrimary">#4DB6AC</item>
+        <item name="colorSecondary">#4DB6AC</item>
+        <item name="colorAccent">#4DB6AC</item>
     </style>
 
     <style name="Accent_Green">
-        <item name="colorPrimary">#66BB6A</item>
-        <item name="colorSecondary">#66BB6A</item>
-        <item name="colorAccent">#66BB6A</item>
+        <item name="colorPrimary">#81C784</item>
+        <item name="colorSecondary">#81C784</item>
+        <item name="colorAccent">#81C784</item>
     </style>
 
     <style name="Accent_Light_Green">
-        <item name="colorPrimary">#9CCC65</item>
-        <item name="colorSecondary">#9CCC65</item>
-        <item name="colorAccent">#9CCC65</item>
+        <item name="colorPrimary">#AED581</item>
+        <item name="colorSecondary">#AED581</item>
+        <item name="colorAccent">#AED581</item>
     </style>
 
     <style name="Accent_Lime">
-        <item name="colorPrimary">#D4E157</item>
-        <item name="colorSecondary">#D4E157</item>
-        <item name="colorAccent">#D4E157</item>
+        <item name="colorPrimary">#DCE775</item>
+        <item name="colorSecondary">#DCE775</item>
+        <item name="colorAccent">#DCE775</item>
     </style>
 
     <style name="Accent_Yellow">
-        <item name="colorPrimary">#FFEE58</item>
-        <item name="colorSecondary">#FFEE58</item>
-        <item name="colorAccent">#FFEE58</item>
+        <item name="colorPrimary">#FFF176</item>
+        <item name="colorSecondary">#FFF176</item>
+        <item name="colorAccent">#FFF176</item>
     </style>
 
     <style name="Accent_Amber">
-        <item name="colorPrimary">#FFCA28</item>
-        <item name="colorSecondary">#FFCA28</item>
-        <item name="colorAccent">#FFCA28</item>
+        <item name="colorPrimary">#FFD54F</item>
+        <item name="colorSecondary">#FFD54F</item>
+        <item name="colorAccent">#FFD54F</item>
     </style>
 
     <style name="Accent_Orange">
-        <item name="colorPrimary">#FFA726</item>
-        <item name="colorSecondary">#FFA726</item>
-        <item name="colorAccent">#FFA726</item>
+        <item name="colorPrimary">#FFB74D</item>
+        <item name="colorSecondary">#FFB74D</item>
+        <item name="colorAccent">#FFB74D</item>
     </style>
 
     <style name="Accent_Deep_Orange">
-        <item name="colorPrimary">#FF7043</item>
-        <item name="colorSecondary">#FF7043</item>
-        <item name="colorAccent">#FF7043</item>
+        <item name="colorPrimary">#FF8A65</item>
+        <item name="colorSecondary">#FF8A65</item>
+        <item name="colorAccent">#FF8A65</item>
     </style>
 
     <style name="Accent_Brown">
-        <item name="colorPrimary">#8D6E63</item>
-        <item name="colorSecondary">#8D6E63</item>
-        <item name="colorAccent">#8D6E63</item>
+        <item name="colorPrimary">#A1887F</item>
+        <item name="colorSecondary">#A1887F</item>
+        <item name="colorAccent">#A1887F</item>
     </style>
 </resources>
