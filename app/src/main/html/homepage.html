@@ -124,6 +124,35 @@
       -o-user-select: none;
       user-select: none;
       }
+	  .button-materials {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 4px;
+      padding: 0 16px;
+      min-width: 64px;
+      height: 36px;
+      vertical-align: middle;
+      text-align: center;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+	  color: ${accent};
+      background-color: ${backgroundColor1};
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 36px;
+      overflow: hidden;
+      outline: none;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      }
       h2 {
       -webkit-user-select: none;
       -khtml-user-select: none;
@@ -168,8 +197,10 @@
       input {
       background-color: ${backgroundColor1};
       color: ${searchBarTextColor};
-      border: 1px;
+      border: 0.5px solid ${searchBarTextColor};
       border-radius: 4px;
+	  padding-left: 5px;
+	  padding-right: 5px;
       }
       input:focus{
       outline: none;
@@ -253,7 +284,7 @@
             <input type="url" id="link4inp" name="link4" value="https://duckduckgo.com/"><br><br>
             <div style="float: right;">
                <button class="close button-material" id="close">${close}</button>
-               <button class="save button-material" id="apply">${apply}</button>
+               <button class="save button-materials" id="apply">${apply}</button>
             </div>
             <br>
          </div>
