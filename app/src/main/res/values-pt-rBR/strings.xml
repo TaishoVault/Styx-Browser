@@ -77,6 +77,7 @@
     <string name="allow_javascript">Permitir JavaScript para este site</string>
     <string name="android_open_source_project">Projeto de Código Aberto Android</string>
     <string name="apache">Licença Apache 2.0</string>
+    <string name="apply">Confirmar</string>
     <string name="black_theme">Tema preto</string>
     <string name="block_ad_refresh_hosts">Atualizar arquivo de hosts…</string>
     <string name="block_ad_refresh_now">Atualizar hosts agora</string>
@@ -108,6 +109,7 @@
     <string name="clear_history">Limpar histórico</string>
     <string name="clear_web_storage_exit">Limpar armazenamento na web ao sair</string>
     <string name="clear_web_storage">Limpar armazenamento na web</string>
+    <string name="close">Fechar</string>
     <string name="close_all_tabs">Fechar todas as abas</string>
     <string name="close_on_last_tab">Fechar navegador ao fechar a última aba</string>
     <string name="close_other_tabs">Fechar as outras abas</string>
@@ -150,6 +152,7 @@
     <string name="downloads_notification_description">Disparado ao concluir o download</string>
     <string name="downloads">Downloads</string>
     <string name="edit_cookies">Exibir cookies do site</string>
+    <string name="edit_shortcuts">Editar Atalhos</string>
     <string name="eight">8</string>
     <string name="error_reload">Recarregar</string>
     <string name="error_tip">• Verifique se existem erros de digitação no endereço, como ww.exemplo.com ao invés de www.exemplo.com</string>
@@ -176,6 +179,8 @@
     <string name="host">Servidor:</string>
     <string name="http_proxy">Proxy HTTP</string>
     <string name="i2p">I2P</string>
+    <string name="image_url">Definir imagem de fundo para mecanismo de busca</string>
+    <string name="image_url_summary">Somente para URL Personalizada</string>
     <string name="import_backup">Importar favoritos de um backup</string>
     <string name="import_bookmark_error">Não foi possível importar os favoritos do arquivo</string>
     <string name="import_export_settings">Importar &amp; Exportar</string>
@@ -346,6 +351,7 @@
     <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Desculpe, seu launcher não suporta atalhos.</string>
     <string name="show_second_bar">Mostrar barra de navegação secundária</string>
+    <string name="show_shortcuts">Exibir atalhos na página inicial</string>
     <string name="show_ssl">Mostrar diálogos de alerta de SSL</string>
     <string name="site_cookies">Cookies do site</string>
     <string name="six">6</string>
