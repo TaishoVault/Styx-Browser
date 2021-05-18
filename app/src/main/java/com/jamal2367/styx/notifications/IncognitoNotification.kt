@@ -4,6 +4,7 @@ import android.annotation.TargetApi
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_IMMUTABLE
 import android.content.Context
 import android.os.Build
 import androidx.core.app.NotificationCompat
@@ -50,7 +51,7 @@ class IncognitoNotification(
         val incognitoNotification = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_incognito_24)
             .setContentTitle(context.resources.getQuantityString(R.plurals.notification_incognito_running_title, number, number))
-            .setContentIntent(PendingIntent.getActivity(context, 0, incognitoIntent, 0))
+            .setContentIntent(PendingIntent.getActivity(context, 0, incognitoIntent, FLAG_IMMUTABLE))
             .setContentText(context.getString(R.string.notification_incognito_running_message))
             .setAutoCancel(false)
             .setOngoing(true)

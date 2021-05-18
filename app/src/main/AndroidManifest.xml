@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -62,7 +63,8 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:theme="@style/Theme.App.DayNight"
-            android:windowSoftInputMode="stateHidden|adjustResize">
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -146,7 +148,8 @@
             android:process=":incognito"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.App.DayNight"
-            android:windowSoftInputMode="stateHidden|adjustResize">
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.INCOGNITO" />
@@ -158,9 +161,9 @@
 
         <activity
             android:name=".settings.activity.SettingsActivity"
-            android:parentActivityName=".MainActivity"
             android:label="@string/settings"
-            android:theme="@style/Theme.App.DayNight.Settings">
+            android:theme="@style/Theme.App.DayNight.Settings"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.SETTINGS" />
@@ -172,7 +175,8 @@
         <activity
             android:name=".reading.ReadingActivity"
             android:label="@string/reading_mode"
-            android:theme="@style/Theme.App.DayNight.Settings">
+            android:theme="@style/Theme.App.DayNight.Settings"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.READING" />

@@ -34,7 +34,7 @@ class StyxChromeClient(
         private val styxView: StyxView
 ) : WebChromeClient(), WebRtcPermissionsView {
 
-    private val geoLocationPermissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+    private val geoLocationPermissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION )
     private val uiController: UIController
     @Inject internal lateinit var faviconModel: FaviconModel
     @Inject internal lateinit var userPreferences: UserPreferences
