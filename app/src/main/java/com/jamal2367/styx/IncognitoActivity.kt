@@ -11,8 +11,6 @@ class IncognitoActivity : BrowserActivity() {
 
     override fun provideThemeOverride(): AppTheme = AppTheme.DARK
 
-    override fun provideAccentThemeOverride(): AccentTheme = AccentTheme.PINK
-
     @Suppress("DEPRECATION")
     public override fun updateCookiePreference(): Completable = Completable.fromAction {
         val cookieManager = CookieManager.getInstance()
