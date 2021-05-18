@@ -252,8 +252,9 @@ class StyxView(
      */
     val url: String
         get() {
-            return if (iHideActualUrl || webView == null || webView!!.url.isNullOrBlank() || webView!!.url.isSpecialUrl()) {
+            return if (webView == null || webView!!.url.isNullOrBlank() || webView!!.url.isSpecialUrl()) {
                 iTargetUrl.toString()
+                webView?.url ?: ""
             } else {
                 webView!!.url
             }!!
