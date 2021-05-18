@@ -30,6 +30,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient.CustomViewCallback
+import android.webkit.WebView
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.TextView.OnEditorActionListener
@@ -3086,11 +3087,20 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         iBinding.toolbarInclude.toolbarLayout.visibility = VISIBLE
     }
 
+    var webView: WebView? = null
+        private set
+
     /**
      *
      */
     private fun doHideToolBar() {
-        iBinding.toolbarInclude.toolbarLayout.visibility = GONE
+        val currentView = tabsManager.currentTab ?: return
+        val url = currentView.url
+        if (url.isSpecialUrl()) {
+            isToolBarVisible()
+        } else {
+            iBinding.toolbarInclude.toolbarLayout.visibility = GONE
+        }
     }
 
     private fun isToolBarVisible() = iBinding.toolbarInclude.toolbarLayout.visibility == VISIBLE
