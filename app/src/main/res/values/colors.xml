@@ -32,18 +32,18 @@
     <color name="hint_text_dark_theme">#80FFFFFF</color>
     <color name="hint_text_light_theme">#80000000</color>
 
-    <color name="icon_circle_0">#FFD7E5F8</color>
-    <color name="icon_circle_1">#FFF8D7DF</color>
-    <color name="icon_circle_2">#FFD7F8E7</color>
-    <color name="icon_circle_3">#FFF8F3D7</color>
-    <color name="icon_circle_4">#FFFFC8B9</color>
-    <color name="icon_circle_5">#FFDAD7F8</color>
-    <color name="icon_circle_6">#FFD7F8F8</color>
-    <color name="icon_circle_7">#FFEDD7F8</color>
-    <color name="icon_circle_8">#FFFFDDB0</color>
-    <color name="icon_circle_9">#FFFFE2B6</color>
-    <color name="icon_circle_10">#FFE8E8E8</color>
-    <color name="icon_circle_11">#FFF2BCF8</color>
+    <color name="icon_circle_0">#FF2196F3</color>
+    <color name="icon_circle_1">#FF72B70F</color>
+    <color name="icon_circle_2">#FFFF7E0F</color>
+    <color name="icon_circle_3">#FF6F86DA</color>
+    <color name="icon_circle_4">#FF258982</color>
+    <color name="icon_circle_5">#FFFFA727</color>
+    <color name="icon_circle_6">#FFF15B8D</color>
+    <color name="icon_circle_7">#FF1A73E8</color>
+    <color name="icon_circle_8">#FF0F9D58</color>
+    <color name="icon_circle_9">#FF5E97F6</color>
+    <color name="icon_circle_10">#FF2EC7DC</color>
+    <color name="icon_circle_11">#FFF28B82</color>
 
     <color name="icon_dark_theme">#FFFFFFFF</color>
     <color name="icon_light_theme">#8A000000</color>
