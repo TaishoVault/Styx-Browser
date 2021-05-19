@@ -65,26 +65,6 @@
             android:requiresFadingEdge="vertical"
             tools:listitem="@layout/bookmark_list_item" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/haloColor"
-        android:baselineAligned="false"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <ImageView
-            android:id="@+id/menuItemAddBookmark"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/action_add_bookmark"
-            android:scaleType="center"
-            app:srcCompat="@drawable/ic_bookmark_add" />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </layout>

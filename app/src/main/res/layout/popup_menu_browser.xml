@@ -128,6 +128,13 @@
                     android:text="@string/action_sessions" />
 
                 <TextView
+                    android:id="@+id/menuItemAddBookmark"
+                    style="@style/BrowserTextMenuItem"
+                    android:background="?attr/selectableItemBackground"
+                    app:drawableStartCompat="@drawable/ic_bookmark_add"
+                    android:text="@string/action_add_bookmark" />
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="?android:attr/listDivider" />

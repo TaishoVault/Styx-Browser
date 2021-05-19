@@ -484,6 +484,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             onMenuItemClicked(iBinding.menuItemPrint) { executeAction(R.id.menuItemPrint) }
             onMenuItemClicked(iBinding.menuItemHistory) { executeAction(R.id.menuItemHistory) }
             onMenuItemClicked(iBinding.menuItemDownloads) { executeAction(R.id.menuItemDownloads) }
+            onMenuItemClicked(iBinding.menuItemAddBookmark) { executeAction(R.id.menuItemAddBookmark) }
             onMenuItemClicked(iBinding.menuItemShare) { executeAction(R.id.menuItemShare) }
             onMenuItemClicked(iBinding.menuItemFind) { executeAction(R.id.menuItemFind) }
             onMenuItemClicked(iBinding.menuItemPageTools) { executeAction(R.id.menuItemPageTools) }
@@ -1612,6 +1613,10 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             R.id.menuItemDownloads -> {
                 openDownloads()
+                return true
+            }
+            R.id.menuItemAddBookmark -> {
+                addBookmark(currentView!!.title, currentUrl!!)
                 return true
             }
             R.id.menuItemFind -> {
