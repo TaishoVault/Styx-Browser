@@ -17,6 +17,8 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
+import com.anthonycr.grant.PermissionsManager
+import com.anthonycr.grant.PermissionsResultAction
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.BuildConfig
 import com.jamal2367.styx.R
@@ -32,8 +34,6 @@ import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.extensions.snackbar
 import com.jamal2367.styx.log.Logger
-import com.jamal2367.styx.permissions.PermissionsManager
-import com.jamal2367.styx.permissions.PermissionsResultAction
 import com.jamal2367.styx.utils.Utils
 import io.reactivex.Scheduler
 import io.reactivex.Single

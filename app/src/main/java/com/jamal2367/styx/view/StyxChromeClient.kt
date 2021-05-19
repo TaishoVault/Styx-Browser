@@ -12,6 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
+import com.anthonycr.grant.PermissionsManager
+import com.anthonycr.grant.PermissionsResultAction
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
 import com.jamal2367.styx.controller.UIController
@@ -21,8 +23,6 @@ import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.favicon.FaviconModel
-import com.jamal2367.styx.permissions.PermissionsManager
-import com.jamal2367.styx.permissions.PermissionsResultAction
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.view.webrtc.WebRtcPermissionsModel
 import com.jamal2367.styx.view.webrtc.WebRtcPermissionsView

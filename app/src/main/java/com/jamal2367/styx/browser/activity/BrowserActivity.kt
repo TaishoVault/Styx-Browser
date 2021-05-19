@@ -48,6 +48,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.anthonycr.grant.PermissionsManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -80,7 +81,6 @@ import com.jamal2367.styx.html.history.HistoryPageFactory
 import com.jamal2367.styx.html.homepage.HomePageFactory
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.notifications.IncognitoNotification
-import com.jamal2367.styx.permissions.PermissionsManager
 import com.jamal2367.styx.reading.ReadingActivity
 import com.jamal2367.styx.search.SearchEngineProvider
 import com.jamal2367.styx.search.SuggestionsAdapter

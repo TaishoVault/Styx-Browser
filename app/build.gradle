@@ -67,6 +67,9 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.35'
     kapt 'com.google.dagger:dagger-compiler:2.35'
 
+    // Permissions //
+    implementation 'com.anthonycr.grant:permissions:1.1.2'
+
     // OkHttp3 //
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
 
@@ -78,8 +81,8 @@ dependencies {
     implementation 'net.dankito.readability4j:readability4j:1.0.6'
 
     // File Reading //
-    implementation 'com.github.anthonycr:Mezzanine:1.1.1'
-    kapt 'com.github.anthonycr.mezzanine:mezzanine-compiler:1.1.1'
+    implementation "com.anthonycr.mezzanine:mezzanine:1.1.1"
+    kapt "com.anthonycr.mezzanine:mezzanine-compiler:1.1.1"
 }
 
 kapt {
