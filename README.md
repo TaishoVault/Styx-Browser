@@ -94,13 +94,15 @@ or you can install Styx via IzzyOnDroid.
 
 ## License
 ```
-© Copyright 2021 Jamal Rothfuchs
-© Copyright 2021 Stéphane Lenclud
 © Copyright 2014 Anthony Restaino
+© Copyright 2021 Stéphane Lenclud
+© Copyright 2021 CookieJarApps
+© Copyright 2021 Jamal Rothfuchs
 
-Styx Browser
-Fulguris Browser
 Lightning Browser
+Fulguris Browser
+SmartCookieWeb
+Styx Browser
 
    This Source Code Form is subject to the terms of the 
    Mozilla Public License, v. 2.0. If a copy of the MPL 
