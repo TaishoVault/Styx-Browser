@@ -55,6 +55,50 @@
                 </intent>
             </Preference>
 
+        </PreferenceCategory>,
+
+        <PreferenceCategory
+            android:title="@string/settings_credits">
+
+            <Preference
+                android:title="@string/credits_lightning_browser"
+                app:icon="@drawable/ic_about_oval">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/anthonycr/Lightning-Browser">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+            <Preference
+                android:title="@string/credits_fulguris"
+                app:icon="@drawable/ic_about_oval">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/Slion/Fulguris">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+            <Preference
+                android:title="@string/credits_smartcookieweb"
+                app:icon="@drawable/ic_about_oval">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/CookieJarApps/SmartCookieWeb">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
         </PreferenceCategory>
 
     </PreferenceCategory>

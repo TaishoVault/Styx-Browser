@@ -323,6 +323,7 @@
     <string name="settings_admalwareblocker">Werbe &amp; Malwareblocker</string>
     <string name="settings_advanced">Erweitert</string>
     <string name="settings_black_status_bar">Schwarze Statusleiste</string>
+    <string name="settings_credits">Danksagungen</string>
     <string name="settings_display">Darstellung</string>
     <string name="settings_export_failure">Einstellungen konnten nicht exportiert werden</string>
     <string name="settings_exported">Einstellungen exportiert nach:</string>

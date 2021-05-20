@@ -117,6 +117,9 @@
     <string name="close_tab">Close current tab</string>
     <string name="color_mode">Color mode</string>
     <string name="cookies">Enable cookies</string>
+    <string name="credits_fulguris" translatable="false">Fulguris</string>
+    <string name="credits_lightning_browser" translatable="false">Lightning Browser</string>
+    <string name="credits_smartcookieweb" translatable="false">SmartCookieWeb</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="dark_theme">Dark</string>
     <string name="default_theme">Follow System</string>
@@ -339,6 +342,7 @@
     <string name="settings_advanced">Advanced</string>
     <string name="settings_app_prefix" translatable="false">app_for_</string>
     <string name="settings_black_status_bar">Black status bar</string>
+    <string name="settings_credits">Credits</string>
     <string name="settings_display">Look &amp; feel</string>
     <string name="settings_export_failure">Sorry, settings could not be exported!</string>
     <string name="settings_exported">Settings exported to:</string>
