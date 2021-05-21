@@ -22,6 +22,7 @@ import android.os.*
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.util.TypedValue
 import android.view.*
 import android.view.View.*
@@ -48,11 +49,16 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.*
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.anthonycr.grant.PermissionsManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.IncognitoActivity
 import com.jamal2367.styx.R
@@ -168,6 +174,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     @Inject lateinit var bookmarksDialogBuilder: StyxDialogBuilder
     @Inject lateinit var exitCleanup: ExitCleanup
 
+    // HTTP
+    private lateinit var queue: RequestQueue
+
     // Image
     private var webPageBitmap: Bitmap? = null
     private val backgroundDrawable = ColorDrawable()
@@ -237,6 +246,8 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         iBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        queue = Volley.newRequestQueue(this)
+
         createPopupMenu()
         createSessionsMenu()
         tabsDialog = BottomSheetDialog(this)
@@ -280,6 +291,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     }, 100 )
                 }
             }
+            mainHandler.postDelayed({ checkForUpdates(this) }, 3000)
         }
 
         // Hook in buttons with onClick handler
@@ -2184,6 +2196,8 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     override fun onDestroy() {
         logger.log(TAG, "onDestroy")
 
+        queue.cancelAll(TAG)
+
         incognitoNotification?.hide()
 
         mainHandler.removeCallbacksAndMessages(null)
@@ -3307,6 +3321,36 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
         }
         return super.dispatchTouchEvent(anEvent)
+    }
+
+    /**
+     * Check for update on github
+     */
+    @Suppress("NAME_SHADOWING")
+    private fun checkForUpdates(context: Context) {
+        val url = getString(R.string.github_update_check_url)
+        val request = StringRequest(Request.Method.GET, url, { reply ->
+                val latestVersion = Gson().fromJson(reply, JsonObject::class.java).get("tag_name").asString
+                val current = context.packageManager.getPackageInfo(context.packageName, 0).versionName
+                if (latestVersion != current) {
+                    // We have an update available, tell our user about it
+                    makeCSnackbar(
+                        getString(R.string.app_name) + " " + latestVersion + " " + getString(R.string.update_available), 10000, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
+                        .setAction(R.string.show) {
+                            val url = getString(R.string.url_app_home_page)
+                            val i = Intent(Intent.ACTION_VIEW)
+                            i.data = Uri.parse(url)
+                            // Not sure that does anything
+                            i.putExtra("SOURCE", "SELF")
+                            startActivity(i)
+                        }.show()
+                }
+        }, { error ->
+            Log.w(TAG, "Update check failed", error)
+        })
+
+        request.tag = TAG
+        queue.add(request)
     }
 
     companion object {

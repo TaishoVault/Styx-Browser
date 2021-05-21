@@ -174,6 +174,7 @@
     <string name="force_zoom_summary">Does not work if JavaScript is not enabled</string>
     <string name="force_zoom">Force zoom for websites</string>
     <string name="four">4</string>
+    <string name="github_update_check_url" translatable="false">https://api.github.com/repos/jamal2362/Styx/releases/latest</string>
     <string name="hint_password">Password</string>
     <string name="hint_title">Title</string>
     <string name="hint_url">URL</string>
@@ -370,6 +371,7 @@
     <string name="settings">Settings</string>
     <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Sorry, your launcher does not support shortcuts.</string>
+    <string name="show">Show</string>
     <string name="show_second_bar">Show secondary navigation bar</string>
     <string name="show_shortcuts">Show shortcuts on homepage</string>
     <string name="show_ssl">Show SSL warning dialogs</string>
@@ -419,6 +421,8 @@
     <string name="unknown">Unknown</string>
     <string name="unlisted_javascript">Block JavaScript for listed sites</string>
     <string name="untitled">Untitled</string>
+    <string name="update_available">is available!</string>
+    <string name="url_app_home_page" translatable="false">https://github.com/jamal2362/Styx/releases/latest</string>
     <string name="url_contents">Tool bar shows</string>
     <string name="url_in_new_tab">URL in new tab</string>
     <string name="url">URL</string>

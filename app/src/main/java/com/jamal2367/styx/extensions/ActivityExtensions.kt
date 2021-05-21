@@ -16,6 +16,7 @@ import com.jamal2367.styx.utils.Utils
 
 // Define our snackbar popup duration
 const val KDuration: Int = 4000 // Snackbar.LENGTH_LONG
+const val KCDuration: Int = 10000 // Snackbar.LENGTH_LONG
 
 /**
  * Displays a snackbar to the user with a [StringRes] message.
@@ -53,6 +54,34 @@ fun Activity.makeSnackbar(message: String, aDuration: Int, aGravity: Int): Snack
     } else {
         // Apply specified gravity before showing snackbar
         val snackbar = Snackbar.make(view, message, KDuration)
+        val params = snackbar.view.layoutParams as CoordinatorLayout.LayoutParams
+        params.gravity = aGravity
+        if (aGravity==Gravity.TOP) {
+            // Move snackbar away from status bar
+            // That one works well it seems
+            params.topMargin = Utils.dpToPx(30F)
+        } else {
+            // Make sure it is above rounded corner
+            // Ain't working on F(x)tec Pro1, weird...
+            params.bottomMargin = Utils.dpToPx(30F)
+        }
+        snackbar.view.layoutParams = params
+        snackbar.animationMode = BaseTransientBottomBar.ANIMATION_MODE_FADE
+        snackbar.show()
+        return snackbar
+    }
+}
+
+@SuppressLint("WrongConstant")
+fun Activity.makeCSnackbar(message: String, aDuration: Int, aGravity: Int): Snackbar {
+    var view = findViewById<View>(R.id.coordinator_layout)
+    if (view == null) {
+        // We won't use gravity and we provide compatibility with previous implementation
+        view = findViewById(android.R.id.content)
+        return Snackbar.make(view, message, aDuration)
+    } else {
+        // Apply specified gravity before showing snackbar
+        val snackbar = Snackbar.make(view, message, KCDuration)
         val params = snackbar.view.layoutParams as CoordinatorLayout.LayoutParams
         params.gravity = aGravity
         if (aGravity==Gravity.TOP) {

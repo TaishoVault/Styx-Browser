@@ -351,6 +351,7 @@
     <string name="settings">Einstellungen</string>
     <string name="seven">7</string>
     <string name="shortcut_message_failed_to_add">Ihr Launcher unterstützt keine Verknüpfungen!</string>
+    <string name="show">Zeigen</string>
     <string name="show_second_bar">Zweite Navigationsleiste anzeigen</string>
     <string name="show_shortcuts">Verknüpfungen auf der Startseite anzeigen</string>
     <string name="show_ssl">SSL-Warndialog anzeigen</string>
@@ -400,6 +401,7 @@
     <string name="unknown">Unbekannt</string>
     <string name="unlisted_javascript">JavaScript für diese Webseiten blockieren</string>
     <string name="untitled">Ohne Titel</string>
+    <string name="update_available">ist verfügbar!</string>
     <string name="url_contents">URL-Box Inhalt</string>
     <string name="url_in_new_tab">URL in neuem Tab öffnen</string>
     <string name="url">URL</string>
