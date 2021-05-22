@@ -323,6 +323,7 @@
     <string name="settings_admalwareblocker">广告 &amp; 恶意软件拦截器</string>
     <string name="settings_advanced">高级设置</string>
     <string name="settings_black_status_bar">黑色状态栏</string>
+    <string name="settings_credits">鸣谢</string>
     <string name="settings_display">显示设置</string>
     <string name="settings_export_failure">对不起，设置无法导出！</string>
     <string name="settings_exported">设置已导出到：</string>
@@ -350,6 +351,7 @@
     <string name="settings">设置</string>
     <string name="seven">七</string>
     <string name="shortcut_message_failed_to_add">抱歉，你的桌面应用不支持快捷方式</string>
+    <string name="show">显示</string>
     <string name="show_second_bar">显示辅助导航栏</string>
     <string name="show_shortcuts">在主页上显示快捷方式</string>
     <string name="show_ssl">显示 SSL 警告对话框</string>
@@ -399,6 +401,7 @@
     <string name="unknown">未知</string>
     <string name="unlisted_javascript">阻止列出站点的JavaScript</string>
     <string name="untitled">未命名</string>
+    <string name="update_available">有更新可用！</string>
     <string name="url_contents">地址栏内容</string>
     <string name="url_in_new_tab">在新标签页中打开 URL</string>
     <string name="url">URL</string>
