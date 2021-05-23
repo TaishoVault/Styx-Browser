@@ -31,7 +31,6 @@
     <string name="agent_desktop">Stolní počítače</string>
     <string name="agent">Uživatelský agent</string>
     <string name="android_open_source_project">Open Source projekt Android</string>
-    <string name="apache">Licence Apache 2.0</string>
     <string name="black_theme">Černý motiv</string>
     <string name="block_ad_refresh_now">Aktualizovat hostitele</string>
     <string name="block_ad_remote_refresh_frequency_description">Pro vzdálený soubor hosts</string>
@@ -106,7 +105,6 @@
     <string name="java">Povolit JavaScript</string>
     <string name="jsoup">jsoup: Java HTML parametr</string>
     <string name="label_realm">Serverová zpráva: %s</string>
-    <string name="license_gnu">GNU méně všeobecná veřejná licence</string>
     <string name="licenses">Licence Open Source</string>
     <string name="light_theme">Světlý motiv</string>
     <string name="listed_javascript">Povolit JavaScript pouze pro uvedené stránky</string>
@@ -133,7 +131,6 @@
     <string name="message_open_download_fail">Tento soubor již neexistuje</string>
     <string name="message_permission_request">%1$s  by chtěl použít:  %2$s</string>
     <string name="message_web_storage_cleared">Webové úložiště vymazáno</string>
-    <string name="mit_license">MIT licence</string>
     <string name="name_increase_contrast">Zvýšit kontrast</string>
     <string name="name_inverted_grayscale">Obrácené šedé stupnice</string>
     <string name="name_inverted">Obrácené</string>

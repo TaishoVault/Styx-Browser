@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">Ambra</string>
     <string name="accent_blue">Blu</string>
     <string name="accent_color">Colore d\'accento</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">Algoritmo</string>
     <string name="allow_javascript">Permetti JavaScript per questo sito</string>
     <string name="android_open_source_project">Android Open Source Project</string>
-    <string name="apache">Licenza Apache 2.0</string>
     <string name="apply">Applica</string>
     <string name="black_theme">Nero (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Aggiornamento file host…</string>
@@ -197,7 +195,6 @@
     <string name="jsoup">jsoup: Parser Java HTML</string>
     <string name="label_realm">Messaggio del server: %s</string>
     <string name="library_netcipher">NetCipher</string>
-    <string name="license_gnu">GNU Lesser General Public License</string>
     <string name="licenses">Licenze Open Source</string>
     <string name="light_theme">Chiaro</string>
     <string name="listed_javascript">Permetti Javascript solo per siti indicati</string>
@@ -227,8 +224,6 @@
     <string name="message_open_download_fail">Questo file non esiste più</string>
     <string name="message_permission_request">%1$s\n\nvorrebbe usare:\n\n%2$s</string>
     <string name="message_web_storage_cleared">Memoria siti cancellata</string>
-    <string name="mit_license">Licenza MIT</string>
-    <string name="mpl_license">Mozilla Public License v2.0</string>
     <string name="name_grayscale">Scala di grigi</string>
     <string name="name_increase_contrast">Alto contrasto</string>
     <string name="name_inverted_grayscale">Scala di grigi inversa</string>
@@ -319,6 +314,7 @@
     <string name="settings_admalwareblocker">Blocco Ad &amp; Malware</string>
     <string name="settings_advanced">Avanzate</string>
     <string name="settings_black_status_bar">Barra status nera</string>
+    <string name="settings_credits">Riconoscimenti</string>
     <string name="settings_display">Visualizzazione</string>
     <string name="settings_export_failure">Scusa, le impostazioni non possono essere esportate!</string>
     <string name="settings_exported">Impostazioni esportate in:</string>
@@ -345,6 +341,7 @@
     <string name="settings_title_toolbars_bottom">Toolbar in basso</string>
     <string name="settings">Impostazioni</string>
     <string name="shortcut_message_failed_to_add">Scusa, il tuo launcher non supporta gli shortcut.</string>
+    <string name="show">Mostra</string>
     <string name="show_second_bar">Mosta barra di navigazione secondaria</string>
     <string name="show_shortcuts">Mostra scorciatoie sulla pagina iniziale</string>
     <string name="show_ssl">Mostra finestre avviso SSL</string>
@@ -390,6 +387,7 @@
     <string name="unknown">Sconosciuto</string>
     <string name="unlisted_javascript">Blocca JavaScript per i siti indicati</string>
     <string name="untitled">Senza titolo</string>
+    <string name="update_available">è disponibile!</string>
     <string name="url_contents">Contenuto del campo URL</string>
     <string name="url_in_new_tab">URL in nuovo tab</string>
     <string name="url">URL</string>

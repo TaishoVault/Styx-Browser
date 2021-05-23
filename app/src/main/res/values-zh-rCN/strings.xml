@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">琥珀色</string>
     <string name="accent_blue">蓝色</string>
     <string name="accent_color">强调色</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">算法</string>
     <string name="allow_javascript">允许此网站使用 JavaScript</string>
     <string name="android_open_source_project">Android开源项目</string>
-    <string name="apache">Apache许可2.0</string>
     <string name="apply">应用</string>
     <string name="black_theme">黑色 (AMOLED)</string>
     <string name="block_ad_refresh_hosts">刷新主机文件…</string>
@@ -197,7 +195,6 @@
     <string name="jsoup">jsoup：Java HTML解析器</string>
     <string name="label_realm">来自服务器的消息：%s</string>
     <string name="library_netcipher">NetCipher</string>
-    <string name="license_gnu">GNU 较宽松通用公共许可证</string>
     <string name="licenses">开放源代码许可</string>
     <string name="light_theme">亮色</string>
     <string name="listed_javascript">只允许列出的站点使用 JavaScript</string>
@@ -227,8 +224,6 @@
     <string name="message_open_download_fail">文件不存在</string>
     <string name="message_permission_request">%1$s\n\n想要使用：\n\n%2$s</string>
     <string name="message_web_storage_cleared">Web 存储已清除</string>
-    <string name="mit_license">MIT 许可证</string>
-    <string name="mpl_license">Mozilla 公共许可证 v2.0</string>
     <string name="name_grayscale">灰度</string>
     <string name="name_increase_contrast">高对比度</string>
     <string name="name_inverted_grayscale">灰度反色</string>

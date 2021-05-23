@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="action_add_bookmark">Añadir marcador</string>
     <string name="action_add_to_homescreen">Añadir a pantalla de inicio</string>
     <string name="action_allow">Permitir</string>
@@ -52,7 +51,6 @@
     <string name="agent_linux_desktop">Linux (Escritorio)</string>
     <string name="agent">Agente de usuario</string>
     <string name="android_open_source_project">Proyecto de código abierto de Android</string>
-    <string name="apache">Licencia Apache 2.0</string>
     <string name="black_theme">Tema negro (AMOLED)</string>
     <string name="block_ad_refresh_now">Actualizar hosts ahora</string>
     <string name="block_ad_remote_refresh_frequency_description">Para el archivo de hosts remotos</string>
@@ -134,7 +132,6 @@
     <string name="java">Habilitar JavaScript</string>
     <string name="jsoup">jsoup: analizador de HTML Java</string>
     <string name="label_realm">Mensaje del servidor: %s</string>
-    <string name="license_gnu">Licencia pública general menor de GNU</string>
     <string name="licenses">Licencias de código abierto (open source)</string>
     <string name="light_theme">Tema claro</string>
     <string name="listed_javascript">Sólo permitir JavaScript para sitios listados</string>
@@ -160,7 +157,6 @@
     <string name="message_location">\n¿Quieres usar tu geolocalización?</string>
     <string name="message_open_download_fail">Este archivo ya no existe</string>
     <string name="message_web_storage_cleared">Almacenamiento web borrado</string>
-    <string name="mit_license">Licencia MIT</string>
     <string name="name_grayscale">Escala de grises</string>
     <string name="name_increase_contrast">Aumentar contraste</string>
     <string name="name_inverted_grayscale">Escala de grises invertida</string>

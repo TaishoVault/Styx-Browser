@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="action_add_bookmark">Legg til bokmerke</string>
     <string name="action_add_to_homescreen">Legg til på startskjerm</string>
     <string name="action_allow">Tillat</string>
@@ -32,7 +31,6 @@
     <string name="agent_desktop">Skrivebord</string>
     <string name="agent">Bruker agent</string>
     <string name="android_open_source_project">Android åpen kildekode-prosjekt</string>
-    <string name="apache">Apache lisens 2.0</string>
     <string name="black_theme">Svart tema</string>
     <string name="block_ad_refresh_now">Oppdater verter nå</string>
     <string name="block_ad_remote_refresh_frequency_description">For eksterne verts-fil</string>
@@ -131,7 +129,6 @@
     <string name="message_open_download_fail">Denne filen finnes ikke lenger</string>
     <string name="message_permission_request">%1$s  vil bruke:  %2$s</string>
     <string name="message_web_storage_cleared">Nettlagring fjernet</string>
-    <string name="mit_license">MIT lisens</string>
     <string name="name_increase_contrast">Øk kontrast</string>
     <string name="name_inverted_grayscale">Omvendt gråtone</string>
     <string name="name_inverted">Invertert</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">Âmbar</string>
     <string name="accent_blue">Azul</string>
     <string name="accent_color">Cor de realce</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">Algoritmo</string>
     <string name="allow_javascript">Permitir JavaScript para este site</string>
     <string name="android_open_source_project">Projeto de Código Aberto Android</string>
-    <string name="apache">Licença Apache 2.0</string>
     <string name="apply">Confirmar</string>
     <string name="black_theme">Tema preto</string>
     <string name="block_ad_refresh_hosts">Atualizar arquivo de hosts…</string>
@@ -197,7 +195,6 @@
     <string name="jsoup">jsoup: Analisador HTML do Java</string>
     <string name="label_realm">Mensagem do servidor: %s</string>
     <string name="library_netcipher">NetCipher</string>
-    <string name="license_gnu">GNU Lesser General Public License</string>
     <string name="licenses">Licenças Open Source</string>
     <string name="light_theme">Tema claro</string>
     <string name="listed_javascript">Permitir JavaScript apenas nos sites listados</string>
@@ -227,8 +224,6 @@
     <string name="message_open_download_fail">Este arquivo não existe mais</string>
     <string name="message_permission_request">%1$s  gostaria de usar:  %2$s</string>
     <string name="message_web_storage_cleared">Armazenamento na web limpo</string>
-    <string name="mit_license">Licença MIT</string>
-    <string name="mpl_license">Mozilla Public License v2.0</string>
     <string name="name_grayscale">Escala cinza</string>
     <string name="name_increase_contrast">Aumentar contraste</string>
     <string name="name_inverted_grayscale">Escala cinza invertida</string>

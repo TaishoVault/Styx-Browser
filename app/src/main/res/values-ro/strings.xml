@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">Chihlimbar</string>
     <string name="accent_blue">Albastru</string>
     <string name="accent_color">Culoare de evidențiere</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">Algoritm</string>
     <string name="allow_javascript">Permite JavaScript pentru acest site</string>
     <string name="android_open_source_project">Proiect Open Source Android</string>
-    <string name="apache">Licență Apache 2.0</string>
     <string name="black_theme">Temă neagră</string>
     <string name="block_ad_refresh_hosts">Reîmprospătează fişierul de gazde…</string>
     <string name="block_ad_refresh_now">Reîmprospătează gazdele acum</string>
@@ -192,7 +190,6 @@
     <string name="jsoup">Jsoup: Parser Java HTML</string>
     <string name="label_realm">Mesaj server: %s</string>
     <string name="library_netcipher">NetCipher</string>
-    <string name="license_gnu">Licență GNU Lesser General Public</string>
     <string name="licenses">Licențe Open Source</string>
     <string name="light_theme">Temă luminoasă</string>
     <string name="listed_javascript">Permiteți doar JavaScript pentru site-urile listate</string>
@@ -222,8 +219,6 @@
     <string name="message_open_download_fail">Acest fișier nu mai există</string>
     <string name="message_permission_request">%1$s  vrea să folosească:  %2$s</string>
     <string name="message_web_storage_cleared">Stocare web ștearsă</string>
-    <string name="mit_license">Licență MIT</string>
-    <string name="mpl_license">Licență publică Mozilla v2.0</string>
     <string name="name_grayscale">Tonuri de gri</string>
     <string name="name_increase_contrast">Crește contrastul</string>
     <string name="name_inverted_grayscale">Inversat la gri</string>

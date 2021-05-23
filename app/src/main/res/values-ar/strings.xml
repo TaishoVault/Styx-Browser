@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">كهرمان اصفر</string>
     <string name="accent_blue">أزرق</string>
     <string name="accent_color">اللون الثانوي</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">الخوارزمية</string>
     <string name="allow_javascript">السماح بجافا سكريبت لهذا الموقع</string>
     <string name="android_open_source_project">مشروع أندرويد مفتوح المصدر</string>
-    <string name="apache"> ترخيص اباتشي 2.0</string>
     <string name="apply">تطبيق</string>
     <string name="black_theme">سمة سوداء</string>
     <string name="block_ad_refresh_hosts">تحديث ملف المضيف…</string>
@@ -197,7 +195,6 @@
     <string name="jsoup">jsoup: Java HTML Parser</string>
     <string name="label_realm">رسالة الملقم: %s</string>
     <string name="library_netcipher">Netcipher</string>
-    <string name="license_gnu">رخصة غنو العامة الصغرى</string>
     <string name="licenses">تراخيص البرامج مفتوحة المصدر</string>
     <string name="light_theme">سمة فاتحة</string>
     <string name="listed_javascript">السماح فقط بجافا سكريبت للمواقع المدرجة</string>
@@ -227,8 +224,6 @@
     <string name="message_open_download_fail">هذا الملف غير موجود بعد الآن</string>
     <string name="message_permission_request">%1$s  يودّ استخدام:  %2$s</string>
     <string name="message_web_storage_cleared">مسح تخزين الويب</string>
-    <string name="mit_license">رخصة MIT</string>
-    <string name="mpl_license">رخصة موزيلا العامة v2.0</string>
     <string name="name_grayscale">الرمادي</string>
     <string name="name_increase_contrast">زيادة التباين</string>
     <string name="name_inverted_grayscale">تدرج الرمادي المقلوب</string>

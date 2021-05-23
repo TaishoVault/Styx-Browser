@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="action_add_bookmark">Thêm dấu trang</string>
     <string name="action_add_to_homescreen">Thêm vào màn hình chính</string>
     <string name="action_allow">Cho phép</string>
@@ -31,7 +30,6 @@
     <string name="agent_default">Mặc định</string>
     <string name="agent_desktop">Máy tính</string>
     <string name="agent">Tác nhân người dùng</string>
-    <string name="apache">Giấy phép Apache 2.0</string>
     <string name="black_theme">AMOLED theme</string>
     <string name="block_ad_refresh_now">Làm mới máy chủ ngay</string>
     <string name="block_ad_remote_refresh_frequency_description">Dành cho tệp máy chủ trên mạng</string>

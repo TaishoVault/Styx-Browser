@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="action_add_bookmark">ブックマークに追加</string>
     <string name="action_add_to_homescreen">ホーム画面に追加</string>
     <string name="action_allow">許可する</string>
@@ -32,7 +31,6 @@
     <string name="agent_desktop">デスクトップ</string>
     <string name="agent">ユーザーエージェント</string>
     <string name="android_open_source_project">Androidオープンソースプロジェクト</string>
-    <string name="apache">Apacheライセンス2.0</string>
     <string name="black_theme">ブラック (AMOLED)</string>
     <string name="block_ad_refresh_now">今すぐホストを更新</string>
     <string name="block_ad_remote_refresh_frequency_description">リモートホストファイルの場合</string>
@@ -133,7 +131,6 @@
     <string name="message_open_download_fail">このファイルは存在しません</string>
     <string name="message_permission_request">％1 $ s \ n \ n使用したい：\ n \ n％2 $ s</string>
     <string name="message_web_storage_cleared">Web storage を消去しました</string>
-    <string name="mit_license">MITライセンス</string>
     <string name="name_grayscale">グレースケール</string>
     <string name="name_increase_contrast">高コントラスト</string>
     <string name="name_inverted_grayscale">反転グレースケール</string>

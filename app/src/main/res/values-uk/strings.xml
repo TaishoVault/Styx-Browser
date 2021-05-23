@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="action_add_bookmark">Додати до закладок</string>
     <string name="action_add_to_homescreen">Додати на головний екран</string>
     <string name="action_allow">Дозволити</string>
@@ -32,7 +31,6 @@
     <string name="agent_desktop">Стільниця</string>
     <string name="agent">Клієнтський додаток</string>
     <string name="android_open_source_project">Android Open Source проект</string>
-    <string name="apache">Apache Ліцензія 2.0</string>
     <string name="black_theme">Чорна тема</string>
     <string name="block_ad_refresh_now">Оновити хости зараз</string>
     <string name="block_ad_remote_refresh_frequency_description">Файл віддалених хостів</string>
@@ -134,7 +132,6 @@
     <string name="message_open_download_fail">Цей файл більше не існує</string>
     <string name="message_permission_request">%1$s  бажаєте використовувати:  %2$s</string>
     <string name="message_web_storage_cleared">Веб-сховище очищено</string>
-    <string name="mit_license">Ліцензія MIT</string>
     <string name="name_increase_contrast">Збільшити контраст</string>
     <string name="name_inverted_grayscale">Інвертовані відтінки сірого</string>
     <string name="name_inverted">Інвертований</string>

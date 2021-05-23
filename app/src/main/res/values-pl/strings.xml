@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">Bursztynowy</string>
     <string name="accent_blue">Niebieski</string>
     <string name="accent_color">Kolor akcentu</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">Algorytm</string>
     <string name="allow_javascript">Zezwalaj na JavaScript w tej witrynie</string>
     <string name="android_open_source_project">Projekt Android Open Source</string>
-    <string name="apache">Licencja Apache 2.0</string>
     <string name="black_theme">Czarny motyw (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Odśwież plik hosts…</string>
     <string name="block_ad_refresh_now">Odśwież teraz hosty</string>
@@ -186,7 +184,6 @@
     <string name="jsoup">jsoup: parser HTML HTML</string>
     <string name="label_realm">Wiadomość serwera: %s</string>
     <string name="library_netcipher">NetCipher</string>
-    <string name="license_gnu">Mniejsza ogólna licencja publiczna GNU</string>
     <string name="licenses">Licencje Open Source</string>
     <string name="light_theme">Jasny motyw</string>
     <string name="listed_javascript">Zezwalaj tylko na obsługę JavaScript dla stron wymienionych na liście</string>
@@ -215,8 +212,6 @@
     <string name="message_open_download_fail">Ten plik już nie istnieje</string>
     <string name="message_permission_request">%1$s \n \n chciałby użyć: \n \n %2$s</string>
     <string name="message_web_storage_cleared">Dane i ustawienia witryn zostały wyczyszczone</string>
-    <string name="mit_license">Licencja MIT</string>
-    <string name="mpl_license">Mozilla Public License v2.0</string>
     <string name="name_grayscale">Odcienie szarości</string>
     <string name="name_increase_contrast">Zwiększ kontrast</string>
     <string name="name_inverted_grayscale">Odwrócone odcienie szarości</string>

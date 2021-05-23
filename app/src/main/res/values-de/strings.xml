@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">Bernstein</string>
     <string name="accent_blue">Blau</string>
     <string name="accent_color">Akzentfarbe</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">Algorithmus:</string>
     <string name="allow_javascript">JavaScript für diese Webseite zulassen</string>
     <string name="android_open_source_project">Android Open Source Project</string>
-    <string name="apache">Apache License 2.0</string>
     <string name="apply">Anwenden</string>
     <string name="black_theme">Schwarzes Design (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Hosts-Liste wird aktualisiert…</string>
@@ -197,7 +195,6 @@
     <string name="jsoup">jsoup: Java HTML Parser</string>
     <string name="label_realm">Server Nachricht: %s</string>
     <string name="library_netcipher">NetCipher</string>
-    <string name="license_gnu">GNU Lesser General Public License</string>
     <string name="licenses">Open Source Lizenzen</string>
     <string name="light_theme">Helles Design</string>
     <string name="listed_javascript">JavaScript nur für diese Webseiten zulassen</string>
@@ -227,8 +224,6 @@
     <string name="message_open_download_fail">Diese Datei existiert nicht mehr</string>
     <string name="message_permission_request">%1$s\n\nwürde gerne benutzen:\n\n%2$s</string>
     <string name="message_web_storage_cleared">Webinhalte gelöscht</string>
-    <string name="mit_license">MIT Lizenz</string>
-    <string name="mpl_license">Mozilla Public License v2.0</string>
     <string name="name_grayscale">Graustufen</string>
     <string name="name_increase_contrast">Erhöhter Kontrast</string>
     <string name="name_inverted_grayscale">Invertierte Graustufen</string>

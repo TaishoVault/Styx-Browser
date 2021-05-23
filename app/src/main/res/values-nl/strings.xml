@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="action_add_bookmark">Bladwijzer toevoegen</string>
     <string name="action_add_to_homescreen">Voeg aan startscherm toe</string>
     <string name="action_allow">Toestaan</string>
@@ -29,7 +28,6 @@
     <string name="agent_default">Standaard</string>
     <string name="agent_desktop">Bureaublad</string>
     <string name="agent">Gebruikersagent</string>
-    <string name="apache">Apache-licentie 2.0</string>
     <string name="black_theme">Zwart Thema (AMOLED)</string>
     <string name="block_ad_refresh_now">Vernieuw nu hosts</string>
     <string name="block_ad_remote_refresh_frequency_description">Voor externe hosts-bestand</string>
@@ -129,7 +127,6 @@
     <string name="message_open_download_fail">Dit bestand bestaat niet meer</string>
     <string name="message_permission_request">%1$s  nwilt graag: %2$s</string>
     <string name="message_web_storage_cleared">Web opslag gewist</string>
-    <string name="mit_license">MIT licensie</string>
     <string name="name_grayscale">Zwart-wit</string>
     <string name="name_increase_contrast">Contrast vergroten</string>
     <string name="name_inverted_grayscale">Omgkeerd zwart-wit</string>

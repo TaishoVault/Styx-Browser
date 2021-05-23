@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="accent_amber">Янтарный</string>
     <string name="accent_blue">Синий</string>
     <string name="accent_color">Цветовой акцент</string>
@@ -76,7 +75,6 @@
     <string name="algorithm">Алгоритм</string>
     <string name="allow_javascript">Разрешить JavaScript для этого сайта</string>
     <string name="android_open_source_project">Android Open Source Project</string>
-    <string name="apache">Лицензия Apache 2.0</string>
     <string name="apply">Применить</string>
     <string name="black_theme">Чёрная тема (AMOLED)</string>
     <string name="block_ad_refresh_hosts">Обновить host-файл…</string>
@@ -197,7 +195,6 @@
     <string name="jsoup">jsoup: Java HTML Parser</string>
     <string name="label_realm">Серверное сообщение: %s</string>
     <string name="library_netcipher">NetCipher</string>
-    <string name="license_gnu">GNU Lesser General Public License</string>
     <string name="licenses">Open Source Licenses</string>
     <string name="light_theme">Светлая тема</string>
     <string name="listed_javascript">Разрешить JavaScript только для перечисленных сайтов</string>
@@ -227,8 +224,6 @@
     <string name="message_open_download_fail">Файл не доступен</string>
     <string name="message_permission_request">%1$s\n\nхотел бы использовать:\n\n%2$s</string>
     <string name="message_web_storage_cleared">Интернет-хранилище очищено</string>
-    <string name="mit_license">MIT лицензия</string>
-    <string name="mpl_license">Mozilla Public License v2.0</string>
     <string name="name_grayscale">Оттенки серого</string>
     <string name="name_increase_contrast">Повышенный контраст</string>
     <string name="name_inverted_grayscale">Инвертированные оттенки серого</string>

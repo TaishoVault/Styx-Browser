@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Styx</string>
     <string name="action_add_bookmark">즐겨찾기 추가</string>
     <string name="action_add_to_homescreen">홈 화면에 추가</string>
     <string name="action_allow">허용</string>
@@ -33,7 +32,6 @@
     <string name="agent_desktop">데스크탑</string>
     <string name="agent">사용자 에이전트</string>
     <string name="android_open_source_project">안드로이드 오픈 소스 프로젝트</string>
-    <string name="apache">Apache 라이선스 2.0</string>
     <string name="black_theme">검정 테마 (AMOLED)</string>
     <string name="block_ad_refresh_now">지금 호스트 새로 고침</string>
     <string name="block_ad_remote_refresh_frequency_description">원격 호스트 파일의 경우</string>
@@ -103,7 +101,6 @@
     <string name="java">JavaScript 사용</string>
     <string name="jsoup">jsoup : 자바 HTML 파서</string>
     <string name="label_realm">서버 메시지: %s</string>
-    <string name="license_gnu">GNU Lesser 일반 공중 사용 허가서</string>
     <string name="licenses">오픈 소스 라이선스</string>
     <string name="light_theme">밝은 테마</string>
     <string name="loading">불러오는 중&#8230;</string>
@@ -129,7 +126,6 @@
     <string name="message_open_download_fail">파일이 더 이상 존재하지 않습니다</string>
     <string name="message_permission_request">%1$s  다음 권한을 사용하려 합니다:  %2$s</string>
     <string name="message_web_storage_cleared">웹 저장소를 비웠습니다</string>
-    <string name="mit_license">MIT 라이선스</string>
     <string name="name_grayscale">그레이스케일</string>
     <string name="name_increase_contrast">대비 증가</string>
     <string name="name_inverted_grayscale">반전된 그레이스케일</string>

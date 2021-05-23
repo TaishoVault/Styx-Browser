@@ -32,7 +32,6 @@
     <string name="agent_default">Προεπιλογή</string>
     <string name="agent_desktop">Υπολογιστής</string>
     <string name="agent">User Agent</string>
-    <string name="apache">Άδεια Apache 2.0</string>
     <string name="black_theme">Μαύρο θέμα</string>
     <string name="block_ad_refresh_now">Αναβαθμίστε τώρα τους hosts</string>
     <string name="block_ad_remote_refresh_frequency_description">Για το αρχείο απομακρυσμένων hosts</string>
@@ -104,7 +103,6 @@
     <string name="invert_color">Αναστρέψτε το χρώμα</string>
     <string name="java">Ενεργοποίηση JavaScript</string>
     <string name="label_realm">Μήνυμα διακομιστή: %s</string>
-    <string name="license_gnu">GNU Lesser Γενική Άδεια Δημόσιας Χρήσης</string>
     <string name="licenses">Άδειες ανοιχτού κώδικα</string>
     <string name="light_theme">Φως θέμα</string>
     <string name="listed_javascript">Η JavaScript επιτρέπετε μόνο για καταχωρημένους ιστότοπους</string>
@@ -131,7 +129,6 @@
     <string name="message_open_download_fail">Αυτό το αρχείο δεν υπάρχει πια</string>
     <string name="message_permission_request">%1$s nΘέλετε να χρησιμοποιήσετε: %2$s</string>
     <string name="message_web_storage_cleared">Αποθηκεύθηκε το αποθηκευτικό χώρο στο Web</string>
-    <string name="mit_license">Άδεια MIT</string>
     <string name="name_grayscale">Στάση του γκρι</string>
     <string name="name_increase_contrast">Αυξήστε την αντίθεση</string>
     <string name="name_inverted_grayscale">Inverted Grayscale</string>
