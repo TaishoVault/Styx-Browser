@@ -291,7 +291,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     }, 100 )
                 }
             }
-            mainHandler.postDelayed({ checkForUpdates(this) }, 3000)
+            mainHandler.postDelayed({ checkForUpdates(this) }, 1000)
         }
 
         // Hook in buttons with onClick handler
