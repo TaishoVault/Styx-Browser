@@ -153,7 +153,6 @@
     <string name="downloads">التحميلات</string>
     <string name="edit_cookies">إظهار ملفات تعريف الارتباط للموقع</string>
     <string name="edit_shortcuts">تعديل الاختصار</string>
-    <string name="eight">٨</string>
     <string name="error_reload">إعادة تحميل</string>
     <string name="error_tip">• تحقق من الاخطاء الكتابية العنوان مثل ww.example.com بدلا من www.example.com</string>
     <string name="error_tip2">• إذا كنت غير قادر على تحميل أي صفحات، تحقق من بيانات جهازك أو اتصال Wi-Fi.</string>
@@ -163,13 +162,11 @@
     <string name="example_text">مثال للنص</string>
     <string name="export_bookmarks">تصدير الإشارات المرجعية إلى النسخ الاحتياطي</string>
     <string name="export_settings">تصدير الإعدادات للنسخ الاحتياطي</string>
-    <string name="five">٥</string>
     <string name="folder_custom">مخصص</string>
     <string name="folder_default">الافتراضي</string>
     <string name="folder">اسم المجلد</string>
     <string name="force_zoom_summary">لا يعمل إذا لم يتم تمكين جافا سكريبت</string>
     <string name="force_zoom">فرض تكبير المواقع</string>
-    <string name="four">٤</string>
     <string name="hint_password">كلمه السر</string>
     <string name="hint_title">العنوان</string>
     <string name="hint_url">الرابط</string>
@@ -243,7 +240,6 @@
     <string name="new_tab_position_end">نهاية قائمة علامات التبويب</string>
     <string name="new_tab_position_start">بدء قائمة التبويب</string>
     <string name="new_tab_position">موضع علامة التبويب الجديدة</string>
-    <string name="nine">٩</string>
     <string name="no_tts">اللغة غير مدعومة</string>
     <string name="no">لا</string>
     <string name="none">لا يوجد</string>
@@ -348,13 +344,11 @@
     <string name="settings_title_desktop_mode_default">وضع سطح المكتب</string>
     <string name="settings_title_toolbars_bottom">شريط الأدوات في الأسفل</string>
     <string name="settings">إعدادات المتصفح</string>
-    <string name="seven">٧</string>
     <string name="shortcut_message_failed_to_add">عذرًا ، لا تدعم واجهة المستخدم الاختصارات.</string>
     <string name="show_second_bar">إظهار شريط التنقل الثانوي</string>
     <string name="show_shortcuts">إظهار الاختصارات على الصفحة الرئيسية</string>
     <string name="show_ssl">إظهار مربعات حوار تحذير SSL</string>
     <string name="site_cookies">ملفات تعريف الارتباط</string>
-    <string name="six">٦</string>
     <string name="size">حجم النص</string>
     <string name="ssl_info_expires_on">تنتهي صلاحيته في</string>
     <string name="ssl_info_issued_by">أصدرت بواسطة</string>
@@ -369,11 +363,9 @@
     <string name="swap_bookmarks_and_tabs">تبديل درج الإشارات المرجعية وعلامات التبويب</string>
     <string name="tabs_in_drawer">إظهار علامات التبويب في قائمة التنقل</string>
     <string name="tabs">تبويبات</string>
-    <string name="ten">١٠</string>
     <string name="text_encoding">ترميز النص</string>
     <string name="theme">ثيم التطبيق</string>
     <string name="third_party">حظر ملفات تعريف ارتباط الخاصة بطرف ثالث</string>
-    <string name="three">٣</string>
     <string name="title_chooser">اختيار ملف</string>
     <string name="title_clear_cookies">مسح ملفات تعريف الارتباط</string>
     <string name="title_clear_history">مسح السجل</string>
@@ -394,7 +386,6 @@
     <string name="translator">ترجمة</string>
     <string name="tts_initilization_failed">فشل البدء</string>
     <string name="tts">قراءة الصفحة</string>
-    <string name="two">٢</string>
     <string name="unknown_size">حجم غير معروف</string>
     <string name="unknown">غير معروف</string>
     <string name="unlisted_javascript">حظر جافا سكريبت للمواقع المدرجة</string>
