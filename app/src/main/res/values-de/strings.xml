@@ -92,7 +92,7 @@
     <string name="block_source_remote">Online Hosts-Datei</string>
     <string name="blocked_javascript">JavaScript für diese Webseite blockieren</string>
     <string name="bookmark_export_failure">Lesezeichen konnten nicht exportiert werden</string>
-    <string name="bookmark_export_path">Lesezeichen exportiert nach:</string>
+    <string name="bookmark_export_path">Lesezeichen exportiert:</string>
     <string name="bookmark_in_new_tab">Lesezeichen in neuem Tab öffnen</string>
     <string name="bookmark_restore">Lesezeichen wurden zurückgesetzt</string>
     <string name="bookmark_settings">Lesezeichen</string>
@@ -317,7 +317,7 @@
     <string name="settings_credits">Danksagungen</string>
     <string name="settings_display">Darstellung</string>
     <string name="settings_export_failure">Einstellungen konnten nicht exportiert werden</string>
-    <string name="settings_exported">Einstellungen exportiert nach:</string>
+    <string name="settings_exported">Einstellungen exportiert:</string>
     <string name="settings_extensions">Erweiterungen</string>
     <string name="settings_general">Allgemein</string>
     <string name="settings_help_us">Hilf uns</string>

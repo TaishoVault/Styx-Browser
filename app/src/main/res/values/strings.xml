@@ -95,7 +95,7 @@
     <string name="block_source_remote">Remote hosts file</string>
     <string name="blocked_javascript">Block JavaScript for this site</string>
     <string name="bookmark_export_failure">Sorry, bookmarks could not be exported!</string>
-    <string name="bookmark_export_path">Bookmarks exported to</string>
+    <string name="bookmark_export_path">Bookmarks exported:</string>
     <string name="bookmark_in_new_tab">Bookmark in new tab</string>
     <string name="bookmark_restore">Bookmarks restored</string>
     <string name="bookmark_settings">Bookmarks</string>
@@ -346,7 +346,7 @@
     <string name="settings_credits">Credits</string>
     <string name="settings_display">Look &amp; feel</string>
     <string name="settings_export_failure">Sorry, settings could not be exported!</string>
-    <string name="settings_exported">Settings exported to:</string>
+    <string name="settings_exported">Settings exported:</string>
     <string name="settings_extensions">Extensions</string>
     <string name="settings_general">General</string>
     <string name="settings_help_us">Help us</string>
@@ -527,6 +527,7 @@
     <string name="pref_key_block_js" translatable="false">pref_key_block_js</string>
     <string name="pref_key_block_malware" translatable="false">pref_key_block_malware</string>
     <string name="pref_key_block_third_party" translatable="false">pref_key_block_third_party</string>
+    <string name="pref_key_bookmark_changed" translatable="false">pref_key_bookmark_changed</string>
     <string name="pref_key_bookmark_in_new_tab" translatable="false">pref_key_bookmark_in_new_tab</string>
     <string name="pref_key_browser_text_size" translatable="false">pref_key_browser_text_size</string>
     <string name="pref_key_clear_cache_exit" translatable="false">pref_key_clear_cache_exit</string>

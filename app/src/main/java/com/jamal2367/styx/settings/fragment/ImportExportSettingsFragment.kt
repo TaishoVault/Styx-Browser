@@ -1,26 +1,20 @@
 package com.jamal2367.styx.settings.fragment
 
-import android.Manifest
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
 import android.app.Application
 import android.content.Context.ACTIVITY_SERVICE
 import android.content.Intent
 import android.net.Uri
-import android.os.Build.VERSION.SDK_INT
+import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.os.Handler
-import android.provider.Settings
-import android.util.Log
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
-import com.anthonycr.grant.PermissionsManager
-import com.anthonycr.grant.PermissionsResultAction
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.jamal2367.styx.BuildConfig
 import com.jamal2367.styx.R
 import com.jamal2367.styx.bookmark.LegacyBookmarkImporter
 import com.jamal2367.styx.bookmark.NetscapeBookmarkFormatImporter
@@ -31,9 +25,10 @@ import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.dialog.DialogItem
-import com.jamal2367.styx.extensions.resizeAndShow
+import com.jamal2367.styx.extensions.fileName
 import com.jamal2367.styx.extensions.snackbar
 import com.jamal2367.styx.log.Logger
+import com.jamal2367.styx.settings.activity.SettingsActivity
 import com.jamal2367.styx.utils.Utils
 import io.reactivex.Scheduler
 import io.reactivex.Single
@@ -42,6 +37,7 @@ import io.reactivex.rxkotlin.subscribeBy
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.*
+import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
@@ -57,6 +53,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
 
     private var importSubscription: Disposable? = null
     private var exportSubscription: Disposable? = null
+    private var bookmarksSortSubscription: Disposable? = null
 
     override fun providePreferencesXmlResource() = R.xml.preference_import
 
@@ -64,15 +61,11 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         super.onCreate(savedInstanceState)
         injector.inject(this)
 
-        if (SDK_INT <= 29) {
-        PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(activity, REQUIRED_PERMISSIONS, null)
-        }
-
         clickablePreference(preference = SETTINGS_EXPORT, onClick = this::exportBookmarks)
         clickablePreference(preference = SETTINGS_IMPORT, onClick = this::importBookmarks)
         clickablePreference(preference = SETTINGS_DELETE_BOOKMARKS, onClick = this::deleteAllBookmarks)
-        clickablePreference(preference = SETTINGS_SETTINGS_EXPORT, onClick = this::exportSettings)
-        clickablePreference(preference = SETTINGS_SETTINGS_IMPORT, onClick = this::importSettings)
+        clickablePreference(preference = SETTINGS_SETTINGS_EXPORT, onClick = this::requestSettingsExport)
+        clickablePreference(preference = SETTINGS_SETTINGS_IMPORT, onClick = this::requestSettingsImport)
         clickablePreference(preference = SETTINGS_DELETE_SETTINGS, onClick = this::clearSettings)
     }
 
@@ -81,6 +74,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
 
         exportSubscription?.dispose()
         importSubscription?.dispose()
+        bookmarksSortSubscription?.dispose()
     }
 
     override fun onDestroy() {
@@ -88,6 +82,32 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
 
         exportSubscription?.dispose()
         importSubscription?.dispose()
+        bookmarksSortSubscription?.dispose()
+    }
+
+    @Suppress("DEPRECATION")
+    private fun requestSettingsImport(){
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "text/plain"
+        }
+        startActivityForResult(intent, IMPORT_SETTINGS)
+    }
+
+    @Suppress("DEPRECATION")
+    private fun requestSettingsExport(){
+        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "text/plain"
+            var timeStamp = ""
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                val dateFormat = SimpleDateFormat("-yyyy-MM-dd-(HH:mm)", Locale.US)
+                timeStamp = dateFormat.format(Date())
+            }
+            // That is a neat feature as it guarantee no file will be overwritten.
+            putExtra(Intent.EXTRA_TITLE, "StyxSettings$timeStamp.txt")
+        }
+        startActivityForResult(intent, EXPORT_SETTINGS)
     }
 
     @Suppress("DEPRECATION")
@@ -114,93 +134,78 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         alertDialog.show()
     }
 
-    @Suppress("DEPRECATION")
-    private fun exportSettings() {
-        if (SDK_INT <= 29) {
-        PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(activity, REQUIRED_PERMISSIONS,
-            object : PermissionsResultAction() {
-                override fun onGranted() {
-                    val exportFile = BookmarkExporter.createNewSettingsExportFile()
-                    val userPref = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
-                    val allEntries: Map<String, *> = userPref!!.all
-                    var string = "{"
-                    for (entry in allEntries.entries) {
-                        string = string + '"' + entry.key + '"' + "=" + '"' + entry.value + '"' + ","
-                    }
-
-                    string = string.substring(0, string.length - 1) + "}"
-
-                    try {
-                        val fileIs = resources.getString(R.string.settings_exported)
-                        (activity as AppCompatActivity).snackbar("$fileIs $exportFile")
-                        val fOut = FileOutputStream(exportFile)
-                        val myOutWriter = OutputStreamWriter(fOut)
-                        myOutWriter.append(string)
-                        myOutWriter.close()
-                        fOut.close()
-                    } catch (e: IOException) {
-                        Log.e("Exception", "File write failed: $e")
-                    }
-                }
-
-                override fun onDenied(permission: String) {
-                    val activity = activity
-                    if (activity != null && !activity.isFinishing && isAdded) {
-                        Utils.createInformativeDialog(activity as AppCompatActivity, R.string.title_error, R.string.import_settings_error)
-                    } else {
-                        (activity as AppCompatActivity).snackbar(R.string.settings_export_failure)
-                    }
-                }
-            })
-        } else {
-            val exportFile = BookmarkExporter.createNewSettingsExportFile()
-            val userPref = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
-            val allEntries: Map<String, *> = userPref!!.all
-            var string = "{"
-            for (entry in allEntries.entries) {
-                string = string + '"' + entry.key + '"' + "=" + '"' + entry.value + '"' + ","
-            }
-
-            string = string.substring(0, string.length - 1) + "}"
-
-            try {
-                val fileIs = resources.getString(R.string.settings_exported)
-                (activity as AppCompatActivity).snackbar("$fileIs $exportFile")
-                val fOut = FileOutputStream(exportFile)
-                val myOutWriter = OutputStreamWriter(fOut)
-                myOutWriter.append(string)
-                myOutWriter.close()
-                fOut.close()
-            } catch (e: IOException) {
-                Log.e("Exception", "File write failed: $e")
-            }
+    private fun exportSettings(uri: Uri) {
+        val userPref = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
+        val allEntries: Map<String, *> = userPref!!.all
+        var string = "{"
+        for (entry in allEntries.entries) {
+            string += "\"${entry.key}\"=\"${entry.value}\","
         }
 
+        string = string.substring(0, string.length - 1) + "}"
+
+        try {
+            val output: OutputStream? = requireActivity().contentResolver.openOutputStream(uri)
+
+            output?.write(string.toByteArray())
+            output?.flush()
+            output?.close()
+            activity?.snackbar("${getString(R.string.settings_exported)} ${uri.fileName}")
+        } catch (e: IOException) {
+            activity?.snackbar(R.string.settings_export_failure)
+        }
     }
 
-    @SuppressLint("CheckResult")
+    private fun importBookmarks() {
+        showImportBookmarksDialog()
+    }
+
     private fun exportBookmarks() {
-        if (SDK_INT <= 29) {
-        PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(activity, REQUIRED_PERMISSIONS,
-            object : PermissionsResultAction() {
-                @SuppressLint("CheckResult")
-                override fun onGranted() {
-                    bookmarkRepository.getAllBookmarksSorted()
+        showExportBookmarksDialog()
+    }
+
+    /**
+     * Start bookmarks export workflow by showing file creation dialog.
+     */
+    private fun showExportBookmarksDialog() {
+        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "text/plain"
+            var timeStamp = ""
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                val dateFormat = SimpleDateFormat("-yyyy-MM-dd-(HH:mm)", Locale.US)
+                timeStamp = dateFormat.format(Date())
+            }
+            // That is a neat feature as it guarantee no file will be overwritten.
+            putExtra(Intent.EXTRA_TITLE, "StyxBookmarks$timeStamp.txt")
+        }
+        bookmarkExportFilePicker.launch(intent)
+    }
+
+    val bookmarkExportFilePicker = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+
+            // Using content resolver to get an input stream from selected URI
+            result.data?.data?.let{ uri ->
+                context?.contentResolver?.openOutputStream(uri)?.let { outputStream ->
+                    //val mimeType = context?.contentResolver?.getType(uri)
+
+                    bookmarksSortSubscription = bookmarkRepository.getAllBookmarksSorted()
                         .subscribeOn(databaseScheduler)
                         .subscribe { list ->
                             if (!isAdded) {
                                 return@subscribe
                             }
 
-                            val exportFile = BookmarkExporter.createNewBookmarksExportFile()
                             exportSubscription?.dispose()
-                            exportSubscription = BookmarkExporter.exportBookmarksToFile(list, exportFile)
+                            exportSubscription = BookmarkExporter.exportBookmarksToFile(list, outputStream)
                                 .subscribeOn(databaseScheduler)
                                 .observeOn(mainScheduler)
                                 .subscribeBy(
                                     onComplete = {
                                         activity?.apply {
-                                            (activity as AppCompatActivity).snackbar("${getString(R.string.bookmark_export_path)} ${exportFile.path}")
+                                            snackbar("${getString(R.string.bookmark_export_path)} ${uri.fileName}")
                                         }
                                     },
                                     onError = { throwable ->
@@ -215,79 +220,105 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                                 )
                         }
                 }
+            }
+        }
+    }
 
-                override fun onDenied(permission: String) {
-                    val activity = activity
-                    if (activity != null && !activity.isFinishing && isAdded) {
-                        Utils.createInformativeDialog(activity as AppCompatActivity, R.string.title_error, R.string.bookmark_export_failure)
-                    } else {
-                        (activity as AppCompatActivity).snackbar(R.string.bookmark_export_failure)
-                    }
-                }
-            })
-        } else {
-            bookmarkRepository.getAllBookmarksSorted()
-                .subscribeOn(databaseScheduler)
-                .subscribe { list ->
-                    if (!isAdded) {
-                        return@subscribe
-                    }
+    private fun showImportBookmarksDialog() {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "*/*" // That's needed for some reason, crashes otherwise
+            putExtra(
+                // List all file types you want the user to be able to select
+                Intent.EXTRA_MIME_TYPES, arrayOf(
+                    "text/html", // .html
+                    "text/plain" // .txt
+                )
+            )
+        }
+        bookmarkImportFilePicker.launch(intent)
+    }
 
-                    val exportFile = BookmarkExporter.createNewBookmarksExportFile()
-                    exportSubscription?.dispose()
-                    exportSubscription = BookmarkExporter.exportBookmarksToFile(list, exportFile)
+    val bookmarkImportFilePicker = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            // Using content resolver to get an input stream from selected URI
+            result.data?.data?.let{ uri ->
+                context?.contentResolver?.openInputStream(uri).let { inputStream ->
+                    val mimeType = context?.contentResolver?.getType(uri)
+                    importSubscription?.dispose()
+                    importSubscription = Single.just(inputStream)
+                        .map {
+                            if (mimeType == "text/html") {
+                                netscapeBookmarkFormatImporter.importBookmarks(it)
+                            } else {
+                                legacyBookmarkImporter.importBookmarks(it)
+                            }
+                        }
+                        .flatMap {
+                            bookmarkRepository.addBookmarkList(it).andThen(Single.just(it.size))
+                        }
                         .subscribeOn(databaseScheduler)
                         .observeOn(mainScheduler)
                         .subscribeBy(
-                            onComplete = {
+                            onSuccess = { count ->
                                 activity?.apply {
-                                    (activity as AppCompatActivity).snackbar("${getString(R.string.bookmark_export_path)} ${exportFile.path}")
+                                    snackbar("$count ${getString(R.string.message_import)}")
+                                    // Tell browser activity bookmarks have changed
+                                    (activity as SettingsActivity).userPreferences.bookmarksChanged = true
                                 }
                             },
-                            onError = { throwable ->
-                                logger.log(TAG, "onError: exporting bookmarks", throwable)
+                            onError = {
+                                logger.log(TAG, "onError: importing bookmarks", it)
                                 val activity = activity
                                 if (activity != null && !activity.isFinishing && isAdded) {
-                                    Utils.createInformativeDialog(activity as AppCompatActivity, R.string.title_error, R.string.bookmark_export_failure)
+                                    Utils.createInformativeDialog(activity as AppCompatActivity, R.string.title_error, R.string.import_bookmark_error)
                                 } else {
-                                    (activity as AppCompatActivity).snackbar(R.string.bookmark_export_failure)
+                                    (activity as AppCompatActivity).snackbar(R.string.import_bookmark_error)
                                 }
                             }
                         )
                 }
+            }
         }
     }
 
-    private fun importBookmarks() {
-        if (SDK_INT <= 29) {
-        PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(activity, REQUIRED_PERMISSIONS,
-            object : PermissionsResultAction() {
-                override fun onGranted() {
-                    showImportBookmarkDialog(null)
-                }
+    private fun importSettings(uri: Uri) {
+        val input: InputStream? = requireActivity().contentResolver.openInputStream(uri)
 
-                override fun onDenied(permission: String) {
-                }
-            })
-        } else {
-            showImportBookmarkDialog(null)
+        val bufferSize = 1024
+        val buffer = CharArray(bufferSize)
+        val out = StringBuilder()
+        val `in`: Reader = InputStreamReader(input, "UTF-8")
+        while (true) {
+            val rsz = `in`.read(buffer, 0, buffer.size)
+            if (rsz < 0) break
+            out.append(buffer, 0, rsz)
         }
-    }
 
-    private fun importSettings() {
-        if (SDK_INT <= 29) {
-            PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(activity, REQUIRED_PERMISSIONS,
-                object : PermissionsResultAction() {
-                    override fun onGranted() {
-                        showImportSettingsDialog(null)
-                    }
+        val content = out.toString()
 
-                    override fun onDenied(permission: String) {
-                    }
-                })
-        } else {
-            showImportSettingsDialog(null)
+        val answer = JSONObject(content)
+        val keys: JSONArray? = answer.names()
+        val userPref = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
+        for (i in 0 until keys!!.length()) {
+            val key: String = keys.getString(i)
+            val value: String = answer.getString(key)
+            with (userPref.edit()) {
+                if(value.matches("-?\\d+".toRegex())){
+                    putInt(key, value.toInt())
+                }
+                else if(value == "true" || value == "false"){
+                    putBoolean(key, value.toBoolean())
+                }
+                else{
+                    putString(key, value)
+                }
+                apply()
+            }
+
         }
+        activity?.snackbar(R.string.settings_reseted)
     }
 
     private fun deleteAllBookmarks() {
@@ -313,173 +344,23 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         }
     }
 
-    @Suppress("DEPRECATION")
-    private fun loadFileList(path: File?): Array<File> {
-        val file: File = path ?: File(Environment.getExternalStorageDirectory().toString())
-
-        if (SDK_INT >= 30) {
-            if (!Environment.isExternalStorageManager()) {
-                val uri: Uri = Uri.parse("package:" + BuildConfig.APPLICATION_ID)
-                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION, uri)
-                startActivity(intent)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val uri: Uri? = data?.data
+        if(requestCode == EXPORT_SETTINGS && resultCode == Activity.RESULT_OK) {
+            if(uri != null){
+                exportSettings(uri)
             }
         }
-
-        try {
-            file.mkdirs()
-        } catch (e: SecurityException) {
-            logger.log(TAG, "Unable to make directory", e)
-        }
-
-        return (if (file.exists()) {
-            file.listFiles()
-        } else {
-            arrayOf()
-        }).apply {
-            sortWith(SortName())
-        }
-    }
-
-    private class SortName : Comparator<File> {
-
-        override fun compare(a: File, b: File): Int {
-            return if (a.isDirectory && b.isDirectory) {
-                a.name.compareTo(b.name)
-            } else if (a.isDirectory) {
-                -1
-            } else if (b.isDirectory) {
-                1
-            } else if (a.isFile && b.isFile) {
-                a.name.compareTo(b.name)
-            } else {
-                1
+        else if(requestCode == IMPORT_SETTINGS && resultCode == Activity.RESULT_OK) {
+            if(uri != null){
+                importSettings(uri)
             }
         }
-    }
-
-    @Suppress("DEPRECATION", "NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    private fun showImportSettingsDialog(path: File?) {
-        val builder = MaterialAlertDialogBuilder(activity as AppCompatActivity)
-
-        val title = getString(R.string.title_chooser)
-        builder.setTitle(title + ": " + Environment.getExternalStorageDirectory())
-
-        val fileList = loadFileList(path)
-        val fileNames = fileList.map(File::getName).toTypedArray()
-
-        builder.setItems(fileNames) { _, which ->
-            if (fileList[which].isDirectory) {
-                showImportSettingsDialog(fileList[which])
-            } else {
-                Single.fromCallable(fileList[which]::inputStream)
-                    .map {
-                        val reader = BufferedReader(it.reader())
-                        val content = StringBuilder()
-                        reader.use {
-                            var line = reader.readLine()
-                            while (line != null) {
-                                content.append(line)
-                                line = reader.readLine()
-                            }
-                        }
-
-                        val answer = JSONObject(content.toString())
-                        val keys: JSONArray = answer.names()
-                        val userPref = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
-                        for (i in 0 until keys.length()) {
-                            val key: String = keys.getString(i) // Here's your key
-                            val value: String = answer.getString(key) // Here's your value
-                            with (userPref.edit()) {
-                                if(value.matches("-?\\d+".toRegex())){
-                                    putInt(key, value.toInt())
-                                }
-                                else if(value == "true" || value == "false"){
-                                    putBoolean(key, value.toBoolean())
-                                }
-                                else{
-                                    putString(key, value)
-                                }
-                                apply()
-                            }
-
-                        }
-                    }
-                    .subscribeOn(databaseScheduler)
-                    .observeOn(mainScheduler)
-                    .subscribeBy(
-                        onSuccess = {
-                            activity?.apply {
-                                Utils.createInformativeDialog(activity as AppCompatActivity, R.string.success, R.string.settings_imported)
-                            }
-                        },
-                        onError = {
-                            logger.log(TAG, "onError: importing settings", it)
-                            val activity = activity
-                            if (activity != null && !activity.isFinishing && isAdded) {
-                                Utils.createInformativeDialog(activity as AppCompatActivity, R.string.title_error, R.string.import_settings_error)
-                            } else {
-                                (activity as AppCompatActivity).snackbar(R.string.import_bookmark_error)
-                            }
-                        }
-                    )
-            }
-        }
-        builder.resizeAndShow()
-    }
-
-    @Suppress("DEPRECATION")
-    private fun showImportBookmarkDialog(path: File?) {
-        val builder = MaterialAlertDialogBuilder(activity as AppCompatActivity)
-
-        val title = getString(R.string.title_chooser)
-        builder.setTitle(title + ": " + Environment.getExternalStorageDirectory())
-
-        val fileList = loadFileList(path)
-        val fileNames = fileList.map(File::getName).toTypedArray()
-
-        builder.setItems(fileNames) { _, which ->
-            if (fileList[which].isDirectory) {
-                showImportBookmarkDialog(fileList[which])
-            } else {
-                Single.fromCallable(fileList[which]::inputStream)
-                    .map {
-                        if (fileList[which].extension == EXTENSION_HTML) {
-                            netscapeBookmarkFormatImporter.importBookmarks(it)
-                        } else {
-                            legacyBookmarkImporter.importBookmarks(it)
-                        }
-                    }
-                    .flatMap {
-                        bookmarkRepository.addBookmarkList(it).andThen(Single.just(it.size))
-                    }
-                    .subscribeOn(databaseScheduler)
-                    .observeOn(mainScheduler)
-                    .subscribeBy(
-                        onSuccess = { count ->
-                            activity?.apply {
-                                (activity as AppCompatActivity).snackbar("$count ${getString(R.string.message_import)}")
-                            }
-                        },
-                        onError = {
-                            logger.log(TAG, "onError: importing bookmarks", it)
-                            val activity = activity
-                            if (activity != null && !activity.isFinishing && isAdded) {
-                                Utils.createInformativeDialog(activity as AppCompatActivity, R.string.title_error, R.string.import_bookmark_error)
-                            } else {
-                                (activity as AppCompatActivity).snackbar(R.string.import_bookmark_error)
-                            }
-                        }
-                    )
-            }
-        }
-        builder.resizeAndShow()
     }
 
     companion object {
 
         private const val TAG = "BookmarkSettingsFrag"
-
-        private const val EXTENSION_HTML = "html"
 
         private const val SETTINGS_EXPORT = "export_bookmark"
         private const val SETTINGS_IMPORT = "import_bookmark"
@@ -488,6 +369,8 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         private const val SETTINGS_SETTINGS_IMPORT = "import_settings"
         private const val SETTINGS_DELETE_SETTINGS = "clear_settings"
 
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        const val EXPORT_SETTINGS = 0
+        const val IMPORT_SETTINGS = 1
+
     }
 }

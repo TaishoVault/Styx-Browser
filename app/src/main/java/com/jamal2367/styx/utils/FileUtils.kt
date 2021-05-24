@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Parcel
 import android.util.Log
+import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.utils.Utils.close
 import io.reactivex.Completable
 import java.io.*
+
 
 /**
  * A utility class containing helpful methods
@@ -119,7 +121,7 @@ object FileUtils {
      */
     fun writeCrashToStorage(throwable: Throwable) {
         val fileName = throwable.javaClass.simpleName + '_' + System.currentTimeMillis() + ".txt"
-        val outputFile = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName)
+        val outputFile = File(BrowserApp.instance.applicationContext.getExternalFilesDir("CrashLogs"), fileName)
         var outputStream: FileOutputStream? = null
         try {
             outputStream = FileOutputStream(outputFile)

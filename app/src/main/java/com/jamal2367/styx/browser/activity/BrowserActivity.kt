@@ -2243,6 +2243,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             unlockDrawers()
         }
 
+        if (userPreferences.bookmarksChanged) {
+            handleBookmarksChange()
+            userPreferences.bookmarksChanged = false
+        }
+
         if (userPreferences.incognito) {
             WebUtils.clearHistory(this, historyModel, databaseScheduler)
             WebUtils.clearCookies()

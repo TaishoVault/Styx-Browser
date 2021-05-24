@@ -348,6 +348,11 @@ class UserPreferences @Inject constructor(
     var pullToRefreshInLandscape by preferences.booleanPreference(R.string.pref_key_landscape_pull_to_refresh, R.bool.pref_default_landscape_pull_to_refresh)
 
     /**
+     * Not an actual user preference. Just used to communicate between settings and browser activity.
+     */
+    var bookmarksChanged by preferences.booleanPreference(R.string.pref_key_bookmark_changed, false)
+
+    /**
      * True if the status bar of the app should always be high contrast, false if it should follow
      * the theme of the app.
      */

@@ -36,6 +36,7 @@ import java.net.URISyntaxException
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 object Utils {
     private const val TAG = "Utils"
 
@@ -260,7 +261,7 @@ object Utils {
         // Create an image file name
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "JPEG_" + timeStamp + '_'
-        val storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+        val storageDir = BrowserApp.instance.applicationContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(imageFileName,  /* prefix */
                 ".jpg",  /* suffix */
                 storageDir /* directory */
@@ -390,5 +391,18 @@ object Utils {
         // Get our bottom sheet view field
         val fieldBottomField = BottomSheetDialog::class.java.getDeclaredField("bottomSheet")
         fieldBottomField.isAccessible = true
+    }
+
+    fun startActivityForFolder(aContext: Context, aFolder: String?) {
+        // This is the solution from there: https://stackoverflow.com/a/26651827/3969362
+        // Build an intent to open our download folder in a file explorer app
+        val intent =
+            Intent(Intent.ACTION_VIEW).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        intent.setDataAndType(Uri.parse(aFolder), "resource/folder")
+        // Check that there is an app activity handling that intent on our system
+        if (intent.resolveActivityInfo(aContext.packageManager, 0) != null) {
+            // Yes, there is one, use it then
+            aContext.startActivity(intent)
+        }
     }
 }
