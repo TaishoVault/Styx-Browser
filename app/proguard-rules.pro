@@ -39,12 +39,6 @@
 
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
--keep class com.jamal2367.styx.view.StyxView$StyxChromeClient {
-    void openFileChooser(android.webkit.ValueCallback);
-    void openFileChooser(android.webkit.ValueCallback, java.lang.String);
-    void openFileChooser(android.webkit.ValueCallback, java.lang.String, java.lang.String);
-}
-
 -keep class com.google.android.material.bottomsheet.BottomSheetDialog$EdgeToEdgeCallback {
     private void setPaddingForPosition(android.view.View);
 }
@@ -81,6 +75,7 @@
 -dontwarn javax.annotation.ParametersAreNonnullByDefault
 -dontwarn okhttp3.**
 -dontwarn okio.**
+-dontwarn org.chromium.net.*
 -dontwarn org.apache.http.conn.ssl.DefaultHostnameVerifier
 -dontwarn org.apache.http.HttpHost
 -dontwarn org.conscrypt.**
