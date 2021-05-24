@@ -126,6 +126,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         )
     }
 
+    @Suppress("DEPRECATION")
     private fun showFileChooser(summaryUpdater: SummaryUpdater) {
         this.recentSummaryUpdater = summaryUpdater
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
@@ -154,6 +155,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         )
     }
 
+    @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == FILE_REQUEST_CODE) {
             if (resultCode == AppCompatActivity.RESULT_OK) {

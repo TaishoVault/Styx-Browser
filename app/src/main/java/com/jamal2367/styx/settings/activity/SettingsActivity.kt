@@ -64,6 +64,7 @@ class SettingsActivity : ThemedSettingsActivity(),
         return super.onSupportNavigateUp()
     }
 
+    @Suppress("DEPRECATION")
     override fun onPreferenceStartFragment(
             caller: PreferenceFragmentCompat,
             pref: Preference

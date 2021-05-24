@@ -2791,6 +2791,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      * param ValueCallback is the message from the WebView indicating a file chooser
      * should be opened
      */
+    @Suppress("DEPRECATION")
     override fun openFileChooser(uploadMsg: ValueCallback<Uri>) {
         uploadMessageCallback = uploadMsg
         startActivityForResult(Intent.createChooser(Intent(Intent.ACTION_GET_CONTENT).apply {
@@ -2802,6 +2803,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      * used to allow uploading into the browser
      */
+    @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         if (requestCode == FILE_CHOOSER_REQUEST_CODE) {
             val results: Array<Uri>? = if (resultCode == RESULT_OK) {
@@ -2825,6 +2827,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      *
      */
+    @Suppress("DEPRECATION")
     override fun showFileChooser(filePathCallback: ValueCallback<Array<Uri>>) {
         this.filePathCallback?.onReceiveValue(null)
         this.filePathCallback = filePathCallback
