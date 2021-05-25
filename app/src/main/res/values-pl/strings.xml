@@ -164,8 +164,6 @@
     <string name="home">Strona domowa</string>
     <string name="homepage_in_new_tab">Strona główna w nowej karcie</string>
     <string name="host">Gospodarz:</string>
-    <string name="http_proxy">Konfiguracja serwera proxy</string>
-    <string name="i2p">I2P</string>
     <string name="import_backup">Importuj zakładki</string>
     <string name="import_bookmark_error">Nie udało się zaimportować zakładek z</string>
     <string name="import_export_settings">Import i eksport</string>
@@ -174,8 +172,6 @@
     <string name="incognito_cookies_pie">Tryb incognito działa jako osobny proces, który jest resetowany z końcem każdej sesji. Preferencje plików cookie w trybie incognito są teraz kontrolowane przez ogólne preferencje plików cookie.</string>
     <string name="incognito_cookies">Włącz ciasteczka w trybie Incognito</string>
     <string name="inspect">Włącz JavaScript</string>
-    <string name="install_i2p">Zainstaluj I2P, aby korzystać z Proxy.</string>
-    <string name="install_orbot">Zainstaluj Orbot, aby korzystać z Proxy.</string>
     <string name="install_userscript_description">Czy chcesz zainstalować UserScript?</string>
     <string name="install_userscript">Zainstaluj UserScript</string>
     <string name="invert_color">Odwróć kolory</string>
@@ -189,7 +185,6 @@
     <string name="load_images">Wczytuj obrazy</string>
     <string name="loading">Ładowanie…</string>
     <string name="location">Dostęp do geolokalizacji</string>
-    <string name="manual_proxy">Ręczne ustawienia proxy</string>
     <string name="message_added_to_homescreen">Dodano skrót do ekranu głównego</string>
     <string name="message_blocked_local">Wczytywanie lokalnego pliku zostało zablokowane</string>
     <string name="message_bookmark_added">Dodano zakładkę.</string>
@@ -219,10 +214,8 @@
     <string name="name">Jamal2367</string>
     <string name="no_tts">Język nie jest wspierany</string>
     <string name="no">Nie</string>
-    <string name="none">Żaden</string>
     <string name="notification_incognito_running_description">Powiadomienie o trybie prywatnym</string>
     <string name="notification_incognito_running_message">Dotknij, aby otworzyć</string>
-    <string name="orbot">Orbot</string>
     <string name="overViewMode">Wyświetlaj strony nie-mobilne w pomniejszeniu</string>
     <string name="page_source">Pokaż źródło strony</string>
     <string name="password">Zapisuj hasła</string>

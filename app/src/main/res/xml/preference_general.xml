@@ -183,11 +183,6 @@
             app:icon="@drawable/ic_cloud_download_oval" />
 
         <Preference
-            android:key="proxy"
-            android:title="@string/http_proxy"
-            app:icon="@drawable/ic_http_oval" />
-
-        <Preference
             android:key="agent"
             android:title="@string/agent"
             app:icon="@drawable/ic_about_oval" />

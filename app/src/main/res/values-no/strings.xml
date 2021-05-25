@@ -107,7 +107,6 @@
     <string name="listed_javascript">Tillat bare JavaScript for opplistede sider</string>
     <string name="loading">Laster&#8230;</string>
     <string name="location">Posisjon tilgang</string>
-    <string name="manual_proxy">Manuell proxy</string>
     <string name="message_added_to_homescreen">Snarvei lagt til på startskjermen</string>
     <string name="message_blocked_local">Lokal fil er blokkert for lasting</string>
     <string name="message_bookmark_added">Bokmerke lagt til.</string>
@@ -133,7 +132,6 @@
     <string name="name_inverted">Invertert</string>
     <string name="name_normal">Vanlig</string>
     <string name="no">Nei</string>
-    <string name="none">Ingen</string>
     <string name="notification_incognito_running_description">Pågående varsel om privat fane</string>
     <string name="notification_incognito_running_message">Trykk for å åpne</string>
     <string name="overViewMode">Last sider i Oversikt-modus</string>

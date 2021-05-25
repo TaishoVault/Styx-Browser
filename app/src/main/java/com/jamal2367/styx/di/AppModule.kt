@@ -63,10 +63,6 @@ class AppModule {
     fun provideUserPreferences(application: Application): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
 
     @Provides
-    @DevPrefs
-    fun provideDebugPreferences(application: Application): SharedPreferences = application.getSharedPreferences("developer_settings", 0)
-
-    @Provides
     @AdBlockPrefs
     fun provideAdBlockPreferences(application: Application): SharedPreferences = application.getSharedPreferences("ad_block_settings", 0)
 
@@ -212,10 +208,6 @@ annotation class UserPrefs
 @Qualifier
 @Retention(AnnotationRetention.SOURCE)
 annotation class AdBlockPrefs
-
-@Qualifier
-@Retention(AnnotationRetention.SOURCE)
-annotation class DevPrefs
 
 @Qualifier
 @Retention(AnnotationRetention.SOURCE)

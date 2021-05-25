@@ -121,7 +121,6 @@
     <string name="hint_username">Nombre de usuario</string>
     <string name="home">Página de inicio</string>
     <string name="host">Anfitrión:</string>
-    <string name="http_proxy">Proxy HTTP</string>
     <string name="import_backup">Importar marcadores desde una copia de seguridad</string>
     <string name="import_bookmark_error">No se pudo importar los marcadores del archivo</string>
     <string name="import_settings">Importar ajustes desde copia de seguridad</string>
@@ -136,7 +135,6 @@
     <string name="listed_javascript">Sólo permitir JavaScript para sitios listados</string>
     <string name="loading">Cargando&#8230;</string>
     <string name="location">Permitir acceso a tu ubicación</string>
-    <string name="manual_proxy">Proxy manual</string>
     <string name="message_added_to_homescreen">Acceso directo añadido a la pantalla de inicio</string>
     <string name="message_blocked_local">Se ha bloqueado la carga del archivo local</string>
     <string name="message_bookmark_added">Marcador agregado.</string>
@@ -160,7 +158,6 @@
     <string name="name_increase_contrast">Aumentar contraste</string>
     <string name="name_inverted_grayscale">Escala de grises invertida</string>
     <string name="name_inverted">Invertido</string>
-    <string name="none">Ninguna</string>
     <string name="notification_incognito_running_description">Notificación de incógnito en curso</string>
     <string name="notification_incognito_running_message">Toca para abrir</string>
     <string name="overViewMode">Visualizar la página de lejos al cargar</string>

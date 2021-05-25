@@ -94,7 +94,6 @@
     <string name="hint_username">Ім\'я користувача</string>
     <string name="home">Домашня сторінка</string>
     <string name="host">Хост:</string>
-    <string name="http_proxy">HTTP-проксі</string>
     <string name="import_backup">Відновити закладки з резервної копії</string>
     <string name="import_bookmark_error">Не вдалося імпортувати закладки з файлу</string>
     <string name="import_settings">Імпортувати налаштування з резервної копії</string>
@@ -110,7 +109,6 @@
     <string name="listed_javascript">Дозволити лише JavaScript для сайтів з списку сайтів</string>
     <string name="loading">Завантаження&#8230;</string>
     <string name="location">Доступ до місцезнаходження</string>
-    <string name="manual_proxy">Ручний проксі</string>
     <string name="message_added_to_homescreen">Ярлик додано на робочий стіл</string>
     <string name="message_blocked_local">Локальний файл було заблоковано для завантаження</string>
     <string name="message_bookmark_added">Закладку додано.</string>
@@ -136,7 +134,6 @@
     <string name="name_inverted">Інвертований</string>
     <string name="name_normal">Нормальний</string>
     <string name="no">Ні</string>
-    <string name="none">Без ефекту</string>
     <string name="notification_incognito_running_description">Сповіщення про приватні вкладки</string>
     <string name="notification_incognito_running_message">Дотик до відкриття</string>
     <string name="overViewMode">Відкривати сторінки в режимі попереднього перегляду</string>

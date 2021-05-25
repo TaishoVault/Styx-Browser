@@ -171,8 +171,6 @@
     <string name="home">Новая вкладка</string>
     <string name="homepage_in_new_tab">Домашняя страница в новой вкладке</string>
     <string name="host">Хост:</string>
-    <string name="http_proxy">HTTP прокси</string>
-    <string name="i2p">I2P</string>
     <string name="image_url">Установить фоновое изображение для поисковой системы</string>
     <string name="image_url_summary">Только для пользовательских URL</string>
     <string name="import_backup">Восстановить закладки из резервной копии</string>
@@ -183,8 +181,6 @@
     <string name="incognito_cookies_pie">Режим инкогнито запускается в отдельном процессе, который будет сброшен после каждой сессии. Настройки cookie инкогнито теперь контролируются обычными настройками cookie.</string>
     <string name="incognito_cookies">Включить cookie в режиме инкогнито</string>
     <string name="inspect">Вставить Javascript</string>
-    <string name="install_i2p">Пожалуйста, установите I2P для использования прокси.</string>
-    <string name="install_orbot">Пожалуйста, установите Orbot для использования прокси.</string>
     <string name="install_userscript_description">Вы действительно хотите установить этот UserScript?</string>
     <string name="install_userscript">Установка UserScript</string>
     <string name="invalid_character_removed">Недопустимый символ удален!</string>
@@ -200,8 +196,6 @@
     <string name="load_images">Загружать изображения</string>
     <string name="loading">Загрузка&#8230;</string>
     <string name="location">Местоположение</string>
-    <string name="manual_proxy">Прокси</string>
-    <string name="manual">Настроить вручную</string>
     <string name="message_added_to_homescreen">Ярлык добавлен на домашний экран</string>
     <string name="message_blocked_local">Локальный файл недоступен для загрузки</string>
     <string name="message_bookmark_added">Закладка добавлена</string>
@@ -236,11 +230,9 @@
     <string name="new_tab_position">Положение новой вкладки</string>
     <string name="no_tts">Язык не поддерживается</string>
     <string name="no">Нет</string>
-    <string name="none">Ничего</string>
     <string name="notification_incognito_running_description">Постоянное уведомление инкогнито</string>
     <string name="notification_incognito_running_message">Нажмите, чтобы открыть</string>
     <string name="one">%1$d инкогнито вкладка открыта</string>
-    <string name="orbot">Orbot</string>
     <string name="other">%1$d инкогнито вкладки открыто</string>
     <string name="overViewMode">Загружать обзор</string>
     <string name="page_source">Просмотр кода страницы</string>

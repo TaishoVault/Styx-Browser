@@ -91,7 +91,6 @@
     <string name="hint_username">Gebruiksnaam</string>
     <string name="home">Startpagina</string>
     <string name="host">Gastheer:</string>
-    <string name="http_proxy">HTTP Proxy</string>
     <string name="import_backup">Importeer bladwijzers van backup</string>
     <string name="import_bookmark_error">Kon bladwijzers niet van bestand laden</string>
     <string name="import_settings">Instellingen importeren uit back-up</string>
@@ -105,7 +104,6 @@
     <string name="listed_javascript">Alleen JavaScript toestaan voor vermelde websites</string>
     <string name="loading">Laden&#8230;</string>
     <string name="location">Locatie toegang</string>
-    <string name="manual_proxy">Manuele proxy</string>
     <string name="message_added_to_homescreen">Snelkoppeling aan startscherm toegevoegd</string>
     <string name="message_blocked_local">Lokaal bestand werd geblokkeerd</string>
     <string name="message_bookmark_added">Bladwijzer toegevoegd.</string>
@@ -132,7 +130,6 @@
     <string name="name_inverted">Omgekeerd</string>
     <string name="name_normal">Normaal</string>
     <string name="no">Nee</string>
-    <string name="none">Geen</string>
     <string name="notification_incognito_running_description">Lopende incognito melding</string>
     <string name="notification_incognito_running_message">Tik om te openen</string>
     <string name="overViewMode">Laad pagina\'s in overzichtsweergave</string>

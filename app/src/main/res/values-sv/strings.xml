@@ -91,7 +91,6 @@
     <string name="hint_username">Användarnamn</string>
     <string name="home">Hemsida</string>
     <string name="host">Värd:</string>
-    <string name="http_proxy">HTTP-proxy</string>
     <string name="import_backup">Importera bokmärken från backup</string>
     <string name="import_bookmark_error">Kunde inte importera bokmärken från fil</string>
     <string name="import_settings">Importera inställningar från säkerhetskopia</string>
@@ -105,7 +104,6 @@
     <string name="listed_javascript">Tillåt endast JavaScript för listade webbplatser</string>
     <string name="loading">Laddar&#8230;</string>
     <string name="location">Tillgång till plats</string>
-    <string name="manual_proxy">Manuell proxy</string>
     <string name="message_added_to_homescreen">Genväg tillagd på startskärmen</string>
     <string name="message_blocked_local">Lokal fil har blockerats från att ladda</string>
     <string name="message_bookmark_added">Bokmärke tillagt.</string>
@@ -130,7 +128,6 @@
     <string name="name_inverted_grayscale">Inverterad gråskala</string>
     <string name="name_inverted">Inverterad</string>
     <string name="no">Nej</string>
-    <string name="none">Ingen</string>
     <string name="notification_incognito_running_description">Pågående privat flikavisering</string>
     <string name="notification_incognito_running_message">Tryck om du vill öppna</string>
     <string name="overViewMode">Ladda sidor i översiktsläge</string>

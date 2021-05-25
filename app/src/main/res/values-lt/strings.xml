@@ -94,7 +94,6 @@
     <string name="hint_username">Slapyvardis</string>
     <string name="home">Pradinis puslapis</string>
     <string name="host">Pagrindinis kompiuteris:</string>
-    <string name="http_proxy">„HTTP proxy“</string>
     <string name="import_backup">Importuokite žymes iš atsarginės kopijos</string>
     <string name="import_bookmark_error">Nepavyko importuoti žymių iš failo</string>
     <string name="import_settings">Importuoti nustatymus iš atsarginės kopijos</string>
@@ -109,7 +108,6 @@
     <string name="light_theme">Šviesos tema</string>
     <string name="loading">Įkeliama ...</string>
     <string name="location">Prieiga prie vietovės</string>
-    <string name="manual_proxy">Rankinis tarpinis serveris</string>
     <string name="message_added_to_homescreen">Spartusis klavišas pridėtas prie pagrindinio ekrano</string>
     <string name="message_blocked_local">Vietinio failo įkėlimas buvo užblokuotas</string>
     <string name="message_bookmark_added">Žyma pridėta.</string>
@@ -135,7 +133,6 @@
     <string name="name_inverted">Apversta</string>
     <string name="name_normal">Normalus</string>
     <string name="no">Ne</string>
-    <string name="none">Nė vienas</string>
     <string name="notification_incognito_running_description">Vyksta inkognito pranešimas</string>
     <string name="notification_incognito_running_message">Palieskite, kad atidarytumėte</string>
     <string name="overViewMode">Įkelkite puslapius apžvalgos režimu</string>

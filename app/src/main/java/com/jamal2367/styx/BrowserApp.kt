@@ -17,7 +17,6 @@ import com.jamal2367.styx.di.DaggerAppComponent
 import com.jamal2367.styx.di.DatabaseScheduler
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.log.Logger
-import com.jamal2367.styx.preference.DeveloperPreferences
 import com.jamal2367.styx.utils.FileUtils
 import com.jamal2367.styx.utils.MemoryLeakUtils
 import io.reactivex.Scheduler
@@ -28,7 +27,6 @@ import kotlin.system.exitProcess
 
 class BrowserApp : Application() {
 
-    @Inject internal lateinit var developerPreferences: DeveloperPreferences
     @Inject internal lateinit var bookmarkModel: BookmarkRepository
     @Inject @field:DatabaseScheduler internal lateinit var databaseScheduler: Scheduler
     @Inject internal lateinit var logger: Logger

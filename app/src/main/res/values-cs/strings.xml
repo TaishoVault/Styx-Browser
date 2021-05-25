@@ -109,7 +109,6 @@
     <string name="listed_javascript">Povolit JavaScript pouze pro uvedené stránky</string>
     <string name="loading">Načítání&#8230;</string>
     <string name="location">Přístup k poloze</string>
-    <string name="manual_proxy">Manuální proxy</string>
     <string name="message_added_to_homescreen">Zástupce přidán na domovskou obrazovku</string>
     <string name="message_blocked_local">Místní soubor byl zablokován při načítání</string>
     <string name="message_bookmark_added">Záložka přidána.</string>
@@ -135,7 +134,6 @@
     <string name="name_inverted">Obrácené</string>
     <string name="name_normal">Normální</string>
     <string name="no">Ne</string>
-    <string name="none">Nic</string>
     <string name="notification_incognito_running_description">Probíhající upozornění na soukromou kartu</string>
     <string name="notification_incognito_running_message">Klepnutím otevřete</string>
     <string name="overViewMode">Načíst stránky v režimu přehledu</string>

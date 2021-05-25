@@ -94,7 +94,6 @@
     <string name="hint_username">使用者名稱</string>
     <string name="home">首頁</string>
     <string name="host">主機位址：</string>
-    <string name="http_proxy">HTTP 代理伺服器</string>
     <string name="import_backup">自備份檔匯入書籤</string>
     <string name="import_bookmark_error">無法自檔案中匯入書籤</string>
     <string name="incognito_cookies">在無痕模式中啟用 Cookies</string>
@@ -107,7 +106,6 @@
     <string name="light_theme">淺色主題</string>
     <string name="loading">正在載入&#8230;</string>
     <string name="location">允許網站存取地理位置</string>
-    <string name="manual_proxy">手動設定代理</string>
     <string name="message_added_to_homescreen">捷徑已新增至主畫面</string>
     <string name="message_blocked_local">本機檔已被封鎖載入</string>
     <string name="message_bookmark_added">已新增書籤。</string>
@@ -134,7 +132,6 @@
     <string name="name_inverted">反轉</string>
     <string name="name_normal">標準</string>
     <string name="no">取消</string>
-    <string name="none">沒有</string>
     <string name="notification_incognito_running_description">正在顯示無痕通知</string>
     <string name="notification_incognito_running_message">點觸以開啟</string>
     <string name="overViewMode">使用概覽模式載入頁面</string>

@@ -46,7 +46,6 @@ import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.ssl.SslState
 import com.jamal2367.styx.ssl.SslWarningPreferences
 import com.jamal2367.styx.utils.IntentUtils
-import com.jamal2367.styx.utils.ProxyUtils
 import com.jamal2367.styx.utils.Utils
 import com.jamal2367.styx.utils.Utils.buildErrorPage
 import com.jamal2367.styx.utils.Utils.buildMalwarePage
@@ -74,7 +73,6 @@ class StyxWebClient(
     private val emptyResponseByteArray: ByteArray = byteArrayOf()
     private var urlLoaded = ""
 
-    @Inject internal lateinit var proxyUtils: ProxyUtils
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject @UserPrefs internal lateinit var preferences: SharedPreferences
     @Inject internal lateinit var sslWarningPreferences: SslWarningPreferences
@@ -618,12 +616,6 @@ class StyxWebClient(
      * Overrides [WebViewClient.shouldOverrideUrlLoading].
      */
     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
-        // Check if configured proxy is available
-        if (!proxyUtils.isProxyReady()) {
-            // User has been notified
-            return true
-        }
-
         val url = request.url.toString()
         val headers = styxView.requestHeaders
 

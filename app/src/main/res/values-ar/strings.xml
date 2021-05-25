@@ -171,8 +171,6 @@
     <string name="home">الصفحة الرئيسية</string>
     <string name="homepage_in_new_tab">الصفحة الرئيسية في علامة التبويب الجديدة</string>
     <string name="host">المضيف:</string>
-    <string name="http_proxy">وكيل HTTP</string>
-    <string name="i2p">I2P</string>
     <string name="image_url">تعيين صورة الخلفية لمحرك البحث</string>
     <string name="image_url_summary">فقط لعنوان URL المخصص</string>
     <string name="import_backup">استيراد الإشارات المرجعية من النسخ الاحتياطي</string>
@@ -183,8 +181,6 @@
     <string name="incognito_cookies_pie">يعمل وضع التخفي في عملية منفصلة يعاد تعيينها بعد كل جلسة. يتم الآن التحكم في تفضيلات ملفات تعريف الارتباط المخفية من خلال تفضيلات ملفات تعريف الارتباط العادية.</string>
     <string name="incognito_cookies">تمكين ملفات تعريف الارتباط في وضع التصفح المتخفي</string>
     <string name="inspect">حقن جافا سكريبت</string>
-    <string name="install_i2p">الرجاء تثبيت I2P لاستخدام البروكسي.</string>
-    <string name="install_orbot">الرجاء تثبيت Orbot لاستخدام البروكسي.</string>
     <string name="install_userscript_description">هل ترغب في تثبيت هذا البرنامج النصي للمستخدم؟</string>
     <string name="install_userscript">تثبيت البرنامج النصي المستخدم</string>
     <string name="invalid_character_removed">تم إزالة حرف غير صالح!</string>
@@ -200,8 +196,6 @@
     <string name="load_images">تحميل الصور</string>
     <string name="loading">جارٍ التحميل&#8230;</string>
     <string name="location">الوصول إلى موقعك</string>
-    <string name="manual_proxy">الوكيل اليدوي</string>
-    <string name="manual">دليل</string>
     <string name="message_added_to_homescreen">تم اضافة الاختصار الي الشاشة الرئيسية</string>
     <string name="message_blocked_local">تم حظر الملف المحلي من التحميل</string>
     <string name="message_bookmark_added">تمت إضافة الإشارة المرجعية.</string>
@@ -236,11 +230,9 @@
     <string name="new_tab_position">موضع علامة التبويب الجديدة</string>
     <string name="no_tts">اللغة غير مدعومة</string>
     <string name="no">لا</string>
-    <string name="none">لا يوجد</string>
     <string name="notification_incognito_running_description">إشعار علامة التبويب الخاصة المستمرة</string>
     <string name="notification_incognito_running_message">المس لفتح</string>
     <string name="one">%1$d تبويب مخفي مفتوح</string>
-    <string name="orbot">Orbot</string>
     <string name="other">%1$d تبويبات مخفية مفتوحة</string>
     <string name="overViewMode">تحميل الصفحات في نظرة عامة</string>
     <string name="page_source">عرض مصدر الصفحة</string>

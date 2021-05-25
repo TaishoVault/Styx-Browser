@@ -169,7 +169,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     @Inject lateinit var homePageInitializer: HomePageInitializer
     @Inject lateinit var bookmarkPageInitializer: BookmarkPageInitializer
     @Inject @field:MainHandler lateinit var mainHandler: Handler
-    @Inject lateinit var proxyUtils: ProxyUtils
     @Inject lateinit var logger: Logger
     @Inject lateinit var bookmarksDialogBuilder: StyxDialogBuilder
     @Inject lateinit var exitCleanup: ExitCleanup
@@ -649,7 +648,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             presenter?.setupTabs(intent)
             setIntent(null)
-            proxyUtils.checkForProxy(this)
         }
 
         if (userPreferences.lockedDrawers) {
@@ -1165,7 +1163,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         searchText = currentSearchEngine.queryUrl
 
         updateCookiePreference().subscribeOn(diskScheduler).subscribe()
-        proxyUtils.updateProxySettings(this)
 
         val extraBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
@@ -2182,14 +2179,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     }
 
     /**
-     *
-     */
-    override fun onStop() {
-        super.onStop()
-        proxyUtils.onStop()
-    }
-
-    /**
      * Amazingly this is not called when closing our app from Task list.
      * See: https://developer.android.com/reference/android/app/Activity.html#onDestroy()
      */
@@ -2205,14 +2194,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         presenter?.shutdown()
 
         super.onDestroy()
-    }
-
-    /**
-     *
-     */
-    override fun onStart() {
-        super.onStart()
-        proxyUtils.onStart()
     }
 
     /**

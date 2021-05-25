@@ -81,7 +81,6 @@
     <string name="hint_username">Tên người dùng</string>
     <string name="home">Trang chủ</string>
     <string name="host">Máy chủ:</string>
-    <string name="http_proxy">Proxy HTTP</string>
     <string name="import_backup">Nhập dấu trang từ bản sao lưu</string>
     <string name="import_bookmark_error">Không thể nhập dấu trang từ tệp</string>
     <string name="import_settings">Nhập cài đặt từ bản sao lưu</string>
@@ -91,7 +90,6 @@
     <string name="licenses">Giấy phép mã nguồn mở</string>
     <string name="light_theme">Light theme</string>
     <string name="location">Truy cập vị trí</string>
-    <string name="manual_proxy">Proxy thủ công</string>
     <string name="message_added_to_homescreen">Đã thêm lối tắt vào màn hình chính</string>
     <string name="message_blocked_local">Tệp cục bộ đã bị chặn không cho tải</string>
     <string name="message_bookmark_added">Đã thêm dấu trang.</string>

@@ -89,7 +89,6 @@
     <string name="hint_username">Felhasználónév</string>
     <string name="home">Főoldal</string>
     <string name="host">Hoszt:</string>
-    <string name="http_proxy">HTTP Proxy</string>
     <string name="import_backup">Könyvjelzők importálása biztonsági mentésből</string>
     <string name="import_bookmark_error">Nem sikerült importálni a könyvjelzőket a fájlból</string>
     <string name="incognito_cookies">Cookie-k engedélyezése inkognitó módban</string>
@@ -102,7 +101,6 @@
     <string name="light_theme">Világos Téma</string>
     <string name="loading">Betöltés&#8230;</string>
     <string name="location">Hely hozzáférés</string>
-    <string name="manual_proxy">Manuális proxy</string>
     <string name="message_added_to_homescreen">Parancsikon hozzáadva a kezdőképernyőhöz</string>
     <string name="message_blocked_local">Helyi fájl betöltése blokkolva</string>
     <string name="message_bookmark_added">Könyvjelző hozzáadva.</string>
@@ -129,7 +127,6 @@
     <string name="name_inverted">Negatív</string>
     <string name="name_normal">Normál</string>
     <string name="no">Nem</string>
-    <string name="none">Nincs</string>
     <string name="notification_incognito_running_description">Folyamatos inkognitó-értesítés</string>
     <string name="notification_incognito_running_message">Érintse meg a megnyitáshoz</string>
     <string name="overViewMode">Oldalak betöltése áttekinthető módban</string>

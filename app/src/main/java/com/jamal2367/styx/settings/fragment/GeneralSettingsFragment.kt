@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.text.Editable
-import android.text.InputFilter
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.webkit.URLUtil
@@ -18,7 +17,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.Capabilities
 import com.jamal2367.styx.R
 import com.jamal2367.styx.browser.JavaScriptChoice
-import com.jamal2367.styx.browser.ProxyChoice
 import com.jamal2367.styx.browser.SuggestionNumChoice
 import com.jamal2367.styx.constant.TEXT_ENCODINGS
 import com.jamal2367.styx.constant.Uris
@@ -34,7 +32,6 @@ import com.jamal2367.styx.search.Suggestions
 import com.jamal2367.styx.search.engine.BaseSearchEngine
 import com.jamal2367.styx.search.engine.CustomSearch
 import com.jamal2367.styx.utils.FileUtils
-import com.jamal2367.styx.utils.ProxyUtils
 import com.jamal2367.styx.utils.ThemeUtils
 import javax.inject.Inject
 
@@ -45,7 +42,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
 
     @Inject lateinit var searchEngineProvider: SearchEngineProvider
     @Inject lateinit var userPreferences: UserPreferences
-    private lateinit var proxyChoices: Array<String>
 
     override fun providePreferencesXmlResource() = R.xml.preference_general
 
@@ -53,14 +49,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         super.onCreatePreferences(savedInstanceState, rootKey)
 
         injector.inject(this)
-
-        proxyChoices = resources.getStringArray(R.array.proxy_choices_array)
-
-        clickableDynamicPreference(
-            preference = SETTINGS_PROXY,
-            summary = userPreferences.proxyChoice.toSummary(),
-            onClick = ::showProxyPicker
-        )
 
         clickableDynamicPreference(
             preference = SETTINGS_USER_AGENT,
@@ -226,80 +214,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
                 userPreferences.imageUrlString,
                 R.string.action_ok) { s ->
                 userPreferences.imageUrlString = s
-            }
-        }
-    }
-
-    private fun ProxyChoice.toSummary(): String {
-        val stringArray = resources.getStringArray(R.array.proxy_choices_array)
-        return when (this) {
-            ProxyChoice.NONE -> stringArray[0]
-            ProxyChoice.ORBOT -> stringArray[1]
-            ProxyChoice.I2P -> stringArray[2]
-            ProxyChoice.MANUAL -> "${userPreferences.proxyHost}:${userPreferences.proxyPort}"
-        }
-    }
-
-    private fun showProxyPicker(summaryUpdater: SummaryUpdater) {
-        BrowserDialog.showCustomDialog(activity as AppCompatActivity) {
-            setTitle(R.string.http_proxy)
-            val stringArray = resources.getStringArray(R.array.proxy_choices_array)
-            val values = ProxyChoice.values().map {
-                Pair(it, when (it) {
-                    ProxyChoice.NONE -> stringArray[0]
-                    ProxyChoice.ORBOT -> stringArray[1]
-                    ProxyChoice.I2P -> stringArray[2]
-                    ProxyChoice.MANUAL -> stringArray[3]
-                })
-            }
-            withSingleChoiceItems(values, userPreferences.proxyChoice) {
-                updateProxyChoice(it, activity as AppCompatActivity, summaryUpdater)
-            }
-            setPositiveButton(R.string.action_ok, null)
-        }
-    }
-
-    private fun updateProxyChoice(choice: ProxyChoice, activity: AppCompatActivity, summaryUpdater: SummaryUpdater) {
-        val sanitizedChoice = ProxyUtils.sanitizeProxyChoice(choice, activity)
-        if (sanitizedChoice == ProxyChoice.MANUAL) {
-            showManualProxyPicker(activity, summaryUpdater)
-        }
-
-        userPreferences.proxyChoice = sanitizedChoice!!
-        summaryUpdater.updateSummary(sanitizedChoice.toSummary())
-    }
-
-    @SuppressLint("InflateParams")
-    private fun showManualProxyPicker(activity: AppCompatActivity, summaryUpdater: SummaryUpdater) {
-        val v = activity.layoutInflater.inflate(R.layout.dialog_manual_proxy, null)
-        val eProxyHost = v.findViewById<TextView>(R.id.proxyHost)
-        val eProxyPort = v.findViewById<TextView>(R.id.proxyPort)
-
-        // Limit the number of characters since the port needs to be of type int
-        // Use input filters to limit the EditText length and determine the max
-        // length by using length of integer MAX_VALUE
-        val maxCharacters = Integer.MAX_VALUE.toString().length
-        eProxyPort.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(maxCharacters - 1))
-
-        eProxyHost.text = userPreferences.proxyHost
-        eProxyPort.text = userPreferences.proxyPort.toString()
-
-        BrowserDialog.showCustomDialog(activity) {
-            setTitle(R.string.manual_proxy)
-            setView(v)
-            setPositiveButton(R.string.action_ok) { _, _ ->
-                val proxyHost = eProxyHost.text.toString()
-                val proxyPort = try {
-                    // Try/Catch in case the user types an empty string or a number
-                    // larger than max integer
-                    Integer.parseInt(eProxyPort.text.toString())
-                } catch (ignored: NumberFormatException) {
-                    userPreferences.proxyPort
-                }
-
-                userPreferences.proxyHost = proxyHost
-                userPreferences.proxyPort = proxyPort
-                summaryUpdater.updateSummary("$proxyHost:$proxyPort")
             }
         }
     }
@@ -589,8 +503,8 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             setTitle(R.string.block_sites_title)
             setView(v)
             setPositiveButton(R.string.action_ok) { _, _ ->
-                val proxyHost = blockedSites.text.toString()
-                userPreferences.javaScriptBlocked = proxyHost
+                val js = blockedSites.text.toString()
+                userPreferences.javaScriptBlocked = js
                 if(choice.toString() == "BLACKLIST"){
                     summaryUpdater.updateSummary(getText(R.string.listed_javascript).toString())
                 }
@@ -642,7 +556,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
     }
 
     companion object {
-        private const val SETTINGS_PROXY = "proxy"
         private const val SETTINGS_SUGGESTIONS_NUM = "suggestions_number"
         private const val SETTINGS_USER_AGENT = "agent"
         private const val SETTINGS_DOWNLOAD = "download"

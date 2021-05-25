@@ -188,7 +188,6 @@ class StyxView(
 
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject internal lateinit var dialogBuilder: StyxDialogBuilder
-    @Inject internal lateinit var proxyUtils: ProxyUtils
     @Inject @field:DatabaseScheduler internal lateinit var databaseScheduler: Scheduler
     @Inject @field:MainScheduler internal lateinit var mainScheduler: Scheduler
     @Inject lateinit var networkConnectivityModel: NetworkConnectivityModel
@@ -752,17 +751,8 @@ class StyxView(
 
     /**
      * Tells the WebView to reload the current page.
-     * If the proxy settings are not ready then the
-     * this method will not have an affect as the
-     * proxy must start before the load occurs.
      */
     fun reload() {
-        // Check if configured proxy is available
-        if (!proxyUtils.isProxyReady()) {
-            // User has been notified
-            return
-        }
-
         loadUrl(url)
     }
 
@@ -916,20 +906,11 @@ class StyxView(
     fun canGoForward(): Boolean = webView?.canGoForward() == true
 
     /**
-     * Loads the URL in the WebView. If the proxy settings
-     * are still initializing, then the URL will not load
-     * as it is necessary to have the settings initialized
-     * before a load occurs.
-     *
+     * Loads the URL in the WebView.
      * @param "url" the non-null URL to attempt to load in
      * the WebView.
      */
     fun loadUrl(aUrl: String) {
-        // Check if configured proxy is available
-        if (!proxyUtils.isProxyReady()) {
-            return
-        }
-
         iTargetUrl = Uri.parse(aUrl)
 
         if (iTargetUrl.scheme == Schemes.Styx || iTargetUrl.scheme == Schemes.About) {

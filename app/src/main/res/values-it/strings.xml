@@ -172,8 +172,6 @@
     <string name="home">Pagina iniziale</string>
     <string name="homepage_in_new_tab">Hompage in nuovo tab</string>
     <string name="host">Host:</string>
-    <string name="http_proxy">Proxy HTTP</string>
-    <string name="i2p">I2P</string>
     <string name="image_url">Imposta un\' immagine di sfondo per il motore di ricerca</string>
     <string name="image_url_summary">Solo per URL personalizzato</string>
     <string name="import_backup">Importa i segnalibri da un backup</string>
@@ -184,8 +182,6 @@
     <string name="incognito_cookies_pie">La modalità incognito esegue un processo separato che è resettato dopo ogni sessione. Le preferenze dei cookie in incognito sono ora controllate dalle preferente dei cookie normali.</string>
     <string name="incognito_cookies">Abilita i cookie nella modalità incognito</string>
     <string name="inspect">Inietta Javascript</string>
-    <string name="install_i2p">Installa I2P per usare il Proxy.</string>
-    <string name="install_orbot">Installa Orbot per usare il Proxy.</string>
     <string name="install_userscript_description">Vuoi installare questo UserScript?</string>
     <string name="install_userscript">Installa UserScript</string>
     <string name="invalid_character_removed">Carattere invalido rimosso!</string>
@@ -201,8 +197,6 @@
     <string name="load_images">Carica immagini</string>
     <string name="loading">Caricamento&#8230;</string>
     <string name="location">Posizione</string>
-    <string name="manual_proxy">Proxy manuale</string>
-    <string name="manual">Manuale</string>
     <string name="message_added_to_homescreen">Scorciatoia aggiunta</string>
     <string name="message_blocked_local">Caricamento file locale bloccato</string>
     <string name="message_bookmark_added">Segnalibro aggiunto.</string>
@@ -237,11 +231,9 @@
     <string name="new_tab_position">Nuova posizione tab</string>
     <string name="no_tts">La lingua non è supportata</string>
     <string name="no">No</string>
-    <string name="none">Nessuno</string>
     <string name="notification_incognito_running_description">Notifica in incognito attiva</string>
     <string name="notification_incognito_running_message">Clicca per aprire</string>
     <string name="one">%1$d apertura tab incognito</string>
-    <string name="orbot">Orbot</string>
     <string name="other">%1$d apertura tab incognito</string>
     <string name="overViewMode">Visualizza le pagine alla massima larghezza</string>
     <string name="page_source">Visualizza sorgente pagina</string>

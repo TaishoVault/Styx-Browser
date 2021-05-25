@@ -171,8 +171,6 @@
     <string name="home">主页</string>
     <string name="homepage_in_new_tab">新标签页中的主页</string>
     <string name="host">主机：</string>
-    <string name="http_proxy">HTTP 代理</string>
-    <string name="i2p">I2P</string>
     <string name="image_url">设置搜索引擎背景图像</string>
     <string name="image_url_summary">仅用于自定义 URL</string>
     <string name="import_backup">从备份中导入书签</string>
@@ -183,8 +181,6 @@
     <string name="incognito_cookies_pie">无痕模式运行于单独的进程，并在会话结束后重置。无痕模式下的 Cookie 设置由常规的 Cookie 选项控制。</string>
     <string name="incognito_cookies">在无痕模式下启用 Cookie</string>
     <string name="inspect">注入JavaScript</string>
-    <string name="install_i2p">请安装 I2P 以使用代理服务器</string>
-    <string name="install_orbot">请安装 Orbot 以使用代理服务器.</string>
     <string name="install_userscript_description">你想安装这个 UserScript 吗？</string>
     <string name="install_userscript">安装 UserScript</string>
     <string name="invalid_character_removed">无效字符已移除！</string>
@@ -200,8 +196,6 @@
     <string name="load_images">载入图片</string>
     <string name="loading">加载中&#8230;</string>
     <string name="location">位置信息访问</string>
-    <string name="manual_proxy">手动设置代理</string>
-    <string name="manual">手动</string>
     <string name="message_added_to_homescreen">快捷方式已添加到桌面</string>
     <string name="message_blocked_local">已阻止本地文件加载</string>
     <string name="message_bookmark_added">书签已添加</string>
@@ -236,11 +230,9 @@
     <string name="new_tab_position">新建标签页的位置</string>
     <string name="no_tts">不支持该语言</string>
     <string name="no">否</string>
-    <string name="none">无</string>
     <string name="notification_incognito_running_description">进行中的无痕标签页通知</string>
     <string name="notification_incognito_running_message">轻触以打开</string>
     <string name="one">打开了 %1$d 隐身标签页</string>
-    <string name="orbot">Orbot</string>
     <string name="other">打开了 %1$d 隐身标签页</string>
     <string name="overViewMode">以概览模式加载页面</string>
     <string name="page_source">查看页面源代码</string>

@@ -98,7 +98,6 @@
     <string name="hint_username">Kullanıcı adı</string>
     <string name="home">Ana sayfa</string>
     <string name="host">Ana bilgisayar:</string>
-    <string name="http_proxy">HTTP vekil sunucu</string>
     <string name="import_backup">Yer işaretlerini geri yükle</string>
     <string name="import_bookmark_error">Yer işaretleri dosyadan yüklenemedi</string>
     <string name="import_settings">Ayarları yedekten içe aktar</string>
@@ -115,7 +114,6 @@
     <string name="listed_javascript">Yalnızca listelenen siteler için JavaScript\'e izin ver</string>
     <string name="loading">Yükleniyor&#8230;</string>
     <string name="location">Konum erişimi</string>
-    <string name="manual_proxy">Elle vekil sunucu</string>
     <string name="message_added_to_homescreen">Ana ekrana kısayol eklendi</string>
     <string name="message_blocked_local">Yerel dosyanın yüklenmesi engellendi</string>
     <string name="message_bookmark_added">Yer işareti eklendi.</string>
@@ -141,7 +139,6 @@
     <string name="name_inverted_grayscale">Ters ve gri tonlamalı</string>
     <string name="name_inverted">Ters</string>
     <string name="no">Hayır</string>
-    <string name="none">Yok</string>
     <string name="notification_incognito_running_description">Devam eden gizli bildirim</string>
     <string name="notification_incognito_running_message">Açmak için dokunun</string>
     <string name="overViewMode">Sayfaları önizleme modunda göster</string>

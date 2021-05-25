@@ -107,7 +107,6 @@
     <string name="listed_javascript">Η JavaScript επιτρέπετε μόνο για καταχωρημένους ιστότοπους</string>
     <string name="loading">Φόρτωση…</string>
     <string name="location">Πρόσβαση σε τοποθεσία</string>
-    <string name="manual_proxy">Μη αυτόματο διακομιστή μεσολάβησης</string>
     <string name="message_added_to_homescreen">Η συντόμευση προστέθηκε στην αρχική οθόνη</string>
     <string name="message_blocked_local">Τοπικά αρχεία εχουν μπλοκαριστεί απο την φόρτωση</string>
     <string name="message_bookmark_added">Προσθήκη σελιδοδείκτη.</string>
@@ -134,7 +133,6 @@
     <string name="name_inverted">Αντιστροφή</string>
     <string name="name_normal">Κανονικός</string>
     <string name="no">Όχι</string>
-    <string name="none">Κανένας</string>
     <string name="notification_incognito_running_description">Συνεχής ειδοποίηση ανώνυμης περιήγησης</string>
     <string name="notification_incognito_running_message">Πατήστε για να το ανοίξετε</string>
     <string name="overViewMode">Φόρτωση σελίδων σε προεπισκόπηση</string>

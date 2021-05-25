@@ -359,21 +359,6 @@ class UserPreferences @Inject constructor(
     var useBlackStatusBar by preferences.booleanPreference(R.string.pref_key_black_status_bar, R.bool.pref_default_black_status_bar)
 
     /**
-     * The index of the proxy choice.
-     */
-    var proxyChoice by preferences.enumPreference(R.string.pref_key_proxy_choice, ProxyChoice.NONE)
-
-    /**
-     * The proxy host used when [proxyChoice] is [ProxyChoice.MANUAL].
-     */
-    var proxyHost by preferences.stringPreference(R.string.pref_key_proxy_host, "localhost")
-
-    /**
-     * The proxy port used when [proxyChoice] is [ProxyChoice.MANUAL].
-     */
-    var proxyPort by preferences.intPreference(R.string.pref_key_use_proxy_port, 8118)
-
-    /**
      * The index of the search suggestion choice.
      *
      * @see SearchEngineProvider

@@ -93,7 +93,6 @@
     <string name="hint_username">Корисничко име</string>
     <string name="home">Почетна страница</string>
     <string name="host">Домаћин:</string>
-    <string name="http_proxy">ХТТП прокси</string>
     <string name="import_backup">Увези обележиваче из резерве</string>
     <string name="import_bookmark_error">Не могу да увезем обележиваче из фајла</string>
     <string name="incognito_cookies">Омогући колачиће у приватном режиму</string>
@@ -107,7 +106,6 @@
     <string name="light_theme">Светла</string>
     <string name="loading">Учитавам&#8230;</string>
     <string name="location">Приступ локацији</string>
-    <string name="manual_proxy">Ручне поставке проксија</string>
     <string name="message_added_to_homescreen">Пречица додата на почетни екран</string>
     <string name="message_blocked_local">Учитавање локалног фајла је блокирано</string>
     <string name="message_bookmark_added">Ознака је додата.</string>
@@ -134,7 +132,6 @@
     <string name="name_inverted">Инверзно</string>
     <string name="name_normal">Нормално</string>
     <string name="no">Не</string>
-    <string name="none">Ниједан</string>
     <string name="notification_incognito_running_description">Анонимно обавештавање</string>
     <string name="notification_incognito_running_message">Додирните за отварање</string>
     <string name="overViewMode">Учитај странице у режиму прегледа</string>

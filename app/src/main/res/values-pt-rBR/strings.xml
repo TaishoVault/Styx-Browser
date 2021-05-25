@@ -171,8 +171,6 @@
     <string name="home">Página inicial</string>
     <string name="homepage_in_new_tab">Página inicial em uma nova aba</string>
     <string name="host">Servidor:</string>
-    <string name="http_proxy">Proxy HTTP</string>
-    <string name="i2p">I2P</string>
     <string name="image_url">Definir imagem de fundo para mecanismo de busca</string>
     <string name="image_url_summary">Somente para URL Personalizada</string>
     <string name="import_backup">Importar favoritos de um backup</string>
@@ -183,8 +181,6 @@
     <string name="incognito_cookies_pie">O modo anônimo é executado em um processo separado que é reiniciado após cada sessão. Preferências de cookies no modo anônimo são agora gerenciados nas preferências de cookies padrão.</string>
     <string name="incognito_cookies">Permitir cookies no modo anônimo</string>
     <string name="inspect">Injetar JavaScript</string>
-    <string name="install_i2p">Instale o I2P para usar o Proxy.</string>
-    <string name="install_orbot">Instale o Orbot para usar o Proxy.</string>
     <string name="install_userscript_description">Deseja instalar este UserScript?</string>
     <string name="install_userscript">Instalar UserScript</string>
     <string name="invalid_character_removed">Caracter inválido removido!</string>
@@ -200,8 +196,6 @@
     <string name="load_images">Carregar imagens</string>
     <string name="loading">A carregar&#8230;</string>
     <string name="location">Acesso de localização</string>
-    <string name="manual_proxy">Proxy manual</string>
-    <string name="manual">Manual</string>
     <string name="message_added_to_homescreen">Atalho adicionado à tela inicial</string>
     <string name="message_blocked_local">Bloqueado o carregamento do arquivo local</string>
     <string name="message_bookmark_added">Favorito adicionado</string>
@@ -236,11 +230,9 @@
     <string name="new_tab_position">Posição da nova aba</string>
     <string name="no_tts">Idioma não suportado</string>
     <string name="no">Não</string>
-    <string name="none">Não bloquear</string>
     <string name="notification_incognito_running_description">Notificação de aba anônima aberta</string>
     <string name="notification_incognito_running_message">Toque para abrir</string>
     <string name="one">%1$d aba anônima aberta</string>
-    <string name="orbot">Orbot</string>
     <string name="other">%1$d abas anônimas abertas</string>
     <string name="overViewMode">Carregar páginas no modo panorâmico</string>
     <string name="page_source">Ver código-fonte da página</string>

@@ -93,7 +93,6 @@
     <string name="hint_username">שם משתמש</string>
     <string name="home">דף הבית</string>
     <string name="host">מנחה:</string>
-    <string name="http_proxy">פרוקסי HTTP</string>
     <string name="import_backup">ייבא סימניות מגיבוי</string>
     <string name="import_bookmark_error">לא ניתן היה לייבא סימניות מהקובץ</string>
     <string name="incognito_cookies">אפשר קובצי Cookie במצב גלישה בסתר</string>
@@ -105,7 +104,6 @@
     <string name="light_theme">נושא קל</string>
     <string name="loading">טוען…</string>
     <string name="location">גישה למיקום</string>
-    <string name="manual_proxy">פרוקסי ידני</string>
     <string name="message_added_to_homescreen">קיצור הדרך נוסף למסך הבית</string>
     <string name="message_blocked_local">הטעינה של הקובץ המקומי נחסמה</string>
     <string name="message_bookmark_added">הוסף סימניה.</string>
@@ -132,7 +130,6 @@
     <string name="name_inverted">הפוך</string>
     <string name="name_normal">רגיל</string>
     <string name="no">לא</string>
-    <string name="none">אף אחד</string>
     <string name="notification_incognito_running_description">התראת גלישה בסתר</string>
     <string name="notification_incognito_running_message">גע כדי לפתוח</string>
     <string name="overViewMode">טען דפים במצב סקירה כללית</string>
