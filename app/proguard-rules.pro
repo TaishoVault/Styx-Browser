@@ -70,7 +70,6 @@
 
 -dontwarn android.support.**
 -dontwarn com.jamal2367.styx.**
--dontwarn net.i2p.crypto.CertUtil
 -dontwarn javax.annotation.Nullable
 -dontwarn javax.annotation.ParametersAreNonnullByDefault
 -dontwarn okhttp3.**
