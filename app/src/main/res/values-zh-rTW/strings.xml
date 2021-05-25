@@ -45,7 +45,6 @@
     <string name="block_source_remote_description">網址：%1$s</string>
     <string name="block_source_remote">遠程主機文件</string>
     <string name="bookmark_export_failure">很抱歉，無法匯出書籤！</string>
-    <string name="bookmark_export_path">書籤已匯出至</string>
     <string name="bookmark_settings">書籤設定</string>
     <string name="cache">結束時清除快取</string>
     <string name="cannot_download">僅可下載以「http」或「https」開頭的網址</string>

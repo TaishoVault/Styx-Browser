@@ -45,7 +45,6 @@
     <string name="block_source_remote_description">УРЛ: %1$s</string>
     <string name="block_source_remote">Датотека удаљених домаћина</string>
     <string name="bookmark_export_failure">Опростите, ознаке се нису могле извести!</string>
-    <string name="bookmark_export_path">Обележивачи извезени у</string>
     <string name="bookmark_settings">Поставке обележивача</string>
     <string name="cache">Очисти кеш по затварању</string>
     <string name="cannot_download">Могу да преузмем само са „http“ или „https“ адреса.</string>

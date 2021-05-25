@@ -43,7 +43,6 @@
     <string name="block_source_local">Helyi host fájl</string>
     <string name="block_source_remote">Távoli állomásfájl</string>
     <string name="bookmark_export_failure">Sajnáljuk, a könyvjelzők nem exportálhatók!</string>
-    <string name="bookmark_export_path">Könyvjelző exportálva</string>
     <string name="bookmark_settings">Könyvjelző beállítások</string>
     <string name="cache">Gyorsítótár törlése kilépéskor</string>
     <string name="cannot_download">Csak \"http\" vagy \"https\" URL-eket lehet letölteni.</string>

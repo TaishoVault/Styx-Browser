@@ -44,7 +44,6 @@
     <string name="block_source_local">Lokal verts-fil</string>
     <string name="block_source_remote">Ekstern verts-fil</string>
     <string name="bookmark_export_failure">Beklager, bokmerker kunne ikke eksporteres!</string>
-    <string name="bookmark_export_path">Bokmerker eksportert til</string>
     <string name="bookmark_settings">Bokmerke innstillinger</string>
     <string name="cache">Tøm hurtigminne ved avslutning</string>
     <string name="cannot_download">Kan kun laste ned HTTP eller HTTPS-URLer.</string>

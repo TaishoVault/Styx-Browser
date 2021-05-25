@@ -64,7 +64,6 @@
     <string name="block_source_local">Archivo de hosts locales</string>
     <string name="block_source_remote">Archivo de hosts remotos</string>
     <string name="bookmark_export_failure">Lo sentimos, los marcadores no se pudieron exportar.</string>
-    <string name="bookmark_export_path">Marcadores exportados a</string>
     <string name="bookmark_settings">Ajustes de marcadores</string>
     <string name="cache">Vaciar caché al salir</string>
     <string name="cannot_download">Sólo se puede descargar de URLs \"http\" o \"https\".</string>

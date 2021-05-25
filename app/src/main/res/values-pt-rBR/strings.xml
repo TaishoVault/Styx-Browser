@@ -92,7 +92,6 @@
     <string name="block_source_remote">Arquivo de hosts remoto</string>
     <string name="blocked_javascript">Bloquear JavaScript para este site</string>
     <string name="bookmark_export_failure">Desculpe, os favoritos não puderam ser exportados!</string>
-    <string name="bookmark_export_path">Favoritos salvos em</string>
     <string name="bookmark_in_new_tab">Favorito em uma nova aba</string>
     <string name="bookmark_restore">Favoritos restaurados</string>
     <string name="bookmark_settings">Configurações de favoritos</string>
@@ -316,7 +315,6 @@
     <string name="settings_black_status_bar">Barra de status preta</string>
     <string name="settings_display">Configurações de exibição</string>
     <string name="settings_export_failure">Desculpe, as configurações não puderam ser exportadas!</string>
-    <string name="settings_exported">Configurações exportadas para:</string>
     <string name="settings_extensions">Extensões</string>
     <string name="settings_general">Configurações gerais</string>
     <string name="settings_help_us">Ajude-nos!</string>

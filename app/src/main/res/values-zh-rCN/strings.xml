@@ -92,7 +92,6 @@
     <string name="block_source_remote">远程 Hosts 文件</string>
     <string name="blocked_javascript">屏蔽此网站的 JavaScript</string>
     <string name="bookmark_export_failure">抱歉，无法导出书签！</string>
-    <string name="bookmark_export_path">书签已经导出到</string>
     <string name="bookmark_in_new_tab">在新标签页打开书签</string>
     <string name="bookmark_restore">书签已恢复</string>
     <string name="bookmark_settings">书签设置</string>
@@ -317,7 +316,6 @@
     <string name="settings_credits">鸣谢</string>
     <string name="settings_display">显示设置</string>
     <string name="settings_export_failure">对不起，设置无法导出！</string>
-    <string name="settings_exported">设置已导出到：</string>
     <string name="settings_extensions">扩展程序</string>
     <string name="settings_general">常规设置</string>
     <string name="settings_help_us">帮助我们</string>

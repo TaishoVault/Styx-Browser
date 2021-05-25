@@ -41,7 +41,6 @@
     <string name="block_source_local">Lokaal hosts-bestand</string>
     <string name="block_source_remote">Extern hosts-bestand</string>
     <string name="bookmark_export_failure">Sorry, bladwijzers konden niet worden geëxporteerd!</string>
-    <string name="bookmark_export_path">Bladwijzers geëxporteerd naar</string>
     <string name="bookmark_settings">Bladwijzer instellingen</string>
     <string name="cache">Wis cache bij beëindigen</string>
     <string name="cannot_download">Kan alleen \"http\" of \"https\" URLs downloaden.</string>

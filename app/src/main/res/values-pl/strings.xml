@@ -91,7 +91,6 @@
     <string name="block_source_remote">Plik hostów zdalnych</string>
     <string name="blocked_javascript">Blokuj JavaScript w tej witrynie</string>
     <string name="bookmark_export_failure">Nie udało się wyeksportować zakładek!</string>
-    <string name="bookmark_export_path">Zakładki wyeksportowane do</string>
     <string name="bookmark_restore">Zakładki przywrócone</string>
     <string name="bookmark_settings">Zakładki</string>
     <string name="cache">Wyczyść pamięć podręczną po zamknięciu</string>
@@ -288,7 +287,6 @@
     <string name="settings_black_status_bar">Czarny pasek stanu</string>
     <string name="settings_display">Wyświetlanie</string>
     <string name="settings_export_failure">Niestety, ale nie udało się wyeksportować ustawień!</string>
-    <string name="settings_exported">Ustawienia wyeksportowane do:</string>
     <string name="settings_extensions">Rozszerzenia</string>
     <string name="settings_general">Ogólne</string>
     <string name="settings_help_us">Wsparcie</string>

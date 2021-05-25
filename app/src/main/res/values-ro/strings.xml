@@ -91,7 +91,6 @@
     <string name="block_source_remote">Fişier gazdă la distanţă</string>
     <string name="blocked_javascript">Blochează JavaScript pentru acest site</string>
     <string name="bookmark_export_failure">Ne pare rău, marcajele nu au putut fi exportate!</string>
-    <string name="bookmark_export_path">Marcaje exportate către</string>
     <string name="bookmark_in_new_tab">Deschide marcajul în filă nouă</string>
     <string name="bookmark_restore">Marcaje restaurate</string>
     <string name="bookmark_settings">Setări marcaj</string>
@@ -311,7 +310,6 @@
     <string name="settings_black_status_bar">Bară de stare neagră</string>
     <string name="settings_display">Setări de afișare</string>
     <string name="settings_export_failure">Ne pare rău, setările nu au putut fi exportate!</string>
-    <string name="settings_exported">Setări exportate în:</string>
     <string name="settings_extensions">Extensii</string>
     <string name="settings_general">Setări generale</string>
     <string name="settings_help_us">Ajută-ne</string>

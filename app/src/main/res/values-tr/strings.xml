@@ -48,7 +48,6 @@
     <string name="block_source_remote_description">Adres: %1$s</string>
     <string name="block_source_remote">Uzak dosya</string>
     <string name="bookmark_export_failure">Üzgünüz, yer işaretleri dışa aktarılamadı!</string>
-    <string name="bookmark_export_path">Yer işaretlerinin yedeklendiği konum</string>
     <string name="bookmark_settings">Yer işareti ayarları</string>
     <string name="cache">Çıkışta önbelleği temizle</string>
     <string name="cannot_download">Yalnızca \"http\" veya \"https\" bağlantıları indirilebilir.</string>

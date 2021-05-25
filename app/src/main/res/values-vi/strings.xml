@@ -41,7 +41,6 @@
     <string name="block_source_local">Tệp máy chủ (hosts) cục bộ</string>
     <string name="block_source_remote">Tệp máy chủ trên mạng</string>
     <string name="bookmark_export_failure">Xin lỗi, không thể xuất dấu trang!</string>
-    <string name="bookmark_export_path">Đã xuất dấu trang ra</string>
     <string name="bookmark_settings">Cài đặt dấu trang</string>
     <string name="cache">Xóa bộ nhớ đệm khi thoát</string>
     <string name="cannot_download">Chỉ có thể tải xuống các URL HTTP hoặc HTTPS.</string>

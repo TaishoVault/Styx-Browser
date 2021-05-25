@@ -45,7 +45,6 @@
     <string name="block_source_local">Τοπικό αρχείο hosts</string>
     <string name="block_source_remote">Αρχείο απομακρυσμένων hosts</string>
     <string name="bookmark_export_failure">Λυπούμαστε, δεν ήταν δυνατή η εξαγωγή σελιδοδεικτών!</string>
-    <string name="bookmark_export_path">Σελιδοδείκτες εξάχθηκαν στο</string>
     <string name="bookmark_settings">Ρυθμίσεις σελιδοδεικτών</string>
     <string name="cache">Καθαρισμός cache στο κλείσιμο</string>
     <string name="cannot_download">Μπορείτε να κατεβάσετε μόνο \"http\" ή \"https\" συνδέσμους.</string>

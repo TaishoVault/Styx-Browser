@@ -92,7 +92,6 @@
     <string name="block_source_remote">ملف المضيف البعيد</string>
     <string name="blocked_javascript">حظر جافا سكريبت لهذا الموقع</string>
     <string name="bookmark_export_failure">عذرًا ، تعذر تصدير الإشارات المرجعية!</string>
-    <string name="bookmark_export_path">تم تصدير الإشارات المرجعية إلى</string>
     <string name="bookmark_in_new_tab">إشارة مرجعية في علامة تبويب جديدة</string>
     <string name="bookmark_restore">تمت استعادة الإشارات المرجعية</string>
     <string name="bookmark_settings">إعدادات إشارة مرجعية</string>
@@ -314,9 +313,9 @@
     <string name="settings_admalwareblocker">منع الإعلانات &amp; البرمجيات الخبيثة</string>
     <string name="settings_advanced">الإعدادات المتقدمة</string>
     <string name="settings_black_status_bar">شريط الحالة الأسود</string>
+    <string name="settings_credits">شكر وتقدير</string>
     <string name="settings_display">اعدادات العرض</string>
     <string name="settings_export_failure">عذراً، لا يمكن تصدير الإعدادات!</string>
-    <string name="settings_exported">تم تصدير الإعدادات إلى:</string>
     <string name="settings_extensions">الإضافات</string>
     <string name="settings_general">الاعدادات العامة</string>
     <string name="settings_help_us">ساعدنا</string>
@@ -340,6 +339,7 @@
     <string name="settings_title_toolbars_bottom">شريط الأدوات في الأسفل</string>
     <string name="settings">إعدادات المتصفح</string>
     <string name="shortcut_message_failed_to_add">عذرًا ، لا تدعم واجهة المستخدم الاختصارات.</string>
+    <string name="show">عرض</string>
     <string name="show_second_bar">إظهار شريط التنقل الثانوي</string>
     <string name="show_shortcuts">إظهار الاختصارات على الصفحة الرئيسية</string>
     <string name="show_ssl">إظهار مربعات حوار تحذير SSL</string>
@@ -385,6 +385,7 @@
     <string name="unknown">غير معروف</string>
     <string name="unlisted_javascript">حظر جافا سكريبت للمواقع المدرجة</string>
     <string name="untitled">بدون عنوان</string>
+    <string name="update_available">متوفر!</string>
     <string name="url_contents">محتويات مربع URL</string>
     <string name="url_in_new_tab">عنوان URL في علامة تبويب جديدة</string>
     <string name="url">URL</string>

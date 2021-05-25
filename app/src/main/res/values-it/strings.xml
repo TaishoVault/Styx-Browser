@@ -92,7 +92,7 @@
     <string name="block_source_remote">File host remoto</string>
     <string name="blocked_javascript">Blocca JavaScript per questo sito</string>
     <string name="bookmark_export_failure">Spiacente, i segnalibri non possono essere esportati!</string>
-    <string name="bookmark_export_path">Segnalibri esportati in</string>
+    <string name="bookmark_export_path">Segnalibri esportati:</string>
     <string name="bookmark_in_new_tab">Segnalibro in nuovo tab</string>
     <string name="bookmark_restore">Segnalibri ripristinati</string>
     <string name="bookmark_settings">Segnalibri</string>
@@ -317,7 +317,7 @@
     <string name="settings_credits">Riconoscimenti</string>
     <string name="settings_display">Visualizzazione</string>
     <string name="settings_export_failure">Scusa, le impostazioni non possono essere esportate!</string>
-    <string name="settings_exported">Impostazioni esportate in:</string>
+    <string name="settings_exported">Impostazioni esportate:</string>
     <string name="settings_extensions">Estensioni</string>
     <string name="settings_general">Generale</string>
     <string name="settings_help_us">Aiutaci</string>

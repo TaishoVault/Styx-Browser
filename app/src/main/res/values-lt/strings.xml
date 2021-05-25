@@ -45,7 +45,6 @@
     <string name="block_source_local">Vietinių kompiuterių failas</string>
     <string name="block_source_remote">Nuotolinių kompiuterių failas</string>
     <string name="bookmark_export_failure">Deja, žymių nepavyko eksportuoti!</string>
-    <string name="bookmark_export_path">Žymos eksportuotos į</string>
     <string name="bookmark_settings">Žymių nustatymai</string>
     <string name="cache">Išvalyti talpyklą išėjus</string>
     <string name="cannot_download">Galima atsisiųsti tik „HTTP“ arba „HTTPS“ „URL“.</string>

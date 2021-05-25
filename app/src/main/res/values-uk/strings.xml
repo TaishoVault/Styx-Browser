@@ -45,7 +45,6 @@
     <string name="block_source_remote_description">URL-адреса: %1$s</string>
     <string name="block_source_remote">Віддалений файл хостів</string>
     <string name="bookmark_export_failure">Вибачте, закладки не вдалося експортувати!</string>
-    <string name="bookmark_export_path">Закладки експортовано до</string>
     <string name="bookmark_settings">Налаштування закладок</string>
     <string name="cache">Очистити кеш на виході</string>
     <string name="cannot_download">Можна завантажити лише HTTP або HTTPS URL-адреси.</string>

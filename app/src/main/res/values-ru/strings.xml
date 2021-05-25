@@ -92,7 +92,6 @@
     <string name="block_source_remote">Удаленно расположенный host файл</string>
     <string name="blocked_javascript">Блокировать JavaScript на сайте</string>
     <string name="bookmark_export_failure">Извините, закладки не удалось экспортировать!</string>
-    <string name="bookmark_export_path">Экспортировать закладки в </string>
     <string name="bookmark_in_new_tab">Закладка в новой вкладке</string>
     <string name="bookmark_restore">Закладки восстановлены</string>
     <string name="bookmark_settings">Настройки закладок</string>
@@ -317,7 +316,6 @@
     <string name="settings_credits">Благодарности</string>
     <string name="settings_display">Настройки отображения</string>
     <string name="settings_export_failure">К сожалению, настройки не могут быть экспортированы!</string>
-    <string name="settings_exported">Настройки экспортированы в:</string>
     <string name="settings_extensions">Расширения</string>
     <string name="settings_general">Основные настройки</string>
     <string name="settings_help_us">Помочь нам</string>

@@ -71,7 +71,6 @@
     <string name="block_source_remote">Ficheiro remoto</string>
     <string name="blocked_javascript">Bloquear JavaScript para este sítio</string>
     <string name="bookmark_export_failure">Desculpe, mas não foi possível exportar os marcadores!</string>
-    <string name="bookmark_export_path">Marcadores exportados para</string>
     <string name="bookmark_settings">Definições de marcadores</string>
     <string name="cache">Limpar cache ao sair</string>
     <string name="cannot_download">Apenas possível para os URL \"http\" ou \"https\".</string>

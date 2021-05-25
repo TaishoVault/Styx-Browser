@@ -45,7 +45,6 @@
     <string name="block_source_remote_description">כתובת אתר:%1$s</string>
     <string name="block_source_remote">קובץ מארחים מרוחק</string>
     <string name="bookmark_export_failure">מצטערים, לא ניתן היה לייצא סימניות!</string>
-    <string name="bookmark_export_path">סימניות שיוצאו אל</string>
     <string name="bookmark_settings">הגדרות סימניות</string>
     <string name="cache">נקה את המטמון ביציאה</string>
     <string name="cannot_download">ניתן להוריד רק כתובות URL של HTTP או HTTPS.</string>

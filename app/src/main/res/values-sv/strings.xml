@@ -43,7 +43,6 @@
     <string name="block_source_local">Lokal hosts-fil</string>
     <string name="block_source_remote">Filen för fjärrvärdar</string>
     <string name="bookmark_export_failure">Tyvärr kunde bokmärken inte exporteras!</string>
-    <string name="bookmark_export_path">Bokmärken exporterade till</string>
     <string name="bookmark_settings">Bokmärk inställningar</string>
     <string name="cache">Rensa cache vid avslut</string>
     <string name="cannot_download">Kan bara ladda ner HTTP eller HTTPS-URL:er.</string>

@@ -45,7 +45,6 @@
     <string name="block_source_remote_description">URL：%1$s</string>
     <string name="block_source_remote">リモートホストファイル</string>
     <string name="bookmark_export_failure">ブックマークのエクスポートに失敗しました!</string>
-    <string name="bookmark_export_path">ブックマークをエクスポートしました</string>
     <string name="bookmark_settings">ブックマーク</string>
     <string name="cache">終了時にキャッシュを消去する</string>
     <string name="cannot_download">\"http\" または \"https\" で始まる URL のみダウンロードできます</string>
