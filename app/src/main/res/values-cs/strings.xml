@@ -94,7 +94,6 @@
     <string name="hint_title">Hlava 1 – Celkem</string>
     <string name="hint_username">Uživatelské jméno</string>
     <string name="home">Domovská stránka</string>
-    <string name="host">Hostitel:</string>
     <string name="import_backup">Importovat záložky ze zálohy</string>
     <string name="import_bookmark_error">Nelze importovat záložky ze souboru</string>
     <string name="import_settings">Importovat nastavení ze zálohy</string>
@@ -139,7 +138,6 @@
     <string name="overViewMode">Načíst stránky v režimu přehledu</string>
     <string name="page_source">Zobrazit zdrojový kód stránky</string>
     <string name="password">Uložit hesla</string>
-    <string name="port">Přístav:</string>
     <string name="powered_by_baidu">Baidu</string>
     <string name="powered_by_duck">DuckDuckGo</string>
     <string name="powered_by_google">Google</string>
@@ -180,7 +178,6 @@
     <string name="text_encoding">Kódování textu</string>
     <string name="theme">Motiv aplikace</string>
     <string name="third_party">Blokovat cookies třetích stran</string>
-    <string name="title_chooser">Vyberte soubor</string>
     <string name="title_clear_cookies">Vymazat soubory cookie</string>
     <string name="title_clear_history">Vymazat historii</string>
     <string name="title_custom_homepage">Vlastní domovská stránka</string>
@@ -200,8 +197,6 @@
     <string name="unlisted_javascript">Blokovat JavaScript pro uvedené stránky</string>
     <string name="untitled">Bez názvu</string>
     <string name="url_contents">Obsah URL boxu</string>
-    <string name="use_i2p_prompt">Vypadá to, že máte nainstalovaný I2P. Chcete použít I2P?</string>
-    <string name="use_tor_prompt">Zdá se, že máte Orbot nainstalovaný. Chcete použít Tor?</string>
     <string name="version">Verze aplikace</string>
     <string name="wideViewPort">Použít široký pohled</string>
     <string name="window">Povolit stránkám otevírat nová okna</string>

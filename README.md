@@ -34,7 +34,6 @@ or you can install Styx via IzzyOnDroid.
 * Android desktop support (Samsung Dex, EMUI Desktop). 
 * Multiple search engines (Google, Bing, Yahoo, StartPage, DuckDuckGo, Mojeek, Searx etc.).
 * Incognito mode.
-* Orbot Proxy and I2P support.
 * Ad-blocker.
 * Malware blocker.
 * Reader mode with Text To Speech (TTS).
