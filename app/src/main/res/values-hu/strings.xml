@@ -88,7 +88,6 @@
     <string name="hint_title">Cím</string>
     <string name="hint_username">Felhasználónév</string>
     <string name="home">Főoldal</string>
-    <string name="host">Hoszt:</string>
     <string name="import_backup">Könyvjelzők importálása biztonsági mentésből</string>
     <string name="import_bookmark_error">Nem sikerült importálni a könyvjelzőket a fájlból</string>
     <string name="incognito_cookies">Cookie-k engedélyezése inkognitó módban</string>
@@ -131,7 +130,6 @@
     <string name="notification_incognito_running_message">Érintse meg a megnyitáshoz</string>
     <string name="overViewMode">Oldalak betöltése áttekinthető módban</string>
     <string name="password">Jelszavak mentése</string>
-    <string name="port">Kikötő:</string>
     <string name="powered_by_baidu">Baidu</string>
     <string name="powered_by_duck">DuckDuckGo</string>
     <string name="powered_by_google">A Google támogatásával</string>
@@ -174,7 +172,6 @@
     <string name="text_encoding">Szöveg Kódolás</string>
     <string name="theme">Alkalmazás Téma</string>
     <string name="third_party">Harmadik féltől származó Cookie-k letiltása</string>
-    <string name="title_chooser">Válasszon egy fájlt</string>
     <string name="title_clear_cookies">Cookie-k törlése</string>
     <string name="title_clear_history">Előzmények törlése</string>
     <string name="title_custom_homepage">Egyéni honlap</string>
@@ -193,8 +190,6 @@
     <string name="unknown_size">Ismeretlen méret</string>
     <string name="untitled">Névtelen</string>
     <string name="url_contents">URL doboz tartalma</string>
-    <string name="use_i2p_prompt">Úgy tűnik, hogy önnek telepítve van az I2P. Szeretné használni az I2P-t?</string>
-    <string name="use_tor_prompt">Úgy tűnik, hogy önnek telepítve van az Orbot. Szeretné használni a Tor-t?</string>
     <string name="version">Alkalmazás Verzió</string>
     <string name="wideViewPort">Széles nézőport használata</string>
     <string name="window">Engedélyezés,hogy a webhelyek új lapot nyithassanak meg</string>

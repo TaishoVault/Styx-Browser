@@ -92,7 +92,6 @@
     <string name="hint_url">Nettadresse</string>
     <string name="hint_username">Brukernavn</string>
     <string name="home">Hjemmeside</string>
-    <string name="host">Vert:</string>
     <string name="import_backup">Importer bokmerker fra sikkerhetskopi</string>
     <string name="import_bookmark_error">Kan ikke importere bokmerker fra fil</string>
     <string name="import_settings">Importer innstillinger fra sikkerhetskopi</string>
@@ -176,7 +175,6 @@
     <string name="text_encoding">Tekst koding</string>
     <string name="theme">App tema</string>
     <string name="third_party">Blokker tredjeparts informasjonskapsler</string>
-    <string name="title_chooser">Velg en fil</string>
     <string name="title_clear_cookies">Slett informasjonskapsler</string>
     <string name="title_clear_history">Tøm logg</string>
     <string name="title_custom_homepage">Tilpasset hjemmeside</string>
@@ -196,8 +194,6 @@
     <string name="unlisted_javascript">Blokker JavaScript for oppførte nettsteder</string>
     <string name="untitled">Navnløs</string>
     <string name="url_contents">Innhold i URL-boksen</string>
-    <string name="use_i2p_prompt">Det ser ut som du har I2P installert. Vil du bruke I2P?</string>
-    <string name="use_tor_prompt">Det ser ut som du har Orbot installert. Vil du bruke Tor?</string>
     <string name="version">Program versjon</string>
     <string name="wideViewPort">Bruk bredt visningsområde</string>
     <string name="window">Tillat å åpne sider nye vinduer</string>

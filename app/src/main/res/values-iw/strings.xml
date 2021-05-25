@@ -92,7 +92,6 @@
     <string name="hint_url">כתובת אתר</string>
     <string name="hint_username">שם משתמש</string>
     <string name="home">דף הבית</string>
-    <string name="host">מנחה:</string>
     <string name="import_backup">ייבא סימניות מגיבוי</string>
     <string name="import_bookmark_error">לא ניתן היה לייבא סימניות מהקובץ</string>
     <string name="incognito_cookies">אפשר קובצי Cookie במצב גלישה בסתר</string>
@@ -134,7 +133,6 @@
     <string name="notification_incognito_running_message">גע כדי לפתוח</string>
     <string name="overViewMode">טען דפים במצב סקירה כללית</string>
     <string name="password">שמור את הסיסמאות שלך</string>
-    <string name="port">נמל:</string>
     <string name="powered_by_baidu">באידו</string>
     <string name="powered_by_duck">DuckDuckGo</string>
     <string name="powered_by_google">גוגל</string>
@@ -176,7 +174,6 @@
     <string name="text_encoding">קידוד טקסט</string>
     <string name="theme">נושא האפליקציה</string>
     <string name="third_party">חסום עוגיות של צד שלישי</string>
-    <string name="title_chooser">בחר קובץ</string>
     <string name="title_clear_cookies">נקה עוגיות</string>
     <string name="title_clear_history">נקה היסטוריה</string>
     <string name="title_custom_homepage">דף הבית המותאם אישית</string>
@@ -195,8 +192,6 @@
     <string name="unknown_size">גודל לא ידוע</string>
     <string name="untitled">ללא כותרת</string>
     <string name="url_contents">תוכן תיבת URL</string>
-    <string name="use_i2p_prompt">נראה כי התקנת I2P. האם אתה רוצה להשתמש ב- I2P?</string>
-    <string name="use_tor_prompt">נראה כי התקנת Orbot. האם אתה רוצה להשתמש ב- Tor?</string>
     <string name="version">גרסת אפליקציה</string>
     <string name="wideViewPort">השתמש בתצוגה נרחבת</string>
     <string name="window">אפשר לאתרים לפתוח חלונות חדשים</string>

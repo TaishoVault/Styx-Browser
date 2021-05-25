@@ -93,7 +93,6 @@
     <string name="hint_url">Адреса</string>
     <string name="hint_username">Ім\'я користувача</string>
     <string name="home">Домашня сторінка</string>
-    <string name="host">Хост:</string>
     <string name="import_backup">Відновити закладки з резервної копії</string>
     <string name="import_bookmark_error">Не вдалося імпортувати закладки з файлу</string>
     <string name="import_settings">Імпортувати налаштування з резервної копії</string>
@@ -138,7 +137,6 @@
     <string name="notification_incognito_running_message">Дотик до відкриття</string>
     <string name="overViewMode">Відкривати сторінки в режимі попереднього перегляду</string>
     <string name="password">Зберігати паролі</string>
-    <string name="port">Порт:</string>
     <string name="powered_by_baidu">Baidu</string>
     <string name="powered_by_duck">Даккаго</string>
     <string name="powered_by_google">Гугл</string>
@@ -179,7 +177,6 @@
     <string name="text_encoding">Кодування тексту</string>
     <string name="theme">Тема додатку</string>
     <string name="third_party">Блокувати куки від сторонніх сайтів</string>
-    <string name="title_chooser">Виберіть файл</string>
     <string name="title_clear_cookies">Очистити куки</string>
     <string name="title_clear_history">Вичистити історію</string>
     <string name="title_custom_homepage">Користувальницька домашня сторінка</string>
@@ -199,8 +196,6 @@
     <string name="unlisted_javascript">Блокувати JavaScript для сайтів в списку</string>
     <string name="untitled">Без назви</string>
     <string name="url_contents">Вміст URL</string>
-    <string name="use_i2p_prompt">Схоже, що у вас встановлений I2P. Ви хочете використовувати I2P?</string>
-    <string name="use_tor_prompt">Схоже, що у вас не встановлений Orbot. Ви хочете використовувати Tor?</string>
     <string name="version">Версія програми</string>
     <string name="wideViewPort">Використовувати розширене поле перегляду</string>
     <string name="window">Дозволити сайтам відкривати нові вікна</string>

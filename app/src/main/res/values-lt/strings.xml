@@ -93,7 +93,6 @@
     <string name="hint_url">„URL“</string>
     <string name="hint_username">Slapyvardis</string>
     <string name="home">Pradinis puslapis</string>
-    <string name="host">Pagrindinis kompiuteris:</string>
     <string name="import_backup">Importuokite žymes iš atsarginės kopijos</string>
     <string name="import_bookmark_error">Nepavyko importuoti žymių iš failo</string>
     <string name="import_settings">Importuoti nustatymus iš atsarginės kopijos</string>
@@ -137,7 +136,6 @@
     <string name="notification_incognito_running_message">Palieskite, kad atidarytumėte</string>
     <string name="overViewMode">Įkelkite puslapius apžvalgos režimu</string>
     <string name="password">Išsaugokite savo slaptažodžius</string>
-    <string name="port">Portas:</string>
     <string name="powered_by_baidu">„Baidu“</string>
     <string name="powered_by_duck">„DuckDuckGo“</string>
     <string name="powered_by_google">„Google“</string>
@@ -181,7 +179,6 @@
     <string name="text_encoding">Teksto kodavimas</string>
     <string name="theme">Programos tema</string>
     <string name="third_party">Blokuokite trečiųjų šalių slapukus</string>
-    <string name="title_chooser">Pasirinkite failą</string>
     <string name="title_clear_cookies">Išvalykite slapukus</string>
     <string name="title_clear_history">Išvalyti istoriją</string>
     <string name="title_custom_homepage">Individualizuotas pagrindinis puslapis</string>
@@ -200,8 +197,6 @@
     <string name="unknown_size">Nežinomas dydis</string>
     <string name="untitled">Be pavadinimo</string>
     <string name="url_contents">URL laukelio turinys</string>
-    <string name="use_i2p_prompt">Panašu, kad turite įdiegtą I2P. Ar norite naudoti I2P?</string>
-    <string name="use_tor_prompt">Panašu, kad įdiegėte „Orbot“. Ar norite naudoti „Tor“?</string>
     <string name="version">Programos versija</string>
     <string name="wideViewPort">Naudokite plačią peržiūros sritį</string>
     <string name="window">Leisti svetainėms atidaryti naujus langus</string>

@@ -90,7 +90,6 @@
     <string name="hint_title">Titel</string>
     <string name="hint_username">Användarnamn</string>
     <string name="home">Hemsida</string>
-    <string name="host">Värd:</string>
     <string name="import_backup">Importera bokmärken från backup</string>
     <string name="import_bookmark_error">Kunde inte importera bokmärken från fil</string>
     <string name="import_settings">Importera inställningar från säkerhetskopia</string>
@@ -172,7 +171,6 @@
     <string name="text_encoding">Textkodning</string>
     <string name="theme">App tema</string>
     <string name="third_party">Blockera tredjepartskakor</string>
-    <string name="title_chooser">Välj en fil</string>
     <string name="title_clear_cookies">Rensa kakor</string>
     <string name="title_clear_history">Rensa historik</string>
     <string name="title_custom_homepage">Anpassad hemsida</string>
@@ -192,8 +190,6 @@
     <string name="unlisted_javascript">Blockera JavaScript för listade platser</string>
     <string name="untitled">Namnlös</string>
     <string name="url_contents">Innehåll i URL-rutan</string>
-    <string name="use_i2p_prompt">Det verkar som om du har I2P installerad. Vill du använda I2P?</string>
-    <string name="use_tor_prompt">Det ser ut som du har Orbot installerat. Vill du använda Tor?</string>
     <string name="version">Applikationsversion</string>
     <string name="wideViewPort">Använd bred viewport</string>
     <string name="window">Tillåt sajter att öppna nya fönster</string>

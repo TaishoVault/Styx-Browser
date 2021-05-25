@@ -80,7 +80,6 @@
     <string name="hint_title">Tiêu đề</string>
     <string name="hint_username">Tên người dùng</string>
     <string name="home">Trang chủ</string>
-    <string name="host">Máy chủ:</string>
     <string name="import_backup">Nhập dấu trang từ bản sao lưu</string>
     <string name="import_bookmark_error">Không thể nhập dấu trang từ tệp</string>
     <string name="import_settings">Nhập cài đặt từ bản sao lưu</string>
@@ -119,7 +118,6 @@
     <string name="notification_incognito_running_message">Chạm để mở</string>
     <string name="overViewMode">Tải trang trong chế độ tổng quan</string>
     <string name="password">Lưu mật khẩu của bạn</string>
-    <string name="port">Cổng:</string>
     <string name="powered_by_baidu">Baidu</string>
     <string name="powered_by_duck">DuckDuckGo</string>
     <string name="powered_by_google">Google</string>
@@ -154,7 +152,6 @@
     <string name="suggestion">Tìm kiếm</string>
     <string name="tabs_in_drawer">Show tabs in drawer</string>
     <string name="theme">App theme</string>
-    <string name="title_chooser">Chọn một tệp</string>
     <string name="title_clear_cookies">Xóa cookie</string>
     <string name="title_clear_history">Xóa lịch sử</string>
     <string name="title_custom_homepage">Trang chủ tuỳ chỉnh</string>
@@ -172,8 +169,6 @@
     <string name="unknown_size">Không rõ kích thước</string>
     <string name="untitled">Không có tiêu đề</string>
     <string name="url_contents">URL box contents</string>
-    <string name="use_i2p_prompt">Có vẻ như bạn đã cài đặt I2P. Bạn có muốn sử dụng I2P không?</string>
-    <string name="use_tor_prompt">Có vẻ như bạn đã cài đặt Orbot. Bạn có muốn sử dụng Tor không?</string>
     <string name="version">Phiên bản ứng dụng</string>
     <string name="window">Cho phép các trang web mở cửa sổ mới</string>
     <string name="yes">Có</string>

@@ -93,7 +93,6 @@
     <string name="hint_title">タイトル</string>
     <string name="hint_username">ユーザー名</string>
     <string name="home">ホームページ</string>
-    <string name="host">ホスト:</string>
     <string name="import_backup">ブックマークをインポートする</string>
     <string name="import_bookmark_error">ブックマークのインポートに失敗しました</string>
     <string name="import_settings">バックアップから設定をインポート</string>
@@ -138,7 +137,6 @@
     <string name="notification_incognito_running_message">タップして開きます</string>
     <string name="overViewMode">Overview mode でページを読み込む</string>
     <string name="password">パスワードを記憶する</string>
-    <string name="port">ポート:</string>
     <string name="powered_by_baidu">Baidu を使用する</string>
     <string name="powered_by_duck">DuckDuckGo を使用する</string>
     <string name="powered_by_google">Google を使用する</string>
@@ -181,7 +179,6 @@
     <string name="text_encoding">テキストエンコーディング</string>
     <string name="theme">アプリのテーマ</string>
     <string name="third_party">サードパーティ Cookie を拒否する</string>
-    <string name="title_chooser">ファイルを選択してください</string>
     <string name="title_clear_cookies">Cookie を消去する</string>
     <string name="title_clear_history">履歴を消去する</string>
     <string name="title_custom_homepage">カスタムホームページ</string>
@@ -201,8 +198,6 @@
     <string name="unlisted_javascript">リストされたサイトの JavaScript をブロック</string>
     <string name="untitled">タイトルなし</string>
     <string name="url_contents">URL 欄の表示内容</string>
-    <string name="use_i2p_prompt">I2P はインストール済みです。I2P を使用しますか?</string>
-    <string name="use_tor_prompt">Orbot はインストール済みです。Tor を使用しますか?</string>
     <string name="version">アプリのバージョン</string>
     <string name="wideViewPort">Wide view port を使用する</string>
     <string name="window">サイトが新しいタブを開くことを許可する</string>

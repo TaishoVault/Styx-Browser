@@ -97,7 +97,6 @@
     <string name="hint_title">Başlık</string>
     <string name="hint_username">Kullanıcı adı</string>
     <string name="home">Ana sayfa</string>
-    <string name="host">Ana bilgisayar:</string>
     <string name="import_backup">Yer işaretlerini geri yükle</string>
     <string name="import_bookmark_error">Yer işaretleri dosyadan yüklenemedi</string>
     <string name="import_settings">Ayarları yedekten içe aktar</string>
@@ -144,7 +143,6 @@
     <string name="overViewMode">Sayfaları önizleme modunda göster</string>
     <string name="page_source">Sayfa kaynağını göster</string>
     <string name="password">Şifrelerinizi kaydedin</string>
-    <string name="port">Bağlantı noktası:</string>
     <string name="powered_by_baidu">Baidu tarafından desteklenmektedir</string>
     <string name="powered_by_duck">DuckDuckGo tarafından desteklenmektedir</string>
     <string name="powered_by_google">Google tarafından desteklenmektedir</string>
@@ -196,7 +194,6 @@
     <string name="text_encoding">Metin kodlaması</string>
     <string name="theme">Uygulama teması</string>
     <string name="third_party">Üçüncü taraf çerezleri engelle</string>
-    <string name="title_chooser">Bir dosya seç</string>
     <string name="title_clear_cookies">Çerezleri temizle</string>
     <string name="title_clear_history">Geçmişi temizle</string>
     <string name="title_custom_homepage">Özel ana sayfa</string>
@@ -218,8 +215,6 @@
     <string name="unlisted_javascript">Listelenen siteler için JavaScript\'i engelle</string>
     <string name="untitled">Başlıksız</string>
     <string name="url_contents">URL kutusu içeriği</string>
-    <string name="use_i2p_prompt">Cihazında I2P yüklü görünüyor. I2P kullanmak ister misiniz?</string>
-    <string name="use_tor_prompt">Cihazında Orbot yüklü görünüyor. Tor kullanmak ister misiniz?</string>
     <string name="version">Uygulama sürümü</string>
     <string name="webview_version">WebView sürümü</string>
     <string name="wideViewPort">Geniş ekranda kullan</string>

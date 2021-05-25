@@ -93,7 +93,6 @@
     <string name="hint_title">Τίτλος</string>
     <string name="hint_username">Όνομα χρήστη</string>
     <string name="home">Αρχική σελίδα</string>
-    <string name="host">Πλήθος:</string>
     <string name="import_backup">Εισαγωγή σελιδοδεικτών απο αρχείο</string>
     <string name="import_bookmark_error">Δεν ηταν δυνατή η φόρτωση σελιδοδεικτών απο αρχείο</string>
     <string name="import_settings">Εισαγωγή ρυθμίσεων από αντίγραφο ασφαλείας</string>
@@ -138,7 +137,6 @@
     <string name="overViewMode">Φόρτωση σελίδων σε προεπισκόπηση</string>
     <string name="page_source">Προβολή κώδικα σελίδας</string>
     <string name="password">Αποθήκευση κωδικών</string>
-    <string name="port">Λιμάνι:</string>
     <string name="powered_by_baidu">Baidu</string>
     <string name="powered_by_duck">DuckDuckGo</string>
     <string name="powered_by_google">Google</string>
@@ -183,7 +181,6 @@
     <string name="text_encoding">Κωδικοποίηση κειμένου</string>
     <string name="theme">Θέμα εφαρμογών</string>
     <string name="third_party">Αποκλεισμός σε Cookies από τρίτους</string>
-    <string name="title_chooser">Επιλογή αρχείου</string>
     <string name="title_clear_cookies">Καθαρισμός Cookies</string>
     <string name="title_clear_history">Καθαρισμός Ιστορικού</string>
     <string name="title_custom_homepage">Συγκεκριμένη Αρχική Σελίδα</string>
@@ -203,8 +200,6 @@
     <string name="unlisted_javascript">Αποκλεισμός JavaScript για καταχωρημένους ιστοτόπους</string>
     <string name="untitled">Χωρίς τίτλο</string>
     <string name="url_contents">Περιεχόμενα κουτιού URL</string>
-    <string name="use_i2p_prompt">Φαίνεται ότι έχετε εγκαταστήσει το I2P. Θέλετε να χρησιμοποιήσετε το I2P;</string>
-    <string name="use_tor_prompt">Φαίνεται οτι έχετε εγκατεστημένο το Orbot. Θα θέλατε να χρησιμοποιήσετε το Tor?</string>
     <string name="version">Έκδοση εφαρμογής</string>
     <string name="wideViewPort">Χρήση ευρύ παραθύρου</string>
     <string name="window">Να επιτρέπεται στις σελίδες να ανοίγουν νέα παράθυρα</string>

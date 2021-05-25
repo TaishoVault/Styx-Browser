@@ -99,7 +99,6 @@
     <string name="hint_url">Adresse</string>
     <string name="hint_username">Nom d\'utilisateur</string>
     <string name="home">Page d\'accueil</string>
-    <string name="host">Host :</string>
     <string name="import_backup">Importer les favoris depuis une sauvegarde</string>
     <string name="import_bookmark_error">Impossible d\'importer les favoris depuis le fichier</string>
     <string name="import_settings">Importer les paramètres</string>
@@ -146,7 +145,6 @@
     <string name="overViewMode">Charger les pages en mode aperçu</string>
     <string name="page_source">Code source de la page</string>
     <string name="password">Enregistrer les mots de passe</string>
-    <string name="port">Port :</string>
     <string name="powered_by_baidu">Baidu</string>
     <string name="powered_by_duck">Propulsé par DuckDuckGo</string>
     <string name="powered_by_google">Proposé par Google</string>
@@ -197,7 +195,6 @@
     <string name="text_encoding">Encodage du texte</string>
     <string name="theme">Thème</string>
     <string name="third_party">Bloquer les cookies tiers</string>
-    <string name="title_chooser">Choisir un fichier</string>
     <string name="title_clear_cookies">Effacer les cookies</string>
     <string name="title_clear_history">Effacer l\'historique</string>
     <string name="title_custom_homepage">Page d\'accueil personnalisée</string>
@@ -219,8 +216,6 @@
     <string name="unlisted_javascript">Bloquer JavaScript pour les sites listés</string>
     <string name="untitled">Exemple</string>
     <string name="url_contents">Contenu du champs adresse</string>
-    <string name="use_i2p_prompt">Il semble que vous avez installé I2P. Voulez-vous utiliser I2P ?</string>
-    <string name="use_tor_prompt">Il semble que vous avez installé Orbot. Voulez-vous utiliser Tor ?</string>
     <string name="version">Version application</string>
     <string name="webview_version">Version de WebView</string>
     <string name="wideViewPort">Utiliser large fenêtre d\'affichage</string>

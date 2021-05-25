@@ -92,7 +92,6 @@
     <string name="hint_url">УРЛ</string>
     <string name="hint_username">Корисничко име</string>
     <string name="home">Почетна страница</string>
-    <string name="host">Домаћин:</string>
     <string name="import_backup">Увези обележиваче из резерве</string>
     <string name="import_bookmark_error">Не могу да увезем обележиваче из фајла</string>
     <string name="incognito_cookies">Омогући колачиће у приватном режиму</string>
@@ -136,7 +135,6 @@
     <string name="notification_incognito_running_message">Додирните за отварање</string>
     <string name="overViewMode">Учитај странице у режиму прегледа</string>
     <string name="password">Сачувај лозинке</string>
-    <string name="port">Порт:</string>
     <string name="powered_by_baidu">Баиду</string>
     <string name="powered_by_duck">ДуцкДуцкГо</string>
     <string name="powered_by_google">Погоњено Гуглом</string>
@@ -181,7 +179,6 @@
     <string name="text_encoding">Кодирање текста</string>
     <string name="theme">Тема</string>
     <string name="third_party">Блокирај колачиће треће стране</string>
-    <string name="title_chooser">Изаберите фајл</string>
     <string name="title_clear_cookies">Чишћење колачића</string>
     <string name="title_clear_history">Чишћење историјата</string>
     <string name="title_custom_homepage">Посебна домаћа страница</string>
@@ -200,8 +197,6 @@
     <string name="unknown_size">Непозната величина</string>
     <string name="untitled">Неименована</string>
     <string name="url_contents">Садржај УРЛ бокса</string>
-    <string name="use_i2p_prompt">Изгледа да имате I2P инсталиран. Желите ли да користите I2P?</string>
-    <string name="use_tor_prompt">Изгледа да имате Орбот инсталиран. Желите ли да користите Тор?</string>
     <string name="version">Издање апликације</string>
     <string name="wideViewPort">Широки приказ</string>
     <string name="window">Дозволи сајтовима да отварају нове прозоре</string>

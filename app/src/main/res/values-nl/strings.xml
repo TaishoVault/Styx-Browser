@@ -90,7 +90,6 @@
     <string name="hint_title">Titel</string>
     <string name="hint_username">Gebruiksnaam</string>
     <string name="home">Startpagina</string>
-    <string name="host">Gastheer:</string>
     <string name="import_backup">Importeer bladwijzers van backup</string>
     <string name="import_bookmark_error">Kon bladwijzers niet van bestand laden</string>
     <string name="import_settings">Instellingen importeren uit back-up</string>
@@ -135,7 +134,6 @@
     <string name="overViewMode">Laad pagina\'s in overzichtsweergave</string>
     <string name="page_source">Paginabron weergeven</string>
     <string name="password">Bewaar jouw paswoord</string>
-    <string name="port">Poort:</string>
     <string name="powered_by_baidu">Baidu</string>
     <string name="powered_by_duck">DuckDuckGo</string>
     <string name="powered_by_google">Ondersteund door Google</string>
@@ -178,7 +176,6 @@
     <string name="text_encoding">Tekst codering</string>
     <string name="theme">App thema</string>
     <string name="third_party">Blokkeer derde partij cookies</string>
-    <string name="title_chooser">Kies een bestand</string>
     <string name="title_clear_cookies">Wisk cookies</string>
     <string name="title_clear_history">Wis historiek</string>
     <string name="title_custom_homepage">Aangepaste startpagina</string>
@@ -198,8 +195,6 @@
     <string name="unlisted_javascript">JavaScript voor vermelde websites blokkeren</string>
     <string name="untitled">Geen titel</string>
     <string name="url_contents">URL box inhoud</string>
-    <string name="use_i2p_prompt">Je lijkt I2P te hebben geïnstalleerd. Wil je I2P gebruiken?</string>
-    <string name="use_tor_prompt">Je lijkt Orbit te hebben geïnstalleerd. Wil je Tor gebruiken?</string>
     <string name="version">Application versie</string>
     <string name="wideViewPort">Gebruik wijde viewport</string>
     <string name="window">Sta sites toe om in een nieuwe pagina te openen</string>

@@ -93,7 +93,6 @@
     <string name="hint_url">網址</string>
     <string name="hint_username">使用者名稱</string>
     <string name="home">首頁</string>
-    <string name="host">主機位址：</string>
     <string name="import_backup">自備份檔匯入書籤</string>
     <string name="import_bookmark_error">無法自檔案中匯入書籤</string>
     <string name="incognito_cookies">在無痕模式中啟用 Cookies</string>
@@ -136,7 +135,6 @@
     <string name="notification_incognito_running_message">點觸以開啟</string>
     <string name="overViewMode">使用概覽模式載入頁面</string>
     <string name="password">儲存密碼</string>
-    <string name="port">連線埠：</string>
     <string name="powered_by_baidu">由百度提供技術支援</string>
     <string name="powered_by_duck">由 DuckDuckGo 提供技術支援</string>
     <string name="powered_by_google">由 Google 提供技術支援</string>
@@ -182,7 +180,6 @@
     <string name="text_encoding">文字編碼</string>
     <string name="theme">應用程式主題</string>
     <string name="third_party">封鎖第三方 Cookie</string>
-    <string name="title_chooser">選擇一個檔案</string>
     <string name="title_clear_cookies">清除 Cookies</string>
     <string name="title_clear_history">清除歷程記錄</string>
     <string name="title_custom_homepage">自訂首頁</string>
@@ -201,8 +198,6 @@
     <string name="unknown_size">未知大小</string>
     <string name="untitled">無標題</string>
     <string name="url_contents">網址方塊內容</string>
-    <string name="use_i2p_prompt">看起來您已經安裝 I2P。您想使用 I2P 嗎？</string>
-    <string name="use_tor_prompt">看起來您已經安裝了 Orbot，您想使用 Tor 嗎？</string>
     <string name="version">應用程式版本</string>
     <string name="wideViewPort">使用寬版檢視區</string>
     <string name="window">允許網站開啟新視窗</string>
