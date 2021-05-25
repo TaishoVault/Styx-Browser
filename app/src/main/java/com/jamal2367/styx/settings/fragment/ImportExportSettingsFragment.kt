@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -86,7 +87,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
     }
 
     @Suppress("DEPRECATION")
-    private fun requestSettingsImport(){
+    private fun requestSettingsImport() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "text/plain"
@@ -95,7 +96,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
     }
 
     @Suppress("DEPRECATION")
-    private fun requestSettingsExport(){
+    private fun requestSettingsExport() {
         val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "text/plain"
@@ -110,7 +111,6 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         startActivityForResult(intent, EXPORT_SETTINGS)
     }
 
-    @Suppress("DEPRECATION")
     private fun clearSettings() {
         val builder = MaterialAlertDialogBuilder(activity as Activity)
         builder.setTitle(getString(R.string.action_delete))
@@ -120,8 +120,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         builder.setPositiveButton(resources.getString(R.string.action_ok)){ _, _ ->
             (activity as AppCompatActivity).snackbar(R.string.settings_reseted)
 
-            val handler = Handler()
-            handler.postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed({
                 (activity?.getSystemService(ACTIVITY_SERVICE) as ActivityManager)
                     .clearApplicationUserData()
             }, 500)

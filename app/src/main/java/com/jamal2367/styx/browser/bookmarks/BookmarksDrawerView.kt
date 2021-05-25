@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
 import android.webkit.CookieManager
 import android.widget.ImageView
@@ -237,7 +238,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
     /**
      * Show the page tools dialog.
      */
-    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "DEPRECATION")
+    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     fun showPageToolsDialog(context: Context, userPreferences: UserPreferences) {
         val currentTab = getTabsManager().currentTab ?: return
         val isAllowedAds = allowListModel.isUrlAllowedAds(currentTab.url)
@@ -279,8 +280,9 @@ class BookmarksDrawerView @JvmOverloads constructor(
                         return "<html>" + document.getElementsByTagName('html')[0].innerHTML + "</html>";
                      })()""".trimMargin()) {
                         // Hacky workaround for weird WebView encoding bug
+
                         var name = it?.replace("\\u003C", "<")
-                        name = name?.replace("\\n", System.getProperty("line.separator").toString())
+                        name = name?.replace("\\n", "[\\r\\n]+")
                         name = name?.replace("\\t", "")
                         name = name?.replace("\\\"", "\"")
                         name = name?.substring(1, name.length - 1)
@@ -339,7 +341,7 @@ class BookmarksDrawerView @JvmOverloads constructor(
                         userPreferences.javaScriptChoice = JavaScriptChoice.WHITELIST
                     }
                     getTabsManager().currentTab?.reload()
-                    Handler().postDelayed({
+                    Handler(Looper.getMainLooper()).postDelayed({
                         getTabsManager().currentTab?.reload()
                     }, 250)
                 },

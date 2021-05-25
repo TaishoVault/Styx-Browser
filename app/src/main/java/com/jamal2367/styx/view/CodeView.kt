@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.graphics.Paint.FontMetricsInt
 import android.graphics.Rect
 import android.os.Handler
+import android.os.Looper
 import android.text.*
 import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
@@ -27,8 +28,7 @@ class CodeView : AppCompatMultiAutoCompleteTextView {
     private var modified = true
     private var hasErrors = false
     private var mRemoveErrorsWhenTextChanged = false
-    @Suppress("DEPRECATION")
-    private val mUpdateHandler = Handler()
+    private val mUpdateHandler = Handler(Looper.getMainLooper())
     private var mAutoCompleteTokenizer: Tokenizer? = null
     private val displayDensity = resources.displayMetrics.density
     private val mErrorHashSet: SortedMap<Int, Int> = TreeMap()

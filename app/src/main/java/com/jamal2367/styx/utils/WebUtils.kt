@@ -23,7 +23,6 @@ object WebUtils {
         WebStorage.getInstance().deleteAllData()
     }
 
-    @Suppress("DEPRECATION")
     fun clearHistory(
             context: Context,
             historyRepository: HistoryRepository,
@@ -33,7 +32,6 @@ object WebUtils {
                 .subscribeOn(databaseScheduler)
                 .subscribe()
         val webViewDatabase = WebViewDatabase.getInstance(context)
-        webViewDatabase.clearFormData()
         webViewDatabase.clearHttpAuthUsernamePassword()
         trimCache(context)
     }

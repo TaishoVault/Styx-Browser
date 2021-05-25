@@ -8,19 +8,15 @@ import io.reactivex.Completable
 
 class MainActivity : BrowserActivity() {
 
-    @Suppress("DEPRECATION")
     public override fun updateCookiePreference(): Completable = Completable.fromAction {
         val cookieManager = CookieManager.getInstance()
         cookieManager.setAcceptCookie(userPreferences.cookiesEnabled)
     }
 
-    override fun onNewIntent(intent: Intent) =
-        if (intent.action == INTENT_PANIC_TRIGGER) {
-            panicClean()
-        } else {
-            handleNewIntent(intent)
-            super.onNewIntent(intent)
-        }
+    override fun onNewIntent(intent: Intent) {
+        handleNewIntent(intent)
+        super.onNewIntent(intent)
+    }
 
     /**
      * This is called once our activity is not visible anymore.

@@ -1,5 +1,4 @@
 @file:Suppress("DEPRECATION")
-
 package com.jamal2367.styx.reading
 
 import android.annotation.SuppressLint
@@ -24,7 +23,6 @@ import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.widget.Toolbar
 import androidx.core.text.HtmlCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -120,20 +118,14 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         }
     }
 
-    @SuppressLint("RestrictedApi")
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.reading, menu)
-
-        if (menu is MenuBuilder) {
-            val m: MenuBuilder = menu
-            m.setOptionalIconsVisible(true)
-        }
-
         return super.onCreateOptionsMenu(menu)
     }
 
-    @Suppress("DEPRECATION")
     @SuppressLint("StaticFieldLeak")
+    @Suppress("DEPRECATION")
     private inner class LoadData : AsyncTask<Void?, Void?, Void?>() {
         var extractedContentHtml: String? = null
         var extractedContentHtmlWithUtf8Encoding: String? = null
@@ -187,7 +179,6 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         }
     }
 
-    @Suppress("DEPRECATION")
     protected fun makeLinkClickable(strBuilder: SpannableStringBuilder, span: URLSpan?) {
         val start: Int = strBuilder.getSpanStart(span)
         val end: Int = strBuilder.getSpanEnd(span)
@@ -215,7 +206,6 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         text.movementMethod = LinkMovementMethod.getInstance()
     }
 
-    @Suppress("DEPRECATION")
     @Throws(IOException::class)
     private fun loadPage(intent: Intent?): Boolean {
         if (intent == null) {

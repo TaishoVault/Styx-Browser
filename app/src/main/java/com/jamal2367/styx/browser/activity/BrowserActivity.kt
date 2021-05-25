@@ -392,8 +392,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      *
      */
     @Suppress("DEPRECATION")
-    private fun createTabsDialog()
-    {
+    private fun createTabsDialog() {
         tabsDialog.dismiss() // Defensive
         // Workaround issue with black icons during transition after first use
         // See: https://github.com/material-components/material-components-android/issues/2168
@@ -436,8 +435,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      *
      */
     @Suppress("DEPRECATION")
-    private fun createBookmarksDialog()
-    {
+    private fun createBookmarksDialog() {
         bookmarksDialog.dismiss() // Defensive
         // Workaround issue with black icons during transition after first use.
         // See: https://github.com/material-components/material-components-android/issues/2168
@@ -639,16 +637,12 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         val launchedFromHistory = intent != null && intent.flags and Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY != 0
 
-        if (intent?.action == INTENT_PANIC_TRIGGER) {
-            setIntent(null)
-            panicClean()
-        } else {
-            if (launchedFromHistory) {
-                intent = null
-            }
-            presenter?.setupTabs(intent)
-            setIntent(null)
+        if (launchedFromHistory) {
+            intent = null
         }
+
+        presenter?.setupTabs(intent)
+        setIntent(null)
 
         if (userPreferences.lockedDrawers) {
             lockDrawers()
@@ -3187,30 +3181,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             iBindingToolbarContent.addressBarInclude.searchSslStatus.updateVisibilityForContent()
         }
 
-        // Set stop or reload icon according to current load status
-        //setMenuItemIcon(R.id.action_reload, if (isLoading) R.drawable.ic_action_delete else R.drawable.ic_action_refresh)
         iBindingToolbarContent.buttonReload.setImageResource(if (isLoading) R.drawable.round_clear_24 else R.drawable.round_refresh_24)
-
-        // That fancy animation would be great but somehow it looks like it is causing issues making the button unresponsive.
-        // I'm guessing it is conflicting with animations from layout change.
-        // Animations on Android really are a pain in the ass, half baked crappy implementations.
-        /*
-        iBindingToolbarContent.buttonReload.let {
-            val imageRes = if (isLoading) R.drawable.ic_action_delete else R.drawable.ic_action_refresh
-            // Only change our image if needed otherwise we animate for nothing
-            // Therefore first check if the selected image is already displayed
-            if (refreshButtonResId != imageRes){
-                refreshButtonResId = imageRes
-                if (it.animation==null) {
-                    val transition = AnimationUtils.createRotationTransitionAnimation(it, refreshButtonResId)
-                    it.startAnimation(transition)
-                }
-                else{
-                    iBindingToolbarContent.buttonReload.setImageResource(imageRes)
-                }
-            }
-        }
-         */
 
         setupPullToRefresh(resources.configuration)
     }
@@ -3346,13 +3317,12 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         private const val TAG = "BrowserActivity"
 
-        const val INTENT_PANIC_TRIGGER = "info.guardianproject.panic.action.TRIGGER"
-
         private const val FILE_CHOOSER_REQUEST_CODE = 1111
 
         // Constant
         private val MATCH_PARENT = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
         private val COVER_SCREEN_PARAMS = FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+
     }
 
 }

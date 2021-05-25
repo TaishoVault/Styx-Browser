@@ -11,7 +11,6 @@ class IncognitoActivity : BrowserActivity() {
 
     override fun provideThemeOverride(): AppTheme = AppTheme.DARK
 
-    @Suppress("DEPRECATION")
     public override fun updateCookiePreference(): Completable = Completable.fromAction {
         val cookieManager = CookieManager.getInstance()
         if (Capabilities.FULL_INCOGNITO.isSupported) {
@@ -21,16 +20,12 @@ class IncognitoActivity : BrowserActivity() {
         }
     }
 
-    @Suppress("RedundantOverride")
     override fun onNewIntent(intent: Intent) {
         handleNewIntent(intent)
         super.onNewIntent(intent)
     }
 
-    @Suppress("RedundantOverride")
-    override fun onPause() = super.onPause() // saveOpenTabs();
-
-    override fun updateHistory(title: String?, url: String) = Unit // addItemToHistory(title, url)
+    override fun updateHistory(title: String?, url: String) = Unit
 
     override fun isIncognito() = true
 

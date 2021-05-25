@@ -3,6 +3,7 @@ package com.jamal2367.styx.download
 import android.app.Activity
 import android.app.DownloadManager
 import android.net.Uri
+import android.os.Build
 import android.view.Gravity
 import android.webkit.CookieManager
 import com.jamal2367.styx.R
@@ -21,14 +22,7 @@ class DownloadHandler
 @Inject
 constructor(private var downloadManager: DownloadManager) {
     @Suppress("DEPRECATION")
-    fun onDownloadStartNoStream(
-            context: Activity, preferences: UserPreferences,
-            url: String,
-            userAgent: String,
-            contentDisposition: String?,
-            mimetype: String?)
-    {
-
+    fun onDownloadStartNoStream(context: Activity, preferences: UserPreferences, url: String, userAgent: String, contentDisposition: String?, mimetype: String?) {
         val webAddress: WebAddress
 
         try {
@@ -62,8 +56,10 @@ constructor(private var downloadManager: DownloadManager) {
         location = FileUtils.addNecessarySlashes(location)
         request.setDestinationUri(Uri.parse(FILE + location + filename))
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE or DownloadManager.Request.NETWORK_WIFI)
-        request.setVisibleInDownloadsUi(true)
-        request.allowScanningByMediaScanner()
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            request.setVisibleInDownloadsUi(true)
+            request.allowScanningByMediaScanner()
+        }
         request.addRequestHeader(COOKIE_REQUEST_HEADER, cookies)
         request.addRequestHeader(REFERER_REQUEST_HEADER, url)
         request.addRequestHeader(USERAGENT_REQUEST_HEADER, userAgent)

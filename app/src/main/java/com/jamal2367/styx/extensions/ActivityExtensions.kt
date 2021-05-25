@@ -104,11 +104,10 @@ fun Activity.makeCSnackbar(message: String, aDuration: Int, aGravity: Int): Snac
  *
  */
 @Suppress("DEPRECATION")
-fun Window.setStatusBarIconsColor(dark: Boolean)
-{
-        if (dark) {
-            decorView.systemUiVisibility = decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        } else {
-            decorView.systemUiVisibility = decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
-        }
+fun Window.setStatusBarIconsColor(dark: Boolean) {
+    if (dark) {
+        decorView.systemUiVisibility = decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+    } else {
+        decorView.systemUiVisibility = decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+    }
 }

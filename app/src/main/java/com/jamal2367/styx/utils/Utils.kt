@@ -1,6 +1,5 @@
 package com.jamal2367.styx.utils
 
-import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.Context
 import android.content.DialogInterface
@@ -254,18 +253,13 @@ object Utils {
                 color
     }
 
-    @Suppress("DEPRECATION")
-    @SuppressLint("SimpleDateFormat")
     @Throws(IOException::class)
     fun createImageFile(): File {
         // Create an image file name
-        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        val timeStamp = SimpleDateFormat("d MMM yyyy", Locale.getDefault())
         val imageFileName = "JPEG_" + timeStamp + '_'
         val storageDir = BrowserApp.instance.applicationContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File.createTempFile(imageFileName,  /* prefix */
-                ".jpg",  /* suffix */
-                storageDir /* directory */
-        )
+        return File.createTempFile(imageFileName, ".jpg", storageDir)
     }
 
     /**
@@ -297,9 +291,7 @@ object Utils {
      * @param historyEntry     the HistoryEntity to create the shortcut from
      */
     @Suppress("DEPRECATION")
-    fun createShortcut(activity: AppCompatActivity,
-                       historyEntry: HistoryEntry,
-                       favicon: Bitmap) {
+    fun createShortcut(activity: AppCompatActivity, historyEntry: HistoryEntry, favicon: Bitmap) {
         val shortcutIntent = Intent(Intent.ACTION_VIEW)
         shortcutIntent.data = Uri.parse(historyEntry.url)
         val title = if (TextUtils.isEmpty(historyEntry.title)) activity.getString(R.string.untitled) else historyEntry.title

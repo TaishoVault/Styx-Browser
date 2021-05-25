@@ -3,7 +3,6 @@
  */
 package com.jamal2367.styx.download
 
-import android.util.Patterns
 import java.util.*
 import java.util.regex.Pattern
 
@@ -47,11 +46,10 @@ internal class WebAddress(address: String?) {
         private const val MATCH_GROUP_PORT = 4
         private const val MATCH_GROUP_PATH = 5
 
-        @Suppress("DEPRECATION")
         private val sAddressPattern = Pattern.compile( /* scheme */
                 "(?:(http|https|file)://)?" +  /* authority */
                         "(?:([-A-Za-z0-9$string.+!*'(),;?&=]+(?::[-A-Za-z0-9$string.+!*'(),;?&=]+)?)@)?" +  /* host */
-                        "([" + Patterns.GOOD_IRI_CHAR + "%_-][" + Patterns.GOOD_IRI_CHAR + "%_\\.-]*|\\[[0-9a-fA-F:\\.]+\\])?" +  /* port */
+                        "([" + "a-zA-Z0-9\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF" + "%_-][" + "a-zA-Z0-9\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF" + "%_\\.-]*|\\[[0-9a-fA-F:\\.]+\\])?" +  /* port */
                         "(?::([0-9]*))?" +  /* path */
                         "(/?[^#]*)?" +  /* anchor */
                         ".*", Pattern.CASE_INSENSITIVE)

@@ -6,10 +6,7 @@ import android.content.res.Resources
 import android.graphics.*
 import android.net.Uri
 import android.net.http.SslCertificate
-import android.os.Build
-import android.os.Bundle
-import android.os.Handler
-import android.os.Message
+import android.os.*
 import android.print.*
 import android.view.*
 import android.view.GestureDetector.SimpleOnGestureListener
@@ -400,7 +397,7 @@ class StyxView(
      * the preferences are changed within SharedPreferences.
      */
     @Suppress("DEPRECATION")
-    @SuppressLint("NewApi", "SetJavaScriptEnabled")
+    @SuppressLint("SetJavaScriptEnabled")
     fun initializePreferences() {
         val settings = webView?.settings ?: return
 
@@ -506,7 +503,6 @@ class StyxView(
      * by the user. Distinguish between Incognito and Regular tabs here.
      */
     @Suppress("DEPRECATION")
-    @SuppressLint("NewApi")
     private fun WebView.initializeSettings() {
         settings.apply {
             // That needs to be false for WebRTC to work at all, don't ask me why
@@ -524,12 +520,10 @@ class StyxView(
 
             if (!isIncognito || Capabilities.FULL_INCOGNITO.isSupported) {
                 domStorageEnabled = true
-                setAppCacheEnabled(true)
                 databaseEnabled = true
                 cacheMode = WebSettings.LOAD_DEFAULT
             } else {
                 domStorageEnabled = false
-                setAppCacheEnabled(false)
                 databaseEnabled = false
                 cacheMode = WebSettings.LOAD_NO_CACHE
             }
@@ -790,7 +784,6 @@ class StyxView(
      * the WebView cannot be recreated using the public
      * api.
      */
-    @Suppress("DEPRECATION")
     fun destroy() {
         networkDisposable.dispose()
         webView?.let {
@@ -806,7 +799,6 @@ class StyxView(
             it.clearHistory()
             it.visibility = View.GONE
             it.removeAllViews()
-            it.destroyDrawingCache()
             it.destroy()
         }
     }
@@ -1083,8 +1075,7 @@ class StyxView(
      * reference to the WebView and therefore will not
      * leak it if the WebView is garbage collected.
      */
-    @Suppress("DEPRECATION")
-    private class WebViewHandler(view: StyxView) : Handler() {
+    private class WebViewHandler(view: StyxView) : Handler(Looper.getMainLooper()) {
 
         private val reference: WeakReference<StyxView> = WeakReference(view)
 
