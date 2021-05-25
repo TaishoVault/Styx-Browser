@@ -43,7 +43,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
 
     override fun onDownloadStart(url: String, userAgent: String,
                                  contentDisposition: String, mimetype: String, contentLength: Long) {
-        if (Build.VERSION.SDK_INT <= 29) {
+        if (Build.VERSION.SDK_INT <= 28) {
         PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(mActivity, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE),
                 object : PermissionsResultAction() {
                     override fun onGranted() {
