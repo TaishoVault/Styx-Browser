@@ -3,23 +3,16 @@ package com.jamal2367.styx.browser.bookmarks
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
-import android.os.Handler
-import android.os.Looper
 import android.util.AttributeSet
-import android.webkit.CookieManager
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
-import com.jamal2367.styx.adblock.allowlist.AllowListModel
 import com.jamal2367.styx.animation.AnimationUtils
 import com.jamal2367.styx.browser.BookmarksView
-import com.jamal2367.styx.browser.JavaScriptChoice
-import com.jamal2367.styx.browser.TabsManager
 import com.jamal2367.styx.controller.UIController
 import com.jamal2367.styx.database.Bookmark
 import com.jamal2367.styx.database.bookmark.BookmarkRepository
@@ -28,18 +21,14 @@ import com.jamal2367.styx.di.DatabaseScheduler
 import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.di.NetworkScheduler
 import com.jamal2367.styx.di.injector
-import com.jamal2367.styx.dialog.BrowserDialog
-import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.dialog.StyxDialogBuilder
 import com.jamal2367.styx.extensions.*
 import com.jamal2367.styx.favicon.FaviconModel
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.*
-import com.jamal2367.styx.view.CodeView
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.disposables.Disposable
-import java.net.URL
 import javax.inject.Inject
 
 
@@ -56,7 +45,6 @@ class BookmarksDrawerView @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr), BookmarksView {
 
     @Inject internal lateinit var bookmarkModel: BookmarkRepository
-    @Inject internal lateinit var allowListModel: AllowListModel
     @Inject internal lateinit var bookmarksDialogBuilder: StyxDialogBuilder
     @Inject internal lateinit var faviconModel: FaviconModel
     @Inject lateinit var userPreferences: UserPreferences
@@ -137,8 +125,6 @@ class BookmarksDrawerView @JvmOverloads constructor(
 
         iAdapter.cleanupSubscriptions()
     }
-
-    private fun getTabsManager(): TabsManager = uiController.getTabModel()
 
     private fun updateBookmarkIndicator(url: String) {
         bookmarkUpdateSubscription?.dispose()
@@ -224,154 +210,6 @@ class BookmarksDrawerView @JvmOverloads constructor(
             setBookmarksShown(bookmark.title, true)
         }
         is Bookmark.Entry -> uiController.bookmarkItemClicked(bookmark)
-    }
-
-    private fun stringContainsItemFromList(inputStr: String, items: Array<String>): Boolean {
-        for (i in items.indices) {
-            if (inputStr.contains(items[i])) {
-                return true
-            }
-        }
-        return false
-    }
-
-    /**
-     * Show the page tools dialog.
-     */
-    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    fun showPageToolsDialog(context: Context, userPreferences: UserPreferences) {
-        val currentTab = getTabsManager().currentTab ?: return
-        val isAllowedAds = allowListModel.isUrlAllowedAds(currentTab.url)
-        val whitelistString = if (isAllowedAds) {
-            R.string.dialog_adblock_enable_for_site
-        } else {
-            R.string.dialog_adblock_disable_for_site
-        }
-        val arrayOfURLs = userPreferences.javaScriptBlocked
-        val strgs: Array<String> = if (arrayOfURLs.contains(", ")) {
-            arrayOfURLs.split(", ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-        } else {
-            arrayOfURLs.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-        }
-        val jsEnabledString = if (userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs)) {
-            R.string.allow_javascript
-        } else{
-            R.string.blocked_javascript
-        }
-
-        BrowserDialog.showWithIcons(context, context.getString(R.string.dialog_tools_title),
-                DialogItem(
-                        icon = context.drawable(R.drawable.outline_remove_circle_outline_24),
-                        colorTint = context.attrColor(R.attr.colorPrimary).takeIf { isAllowedAds },
-                        title = whitelistString
-                ) {
-                    if (isAllowedAds) {
-                        allowListModel.removeUrlFromAllowList(currentTab.url)
-                    } else {
-                        allowListModel.addUrlToAllowList(currentTab.url)
-                    }
-                    getTabsManager().currentTab?.reload()
-                },
-                DialogItem(
-                        icon = context.drawable(R.drawable.ic_baseline_code_24),
-                        title = R.string.page_source
-                ) {
-                    currentTab.webView?.evaluateJavascript("""(function() {
-                        return "<html>" + document.getElementsByTagName('html')[0].innerHTML + "</html>";
-                     })()""".trimMargin()) {
-                        // Hacky workaround for weird WebView encoding bug
-
-                        var name = it?.replace("\\u003C", "<")
-                        name = name?.replace("\\n", "[\\r\\n]+")
-                        name = name?.replace("\\t", "")
-                        name = name?.replace("\\\"", "\"")
-                        name = name?.substring(1, name.length - 1)
-
-                        val builder = MaterialAlertDialogBuilder(context)
-                        val inflater = activity.layoutInflater
-                        builder.setTitle(R.string.page_source)
-                        val dialogLayout = inflater.inflate(R.layout.dialog_view_source, null)
-                        val codeView: CodeView = dialogLayout.findViewById(R.id.dialog_multi_line)
-                        codeView.setText(name)
-                        builder.setView(dialogLayout)
-                        builder.setNegativeButton(R.string.action_cancel) { _, _ -> }
-                        builder.setPositiveButton(R.string.action_ok) { _, _ ->
-                            codeView.text?.toString()?.replace("\'", "\\\'")
-                            currentTab.loadUrl("javascript:(function() { document.documentElement.innerHTML = '" + codeView.text.toString() + "'; })()")
-                        }
-                        builder.show()
-                    }
-                },
-                DialogItem(
-                        icon= context.drawable(R.drawable.ic_script_add),
-                        title = R.string.inspect
-                ){
-                    val builder = MaterialAlertDialogBuilder(context)
-                    val inflater = activity.layoutInflater
-                    builder.setTitle(R.string.inspect)
-                    val dialogLayout = inflater.inflate(R.layout.dialog_code_editor, null)
-                    val codeView: CodeView = dialogLayout.findViewById(R.id.dialog_multi_line)
-                    codeView.text.toString()
-                    builder.setView(dialogLayout)
-                    builder.setNegativeButton(R.string.action_cancel) { _, _ -> }
-                    builder.setPositiveButton(R.string.action_ok) { _, _ -> currentTab.loadUrl("javascript:(function() {" + codeView.text.toString() + "})()") }
-                    builder.show()
-                },
-                DialogItem(
-                        icon = context.drawable(R.drawable.outline_script_text_key_outline),
-                        colorTint = context.attrColor(R.attr.colorPrimary).takeIf { userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs) },
-                        title = jsEnabledString
-                ) {
-                    val url = URL(currentTab.url)
-                    if (userPreferences.javaScriptChoice != JavaScriptChoice.NONE) {
-                        if (!stringContainsItemFromList(currentTab.url, strgs)) {
-                            if (userPreferences.javaScriptBlocked == "") {
-                                userPreferences.javaScriptBlocked = url.host
-                            } else {
-                                userPreferences.javaScriptBlocked = userPreferences.javaScriptBlocked + ", " + url.host
-                            }
-                        } else {
-                            if (!userPreferences.javaScriptBlocked.contains(", " + url.host)) {
-                                userPreferences.javaScriptBlocked = userPreferences.javaScriptBlocked.replace(url.host, "")
-                            } else {
-                                userPreferences.javaScriptBlocked = userPreferences.javaScriptBlocked.replace(", " + url.host, "")
-                            }
-                        }
-                    } else {
-                        userPreferences.javaScriptChoice = JavaScriptChoice.WHITELIST
-                    }
-                    getTabsManager().currentTab?.reload()
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        getTabsManager().currentTab?.reload()
-                    }, 250)
-                },
-                DialogItem(
-                        icon = context.drawable(R.drawable.cookie_outline),
-                        title = R.string.edit_cookies
-                ) {
-
-                    val cookieManager = CookieManager.getInstance()
-                    if (cookieManager.getCookie(currentTab.url) != null) {
-                        val builder = MaterialAlertDialogBuilder(context)
-                        val inflater = activity.layoutInflater
-                        builder.setTitle(R.string.site_cookies)
-                        val dialogLayout = inflater.inflate(R.layout.dialog_code_editor, null)
-                        val codeView: CodeView = dialogLayout.findViewById(R.id.dialog_multi_line)
-                        codeView.setText(cookieManager.getCookie(currentTab.url))
-                        builder.setView(dialogLayout)
-                        builder.setNegativeButton(R.string.action_cancel) { _, _ -> }
-                        builder.setPositiveButton(R.string.action_ok) { _, _ ->
-                            val cookiesList = codeView.text.toString().split(";")
-                            cookiesList.forEach { item ->
-                                CookieManager.getInstance().setCookie(currentTab.url, item)
-                            }
-                        }
-                        builder.show()
-                    }
-
-                }
-        )
-
     }
 
     override fun navigateBack() {
