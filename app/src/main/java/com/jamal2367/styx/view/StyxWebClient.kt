@@ -139,7 +139,6 @@ class StyxWebClient(
     var description: String? = null
     val include = ArrayList<Pattern>(0)
 
-
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     @SuppressLint("CheckResult")
     private fun installExtension(text: String){

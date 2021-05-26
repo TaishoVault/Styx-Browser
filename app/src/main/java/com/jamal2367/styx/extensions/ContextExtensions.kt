@@ -56,10 +56,10 @@ inline fun Context.drawable(@DrawableRes drawableRes: Int): Drawable = ContextCo
 /**
  * The preferred locale of the user.
  */
+@Suppress("DEPRECATION")
 val Context.preferredLocale: Locale
     get() = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
         resources.configuration.locales[0]
     } else {
-        @Suppress("DEPRECATION")
         resources.configuration.locale
     }

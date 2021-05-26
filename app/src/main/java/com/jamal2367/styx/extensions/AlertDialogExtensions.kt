@@ -26,5 +26,4 @@ fun <T> MaterialAlertDialogBuilder.withSingleChoiceItems(
 /**
  * Ensures that the dialog is appropriately sized and displays it.
  */
-@Suppress("NOTHING_TO_INLINE")
-inline fun MaterialAlertDialogBuilder.resizeAndShow(): Dialog = show().also { BrowserDialog.setDialogSize(context, it) }
+fun MaterialAlertDialogBuilder.resizeAndShow(): Dialog = show().also { BrowserDialog.setDialogSize(context, it) }

@@ -187,14 +187,13 @@ class CodeView : AppCompatMultiAutoCompleteTextView {
         modified = true
     }
 
-    @Suppress("NAME_SHADOWING")
     fun setTextHighlighted(text: CharSequence?) {
-        var text = text
-        if (text == null) text = ""
+        var texts = text
+        if (text == null) texts = ""
         cancelHighlighterRender()
         removeAllErrorLines()
         modified = false
-        setText(highlight(SpannableStringBuilder(text)))
+        setText(highlight(SpannableStringBuilder(texts)))
         modified = true
     }
 
@@ -230,21 +229,20 @@ class CodeView : AppCompatMultiAutoCompleteTextView {
         mUpdateHandler.removeCallbacks(mUpdateRunnable)
     }
 
-    @Suppress("NAME_SHADOWING")
     private fun convertTabs(editable: Editable, start: Int, count: Int) {
-        var start = start
+        var starts = start
         if (tabWidth < 1) {
             return
         }
         val s = editable.toString()
         val stop = start + count
-        while (s.indexOf("\t", start).also { start = it } > -1 && start < stop) {
+        while (s.indexOf("\t", starts).also { starts = it } > -1 && start < stop) {
             editable.setSpan(
                 TabWidthSpan(),
                 start,
                 start + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
-            ++start
+            ++starts
         }
     }
 

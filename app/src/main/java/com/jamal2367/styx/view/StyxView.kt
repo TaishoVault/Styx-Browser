@@ -757,7 +757,6 @@ class StyxView(
      *
      * @param text the text to search for.
      */
-    @SuppressLint("NewApi")
     fun find(text: String): FindResults {
         webView?.findAllAsync(text)
 

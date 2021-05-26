@@ -87,15 +87,14 @@ class ProgressBar : View {
      * nearest value within the interval, i.e. setting a value of 150 will have
      * the effect of setting the progress to 100. You cannot trick us.
      */
-    @Suppress("NAME_SHADOWING")
     var progress: Int
         get() = mProgress
         set(progress) {
-            var progress = progress
+            var progresses = progress
             if (progress > 100) {       // progress cannot be greater than 100
-                progress = 100
+                progresses = 100
             } else if (progress < 0) {  // progress cannot be less than 0
-                progress = 0
+                progresses = 0
             }
             if (alpha < 1.0f) {
                 fadeIn()
@@ -105,7 +104,7 @@ class ProgressBar : View {
             mRect.left = 0
             mRect.top = 0
             mRect.bottom = bottom - top
-            if (progress < mProgress && !mBidirectionalAnimate) {   // if the we only animate the view in one direction
+            if (progresses < mProgress && !mBidirectionalAnimate) {   // if the we only animate the view in one direction
                 // then reset the view width if it is less than the
                 // previous progress
                 mDrawWidth = 0
@@ -168,15 +167,13 @@ class ProgressBar : View {
                 .start()
     }
 
-    @Suppress("NAME_SHADOWING")
     override fun onRestoreInstanceState(state: Parcelable) {
-        var state: Parcelable? = state
+        var states: Parcelable? = state
         if (state is Bundle) {
-            val bundle = state
-            mProgress = bundle.getInt("progressState")
-            state = bundle.getParcelable("instanceState")
+            mProgress = state.getInt("progressState")
+            states = state.getParcelable("instanceState")
         }
-        super.onRestoreInstanceState(state)
+        super.onRestoreInstanceState(states)
     }
 
     override fun onSaveInstanceState(): Parcelable {

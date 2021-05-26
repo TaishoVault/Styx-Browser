@@ -185,16 +185,15 @@ object FileUtils {
      * @param directory the directory to find the first existent parent
      * @return the first existent parent
      */
-    @Suppress("NAME_SHADOWING")
     private fun getFirstRealParentDirectory(directory: String?): String {
-        var directory = directory
+        var directorys = directory
         while (true) {
             if (directory == null || directory.isEmpty()) {
                 return "/"
             }
-            directory = addNecessarySlashes(directory)
+            directorys = addNecessarySlashes(directorys)
             val file = File(directory)
-            directory = if (!file.isDirectory) {
+            directorys = if (!file.isDirectory) {
                 val indexSlash = directory.lastIndexOf('/')
                 if (indexSlash > 0) {
                     val parent = directory.substring(0, indexSlash)
@@ -208,7 +207,7 @@ object FileUtils {
                     return "/"
                 }
             } else {
-                return directory
+                return directorys
             }
         }
     }

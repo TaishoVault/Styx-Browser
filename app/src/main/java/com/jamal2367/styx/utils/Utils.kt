@@ -101,18 +101,17 @@ object Utils {
      * could not be extracted. The domain name may include
      * HTTPS if the URL is an SSL supported URL.
      */
-    @Suppress("NAME_SHADOWING")
     fun getDisplayDomainName(url: String?): String {
-        var url = url
+        var urls = url
         if (url == null || url.isEmpty()) return ""
         val index = url.indexOf('/', 8)
         if (index != -1) {
-            url = url.substring(0, index)
+            urls = url.substring(0, index)
         }
         val uri: URI
         var domain: String?
         try {
-            uri = URI(url)
+            uri = URI(urls)
             domain = uri.host
         } catch (e: URISyntaxException) {
             Log.e(TAG, "Unable to parse URI", e)

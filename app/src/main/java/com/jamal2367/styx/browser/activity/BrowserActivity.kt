@@ -3291,7 +3291,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      * Check for update on github
      */
-    @Suppress("NAME_SHADOWING")
     private fun checkForUpdates(context: Context) {
         val url = getString(R.string.github_update_check_url)
         val request = StringRequest(Request.Method.GET, url, { reply ->
@@ -3302,9 +3301,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     makeCSnackbar(
                         getString(R.string.app_name) + " " + latestVersion + " " + getString(R.string.update_available), 10000, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
                         .setAction(R.string.show) {
-                            val url = getString(R.string.url_app_home_page)
+                            val releaseurl = getString(R.string.url_app_home_page)
                             val i = Intent(Intent.ACTION_VIEW)
-                            i.data = Uri.parse(url)
+                            i.data = Uri.parse(releaseurl)
                             // Not sure that does anything
                             i.putExtra("SOURCE", "SELF")
                             startActivity(i)

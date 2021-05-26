@@ -144,7 +144,6 @@ class StyxDialogBuilder @Inject constructor(
      * Show the add bookmark dialog. Shows a dialog with the title and URL pre-populated.
      */
     @SuppressLint("CheckResult")
-    @SuppressWarnings("unused")
     fun showAddBookmarkDialog(
             activity: AppCompatActivity,
             uiController: UIController,

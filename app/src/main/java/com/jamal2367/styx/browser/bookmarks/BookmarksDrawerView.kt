@@ -31,7 +31,6 @@ import io.reactivex.Single
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
-
 /**
  * The view that displays bookmarks in a list and some controls.
  */

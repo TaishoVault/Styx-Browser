@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
 import android.os.Message
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.webkit.*
@@ -202,14 +201,13 @@ class StyxChromeClient(
 
     override fun onCloseWindow(window: WebView) = uiController.onCloseWindow(styxView)
 
-    @Suppress("unused", "UNUSED_PARAMETER")
     fun openFileChooser(uploadMsg: ValueCallback<Uri>) = uiController.openFileChooser(uploadMsg)
 
-    @Suppress("unused", "UNUSED_PARAMETER")
+    @Suppress("UNUSED_PARAMETER")
     fun openFileChooser(uploadMsg: ValueCallback<Uri>, acceptType: String) =
         uiController.openFileChooser(uploadMsg)
 
-    @Suppress("unused", "UNUSED_PARAMETER")
+    @Suppress("UNUSED_PARAMETER")
     fun openFileChooser(uploadMsg: ValueCallback<Uri>, acceptType: String, capture: String) =
         uiController.openFileChooser(uploadMsg)
 
@@ -238,26 +236,11 @@ class StyxChromeClient(
      * of a video's loading progress.
      */
     @SuppressLint("InflateParams")
-    override fun getVideoLoadingProgressView(): View =
-        LayoutInflater.from(activity).inflate(R.layout.video_loading_progress, null)
+    override fun getVideoLoadingProgressView(): View = LayoutInflater.from(activity).inflate(R.layout.video_loading_progress, null)
 
     override fun onHideCustomView() = uiController.onHideCustomView()
 
-    override fun onShowCustomView(view: View, callback: CustomViewCallback) =
-        uiController.onShowCustomView(view, callback)
+    override fun onShowCustomView(view: View, callback: CustomViewCallback) = uiController.onShowCustomView(view, callback)
 
-    override fun onShowCustomView(view: View, requestedOrientation: Int,
-                                  callback: CustomViewCallback) =
-        uiController.onShowCustomView(view, callback, requestedOrientation)
-
-    /**
-     * Needed to display javascript console message in logcat.
-     */
-    override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
-        consoleMessage?.apply {
-            Log.d("Chrome Console", "${messageLevel()} - ${message()} -- from line ${lineNumber()} of ${sourceId()}")
-        }
-        return true
-    }
-
+    override fun onShowCustomView(view: View, requestedOrientation: Int, callback: CustomViewCallback) = uiController.onShowCustomView(view, callback, requestedOrientation)
 }

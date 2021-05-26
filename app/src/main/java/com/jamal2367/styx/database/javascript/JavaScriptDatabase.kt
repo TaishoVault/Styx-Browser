@@ -9,13 +9,11 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import androidx.annotation.WorkerThread
 import com.jamal2367.styx.database.databaseDelegate
-import com.jamal2367.styx.extensions.firstOrNullMap
 import com.jamal2367.styx.extensions.useMap
 import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
-
 
 /**
  * The disk backed download database. See [JavaScriptRepository] for function documentation.
@@ -60,13 +58,13 @@ class JavaScriptDatabase @Inject constructor(
         db.execSQL(createJavaScriptTable)
     }
 
-    private val DATABASE_ALTER_3 = ("ALTER TABLE "
+    private val databasealter3 = ("ALTER TABLE "
             + TABLE_JAVASCRIPT) + " ADD COLUMN " + KEY_REQUIREMENTS + " string;"
 
     // Upgrading database
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (oldVersion < 3) {
-            db.execSQL(DATABASE_ALTER_3)
+            db.execSQL(databasealter3)
         }
     }
 
@@ -80,6 +78,7 @@ class JavaScriptDatabase @Inject constructor(
     override fun deleteJavaScriptEntry(name: String): Completable = Completable.fromAction {
         database.delete(TABLE_JAVASCRIPT, "$KEY_NAME = ?", arrayOf(name))
     }
+
 
     @SuppressLint("Recycle")
     override fun findJavaScriptEntriesContaining(query: String): Single<List<JavaScriptEntry>> =
@@ -132,26 +131,6 @@ class JavaScriptDatabase @Inject constructor(
 
         return@fromCallable id != -1L
     }
-
-    @WorkerThread
-    private fun addJavaScriptEntry(item: JavaScriptEntry) {
-        database.insert(TABLE_JAVASCRIPT, null, item.toContentValues())
-    }
-
-    @SuppressLint("Recycle")
-    @WorkerThread
-    fun getJavaScriptEntry(url: String): String? =
-            database.query(
-                    TABLE_JAVASCRIPT,
-                    arrayOf(KEY_ID, KEY_INCLUDE, KEY_CODE, KEY_NAME),
-                    "$KEY_NAME = ?",
-                    arrayOf(url),
-                    null,
-                    null,
-                    null,
-                    "1"
-            ).firstOrNullMap { it.getString(0) }
-
 
     @SuppressLint("Recycle")
     fun getAllJavaScriptEntries(): List<JavaScriptEntry> {

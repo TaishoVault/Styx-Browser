@@ -23,7 +23,6 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 
-
 /**
  * The [RecyclerView.ViewHolder] for both vertical and horizontal tabs.
  * That represents an item in our list, basically one tab.
@@ -141,8 +140,8 @@ class SessionViewHolder(
     override fun onClick(v: View) {
         if (v === buttonDelete) {
             //uiController.tabCloseClicked(adapterPosition)
-        } else if (v === iCardView) {
-
+        } else {
+            return
         }
     }
 

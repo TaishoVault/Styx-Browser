@@ -169,7 +169,6 @@ class SessionsPopupWindow(
     /**
      *
      */
-    @SuppressLint("RtlHardcoded")
     fun show(aAnchor: View, aEdit: Boolean = false, aShowCurrent: Boolean = true) {
         // Disable edit mode when showing our menu
         iAdapter.iEditModeEnabledObservable.onNext(aEdit)
@@ -186,7 +185,7 @@ class SessionsPopupWindow(
         val anchorLoc = IntArray(2)
         aAnchor.getLocationInWindow(anchorLoc)
         //
-        val gravity = if (userPreferences.toolbarsBottom) Gravity.BOTTOM or Gravity.RIGHT else Gravity.TOP or Gravity.RIGHT
+        val gravity = if (userPreferences.toolbarsBottom) Gravity.BOTTOM or Gravity.END else Gravity.TOP or Gravity.END
         val yOffset = if (userPreferences.toolbarsBottom) (contentView.context as BrowserActivity).iBinding.root.height - anchorLoc[1] else anchorLoc[1]+aAnchor.height
         // Show our popup menu from the right side of the screen below our anchor
         showAtLocation(aAnchor, gravity,
