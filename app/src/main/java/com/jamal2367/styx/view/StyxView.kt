@@ -512,10 +512,10 @@ class StyxView(
                 WebSettingsCompat.setForceDarkStrategy(settings,WebSettingsCompat.DARK_STRATEGY_PREFER_WEB_THEME_OVER_USER_AGENT_DARKENING)
             }
 
-            if (!isIncognito) {
-                mixedContentMode = WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
-                // We're in Incognito mode, reject
-                mixedContentMode = WebSettings.MIXED_CONTENT_NEVER_ALLOW
+            mixedContentMode = if (!isIncognito) {
+                WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
+            } else {
+                WebSettings.MIXED_CONTENT_NEVER_ALLOW
             }
 
             if (!isIncognito || Capabilities.FULL_INCOGNITO.isSupported) {
