@@ -170,7 +170,7 @@
     <string name="hint_url">Adres</string>
     <string name="hint_username">Kullanıcı adı</string>
     <string name="home">Ana sayfa</string>
-    <string name="homepage_in_new_tab">Uga buga ana sayfa</string>
+    <string name="homepage_in_new_tab">Ana sayfayı yeni sekmede aç</string>
     <string name="image_url">Arama motoru için arkaplan resmi ayarlayın</string>
     <string name="image_url_summary">Yalnızca özel adres için</string>
     <string name="import_backup">Yer işaretlerini geri yükle</string>
