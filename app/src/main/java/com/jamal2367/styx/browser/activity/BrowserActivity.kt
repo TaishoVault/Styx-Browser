@@ -1095,9 +1095,14 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     (iBinding.listBookmarks.layoutManager as? LinearLayoutManager)?.reverseLayout = true
                 }
 
+                // Deal with session menu
+                sessionsMenu.animationStyle = R.style.AnimationMenuBottom
+                (sessionsMenu.iBinding.recyclerViewSessions.layoutManager as? LinearLayoutManager)?.reverseLayout = true
+                // Move sessions menu toolbar to the bottom
+                sessionsMenu.iBinding.toolbar.apply{removeFromParent()?.addView(this)}
+
                 // Set popup menus animations
                 popupMenu.animationStyle = R.style.AnimationMenuBottom
-                sessionsMenu.animationStyle = R.style.AnimationMenuBottom
                 // Move popup menu toolbar to the bottom
                 popupMenu.iBinding.header.apply{removeFromParent()?.addView(this)}
 
