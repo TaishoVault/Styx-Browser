@@ -75,6 +75,7 @@
     <string name="algorithm">Algoritm</string>
     <string name="allow_javascript">Permite JavaScript pentru acest site</string>
     <string name="android_open_source_project">Proiect Open Source Android</string>
+    <string name="apply">Aplică</string>
     <string name="black_theme">Temă neagră</string>
     <string name="block_ad_refresh_hosts">Reîmprospătează fişierul de gazde…</string>
     <string name="block_ad_refresh_now">Reîmprospătează gazdele acum</string>
@@ -105,6 +106,7 @@
     <string name="clear_history">Ștergeți istoricul browser-ului</string>
     <string name="clear_web_storage_exit">Curăță stocarea web la ieșire</string>
     <string name="clear_web_storage">Ştergeţi stocarea web</string>
+    <string name="close">Închideți</string>
     <string name="close_all_tabs">Închide toate filele</string>
     <string name="close_on_last_tab">Închide browserul cu ultima filă</string>
     <string name="close_other_tabs">Închide celelalte file</string>
@@ -297,6 +299,7 @@
     <string name="settings_admalwareblocker">Reclame &amp; Blocare Malware</string>
     <string name="settings_advanced">Setări avansate</string>
     <string name="settings_black_status_bar">Bară de stare neagră</string>
+    <string name="settings_credits">Recunoștințe</string>
     <string name="settings_display">Setări de afișare</string>
     <string name="settings_export_failure">Ne pare rău, setările nu au putut fi exportate!</string>
     <string name="settings_extensions">Extensii</string>
@@ -321,6 +324,7 @@
     <string name="settings_title_toolbars_bottom">Bare de instrumente jos</string>
     <string name="settings">Setări</string>
     <string name="shortcut_message_failed_to_add">Ne pare rău, lansatorul nu acceptă scurtături.</string>
+    <string name="show">Arată</string>
     <string name="show_second_bar">Afișează bara de navigare secundară</string>
     <string name="show_ssl">Afișează dialogurile de avertizare SSL</string>
     <string name="site_cookies">Cookie-urile site-urilor</string>

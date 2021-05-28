@@ -92,6 +92,7 @@
     <string name="block_source_remote">Arquivo de hosts remoto</string>
     <string name="blocked_javascript">Bloquear JavaScript para este site</string>
     <string name="bookmark_export_failure">Desculpe, os favoritos não puderam ser exportados!</string>
+    <string name="bookmark_export_path">Favoritos exportados:</string>
     <string name="bookmark_in_new_tab">Favorito em uma nova aba</string>
     <string name="bookmark_restore">Favoritos restaurados</string>
     <string name="bookmark_settings">Configurações de favoritos</string>
@@ -302,8 +303,10 @@
     <string name="settings_admalwareblocker">Bloqueador de Anúncios &amp; Malware</string>
     <string name="settings_advanced">Configurações avançadas</string>
     <string name="settings_black_status_bar">Barra de status preta</string>
+    <string name="settings_credits">Créditos</string>
     <string name="settings_display">Configurações de exibição</string>
     <string name="settings_export_failure">Desculpe, as configurações não puderam ser exportadas!</string>
+    <string name="settings_exported">Configurações exportadas:</string>
     <string name="settings_extensions">Extensões</string>
     <string name="settings_general">Configurações gerais</string>
     <string name="settings_help_us">Ajude-nos!</string>
@@ -326,6 +329,7 @@
     <string name="settings_title_toolbars_bottom">Barras de ferramentas na parte inferior</string>
     <string name="settings">Configurações</string>
     <string name="shortcut_message_failed_to_add">Desculpe, seu launcher não suporta atalhos.</string>
+    <string name="show">Mostrar</string>
     <string name="show_second_bar">Mostrar barra de navegação secundária</string>
     <string name="show_shortcuts">Exibir atalhos na página inicial</string>
     <string name="show_ssl">Mostrar diálogos de alerta de SSL</string>
@@ -369,6 +373,7 @@
     <string name="unknown">Desconhecido</string>
     <string name="unlisted_javascript">Bloquear JavaScript nos sites listados</string>
     <string name="untitled">Sem título</string>
+    <string name="update_available">está disponível!</string>
     <string name="url_contents">Conteúdo da caixa do URL</string>
     <string name="url_in_new_tab">Abrir em uma nova aba</string>
     <string name="url">URL</string>

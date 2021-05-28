@@ -92,6 +92,7 @@
     <string name="block_source_remote">ملف المضيف البعيد</string>
     <string name="blocked_javascript">حظر جافا سكريبت لهذا الموقع</string>
     <string name="bookmark_export_failure">عذرًا ، تعذر تصدير الإشارات المرجعية!</string>
+    <string name="bookmark_export_path">تم تصدير الإشارات المرجعية:</string>
     <string name="bookmark_in_new_tab">إشارة مرجعية في علامة تبويب جديدة</string>
     <string name="bookmark_restore">تمت استعادة الإشارات المرجعية</string>
     <string name="bookmark_settings">إعدادات إشارة مرجعية</string>
@@ -305,6 +306,7 @@
     <string name="settings_credits">شكر وتقدير</string>
     <string name="settings_display">اعدادات العرض</string>
     <string name="settings_export_failure">عذراً، لا يمكن تصدير الإعدادات!</string>
+    <string name="settings_exported">تم تصدير الإعدادات:</string>
     <string name="settings_extensions">الإضافات</string>
     <string name="settings_general">الاعدادات العامة</string>
     <string name="settings_help_us">ساعدنا</string>

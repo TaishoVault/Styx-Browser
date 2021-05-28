@@ -147,38 +147,58 @@
     <string name="dont_ask_again">Não perguntar novamente</string>
     <string name="download_pending">A transferir:</string>
     <string name="download">Local para descargas</string>
+    <string name="downloads_notification_description">Triggers upon download completion</string>
     <string name="downloads">Transferências</string>
     <string name="edit_cookies">Mostrar cookies do site</string>
     <string name="edit_shortcuts">Editar Atalhos</string>
     <string name="error_reload">Recarregar</string>
+    <string name="error_tip">• Check the Address for typing errors such as ww.example.com instead of www.example.com</string>
+    <string name="error_tip2">• If you are unable to load any pages, check your device\'s data or Wi-Fi connection.</string>
+    <string name="error_tip3">• That site appears to be malware.</string>
+    <string name="error_tip4">Ligação Bloqueada!</string>
+    <string name="error_title">Ora bolas!</string>
+    <string name="example_text">Texto de exemplo</string>
     <string name="export_bookmarks">Exportar marcadores para backup</string>
     <string name="export_settings">Exportar definições para backup</string>
     <string name="folder_custom">Personalizada</string>
     <string name="folder_default">Padrão</string>
     <string name="folder">Nome da pasta</string>
+    <string name="force_zoom_summary">Does not work if JavaScript is not enabled</string>
+    <string name="force_zoom">Forçar zoom para websites</string>
     <string name="hint_password">Palavra-passe</string>
     <string name="hint_title">Título</string>
     <string name="hint_url">URL</string>
     <string name="hint_username">Utilizador</string>
     <string name="home">Página inicial</string>
+    <string name="homepage_in_new_tab">Página inicial em no novo separador</string>
+    <string name="image_url">Set background image for search engine</string>
+    <string name="image_url_summary">Somente para URL personalizado</string>
     <string name="import_backup">Importar marcadores de um backup</string>
     <string name="import_bookmark_error">Não foi possível importar os marcadores do ficheiro</string>
+    <string name="import_export_settings">Importar &amp; Exportar</string>
     <string name="import_settings">Importar definições de um backup</string>
+    <string name="incognito_cookies_pie">Incognito mode runs in a separate process that is reset after each session. Incognito cookie preferences are now controlled by the regular cookie preferences.</string>
     <string name="incognito_cookies">Permitir cookies no modo incógnito</string>
     <string name="inspect">Injetar JavaScript</string>
     <string name="install_userscript_description">Deseja instalar este UserScript?</string>
     <string name="install_userscript">Instalar UserScript</string>
+    <string name="invalid_character_removed">Caracter inválido removido!</string>
+    <string name="invalid_characters_removed">Caracteres inválidos removidos!</string>
     <string name="invert_color">Inverter cores</string>
     <string name="java">Ativar JavaScript</string>
+    <string name="jsoup">jsoup: Analisador HTML Java</string>
     <string name="label_realm">Mensagem do servidor: %s</string>
+    <string name="library_netcipher">NetCipher</string>
     <string name="licenses">Licenças Open Source</string>
     <string name="light_theme">Tema claro</string>
     <string name="listed_javascript">Apenas permitir JavaScript nos sites listados</string>
+    <string name="load_images">Carregar imagens</string>
     <string name="loading">A carregar&#8230;</string>
     <string name="location">Acesso de localização</string>
     <string name="message_added_to_homescreen">Atalho adicionado ao ecrã</string>
     <string name="message_blocked_local">Bloqueado o carregamento do ficheiro local</string>
     <string name="message_bookmark_added">Marcador adicionado</string>
+    <string name="message_bookmark_not_added">Marcador já existe.</string>
     <string name="message_cache_cleared">Cache limpa</string>
     <string name="message_certificate_date_invalid">data de certificado inválida</string>
     <string name="message_certificate_domain_mismatch">domínio do certificado não coincide com o domínio do site</string>
@@ -200,9 +220,19 @@
     <string name="name_increase_contrast">Aumentar contraste</string>
     <string name="name_inverted_grayscale">Escala de cinzento invertida</string>
     <string name="name_inverted">Invertido</string>
+    <string name="name_normal">Normal</string>
+    <string name="name">Jamal2367</string>
+    <string name="new_tab_position_after">Após a separador atual</string>
+    <string name="new_tab_position_before">Antes do separador atual</string>
+    <string name="new_tab_position_end">Fim de lista de separadores</string>
+    <string name="new_tab_position_start">Início da lista de separadores</string>
+    <string name="new_tab_position">Posição do novo separador</string>
+    <string name="no_tts">Idioma não suportado</string>
     <string name="no">Não</string>
     <string name="notification_incognito_running_description">Notificação persistente de modo privado</string>
     <string name="notification_incognito_running_message">Toque para abrir</string>
+    <string name="one">%1$d incognito tab open</string>
+    <string name="other">%1$d incognito tabs open</string>
     <string name="overViewMode">Carregar páginas no modo panorâmico</string>
     <string name="page_source">Ver código-fonte da página</string>
     <string name="password">Guardar palavras-passe</string>
@@ -210,6 +240,26 @@
     <string name="powered_by_duck">Disponibilizadas por DuckDuckGo</string>
     <string name="powered_by_google">Disponibilizadas por Google</string>
     <string name="powered_by_naver">Disponibilizadas por Naver</string>
+    <string name="pref_app_version_summary">Versão:</string>
+    <string name="pref_category_general">Geral</string>
+    <string name="pref_category_landscape">Paisagem</string>
+    <string name="pref_category_portrait">Portrait</string>
+    <string name="pref_report_issue_summary">Report bugs and suggest improvements on GitHub.</string>
+    <string name="pref_report_issue_title">Relatar problemas</string>
+    <string name="pref_summary_desktop_width">Desktop mode viewport width, set it higher for smaller content</string>
+    <string name="pref_summary_locked_drawers">Tabs and Bookmarks drawers are locked</string>
+    <string name="pref_summary_tab_list_item_show_close_button">Display close tab buttons on tab list items</string>
+    <string name="pref_summary_use_bottom_sheets">Tabs and Bookmarks are shown in bottom sheets instead of side drawers</string>
+    <string name="pref_summary_webrtc">Allows Real Time Communication over the Web using your device camera and microphone</string>
+    <string name="pref_title_desktop_width">Desktop width</string>
+    <string name="pref_title_hide_status_bar">Hide status bar</string>
+    <string name="pref_title_hide_tool_bar">Hide tool bar when scrolling down</string>
+    <string name="pref_title_locked_drawers">Locked drawers</string>
+    <string name="pref_title_pull_to_refresh">Pull to refresh</string>
+    <string name="pref_title_tab_list_item_show_close_button">Show close tab button</string>
+    <string name="pref_title_use_bottom_sheets">Use bottom sheets</string>
+    <string name="pref_title_webrtc">Suporte a WebRTC</string>
+    <string name="pref_translation_summary">Ajude-nos a traduzir a aplicação</string>
     <string name="pref_translation_title">Tradução</string>
     <string name="problem_download">URL inválido e a descarga não é possível</string>
     <string name="problem_location_download">Não é possível descarregar da localização especificada</string>
@@ -269,10 +319,21 @@
     <string name="settings_summary_desktop_mode_default">Definir se novos separadores usam o modo desktop por padrão</string>
     <string name="settings_summary_display">Design da aplicação, modo de cor, puxar-para-atualizar…</string>
     <string name="settings_summary_extensions">Instalar extensões</string>
+    <string name="settings_summary_general">Home page, search services, tabs…</string>
+    <string name="settings_summary_import_export">Backup and restore settings and bookmarks</string>
+    <string name="settings_summary_privacy">Cache, history, cookies…</string>
+    <string name="settings_summary_vertical_tab_bar">Disable it to use tabs in navigation drawer</string>
+    <string name="settings_title_apps">Aplicações</string>
+    <string name="settings_title_dark_mode_default">Forçar tema escuro</string>
+    <string name="settings_title_desktop_mode_default">Modo Desktop</string>
+    <string name="settings_title_toolbars_bottom">Toolbars at the bottom</string>
     <string name="settings">Definições</string>
     <string name="shortcut_message_failed_to_add">Lamentamos mas o seu launcher não permite atalhos.</string>
+    <string name="show">Mostrar</string>
     <string name="show_second_bar">Mostrar barra de navegação secundária</string>
+    <string name="show_shortcuts">Mostrar atalhos na página inicial</string>
     <string name="show_ssl">Mostrar avisos SSL</string>
+    <string name="site_cookies">Cookies do site</string>
     <string name="size">Tamanho do texto</string>
     <string name="ssl_info_expires_on">Expira em</string>
     <string name="ssl_info_issued_by">Emitido por</string>
@@ -281,6 +342,7 @@
     <string name="ssl_warning_dont_ask_again">Não perguntar de novo para esta sessão.</string>
     <string name="start_incognito">Iniciar sempre no modo de navegação privada</string>
     <string name="stop_tts">Parar de ler</string>
+    <string name="suggest">Search suggestions (number)</string>
     <string name="suggestion">Pesquisar por</string>
     <string name="swap_bookmarks_and_tabs">Trocar menus de marcadores e separadores</string>
     <string name="tabs_in_drawer">Mostrar separadores no menu de navegação</string>
@@ -300,18 +362,89 @@
     <string name="title_rename_folder">Renomear pasta</string>
     <string name="title_search_engine">Mecanismo de pesquisa</string>
     <string name="title_sign_in">Iniciar sessão</string>
+    <string name="title_standard">Title (Standard)</string>
     <string name="title_text_size">Tamanho do texto</string>
     <string name="title_user_agent">Agente de utilizador</string>
     <string name="title_warning">Aviso</string>
+    <string name="translator">Translate</string>
+    <string name="tts_initilization_failed">Initilization failed</string>
     <string name="tts">Ler página</string>
     <string name="unknown_size">Tamanho desconhecido</string>
     <string name="unknown">Desconhecido</string>
     <string name="unlisted_javascript">Bloquear JavaScript para os sites listados</string>
     <string name="untitled">Sem título</string>
+    <string name="update_available">is available!</string>
     <string name="url_contents">Conteúdo da caixa do URL</string>
+    <string name="url_in_new_tab">URL in new tab</string>
+    <string name="url">URL</string>
     <string name="version">Versão da aplicação</string>
     <string name="webview_version">Versão WebView</string>
     <string name="wideViewPort">Utilizar viewport amplo</string>
     <string name="window">Permitir que os sites abram novas janelas</string>
     <string name="yes">Sim</string>
+    <plurals name="notification_incognito_running_title">
+        <item quantity="one">@string/one</item>
+        <item quantity="other">@string/other</item>
+    </plurals>
+    <string-array name="block_javascript">
+        <item>@string/no</item>
+        <item>@string/unlisted_javascript</item>
+        <item>@string/listed_javascript</item>
+    </string-array>
+    <string-array name="download_folder">
+        <item>@string/folder_default</item>
+        <item>@string/folder_custom</item>
+    </string-array>
+    <string-array name="homepage">
+        <item>@string/action_homepage</item>
+        <item>@string/action_blank</item>
+        <item>@string/action_bookmarks</item>
+        <item>@string/action_webpage</item>
+    </string-array>
+    <string-array name="new_tab_positions">
+        <item>@string/new_tab_position_before</item>
+        <item>@string/new_tab_position_after</item>
+        <item>@string/new_tab_position_start</item>
+        <item>@string/new_tab_position_end</item>
+    </string-array>
+    <string-array name="new_tab_position_values">
+        <item>@string/new_tab_position_before_value</item>
+        <item>@string/new_tab_position_after_value</item>
+        <item>@string/new_tab_position_start_value</item>
+        <item>@string/new_tab_position_end_value</item>
+    </string-array>
+    <string-array name="suggestions">
+        <item>@string/powered_by_google</item>
+        <item>@string/powered_by_duck</item>
+        <item>@string/powered_by_naver</item>
+        <item>@string/powered_by_baidu</item>
+        <item>@string/search_suggestions_off</item>
+    </string-array>
+    <string-array name="suggestion_name_array">
+        <item>@string/two</item>
+        <item>@string/three</item>
+        <item>@string/four</item>
+        <item>@string/five</item>
+        <item>@string/six</item>
+        <item>@string/seven</item>
+        <item>@string/eight</item>
+        <item>@string/nine</item>
+        <item>@string/ten</item>
+    </string-array>
+    <string-array name="url_content_array">
+        <item>@string/domain</item>
+        <item>@string/url</item>
+        <item>@string/title_standard</item>
+    </string-array>
+    <string-array name="user_agent">
+        <item>@string/agent_default</item>
+        <item>@string/agent_windows_desktop</item>
+        <item>@string/agent_linux_desktop</item>
+        <item>@string/agent_macos_desktop</item>
+        <item>@string/agent_android_mobile</item>
+        <item>@string/agent_ios_mobile</item>
+        <item>@string/agent_system</item>
+        <item>@string/agent_web_view</item>
+        <item>@string/agent_custom</item>
+    </string-array>
 </resources>
