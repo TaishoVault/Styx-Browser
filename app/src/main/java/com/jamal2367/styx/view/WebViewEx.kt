@@ -8,6 +8,7 @@ import android.print.PrintManager
 import android.util.AttributeSet
 import android.view.KeyEvent
 import android.webkit.WebView
+import androidx.annotation.ColorInt
 
 /**
  * Specialising  WebView could be useful at some point.
@@ -24,6 +25,14 @@ class WebViewEx : WebView {
     override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
         return super.dispatchKeyEvent(event)
     }
+
+    /**
+     * We use that to debug our beautiful color mess.
+     */
+    override fun setBackgroundColor(@ColorInt color: Int) {
+        super<WebView>.setBackgroundColor(color)
+    }
+
 
     /**
      * Start a print job, thus notably enabling saving a web page as PDF.

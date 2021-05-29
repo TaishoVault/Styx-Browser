@@ -37,7 +37,7 @@
         android:title="@string/pref_category_general">
 
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="@string/pref_key_web_page_theme"
             android:title="@string/color_mode"
             app:icon="@drawable/ic_brush_oval" />
