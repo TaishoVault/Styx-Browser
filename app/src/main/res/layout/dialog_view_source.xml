@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <com.jamal2367.styx.view.CodeView
+    <com.github.ahmadaghazadeh.editor.widget.CodeEditor
         android:id="@+id/dialog_multi_line"
+        bind:lang="html"
+        bind:isReadOnly="false"
+        bind:isShowExtendedKeyboard="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/trackColor"
-        android:gravity="top|start" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

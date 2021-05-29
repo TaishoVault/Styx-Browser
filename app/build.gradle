@@ -88,6 +88,9 @@ dependencies {
 
     // Volley HTTP //
     implementation 'com.android.volley:volley:1.2.0'
+
+    // Code Editor //
+    implementation 'com.github.jamal2362:CodeEditor:3.0.0'
 }
 
 kapt {

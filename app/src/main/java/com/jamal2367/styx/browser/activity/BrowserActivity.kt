@@ -54,6 +54,7 @@ import com.android.volley.*
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.anthonycr.grant.PermissionsManager
+import com.github.ahmadaghazadeh.editor.widget.CodeEditor
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -3366,6 +3367,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      * Show the page tools dialog.
      */
+    @SuppressLint("CutPasteId")
     @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     fun showPageToolsDialog(context: Context, userPreferences: UserPreferences) {
         val currentTab = tabsManager.currentTab ?: return
@@ -3408,7 +3410,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                         return "<html>" + document.getElementsByTagName('html')[0].innerHTML + "</html>";
                      })()""".trimMargin()) {
                     // Hacky workaround for weird WebView encoding bug
-
                     var name = it?.replace("\\u003C", "<")
                     name = name?.replace("\\n", System.getProperty("line.separator").toString())
                     name = name?.replace("\\t", "")
@@ -3419,13 +3420,13 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     val inflater = this.layoutInflater
                     builder.setTitle(R.string.page_source)
                     val dialogLayout = inflater.inflate(R.layout.dialog_view_source, null)
-                    val codeView: CodeView = dialogLayout.findViewById(R.id.dialog_multi_line)
-                    codeView.setText(name)
+                    val editText = dialogLayout.findViewById<CodeEditor>(R.id.dialog_multi_line)
+                    editText.setText(name, 1)
                     builder.setView(dialogLayout)
                     builder.setNegativeButton(R.string.action_cancel) { _, _ -> }
                     builder.setPositiveButton(R.string.action_ok) { _, _ ->
-                        codeView.text?.toString()?.replace("\'", "\\\'")
-                        currentTab.loadUrl("javascript:(function() { document.documentElement.innerHTML = '" + codeView.text.toString() + "'; })()")
+                        editText.setText(editText.text?.toString()?.replace("\'", "\\\'"), 1)
+                        currentTab.loadUrl("javascript:(function() { document.documentElement.innerHTML = '" + editText.text.toString() + "'; })()")
                     }
                     builder.show()
                 }
