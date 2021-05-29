@@ -14,6 +14,7 @@ import com.anthonycr.grant.PermissionsManager
 import com.anthonycr.grant.PermissionsResultAction
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
+import com.jamal2367.styx.browser.activity.BrowserActivity
 import com.jamal2367.styx.database.downloads.DownloadsRepository
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.dialog.BrowserDialog.setDialogSize
@@ -21,6 +22,7 @@ import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.guessFileName
 import javax.inject.Inject
+
 
 class StyxDownloadListener(context: Activity) : DownloadListener {
     private val mActivity: Activity
@@ -86,6 +88,10 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                         //
                     }
                 })
+            // Some download link spawn an empty tab, just close it then
+            if (mActivity is BrowserActivity) {
+                mActivity.closeCurrentTabIfEmpty()
+            }
         } else {
             val fileName = guessFileName(contentDisposition, null, url, mimetype)
             val downloadSize: String = if (contentLength > 0) {
@@ -119,6 +125,10 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                 logger!!.log(TAG, "Downloading: $fileName")
             } else {
                 downloadHandler!!.onDownloadStartNoStream(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype)
+            }
+            // Some download link spawn an empty tab, just close it then
+            if (mActivity is BrowserActivity) {
+                mActivity.closeCurrentTabIfEmpty()
             }
         }
     }

@@ -1545,6 +1545,19 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         return super.dispatchKeyEvent(event)
     }
 
+    /**
+     * Used to close empty tab after opening link.
+     */
+    fun closeCurrentTabIfEmpty() {
+        // Had to delay that otherwise we could get there too early on the url still contains the download link
+        // URL is later on reset to null by WebView internal mechanics.
+        mainHandler.postDelayed({
+            if ((currentTabView as? WebViewEx)?.url.isNullOrBlank()) {
+                tabsManager.let { presenter?.deleteTab(it.indexOfCurrentTab()) }
+            }
+        }, 500)
+    }
+
 
     /**
      *
