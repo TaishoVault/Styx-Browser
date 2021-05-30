@@ -76,7 +76,7 @@ object ThemeUtils {
     @JvmStatic
     @ColorInt
     fun getBackgroundColor(context: Context): Int {
-        return ThemeUtils.getColor(context, android.R.attr.colorBackground)
+        return getColor(context, android.R.attr.colorBackground)
     }
 
     /**
