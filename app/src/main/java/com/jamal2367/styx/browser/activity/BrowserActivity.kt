@@ -2822,14 +2822,14 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      * used to allow uploading into the browser
      */
     @Suppress("DEPRECATION")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == FILE_CHOOSER_REQUEST_CODE) {
             val results: Array<Uri>? = if (resultCode == RESULT_OK) {
-                if (intent == null) {
+                if (data == null) {
                     // If there is not data, then we may have taken a photo
                     cameraPhotoPath?.let { arrayOf(it.toUri()) }
                 } else {
-                    intent.dataString?.let { arrayOf(it.toUri()) }
+                    data.dataString?.let { arrayOf(it.toUri()) }
                 }
             } else {
                 null
@@ -2838,7 +2838,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             filePathCallback?.onReceiveValue(results)
             filePathCallback = null
         } else {
-            super.onActivityResult(requestCode, resultCode, intent)
+            super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
