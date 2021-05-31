@@ -13,10 +13,8 @@ We would be very happy if you help us with the translation.
 [<img src="https://user-images.githubusercontent.com/15986930/117266967-12c12380-ae56-11eb-8ae0-d7914c402e74.png" alt="Crowdin" height="60">](https://crowdin.com/project/styx-browser)  
 
 ## Install Styx
-[<img src="https://www.skills4school.de/wp-content/uploads/2018/10/badge-googleplay.png" alt="Get it on Google Play" height="76">](https://play.google.com/store/apps/details?id=com.jamal2367.styx)  
-
-[<img src="https://user-images.githubusercontent.com/15986930/117268282-67b16980-ae57-11eb-8dbb-ea5b4f974daa.png" alt="Get it on IzzyOnDroid" height="60">](https://android.izzysoft.de/repo/apk/com.jamal2367.styx)
-
+[<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.jamal2367.styx)  
+[<img src="https://abload.de/img/izzyondroidkek5i.png" alt="Get it on IzzyOnDroid" height="80">](https://android.izzysoft.de/repo/apk/com.jamal2367.styx)  
 or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
 
 ## Features
