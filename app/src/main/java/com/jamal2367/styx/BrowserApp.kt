@@ -1,6 +1,7 @@
 package com.jamal2367.styx
 
 import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.os.Build
 import android.os.StrictMode
@@ -15,7 +16,6 @@ import com.jamal2367.styx.di.AppComponent
 import com.jamal2367.styx.di.DaggerAppComponent
 import com.jamal2367.styx.di.DatabaseScheduler
 import com.jamal2367.styx.di.injector
-import com.jamal2367.styx.locale.LocaleAwareApplication
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.utils.FileUtils
 import com.jamal2367.styx.utils.MemoryLeakUtils
@@ -25,7 +25,7 @@ import io.reactivex.plugins.RxJavaPlugins
 import javax.inject.Inject
 import kotlin.system.exitProcess
 
-class BrowserApp : LocaleAwareApplication() {
+class BrowserApp : Application() {
 
     @Inject internal lateinit var bookmarkModel: BookmarkRepository
     @Inject @field:DatabaseScheduler internal lateinit var databaseScheduler: Scheduler
