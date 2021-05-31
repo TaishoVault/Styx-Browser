@@ -596,7 +596,7 @@ class StyxView(
     }
 
     fun updateDesktopMode() {
-        val newDesktopMode = domainSettings.get(DomainSettings.DESKTOP_MODE, userPreferences.darkModeDefault)
+        val newDesktopMode = domainSettings.get(DomainSettings.DESKTOP_MODE, userPreferences.desktopModeDefault)
         if (newDesktopMode != desktopMode)
             desktopMode = newDesktopMode
     }
