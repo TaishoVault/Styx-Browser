@@ -5,11 +5,12 @@ import android.view.View
 import androidx.annotation.XmlRes
 import androidx.preference.*
 import androidx.recyclerview.widget.RecyclerView
+import com.jamal2367.styx.locale.LocaleAwarePreferenceFragment
 
 /**
  * An abstract settings fragment which performs wiring for an instance of [PreferenceFragment].
  */
-abstract class AbstractSettingsFragment : PreferenceFragmentCompat() {
+abstract class AbstractSettingsFragment : LocaleAwarePreferenceFragment() {
 
     /**
      * Provide the XML resource which holds the preferences.
@@ -31,6 +32,13 @@ abstract class AbstractSettingsFragment : PreferenceFragmentCompat() {
         view.findViewById<RecyclerView>(R.id.recycler_view)?.apply{
             isVerticalFadingEdgeEnabled = true
         }
+    }
+
+    /**
+     * See [LocaleAwarePreferenceFragment.applyLocale]
+     */
+    override fun applyLocale() {
+        requireActivity().recreate()
     }
 
     /**
@@ -161,5 +169,6 @@ abstract class AbstractSettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
+    abstract fun titleResourceId() : Int
 
 }

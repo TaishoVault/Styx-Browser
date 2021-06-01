@@ -1,30 +1,30 @@
-/*
- * Copyright 2014 A.C.R. Development
- */
 package com.jamal2367.styx.settings.activity
 
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.fragment.app.Fragment
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.jamal2367.styx.extensions.findPreference
 import com.jamal2367.styx.R
+import com.jamal2367.styx.settings.fragment.AbstractSettingsFragment
 
-private const val TITLE_TAG = "settingsActivityTitle"
+const val SETTINGS_CLASS_NAME = "ClassName"
 
 class SettingsActivity : ThemedSettingsActivity(),
-        PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+    PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
         if (savedInstanceState == null) {
             supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.settings, HeaderFragment())
-                    .commit()
-        } else {
-            title = savedInstanceState.getCharSequence(TITLE_TAG)
+                .beginTransaction()
+                .replace(R.id.settings, HeaderFragment())
+                .commit()
         }
+
         supportFragmentManager.addOnBackStackChangedListener {
             if (supportFragmentManager.backStackEntryCount == 0) {
                 setTitle(R.string.settings)
@@ -39,6 +39,46 @@ class SettingsActivity : ThemedSettingsActivity(),
         //supportActionBar?.setDisplayShowTitleEnabled(true)
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        // At this stage our preferences have been created
+        try {
+            // Start specified fragment if any
+            val className = intent.extras!!.getString(SETTINGS_CLASS_NAME)
+            val classType = Class.forName(className!!)
+            startFragment(classType)
+        }
+        catch(ex: Exception) {
+            // Just ignore
+        }
+
+        updateTitle()
+    }
+
+    /**
+     * Fetch the currently loaded settings fragment.
+     */
+    fun currentFragment() = supportFragmentManager.findFragmentById(R.id.settings)
+
+
+    /**
+     * Update activity title as define by the current fragment
+     */
+    fun updateTitle() {
+        updateTitle(currentFragment())
+    }
+
+    /**
+     * Update activity title as defined by the given [aFragment].
+     */
+    fun updateTitle(aFragment : Fragment?) {
+        // Needed to update title after language change
+        (aFragment as? AbstractSettingsFragment)?.let {
+            setTitle(it.titleResourceId())
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Make sure the back button closes the application
         // See: https://stackoverflow.com/questions/14545139/android-back-button-in-the-title-bar
@@ -51,12 +91,6 @@ class SettingsActivity : ThemedSettingsActivity(),
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        // Save current activity title so we can set it again after a configuration change
-        outState.putCharSequence(TITLE_TAG, title)
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         if (supportFragmentManager.popBackStackImmediate()) {
             return true
@@ -64,27 +98,52 @@ class SettingsActivity : ThemedSettingsActivity(),
         return super.onSupportNavigateUp()
     }
 
-    @Suppress("DEPRECATION")
-    override fun onPreferenceStartFragment(
-            caller: PreferenceFragmentCompat,
-            pref: Preference
-    ): Boolean {
+    override fun onPreferenceStartFragment(caller: PreferenceFragmentCompat, pref: Preference): Boolean {
         // Instantiate the new Fragment
-        val args = pref.extras
+        startFragment(caller,pref)
+        return true
+    }
+
+
+    /**
+     * Start fragment matching the given type.
+     * That should only work if the currently loaded fragment is our root/header fragment.
+     */
+    fun startFragment(aClass: Class<*>) {
+        // We need to find the preference that's associated with that fragment, before we can start it.
+        (currentFragment() as? HeaderFragment)?.let {
+            it.preferenceScreen.findPreference(aClass)?.let { pref ->
+                startFragment(it,pref)
+            }
+        }
+    }
+
+
+    /**
+     * Start the fragment associated with the given [Preference].
+     * Boiler plate code taken from [onPreferenceStartFragment], the framework function it overrides as well as its caller.
+     *
+     * [aTarget] My understanding is that this is the fragment that will be replaced by the one the are starting.
+     * [aPref] Preference associated with the fragment being started.
+     */
+    @Suppress("DEPRECATION")
+    fun startFragment(aTarget: PreferenceFragmentCompat, aPref: Preference) {
+        // Instantiate the new Fragment
+        val args = aPref.extras
         val fragment = supportFragmentManager.fragmentFactory.instantiate(
-                classLoader,
-                pref.fragment
+            classLoader,
+            aPref.fragment
         ).apply {
             arguments = args
-            setTargetFragment(caller, 0)
+            setTargetFragment(aTarget, 0)
         }
         // Replace the existing Fragment with the new Fragment
         supportFragmentManager.beginTransaction()
-                .replace(R.id.settings, fragment)
-                .addToBackStack(null)
-                .commit()
-        title = pref.title
-        return true
+            .replace(R.id.settings, fragment)
+            .addToBackStack(null)
+            .commit()
+
+        updateTitle(fragment)
     }
 
     class HeaderFragment : PreferenceFragmentCompat() {

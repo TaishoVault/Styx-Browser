@@ -5,6 +5,7 @@ import android.app.ActivityManager
 import android.app.Application
 import android.content.Context.ACTIVITY_SERVICE
 import android.content.Intent
+import android.content.Intent.getIntent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -42,6 +43,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
+
 class ImportExportSettingsFragment : AbstractSettingsFragment() {
 
     @Inject internal lateinit var bookmarkRepository: BookmarkRepository
@@ -55,6 +57,13 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
     private var importSubscription: Disposable? = null
     private var exportSubscription: Disposable? = null
     private var bookmarksSortSubscription: Disposable? = null
+
+    /**
+     * See [AbstractSettingsFragment.titleResourceId]
+     */
+    override fun titleResourceId(): Int {
+        return R.string.import_export_settings
+    }
 
     override fun providePreferencesXmlResource() = R.xml.preference_import
 
@@ -314,10 +323,14 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                     putString(key, value)
                 }
                 apply()
-            }
 
+            }
         }
         activity?.snackbar(R.string.settings_reseted)
+        Handler(Looper.getMainLooper()).postDelayed({
+            activity?.finish()
+            activity?.startActivity(activity?.intent)},
+            750)
     }
 
     private fun deleteAllBookmarks() {
