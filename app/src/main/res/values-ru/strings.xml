@@ -329,7 +329,7 @@
     <string name="settings_title_toolbars_bottom">Панель инструментов внизу</string>
     <string name="settings">Настройки</string>
     <string name="shortcut_message_failed_to_add">К сожалению, ваш лаунчер не поддерживает ярлыки.</string>
-    <string name="show">Показывать</string>
+    <string name="show">Показать</string>
     <string name="show_second_bar">Показывать вторую панель навигации</string>
     <string name="show_shortcuts">Показывать ярлыки на домашней странице</string>
     <string name="show_ssl">Показать диалоги предупреждения SSL</string>
