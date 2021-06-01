@@ -66,11 +66,8 @@ object LocaleUtils {
      * @return The Java locale string: e.g., "en_US".
      */
     @JvmStatic
-    fun updateLocale(context: Context, locale: Locale): String? {
+    fun updateLocale(context: Context, locale: Locale): String {
         // Fast path.
-        if (Locale.getDefault() == locale) {
-            return null
-        }
         Locale.setDefault(locale)
         // Update resources.
         updateConfiguration(context, locale)

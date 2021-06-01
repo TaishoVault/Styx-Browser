@@ -32,6 +32,7 @@ class HistoryPageFactory @Inject constructor(
     override fun buildPage(): Single<String> = historyRepository
         .lastHundredVisitedHistoryEntries()
         .map { list ->
+            BrowserApp.setLocale() // Make sure locale is set as user specified
             parse(listPageReader.provideHtml()
                     .replace("\${pageTitle}", application.getString(R.string.action_history))
                     .replace("\${backgroundColor}", htmlColor(ThemeUtils.getPrimaryColor(BrowserApp.currentContext())))

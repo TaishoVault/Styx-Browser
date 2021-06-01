@@ -16,7 +16,9 @@ import com.jamal2367.styx.di.AppComponent
 import com.jamal2367.styx.di.DaggerAppComponent
 import com.jamal2367.styx.di.DatabaseScheduler
 import com.jamal2367.styx.di.injector
+import com.jamal2367.styx.locale.LocaleUtils
 import com.jamal2367.styx.log.Logger
+import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.FileUtils
 import com.jamal2367.styx.utils.MemoryLeakUtils
 import io.reactivex.Scheduler
@@ -27,6 +29,7 @@ import kotlin.system.exitProcess
 
 class BrowserApp : Application() {
 
+    @Inject internal lateinit var userPreferences: UserPreferences
     @Inject internal lateinit var bookmarkModel: BookmarkRepository
     @Inject @field:DatabaseScheduler internal lateinit var databaseScheduler: Scheduler
     @Inject internal lateinit var logger: Logger
@@ -87,6 +90,10 @@ class BrowserApp : Application() {
 
         injector.inject(this)
 
+        // Apply locale
+        val requestLocale = LocaleUtils.requestedLocale(userPreferences.locale)
+        LocaleUtils.updateLocale(this, requestLocale)
+
         Single.fromCallable(bookmarkModel::count)
             .filter { it == 0L }
             .flatMapCompletable {
@@ -137,6 +144,14 @@ class BrowserApp : Application() {
          */
         fun currentContext() : Context {
             return resumedActivity ?: instance.applicationContext
+        }
+
+        /**
+         * Was needed to patch issue with Homepage displaying system language when user selected another language
+         */
+        fun setLocale() {
+            val requestLocale = LocaleUtils.requestedLocale(instance.userPreferences.locale)
+            LocaleUtils.updateLocale(instance, requestLocale)
         }
     }
 }

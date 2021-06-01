@@ -1,6 +1,7 @@
 package com.jamal2367.styx.html.download
 
 import android.app.Application
+import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.R
 import com.jamal2367.styx.constant.FILE
 import com.jamal2367.styx.database.downloads.DownloadEntry
@@ -29,6 +30,7 @@ class DownloadPageFactory @Inject constructor(
     override fun buildPage(): Single<String> = manager
         .getAllDownloads()
         .map { list ->
+            BrowserApp.setLocale() // Make sure locale is set as user specified
             parse(listPageReader.provideHtml()) andBuild {
                 title { application.getString(R.string.action_downloads) }
                 body {

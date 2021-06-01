@@ -47,6 +47,7 @@ class BookmarkPageFactory @Inject constructor(
         .flattenAsObservable { it }
         .groupBy<Bookmark.Folder, Bookmark>(Bookmark.Entry::folder) { it }
         .flatMapSingle { bookmarksInFolder ->
+            BrowserApp.setLocale() // Make sure locale is set as user specified
             val folder = bookmarksInFolder.key
             return@flatMapSingle bookmarksInFolder
                 .toList()
