@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.webkit.URLUtil
@@ -28,8 +27,7 @@ import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.extensions.withSingleChoiceItems
 import com.jamal2367.styx.isSupported
-import com.jamal2367.styx.locale.LocaleManager
-import com.jamal2367.styx.locale.Locales
+import com.jamal2367.styx.locale.LocaleUtils
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.preference.userAgent
 import com.jamal2367.styx.search.SearchEngineProvider
@@ -38,7 +36,6 @@ import com.jamal2367.styx.search.engine.BaseSearchEngine
 import com.jamal2367.styx.search.engine.CustomSearch
 import com.jamal2367.styx.utils.FileUtils
 import com.jamal2367.styx.utils.ThemeUtils
-import java.util.*
 import javax.inject.Inject
 
 /**
@@ -173,29 +170,16 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
 
         // Handle locale language selection
         findPreference<ListPreference>(getString(R.string.pref_key_locale))?.apply {
-            onPreferenceChangeListener =
-                Preference.OnPreferenceChangeListener { _, aNewLocale: Any ->
-                    // User selected a new locale
-                    val newLocaleId = aNewLocale as String
-                    LocaleManager.getInstance().apply {
-                        val newLocale: Locale?
-                        if (TextUtils.isEmpty(newLocaleId)) {
-                            // Reset back to system default
-                            resetToSystemLocale(activity)
-                            newLocale = getCurrentLocale(activity)
-                        } else {
-                            // Apply selected locale
-                            newLocale = Locales.parseLocaleCode(newLocaleId)
-                            setSelectedLocale(activity, newLocaleId)
-                        }
-                        // Update app configuration with selected locale
-                        updateConfiguration(activity, newLocale)
-                    }
-
-                    // Reload our activity
-                    requireActivity().recreate()
-                    true
-                }
+            onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, aNewLocale: Any ->
+                // User selected a new locale
+                val newLocaleId = aNewLocale as String
+                val newLocale = LocaleUtils.requestedLocale(newLocaleId)
+                // Update app configuration with selected locale
+                activity?.let { LocaleUtils.updateLocale(it, newLocale) }
+                // Reload our activity
+                requireActivity().recreate()
+                true
+            }
         }
     }
 

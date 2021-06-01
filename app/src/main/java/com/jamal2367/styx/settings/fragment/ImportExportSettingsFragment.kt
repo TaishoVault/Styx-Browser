@@ -5,7 +5,6 @@ import android.app.ActivityManager
 import android.app.Application
 import android.content.Context.ACTIVITY_SERVICE
 import android.content.Intent
-import android.content.Intent.getIntent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -323,14 +322,9 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
                     putString(key, value)
                 }
                 apply()
-
             }
         }
         activity?.snackbar(R.string.settings_reseted)
-        Handler(Looper.getMainLooper()).postDelayed({
-            activity?.finish()
-            activity?.startActivity(activity?.intent)},
-            750)
     }
 
     private fun deleteAllBookmarks() {

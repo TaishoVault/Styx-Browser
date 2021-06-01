@@ -11,30 +11,21 @@ import android.util.AttributeSet
 import android.util.Log
 import androidx.preference.ListPreference
 import com.jamal2367.styx.R
-import com.jamal2367.styx.locale.LocaleManager
-import com.jamal2367.styx.locale.Locales.parseLocaleCode
+import com.jamal2367.styx.locale.LocaleUtils
 import java.lang.ref.WeakReference
 import java.nio.ByteBuffer
 import java.text.Collator
 import java.util.*
 
-class LocaleListPreference @JvmOverloads constructor(
-    context: Context?,
-    attributes: AttributeSet? = null
-) : ListPreference(context, attributes) {
+class LocaleListPreference @JvmOverloads constructor(context: Context?, attributes: AttributeSet? = null) : ListPreference(context, attributes) {
+
     companion object {
-        private const val LOG_TAG = "GeckoLocaleList"
+        private const val LOG_TAG = "LocaleList"
         private val languageCodeToNameMap: MutableMap<String, String> = HashMap()
         private val localeToNameMap: MutableMap<String, String> = HashMap()
 
         init {
-            // Only ICU 57 actually contains the Asturian name for Asturian, even Android 7.1 is still
-            // shipping with ICU 56, so we need to override the Asturian name (otherwise displayName will
-            // be the current locales version of Asturian, see:
-            // https://github.com/mozilla-mobile/focus-android/issues/634#issuecomment-303886118
             languageCodeToNameMap["ast"] = "Asturianu"
-            // On an Android 8.0 device those languages are not known and we need to add the names
-            // manually. Loading the resources at runtime works without problems though.
             languageCodeToNameMap["cak"] = "Kaqchikel"
             languageCodeToNameMap["ia"] = "Interlingua"
             languageCodeToNameMap["meh"] = "Tu´un savi ñuu Yasi'í Yuku Iti"
@@ -120,6 +111,9 @@ class LocaleListPreference @JvmOverloads constructor(
             }
         }
 
+        // Note: this constructor fails when running in Robolectric: robolectric only supports bitmaps
+        // with 4 bytes per pixel ( https://github.com/robolectric/robolectric/blob/master/robolectric-shadows/shadows-core/src/main/java/org/robolectric/shadows/ShadowBitmap.java#L540 ).
+        // We need to either make this code test-aware, or fix robolectric.
         init {
             missingCharacter = getPixels(drawBitmap(missing))
         }
@@ -163,7 +157,7 @@ class LocaleListPreference @JvmOverloads constructor(
         val defaultLanguage = context.getString(R.string.language_system_default)
         buildLocaleListTask = BuildLocaleListTask(
             this, defaultLanguage,
-            characterValidator, LocaleManager.getPackagedLocaleTags()
+            characterValidator, LocaleUtils.getPackagedLocaleTags()
         )
         buildLocaleListTask!!.execute()
     }
@@ -182,7 +176,7 @@ class LocaleListPreference @JvmOverloads constructor(
     private class LocaleDescriptor(locale: Locale, val tag: String) : Comparable<LocaleDescriptor> {
         var displayName: String
 
-        constructor(tag: String) : this(parseLocaleCode(tag), tag)
+        constructor(tag: String) : this(LocaleUtils.parseLocaleCode(tag), tag)
 
         override fun toString(): String {
             return displayName
@@ -284,25 +278,6 @@ class LocaleListPreference @JvmOverloads constructor(
         }
     }
 
-    override fun onClick() {
-        super.onClick()
-
-        // Use this hook to try to fix up the environment ASAP.
-        // Do this so that the redisplayed fragment is inflated
-        // with the right locale.
-        val selectedLocale = selectedLocale
-        val context = context
-        LocaleManager.getInstance().updateConfiguration(context, selectedLocale)
-    }
-
-    private val selectedLocale: Locale
-        get() {
-            val tag = value
-            return if (tag == null || tag == "") {
-                Locale.getDefault()
-            } else parseLocaleCode(tag)
-        }
-
     override fun getSummary(): CharSequence {
         val value = value
         return if (TextUtils.isEmpty(value)) {
@@ -314,14 +289,15 @@ class LocaleListPreference @JvmOverloads constructor(
     }
 
     @Suppress("DEPRECATION")
-    internal class BuildLocaleListTask(
+    internal open class BuildLocaleListTask(
         listPreference: LocaleListPreference,
         private val systemDefaultLanguage: String,
         private val characterValidator: CharacterValidator?,
         private val shippingLocales: Collection<String>
     ) : AsyncTask<Void?, Void?, Pair<Array<String?>, Array<String?>>>() {
         private val weakListPreference: WeakReference<LocaleListPreference> = WeakReference(listPreference)
-        override fun doInBackground(vararg params: Void?): Pair<Array<String?>, Array<String?>> {
+
+        override fun doInBackground(vararg params: Void?): Pair<Array<String?>, Array<String?>>? {
             val descriptors = usableLocales
             val count = descriptors.size
 
@@ -365,7 +341,6 @@ class LocaleListPreference @JvmOverloads constructor(
                 return descriptors
             }
 
-        @Suppress("DEPRECATION")
         override fun onPostExecute(pair: Pair<Array<String?>, Array<String?>>) {
             if (isCancelled) {
                 return

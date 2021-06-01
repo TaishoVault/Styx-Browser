@@ -6,14 +6,10 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.annotation.StyleRes
 import com.jamal2367.styx.di.injector
-import com.jamal2367.styx.locale.LocaleAwareAppCompatActivity
-import com.jamal2367.styx.preference.UserPreferences
+import com.jamal2367.styx.locale.LocaleAwareActivity
 import com.jamal2367.styx.utils.ThemeUtils
-import javax.inject.Inject
 
-abstract class ThemedActivity : LocaleAwareAppCompatActivity() {
-
-    @Inject lateinit var userPreferences: UserPreferences
+abstract class ThemedActivity : LocaleAwareActivity() {
 
     protected var accentId: AccentTheme = AccentTheme.DEFAULT_ACCENT
     protected var themeId: AppTheme = AppTheme.LIGHT
@@ -96,9 +92,9 @@ abstract class ThemedActivity : LocaleAwareAppCompatActivity() {
     }
 
     /**
-     * See [LocaleAwareAppCompatActivity.applyLocale]
+     * See [LocaleAwareActivity.onLocaleChanged]
      */
-    override fun applyLocale() {
+    override fun onLocaleChanged() {
         restart()
     }
 
