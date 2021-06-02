@@ -137,6 +137,7 @@ class StyxWebClient(
     var version: String? = null
     var author: String? = null
     var description: String? = null
+    var requirements = ArrayList<String>(0)
     val include = ArrayList<Pattern>(0)
 
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
@@ -186,8 +187,9 @@ class StyxWebClient(
         }
 
         val inc = TextUtils.join(",", include)
+        val reqs = TextUtils.join(",", requirements)
 
-        javascriptRepository.addJavaScriptIfNotExists(JavaScriptDatabase.JavaScriptEntry(name!!, "", version, author, inc, "", "", "", code, ""))
+        javascriptRepository.addJavaScriptIfNotExists(JavaScriptDatabase.JavaScriptEntry(name!!, "", version, author, inc, "", "", "", code, reqs))
                 .subscribeOn(databaseScheduler)
                 .subscribe { aBoolean: Boolean? ->
                     if (!aBoolean!!) {
@@ -205,6 +207,10 @@ class StyxWebClient(
             author = value
         } else if ("description".equals(field, ignoreCase = true)) {
             description = value
+        } else if ("require".equals(field, ignoreCase = true)) {
+            if (value != null) {
+                requirements.add(value)
+            }
         } else if ("include".equals(field, ignoreCase = true)) {
             urlToPattern(value)?.let {
                 include.add(it)
