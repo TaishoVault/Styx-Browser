@@ -38,10 +38,9 @@
         android:title="@string/home">
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="show_shortcuts"
             android:title="@string/show_shortcuts"
-            android:summary="@string/recommended"
             app:icon="@drawable/ic_apps_oval" />
 
         <Preference

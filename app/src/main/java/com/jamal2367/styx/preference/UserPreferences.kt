@@ -454,7 +454,7 @@ class UserPreferences @Inject constructor(
     /**
      * Show homepage shortcuts
      */
-    var showShortcuts by preferences.booleanPreference(R.string.pref_key_show_shortcuts, true)
+    var showShortcuts by preferences.booleanPreference(R.string.pref_key_show_shortcuts, R.bool.pref_default_show_shortcuts)
 
     /**
      * Homepage shortcuts
