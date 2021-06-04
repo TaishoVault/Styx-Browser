@@ -61,9 +61,8 @@
             app:icon="@drawable/ic_save_oval" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="last_tab"
-            android:summary="@string/recommended"
             android:title="@string/close_on_last_tab"
             app:icon="@drawable/ic_apps_oval" />
 
