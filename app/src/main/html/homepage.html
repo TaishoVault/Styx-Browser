@@ -20,7 +20,7 @@
     form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 0.7px solid ${backgroundColor2};
+    border: 1px solid ${backgroundColor2};
     float: left;
     width: 83%;
     margin-bottom: 5px;
@@ -34,27 +34,43 @@
     }
     /* Style the submit button */
     form.example button {
-    width: 15%;
+	position: relative;
+	width: 15%;
     padding: 10px;
     background: ${accent};
     color: ${backgroundColor};
     font-size: 17px;
-    border: 0.7px solid ${backgroundColor2};
+	-webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+	border: 1px solid ${backgroundColor2};
     -moz-box-shadow: 0 0 1px ${backgroundColor2};
     -webkit-box-shadow: 0 0 1px ${backgroundColor2};
     box-shadow: 0 0 1px ${backgroundColor2};
-    cursor: pointer;
-    outline: none;
-    border-top-left-radius: 10px;
+	outline: none;
+	border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     }
-    form.example button:hover {
-    background: ${accent};
-    opacity: 0.7;
-    -webkit-tap-highlight-color: transparent;
+    form.example button:after {
+	content: "";
+    background: #000000;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -120px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: 0.8s;
     }
+	form.example button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+	}
     /* Clear floats */
     form.example::after {
     content: "";
@@ -107,7 +123,7 @@
     left: 50%;
     transform: translateX(-50%);
     margin-right: 50px !important;
-    bottom: 30px;
+    bottom: 10px;
     }
     .button-material {
     position: relative;
@@ -245,7 +261,7 @@
     }
     .edit {
     background-color: transparent;
-    color: ${searchBarTextColor};
+    color: ${backgroundColor2};
     border: none;
     outline: none;
     }
@@ -260,7 +276,7 @@
           <form onsubmit="return search()" class="search_bar example" autocomplete="off">
             <button type="submit" id="search_submit"><i class="fas fa-search"></i></button>
             <span>
-            <input class="search" type="text" value="" id="search_input" placeholder="${search}"/>
+            <input class="search" type="text" id="search_input" placeholder="${search}"/>
             </span>
           </form>
           </br>
@@ -289,8 +305,6 @@
       </div>
     </div>
     <script type="text/javascript">
-      document.getElementById('search_input').focus();
-      
             function search() {
                 if (document.getElementById("search_input").value != "") {
                     window.location.href = "${BASE_URL}" + document.getElementById("search_input").value;
@@ -298,10 +312,8 @@
                 }
                 return false;
             }
-        
     </script>
     <div id="editModal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
         <h2 id="edit_shortcuts">Edit shortcuts</h2>
         <label for="link1">Link 1:</label><br>
@@ -320,7 +332,6 @@
       </div>
     </div>
     <script>
-      // MPL 2.0
       var link1var = "https://www.google.com/";
       var link2var = "https://www.wikipedia.org/";
       var link3var = "https://twitter.com/";
