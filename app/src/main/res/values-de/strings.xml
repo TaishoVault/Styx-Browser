@@ -97,6 +97,7 @@
     <string name="bookmark_restore">Lesezeichen wurden zurückgesetzt</string>
     <string name="bookmark_settings">Lesezeichen</string>
     <string name="busy">Besetzt, versuchen Sie es in Kürze wieder.</string>
+    <string name="button_undo">Rückgängig machen</string>
     <string name="cache">Cache beim Beenden löschen</string>
     <string name="cannot_download">Herunterladen nur bei \"http\" oder \"https\" URLs möglich!</string>
     <string name="clean_settings">Hiermit werden alle Daten gelöscht, die Styx auf Ihrem Gerät gespeichert hat! Die App wird nach der Bestätigung beendet.</string>
@@ -232,6 +233,7 @@
     <string name="no">Nein</string>
     <string name="notification_incognito_running_description">Dauerhafte Inkognito-Benachrichtigung</string>
     <string name="notification_incognito_running_message">Inkognito-Tab anzeigen</string>
+    <string name="notify_tab_closed">Tab geschlossen</string>
     <string name="one">%1$d Inkognito-Tab geöffnet</string>
     <string name="other">%1$d Inkognito-Tabs geöffnet</string>
     <string name="overViewMode">Seiten in der Übersicht öffnen</string>

@@ -59,6 +59,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.jamal2367.styx.BrowserApp
@@ -1839,6 +1840,12 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     override fun notifyTabViewRemoved(position: Int) {
         logger.log(TAG, "Notify Tab Removed: $position")
         tabsView?.tabRemoved(position)
+        // Notify user a tab was closed with an option to recover it
+        makeSnackbar(
+            getString(R.string.notify_tab_closed), Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
+            .setAction(R.string.button_undo) {
+                presenter?.recoverClosedTab()
+            }.show()
     }
 
     /**

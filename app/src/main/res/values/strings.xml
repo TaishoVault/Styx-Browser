@@ -100,6 +100,7 @@
     <string name="bookmark_restore">Bookmarks restored</string>
     <string name="bookmark_settings">Bookmarks</string>
     <string name="busy">Busy, try again shortly."</string>
+    <string name="button_undo">Undo</string>
     <string name="cache">Clear cache on exit</string>
     <string name="cannot_download">Can only download \"http\" or \"https\" URLs.</string>
     <string name="clean_settings">This will delete all data that Styx has stored on your device! The app will exit when you confirm it.</string>
@@ -246,6 +247,7 @@
     <string name="no">No</string>
     <string name="notification_incognito_running_description">Ongoing incognito notification</string>
     <string name="notification_incognito_running_message">Touch to open</string>
+    <string name="notify_tab_closed">Tab closed</string>
     <string name="one">%1$d incognito tab open</string>
     <string name="other">%1$d incognito tabs open</string>
     <string name="overViewMode">Load pages in overview mode</string>
