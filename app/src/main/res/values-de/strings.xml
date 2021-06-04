@@ -97,6 +97,8 @@
     <string name="bookmark_restore">Lesezeichen wurden zurückgesetzt</string>
     <string name="bookmark_settings">Lesezeichen</string>
     <string name="busy">Besetzt, versuchen Sie es in Kürze wieder.</string>
+    <string name="button_image">Bild</string>
+    <string name="button_link">Link</string>
     <string name="button_undo">Rückgängig machen</string>
     <string name="cache">Cache beim Beenden löschen</string>
     <string name="cannot_download">Herunterladen nur bei \"http\" oder \"https\" URLs möglich!</string>
@@ -267,6 +269,7 @@
     <string name="pref_translation_title">Übersetzung</string>
     <string name="problem_download">Ungültige URL, Download nicht möglich!</string>
     <string name="problem_location_download">Download in dieses Verzeichns nicht möglich!</string>
+    <string name="question_what_do_you_want_to_use">Was soll verwendet werden?</string>
     <string name="reading_mode_image_caption">Bild mit Beschriftung</string>
     <string name="reading_mode_image_copyright">Bild zurückzuführen auf</string>
     <string name="reading_mode">Lesemodus</string>

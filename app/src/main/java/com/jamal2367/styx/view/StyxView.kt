@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.collection.ArrayMap
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
+import com.google.android.material.snackbar.Snackbar
 import com.jamal2367.styx.Capabilities
 import com.jamal2367.styx.R
 import com.jamal2367.styx.browser.TabModel
@@ -31,7 +32,9 @@ import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.dialog.StyxDialogBuilder
 import com.jamal2367.styx.download.StyxDownloadListener
+import com.jamal2367.styx.extensions.addAction
 import com.jamal2367.styx.extensions.canScrollVertically
+import com.jamal2367.styx.extensions.makeSnackbar
 import com.jamal2367.styx.isSupported
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.network.NetworkConnectivityModel
@@ -886,10 +889,24 @@ class StyxView(
         } else {
             if (url != null) {
                 if (result != null) {
-                    if (result.type == WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE || result.type == WebView.HitTestResult.IMAGE_TYPE) {
-                        dialogBuilder.showLongPressImageDialog(activity, uiController, url, result.extra!!, userAgent)
-                    } else {
-                        dialogBuilder.showLongPressLinkDialog(activity, uiController, url, text)
+                    when (result.type) {
+                        WebView.HitTestResult.IMAGE_TYPE -> {
+                            dialogBuilder.showLongPressImageDialog(activity, uiController, url, result.extra!!, userAgent)
+                        }
+                        WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE -> {
+                            // Ask user if she want to use the link or the image
+                            activity.makeSnackbar(
+                                activity.getString(R.string.question_what_do_you_want_to_use), Snackbar.LENGTH_LONG, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM) //Snackbar.LENGTH_LONG
+                                .setAction(R.string.button_link) {
+                                    // Use the link then
+                                    dialogBuilder.showLongPressLinkDialog(activity, uiController, url, userAgent)
+                                }.addAction(R.layout.snackbar_extra_button, R.string.button_image){
+                                    dialogBuilder.showLongPressImageDialog(activity, uiController, result.extra!!, url, userAgent)
+                                }.show()
+                        }
+                        else -> {
+                            dialogBuilder.showLongPressLinkDialog(activity, uiController, url, text)
+                        }
                     }
                 } else {
                     dialogBuilder.showLongPressLinkDialog(activity, uiController, url, text)

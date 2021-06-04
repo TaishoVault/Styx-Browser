@@ -100,6 +100,8 @@
     <string name="bookmark_restore">Bookmarks restored</string>
     <string name="bookmark_settings">Bookmarks</string>
     <string name="busy">Busy, try again shortly."</string>
+    <string name="button_image">Image</string>
+    <string name="button_link">Link</string>
     <string name="button_undo">Undo</string>
     <string name="cache">Clear cache on exit</string>
     <string name="cannot_download">Can only download \"http\" or \"https\" URLs.</string>
@@ -281,6 +283,7 @@
     <string name="pref_translation_title">Translation</string>
     <string name="problem_download">Invalid URL encountered, cannot download</string>
     <string name="problem_location_download">Cannot download to the specified location</string>
+    <string name="question_what_do_you_want_to_use">What do you want to use?</string>
     <string name="reading_mode_image_caption">Image with caption</string>
     <string name="reading_mode_image_copyright">Image attributed to</string>
     <string name="reading_mode">Reader mode</string>
