@@ -14,6 +14,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.Message
 import android.text.TextUtils
+import android.util.Base64
 import android.util.Log
 import android.view.LayoutInflater
 import android.webkit.*
@@ -23,7 +24,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.toBitmap
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.BuildConfig
 import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.AdBlocker
@@ -45,11 +49,8 @@ import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.ssl.SslState
 import com.jamal2367.styx.ssl.SslWarningPreferences
-import com.jamal2367.styx.utils.IntentUtils
-import com.jamal2367.styx.utils.Utils
-import com.jamal2367.styx.utils.Utils.buildErrorPage
+import com.jamal2367.styx.utils.*
 import com.jamal2367.styx.utils.Utils.buildMalwarePage
-import com.jamal2367.styx.utils.isSpecialUrl
 import com.jamal2367.styx.view.StyxView.Companion.KFetchMetaThemeColorTries
 import io.reactivex.Observable
 import io.reactivex.Scheduler
@@ -71,7 +72,6 @@ class StyxWebClient(
     private val uiController: UIController
     private val intentUtils = IntentUtils(activity)
     private val emptyResponseByteArray: ByteArray = byteArrayOf()
-    private var urlLoaded = ""
 
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject @UserPrefs internal lateinit var preferences: SharedPreferences
@@ -513,28 +513,29 @@ class StyxWebClient(
         }.resizeAndShow()
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint("ResourceType")
     override fun onReceivedError(webview: WebView, errorCode: Int, error: String, failingUrl: String) {
-
-        // Not sure that's still needed then, sigh...
-        styxView.iHideActualUrl = true
-
-        if(errorCode != -1) {
-            Thread.sleep(500)
-           webview.settings.javaScriptEnabled = true
-            val reloadCode = "window.location.href = '$failingUrl';"
-            val title = activity.getString(R.string.error_title)
-            val reload = activity.getString(R.string.error_reload)
-            val tip = activity.getString(R.string.error_tip)
-            val tip2 = activity.getString(R.string.error_tip2)
-            webview.loadUrl("about:blank")
-            webview.loadDataWithBaseURL(failingUrl, buildErrorPage(color, title, error, tip, tip2, reload, true, reloadCode), "text/html", "UTF-8", null)
-            uiController.updateUrl(failingUrl, false)
-            currentUrl = failingUrl
-            urlLoaded = failingUrl
-            webview.settings.javaScriptEnabled = userPreferences.javaScriptEnabled
-        }
-
+        val output = ByteArrayOutputStream()
+        val bitmap = ResourcesCompat.getDrawable(activity.resources, R.raw.warning, activity.theme)?.toBitmap()
+        bitmap?.compress(Bitmap.CompressFormat.PNG, 100, output)
+        val imageBytes: ByteArray = output.toByteArray()
+        val imageString = "data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP)
+        val title = activity.getString(R.string.error_title)
+        val tip = activity.getString(R.string.error_tip)
+        val tip2 = activity.getString(R.string.error_tip2)
+        val background = htmlColor(ThemeUtils.getSurfaceColor(BrowserApp.currentContext()))
+        val text = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(), R.attr.colorOnPrimary))
+        val script = """(function() {
+        document.getElementsByTagName('style')[0].innerHTML += "body { pointer-events: none; user-select: none; margin: 30px; padding-top: 40px; text-align: center; background-color: ${background}; color: ${text};} img{width: 128px; height: 128px; margin-bottom: 20px;}"
+        document.getElementsByTagName('h2')[0].innerHTML = '$title';
+        document.getElementsByTagName('p')[0].innerHTML = '<br>$tip <br><br> $tip2 <br><br>';
+        var img = document.getElementsByTagName('img')[0]
+        img.src = "$imageString"
+        img.width = ${bitmap?.width}
+        img.height = ${bitmap?.height}
+        })()"""
+        Thread.sleep(100)
+        webview.evaluateJavascript(script) {}
     }
 
     override fun onScaleChanged(view: WebView, oldScale: Float, newScale: Float) {
