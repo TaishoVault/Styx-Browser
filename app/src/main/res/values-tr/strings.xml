@@ -97,6 +97,9 @@
     <string name="bookmark_restore">Yer işaretleri geri yüklendi</string>
     <string name="bookmark_settings">Yer işaretleri</string>
     <string name="busy">Şu an meşgul, kısa süre sonra tekrar deneyin.\"</string>
+    <string name="button_image">Resim</string>
+    <string name="button_link">Bağlantı</string>
+    <string name="button_undo">Geri al</string>
     <string name="cache">Çıkışta önbelleği temizle</string>
     <string name="cannot_download">Yalnızca \"http\" veya \"https\" bağlantıları indirilebilir.</string>
     <string name="clean_settings">Bu, Styx\'in cihazınızda depoladığı tüm verileri silecektir! Onayladığınızda uygulamadan çıkacaksınız.</string>
@@ -232,6 +235,7 @@
     <string name="no">Hayır</string>
     <string name="notification_incognito_running_description">Devam eden gizli bildirim</string>
     <string name="notification_incognito_running_message">Açmak için dokunun</string>
+    <string name="notify_tab_closed">Sekme kapatıldı</string>
     <string name="one">%1$d gizli sekme açık</string>
     <string name="other">%1$d gizli sekmeler açık</string>
     <string name="overViewMode">Sayfaları önizleme modunda göster</string>
@@ -265,6 +269,7 @@
     <string name="pref_translation_title">Çeviri</string>
     <string name="problem_download">Geçersiz URL, yükleme yapılamıyor</string>
     <string name="problem_location_download">Belirtilen yere indirme yapılamıyor</string>
+    <string name="question_what_do_you_want_to_use">Ne kullanmak istiyorsun?</string>
     <string name="reading_mode_image_caption">Başlıklı resim</string>
     <string name="reading_mode_image_copyright">Resim ile ilişkilendirildi</string>
     <string name="reading_mode">Okuyucu modu</string>

@@ -97,6 +97,9 @@
     <string name="bookmark_restore">书签已恢复</string>
     <string name="bookmark_settings">书签设置</string>
     <string name="busy">忙碌，请稍后重试。”</string>
+    <string name="button_image">图片</string>
+    <string name="button_link">链接</string>
+    <string name="button_undo">撤销</string>
     <string name="cache">退出时清除缓存</string>
     <string name="cannot_download">只能下载 HTTP 或 HTTPS 链接</string>
     <string name="clean_settings">这将删除Styx存储在您的设备上的所有数据! 应用程序将在你确认后退出。</string>
@@ -232,6 +235,7 @@
     <string name="no">否</string>
     <string name="notification_incognito_running_description">进行中的无痕标签页通知</string>
     <string name="notification_incognito_running_message">轻触以打开</string>
+    <string name="notify_tab_closed">标签页已关闭</string>
     <string name="one">打开了 %1$d 隐身标签页</string>
     <string name="other">打开了 %1$d 隐身标签页</string>
     <string name="overViewMode">以概览模式加载页面</string>
@@ -265,6 +269,7 @@
     <string name="pref_translation_title">翻译</string>
     <string name="problem_download">无效的 URL，无法下载</string>
     <string name="problem_location_download">无法下载到指定的位置</string>
+    <string name="question_what_do_you_want_to_use">你想使用什么？</string>
     <string name="reading_mode_image_caption">带说明的图片</string>
     <string name="reading_mode_image_copyright">图片版权属于</string>
     <string name="reading_mode">阅读模式</string>

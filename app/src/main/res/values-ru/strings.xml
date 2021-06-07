@@ -97,6 +97,9 @@
     <string name="bookmark_restore">Закладки восстановлены</string>
     <string name="bookmark_settings">Настройки закладок</string>
     <string name="busy">Занято, попробуйте еще раз в ближайшее время.\"</string>
+    <string name="button_image">Изображение</string>
+    <string name="button_link">Ссылка</string>
+    <string name="button_undo">Отменить</string>
     <string name="cache">Очищать кэш при выходе</string>
     <string name="cannot_download">Загрузка возможна только с \"http\" или \"https\" адресов</string>
     <string name="clean_settings">Это удалит все данные, которые Styx хранит на вашем устройстве! Приложение будет закрыто после подтверждения.</string>
@@ -149,7 +152,7 @@
     <string name="download">Путь загрузки</string>
     <string name="downloads_notification_description">Триггеры после окончания загрузки</string>
     <string name="downloads">Загрузки</string>
-    <string name="edit_cookies">Показывать cookie сайта</string>
+    <string name="edit_cookies">Показать cookie сайта</string>
     <string name="edit_shortcuts">Редактировать ярлык</string>
     <string name="error_reload">Обновить</string>
     <string name="error_tip">• Проверьте адрес на наличие ошибок, таких как ww.example.com вместо www.example.com</string>
@@ -188,6 +191,7 @@
     <string name="java">Включить JavaScript</string>
     <string name="jsoup">jsoup: Java HTML Parser</string>
     <string name="label_realm">Серверное сообщение: %s</string>
+    <string name="language_system_default">Системный по умолчанию</string>
     <string name="library_netcipher">NetCipher</string>
     <string name="licenses">Open Source Licenses</string>
     <string name="light_theme">Светлая тема</string>
@@ -231,6 +235,7 @@
     <string name="no">Нет</string>
     <string name="notification_incognito_running_description">Постоянное уведомление инкогнито</string>
     <string name="notification_incognito_running_message">Нажмите, чтобы открыть</string>
+    <string name="notify_tab_closed">Вкладка закрыта</string>
     <string name="one">%1$d инкогнито вкладка открыта</string>
     <string name="other">%1$d инкогнито вкладки открыто</string>
     <string name="overViewMode">Загружать обзор</string>
@@ -254,6 +259,7 @@
     <string name="pref_title_desktop_width">Ширина экрана</string>
     <string name="pref_title_hide_status_bar">Скрыть строку состояния</string>
     <string name="pref_title_hide_tool_bar">Скрыть панель инструментов при прокрутке вниз</string>
+    <string name="pref_title_language">Язык</string>
     <string name="pref_title_locked_drawers">Заблокировать выдвижное меню</string>
     <string name="pref_title_pull_to_refresh">Потянуть для обновления</string>
     <string name="pref_title_tab_list_item_show_close_button">Отображать кнопку закрытия вкладки</string>
@@ -263,6 +269,7 @@
     <string name="pref_translation_title">Перевод</string>
     <string name="problem_download">Некорректный URL, загрузка невозможна</string>
     <string name="problem_location_download">Невозможно загрузить по указанному пути</string>
+    <string name="question_what_do_you_want_to_use">Что вы хотите использовать?</string>
     <string name="reading_mode_image_caption">Изображение с надписью</string>
     <string name="reading_mode_image_copyright">Изображение принадлежит</string>
     <string name="reading_mode">Режим чтения</string>

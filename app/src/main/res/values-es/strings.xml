@@ -97,6 +97,9 @@
     <string name="bookmark_restore">Marcadores restaurados</string>
     <string name="bookmark_settings">Ajustes de marcadores</string>
     <string name="busy">Ocupado, inténtelo de nuevo en breve.\"</string>
+    <string name="button_image">Imagen</string>
+    <string name="button_link">Enlace</string>
+    <string name="button_undo">Deshacer</string>
     <string name="cache">Vaciar caché al salir</string>
     <string name="cannot_download">Sólo se puede descargar de URLs \"http\" o \"https\".</string>
     <string name="clean_settings">¡Esto eliminará todos los datos que Styx ha almacenado en tu dispositivo! La aplicación se cerrará cuando lo confirmes.</string>
@@ -232,6 +235,7 @@
     <string name="no">No</string>
     <string name="notification_incognito_running_description">Notificación de incógnito en curso</string>
     <string name="notification_incognito_running_message">Toca para abrir</string>
+    <string name="notify_tab_closed">Pestaña cerrada</string>
     <string name="one">%1$d pestaña incógnito abierta</string>
     <string name="other">%1$d pestaña incógnito abierta</string>
     <string name="overViewMode">Visualizar la página de lejos al cargar</string>
@@ -265,6 +269,7 @@
     <string name="pref_translation_title">Traducción</string>
     <string name="problem_download">La dirección no es válida, no se pudo descargar</string>
     <string name="problem_location_download">No se pudo descargar en la localización específica</string>
+    <string name="question_what_do_you_want_to_use">¿Qué quieres usar?</string>
     <string name="reading_mode_image_caption">Imagen con título</string>
     <string name="reading_mode_image_copyright">Imagen atribuida a</string>
     <string name="reading_mode">Modo de lectura</string>

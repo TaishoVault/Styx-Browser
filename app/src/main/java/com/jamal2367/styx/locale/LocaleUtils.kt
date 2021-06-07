@@ -78,6 +78,6 @@ object LocaleUtils {
      * Returns a list of supported locale codes
      */
     fun getPackagedLocaleTags(): Collection<String> {
-        return Collections.unmodifiableList(listOf("ar", "cs", "de", "el", "en-US", "es", "fr", "hu", "it", "iw", "ja", "ko", "lt", "nl", "no", "pl", "pt", "pt-BR", "ro", "ru", "sr", "sv", "tr", "uk", "vi", "zh-CN", "zh-TW"))
+        return Collections.unmodifiableList(listOf("ar", "cs", "de", "el", "en-US", "es", "fr", "hu", "it", "iw", "ja", "ko", "lt", "nl", "no", "pl", "pt", "pt-BR", "ro", "ru", "sr", "sv", "th", "tr", "uk", "vi", "zh-CN", "zh-TW"))
     }
 }

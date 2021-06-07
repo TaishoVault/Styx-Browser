@@ -12,7 +12,7 @@ android {
         targetSdkVersion 30
         versionCode 124
         versionName '12.4'
-        resConfigs "ar", "cs", "de", "el", "en", "es", "fr", "hu", "it", "iw", "ja", "ko", "lt", "nl", "no", "pl", "pt", "pt-rBR", "ro", "ru", "sr", "sv", "tr", "uk", "vi", "zh-rCN", "zh-rTW"
+        resConfigs "ar", "cs", "de", "el", "en", "es", "fr", "hu", "it", "iw", "ja", "ko", "lt", "nl", "no", "pl", "pt", "pt-rBR", "ro", "ru", "sr", "sv", "th", "tr", "uk", "vi", "zh-rCN", "zh-rTW"
         setProperty("archivesBaseName", 'Styx_' + versionName)
     }
 
