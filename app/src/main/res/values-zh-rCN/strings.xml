@@ -191,7 +191,6 @@
     <string name="java">启用 JavaScript</string>
     <string name="jsoup">jsoup：Java HTML解析器</string>
     <string name="label_realm">来自服务器的消息：%s</string>
-    <string name="language_system_default">系统默认值</string>
     <string name="library_netcipher">NetCipher</string>
     <string name="licenses">开放源代码许可</string>
     <string name="light_theme">亮色</string>
@@ -259,7 +258,6 @@
     <string name="pref_title_desktop_width">桌面宽度</string>
     <string name="pref_title_hide_status_bar">隐藏状态栏</string>
     <string name="pref_title_hide_tool_bar">向下移动时隐藏工具栏</string>
-    <string name="pref_title_language">语言</string>
     <string name="pref_title_locked_drawers">锁定的抽屉栏</string>
     <string name="pref_title_pull_to_refresh">下拉即可刷新</string>
     <string name="pref_title_tab_list_item_show_close_button">显示关闭标签按钮</string>

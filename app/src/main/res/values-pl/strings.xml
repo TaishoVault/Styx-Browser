@@ -188,7 +188,6 @@
     <string name="java">Włącz Javascript</string>
     <string name="jsoup">jsoup: parser HTML HTML</string>
     <string name="label_realm">Wiadomość serwera: %s</string>
-    <string name="language_system_default">Systemowy</string>
     <string name="library_netcipher">NetCipher</string>
     <string name="licenses">Licencje Open Source</string>
     <string name="light_theme">Jasny motyw</string>
@@ -250,7 +249,6 @@
     <string name="pref_title_desktop_width">Szerokość</string>
     <string name="pref_title_hide_status_bar">Ukryj pasek stanu</string>
     <string name="pref_title_hide_tool_bar">Ukryj przybornik podczas przewijania w dół</string>
-    <string name="pref_title_language">Język</string>
     <string name="pref_title_pull_to_refresh">Pociągnij, aby odświeżyć</string>
     <string name="pref_title_tab_list_item_show_close_button">Wyświetlaj przycisk do zamknięcia kart</string>
     <string name="pref_title_webrtc">Wsparcie dla WebRTC</string>

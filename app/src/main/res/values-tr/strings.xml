@@ -191,7 +191,6 @@
     <string name="java">Javascript\'i etkinleştir</string>
     <string name="jsoup">jsoup: Java HTML Ayrıştırıcı</string>
     <string name="label_realm">Sunucu mesajı: %s</string>
-    <string name="language_system_default">Sistem Varsayılanı</string>
     <string name="library_netcipher">NetChiper</string>
     <string name="licenses">Açık Kaynak Lisansları</string>
     <string name="light_theme">Açık tema</string>
@@ -259,7 +258,6 @@
     <string name="pref_title_desktop_width">Masaüstü genişliği</string>
     <string name="pref_title_hide_status_bar">Durum çubuğunu gizle</string>
     <string name="pref_title_hide_tool_bar">Kaydırırken araç çubuğunu gizle</string>
-    <string name="pref_title_language">Dil</string>
     <string name="pref_title_locked_drawers">Kilitli çekmeceler</string>
     <string name="pref_title_pull_to_refresh">Yenilemek için kaydır</string>
     <string name="pref_title_tab_list_item_show_close_button">Sekmeyi kapat düğmesini göster</string>

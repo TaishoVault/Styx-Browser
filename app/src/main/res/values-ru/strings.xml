@@ -191,7 +191,6 @@
     <string name="java">Включить JavaScript</string>
     <string name="jsoup">jsoup: Java HTML Parser</string>
     <string name="label_realm">Серверное сообщение: %s</string>
-    <string name="language_system_default">Системный по умолчанию</string>
     <string name="library_netcipher">NetCipher</string>
     <string name="licenses">Open Source Licenses</string>
     <string name="light_theme">Светлая тема</string>
@@ -259,7 +258,6 @@
     <string name="pref_title_desktop_width">Ширина экрана</string>
     <string name="pref_title_hide_status_bar">Скрыть строку состояния</string>
     <string name="pref_title_hide_tool_bar">Скрыть панель инструментов при прокрутке вниз</string>
-    <string name="pref_title_language">Язык</string>
     <string name="pref_title_locked_drawers">Заблокировать выдвижное меню</string>
     <string name="pref_title_pull_to_refresh">Потянуть для обновления</string>
     <string name="pref_title_tab_list_item_show_close_button">Отображать кнопку закрытия вкладки</string>

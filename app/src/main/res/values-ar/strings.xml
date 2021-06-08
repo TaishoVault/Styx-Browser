@@ -191,7 +191,6 @@
     <string name="java">تفعيل الجافا</string>
     <string name="jsoup">jsoup: Java HTML Parser</string>
     <string name="label_realm">رسالة الملقم: %s</string>
-    <string name="language_system_default">الإعداد الافتراضي للنظام</string>
     <string name="library_netcipher">Netcipher</string>
     <string name="licenses">تراخيص البرامج مفتوحة المصدر</string>
     <string name="light_theme">سمة فاتحة</string>
@@ -259,7 +258,6 @@
     <string name="pref_title_desktop_width">عرض سطح المكتب</string>
     <string name="pref_title_hide_status_bar">أخفِ شريط الحالة</string>
     <string name="pref_title_hide_tool_bar">إخفاء شريط الأدوات عند التمرير لأسفل</string>
-    <string name="pref_title_language">اللغـة</string>
     <string name="pref_title_locked_drawers">الادراج المغلقة</string>
     <string name="pref_title_pull_to_refresh">اسحب للتحديث</string>
     <string name="pref_title_tab_list_item_show_close_button">إظهار زر غلق التبويب</string>
