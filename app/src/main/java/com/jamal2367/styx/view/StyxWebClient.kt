@@ -515,27 +515,28 @@ class StyxWebClient(
 
     @SuppressLint("ResourceType")
     override fun onReceivedError(webview: WebView, errorCode: Int, error: String, failingUrl: String) {
-        val output = ByteArrayOutputStream()
-        val bitmap = ResourcesCompat.getDrawable(activity.resources, R.raw.warning, activity.theme)?.toBitmap()
-        bitmap?.compress(Bitmap.CompressFormat.PNG, 100, output)
-        val imageBytes: ByteArray = output.toByteArray()
-        val imageString = "data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP)
-        val title = activity.getString(R.string.error_title)
-        val tip = activity.getString(R.string.error_tip)
-        val tip2 = activity.getString(R.string.error_tip2)
-        val background = htmlColor(ThemeUtils.getSurfaceColor(BrowserApp.currentContext()))
-        val text = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(), R.attr.colorOnPrimary))
-        val script = """(function() {
+        if (errorCode != -1) {
+            val output = ByteArrayOutputStream()
+            val bitmap = ResourcesCompat.getDrawable(activity.resources, R.raw.warning, activity.theme)?.toBitmap()
+            bitmap?.compress(Bitmap.CompressFormat.PNG, 100, output)
+            val imageBytes: ByteArray = output.toByteArray()
+            val imageString = "data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP)
+            val tip = activity.getString(R.string.error_tip)
+            val tip2 = activity.getString(R.string.error_tip2)
+            val background = htmlColor(ThemeUtils.getSurfaceColor(BrowserApp.currentContext()))
+            val text = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(), R.attr.colorOnPrimary))
+            val script = """(function() {
         document.getElementsByTagName('style')[0].innerHTML += "body { pointer-events: none; user-select: none; margin: 30px; padding-top: 40px; text-align: center; background-color: ${background}; color: ${text};} img{width: 128px; height: 128px; margin-bottom: 20px;}"
-        document.getElementsByTagName('h2')[0].innerHTML = '$title';
-        document.getElementsByTagName('p')[0].innerHTML = '<br>$tip <br><br> $tip2 <br><br>';
+        document.getElementsByTagName('p')[0].innerHTML = '${tip}';
+        document.getElementsByTagName('p')[0].innerHTML += '<br><br>${tip2}';
         var img = document.getElementsByTagName('img')[0]
         img.src = "$imageString"
         img.width = ${bitmap?.width}
         img.height = ${bitmap?.height}
         })()"""
-        Thread.sleep(100)
-        webview.evaluateJavascript(script) {}
+            webview.stopLoading()
+            webview.evaluateJavascript(script) {}
+        }
     }
 
     override fun onScaleChanged(view: WebView, oldScale: Float, newScale: Float) {

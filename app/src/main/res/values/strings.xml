@@ -163,7 +163,7 @@
     <string name="eight" translatable="false">8</string>
     <string name="error_reload">Reload</string>
     <string name="error_tip">• Check the Address for typing errors such as ww.example.com instead of www.example.com</string>
-    <string name="error_tip2">• If you are unable to load any pages, check your device\'s data or Wi-Fi connection.</string>
+    <string name="error_tip2">• If you are unable to load any pages, check your devices data or Wi-Fi connection.</string>
     <string name="error_tip3">• That site appears to be malware.</string>
     <string name="error_tip4">Connection blocked!</string>
     <string name="error_title">Oh crumbs!</string>
