@@ -31,13 +31,6 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
 
     @Inject internal lateinit var userPreferences: UserPreferences
 
-    /**
-     * See [AbstractSettingsFragment.titleResourceId]
-     */
-    override fun titleResourceId(): Int {
-        return R.string.settings_display
-    }
-
     override fun providePreferencesXmlResource() = R.xml.preference_display
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {

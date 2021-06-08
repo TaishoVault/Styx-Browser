@@ -6,12 +6,6 @@
     <PreferenceCategory
         android:title="@string/settings_general">
 
-    <com.jamal2367.styx.preference.LocaleListPreference
-        android:defaultValue=""
-        android:key="@string/pref_key_locale"
-        android:title="@string/pref_title_language"
-        app:icon="@drawable/ic_translate_oval" />
-
     <Preference
         android:key="home"
         android:title="@string/home"

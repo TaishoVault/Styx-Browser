@@ -161,6 +161,4 @@ abstract class AbstractSettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    abstract fun titleResourceId() : Int
-
 }

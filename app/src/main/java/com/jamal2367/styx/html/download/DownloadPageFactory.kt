@@ -30,7 +30,6 @@ class DownloadPageFactory @Inject constructor(
     override fun buildPage(): Single<String> = manager
         .getAllDownloads()
         .map { list ->
-            BrowserApp.setLocale() // Make sure locale is set as user specified
             parse(listPageReader.provideHtml()) andBuild {
                 title { application.getString(R.string.action_downloads) }
                 body {

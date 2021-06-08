@@ -463,10 +463,4 @@ class UserPreferences @Inject constructor(
     var link2 by preferences.stringPreference(R.string.pref_key_link2, "https://www.wikipedia.org/")
     var link3 by preferences.stringPreference(R.string.pref_key_link3, "https://twitter.com/")
     var link4 by preferences.stringPreference(R.string.pref_key_link4, "https://duckduckgo.com/")
-
-    /**
-     * Define the locale language the user want us to use.
-     * Empty string means use system default locale.
-     */
-    var locale by preferences.stringPreference(R.string.pref_key_locale, "")
 }

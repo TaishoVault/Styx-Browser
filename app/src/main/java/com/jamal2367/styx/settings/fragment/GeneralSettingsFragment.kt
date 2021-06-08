@@ -13,8 +13,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.preference.ListPreference
-import androidx.preference.Preference
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.Capabilities
 import com.jamal2367.styx.R
@@ -27,7 +25,6 @@ import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.extensions.withSingleChoiceItems
 import com.jamal2367.styx.isSupported
-import com.jamal2367.styx.locale.LocaleUtils
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.preference.userAgent
 import com.jamal2367.styx.search.SearchEngineProvider
@@ -45,13 +42,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
 
     @Inject lateinit var searchEngineProvider: SearchEngineProvider
     @Inject lateinit var userPreferences: UserPreferences
-
-    /**
-     * See [AbstractSettingsFragment.titleResourceId]
-     */
-    override fun titleResourceId(): Int {
-        return R.string.settings_general
-    }
 
     override fun providePreferencesXmlResource() = R.xml.preference_general
 
@@ -167,20 +157,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             isChecked = userPreferences.showShortcuts,
             onCheckChange = { userPreferences.showShortcuts = it }
         )
-
-        // Handle locale language selection
-        findPreference<ListPreference>(getString(R.string.pref_key_locale))?.apply {
-            onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, aNewLocale: Any ->
-                // User selected a new locale
-                val newLocaleId = aNewLocale as String
-                val newLocale = LocaleUtils.requestedLocale(newLocaleId)
-                // Update app configuration with selected locale
-                activity?.let { LocaleUtils.updateLocale(it, newLocale) }
-                // Reload our activity
-                requireActivity().recreate()
-                true
-            }
-        }
     }
 
     private fun showTextEncodingDialogPicker(summaryUpdater: SummaryUpdater) {

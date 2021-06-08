@@ -1,15 +1,18 @@
 package com.jamal2367.styx
 
-import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import androidx.annotation.StyleRes
+import androidx.appcompat.app.AppCompatActivity
 import com.jamal2367.styx.di.injector
-import com.jamal2367.styx.locale.LocaleAwareActivity
+import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.ThemeUtils
+import javax.inject.Inject
 
-abstract class ThemedActivity : LocaleAwareActivity() {
+abstract class ThemedActivity : AppCompatActivity() {
+
+    @Inject lateinit var userPreferences: UserPreferences
 
     protected var accentId: AccentTheme = AccentTheme.DEFAULT_ACCENT
     protected var themeId: AppTheme = AppTheme.LIGHT
@@ -81,21 +84,6 @@ abstract class ThemedActivity : LocaleAwareActivity() {
      */
     protected fun applyAccent() {
         accentStyle(accentId)?.let { setTheme(it) }
-    }
-
-    /**
-     * Using this instead of recreate() because it does not work when handling resource changes I guess.
-     */
-    protected fun restart() {
-        finish()
-        startActivity(Intent(this, javaClass))
-    }
-
-    /**
-     * See [LocaleAwareActivity.onLocaleChanged]
-     */
-    override fun onLocaleChanged() {
-        restart()
     }
 
 }

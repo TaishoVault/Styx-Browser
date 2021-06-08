@@ -1,5 +1,6 @@
 package com.jamal2367.styx.browser.activity
 
+import android.content.Intent
 import android.os.Bundle
 import com.jamal2367.styx.AccentTheme
 import com.jamal2367.styx.AppTheme
@@ -37,6 +38,14 @@ abstract class ThemedBrowserActivity : ThemedActivity() {
         if (accentId != userPreferences.useAccent) {
             restart()
         }
+    }
+
+    /**
+     * Using this instead of recreate() because it does not work when handling resource changes I guess.
+     */
+    protected fun restart() {
+        finish()
+        startActivity(Intent(this, javaClass))
     }
 
     /**

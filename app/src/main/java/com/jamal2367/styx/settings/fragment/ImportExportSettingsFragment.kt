@@ -57,13 +57,6 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
     private var exportSubscription: Disposable? = null
     private var bookmarksSortSubscription: Disposable? = null
 
-    /**
-     * See [AbstractSettingsFragment.titleResourceId]
-     */
-    override fun titleResourceId(): Int {
-        return R.string.import_export_settings
-    }
-
     override fun providePreferencesXmlResource() = R.xml.preference_import
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -36,13 +36,6 @@ class AboutSettingsFragment : AbstractSettingsFragment() {
 
     }
 
-    /**
-     * See [AbstractSettingsFragment.titleResourceId]
-     */
-    override fun titleResourceId(): Int {
-        return R.string.settings_about
-    }
-
     companion object {
         private const val SETTINGS_VERSION = "pref_version"
         private const val WEBVIEW_VERSION = "pref_webview"

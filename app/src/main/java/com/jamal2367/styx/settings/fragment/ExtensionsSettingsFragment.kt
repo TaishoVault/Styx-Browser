@@ -25,13 +25,6 @@ class ExtensionsSettingsFragment : AbstractSettingsFragment() {
     @Inject @field:DatabaseScheduler internal lateinit var databaseScheduler: io.reactivex.Scheduler
     @Inject @field:MainScheduler internal lateinit var mainScheduler: io.reactivex.Scheduler
 
-    /**
-     * See [AbstractSettingsFragment.titleResourceId]
-     */
-    override fun titleResourceId(): Int {
-        return R.string.settings_extensions
-    }
-
     override fun providePreferencesXmlResource() = R.xml.preference_extensions
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
