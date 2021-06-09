@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import androidx.core.net.toUri
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.R
+import com.jamal2367.styx.browser.activity.BrowserActivity
 import com.jamal2367.styx.constant.FILE
 import com.jamal2367.styx.database.Bookmark
 import com.jamal2367.styx.database.bookmark.BookmarkRepository
@@ -40,6 +41,7 @@ class BookmarkPageFactory @Inject constructor(
 
     private val title = application.getString(R.string.action_bookmarks)
     private val folderIconFile by lazy { File(application.cacheDir, FOLDER_ICON) }
+    private val folderIconFileOnDark by lazy { File(application.cacheDir, FOLDER_ICON_ON_DARK) }
     private val defaultIconFile by lazy { File(application.cacheDir, DEFAULT_ICON) }
 
     override fun buildPage(): Single<String> = bookmarkModel
@@ -73,6 +75,7 @@ class BookmarkPageFactory @Inject constructor(
         .ignoreElements()
         .toSingle {
             cacheIcon(ThemeUtils.createThemedBitmap(application, R.drawable.outline_folder_special_24, false), folderIconFile)
+            cacheIcon(ThemeUtils.createThemedBitmap(application, R.drawable.ic_folder, true), folderIconFileOnDark)
             cacheIcon(faviconModel.createDefaultBitmapForTitle(null), defaultIconFile)
 
             "$FILE${createBookmarkPage(null)}"
@@ -84,7 +87,9 @@ class BookmarkPageFactory @Inject constructor(
     }
 
     private fun construct(list: List<BookmarkViewModel>): String {
+        val useDarkTheme = (BrowserApp.currentContext() as BrowserActivity).useDarkTheme
         return parse(bookmarkPageReader.provideHtml()
+                .replace("\${useDarkTheme}", useDarkTheme.toString())
                 .replace("\${backgroundColor}", htmlColor(ThemeUtils.getPrimaryColor(BrowserApp.currentContext())))
                 .replace("\${backgroundColor1}", htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.appColorControlEnabled)))
                 .replace("\${searchBarColor}", htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.trackColor)))
@@ -97,7 +102,7 @@ class BookmarkPageFactory @Inject constructor(
                     list.forEach {
                         appendChild(repeatableElement.clone {
                             tag("a") { attr("href", it.url) }
-                            tag("img") { attr("src", it.iconUrl) }
+                            tag("img") { attr("src", if (useDarkTheme && it.iconUrlOnDark.isNotEmpty()) it.iconUrlOnDark else it.iconUrl) }
                             id("title") { appendText(it.title) }
                         })
                     }
@@ -118,7 +123,8 @@ class BookmarkPageFactory @Inject constructor(
         return BookmarkViewModel(
             title = folder.title,
             url = url,
-            iconUrl = folderIconFile.toString()
+            iconUrl = folderIconFile.toString(),
+            iconUrlOnDark = folderIconFileOnDark.toString()
         )
     }
 
@@ -126,7 +132,7 @@ class BookmarkPageFactory @Inject constructor(
         val bookmarkUri = entry.url.toUri().toValidUri()
 
         val iconUrl = if (bookmarkUri != null) {
-            val faviconFile = FaviconModel.getFaviconCacheFile(application, bookmarkUri)
+            val faviconFile = FaviconModel.getFaviconCacheFile(application, bookmarkUri,false)
             if (!faviconFile.exists()) {
                 val defaultFavicon = faviconModel.createDefaultBitmapForTitle(entry.title)
                 faviconModel.cacheFaviconForUrl(defaultFavicon, entry.url)
@@ -139,10 +145,26 @@ class BookmarkPageFactory @Inject constructor(
             defaultIconFile
         }
 
+        // Fetch icon URL for dark theme if any
+        val iconUrlOnDark = if (bookmarkUri != null) {
+            val faviconFile = FaviconModel.getFaviconCacheFile(application, bookmarkUri,true)
+            if (!faviconFile.exists()) {
+                ""
+            }
+            else {
+                faviconFile.toString()
+            }
+        }
+        else
+        {
+            ""
+        }
+
         return BookmarkViewModel(
             title = entry.title,
             url = entry.url,
-            iconUrl = iconUrl.toString()
+            iconUrl = iconUrl.toString(),
+            iconUrlOnDark = iconUrlOnDark
         )
     }
 
@@ -163,6 +185,7 @@ class BookmarkPageFactory @Inject constructor(
         const val FILENAME = "bookmarks.html"
 
         private const val FOLDER_ICON = "folder.png"
+        private const val FOLDER_ICON_ON_DARK = "folder-on-dark.png"
         private const val DEFAULT_ICON = "default.png"
 
     }
