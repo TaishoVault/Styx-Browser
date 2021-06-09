@@ -2,7 +2,6 @@ package com.jamal2367.styx.browser.activity
 
 import android.animation.LayoutTransition
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ClipboardManager
@@ -86,7 +85,6 @@ import com.jamal2367.styx.di.*
 import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.dialog.StyxDialogBuilder
-import com.jamal2367.styx.download.StyxDownloadListener
 import com.jamal2367.styx.extensions.*
 import com.jamal2367.styx.html.bookmark.BookmarkPageFactory
 import com.jamal2367.styx.html.history.HistoryPageFactory
@@ -1658,8 +1656,8 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             R.id.menuItemTranslate -> {
                 val locale = Locale.getDefault()
-                // currentView.loadUrl("https://translatetheweb.com/?from=&to=$locale&a=" + currentUrl!!)
-                currentView?.loadUrl("https://translate.google.com/translate?sl=auto&tl=$locale&u=" + currentUrl!!)
+                currentView?.loadUrl("https://www.translatetheweb.com/?from=&to=$locale&dl=$locale&a=$currentUrl")
+                //currentView?.loadUrl("https://translate.google.com/translate?sl=auto&tl=$locale&u=" + currentUrl!!)
                 return true
             }
             R.id.menuItemReaderMode -> {
