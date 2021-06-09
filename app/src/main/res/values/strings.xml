@@ -368,6 +368,7 @@
     <string name="show_second_bar">Show secondary navigation bar</string>
     <string name="show_shortcuts">Show shortcuts on homepage</string>
     <string name="show_ssl">Show SSL warning dialogs</string>
+    <string name="show_undo_tab">Show \"Undo\" button when a tab is closed</string>
     <string name="site_cookies">Site cookies</string>
     <string name="six" translatable="false">6</string>
     <string name="size">Text size</string>
@@ -573,6 +574,7 @@
     <string name="pref_key_second_nav_bar" translatable="false">pref_key_second_nav_bar</string>
     <string name="pref_key_show_download_confirmation" translatable="false">pref_key_show_download_confirmation</string>
     <string name="pref_key_show_shortcuts" translatable="false">pref_key_show_shortcuts</string>
+    <string name="pref_key_show_undo_tab" translatable="false">pref_key_show_undo_tab</string>
     <string name="pref_key_ssl_dialog" translatable="false">pref_key_ssl_dialog</string>
     <string name="pref_key_support_multiple_window" translatable="false">pref_key_support_multiple_window</string>
     <string name="pref_key_swap_tabs_and_bookmarks" translatable="false">pref_key_swap_tabs_and_bookmarks</string>

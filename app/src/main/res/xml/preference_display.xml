@@ -75,6 +75,7 @@
             android:defaultValue="false"
             android:key="@string/pref_key_swap_tabs_and_bookmarks"
             android:title="@string/swap_bookmarks_and_tabs"
+            app:singleLineTitle="false"
             android:dependency="@string/pref_key_use_bottom_sheets"
             app:icon="@drawable/ic_cache_oval" />
 

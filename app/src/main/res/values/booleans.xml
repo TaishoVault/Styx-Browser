@@ -43,6 +43,7 @@
     <bool name="pref_default_second_nav_bar">false</bool>
     <bool name="pref_default_show_download_confirmation">true</bool>
     <bool name="pref_default_show_shortcuts">false</bool>
+    <bool name="pref_default_show_undo_tab">true</bool>
     <bool name="pref_default_ssl_dialog">true</bool>
     <bool name="pref_default_support_multiple_window">true</bool>
     <bool name="pref_default_swap_tabs_and_bookmarks">false</bool>

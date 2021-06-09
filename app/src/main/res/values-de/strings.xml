@@ -338,6 +338,7 @@
     <string name="show_second_bar">Zweite Navigationsleiste anzeigen</string>
     <string name="show_shortcuts">Verknüpfungen auf der Startseite anzeigen</string>
     <string name="show_ssl">SSL-Warndialog anzeigen</string>
+    <string name="show_undo_tab">\"Rückgängig machen\" anzeigen, wenn ein Tab geschlossen wurde</string>
     <string name="site_cookies">Webseiten-Cookies</string>
     <string name="size">Textgröße:</string>
     <string name="ssl_info_expires_on">Verfällt am:</string>

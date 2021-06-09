@@ -463,4 +463,9 @@ class UserPreferences @Inject constructor(
     var link2 by preferences.stringPreference(R.string.pref_key_link2, "https://www.wikipedia.org/")
     var link3 by preferences.stringPreference(R.string.pref_key_link3, "https://twitter.com/")
     var link4 by preferences.stringPreference(R.string.pref_key_link4, "https://duckduckgo.com/")
+
+    /**
+     * Show "Undo" message when a tab is closed.
+     */
+    var showUndo by preferences.booleanPreference(R.string.pref_key_show_undo_tab, R.bool.pref_default_show_undo_tab)
 }

@@ -2,6 +2,7 @@ package com.jamal2367.styx.browser.activity
 
 import android.animation.LayoutTransition
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ClipboardManager
@@ -85,6 +86,7 @@ import com.jamal2367.styx.di.*
 import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.dialog.StyxDialogBuilder
+import com.jamal2367.styx.download.StyxDownloadListener
 import com.jamal2367.styx.extensions.*
 import com.jamal2367.styx.html.bookmark.BookmarkPageFactory
 import com.jamal2367.styx.html.history.HistoryPageFactory
@@ -1841,11 +1843,13 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         logger.log(TAG, "Notify Tab Removed: $position")
         tabsView?.tabRemoved(position)
         // Notify user a tab was closed with an option to recover it
-        makeSnackbar(
-            getString(R.string.notify_tab_closed), Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
-            .setAction(R.string.button_undo) {
-                presenter?.recoverClosedTab()
-            }.show()
+        if (userPreferences.showUndo) {
+            makeSnackbar(
+                getString(R.string.notify_tab_closed), Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
+                .setAction(R.string.button_undo) {
+                    presenter?.recoverClosedTab()
+                }.show()
+        }
     }
 
     /**
