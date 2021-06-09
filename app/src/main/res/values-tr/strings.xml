@@ -338,6 +338,7 @@
     <string name="show_second_bar">İkincil gezinme çubuğunu göster</string>
     <string name="show_shortcuts">Kısayolları ana sayfada göster</string>
     <string name="show_ssl">SSL uyarı iletişim kutularını göster</string>
+    <string name="show_undo_tab">Bir sekme kapatıldığında \"Geri al\" düğmesini göster</string>
     <string name="site_cookies">Web site çerezleri</string>
     <string name="size">Yazı boyutu</string>
     <string name="ssl_info_expires_on">Tarihinde sona eriyor</string>
