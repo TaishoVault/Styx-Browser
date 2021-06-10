@@ -19,7 +19,6 @@ import com.jamal2367.styx.AppTheme
 import com.jamal2367.styx.R
 import com.jamal2367.styx.browser.SearchBoxDisplayChoice
 import com.jamal2367.styx.di.injector
-import com.jamal2367.styx.dialog.BrowserDialog
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.extensions.withSingleChoiceItems
 import com.jamal2367.styx.preference.UserPreferences
