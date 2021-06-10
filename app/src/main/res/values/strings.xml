@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name" translatable="false">Styx</string>
-    <string name="app_version_name" translatable="false">\"Arya\"</string>
+    <string name="app_name" translatable="false">Styx Browser</string>
+    <string name="app_version_name" translatable="false">\"Ivy\"</string>
     <string name="accent_amber">Amber</string>
     <string name="accent_blue">Blue</string>
     <string name="accent_color">Accent color</string>
