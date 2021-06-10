@@ -209,6 +209,7 @@
     <string name="load_images">Load images</string>
     <string name="loading">Loading&#8230;</string>
     <string name="location">Location access</string>
+    <string name="long_press_tab">Long press on the \"Tab\" icon opens a new tab</string>
     <string name="message_added_to_homescreen">Shortcut added to home screen</string>
     <string name="message_blocked_local">Local file has been blocked from loading</string>
     <string name="message_bookmark_added">Bookmark added.</string>
@@ -573,6 +574,7 @@
     <string name="pref_key_search" translatable="false">pref_key_search</string>
     <string name="pref_key_second_nav_bar" translatable="false">pref_key_second_nav_bar</string>
     <string name="pref_key_show_download_confirmation" translatable="false">pref_key_show_download_confirmation</string>
+    <string name="pref_key_long_click_tab" translatable="false">pref_key_long_click_tab</string>
     <string name="pref_key_show_shortcuts" translatable="false">pref_key_show_shortcuts</string>
     <string name="pref_key_show_undo_tab" translatable="false">pref_key_show_undo_tab</string>
     <string name="pref_key_ssl_dialog" translatable="false">pref_key_ssl_dialog</string>

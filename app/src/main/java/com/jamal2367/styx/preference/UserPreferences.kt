@@ -468,4 +468,9 @@ class UserPreferences @Inject constructor(
      * Show "Undo" message when a tab is closed.
      */
     var showUndo by preferences.booleanPreference(R.string.pref_key_show_undo_tab, R.bool.pref_default_show_undo_tab)
+
+    /**
+     * Define long press on the 'Tabs' icon opens a new tab.
+     */
+    var longClickTab by preferences.booleanPreference(R.string.pref_key_long_click_tab, R.bool.pref_default_long_click_tab)
 }

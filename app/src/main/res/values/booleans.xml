@@ -42,6 +42,7 @@
     <bool name="pref_default_search_in_new_tab">false</bool>
     <bool name="pref_default_second_nav_bar">false</bool>
     <bool name="pref_default_show_download_confirmation">true</bool>
+    <bool name="pref_default_long_click_tab">true</bool>
     <bool name="pref_default_show_shortcuts">false</bool>
     <bool name="pref_default_show_undo_tab">true</bool>
     <bool name="pref_default_ssl_dialog">true</bool>

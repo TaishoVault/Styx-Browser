@@ -198,6 +198,7 @@
     <string name="load_images">Bilder laden</string>
     <string name="loading">Lade…</string>
     <string name="location">Standortzugriff erlauben</string>
+    <string name="long_press_tab">Langes Drücken auf das \"Tab\"-Symbol öffnet einen neuen Tab</string>
     <string name="message_added_to_homescreen">Verknüpfung wurde zum Startbildschirm hinzugefügt</string>
     <string name="message_blocked_local">Lokale Datei wurde beim Laden blockiert</string>
     <string name="message_bookmark_added">Lesezeichen hinzugefügt</string>
