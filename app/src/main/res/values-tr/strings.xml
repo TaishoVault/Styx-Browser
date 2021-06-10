@@ -198,6 +198,7 @@
     <string name="load_images">Resimleri yükle</string>
     <string name="loading">Yükleniyor&#8230;</string>
     <string name="location">Konum erişimi</string>
+    <string name="long_press_tab">Sekme butonuna uzun süre basıldığında yeni sekme aç</string>
     <string name="message_added_to_homescreen">Ana ekrana kısayol eklendi</string>
     <string name="message_blocked_local">Yerel dosyanın yüklenmesi engellendi</string>
     <string name="message_bookmark_added">Yer işareti eklendi.</string>

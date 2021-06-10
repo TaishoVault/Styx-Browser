@@ -198,6 +198,7 @@
     <string name="load_images">载入图片</string>
     <string name="loading">加载中&#8230;</string>
     <string name="location">位置信息访问</string>
+    <string name="long_press_tab">长按“标签”图标打开一个新标签页</string>
     <string name="message_added_to_homescreen">快捷方式已添加到桌面</string>
     <string name="message_blocked_local">已阻止本地文件加载</string>
     <string name="message_bookmark_added">书签已添加</string>
