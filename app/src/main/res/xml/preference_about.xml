@@ -25,6 +25,25 @@
         </Preference>
 
         <PreferenceCategory
+            android:title="@string/settings_support">
+
+            <Preference
+                android:summary="@string/pref_donation_summary"
+                android:title="@string/pref_donation_title"
+                app:icon="@drawable/ic_savings_oval">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://paypal.me/jamal2362">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
             android:title="@string/settings_help_us">
 
             <Preference
@@ -55,7 +74,7 @@
                 </intent>
             </Preference>
 
-        </PreferenceCategory>,
+        </PreferenceCategory>
 
         <PreferenceCategory
             android:title="@string/settings_credits">
