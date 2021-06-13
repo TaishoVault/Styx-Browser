@@ -1523,7 +1523,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                         return true
                     }
                     KeyEvent.KEYCODE_B -> {
-                        toggleBookmarks()
+                        executeAction(R.id.menuItemAddBookmark)
                         return true
                     }
                     // Text zoom in and out
