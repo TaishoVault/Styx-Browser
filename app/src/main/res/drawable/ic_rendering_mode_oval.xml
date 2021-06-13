@@ -2,7 +2,7 @@
     <item>
         <shape android:shape="oval">
             <solid
-                android:color="?attr/badgeTextColor" />
+                android:color="?attr/colorPrimarySurface" />
             <size
                 android:width="36dp"
                 android:height="36dp" />
