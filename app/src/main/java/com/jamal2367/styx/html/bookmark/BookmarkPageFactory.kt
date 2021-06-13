@@ -16,6 +16,7 @@ import com.jamal2367.styx.favicon.FaviconModel
 import com.jamal2367.styx.favicon.toValidUri
 import com.jamal2367.styx.html.HtmlPageFactory
 import com.jamal2367.styx.html.jsoup.*
+import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.ThemeUtils
 import com.jamal2367.styx.utils.htmlColor
 import dagger.Reusable
@@ -36,7 +37,8 @@ class BookmarkPageFactory @Inject constructor(
     private val faviconModel: FaviconModel,
     @DatabaseScheduler private val databaseScheduler: Scheduler,
     @DiskScheduler private val diskScheduler: Scheduler,
-    private val bookmarkPageReader: BookmarkPageReader
+    private val bookmarkPageReader: BookmarkPageReader,
+    private val userPreferences: UserPreferences
 ) : HtmlPageFactory {
 
     private val title = application.getString(R.string.action_bookmarks)
@@ -100,11 +102,16 @@ class BookmarkPageFactory @Inject constructor(
                 val repeatableElement = id("repeated").removeElement()
                 id("content") {
                     list.forEach {
-                        appendChild(repeatableElement.clone {
+                        val newElement = repeatableElement.clone {
                             tag("a") { attr("href", it.url) }
                             tag("img") { attr("src", if (useDarkTheme && it.iconUrlOnDark.isNotEmpty()) it.iconUrlOnDark else it.iconUrl) }
                             id("title") { appendText(it.title) }
-                        })
+                        }
+                        if (userPreferences.toolbarsBottom) {
+                            prependChild(newElement)
+                        } else {
+                            appendChild(newElement)
+                        }
                     }
                 }
             }
