@@ -198,6 +198,7 @@
     <string name="load_images">Cargar imágenes</string>
     <string name="loading">Cargando&#8230;</string>
     <string name="location">Permitir acceso a tu ubicación</string>
+    <string name="long_press_tab">Pulsación larga en el icono \"Pestaña\" abre una nueva pestaña</string>
     <string name="message_added_to_homescreen">Acceso directo añadido a la pantalla de inicio</string>
     <string name="message_blocked_local">Se ha bloqueado la carga del archivo local</string>
     <string name="message_bookmark_added">Marcador agregado.</string>
@@ -338,6 +339,7 @@
     <string name="show_second_bar">Mostrar barra de navegación secundaria</string>
     <string name="show_shortcuts">Mostrar accesos directos en la página principal</string>
     <string name="show_ssl">Mostrar diálogos de advertencia SSL</string>
+    <string name="show_undo_tab">Mostrar botón \"Deshacer\" cuando se cierra una pestaña</string>
     <string name="site_cookies">Cookies del sitio</string>
     <string name="size">Tamaño de la tipografía</string>
     <string name="ssl_info_expires_on">Expira el</string>

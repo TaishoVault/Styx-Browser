@@ -339,6 +339,7 @@
     <string name="show_second_bar">显示辅助导航栏</string>
     <string name="show_shortcuts">在主页上显示快捷方式</string>
     <string name="show_ssl">显示 SSL 警告对话框</string>
+    <string name="show_undo_tab">关闭标签时显示“撤销”按钮</string>
     <string name="site_cookies">站点 cookie</string>
     <string name="size">文本大小</string>
     <string name="ssl_info_expires_on">过期时间</string>

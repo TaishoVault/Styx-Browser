@@ -198,6 +198,7 @@
     <string name="load_images">Carregar imagens</string>
     <string name="loading">A carregar&#8230;</string>
     <string name="location">Acesso de localização</string>
+    <string name="long_press_tab">Pressione e segure o ícone \"Aba\" para abrir uma nova aba</string>
     <string name="message_added_to_homescreen">Atalho adicionado à tela inicial</string>
     <string name="message_blocked_local">Bloqueado o carregamento do arquivo local</string>
     <string name="message_bookmark_added">Favorito adicionado</string>

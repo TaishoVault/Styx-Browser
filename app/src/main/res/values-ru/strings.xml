@@ -338,6 +338,7 @@
     <string name="show_second_bar">Показывать вторую панель навигации</string>
     <string name="show_shortcuts">Показывать ярлыки на домашней странице</string>
     <string name="show_ssl">Показать диалоги предупреждения SSL</string>
+    <string name="show_undo_tab">Показывать кнопку \"Отменить\" при закрытии вкладки</string>
     <string name="site_cookies">Cookie сайта</string>
     <string name="size">Размер текста</string>
     <string name="ssl_info_expires_on">Истекает:</string>
