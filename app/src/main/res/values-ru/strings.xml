@@ -198,6 +198,7 @@
     <string name="load_images">Загружать изображения</string>
     <string name="loading">Загрузка&#8230;</string>
     <string name="location">Местоположение</string>
+    <string name="long_press_tab">Долгое нажатие на значок «Вкладка» открывает новую вкладку</string>
     <string name="message_added_to_homescreen">Ярлык добавлен на домашний экран</string>
     <string name="message_blocked_local">Локальный файл недоступен для загрузки</string>
     <string name="message_bookmark_added">Закладка добавлена</string>
@@ -248,6 +249,8 @@
     <string name="pref_category_general">Общие</string>
     <string name="pref_category_landscape">Альбомная</string>
     <string name="pref_category_portrait">Портретная</string>
+    <string name="pref_donation_summary">Не стесняйтесь поддержать меня, если вам нравится моя работа</string>
+    <string name="pref_donation_title">Пожертвование</string>
     <string name="pref_report_issue_summary">Сообщайте об ошибках и предлагайте улучшения на GitHub.</string>
     <string name="pref_report_issue_title">Сообщить о проблеме</string>
     <string name="pref_summary_desktop_width">Ширина области просмотра в режиме настольного компьютера. Установите большее значение для уменьшения отображаемой страницы. </string>
@@ -328,6 +331,7 @@
     <string name="settings_summary_import_export">Резервное копирование и восстановление настроек и закладок</string>
     <string name="settings_summary_privacy">Кэш, история посещений, cookie…</string>
     <string name="settings_summary_vertical_tab_bar">Отключите, чтобы использовать вкладки в панели навигации</string>
+    <string name="settings_support">Поддержка</string>
     <string name="settings_title_apps">Приложения</string>
     <string name="settings_title_dark_mode_default">Принудительно использовать темную тему</string>
     <string name="settings_title_desktop_mode_default">Режим для настольного компьютера</string>
