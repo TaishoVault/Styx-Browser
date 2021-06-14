@@ -249,6 +249,8 @@
     <string name="pref_category_general">Genel</string>
     <string name="pref_category_landscape">Yatay</string>
     <string name="pref_category_portrait">Dikey</string>
+    <string name="pref_donation_summary">Çalışmamı beğendiyseniz beni desteklemekten çekinmeyin</string>
+    <string name="pref_donation_title">Bağış yap</string>
     <string name="pref_report_issue_summary">GitHub\'da hataları bildirin ve iyileştirmeler önerin.</string>
     <string name="pref_report_issue_title">Sorun bildir</string>
     <string name="pref_summary_desktop_width">Masaüstü modu görüntü alanı genişliği. Görüntülenen değeri azaltmak için daha büyük bir değer ayarlayın</string>
@@ -329,6 +331,7 @@
     <string name="settings_summary_import_export">Ayarları ve yer işaretlerini yedekle veya geri yükle</string>
     <string name="settings_summary_privacy">Önbellek, geçmiş, çerezler…</string>
     <string name="settings_summary_vertical_tab_bar">Gezinme çekmecesinde sekmeleri kullanmak için devre dışı bırakın</string>
+    <string name="settings_support">Destek</string>
     <string name="settings_title_apps">Uygulamalar</string>
     <string name="settings_title_dark_mode_default">Karanlık modu zorla</string>
     <string name="settings_title_desktop_mode_default">Masaüstü modu</string>
