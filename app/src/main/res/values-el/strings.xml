@@ -33,17 +33,11 @@
     <string name="agent_desktop">Υπολογιστής</string>
     <string name="agent">User Agent</string>
     <string name="black_theme">Μαύρο θέμα</string>
-    <string name="block_ad_refresh_now">Αναβαθμίστε τώρα τους hosts</string>
-    <string name="block_ad_remote_refresh_frequency_description">Για το αρχείο απομακρυσμένων hosts</string>
-    <string name="block_ad_source">Πηγή αρχείου των hosts</string>
     <string name="block_ads">Μπλοκάρισμα διαφημίσεων</string>
     <string name="block_javascript">Αποκλεισμός JavaScript για ιστότοπο</string>
-    <string name="block_malware">Αποκλεισμός κακόβουλων τοποθεσιών</string>
     <string name="block_sites_title">Custom Site Block (ξεχωριστοί ιστότοποι με κόμμα)</string>
     <string name="block_source_default">Προεπιλεγμένοι hosts</string>
     <string name="block_source_local_description">Αρχείο: %1$s</string>
-    <string name="block_source_local">Τοπικό αρχείο hosts</string>
-    <string name="block_source_remote">Αρχείο απομακρυσμένων hosts</string>
     <string name="bookmark_export_failure">Λυπούμαστε, δεν ήταν δυνατή η εξαγωγή σελιδοδεικτών!</string>
     <string name="bookmark_settings">Ρυθμίσεις σελιδοδεικτών</string>
     <string name="cache">Καθαρισμός cache στο κλείσιμο</string>

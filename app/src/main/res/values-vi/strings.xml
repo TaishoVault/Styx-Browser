@@ -31,15 +31,10 @@
     <string name="agent_desktop">Máy tính</string>
     <string name="agent">Tác nhân người dùng</string>
     <string name="black_theme">AMOLED theme</string>
-    <string name="block_ad_refresh_now">Làm mới máy chủ ngay</string>
-    <string name="block_ad_remote_refresh_frequency_description">Dành cho tệp máy chủ trên mạng</string>
-    <string name="block_ad_source">Nguồn của tệp máy chủ</string>
     <string name="block_ads">Chặn quảng cáo và trình theo dõi</string>
     <string name="block_sites_title">Custom site block (separate sites with a comma)</string>
     <string name="block_source_default">Máy chủ mặc định</string>
     <string name="block_source_local_description">Tệp: %1$s</string>
-    <string name="block_source_local">Tệp máy chủ (hosts) cục bộ</string>
-    <string name="block_source_remote">Tệp máy chủ trên mạng</string>
     <string name="bookmark_export_failure">Xin lỗi, không thể xuất dấu trang!</string>
     <string name="bookmark_settings">Cài đặt dấu trang</string>
     <string name="cache">Xóa bộ nhớ đệm khi thoát</string>

@@ -29,17 +29,11 @@
     <string name="agent_desktop">Bureaublad</string>
     <string name="agent">Gebruikersagent</string>
     <string name="black_theme">Zwart Thema (AMOLED)</string>
-    <string name="block_ad_refresh_now">Vernieuw nu hosts</string>
-    <string name="block_ad_remote_refresh_frequency_description">Voor externe hosts-bestand</string>
-    <string name="block_ad_source">Hosts bestandsbron</string>
     <string name="block_ads">Blokkeer advertenties</string>
     <string name="block_javascript">Blokkeer JavaScript voor websites</string>
-    <string name="block_malware">Blokkeer kwaadaardige sites</string>
     <string name="block_sites_title">Aangepast siteblok (afzonderlijke sites met een komma)</string>
     <string name="block_source_default">Standaard hosts</string>
     <string name="block_source_local_description">Bestand: %1$s</string>
-    <string name="block_source_local">Lokaal hosts-bestand</string>
-    <string name="block_source_remote">Extern hosts-bestand</string>
     <string name="bookmark_export_failure">Sorry, bladwijzers konden niet worden geëxporteerd!</string>
     <string name="bookmark_settings">Bladwijzer instellingen</string>
     <string name="cache">Wis cache bij beëindigen</string>

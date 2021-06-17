@@ -40,10 +40,7 @@
     <string name="agent_web_view">Tampilan Web</string>
     <string name="agent">Agen pengguna</string>
     <string name="black_theme">Hitam</string>
-    <string name="block_ad_source">Daftar halaman yang ingin diblokir</string>
     <string name="block_ads">Blokir iklan</string>
-    <string name="block_source_local">Dari perangkat ini</string>
-    <string name="block_source_remote">Dari sumber lainnya</string>
     <string name="bookmark_export_failure">Maaf, penanda gagal dibawa keluar!</string>
     <string name="bookmark_export_path">Penanda telah dibawa keluar ke</string>
     <string name="bookmark_in_new_tab">Buka penanda di tab yang baru</string>

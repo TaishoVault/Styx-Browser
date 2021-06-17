@@ -31,17 +31,11 @@
     <string name="agent_desktop">Skrivbord</string>
     <string name="agent">Användar agent</string>
     <string name="black_theme">Svart tema</string>
-    <string name="block_ad_refresh_now">Uppdatera värdar nu</string>
-    <string name="block_ad_remote_refresh_frequency_description">För remote hosts-fil</string>
-    <string name="block_ad_source">Källa för värdar</string>
     <string name="block_ads">Blockera annonser och trackers</string>
     <string name="block_javascript">Blockera JavaScript för webbplatser</string>
-    <string name="block_malware">Blockera skadliga webbplatser</string>
     <string name="block_sites_title">Anpassat webbplatsblock (separata platser med kommatecken)</string>
     <string name="block_source_default">Standard värdar</string>
     <string name="block_source_local_description">Fil: %1$s</string>
-    <string name="block_source_local">Lokal hosts-fil</string>
-    <string name="block_source_remote">Filen för fjärrvärdar</string>
     <string name="bookmark_export_failure">Tyvärr kunde bokmärken inte exporteras!</string>
     <string name="bookmark_settings">Bokmärk inställningar</string>
     <string name="cache">Rensa cache vid avslut</string>

@@ -33,17 +33,11 @@
     <string name="agent">Идентификација</string>
     <string name="android_open_source_project">Андроид пројекат отвореног кôда</string>
     <string name="black_theme">Црна (АМОЛЕД)</string>
-    <string name="block_ad_refresh_now">Освежите домаћине сада</string>
-    <string name="block_ad_remote_refresh_frequency_description">За датотеку удаљених хостова</string>
-    <string name="block_ad_source">Извор датотеке домаћина</string>
     <string name="block_ads">Блокирај рекламе</string>
-    <string name="block_malware">Блокирајте злонамерне сајтове</string>
     <string name="block_sites_title">Прилагођени блок страница (одвојена места са зарезом)</string>
     <string name="block_source_default">Подразумевани домаћини</string>
     <string name="block_source_local_description">Датотека: %1$s</string>
-    <string name="block_source_local">Датотека локалних хостова</string>
     <string name="block_source_remote_description">УРЛ: %1$s</string>
-    <string name="block_source_remote">Датотека удаљених домаћина</string>
     <string name="bookmark_export_failure">Опростите, ознаке се нису могле извести!</string>
     <string name="bookmark_settings">Поставке обележивача</string>
     <string name="cache">Очисти кеш по затварању</string>

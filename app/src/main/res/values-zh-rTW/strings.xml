@@ -33,17 +33,11 @@
     <string name="agent">使用者代理</string>
     <string name="android_open_source_project">Android 開放原始碼計畫 (AOSP)</string>
     <string name="black_theme">深色主題 (AMOLED)</string>
-    <string name="block_ad_refresh_now">立即刷新主機</string>
-    <string name="block_ad_remote_refresh_frequency_description">對於遠程主機文件</string>
-    <string name="block_ad_source">主機文件源</string>
     <string name="block_ads">封鎖廣告</string>
-    <string name="block_malware">阻止惡意網站</string>
     <string name="block_sites_title">自定義網站塊（用逗號分隔的網站）</string>
     <string name="block_source_default">默認主機</string>
     <string name="block_source_local_description">檔案：%1$s</string>
-    <string name="block_source_local">本地主機文件</string>
     <string name="block_source_remote_description">網址：%1$s</string>
-    <string name="block_source_remote">遠程主機文件</string>
     <string name="bookmark_export_failure">很抱歉，無法匯出書籤！</string>
     <string name="bookmark_settings">書籤設定</string>
     <string name="cache">結束時清除快取</string>

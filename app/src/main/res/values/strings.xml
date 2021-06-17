@@ -95,19 +95,13 @@
     <string name="apache" translatable="false">Apache License 2.0</string>
     <string name="apply">Apply</string>
     <string name="black_theme">Black (AMOLED)</string>
-    <string name="block_ad_refresh_hosts">Refresh hosts file…</string>
-    <string name="block_ad_refresh_now">Refresh hosts now</string>
-    <string name="block_ad_remote_refresh_frequency_description">For remote hosts file</string>
-    <string name="block_ad_source">Hosts file source</string>
     <string name="block_ads">Block ads</string>
     <string name="block_javascript">Block JavaScript for site</string>
     <string name="block_mining">Block mining sites</string>
     <string name="block_sites_title">Separate sites with a comma</string>
     <string name="block_source_default">Default hosts</string>
     <string name="block_source_local_description">File: %1$s</string>
-    <string name="block_source_local">Local hosts file</string>
     <string name="block_source_remote_description">URL: %1$s</string>
-    <string name="block_source_remote">Remote hosts file</string>
     <string name="blocked_javascript">Block JavaScript for this site</string>
     <string name="bookmark_export_failure">Sorry, bookmarks could not be exported!</string>
     <string name="bookmark_export_path">Bookmarks exported:</string>

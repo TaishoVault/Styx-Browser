@@ -32,17 +32,11 @@
     <string name="agent">Bruker agent</string>
     <string name="android_open_source_project">Android åpen kildekode-prosjekt</string>
     <string name="black_theme">Svart tema</string>
-    <string name="block_ad_refresh_now">Oppdater verter nå</string>
-    <string name="block_ad_remote_refresh_frequency_description">For eksterne verts-fil</string>
-    <string name="block_ad_source">Verter fil kilde</string>
     <string name="block_ads">Blokker annonser og sporere</string>
     <string name="block_javascript">Blokker JavaScript for nettsteder</string>
-    <string name="block_malware">Blokker skadelig nettsteder</string>
     <string name="block_sites_title">Egendefinert nettstedsblokk (separate sider med komma)</string>
     <string name="block_source_default">Standard verter</string>
     <string name="block_source_local_description">Fil: %1$s</string>
-    <string name="block_source_local">Lokal verts-fil</string>
-    <string name="block_source_remote">Ekstern verts-fil</string>
     <string name="bookmark_export_failure">Beklager, bokmerker kunne ikke eksporteres!</string>
     <string name="bookmark_settings">Bokmerke innstillinger</string>
     <string name="cache">Tøm hurtigminne ved avslutning</string>

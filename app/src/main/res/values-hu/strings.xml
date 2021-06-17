@@ -32,16 +32,10 @@
     <string name="agent">Felhasználó Ügynök</string>
     <string name="android_open_source_project">Android nyílt forráskódú projekt</string>
     <string name="black_theme">Fekete Téma (AMOLED)</string>
-    <string name="block_ad_refresh_now">Frissítse a gazdagépeket most</string>
-    <string name="block_ad_remote_refresh_frequency_description">Távoli gazdagép fájlhoz</string>
-    <string name="block_ad_source">Gazdafájl-forrás</string>
     <string name="block_ads">Reklámok blokkolása</string>
-    <string name="block_malware">Blokkolja a rosszindulatú webhelyeket</string>
     <string name="block_sites_title">Egyéni webhelyek blokkolása (külön webhely vesszővel)</string>
     <string name="block_source_default">Alapértelmezett gazdagépek</string>
     <string name="block_source_local_description">Fájl: %1$s</string>
-    <string name="block_source_local">Helyi host fájl</string>
-    <string name="block_source_remote">Távoli állomásfájl</string>
     <string name="bookmark_export_failure">Sajnáljuk, a könyvjelzők nem exportálhatók!</string>
     <string name="bookmark_settings">Könyvjelző beállítások</string>
     <string name="cache">Gyorsítótár törlése kilépéskor</string>

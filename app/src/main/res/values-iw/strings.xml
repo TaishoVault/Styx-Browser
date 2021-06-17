@@ -33,17 +33,11 @@
     <string name="agent">סוכן משתמש</string>
     <string name="android_open_source_project">פרויקט קוד פתוח אנדרואיד</string>
     <string name="black_theme">נושא שחור</string>
-    <string name="block_ad_refresh_now">רענן מארחים עכשיו</string>
-    <string name="block_ad_remote_refresh_frequency_description">עבור קובץ מארחים מרוחק</string>
-    <string name="block_ad_source">מארח את מקור הקבצים</string>
     <string name="block_ads">חסום מודעות ועוקבים</string>
-    <string name="block_malware">חסום אתרים זדוניים</string>
     <string name="block_sites_title">חסימת אתרים מותאמת אישית (אתרים נפרדים עם פסיק)</string>
     <string name="block_source_default">מארחי ברירת מחדל</string>
     <string name="block_source_local_description">קובץ: %1$s</string>
-    <string name="block_source_local">קובץ מארחים מקומי</string>
     <string name="block_source_remote_description">כתובת אתר:%1$s</string>
-    <string name="block_source_remote">קובץ מארחים מרוחק</string>
     <string name="bookmark_export_failure">מצטערים, לא ניתן היה לייצא סימניות!</string>
     <string name="bookmark_settings">הגדרות סימניות</string>
     <string name="cache">נקה את המטמון ביציאה</string>

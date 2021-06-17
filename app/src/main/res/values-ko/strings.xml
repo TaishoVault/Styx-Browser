@@ -33,16 +33,10 @@
     <string name="agent">사용자 에이전트</string>
     <string name="android_open_source_project">안드로이드 오픈 소스 프로젝트</string>
     <string name="black_theme">검정 테마 (AMOLED)</string>
-    <string name="block_ad_refresh_now">지금 호스트 새로 고침</string>
-    <string name="block_ad_remote_refresh_frequency_description">원격 호스트 파일의 경우</string>
-    <string name="block_ad_source">호스트 파일 소스</string>
     <string name="block_ads">광고 차단</string>
-    <string name="block_malware">악성 사이트 차단</string>
     <string name="block_sites_title">맞춤 사이트 차단 (쉼표가있는 별도의 사이트)</string>
     <string name="block_source_default">기본 호스트</string>
     <string name="block_source_local_description">파일: %1$s</string>
-    <string name="block_source_local">로컬 호스트 파일</string>
-    <string name="block_source_remote">원격 호스트 파일</string>
     <string name="bookmark_export_failure">죄송합니다, 즐겨찾기를 내보내지 못했습니다!</string>
     <string name="bookmark_settings">즐겨찾기 설정</string>
     <string name="cache">종료할 때 캐시 지우기</string>
