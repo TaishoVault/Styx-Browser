@@ -160,7 +160,7 @@ object Utils {
         return 0xff shl alphachannel.toInt() or (r shl redchannel.toInt()) or (g shl greenchannel.toInt()) or b
     }
 
-    fun buildMalwarePage(
+    fun buildMiningPage(
         color: String?,
         title: String?,
         error: String?,

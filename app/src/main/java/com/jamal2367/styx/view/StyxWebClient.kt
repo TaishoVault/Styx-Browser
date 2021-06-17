@@ -50,7 +50,7 @@ import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.ssl.SslState
 import com.jamal2367.styx.ssl.SslWarningPreferences
 import com.jamal2367.styx.utils.*
-import com.jamal2367.styx.utils.Utils.buildMalwarePage
+import com.jamal2367.styx.utils.Utils.buildMiningPage
 import com.jamal2367.styx.view.StyxView.Companion.KFetchMetaThemeColorTries
 import io.reactivex.Observable
 import io.reactivex.Scheduler
@@ -71,7 +71,6 @@ class StyxWebClient(
 
     private val uiController: UIController
     private val intentUtils = IntentUtils(activity)
-    private val emptyResponseByteArray: ByteArray = byteArrayOf()
 
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject @UserPrefs internal lateinit var preferences: SharedPreferences
@@ -93,6 +92,8 @@ class StyxWebClient(
     private var zoomScale = 0.0f
 
     private var currentUrl: String = ""
+
+    private var elementHide = true // TODO: better get from preferences
 
     private var color = ""
 
@@ -117,7 +118,7 @@ class StyxWebClient(
     }
 
     private fun chooseAdBlocker(): AdBlocker = if (userPreferences.adBlockEnabled) {
-        activity.injector.provideBloomFilterAdBlocker()
+        activity.injector.provideAbpAdBlocker()
     } else {
         activity.injector.provideNoOpAdBlocker()
     }
@@ -126,9 +127,11 @@ class StyxWebClient(
         !whitelistModel.isUrlAllowedAds(pageUrl) && adBlock.isAd(requestUrl)
 
     override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
-        if (shouldRequestBeBlocked(currentUrl, request.url.toString())) {
-            val empty = ByteArrayInputStream(emptyResponseByteArray)
-            return WebResourceResponse("text/plain", "utf-8", empty)
+        // maybe adjust to always return response... null means allow anyway. what is the "super" actually doing? same as null?
+        // adBlock should probably be renamed
+        val response = adBlock.shouldBlock(request, currentUrl)
+        if (response != null) {
+            return response
         }
         return super.shouldInterceptRequest(view, request)
     }
@@ -226,7 +229,7 @@ class StyxWebClient(
     }
 
     private val tldregex = "^([^:]+://[^/]+)\\\\.tld(/.*)?\$".toRegex()
-    val schemeContainsPattern: Pattern = Pattern.compile("^\\w+:", Pattern.CASE_INSENSITIVE)
+    private val schemeContainsPattern: Pattern = Pattern.compile("^\\w+:", Pattern.CASE_INSENSITIVE)
 
     private fun urlToPattern(patternUrl: String?): Pattern? {
         if (patternUrl == null) return null
@@ -308,6 +311,12 @@ class StyxWebClient(
         if (styxView.invertPage) {
             view.evaluateJavascript(invertPageJs.provideJs(), null)
         }
+        if (elementHide) {
+            adBlock.loadScript(Uri.parse(currentUrl))?.let {
+                view.evaluateJavascript(it, null)
+            }
+            // takes around half a second, but not sure what that tells me
+        }
         if (url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")) {
             view.evaluateJavascript("javascript:(function() {" + "link1var = '" + userPreferences.link1  + "';" + "})();", null)
             view.evaluateJavascript("javascript:(function() {" + "link2var = '" + userPreferences.link2 + "';" + "})();", null)
@@ -360,9 +369,9 @@ class StyxWebClient(
             }
         }
 
-        if (userPreferences.blockMalwareEnabled) {
+        if (userPreferences.blockMiningEnabled) {
             val tip3 = activity.getString(R.string.error_tip3)
-            val inputStream: InputStream = activity.assets.open("malware.txt")
+            val inputStream: InputStream = activity.assets.open("mining.txt")
             val inputString = inputStream.bufferedReader().use { it.readText() }
             val lines =  inputString.split(",").toTypedArray()
             if (stringContainsItemFromList(url, lines)) {
@@ -370,7 +379,7 @@ class StyxWebClient(
                 val title = activity.getString(R.string.error_title)
                 val reload = activity.getString(R.string.error_reload)
                 val error = activity.getString(R.string.error_tip4)
-                view.loadDataWithBaseURL(null, buildMalwarePage(color, title, error, tip3, reload, false), "text/html; charset=utf-8", "UTF-8", null)
+                view.loadDataWithBaseURL(null, buildMiningPage(color, title, error, tip3, reload, false), "text/html; charset=utf-8", "UTF-8", null)
                 view.invalidate()
                 view.settings.javaScriptEnabled = userPreferences.javaScriptEnabled
             }
@@ -619,7 +628,7 @@ class StyxWebClient(
     }
 
     // We use this to prevent opening such dialogs multiple times
-    var exAppLaunchDialog: AlertDialog? = null
+    private var exAppLaunchDialog: AlertDialog? = null
 
     /**
      * Overrides [WebViewClient.shouldOverrideUrlLoading].

@@ -412,7 +412,7 @@ class UserPreferences @Inject constructor(
     /**
      * Malware blocker
      */
-    var blockMalwareEnabled by preferences.booleanPreference(R.string.pref_key_block_malware, R.bool.pref_default_block_malware)
+    var blockMiningEnabled by preferences.booleanPreference(R.string.pref_key_block_mining, R.bool.pref_default_block_mining)
 
     /**
      * Force Zoom for Websites

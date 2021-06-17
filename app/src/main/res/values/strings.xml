@@ -61,7 +61,22 @@
     <string name="action_show_homepage">Homepage</string>
     <string name="action_webpage">Website</string>
     <string name="action_yes">Yes</string>
+    <string name="ad_block_address">Address</string>
+    <string name="ad_block_blocked_page">Ad block blocked the following page:</string>
+    <string name="ad_block_blocked_filter">Because of the following filter:</string>
+    <string name="ad_block_delete_list">Delete</string>
+    <string name="ad_block_edit_blocklist">Edit blocklist</string>
+    <string name="ad_block_enable">Enable</string>
+    <string name="ad_block_file">File</string>
+    <string name="ad_block_from_file">From file</string>
+    <string name="ad_block_from_address">From Address</string>
+    <string name="ad_block_internal_list">Internal list</string>
+    <string name="ad_block_invalid_url">Invalid address</string>
+    <string name="ad_block_last_update">Last update:</string>
     <string name="ad_block_load_failure">Failed to load hosts from ad blocking source.</string>
+    <string name="ad_block_name">Name</string>
+    <string name="ad_block_create_blocklist">Create blocklist</string>
+    <string name="ad_block_update_list">Update blocklist file</string>
     <string name="ad_server_list">AdGuard Ad-Server List</string>
     <string name="agent_android_mobile">Android (Mobile)</string>
     <string name="agent_custom">Custom</string>
@@ -86,7 +101,7 @@
     <string name="block_ad_source">Hosts file source</string>
     <string name="block_ads">Block ads</string>
     <string name="block_javascript">Block JavaScript for site</string>
-    <string name="block_malware">Block malicious sites</string>
+    <string name="block_mining">Block mining sites</string>
     <string name="block_sites_title">Separate sites with a comma</string>
     <string name="block_source_default">Default hosts</string>
     <string name="block_source_local_description">File: %1$s</string>
@@ -164,7 +179,7 @@
     <string name="error_reload">Reload</string>
     <string name="error_tip">• Check the Address for typing errors such as ww.example.com instead of www.example.com</string>
     <string name="error_tip2">• If you are unable to load any pages, check your devices data or Wi-Fi connection.</string>
-    <string name="error_tip3">• That site appears to be malware.</string>
+    <string name="error_tip3">• That site appears to be mining.</string>
     <string name="error_tip4">Connection blocked!</string>
     <string name="error_title">Oh crumbs!</string>
     <string name="example_text">Example text</string>
@@ -512,7 +527,7 @@
     <string name="pref_key_black_status_bar" translatable="false">pref_key_black_status_bar</string>
     <string name="pref_key_block_ads" translatable="false">pref_key_block_ads</string>
     <string name="pref_key_block_js" translatable="false">pref_key_block_js</string>
-    <string name="pref_key_block_malware" translatable="false">pref_key_block_malware</string>
+    <string name="pref_key_block_mining" translatable="false">pref_key_block_mining</string>
     <string name="pref_key_block_third_party" translatable="false">pref_key_block_third_party</string>
     <string name="pref_key_bookmark_changed" translatable="false">pref_key_bookmark_changed</string>
     <string name="pref_key_bookmark_in_new_tab" translatable="false">pref_key_bookmark_in_new_tab</string>
