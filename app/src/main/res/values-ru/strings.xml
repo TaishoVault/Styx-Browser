@@ -150,7 +150,6 @@
     <string name="error_reload">Обновить</string>
     <string name="error_tip">• Проверьте адрес на наличие ошибок, таких как ww.example.com вместо www.example.com</string>
     <string name="error_tip2">• Если вы не можете загрузить какие-либо страницы, проверьте подключение устройства к моб. интерненту или Wi-Fi.</string>
-    <string name="error_tip3">• Похоже, что этот сайт является вредоносным.</string>
     <string name="error_tip4">Соединение заблокировано!</string>
     <string name="error_title">Ох, черт!</string>
     <string name="example_text">Пример текста</string>
@@ -301,7 +300,6 @@
     <string name="settings_about_explain">Информация о версии, авторах и лицензиях</string>
     <string name="settings_about">О программе</string>
     <string name="settings_adblock">Настройки блокировки рекламы</string>
-    <string name="settings_admalwareblocker">Блокировка рекламы и вредоносных ресурсов</string>
     <string name="settings_advanced">Дополнительно</string>
     <string name="settings_black_status_bar">Тёмная строка состояния</string>
     <string name="settings_credits">Благодарности</string>
@@ -311,11 +309,9 @@
     <string name="settings_extensions">Расширения</string>
     <string name="settings_general">Основные настройки</string>
     <string name="settings_help_us">Помочь нам</string>
-    <string name="settings_malware">Вредоносные ресурсы</string>
     <string name="settings_privacy">Настройки приватности</string>
     <string name="settings_reseted">Все настройки восстановлены</string>
     <string name="settings_summary_apps">Разрешить сторонние приложения</string>
-    <string name="settings_summary_adblock">Блокировка рекламы, отслеживания, вредоносного ПО…</string>
     <string name="settings_summary_dark_mode_default">Определить, используют ли новые вкладки принудительный темный режим по умолчанию</string>
     <string name="settings_summary_desktop_mode_default">Определяет, будут ли новые вкладки использовать рабочий стол по умолчанию</string>
     <string name="settings_summary_display">Внешний вид приложения, цветовой режим, \"потянуть_для_обновления\"…</string>

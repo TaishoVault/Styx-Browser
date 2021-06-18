@@ -270,7 +270,6 @@
     <string name="settings_about_explain">Detalhes da versão, do autor e da licença</string>
     <string name="settings_about">Acerca</string>
     <string name="settings_adblock">Definições AdBlock</string>
-    <string name="settings_admalwareblocker">Bloqueador de Anúncios &amp; Malware</string>
     <string name="settings_advanced">Definições avançadas</string>
     <string name="settings_black_status_bar">Barra de estado escura</string>
     <string name="settings_credits">Créditos</string>
@@ -280,11 +279,9 @@
     <string name="settings_extensions">Extensões</string>
     <string name="settings_general">Definições gerais</string>
     <string name="settings_help_us">Ajude-nos</string>
-    <string name="settings_malware">Malware</string>
     <string name="settings_privacy">Definições de privacidade</string>
     <string name="settings_reseted">Todas as definições restauradas</string>
     <string name="settings_summary_apps">Ativar aplicações externas</string>
-    <string name="settings_summary_adblock">Bloquear publicidade, rastreamento, malware…</string>
     <string name="settings_summary_dark_mode_default">Definir por padrão se novos separadores usam o modo forçado escuro</string>
     <string name="settings_summary_desktop_mode_default">Definir se novos separadores usam o modo desktop por padrão</string>
     <string name="settings_summary_display">Design da aplicação, modo de cor, puxar-para-atualizar…</string>

@@ -59,7 +59,18 @@
     <string name="action_show_homepage">主页</string>
     <string name="action_webpage">网页</string>
     <string name="action_yes">是</string>
+    <string name="ad_block_address">地址</string>
+    <string name="ad_block_blocked_page">广告拦截屏蔽了以下页面：</string>
+    <string name="ad_block_blocked_filter">由于下列筛选器：</string>
+    <string name="ad_block_delete_list">删除</string>
+    <string name="ad_block_edit_blocklist">编辑屏蔽列表</string>
+    <string name="ad_block_enable">启用</string>
+    <string name="ad_block_file">文件</string>
+    <string name="ad_block_internal_list">内部列表</string>
+    <string name="ad_block_invalid_url">地址无效</string>
     <string name="ad_block_load_failure">从广告屏蔽来源加载 Hosts 失败</string>
+    <string name="ad_block_create_blocklist">创建拦截列表</string>
+    <string name="ad_block_update_list">更新屏蔽列表文件</string>
     <string name="ad_server_list">AdGuard 广告服务器列表</string>
     <string name="agent_android_mobile">Android (移动)</string>
     <string name="agent_custom">自定义</string>
@@ -79,6 +90,7 @@
     <string name="black_theme">黑色 (AMOLED)</string>
     <string name="block_ads">屏蔽广告</string>
     <string name="block_javascript">屏蔽网站JavaScript</string>
+    <string name="block_mining">屏蔽挖矿站点</string>
     <string name="block_sites_title">自定义网站拦截（用逗号分隔网站）</string>
     <string name="block_source_default">默认 Hosts</string>
     <string name="block_source_local_description">文件：%1$s</string>
@@ -150,7 +162,7 @@
     <string name="error_reload">重新载入</string>
     <string name="error_tip">•检查网址是否有输入错误，比如ww.example.com而不是www.example.com</string>
     <string name="error_tip2">•如果你无法加载任何页面，检查你的设备数据或Wi-Fi连接。</string>
-    <string name="error_tip3">• 该网站似乎是恶意软件。</string>
+    <string name="error_tip3">• 该网站似乎在挖矿。</string>
     <string name="error_tip4">连接被阻止！</string>
     <string name="error_title">哎呀！</string>
     <string name="example_text">示例文本</string>
@@ -301,7 +313,6 @@
     <string name="settings_about_explain">版本，作者以及许可的详细信息</string>
     <string name="settings_about">关于</string>
     <string name="settings_adblock">广告屏蔽设置</string>
-    <string name="settings_admalwareblocker">广告 &amp; 恶意软件拦截器</string>
     <string name="settings_advanced">高级设置</string>
     <string name="settings_black_status_bar">黑色状态栏</string>
     <string name="settings_credits">鸣谢</string>
@@ -311,11 +322,9 @@
     <string name="settings_extensions">扩展程序</string>
     <string name="settings_general">常规设置</string>
     <string name="settings_help_us">帮助我们</string>
-    <string name="settings_malware">恶意软件</string>
     <string name="settings_privacy">隐私设置</string>
     <string name="settings_reseted">所有设置已恢复</string>
     <string name="settings_summary_apps">允许第三方应用</string>
-    <string name="settings_summary_adblock">阻止广告、跟踪、恶意软件…</string>
     <string name="settings_summary_dark_mode_default">定义新标签是否默认使用强制深色模式</string>
     <string name="settings_summary_desktop_mode_default">定义新选项卡是否默认使用桌面模式</string>
     <string name="settings_summary_display">应用设计、色彩模式、下拉刷新…</string>

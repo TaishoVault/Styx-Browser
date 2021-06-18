@@ -147,7 +147,6 @@
     <string name="error_reload">Ricarica</string>
     <string name="error_tip">• Controlla l\'indirizzo per errori di scrittura come ww.example.com invece di www.example.com</string>
     <string name="error_tip2">• Se le pagine non si caricano controlla i la connessione dati o Wi-Fi del cellulare.</string>
-    <string name="error_tip3">• Questo sito sembra contenere malware.</string>
     <string name="error_tip4">Connessione bloccata!</string>
     <string name="error_title">Oh rabbia!</string>
     <string name="example_text">Testo di esempio</string>
@@ -293,7 +292,6 @@
     <string name="settings_about_explain">Informazioni sulla versione, l\'autore e le licenze.</string>
     <string name="settings_about">Informazioni</string>
     <string name="settings_adblock">Impostazioni del blocco annunci</string>
-    <string name="settings_admalwareblocker">Blocco Ad &amp; Malware</string>
     <string name="settings_advanced">Avanzate</string>
     <string name="settings_black_status_bar">Barra status nera</string>
     <string name="settings_credits">Riconoscimenti</string>
@@ -303,11 +301,9 @@
     <string name="settings_extensions">Estensioni</string>
     <string name="settings_general">Generale</string>
     <string name="settings_help_us">Aiutaci</string>
-    <string name="settings_malware">Malware</string>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_reseted">Impostazioni ripristinate</string>
     <string name="settings_summary_apps">Abilita app di terze parti</string>
-    <string name="settings_summary_adblock">Blocca pubblicità, tracking, malware…</string>
     <string name="settings_summary_dark_mode_default">Definisci se i nuovi tab usano la modalità scura di default</string>
     <string name="settings_summary_desktop_mode_default">Definisci se i nuovi tab usano la modalità desktop di default</string>
     <string name="settings_summary_display">Tema applicazione, modalità colori, trascina per ricaricare…</string>

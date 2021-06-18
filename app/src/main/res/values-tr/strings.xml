@@ -59,7 +59,18 @@
     <string name="action_show_homepage">Ana sayfa</string>
     <string name="action_webpage">Web sayfası</string>
     <string name="action_yes">Evet</string>
+    <string name="ad_block_address">Adres</string>
+    <string name="ad_block_blocked_page">Reklam engelleyici şu sayfayı engelledi:</string>
+    <string name="ad_block_blocked_filter">Şu filtre nedeniyle:</string>
+    <string name="ad_block_delete_list">Kaldır</string>
+    <string name="ad_block_edit_blocklist">Filtreyi düzenle</string>
+    <string name="ad_block_enable">Etkinleştir</string>
+    <string name="ad_block_file">Dosya</string>
+    <string name="ad_block_internal_list">Dahili liste</string>
+    <string name="ad_block_invalid_url">Geçersiz adres</string>
     <string name="ad_block_load_failure">Reklam engelleyiciler kaynağından indirilemedi.</string>
+    <string name="ad_block_create_blocklist">Filtre listesi oluştur</string>
+    <string name="ad_block_update_list">Dosya filtresini güncelle</string>
     <string name="ad_server_list">AdGuard Reklam Sunucuları Listesi</string>
     <string name="agent_android_mobile">Android (Telefon)</string>
     <string name="agent_custom">Özel</string>
@@ -79,6 +90,7 @@
     <string name="black_theme">Siyah Tema (AMOLED)</string>
     <string name="block_ads">Reklamları engelle</string>
     <string name="block_javascript">Siteler için JavaScript\'i engelle</string>
+    <string name="block_mining">Madencilik yapan siteleri engelle</string>
     <string name="block_sites_title">Özel Site Engelleme (virgül içeren ayrı siteler)</string>
     <string name="block_source_default">Varsayılan sunucu</string>
     <string name="block_source_local_description">Dosya: %1$s</string>
@@ -150,7 +162,7 @@
     <string name="error_reload">Yeniden yükle</string>
     <string name="error_tip">• www.example.com yerine ww.example.com gibi yazım hataları için adresi kontrol edin</string>
     <string name="error_tip2">• Herhangi bir sayfa yükleyemiyorsanız, mobil veriyi veya Wi-Fi bağlantısını kontrol edin.</string>
-    <string name="error_tip3">Bu site kötü amaçlı yazılım içeriyor.</string>
+    <string name="error_tip3">• Bu site madencilik yapıyor gibi görünüyor.</string>
     <string name="error_tip4">Bağlantı engellendi!</string>
     <string name="error_title">Bi\' terslik var!</string>
     <string name="example_text">Örnek metin</string>
@@ -301,7 +313,6 @@
     <string name="settings_about_explain">Sürüm, yazar ve lisansla ilgili ayrıntılar.</string>
     <string name="settings_about">Hakkında</string>
     <string name="settings_adblock">Reklam engelleme</string>
-    <string name="settings_admalwareblocker">Reklam &amp; kötü amaçlı yazılım engelleme</string>
     <string name="settings_advanced">Gelişmiş ayarlar</string>
     <string name="settings_black_status_bar">Siyah durum çubuğu</string>
     <string name="settings_credits">Teşekkürler</string>
@@ -311,11 +322,9 @@
     <string name="settings_extensions">Eklentiler</string>
     <string name="settings_general">Genel ayarlar</string>
     <string name="settings_help_us">Bize yardımda bulun</string>
-    <string name="settings_malware">Kötü Amaçlı Yazılım</string>
     <string name="settings_privacy">Gizlilik ayarları</string>
     <string name="settings_reseted">Tüm ayarlar geri yüklendi</string>
     <string name="settings_summary_apps">Üçüncü taraf uygulamalarını etkinleştir</string>
-    <string name="settings_summary_adblock">Reklamları, izleyiciler, kötü amaçlı yazılımları engelleyin…</string>
     <string name="settings_summary_dark_mode_default">Yeni sekmelerin varsayılan olarak zorla karanlık modu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_desktop_mode_default">Yeni sekmelerin varsayılan olarak masaüstü modunu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_display">Uygulama tasarımı, renk modu, kaydırınca yenileme...</string>

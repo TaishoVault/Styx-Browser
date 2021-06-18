@@ -150,7 +150,6 @@
     <string name="error_reload">إعادة تحميل</string>
     <string name="error_tip">• تحقق من الاخطاء الكتابية العنوان مثل ww.example.com بدلا من www.example.com</string>
     <string name="error_tip2">• إذا كنت غير قادر على تحميل أي صفحات، تحقق من بيانات جهازك أو اتصال Wi-Fi.</string>
-    <string name="error_tip3">• يبدو أن هذا الموقع يحتوي على برامج ضارة.</string>
     <string name="error_tip4">تم حجب الاتصال!</string>
     <string name="error_title">أوه!</string>
     <string name="example_text">مثال للنص</string>
@@ -301,7 +300,6 @@
     <string name="settings_about_explain">رقم الإصدار، المؤلف والرخص&#8230;</string>
     <string name="settings_about">حول</string>
     <string name="settings_adblock">إعدادات حجب المحتوى</string>
-    <string name="settings_admalwareblocker">منع الإعلانات &amp; البرمجيات الخبيثة</string>
     <string name="settings_advanced">الإعدادات المتقدمة</string>
     <string name="settings_black_status_bar">شريط الحالة الأسود</string>
     <string name="settings_credits">شكر وتقدير</string>
@@ -311,11 +309,9 @@
     <string name="settings_extensions">الإضافات</string>
     <string name="settings_general">الاعدادات العامة</string>
     <string name="settings_help_us">ساعدنا</string>
-    <string name="settings_malware">برمجيات خبيثة</string>
     <string name="settings_privacy">إعدادات الخصوصية والأمان</string>
     <string name="settings_reseted">تم استعادة جميع الإعدادات</string>
     <string name="settings_summary_apps">تمكين تطبيقات الطرف الثالث</string>
-    <string name="settings_summary_adblock">حظر الإعلانات والتعقب والبرامج الضارة…</string>
     <string name="settings_summary_dark_mode_default">تحديد إذا كانت علامات التبويب الجديدة تستخدم الوضع المظلم بشكل افتراضي</string>
     <string name="settings_summary_desktop_mode_default">تحديد ما إذا كانت علامات التبويب الجديدة تستخدم وضع سطح المكتب بشكل افتراضي</string>
     <string name="settings_summary_display">تصميم التطبيق، وضع الألوان، اسحب للتحديث…</string>

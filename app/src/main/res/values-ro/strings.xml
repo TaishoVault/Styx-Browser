@@ -145,7 +145,6 @@
     <string name="error_reload">Reîncarcă</string>
     <string name="error_tip">• Verifică adresa pentru erori scriere cum ar fi ww.example.com în loc de www.example.com</string>
     <string name="error_tip2">• Dacă nu puteți încărca nicio pagină, verificați conexiunea la date sau Wi-Fi a dispozitivului.</string>
-    <string name="error_tip3">• Acest site pare să fie malware.</string>
     <string name="error_tip4">Conexiune blocată!</string>
     <string name="error_title">Oh!</string>
     <string name="example_text">Text Exemplu</string>
@@ -289,7 +288,6 @@
     <string name="settings_about_explain">Numărul versiunii, autorul și licențele&#8230;</string>
     <string name="settings_about">Despre</string>
     <string name="settings_adblock">Setări bloc de conținut</string>
-    <string name="settings_admalwareblocker">Reclame &amp; Blocare Malware</string>
     <string name="settings_advanced">Setări avansate</string>
     <string name="settings_black_status_bar">Bară de stare neagră</string>
     <string name="settings_credits">Recunoștințe</string>
@@ -298,11 +296,9 @@
     <string name="settings_extensions">Extensii</string>
     <string name="settings_general">Setări generale</string>
     <string name="settings_help_us">Ajută-ne</string>
-    <string name="settings_malware">Malware</string>
     <string name="settings_privacy">Setări de confidențialitate și securitate</string>
     <string name="settings_reseted">Toate setările au fost restaurate</string>
     <string name="settings_summary_apps">Activează aplicații terțe</string>
-    <string name="settings_summary_adblock">Blochează publicitatea, urmărirea, malware-ul…</string>
     <string name="settings_summary_dark_mode_default">Definește dacă filele noi folosesc modul întunecat forțat implicit</string>
     <string name="settings_summary_desktop_mode_default">Definește dacă filele noi folosesc modul desktop implicit</string>
     <string name="settings_summary_display">Design aplicație, mod culoare, tragere la reîmprospătare…</string>

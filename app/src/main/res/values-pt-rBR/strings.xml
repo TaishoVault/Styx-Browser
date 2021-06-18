@@ -150,7 +150,6 @@
     <string name="error_reload">Recarregar</string>
     <string name="error_tip">• Verifique se existem erros de digitação no endereço, como ww.exemplo.com ao invés de www.exemplo.com</string>
     <string name="error_tip2">• Caso não consiga carregar nenhuma página, verifique o armazenamento do seu dispositivo ou a conexão Wi-Fi.</string>
-    <string name="error_tip3">• Esse site parece conter malware.</string>
     <string name="error_tip4">Conexão bloqueada!</string>
     <string name="error_title">Vixe!</string>
     <string name="example_text">Texto de exemplo</string>
@@ -299,7 +298,6 @@
     <string name="settings_about_explain">Detalhes da versão, do autor e da licença</string>
     <string name="settings_about">Sobre</string>
     <string name="settings_adblock">Configurações de bloqueio de conteúdo</string>
-    <string name="settings_admalwareblocker">Bloqueador de Anúncios &amp; Malware</string>
     <string name="settings_advanced">Configurações avançadas</string>
     <string name="settings_black_status_bar">Barra de status preta</string>
     <string name="settings_credits">Créditos</string>
@@ -309,11 +307,9 @@
     <string name="settings_extensions">Extensões</string>
     <string name="settings_general">Configurações gerais</string>
     <string name="settings_help_us">Ajude-nos!</string>
-    <string name="settings_malware">Malware</string>
     <string name="settings_privacy">Configurações de privacidade</string>
     <string name="settings_reseted">Todas as configurações restauradas</string>
     <string name="settings_summary_apps">Permitir apps de terceiros</string>
-    <string name="settings_summary_adblock">Bloquear publicidade, rastreamento, malware…</string>
     <string name="settings_summary_dark_mode_default">Definir se novas abas devem forçar o modo escuro por padrão</string>
     <string name="settings_summary_desktop_mode_default">Definir se novas abas devem utilizar o modo área de trabalho por padrão</string>
     <string name="settings_summary_display">Design do app, modo de cor, arrastar-para-atualizar…</string>

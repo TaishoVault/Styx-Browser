@@ -59,7 +59,18 @@
     <string name="action_show_homepage">Strona główna</string>
     <string name="action_webpage">Własny adres</string>
     <string name="action_yes">Tak</string>
+    <string name="ad_block_address">Adres</string>
+    <string name="ad_block_blocked_page">Blokowanie reklam zablokowało następującą stronę:</string>
+    <string name="ad_block_blocked_filter">Ze względu na następujący filtr:</string>
+    <string name="ad_block_delete_list">Usuń</string>
+    <string name="ad_block_edit_blocklist">Edytuj listę blokowania</string>
+    <string name="ad_block_enable">Aktywuj</string>
+    <string name="ad_block_file">Plik</string>
+    <string name="ad_block_internal_list">Lista wbudowana</string>
+    <string name="ad_block_invalid_url">Nieprawidłowy adres</string>
     <string name="ad_block_load_failure">Nie udało się załadować hostów ze źródła blokującego reklamy.</string>
+    <string name="ad_block_create_blocklist">Utwórz listę blokowania</string>
+    <string name="ad_block_update_list">Aktualizuj plik listy blokowania</string>
     <string name="ad_server_list">Lista serwerów reklam AdGuard</string>
     <string name="agent_android_mobile">Android (Mobilne)</string>
     <string name="agent_custom">Własny identyfikator</string>
@@ -79,6 +90,7 @@
     <string name="black_theme">Czarny motyw (AMOLED)</string>
     <string name="block_ads">Blokuj reklamy</string>
     <string name="block_javascript">Zablokuj JavaScript na stronach</string>
+    <string name="block_mining">Blokuj witryny kopiące</string>
     <string name="block_sites_title">Niestandardowy blok witryn (oddzielne witryny przecinkami)</string>
     <string name="block_source_default">Domyślny host</string>
     <string name="block_source_local_description">Plik: %1$s</string>
@@ -150,7 +162,7 @@
     <string name="error_reload">Przeładować</string>
     <string name="error_tip">• Sprawdź adres witryny pod kątem błędów, takich jak ww.strona.pl zamiast www.strona.pl</string>
     <string name="error_tip2">• Jeśli nie możesz wczytać żadnej strony, sprawdź połączenie z siecią Wi-Fi lub dane komórkowe.</string>
-    <string name="error_tip3">• Ta witryna wydaje się być niebezpieczna.</string>
+    <string name="error_tip3">• Ta witryna nie istnieje.</string>
     <string name="error_tip4">Połączenie zablokowane!</string>
     <string name="error_title">A niech to!</string>
     <string name="example_text">Przykładowy tekst</string>
@@ -168,6 +180,7 @@
     <string name="home">Strona główna</string>
     <string name="homepage_in_new_tab">Otwieraj stronę główną w nowej karcie</string>
     <string name="image_url">Ustaw obraz tła dla wyszukiwarki</string>
+    <string name="image_url_summary">Tylko dla własnych adresów URL</string>
     <string name="import_backup">Importuj zakładki</string>
     <string name="import_bookmark_error">Nie udało się zaimportować zakładek z</string>
     <string name="import_export_settings">Import i eksport</string>
@@ -300,7 +313,6 @@
     <string name="settings_about_explain">Szczegóły o wersji, autorze i licencji.</string>
     <string name="settings_about">O przeglądarce</string>
     <string name="settings_adblock">Ustawienia blokowania reklam</string>
-    <string name="settings_admalwareblocker">Blokowanie reklam i zagrożeń</string>
     <string name="settings_advanced">Zaawansowane</string>
     <string name="settings_black_status_bar">Czarny pasek stanu</string>
     <string name="settings_credits">Twórcy</string>
@@ -310,11 +322,9 @@
     <string name="settings_extensions">Rozszerzenia</string>
     <string name="settings_general">Ogólne</string>
     <string name="settings_help_us">Wsparcie</string>
-    <string name="settings_malware">Złośliwe oprogramowanie</string>
     <string name="settings_privacy">Prywatność</string>
     <string name="settings_reseted">Wszystkie ustawienia przywrócone</string>
     <string name="settings_summary_apps">Aktywuj aplikacje zewnętrzne</string>
-    <string name="settings_summary_adblock">Blokowanie reklam, śledzenia, zagrożeń…</string>
     <string name="settings_summary_dark_mode_default">Zdefiniuj, czy nowe karty mają domyślnie wymuszać tryb ciemny</string>
     <string name="settings_summary_desktop_mode_default">Zdefiniuj, czy nowe karty mają domyślnie używać wersji komputerowej</string>
     <string name="settings_summary_display">Wygląd aplikacji, kolory, odświeżanie pociągnięciem…</string>

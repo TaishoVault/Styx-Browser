@@ -157,7 +157,6 @@
     <string name="settings_about_explain">รายละเอียดเกี่ยวกับเวอร์ชัน, ผู้แต่ง, และใบอนุญาต</string>
     <string name="settings_about">เกี่ยวกับ</string>
     <string name="settings_adblock">Ad Block</string>
-    <string name="settings_admalwareblocker">Ad &amp; Malware Blocker</string>
     <string name="settings_advanced">ขั้นสูง</string>
     <string name="settings_black_status_bar">แถบสถานะสีดำ</string>
     <string name="settings_credits">เครดิต</string>
@@ -167,11 +166,9 @@
     <string name="settings_extensions">ส่วนขยาย</string>
     <string name="settings_general">ทั่วไป</string>
     <string name="settings_help_us">สนับสนุน</string>
-    <string name="settings_malware">มัลแวร์</string>
     <string name="settings_privacy">ความเป็นส่วนตัว</string>
     <string name="settings_reseted">คืนค่าการตั้งค่าทั้งหมดแล้ว</string>
     <string name="settings_summary_apps">เปิดใช้งานแอพของบุคคลที่สาม</string>
-    <string name="settings_summary_adblock">บล็อกโฆษณา, การติดตาม, มัลแวร์...</string>
     <string name="settings_summary_dark_mode_default">กำหนดให้แท็บใหม่ใช้โหมดกลางคืนตามค่าเริ่มต้น</string>
     <string name="settings_summary_desktop_mode_default">กำหนดให้แท็บใหม่ใช้โหมดกลางคืนตามค่าเริ่มต้น</string>
     <string name="settings_summary_display">รูปแบบ, โหมดสี, ดึงเพื่อรีเฟรช...</string>
