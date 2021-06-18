@@ -23,7 +23,7 @@
     <androidx.preference.Preference
         app:fragment="com.jamal2367.styx.settings.fragment.AdBlockSettingsFragment"
         app:summary="@string/settings_summary_adblock"
-        app:title="@string/settings_admalwareblocker"
+        app:title="@string/settings_adminingblocker"
         app:icon="@drawable/ic_block_oval" />
 
     <androidx.preference.Preference

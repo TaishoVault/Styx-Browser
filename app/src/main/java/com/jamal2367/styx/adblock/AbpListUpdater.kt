@@ -17,6 +17,7 @@
 package com.jamal2367.styx.adblock
 
 import android.content.Context
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -29,6 +30,7 @@ import com.jamal2367.styx.adblock.filter.unified.io.ElementWriter
 import com.jamal2367.styx.adblock.filter.unified.io.FilterWriter
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
+import com.jamal2367.styx.preference.UserPreferences
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -36,34 +38,37 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.IOException
 import java.nio.charset.Charset
+import javax.inject.Inject
 
 // this is basically the update service from yuzu blocker with some stuff removed
-//class FillList(val context: Context) {
-class AbpListUpdater(val context: Context) {
+class AbpListUpdater @Inject constructor(val context: Context) {
+//class AbpListUpdater @Inject constructor(val context: Context, val userPreferences: UserPreferences) {
 
-//    @Inject
-//    internal lateinit var okHttpClient: OkHttpClient
+    //@Inject internal lateinit var okHttpClient: OkHttpClient
     val okHttpClient = OkHttpClient() // any problems if not injecting?
 
-//    @Inject
+    //    @Inject
 //    internal lateinit var abpDatabase: AbpDatabase
+    @Inject internal lateinit var userPreferences: UserPreferences
 
     val abpDao = AbpDao(context)
 
-    fun updateAll(forceUpdate: Boolean) = runBlocking {
+    fun updateAll(forceUpdate: Boolean): Boolean {
         var result = false
-        var nextUpdateTime = Long.MAX_VALUE
-        val now = System.currentTimeMillis()
-        abpDao.getAll().forEach {
-            if (forceUpdate || it.isNeedUpdate()) {
-                val localResult = updateInternal(it, forceUpdate)
-                if (localResult && it.expires > 0) {
-                    val nextTime = it.expires * AN_HOUR + now
-                    if (nextTime < nextUpdateTime) nextUpdateTime = nextTime
+        runBlocking {
+
+            var nextUpdateTime = Long.MAX_VALUE
+            val now = System.currentTimeMillis()
+            abpDao.getAll().forEach {
+                if (forceUpdate || (it.isNeedUpdate() && it.enabled)) {
+                    val localResult = updateInternal(it, forceUpdate)
+                    if (localResult && it.expires > 0) {
+                        val nextTime = it.expires * AN_HOUR + now
+                        if (nextTime < nextUpdateTime) nextUpdateTime = nextTime
+                    }
+                    result = result or localResult
                 }
-                result = result or localResult
             }
-        }
 
 /*        AdBlockPref.get(applicationContext).abpNextUpdateTime = if (nextUpdateTime != Long.MAX_VALUE) {
             nextUpdateTime
@@ -73,6 +78,23 @@ class AbpListUpdater(val context: Context) {
         if (result) {
             LocalEventBus.getDefault().notify(BROADCAST_ACTION_UPDATE_AD_BLOCK_DATA)
         }*/
+        }
+        return result
+    }
+
+    fun removeFiles(entity: AbpEntity) {
+        val dir = getFilterDir()
+        val writer = FilterWriter()
+        writer.write(dir.getAbpBlackListFile(entity), listOf())
+        writer.write(dir.getAbpWhiteListFile(entity), listOf())
+        writer.write(dir.getAbpWhitePageListFile(entity), listOf())
+
+        val elementWriter = ElementWriter()
+        elementWriter.write(dir.getAbpElementListFile(entity), listOf())
+    }
+
+    fun updateAbpEntity(entity: AbpEntity) = runBlocking {
+        updateInternal(entity)
     }
 
     private fun updateAbpEntity(entity: AbpEntity, result: ResultReceiver?) = runBlocking {
@@ -96,6 +118,13 @@ class AbpListUpdater(val context: Context) {
     private fun getFilterDir() = context.getDir(FILTER_DIR, Context.MODE_PRIVATE)
 
     private suspend fun updateHttp(entity: AbpEntity, forceUpdate: Boolean): Boolean {
+        // don't update if auto-update settings don't allow
+        // TODO: how to get userPreferences
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (!forceUpdate
+            && ((userPreferences.blockListAutoUpdate == AbpUpdateMode.WIFI_ONLY && cm.isActiveNetworkMetered)
+                    || userPreferences.blockListAutoUpdate == AbpUpdateMode.NONE))
+            return false
 
         val request = try {
             Request.Builder()
@@ -180,7 +209,8 @@ class AbpListUpdater(val context: Context) {
         val set = decoder.decode(reader, entity.url)
 
         val info = set.filterInfo
-        entity.title = info.title
+        if (entity.title == null) // only update title if there is none
+            entity.title = info.title
         entity.expires = info.expires ?: -1
         entity.homePage = info.homePage
         entity.version = info.version
@@ -249,29 +279,24 @@ class AbpListUpdater(val context: Context) {
             if (!forceUpdate) {
                 val prefs = AdBlockPref.get(context.applicationContext)
                 if (prefs.abpNextUpdateTime < System.currentTimeMillis()) return
-
                 if (AppPrefs.abpUpdateWifiOnly.get()) {
                     val cm = context.getSystemService<ConnectivityManager>()!!
                     if (!cm.isConnectedWifi()) return
                 }
             }
-
             val intent = Intent(context, AbpUpdateService::class.java).apply {
                 action = ACTION_UPDATE_ALL
                 putExtra(EXTRA_FORCE_UPDATE, forceUpdate)
                 putExtra(EXTRA_RESULT, result)
             }
-
             enqueueWork(context, AbpUpdateService::class.java, JOB_ID, intent)
         }
-
         fun update(context: Context, abpEntity: AbpEntity, result: UpdateResult? = null) {
             val intent = Intent(context, AbpUpdateService::class.java).apply {
                 action = ACTION_UPDATE_ABP
                 putExtra(EXTRA_ABP_ENTRY, abpEntity)
                 putExtra(EXTRA_RESULT, result)
             }
-
             enqueueWork(context, AbpUpdateService::class.java, JOB_ID, intent)
         }*/
     }

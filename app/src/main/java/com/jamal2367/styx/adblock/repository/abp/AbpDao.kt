@@ -18,6 +18,7 @@ package com.jamal2367.styx.adblock.repository.abp
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.jamal2367.styx.adblock.AbpListUpdater
 
 /*
 import androidx.room.*
@@ -41,23 +42,9 @@ interface AbpDao {
     suspend fun update(abpEntity: AbpEntity)
 }
 */
-/*
-interface AbpDao {
-
-    suspend fun getAll(): List<AbpEntity>
-
-    suspend fun inset(abpEntity: AbpEntity): Long
-
-    suspend fun inset(entities: List<AbpEntity>)
-
-    suspend fun delete(abpEntity: AbpEntity)
-
-    suspend fun update(abpEntity: AbpEntity)
-}*/
 
 // (bad?) replacement for the db:
 class AbpDao(val context: Context) {
-    //val prefs = PreferenceManager.getDefaultSharedPreferences(context)
     val prefs: SharedPreferences = context.getSharedPreferences("ad_block_settings", Context.MODE_PRIVATE)
 
     fun getAll(): List<AbpEntity> {
@@ -70,6 +57,8 @@ class AbpDao(val context: Context) {
     // update also handles new entities, they should have index 0 to avoid duplicates (can't happen in a db...)
     fun update(abpEntity: AbpEntity): Int {
         val list = getAll() as MutableList
+
+        // check whether entity exists
         for (index in list.indices) {
             if (list[index] == abpEntity) { // compares id only
                 list[index] = abpEntity
@@ -77,7 +66,8 @@ class AbpDao(val context: Context) {
                 return abpEntity.entityId
             }
         }
-        // if entity has index 0, find a new one
+
+        // if entity has index 0, find a valid unique ne id
         if (abpEntity.entityId == 0) {
             val ids =  list.map { it.entityId }
             var i = 1
@@ -99,8 +89,13 @@ class AbpDao(val context: Context) {
                 list.removeAt(i)
             ++i
         }
-        prefs.edit().putStringSet(ABP_ENTITIES, list.map { it.toString() }.toSet()).apply()
-        // TODO: delete related files
+
+        AbpListUpdater(context).removeFiles(abpEntity)
+
+        if (list.isEmpty())
+            prefs.edit().remove(ABP_ENTITIES).apply()
+        else
+            prefs.edit().putStringSet(ABP_ENTITIES, list.map { it.toString() }.toSet()).apply()
     }
 
 
@@ -108,7 +103,7 @@ class AbpDao(val context: Context) {
 
 // pre-fill some stuff, currently only built-in easylist enabled (enable others by manipulating preferences xml)
 const val ABP_ENTITIES = "abpEntities"
-val ABP_ENTITY_EASYLIST_BUILTIN = AbpEntity(title = "EasyListLocal", entityId = 1, url = "styx://easylist", homePage = "https://easylist.to")
-val ABP_ENTITY_EASYLIST = AbpEntity(title = "EasyList", entityId = 2, url = "https://easylist.to/easylist/easylist.txt", homePage = "https://easylist.to", enabled = false)
-val ABP_ENTITY_EASYPRIVACY = AbpEntity(title = "EasyPrivacy", entityId = 3, url = "https://easylist.to/easylist/easyprivacy.txt", homePage = "https://easylist.to", enabled = false)
+val ABP_ENTITY_EASYLIST_BUILTIN = AbpEntity(title = "Internal List", entityId = 1, url = "styx://easylist", homePage = "https://easylist.to", enabled = true)
+val ABP_ENTITY_EASYLIST = AbpEntity(title = "EasyList", entityId = 2, url = "https://easylist.to/easylist/easylist.txt", homePage = "https://easylist.to")
+val ABP_ENTITY_EASYPRIVACY = AbpEntity(title = "EasyPrivacy", entityId = 3, url = "https://easylist.to/easylist/easyprivacy.txt", homePage = "https://easylist.to")
 val ABP_DEFAULT_ENTITIES = setOf(ABP_ENTITY_EASYLIST_BUILTIN.toString(), ABP_ENTITY_EASYLIST.toString(), ABP_ENTITY_EASYPRIVACY.toString())

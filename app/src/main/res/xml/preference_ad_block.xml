@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:title="@string/settings_malware">
+        android:title="@string/settings_mining">
 
     <SwitchPreferenceCompat
         android:defaultValue="true"
@@ -24,17 +24,10 @@
             android:title="@string/block_ads"
             app:icon="@drawable/ic_block_oval" />
 
-        <!-- <Preference
-            android:key="preference_hosts_source"
-            android:summary="@string/block_source_default"
-            android:title="@string/block_ad_source"
-            app:icon="@drawable/ic_folder_oval" />
-
         <Preference
-            android:key="preference_hosts_refresh_force"
-            android:summary="@string/block_ad_remote_refresh_frequency_description"
-            android:title="@string/block_ad_refresh_now"
-            app:icon="@drawable/ic_action_refresh_oval" /> -->
+            android:key="@string/pref_key_blocklist_auto_update"
+            android:title="@string/ad_block_update_mode"
+            app:icon="@drawable/ic_action_refresh_oval" />
 
     </PreferenceCategory>
 

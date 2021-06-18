@@ -7,6 +7,7 @@ import com.jamal2367.styx.AccentTheme
 import com.jamal2367.styx.AppTheme
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.R
+import com.jamal2367.styx.adblock.AbpUpdateMode
 import com.jamal2367.styx.browser.JavaScriptChoice
 import com.jamal2367.styx.browser.SearchBoxDisplayChoice
 import com.jamal2367.styx.browser.SearchBoxModel
@@ -476,4 +477,6 @@ class UserPreferences @Inject constructor(
      * Define long press on the 'Tabs' icon opens a new tab.
      */
     var longClickTab by preferences.booleanPreference(R.string.pref_key_long_click_tab, R.bool.pref_default_long_click_tab)
+
+    var blockListAutoUpdate by preferences.enumPreference(R.string.pref_key_blocklist_auto_update, AbpUpdateMode.WIFI_ONLY)
 }

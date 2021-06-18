@@ -93,7 +93,7 @@ class StyxWebClient(
 
     private var currentUrl: String = ""
 
-    private var elementHide = true // TODO: better get from preferences
+    //private var elementHide = true
 
     private var color = ""
 
@@ -311,12 +311,13 @@ class StyxWebClient(
         if (styxView.invertPage) {
             view.evaluateJavascript(invertPageJs.provideJs(), null)
         }
+        /*
         if (elementHide) {
             adBlock.loadScript(Uri.parse(currentUrl))?.let {
                 view.evaluateJavascript(it, null)
             }
             // takes around half a second, but not sure what that tells me
-        }
+        }*/
         if (url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")) {
             view.evaluateJavascript("javascript:(function() {" + "link1var = '" + userPreferences.link1  + "';" + "})();", null)
             view.evaluateJavascript("javascript:(function() {" + "link2var = '" + userPreferences.link2 + "';" + "})();", null)

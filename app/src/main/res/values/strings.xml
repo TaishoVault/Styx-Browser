@@ -68,15 +68,20 @@
     <string name="ad_block_edit_blocklist">Edit blocklist</string>
     <string name="ad_block_enable">Enable</string>
     <string name="ad_block_file">File</string>
-    <string name="ad_block_from_file">From file</string>
-    <string name="ad_block_from_address">From Address</string>
+    <string name="ad_block_from_file">Local</string>
+    <string name="ad_block_from_address">Remote</string>
     <string name="ad_block_internal_list">Internal list</string>
+    <string name="ad_block_invalid_title">Invalid title</string>
     <string name="ad_block_invalid_url">Invalid address</string>
-    <string name="ad_block_last_update">Last update:</string>
+    <string name="ad_block_last_update">Last update: %s</string>
     <string name="ad_block_load_failure">Failed to load hosts from ad blocking source.</string>
-    <string name="ad_block_name">Name</string>
     <string name="ad_block_create_blocklist">Create blocklist</string>
     <string name="ad_block_update_list">Update blocklist file</string>
+    <string name="ad_block_update_mode">Automatic update</string>
+    <string name="ad_block_update_now">Update lists</string>
+    <string name="ad_block_update_on">Activate</string>
+    <string name="ad_block_update_off">Disable</string>
+    <string name="ad_block_update_wifi">Only via WLAN</string>
     <string name="ad_server_list">AdGuard Ad-Server List</string>
     <string name="agent_android_mobile">Android (Mobile)</string>
     <string name="agent_custom">Custom</string>
@@ -345,7 +350,7 @@
     <string name="settings_about_explain">Details about version, author and license.</string>
     <string name="settings_about">About</string>
     <string name="settings_adblock">Ad Block</string>
-    <string name="settings_admalwareblocker">Ad &amp; Malware Blocker</string>
+    <string name="settings_adminingblocker">Ad &amp; Mining Blocker</string>
     <string name="settings_advanced">Advanced</string>
     <string name="settings_app_prefix" translatable="false">app_for_</string>
     <string name="settings_black_status_bar">Black status bar</string>
@@ -356,11 +361,11 @@
     <string name="settings_extensions">Extensions</string>
     <string name="settings_general">General</string>
     <string name="settings_help_us">Help us</string>
-    <string name="settings_malware">Malware</string>
+    <string name="settings_mining">Mining</string>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_reseted">All settings restored</string>
     <string name="settings_summary_apps">Enable third-party apps</string>
-    <string name="settings_summary_adblock">Block advertising, tracking, malware…</string>
+    <string name="settings_summary_adblock">Block advertising, tracking, mining…</string>
     <string name="settings_summary_dark_mode_default">Define if new tabs use force dark mode by default</string>
     <string name="settings_summary_desktop_mode_default">Define if new tabs use desktop mode by default</string>
     <string name="settings_summary_display">App design, color mode, pull-to-refresh…</string>
@@ -519,6 +524,7 @@
     <string name="pref_key_accent" translatable="false">pref_key_accent</string>
     <string name="pref_key_always_incognito" translatable="false">pref_key_always_incognito</string>
     <string name="pref_key_black_status_bar" translatable="false">pref_key_black_status_bar</string>
+    <string name="pref_key_blocklist_auto_update" translatable="false">pref_key_blocklist_auto_update</string>
     <string name="pref_key_block_ads" translatable="false">pref_key_block_ads</string>
     <string name="pref_key_block_js" translatable="false">pref_key_block_js</string>
     <string name="pref_key_block_mining" translatable="false">pref_key_block_mining</string>
