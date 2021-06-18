@@ -3341,6 +3341,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      * Check for update on github
      */
     private fun checkForUpdates(context: Context) {
+        if (userPreferences.showUpdate) {
         val url = getString(R.string.github_update_check_url)
         val request = StringRequest(Request.Method.GET, url, { reply ->
                 val latestVersion = Gson().fromJson(reply, JsonObject::class.java).get("tag_name").asString
@@ -3364,6 +3365,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         request.tag = TAG
         queue.add(request)
+        }
     }
 
     private fun stringContainsItemFromList(inputStr: String, items: Array<String>): Boolean {

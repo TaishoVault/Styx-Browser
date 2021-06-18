@@ -478,5 +478,13 @@ class UserPreferences @Inject constructor(
      */
     var longClickTab by preferences.booleanPreference(R.string.pref_key_long_click_tab, R.bool.pref_default_long_click_tab)
 
+    /**
+     * Define auto update for Adblocker.
+     */
     var blockListAutoUpdate by preferences.enumPreference(R.string.pref_key_blocklist_auto_update, AbpUpdateMode.WIFI_ONLY)
+
+    /**
+     * Show "Update available" message when a update is available.
+     */
+    var showUpdate by preferences.booleanPreference(R.string.pref_key_show_update, R.bool.pref_default_show_update)
 }

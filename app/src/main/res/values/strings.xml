@@ -432,6 +432,7 @@
     <string name="unlisted_javascript">Block JavaScript for listed sites</string>
     <string name="untitled">Untitled</string>
     <string name="update_available">is available!</string>
+    <string name="update_message">Show update notification when starting the browser</string>
     <string name="url_app_home_page" translatable="false">https://github.com/jamal2362/Styx/releases/latest</string>
     <string name="url_contents">Tool bar shows</string>
     <string name="url_in_new_tab">URL in new tab</string>
@@ -595,6 +596,7 @@
     <string name="pref_key_long_click_tab" translatable="false">pref_key_long_click_tab</string>
     <string name="pref_key_show_shortcuts" translatable="false">pref_key_show_shortcuts</string>
     <string name="pref_key_show_undo_tab" translatable="false">pref_key_show_undo_tab</string>
+    <string name="pref_key_show_update" translatable="false">pref_key_show_update</string>
     <string name="pref_key_ssl_dialog" translatable="false">pref_key_ssl_dialog</string>
     <string name="pref_key_support_multiple_window" translatable="false">pref_key_support_multiple_window</string>
     <string name="pref_key_swap_tabs_and_bookmarks" translatable="false">pref_key_swap_tabs_and_bookmarks</string>
