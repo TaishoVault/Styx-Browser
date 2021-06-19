@@ -34,7 +34,7 @@ or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/rel
 * Multiple search engines (Google, Bing, Yahoo, StartPage, DuckDuckGo, Mojeek, Searx etc.).
 * Incognito mode.
 * Ad-blocker.
-* Malware blocker.
+* Mining blocker.
 * Reader mode with Text To Speech (TTS).
 * Dark Mode for Websites.
 * Backup/Restore for Settings and Bookmarks.
