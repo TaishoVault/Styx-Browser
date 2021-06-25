@@ -79,8 +79,8 @@
     <string name="ad_block_update_list">Update blocklist file</string>
     <string name="ad_block_update_mode">Automatic update</string>
     <string name="ad_block_update_now">Update lists</string>
-    <string name="ad_block_update_on">Activate</string>
-    <string name="ad_block_update_off">Disable</string>
+    <string name="ad_block_update_on">On</string>
+    <string name="ad_block_update_off">Off</string>
     <string name="ad_block_update_wifi">Only via WLAN</string>
     <string name="ad_server_list">AdGuard Ad-Server List</string>
     <string name="agent_android_mobile">Android (Mobile)</string>
