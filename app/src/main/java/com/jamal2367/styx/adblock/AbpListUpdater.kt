@@ -324,5 +324,5 @@ class AbpListUpdater @Inject constructor(val context: Context) {
 
         abstract fun onUpdateAll()
     }
-    
+
 }
