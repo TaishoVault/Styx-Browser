@@ -19,6 +19,7 @@ package com.jamal2367.styx.adblock.filter.unified.io
 import com.jamal2367.styx.adblock.filter.toByteArray
 import com.jamal2367.styx.adblock.filter.toShortByteArray
 import com.jamal2367.styx.adblock.filter.unified.FILTER_CACHE_HEADER
+import com.jamal2367.styx.adblock.filter.unified.Tag
 import com.jamal2367.styx.adblock.filter.unified.UnifiedFilter
 import com.jamal2367.styx.adblock.filter.unified.writeVariableInt
 import java.io.OutputStream
@@ -48,6 +49,15 @@ class FilterWriter {
             val patternBytes = it.pattern.toByteArray()
             os.writeVariableInt(patternBytes.size, shortBuf, intBuf)
             os.write(patternBytes)
+
+            // also write best tag
+            //  no need to create tags when loading -> loading is ca 20% faster
+            //  drawback: increased file size, up to 50% for easylist blocks (but 300 kb, so whatever)
+            val tagBytes = if (it.isRegex) "".toByteArray()
+            else Tag.createBest(it.pattern).toByteArray()
+            os.writeVariableInt(tagBytes.size, shortBuf, intBuf)
+            os.write(tagBytes)
+
             os.write(min(it.domains?.size ?: 0, 255))
             it.domains?.let { map ->
                 os.write(if (map.include) 1 else 0)

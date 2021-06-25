@@ -18,6 +18,7 @@ import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.okhttp3.internal.publicsuffix.PublicSuffix
 import com.jamal2367.styx.utils.ThemeUtils
 import com.jamal2367.styx.utils.htmlColor
+import com.jamal2367.styx.utils.isSpecialUrl
 import kotlinx.coroutines.*
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -33,23 +34,18 @@ import kotlin.collections.HashMap
 class AbpBlocker @Inject constructor(
     private val application: Application,
     abpListUpdater: AbpListUpdater,
-    //private val userPreferences: UserPreferences // TODO: relevant only for element hiding
+    private val abpUserRules: AbpUserRules
 ) : AdBlocker {
-    // necessary to do it like this; userPreferences not injected when using AbpListUpdater(application.applicationContext).updateAll(false)
-    //@Inject internal lateinit var abpListUpdater: AbpListUpdater
-    // no... not initialized -> bah
+    private lateinit var exclusionList: FilterContainer
+    private lateinit var blockList: FilterContainer
 
-    // filter lists
-//    private var exclusionList: FilterContainer? = null
-    private var exclusionList = FilterContainer()
-    //    private var blockList: FilterContainer? = null
-    private var blockList = FilterContainer()
-    private var userWhitelist: FilterContainer? = null
-    private var userBlockList: FilterContainer? = null
+    // if i want mining/malware block, it should be separate lists so they are not affected by ad-blocklist exclusions
+    // TODO: any reason NOT to join those lists?
+    private var miningList = FilterContainer() // copy from yuzu?
+    private var malwareList = FilterContainer() // copy from smartcookieweb/styx?
 
-    // if i want mining/malware block, it should be separate lists so they don't get disabled when not blocking ads
-    private var miningList: FilterContainer? = null // copy from yuzu?
-    private var malwareList: FilterContainer? = null // copy from smartcookieweb/styx?
+    // store whether lists are loaded (and delay any request if loading is not finished)
+    private var listsLoaded = false
 
     /*    // TODO: element hiding
         //  not sure if this actually works (did not in a test - I think?), maybe it's crucial to inject the js at the right point
@@ -58,52 +54,38 @@ class AbpBlocker @Inject constructor(
     //    private var elementHideList: ElementContainer? = null
         // both lists are actually inside the elementBlocker
         private var elementBlocker: CosmeticFiltering? = null
-        var useElementHide = true // TODO: load from preferences (if it really works)
+        var elementHide = userPreferences.elementHide
     */
     // cache for 3rd party check, allows significantly faster checks
     private val thirdPartyCache = mutableMapOf<String, Boolean>()
     private val thirdPartyCacheSize = 100
 
-    private val dummyImage: ByteArray = readByte(application.applicationContext.resources.assets.open("blank.webp"))
-    private val dummyResponse = WebResourceResponse("text/plain", "UTF-8", EmptyInputStream())
+    private val dummyImage: ByteArray by lazy { readByte(application.applicationContext.resources.assets.open("blank.webp")) }
+    private val dummyResponse by lazy { WebResourceResponse("text/plain", "UTF-8", EmptyInputStream()) }
 
     override fun isAd(url: String) = false // for now...
 
-    // TODO: decide when to load lists
-    //  just loadLists() takes ca 1 second on S4 mini for easylist and delays browser start
-    //  but then blocklists are loaded before the first request
-    //  loading after updates are done may delay loading of adblocker for some 5-30 seconds, depending on phone speed and internet connection
-    //  loading before fetching updates still leaves the first 3-5 seconds without blocker...
-    //  nothing is really good here -> best way would be ton find a way to accelerate blocklist loading
-    //  2nd best: have a setting
-    //  hmm... there was this blocker.await in yuzu, maybe that's connected? but this made blocking 50% slower...
     init {
-        loadLists() // takes ca 1 second on S4 mini for easylist
+        // TODO: ideally we should call loadLists here (blocking) if the url in current tab (on opening browser) is not special
+        //  because loadLists() here is sometimes significantly faster than inside the GlobalScope
+        //  but generally no need to block UI, better just delay the first web requests
+        //loadLists() // 320-430 ms on S4 mini plus / 550-650 ms on S4 mini -> always the fastest, but blocking
 
-        // TODO: use of globalscope was discouraged somewhere... check and adjust if necessary
-        GlobalScope.launch(Dispatchers.IO) {
-            //loadLists() // takes about 3-5 seconds on S4 mini for easylist
-            // updates all entities in AbpDao, may take a while depending on how many lists need update, and internet connection
-            if (abpListUpdater.updateAll(false)) // returns true if any was updated
+        GlobalScope.launch(Dispatchers.Default) { // IO for io-intensive stuff, but here we do some IO and are mostly limited by CPU... so Default should be better?
+            // load lists here if not loaded above
+            //stufftest()
+            loadLists() // 400-450 ms on S4 mini plus / 1200-1700 ms on S4 mini -> good on plus
+            //loadListsAsync() // 540-720 ms on S4 mini plus / 900-1200 ms on S4 mini -> best non-blocking on normal
+            // why is async so much faster on a dual core phone? expectation is other way round
+
+            // update all entities in AbpDao
+            // may take a while depending on how many lists need update, and on internet connection
+            if (abpListUpdater.updateAll(false)) // returns true if anything was updated
                 loadLists() // update again if files have changed
         }
     }
 
     //----------------------- from yuzu adblocker (mostly AdBlockController) --------------------//
-    fun loadLists() {
-        val abpLoader = AbpLoader(application.applicationContext.getFilterDir(), AbpDao(application.applicationContext).getAll())
-        blockList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DENY).forEach(it::plusAssign) }
-//        blockList.also { abpLoader.loadAll(ABP_PREFIX_DENY).forEach(it::plusAssign) } // TODO: if i do it like this, there is even more reason to remove duplicate entries!
-        exclusionList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::plusAssign) }
-//        exclusionList.also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::plusAssign) }
-
-/*        if (useElementHide) {
-            val disableCosmetic = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DISABLE_ELEMENT_PAGE).forEach(it::plusAssign) }
-            val elementFilter = ElementContainer().also { abpLoader.loadAllElementFilter().forEach(it::plusAssign) }
-            elementBlocker = CosmeticFiltering(disableCosmetic, elementFilter)
-        }*/
-    }
-
     private fun createDummy(uri: Uri): WebResourceResponse {
         val mimeType = getMimeType(uri.toString())
         return if (mimeType.startsWith("image/")) {
@@ -136,15 +118,16 @@ class AbpBlocker @Inject constructor(
         return getNoCacheResponse("text/html", builder)
     }
 
+    // TODO: remove if element hiding does not work
     override fun loadScript(uri: Uri): String? {
 //        val cosmetic = elementBlocker ?: return null
 //        return cosmetic.loadScript(uri)
-        return null // TODO: remove if element hiding does not work
+        return null
     }
 
     // copied here to allow modified 3rd party detection
     private fun WebResourceRequest.getContentRequest(pageUri: Uri) =
-        ContentRequest(url, pageUri, getContentType(pageUri), is3rdParty(this.url, pageUri))
+        ContentRequest(url, pageUri, getContentType(pageUri), is3rdParty(url, pageUri))
 
     // modified to use cache for the slow part, decreases average time by 50-70%
     fun is3rdParty(url: Uri, pageUri: Uri): Boolean {
@@ -169,7 +152,35 @@ class AbpBlocker @Inject constructor(
 
     //----------------------- not from yuzu any more ------------------------//
 
-    // cache 3rd party check result
+    // TODO: probably remove
+    fun loadListsAsync() {
+        listsLoaded = false
+        val abpLoader = AbpLoader(application.applicationContext.getFilterDir(), AbpDao(application.applicationContext).getAll())
+        GlobalScope.launch {
+            val el = async { FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::addWithTag) } }
+            val bl = async { FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DENY).forEach(it::addWithTag) } }
+            exclusionList = el.await()
+            blockList = bl.await()
+            listsLoaded = true
+        }
+    }
+
+    fun loadLists() {
+        listsLoaded = false
+        val abpLoader = AbpLoader(application.applicationContext.getFilterDir(), AbpDao(application.applicationContext).getAll())
+        exclusionList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::addWithTag) }
+        blockList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DENY).forEach(it::addWithTag) }
+
+        /*if (elementHide) {
+            val disableCosmetic = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DISABLE_ELEMENT_PAGE).forEach(it::plusAssign) }
+            val elementFilter = ElementContainer().also { abpLoader.loadAllElementFilter().forEach(it::plusAssign) }
+            elementBlocker = CosmeticFiltering(disableCosmetic, elementFilter)
+        }*/
+
+        listsLoaded = true
+    }
+
+    // cache 3rd party check result, and remove oldest entry if cache too large
     private fun cache3rdPartyResult(is3rdParty: Boolean, cacheEntry: String): Boolean {
         thirdPartyCache[cacheEntry] = is3rdParty
         if (thirdPartyCache.size > thirdPartyCacheSize)
@@ -177,49 +188,46 @@ class AbpBlocker @Inject constructor(
         return is3rdParty
     }
 
-    // return null if not blocked, else some WebResourceResponse
+    // returns null if not blocked, else some WebResourceResponse
     override fun shouldBlock(request: WebResourceRequest, pageUrl: String): WebResourceResponse? {
-        // pageUrl might be "" (usually when opening something in a new tab)
-        //  in this case everything gets blocked because of the pattern "|https://"
-        //  this is blocked for some domains, and apparently no domain also means it's blocked
-        //  so some workaround here (maybe do something else?)
-        val contentRequest = request.getContentRequest(if (pageUrl == "") request.url else Uri.parse(pageUrl))
-        userBlockList?.get(contentRequest)?.pattern
-        // check user lists
-        // then mining/malware
+        // always allow special URLs
+        // then check user lists (user allow should even override malware list)
+        // then mining/malware (ad block allow should not override malware list)
         // then ads
 
-        /* replace by rather ugly if-stuff, because result of check is used
-        return when {
-            userWhitelist?.get(contentRequest) != null -> null
-            userBlockList?.get(contentRequest) != null -> getBlockResponse(request)
-            miningList?.get(contentRequest) != null -> getBlockResponse(request)
-            malwareList?.get(contentRequest) != null -> getBlockResponse(request)
-            exclusionList?.get(contentRequest) != null -> null
-            blockList?.get(contentRequest) != null -> getBlockResponse(request)
-            else -> null
-        }*/
-        if (userWhitelist?.get(contentRequest) != null)
+        if (request.url.toString().isSpecialUrl())
             return null
 
-        var filter = userBlockList?.get(contentRequest)
-        if (filter != null)
-            return getBlockResponse(request, "User blocklist: ${filter.pattern}")
+        // create contentRequest
+        // pageUrl can be "" (usually when opening something in a new tab)
+        //  in this case everything gets blocked because of the pattern "|https://"
+        //  this is blocked for some page domains, and apparently no page domain also means it's blocked
+        //  so some workaround here (maybe do something else? check how UnifiedFilter handles domainMap stuff)
+        val contentRequest = request.getContentRequest(if (pageUrl == "") request.url else Uri.parse(pageUrl))
 
-        filter = miningList?.get(contentRequest)
-        if (filter != null)
-            return getBlockResponse(request, "Mining blocklist: ${filter.pattern}")
+        // no need to supply pattern to block response
+        //  pattern only used if it's for main frame
+        //  and if it's for main frame and blocked by user, it's always because user chose to block entire domain
+        abpUserRules.getResponse(contentRequest)?.let { response ->
+            return if (response) getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_user, contentRequest.pageUrl.host ?: ""))
+            else null
+        }
 
-        filter = malwareList?.get(contentRequest)
-        if (filter != null)
-            return getBlockResponse(request, "Malware blocklist: ${filter.pattern}")
+        // wait until blocklists are loaded
+        //  (web request stuff does not run on main thread, so thread.sleep is ok)
+        // possible reduction of wait time before lists have loaded:
+        //   load list with 'empty' tag first and check those
+        //   for the rest the bloom filter could be used, so requests without matching tags are allowed immediately
+        //   but: seems like a lot of work for maybe saving 0.5-2 seconds on browser start
+        //    'maybe' saving because ca 20-50% of all requests will have matching tags, so there will (probably) still be a delay
+        while (!listsLoaded) {
+            Thread.sleep(50)
+        }
 
-        if (exclusionList[contentRequest] != null)
-            return null
-
-        filter = blockList[contentRequest]
-        if (filter != null)
-            return getBlockResponse(request, "Ad blocklist: ${filter.pattern}")
+        miningList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
+        malwareList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
+        exclusionList[contentRequest]?.let { return null }
+        blockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_ad, it.pattern)) }
 
         return null
     }

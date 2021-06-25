@@ -31,7 +31,6 @@ import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.BuildConfig
 import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.AdBlocker
-import com.jamal2367.styx.adblock.allowlist.AllowListModel
 import com.jamal2367.styx.browser.JavaScriptChoice
 import com.jamal2367.styx.browser.activity.BrowserActivity
 import com.jamal2367.styx.constant.FILE
@@ -75,7 +74,6 @@ class StyxWebClient(
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject @UserPrefs internal lateinit var preferences: SharedPreferences
     @Inject internal lateinit var sslWarningPreferences: SslWarningPreferences
-    @Inject internal lateinit var whitelistModel: AllowListModel
     @Inject internal lateinit var logger: Logger
     @Inject internal lateinit var textReflowJs: TextReflow
     @Inject internal lateinit var invertPageJs: InvertPage
@@ -93,7 +91,7 @@ class StyxWebClient(
 
     private var currentUrl: String = ""
 
-    //private var elementHide = true
+    //private var elementHide = userPreferences.elementHide
 
     private var color = ""
 
@@ -123,16 +121,17 @@ class StyxWebClient(
         activity.injector.provideNoOpAdBlocker()
     }
 
-    private fun shouldRequestBeBlocked(pageUrl: String, requestUrl: String) =
-        !whitelistModel.isUrlAllowedAds(pageUrl) && adBlock.isAd(requestUrl)
-
+    /**
+     * Overrides [WebViewClient.shouldInterceptRequest].
+     * Looks like we need to intercept our custom URLs here to implement support for fulguris and about scheme.
+     */
     override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
         // maybe adjust to always return response... null means allow anyway. what is the "super" actually doing? same as null?
-        // adBlock should probably be renamed
+        // adBlock should probably be renamed once mining and malware block is implemented
         val response = adBlock.shouldBlock(request, currentUrl)
-        if (response != null) {
+        if (response != null)
             return response
-        }
+
         return super.shouldInterceptRequest(view, request)
     }
 

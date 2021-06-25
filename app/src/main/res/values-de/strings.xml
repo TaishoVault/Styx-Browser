@@ -62,6 +62,9 @@
     <string name="ad_block_address">Adresse</string>
     <string name="ad_block_blocked_page">Der Werbeblocker hat die folgende Seite blockiert:</string>
     <string name="ad_block_blocked_filter">Aufgrund des folgenden Filters:</string>
+    <string name="ad_block_blocked_list_ad">%s in der Werbeblocker Blockliste</string>
+    <string name="ad_block_blocked_list_malware">%s in der Malware Blockliste</string>
+    <string name="ad_block_blocked_list_user">%s blockiert durch Benutzerregel</string>
     <string name="ad_block_delete_list">Entfernen</string>
     <string name="ad_block_edit_blocklist">Blockliste bearbeiten</string>
     <string name="ad_block_enable">Aktivieren</string>

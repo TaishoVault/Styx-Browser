@@ -64,6 +64,9 @@
     <string name="ad_block_address">Address</string>
     <string name="ad_block_blocked_page">Ad block blocked the following page:</string>
     <string name="ad_block_blocked_filter">Because of the following filter:</string>
+    <string name="ad_block_blocked_list_ad">%s on ad blocklist</string>
+    <string name="ad_block_blocked_list_malware">%s on malware blocklist</string>
+    <string name="ad_block_blocked_list_user">%s blocked by user rule</string>
     <string name="ad_block_delete_list">Delete</string>
     <string name="ad_block_edit_blocklist">Edit blocklist</string>
     <string name="ad_block_enable">Enable</string>

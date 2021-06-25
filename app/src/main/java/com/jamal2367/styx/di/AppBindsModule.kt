@@ -1,5 +1,7 @@
 package com.jamal2367.styx.di
 
+import com.jamal2367.styx.adblock.UserRulesDatabase
+import com.jamal2367.styx.database.adblock.UserRulesRepository
 import com.jamal2367.styx.adblock.allowlist.AllowListModel
 import com.jamal2367.styx.adblock.allowlist.SessionAllowListModel
 import com.jamal2367.styx.adblock.source.AssetsHostsDataSource
@@ -60,6 +62,9 @@ interface AppBindsModule {
 
     @Binds
     fun bindsHostsRepository(hostsDatabase: HostsDatabase): HostsRepository
+
+    @Binds
+    fun bindsAbpRulesRepository(apbRulesDatabase: UserRulesDatabase): UserRulesRepository
 
     @Binds
     fun bindsHostsDataSourceProvider(preferencesHostsDataSourceProvider: PreferencesHostsDataSourceProvider): HostsDataSourceProvider
