@@ -57,7 +57,7 @@
         <item name="appColorControlDisabled">@color/grey_3</item>
         <item name="colorControlNormal">@color/state_color_control</item>
         <item name="haloColor">@color/white</item>
-        <item name="alertDialogTheme">@style/ThemeOverlay.App.Dialog.Alert</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.App.Dialog.Alert.Light</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentStatus">false</item>
@@ -207,8 +207,18 @@
         <item name="android:windowExitAnimation">@anim/menu_close_bottom</item>
     </style>
 
+    <style name="ThemeOverlay.App.Dialog.Alert.Light" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:background">?attr/trackColor</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle.Light</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle.Light</item>
+    </style>
+
     <style name="ThemeOverlay.App.Dialog.Alert" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
         <item name="android:background">?attr/trackColor</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">

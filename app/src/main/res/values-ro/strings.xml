@@ -283,7 +283,6 @@
     <string name="session_prompt_confirm_deletion_message">Ești sigur că vrei să ștergi sesiunea \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Confirmă ștergerea</string>
     <string name="session_switched">Schimbat la \"%s\"</string>
-    <string name="settings_about_explain">Numărul versiunii, autorul și licențele&#8230;</string>
     <string name="settings_about">Despre</string>
     <string name="settings_adblock">Setări bloc de conținut</string>
     <string name="settings_advanced">Setări avansate</string>
@@ -296,14 +295,8 @@
     <string name="settings_help_us">Ajută-ne</string>
     <string name="settings_privacy">Setări de confidențialitate și securitate</string>
     <string name="settings_reseted">Toate setările au fost restaurate</string>
-    <string name="settings_summary_apps">Activează aplicații terțe</string>
     <string name="settings_summary_dark_mode_default">Definește dacă filele noi folosesc modul întunecat forțat implicit</string>
     <string name="settings_summary_desktop_mode_default">Definește dacă filele noi folosesc modul desktop implicit</string>
-    <string name="settings_summary_display">Design aplicație, mod culoare, tragere la reîmprospătare…</string>
-    <string name="settings_summary_extensions">Instalați extensiile</string>
-    <string name="settings_summary_general">Pagina principală, serviciile de căutare, filele…</string>
-    <string name="settings_summary_import_export">Backup și restaurare setări și marcaje</string>
-    <string name="settings_summary_privacy">Cache, Istoric, cookie-uri…</string>
     <string name="settings_summary_vertical_tab_bar">Dezactivează-l pentru a utiliza file în sertarul de navigare</string>
     <string name="settings_title_apps">Aplicații</string>
     <string name="settings_title_dark_mode_default">Forțează modul întunecat</string>

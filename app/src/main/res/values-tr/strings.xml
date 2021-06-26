@@ -59,6 +59,7 @@
     <string name="action_show_homepage">Ana sayfa</string>
     <string name="action_webpage">Web sayfası</string>
     <string name="action_yes">Evet</string>
+    <string name="ad_blocker">Reklam Engelleyici</string>
     <string name="ad_block_address">Adres</string>
     <string name="ad_block_blocked_page">Reklam engelleyici şu sayfayı engelledi:</string>
     <string name="ad_block_blocked_filter">Şu filtre nedeniyle:</string>
@@ -79,6 +80,8 @@
     <string name="ad_block_update_list">Dosya filtresini güncelle</string>
     <string name="ad_block_update_mode">Otomatik güncelleme</string>
     <string name="ad_block_update_now">Listeleri güncelle</string>
+    <string name="ad_block_update_on">Açık</string>
+    <string name="ad_block_update_off">Kapalı</string>
     <string name="ad_block_update_wifi">Sadece WLAN ile</string>
     <string name="ad_server_list">AdGuard Reklam Sunucuları Listesi</string>
     <string name="agent_android_mobile">Android (Telefon)</string>
@@ -317,7 +320,6 @@
     <string name="session_prompt_confirm_deletion_message">\"%s\" Oturumunu silmek istediğinize emin misiniz?</string>
     <string name="session_prompt_confirm_deletion_title">Silmeyi onayla</string>
     <string name="session_switched">\"%s\" olarak değiştirildi</string>
-    <string name="settings_about_explain">Sürüm, yazar ve lisansla ilgili ayrıntılar.</string>
     <string name="settings_about">Hakkında</string>
     <string name="settings_adblock">Reklam engelleme</string>
     <string name="settings_adminingblocker">Reklam &amp; madencilik engelleme</string>
@@ -333,15 +335,8 @@
     <string name="settings_mining">Madencilik</string>
     <string name="settings_privacy">Gizlilik ayarları</string>
     <string name="settings_reseted">Tüm ayarlar geri yüklendi</string>
-    <string name="settings_summary_apps">Üçüncü taraf uygulamalarını etkinleştir</string>
-    <string name="settings_summary_adblock">Reklamları, izleyicileri ve kötü amaçlı madenciliği engelleyin…</string>
     <string name="settings_summary_dark_mode_default">Yeni sekmelerin varsayılan olarak zorla karanlık modu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_desktop_mode_default">Yeni sekmelerin varsayılan olarak masaüstü modunu kullanıp kullanmayacağını tanımlayın</string>
-    <string name="settings_summary_display">Uygulama tasarımı, renk modu, kaydırınca yenileme...</string>
-    <string name="settings_summary_extensions">Eklentileri yükle</string>
-    <string name="settings_summary_general">Ana sayfa, arama servisleri, sekmeler...</string>
-    <string name="settings_summary_import_export">Ayarları ve yer işaretlerini yedekle veya geri yükle</string>
-    <string name="settings_summary_privacy">Önbellek, geçmiş, çerezler…</string>
     <string name="settings_summary_vertical_tab_bar">Gezinme çekmecesinde sekmeleri kullanmak için devre dışı bırakın</string>
     <string name="settings_support">Destek</string>
     <string name="settings_title_apps">Uygulamalar</string>

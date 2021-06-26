@@ -144,7 +144,6 @@
     <string name="search_suggestions_off">검색 제안 없음</string>
     <string name="search_suggestions">검색 제안</string>
     <string name="search">검색 엔진</string>
-    <string name="settings_about_explain">버전, 개발자, 라이선스 정보</string>
     <string name="settings_about">라이트닝 정보</string>
     <string name="settings_adblock">광고 차단 설정</string>
     <string name="settings_advanced">고급 설정</string>

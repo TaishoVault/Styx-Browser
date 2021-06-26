@@ -314,7 +314,6 @@
     <string name="session_prompt_confirm_deletion_message">Вы уверены, что хотите удалить сессию \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Подтвердите удаление</string>
     <string name="session_switched">Переключено на \"%s\"</string>
-    <string name="settings_about_explain">Информация о версии, авторах и лицензиях</string>
     <string name="settings_about">О программе</string>
     <string name="settings_adblock">Настройки блокировки рекламы</string>
     <string name="settings_adminingblocker">Блокировщик рекламы &amp; \"майнинга\"</string>
@@ -330,15 +329,8 @@
     <string name="settings_mining">\"Майнинг\"</string>
     <string name="settings_privacy">Настройки приватности</string>
     <string name="settings_reseted">Все настройки восстановлены</string>
-    <string name="settings_summary_apps">Разрешить сторонние приложения</string>
-    <string name="settings_summary_adblock">Блокировка рекламы, отслеживания, \"майнинга\"…</string>
     <string name="settings_summary_dark_mode_default">Определить, используют ли новые вкладки принудительный темный режим по умолчанию</string>
     <string name="settings_summary_desktop_mode_default">Определяет, будут ли новые вкладки использовать рабочий стол по умолчанию</string>
-    <string name="settings_summary_display">Внешний вид приложения, цветовой режим, \"потянуть_для_обновления\"…</string>
-    <string name="settings_summary_extensions">Установка расширений</string>
-    <string name="settings_summary_general">Домашняя страница, службы поиска, вкладки…</string>
-    <string name="settings_summary_import_export">Резервное копирование и восстановление настроек и закладок</string>
-    <string name="settings_summary_privacy">Кэш, история посещений, cookie…</string>
     <string name="settings_summary_vertical_tab_bar">Отключите, чтобы использовать вкладки в панели навигации</string>
     <string name="settings_support">Поддержка</string>
     <string name="settings_title_apps">Приложения</string>

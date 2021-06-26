@@ -320,7 +320,6 @@
     <string name="session_prompt_confirm_deletion_message">你确定要删除会话 \"%s\" 吗？</string>
     <string name="session_prompt_confirm_deletion_title">确认删除</string>
     <string name="session_switched">切换到\"%s\"</string>
-    <string name="settings_about_explain">版本，作者以及许可的详细信息</string>
     <string name="settings_about">关于</string>
     <string name="settings_adblock">广告屏蔽设置</string>
     <string name="settings_adminingblocker">广告 &amp; 挖矿拦截器</string>
@@ -336,15 +335,8 @@
     <string name="settings_mining">挖矿</string>
     <string name="settings_privacy">隐私设置</string>
     <string name="settings_reseted">所有设置已恢复</string>
-    <string name="settings_summary_apps">允许第三方应用</string>
-    <string name="settings_summary_adblock">阻止广告、跟踪、挖矿…</string>
     <string name="settings_summary_dark_mode_default">定义新标签是否默认使用强制深色模式</string>
     <string name="settings_summary_desktop_mode_default">定义新选项卡是否默认使用桌面模式</string>
-    <string name="settings_summary_display">应用设计、色彩模式、下拉刷新…</string>
-    <string name="settings_summary_extensions">安装扩展</string>
-    <string name="settings_summary_general">主页、搜索服务、选项卡…</string>
-    <string name="settings_summary_import_export">备份和还原设置及书签</string>
-    <string name="settings_summary_privacy">缓存、历史记录、cookie…</string>
     <string name="settings_summary_vertical_tab_bar">禁用它在导航抽屉中使用选项卡</string>
     <string name="settings_support">支持</string>
     <string name="settings_title_apps">应用</string>

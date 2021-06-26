@@ -314,7 +314,6 @@
     <string name="session_prompt_confirm_deletion_message">Sei sicuro di voler cancellare la sessione \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Converma eliminazione</string>
     <string name="session_switched">Passato a \"%s\"</string>
-    <string name="settings_about_explain">Informazioni sulla versione, l\'autore e le licenze.</string>
     <string name="settings_about">Informazioni</string>
     <string name="settings_adblock">Impostazioni del blocco annunci</string>
     <string name="settings_adminingblocker">Blocco Ad &amp; Mining</string>
@@ -330,15 +329,8 @@
     <string name="settings_mining">Mining</string>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_reseted">Impostazioni ripristinate</string>
-    <string name="settings_summary_apps">Abilita app di terze parti</string>
-    <string name="settings_summary_adblock">Blocca pubblicità, tracking, mining…</string>
     <string name="settings_summary_dark_mode_default">Definisci se i nuovi tab usano la modalità scura di default</string>
     <string name="settings_summary_desktop_mode_default">Definisci se i nuovi tab usano la modalità desktop di default</string>
-    <string name="settings_summary_display">Tema applicazione, modalità colori, trascina per ricaricare…</string>
-    <string name="settings_summary_extensions">Installa estensioni</string>
-    <string name="settings_summary_general">Homepage, servizi di ricerca, tab…</string>
-    <string name="settings_summary_import_export">Backup e ripristino impostazioni e segnalibri</string>
-    <string name="settings_summary_privacy">Cronologia, cache, cookie…</string>
     <string name="settings_summary_vertical_tab_bar">Disabilitalo per usare i tab nel drawer di navigazione</string>
     <string name="settings_support">Supporto</string>
     <string name="settings_title_apps">Applicazioni</string>

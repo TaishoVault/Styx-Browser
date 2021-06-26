@@ -152,7 +152,6 @@
     <string name="session_prompt_confirm_deletion_message">Are you sure you want to delete session \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Confirm deletion</string>
     <string name="session_switched">Switched to \"%s\"</string>
-    <string name="settings_about_explain">รายละเอียดเกี่ยวกับเวอร์ชัน, ผู้แต่ง, และใบอนุญาต</string>
     <string name="settings_about">เกี่ยวกับ</string>
     <string name="settings_adblock">Ad Block</string>
     <string name="settings_advanced">ขั้นสูง</string>
@@ -166,12 +165,6 @@
     <string name="settings_help_us">สนับสนุน</string>
     <string name="settings_privacy">ความเป็นส่วนตัว</string>
     <string name="settings_reseted">คืนค่าการตั้งค่าทั้งหมดแล้ว</string>
-    <string name="settings_summary_apps">เปิดใช้งานแอพของบุคคลที่สาม</string>
     <string name="settings_summary_dark_mode_default">กำหนดให้แท็บใหม่ใช้โหมดกลางคืนตามค่าเริ่มต้น</string>
     <string name="settings_summary_desktop_mode_default">กำหนดให้แท็บใหม่ใช้โหมดกลางคืนตามค่าเริ่มต้น</string>
-    <string name="settings_summary_display">รูปแบบ, โหมดสี, ดึงเพื่อรีเฟรช...</string>
-    <string name="settings_summary_extensions">ติดตั้งส่วนขยาย</string>
-    <string name="settings_summary_general">หน้าหลัก, บริการค้นหา, แท็บ</string>
-    <string name="settings_summary_import_export">สำรองข้อมูล, กู้คืนการตั้งค่า, และบุ๊กมาร์ก</string>
-    <string name="settings_summary_privacy">แคช, ประวัติการเข้าชม, คุกกี้</string>
 </resources>

@@ -71,6 +71,8 @@ interface AppComponent {
 
     fun inject(fragment: ExtensionsSettingsFragment)
 
+    fun inject(fragment: TabsSettingsFragment)
+
     fun inject(suggestionsAdapter: SuggestionsAdapter)
 
     fun inject(chromeClient: StyxChromeClient)

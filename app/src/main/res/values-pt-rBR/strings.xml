@@ -293,7 +293,6 @@
     <string name="session_prompt_confirm_deletion_message">Tem certeza que deseja excluir a sessão \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Confirmar exclusão</string>
     <string name="session_switched">Alternado para \"%s\"</string>
-    <string name="settings_about_explain">Detalhes da versão, do autor e da licença</string>
     <string name="settings_about">Sobre</string>
     <string name="settings_adblock">Configurações de bloqueio de conteúdo</string>
     <string name="settings_advanced">Configurações avançadas</string>
@@ -307,14 +306,8 @@
     <string name="settings_help_us">Ajude-nos!</string>
     <string name="settings_privacy">Configurações de privacidade</string>
     <string name="settings_reseted">Todas as configurações restauradas</string>
-    <string name="settings_summary_apps">Permitir apps de terceiros</string>
     <string name="settings_summary_dark_mode_default">Definir se novas abas devem forçar o modo escuro por padrão</string>
     <string name="settings_summary_desktop_mode_default">Definir se novas abas devem utilizar o modo área de trabalho por padrão</string>
-    <string name="settings_summary_display">Design do app, modo de cor, arrastar-para-atualizar…</string>
-    <string name="settings_summary_extensions">Instalar extensões</string>
-    <string name="settings_summary_general">Página inicial, serviços de busca, abas…</string>
-    <string name="settings_summary_import_export">Backup e restauração das configurações e favoritos</string>
-    <string name="settings_summary_privacy">Cache, histórico, cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Desativar para usar abas na gaveta de navegação</string>
     <string name="settings_title_apps">Apps</string>
     <string name="settings_title_dark_mode_default">Forçar modo escuro</string>

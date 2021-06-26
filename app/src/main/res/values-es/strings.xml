@@ -314,7 +314,6 @@
     <string name="session_prompt_confirm_deletion_message">¿Está seguro que desea eliminar la sesión \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Confirmar eliminación</string>
     <string name="session_switched">Cambiar a %s</string>
-    <string name="settings_about_explain">Detalles sobre la versión, autor y licencias.</string>
     <string name="settings_about">Acerca de</string>
     <string name="settings_adblock">Ajustes de bloqueo de anuncios</string>
     <string name="settings_adminingblocker">Anuncio &amp; Bloqueador de Minería</string>
@@ -330,15 +329,8 @@
     <string name="settings_mining">Minando</string>
     <string name="settings_privacy">Ajustes de privacidad</string>
     <string name="settings_reseted">Ajustes restaurados</string>
-    <string name="settings_summary_apps">Habilitar aplicaciones de terceros</string>
-    <string name="settings_summary_adblock">Bloquear publicidad, rastreo, minería…</string>
     <string name="settings_summary_dark_mode_default">Definir si las nuevas pestañas usan el modo oscuro por defecto</string>
     <string name="settings_summary_desktop_mode_default">Definir si las nuevas pestañas usan el modo de escritorio por defecto</string>
-    <string name="settings_summary_display">Diseño, modo de color, refrescar…</string>
-    <string name="settings_summary_extensions">Instalar extensiones</string>
-    <string name="settings_summary_general">Página principal, servicios de búsqueda, pestañas…</string>
-    <string name="settings_summary_import_export">Copia de seguridad y restauración de ajustes y marcadores</string>
-    <string name="settings_summary_privacy">Cache, historial, cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Desactivar para usar pestañas en el cajón de navegación</string>
     <string name="settings_support">Apoyo</string>
     <string name="settings_title_apps">Aplicaciones</string>

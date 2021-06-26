@@ -314,7 +314,6 @@
     <string name="session_prompt_confirm_deletion_message">Czy na pewno chcesz usunąć sesję \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Potwierdź usunięcie</string>
     <string name="session_switched">Przełączono na \"%s\"</string>
-    <string name="settings_about_explain">Szczegóły o wersji, autorze i licencji.</string>
     <string name="settings_about">O przeglądarce</string>
     <string name="settings_adblock">Ustawienia blokowania reklam</string>
     <string name="settings_adminingblocker">Blokowanie reklam i koparek</string>
@@ -330,15 +329,8 @@
     <string name="settings_mining">Koparki</string>
     <string name="settings_privacy">Prywatność</string>
     <string name="settings_reseted">Wszystkie ustawienia przywrócone</string>
-    <string name="settings_summary_apps">Aktywuj aplikacje zewnętrzne</string>
-    <string name="settings_summary_adblock">Blokuj reklamy, śledzenie, koparki…</string>
     <string name="settings_summary_dark_mode_default">Zdefiniuj, czy nowe karty mają domyślnie wymuszać tryb ciemny</string>
     <string name="settings_summary_desktop_mode_default">Zdefiniuj, czy nowe karty mają domyślnie używać wersji komputerowej</string>
-    <string name="settings_summary_display">Wygląd aplikacji, kolory, odświeżanie pociągnięciem…</string>
-    <string name="settings_summary_extensions">Zainstaluj rozszerzenia</string>
-    <string name="settings_summary_general">Strona główna, usługi wyszukiwania, karty…</string>
-    <string name="settings_summary_import_export">Kopia i przywracanie ustawień i zakładek</string>
-    <string name="settings_summary_privacy">Pamięć podręczna, historia, pliki cookie…</string>
     <string name="settings_summary_vertical_tab_bar">Wyłącz, aby wyświetlać karty na pasku nawigacyjnym</string>
     <string name="settings_support">Wsparcie</string>
     <string name="settings_title_apps">Aplikacje</string>

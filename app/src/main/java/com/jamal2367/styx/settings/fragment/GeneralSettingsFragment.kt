@@ -140,12 +140,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
                 onCheckChange = { userPreferences.forceZoom = it }
         )
 
-        switchPreference(
-                preference = SETTINGS_LAST_TAB,
-                isChecked = userPreferences.closeOnLastTab,
-                onCheckChange = { userPreferences.closeOnLastTab = it }
-        )
-
         clickablePreference(
             preference = SETTINGS_IMAGE_URL,
             summary = getString(R.string.image_url_summary),
