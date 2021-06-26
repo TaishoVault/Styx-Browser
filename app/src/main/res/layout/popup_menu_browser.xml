@@ -72,11 +72,6 @@
 
         </LinearLayout>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            app:layout_constraintBottom_toBottomOf="@id/header" />
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -218,6 +213,19 @@
                     android:background="?attr/selectableItemBackground"
                     app:drawableEndCompat="?android:attr/listChoiceIndicatorMultiple"
                     app:drawableStartCompat="@drawable/round_dark_mode_24" />
+
+                <CheckBox
+                    android:id="@+id/menuItemAdBlock"
+                    style="@style/BrowserTextMenuItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:text="@string/ad_blocker"
+                    android:gravity="center_vertical"
+                    android:enabled="true"
+                    android:background="?attr/selectableItemBackground"
+                    app:drawableEndCompat="?android:attr/listChoiceIndicatorMultiple"
+                    app:drawableStartCompat="@drawable/outline_remove_circle_outline_24" />
 
                 <TextView
                     android:id="@+id/divider4"

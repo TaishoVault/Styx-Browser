@@ -66,6 +66,7 @@ import com.google.gson.JsonObject
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.IncognitoActivity
 import com.jamal2367.styx.R
+import com.jamal2367.styx.adblock.AbpUserRules
 import com.jamal2367.styx.adblock.allowlist.AllowListModel
 import com.jamal2367.styx.browser.*
 import com.jamal2367.styx.browser.bookmarks.BookmarksDrawerView
@@ -180,6 +181,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     @Inject lateinit var bookmarksDialogBuilder: StyxDialogBuilder
     @Inject lateinit var exitCleanup: ExitCleanup
     @Inject internal lateinit var allowListModel: AllowListModel
+    @Inject lateinit var abpUserRules: AbpUserRules
 
     // HTTP
     private lateinit var queue: RequestQueue
@@ -514,6 +516,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             onMenuItemClicked(iBinding.menuItemSettings) { executeAction(R.id.menuItemSettings) }
             onMenuItemClicked(iBinding.menuItemDesktopMode) { executeAction(R.id.menuItemDesktopMode) }
             onMenuItemClicked(iBinding.menuItemDarkMode) { executeAction(R.id.menuItemDarkMode) }
+            onMenuItemClicked(iBinding.menuItemAdBlock) { executeAction(R.id.menuItemAdBlock) }
 
             // Popup menu action shortcut icons
             onMenuItemClicked(iBinding.menuShortcutRefresh) { executeAction(R.id.menuShortcutRefresh) }
@@ -1705,6 +1708,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     // Even doing a post does not fix it. However doing a long enough postDelayed does the trick.
                     mainHandler.postDelayed({setToolbarColor()},100)
                 }
+                return true
+            }
+            R.id.menuItemAdBlock -> {
+                abpUserRules.whitelist(Uri.parse(tabsManager.currentTab?.url), !popupMenu.iBinding.menuItemAdBlock.isChecked)
+                tabsManager.currentTab?.reload()
                 return true
             }
             R.id.action_sessions -> {
@@ -3384,12 +3392,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     fun showPageToolsDialog(context: Context, userPreferences: UserPreferences) {
         val currentTab = tabsManager.currentTab ?: return
-        val isAllowedAds = allowListModel.isUrlAllowedAds(currentTab.url)
-        val whitelistString = if (isAllowedAds) {
-            R.string.dialog_adblock_enable_for_site
-        } else {
-            R.string.dialog_adblock_disable_for_site
-        }
         val arrayOfURLs = userPreferences.javaScriptBlocked
         val strgs: Array<String> = if (arrayOfURLs.contains(", ")) {
             arrayOfURLs.split(", ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
@@ -3403,18 +3405,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         }
 
         BrowserDialog.showWithIcons(context, context.getString(R.string.dialog_tools_title),
-            DialogItem(
-                icon = context.drawable(R.drawable.outline_remove_circle_outline_24),
-                colorTint = context.attrColor(R.attr.colorPrimary).takeIf { isAllowedAds },
-                title = whitelistString
-            ) {
-                if (isAllowedAds) {
-                    allowListModel.removeUrlFromAllowList(currentTab.url)
-                } else {
-                    allowListModel.addUrlToAllowList(currentTab.url)
-                }
-                tabsManager.currentTab?.reload()
-            },
             DialogItem(
                 icon = context.drawable(R.drawable.ic_baseline_code_24),
                 title = R.string.page_source
@@ -3491,7 +3481,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 icon = context.drawable(R.drawable.cookie_outline),
                 title = R.string.edit_cookies
             ) {
-
                 val cookieManager = CookieManager.getInstance()
                 if (cookieManager.getCookie(currentTab.url) != null) {
                     val builder = MaterialAlertDialogBuilder(context)

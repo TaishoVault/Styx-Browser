@@ -1,13 +1,16 @@
 package com.jamal2367.styx.browser
 
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.PopupWindow
+import androidx.core.view.isVisible
 import com.jamal2367.styx.R
+import com.jamal2367.styx.adblock.AbpUserRules
 import com.jamal2367.styx.browser.activity.BrowserActivity
 import com.jamal2367.styx.database.bookmark.BookmarkRepository
 import com.jamal2367.styx.databinding.PopupMenuBrowserBinding
@@ -22,6 +25,7 @@ class BrowserPopupMenu
 
     @Inject internal lateinit var bookmarkModel: BookmarkRepository
     @Inject lateinit var userPreferences: UserPreferences
+    @Inject lateinit var abpUserRules: AbpUserRules
 
     var iBinding: PopupMenuBrowserBinding = aBinding
 
@@ -54,27 +58,36 @@ class BrowserPopupMenu
 
     fun show(aAnchor: View) {
 
-        (contentView.context as BrowserActivity).tabsManager.let {
+        (contentView.context as BrowserActivity).tabsManager.let { it ->
             // Set desktop mode checkbox according to current tab
             iBinding.menuItemDesktopMode.isChecked = it.currentTab?.desktopMode ?: false
 
             // Same with dark mode
             iBinding.menuItemDarkMode.isChecked = it.currentTab?.darkMode ?: false
 
-            it.currentTab?.let { tab ->
-                iBinding.menuItemAddToHome.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemShare.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemPrint.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemPageTools.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemFind.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemTranslate.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemReaderMode.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemDesktopMode.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemDarkMode.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.menuItemAddBookmark.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.divider2.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.divider3.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
-                iBinding.divider4.visibility = if (tab.url.isSpecialUrl() or tab.url.isHomeUri() or tab.url.isBookmarkUri() or tab.url.isHistoryUri()) GONE else View.VISIBLE
+            // And ad block
+            iBinding.menuItemAdBlock.isChecked = it.currentTab?.url?.let { url -> !abpUserRules.isWhitelisted(Uri.parse(url)) } ?: false
+
+            (contentView.context as BrowserActivity).tabsManager.let { tm ->
+                tm.currentTab?.let { tab ->
+                    (!(tab.url.isSpecialUrl() || tab.url.isAppScheme())).let {
+                        // Those menu items won't be displayed for special URLs
+                        iBinding.menuItemAddToHome.isVisible = it
+                        iBinding.menuItemShare.isVisible = it
+                        iBinding.menuItemPrint.isVisible = it
+                        iBinding.menuItemPageTools.isVisible = it
+                        iBinding.menuItemFind.isVisible = it
+                        iBinding.menuItemTranslate.isVisible = it
+                        iBinding.menuItemReaderMode.isVisible = it
+                        iBinding.menuItemDesktopMode.isVisible = it
+                        iBinding.menuItemDarkMode.isVisible = it
+                        iBinding.menuItemAdBlock.isVisible = it && userPreferences.adBlockEnabled
+                        iBinding.menuItemAddBookmark.isVisible = it
+                        iBinding.divider2.isVisible = it
+                        iBinding.divider3.isVisible = it
+                        iBinding.divider4.isVisible = it
+                    }
+                }
             }
 
             if (userPreferences.navbar) {

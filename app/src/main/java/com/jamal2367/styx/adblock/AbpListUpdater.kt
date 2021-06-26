@@ -30,6 +30,7 @@ import com.jamal2367.styx.adblock.filter.unified.io.ElementWriter
 import com.jamal2367.styx.adblock.filter.unified.io.FilterWriter
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
+import com.jamal2367.styx.adblock.util.hash.computeMD5
 import com.jamal2367.styx.preference.UserPreferences
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
@@ -196,12 +197,12 @@ class AbpListUpdater @Inject constructor(val context: Context) {
 
         // lastModified is only used for HTTP and file
         //  can't get file date for assets, so assume that size changes when blocklist changes
-        //  and (ab)use lastModified to store file size, so update is triggered when file is changed
-        val fileSize = context.assets.openFd(ASSETS_BLOCKLIST).length.toString()
-        if (fileSize == entity.lastModified)
+        //  and (ab)use lastModified to store checksum, so update is triggered when file is changed
+        val checksum = context.assets.open(ASSETS_BLOCKLIST).computeMD5()
+        if (checksum == entity.lastModified)
             return false
 
-        entity.lastModified = fileSize // file size set now, but written to entity only at the end of decode -> should be safe
+        entity.lastModified = checksum // checksum set now, but written to entity only at the end of decode -> should be safe
         context.assets.open(ASSETS_BLOCKLIST).bufferedReader().use {
             return decode(it, Charsets.UTF_8, entity)
         }

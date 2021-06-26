@@ -1,5 +1,6 @@
 package com.jamal2367.styx.adblock
 
+import android.net.Uri
 import com.jamal2367.styx.adblock.core.ContentRequest
 import com.jamal2367.styx.adblock.filter.unified.*
 import com.jamal2367.styx.database.adblock.UserRulesRepository
@@ -78,7 +79,7 @@ class AbpUserRules @Inject constructor(
         find content types in ContentRequest, and how to get it from request in AdBlock -> WebResourceRequest.getContentType
     */
 
-    fun createUserFilter(pageDomain: String, requestDomain: String, contentType: Int, thirdParty: Boolean): UnifiedFilter {
+    private fun createUserFilter(pageDomain: String, requestDomain: String, contentType: Int, thirdParty: Boolean): UnifiedFilter {
         // 'domains' contains (usually 3rd party) domains, but can also be same as pageDomain (or subdomain of pageDomain)
         // include is always set to true (filter valid only on this domain, and any subdomain if there is no more specific rule)
         val domains = if (requestDomain.isNotEmpty())
@@ -103,6 +104,19 @@ class AbpUserRules @Inject constructor(
 
     fun removeUserRule(pageDomain: String, requestDomain: String, contentType: Int, thirdParty: Boolean, response: Boolean?) {
         removeUserRule(UnifiedFilterResponse(createUserFilter(pageDomain, requestDomain, contentType, thirdParty), response))
+    }
+
+    fun isWhitelisted(pageUrl: Uri): Boolean {
+        // TODO: checking by using a fake request might be "slower than necessary"? but probably faster than DB query
+        return userRules.get(ContentRequest(pageUrl, pageUrl, 0xffff, false, listOf("")))?.response == false
+    }
+
+    fun whitelist(pageUrl: Uri, add: Boolean) {
+        val domain = pageUrl.host ?: return
+        if (add)
+            addUserRule(domain, "", 0xffff, thirdParty = false, response = false)
+        else
+            removeUserRule(domain, "", 0xffff, thirdParty = false, response = false)
     }
 
 }

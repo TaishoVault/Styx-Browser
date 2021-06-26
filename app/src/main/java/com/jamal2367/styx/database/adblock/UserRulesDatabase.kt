@@ -1,4 +1,4 @@
-package com.jamal2367.styx.adblock
+package com.jamal2367.styx.database.adblock
 
 import com.jamal2367.styx.adblock.filter.unified.*
 import com.jamal2367.styx.database.adblock.UserRulesRepository.Companion.RESPONSE_BLOCK
@@ -11,7 +11,7 @@ import android.database.Cursor
 import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.jamal2367.styx.database.adblock.UserRulesRepository
+import com.jamal2367.styx.adblock.UnifiedFilterResponse
 import io.reactivex.Completable
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -97,14 +97,17 @@ class UserRulesDatabase @Inject constructor(
 
     override fun removeRule(rule: UnifiedFilterResponse) {
         database.run {
-            delete(TABLE_RULES,
-                "$$KEY_RESPONSE = ? AND $KEY_PATTERN = ? AND $KEY_DOMAIN_MAP = ? AND $KEY_FILTER_TYPE = ? AND $KEY_CONTENT_TYPE = ? AND $KEY_THIRD_PARTY = ?",
+            delete(
+                TABLE_RULES,
+                "$KEY_RESPONSE = ? AND $KEY_PATTERN = ? AND $KEY_DOMAIN_MAP = ? AND $KEY_FILTER_TYPE = ? AND $KEY_CONTENT_TYPE = ? AND $KEY_THIRD_PARTY = ?",
                 arrayOf(rule.response.toInt().toString(), rule.filter.pattern, rule.filter.domains?.toDBString() ?: "", rule.filter.filterType.toString(), rule.filter.contentType.toString(), rule.filter.thirdParty.toString()))
         }
     }
 
     // page in this context: what is in blocker as pageUrl.host
     // this is used as filter.pattern and as tag
+    // to be used for uBo style page settings, allows users to block/allow/noop requests to specific domains when on this page
+    // (actually could be more powerful than that, could be used for something to create something like uMatrix)
     override fun getRulesForPage(page: String): List<UnifiedFilterResponse> {
         val cursor = database.query(
             TABLE_RULES,

@@ -47,6 +47,9 @@ class AbpBlocker @Inject constructor(
     // store whether lists are loaded (and delay any request if loading is not finished)
     private var listsLoaded = false
 
+    // store urls of entities, they will never be blocked
+    private val entityUrls = mutableListOf<String>()
+
     /*    // TODO: element hiding
         //  not sure if this actually works (did not in a test - I think?), maybe it's crucial to inject the js at the right point
         //  tried onPageFinished, might be too late (try to implement onDomFinished from yuzu?)
@@ -71,6 +74,8 @@ class AbpBlocker @Inject constructor(
         //  but generally no need to block UI, better just delay the first web requests
         //loadLists() // 320-430 ms on S4 mini plus / 550-650 ms on S4 mini -> always the fastest, but blocking
 
+        // TODO: use of globalscope is discouraged, but all reasons I found were related to stuff that is no canceled if the related UI is closed
+        //  I don't see how this would apply, a) the operations end after a few seconds anyway without needing to cancel, and b) blocker runs as log as the app runs
         GlobalScope.launch(Dispatchers.Default) { // IO for io-intensive stuff, but here we do some IO and are mostly limited by CPU... so Default should be better?
             // load lists here if not loaded above
             //stufftest()
@@ -86,6 +91,8 @@ class AbpBlocker @Inject constructor(
     }
 
     //----------------------- from yuzu adblocker (mostly AdBlockController) --------------------//
+
+    // TODO: add info where exactly the code is taken from, should simplify handling in case yuzu code is updated
     private fun createDummy(uri: Uri): WebResourceResponse {
         val mimeType = getMimeType(uri.toString())
         return if (mimeType.startsWith("image/")) {
@@ -167,7 +174,8 @@ class AbpBlocker @Inject constructor(
 
     fun loadLists() {
         listsLoaded = false
-        val abpLoader = AbpLoader(application.applicationContext.getFilterDir(), AbpDao(application.applicationContext).getAll())
+        val entities = AbpDao(application.applicationContext).getAll()
+        val abpLoader = AbpLoader(application.applicationContext.getFilterDir(), entities)
         exclusionList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::addWithTag) }
         blockList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DENY).forEach(it::addWithTag) }
 
@@ -176,6 +184,8 @@ class AbpBlocker @Inject constructor(
             val elementFilter = ElementContainer().also { abpLoader.loadAllElementFilter().forEach(it::plusAssign) }
             elementBlocker = CosmeticFiltering(disableCosmetic, elementFilter)
         }*/
+        entityUrls.clear()
+        entities.forEach { if (it.url.startsWith("http")) entityUrls.add(it.url) }
 
         listsLoaded = true
     }
@@ -195,7 +205,7 @@ class AbpBlocker @Inject constructor(
         // then mining/malware (ad block allow should not override malware list)
         // then ads
 
-        if (request.url.toString().isSpecialUrl())
+        if (request.url.toString().isSpecialUrl() || entityUrls.contains(request.url.toString()))
             return null
 
         // create contentRequest
@@ -240,6 +250,7 @@ class AbpBlocker @Inject constructor(
     }
 
     // stuff from yuzu browser modules/core/.../utility
+    // TODO: add info where exactly the code is taken from, should simplify handling in case yuzu code is updated
     companion object {
         private const val BUFFER_SIZE = 1024 * 8
 

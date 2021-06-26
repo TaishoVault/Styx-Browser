@@ -1,6 +1,6 @@
 package com.jamal2367.styx.di
 
-import com.jamal2367.styx.adblock.UserRulesDatabase
+import com.jamal2367.styx.database.adblock.UserRulesDatabase
 import com.jamal2367.styx.database.adblock.UserRulesRepository
 import com.jamal2367.styx.adblock.allowlist.AllowListModel
 import com.jamal2367.styx.adblock.allowlist.SessionAllowListModel
