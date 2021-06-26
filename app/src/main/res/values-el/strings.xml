@@ -57,8 +57,6 @@
     <string name="cookies">Ενεργοποίηση Cookies</string>
     <string name="dark_mode">Σκοτεινή λειτουργία</string>
     <string name="dark_theme">Dark θέμα</string>
-    <string name="dialog_adblock_disable_for_site">Απενεργοποίηση αποκλεισμού διαφημίσεων για ιστότοπο</string>
-    <string name="dialog_adblock_enable_for_site">Ενεργοποίηση του αποκλεισμού διαφημίσεων για τον ιστότοπο</string>
     <string name="dialog_cookies">Θα θέλατε να καθαρίσετε όλα τα cookies?</string>
     <string name="dialog_copy_link">Αντιγραφή συνδέσμου</string>
     <string name="dialog_download_image">Κατεβάστε την εικόνα</string>

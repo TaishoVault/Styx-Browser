@@ -55,8 +55,6 @@
     <string name="cookies">쿠키 사용</string>
     <string name="dark_mode">Dark mode</string>
     <string name="dark_theme">어두운 테마 사용</string>
-    <string name="dialog_adblock_disable_for_site">사이트에 광고 차단 사용 중지</string>
-    <string name="dialog_adblock_enable_for_site">사이트에 광고 차단 사용</string>
     <string name="dialog_cookies">모든 브라우저 쿠키를 지울까요?</string>
     <string name="dialog_copy_link">링크 복사</string>
     <string name="dialog_download_image">그림 다운로드</string>

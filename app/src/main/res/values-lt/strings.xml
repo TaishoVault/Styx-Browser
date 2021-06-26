@@ -56,8 +56,6 @@
     <string name="cookies">Įgalinti slapukus</string>
     <string name="dark_mode">Tamsus rėžimas</string>
     <string name="dark_theme">Tamsi tema</string>
-    <string name="dialog_adblock_disable_for_site">Išjungti svetainės skelbimų/reklamų blokavimą</string>
-    <string name="dialog_adblock_enable_for_site">Įgalinti svetainės skelbimų/reklamų blokavimą</string>
     <string name="dialog_cookies">Ar norėtumėte išvalyti naršyklės slapukus?</string>
     <string name="dialog_copy_link">Nukopijuoti nuorodą</string>
     <string name="dialog_download_image">Parsisiųsti vaizdą</string>

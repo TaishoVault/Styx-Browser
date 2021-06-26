@@ -54,8 +54,6 @@
     <string name="cookies">Cookie-k bekapcsolása</string>
     <string name="dark_mode">Dark mode</string>
     <string name="dark_theme">Sötét téma</string>
-    <string name="dialog_adblock_disable_for_site">Reklámblokkoló letiltása a webhelyen</string>
-    <string name="dialog_adblock_enable_for_site">Reklámblokkoló engedélyezése a webhelyen</string>
     <string name="dialog_cookies">Szeretnéd törölni az összes cookie-t?</string>
     <string name="dialog_copy_link">Link másolása</string>
     <string name="dialog_download_image">Töltse le a képet</string>

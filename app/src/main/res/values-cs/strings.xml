@@ -57,8 +57,6 @@
     <string name="cookies">Povolit cookies</string>
     <string name="dark_mode">Tmavý režim</string>
     <string name="dark_theme">Tmavý motiv</string>
-    <string name="dialog_adblock_disable_for_site">Zakázat blok reklam pro web</string>
-    <string name="dialog_adblock_enable_for_site">Povolit blokování reklam pro web</string>
     <string name="dialog_cookies">Chcete vymazat soubory cookie prohlížeče?</string>
     <string name="dialog_copy_link">Kopírovat odkaz na stránku</string>
     <string name="dialog_download_image">Stáhnout obrázek</string>

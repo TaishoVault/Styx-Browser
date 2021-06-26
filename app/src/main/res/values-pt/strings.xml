@@ -112,8 +112,6 @@
     <string name="default_theme">Seguir Sistema</string>
     <string name="delete_all_bookmarks">Apagar todos os marcadores?</string>
     <string name="developer">Programador</string>
-    <string name="dialog_adblock_disable_for_site">Desativar bloqueio de anúncios para este site</string>
-    <string name="dialog_adblock_enable_for_site">Ativar bloqueio de anúncios para este site</string>
     <string name="dialog_cookies">Gostaria de limpar todos os cookies do navegador?</string>
     <string name="dialog_copy_link">Copiar ligação</string>
     <string name="dialog_copy_text">Copiar texto</string>

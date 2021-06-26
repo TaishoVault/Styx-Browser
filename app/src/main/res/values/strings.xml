@@ -68,7 +68,6 @@
     <string name="ad_block_blocked_list_ad">%s on ad blocklist</string>
     <string name="ad_block_blocked_list_malware">%s on malware blocklist</string>
     <string name="ad_block_blocked_list_user">%s blocked by user rule</string>
-    <string name="ad_block_delete_list">Delete</string>
     <string name="ad_block_edit_blocklist">Edit blocklist</string>
     <string name="ad_block_enable">Enable</string>
     <string name="ad_block_file">File</string>
@@ -146,8 +145,6 @@
     <string name="default_theme">Follow System</string>
     <string name="delete_all_bookmarks">Delete all bookmarks?</string>
     <string name="developer">Developer</string>
-    <string name="dialog_adblock_disable_for_site">Disable ad block for site</string>
-    <string name="dialog_adblock_enable_for_site">Enable ad block for site</string>
     <string name="dialog_cookies">Would you like to clear all browser cookies?</string>
     <string name="dialog_copy_link">Copy link</string>
     <string name="dialog_copy_text">Copy text</string>

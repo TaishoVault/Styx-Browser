@@ -63,8 +63,6 @@
     <string name="cookies">Nyalakan cookies</string>
     <string name="dark_theme">Gelap</string>
     <string name="default_theme">@string/agent_default</string>
-    <string name="dialog_adblock_disable_for_site">Jangan blokir iklan untuk halaman ini</string>
-    <string name="dialog_adblock_enable_for_site">Izinkan pemblokiran iklan untuk halaman ini</string>
     <string name="dialog_cookies">Hendak menghapus semua cookies dari browser?</string>
     <string name="dialog_copy_link">Salin tautan</string>
     <string name="dialog_copy_text">Salin teks</string>

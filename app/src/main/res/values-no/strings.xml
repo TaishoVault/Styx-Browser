@@ -56,8 +56,6 @@
     <string name="cookies">Aktivere informasjonskapsler</string>
     <string name="dark_mode">Mørkt modus</string>
     <string name="dark_theme">Mørkt tema</string>
-    <string name="dialog_adblock_disable_for_site">Deaktiver annonseblokk for side</string>
-    <string name="dialog_adblock_enable_for_site">Aktiver reklameblokk for nettstedet</string>
     <string name="dialog_cookies">Ønsker du å fjerne informasjonskapsler i nettleseren din?</string>
     <string name="dialog_copy_link">Kopier sidelink</string>
     <string name="dialog_download_image">Last ned bilde</string>

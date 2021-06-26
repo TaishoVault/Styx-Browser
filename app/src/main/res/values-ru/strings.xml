@@ -115,8 +115,6 @@
     <string name="default_theme">Как в системе</string>
     <string name="delete_all_bookmarks">Удалить все закладки?</string>
     <string name="developer">Разработчик</string>
-    <string name="dialog_adblock_disable_for_site">Отключить блокировку рекламы для сайта</string>
-    <string name="dialog_adblock_enable_for_site">Включить блокировку рекламы для сайта</string>
     <string name="dialog_cookies">Cookie будут удалены. Продолжить?</string>
     <string name="dialog_copy_link">Скопировать ссылку</string>
     <string name="dialog_copy_text">Копировать текст</string>

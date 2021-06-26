@@ -56,8 +56,6 @@
     <string name="cookies">אפשר עוגיות</string>
     <string name="dark_mode">Dark mode</string>
     <string name="dark_theme">ערכת נושא כהה</string>
-    <string name="dialog_adblock_disable_for_site">השבת חסימת מודעות לאתר</string>
-    <string name="dialog_adblock_enable_for_site">אפשר חסימת מודעות לאתר</string>
     <string name="dialog_cookies">האם תרצה למחוק את קובצי ה- cookie של הדפדפן שלך?</string>
     <string name="dialog_copy_link">העתק קישור</string>
     <string name="dialog_download_image">הורד תמונה</string>

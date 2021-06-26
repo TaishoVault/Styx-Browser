@@ -62,7 +62,6 @@
     <string name="ad_block_address">Adres</string>
     <string name="ad_block_blocked_page">Blokowanie reklam zablokowało następującą stronę:</string>
     <string name="ad_block_blocked_filter">Ze względu na następujący filtr:</string>
-    <string name="ad_block_delete_list">Usuń</string>
     <string name="ad_block_edit_blocklist">Edytuj listę blokowania</string>
     <string name="ad_block_enable">Aktywuj</string>
     <string name="ad_block_file">Plik</string>
@@ -127,8 +126,6 @@
     <string name="default_theme">Zgodnie z systemem</string>
     <string name="delete_all_bookmarks">Usunąć wszystkie zakładki?</string>
     <string name="developer">Programista</string>
-    <string name="dialog_adblock_disable_for_site">Wyłącz blokowanie reklam dla tej witryny</string>
-    <string name="dialog_adblock_enable_for_site">Włącz blokowanie reklam dla tej witryny</string>
     <string name="dialog_cookies">Czy chcesz wyczyścić wszystkie pliki cookie przeglądarki?</string>
     <string name="dialog_copy_link">Kopiuj odnośnik</string>
     <string name="dialog_copy_text">Kopiuj tekst</string>

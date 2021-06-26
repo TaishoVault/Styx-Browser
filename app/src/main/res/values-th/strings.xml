@@ -72,8 +72,6 @@
     <string name="default_theme">ค่าเริ่มต้นของระบบ</string>
     <string name="delete_all_bookmarks">ลบบุ๊กมาร์กทั้งหมด?</string>
     <string name="developer">นักพัฒนา</string>
-    <string name="dialog_adblock_disable_for_site">ปิดใช้งานการปิดกั้นโฆษณา</string>
-    <string name="dialog_adblock_enable_for_site">เปิดใช้งานการปิดกั้นโฆษณา</string>
     <string name="dialog_cookies">คุณต้องการล้างคุกกี้เบราว์เซอร์ทั้งหมดหรือไม่?</string>
     <string name="dialog_copy_link">คัดลอกที่อยู่ลิงก์</string>
     <string name="dialog_copy_text">คัด​ลอก​ข้อ​ความ</string>

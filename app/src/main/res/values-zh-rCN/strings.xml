@@ -62,7 +62,6 @@
     <string name="ad_block_address">地址</string>
     <string name="ad_block_blocked_page">广告拦截屏蔽了以下页面：</string>
     <string name="ad_block_blocked_filter">由于下列筛选器：</string>
-    <string name="ad_block_delete_list">删除</string>
     <string name="ad_block_edit_blocklist">编辑屏蔽列表</string>
     <string name="ad_block_enable">启用</string>
     <string name="ad_block_file">文件</string>
@@ -127,8 +126,6 @@
     <string name="default_theme">跟随系统</string>
     <string name="delete_all_bookmarks">删除所有书签?</string>
     <string name="developer">开发者</string>
-    <string name="dialog_adblock_disable_for_site">为此页禁用广告屏蔽</string>
-    <string name="dialog_adblock_enable_for_site">为此页启用广告屏蔽</string>
     <string name="dialog_cookies">你想要清除所有 Cookie 吗？</string>
     <string name="dialog_copy_link">复制链接</string>
     <string name="dialog_copy_text">复制文本</string>

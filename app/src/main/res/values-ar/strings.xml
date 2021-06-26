@@ -115,8 +115,6 @@
     <string name="default_theme">اتبع النظام</string>
     <string name="delete_all_bookmarks">حذف جميع الإشارات المرجعية؟</string>
     <string name="developer">المطور</string>
-    <string name="dialog_adblock_disable_for_site">تمكين حظر الإعلانات للموقع</string>
-    <string name="dialog_adblock_enable_for_site">تمكين حظر الإعلانات</string>
     <string name="dialog_cookies">هل تريد مسح جميع ملفات تعريف الارتباط ؟</string>
     <string name="dialog_copy_link">انسخ الرابط</string>
     <string name="dialog_copy_text">نسخ النص</string>

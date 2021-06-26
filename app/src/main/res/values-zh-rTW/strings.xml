@@ -55,8 +55,6 @@
     <string name="color_mode">啟用色彩模式</string>
     <string name="cookies">啟用 Cookies</string>
     <string name="dark_theme">深色主題</string>
-    <string name="dialog_adblock_disable_for_site">對此站停用廣告封鎖功能</string>
-    <string name="dialog_adblock_enable_for_site">對此站啟用廣告封鎖功能</string>
     <string name="dialog_cookies">您是否想清除所有瀏覽器 Cookies？</string>
     <string name="dialog_copy_link">複製連結</string>
     <string name="dialog_download_image">下載圖片</string>

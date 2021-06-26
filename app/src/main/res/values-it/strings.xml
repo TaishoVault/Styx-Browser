@@ -112,8 +112,6 @@
     <string name="default_theme">Segui impostazioni sistema</string>
     <string name="delete_all_bookmarks">Cancellare tutti i segnalibri?</string>
     <string name="developer">Sviluppatore</string>
-    <string name="dialog_adblock_disable_for_site">Disabilita ad block per il sito</string>
-    <string name="dialog_adblock_enable_for_site">Abilita ad block per il sito</string>
     <string name="dialog_cookies">Desideri cancellare tutti i cookie?</string>
     <string name="dialog_copy_link">Copia indirizzo link</string>
     <string name="dialog_copy_text">Copia testo</string>

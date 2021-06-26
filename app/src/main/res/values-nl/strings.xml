@@ -53,8 +53,6 @@
     <string name="cookies">Cookies activeren</string>
     <string name="dark_mode">Donkere modus</string>
     <string name="dark_theme">Donker thema</string>
-    <string name="dialog_adblock_disable_for_site">Schakel advertentieblok voor site uit</string>
-    <string name="dialog_adblock_enable_for_site">Schakel advertentieblok voor site in</string>
     <string name="dialog_cookies">Wil je alle browser cookies wissen?</string>
     <string name="dialog_copy_link">Kopieer link</string>
     <string name="dialog_download_image">Afbeelding downloaden</string>

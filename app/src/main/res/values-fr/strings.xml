@@ -59,8 +59,6 @@
     <string name="cookies">Activer les cookies</string>
     <string name="dark_mode">Mode sombre</string>
     <string name="dark_theme">Thème sombre</string>
-    <string name="dialog_adblock_disable_for_site">Désactiver le blocage des publicités pour ce site</string>
-    <string name="dialog_adblock_enable_for_site">Activer le blocage des publicités pour ce site</string>
     <string name="dialog_cookies">Voulez-vous effacer tous les cookies du navigateur ?</string>
     <string name="dialog_copy_link">Copier le lien</string>
     <string name="dialog_download_image">Télécharger l\'image</string>

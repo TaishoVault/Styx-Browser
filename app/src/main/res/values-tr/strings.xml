@@ -62,7 +62,6 @@
     <string name="ad_block_address">Adres</string>
     <string name="ad_block_blocked_page">Reklam engelleyici şu sayfayı engelledi:</string>
     <string name="ad_block_blocked_filter">Şu filtre nedeniyle:</string>
-    <string name="ad_block_delete_list">Kaldır</string>
     <string name="ad_block_edit_blocklist">Filtreyi düzenle</string>
     <string name="ad_block_enable">Etkinleştir</string>
     <string name="ad_block_file">Dosya</string>
@@ -127,8 +126,6 @@
     <string name="default_theme">Sisteme göre</string>
     <string name="delete_all_bookmarks">Tüm yer işaretleri silinsin mi?</string>
     <string name="developer">Geliştirici</string>
-    <string name="dialog_adblock_disable_for_site">Site için reklam engelleyiciyi kapat</string>
-    <string name="dialog_adblock_enable_for_site">Site için reklam engelleyiciyi etkinleştir</string>
     <string name="dialog_cookies">Tüm tarayıcı çerezlerini silmek ister misiniz?</string>
     <string name="dialog_copy_link">Bağlantıyı kopyala</string>
     <string name="dialog_copy_text">Yazıyı kopyala</string>

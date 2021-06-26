@@ -55,8 +55,6 @@
     <string name="cookies">Aktivera cookies</string>
     <string name="dark_mode">Mörkt läge</string>
     <string name="dark_theme">Mörkt tema</string>
-    <string name="dialog_adblock_disable_for_site">Inaktivera annonsblock för sajten</string>
-    <string name="dialog_adblock_enable_for_site">Aktivera annonsblock för sajten</string>
     <string name="dialog_cookies">Vill du rensa din webbläsares cookies?</string>
     <string name="dialog_copy_link">Kopiera sidlänk</string>
     <string name="dialog_download_image">Ladda ner bild</string>

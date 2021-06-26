@@ -111,8 +111,6 @@
     <string name="default_theme">Urmărește sistemul</string>
     <string name="delete_all_bookmarks">Ştergeţi toate marcajele?</string>
     <string name="developer">Dezvoltator</string>
-    <string name="dialog_adblock_disable_for_site">Dezactivează blocarea reclamelor pentru site</string>
-    <string name="dialog_adblock_enable_for_site">Activează blocul publicitar pentru site</string>
     <string name="dialog_cookies">Doriți să ștergeți cookie-urile browser-ului?</string>
     <string name="dialog_copy_link">Copiază link-ul paginii</string>
     <string name="dialog_copy_text">Copiază textul</string>
