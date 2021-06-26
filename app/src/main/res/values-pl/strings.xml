@@ -65,11 +65,18 @@
     <string name="ad_block_edit_blocklist">Edytuj listę blokowania</string>
     <string name="ad_block_enable">Aktywuj</string>
     <string name="ad_block_file">Plik</string>
+    <string name="ad_block_from_file">Lokalny</string>
+    <string name="ad_block_from_address">Zdalny</string>
     <string name="ad_block_internal_list">Lista wbudowana</string>
+    <string name="ad_block_invalid_title">Nieprawidłowy tytuł</string>
     <string name="ad_block_invalid_url">Nieprawidłowy adres</string>
+    <string name="ad_block_last_update">Ostatnio zaktualizowano: %s</string>
     <string name="ad_block_load_failure">Nie udało się załadować hostów ze źródła blokującego reklamy.</string>
     <string name="ad_block_create_blocklist">Utwórz listę blokowania</string>
     <string name="ad_block_update_list">Aktualizuj plik listy blokowania</string>
+    <string name="ad_block_update_mode">Automatyczne aktualizowanie</string>
+    <string name="ad_block_update_now">Aktualizuj listy</string>
+    <string name="ad_block_update_wifi">Tylko przez Wi-Fi</string>
     <string name="ad_server_list">Lista serwerów reklam AdGuard</string>
     <string name="agent_android_mobile">Android (Mobilne)</string>
     <string name="agent_custom">Własny identyfikator</string>
@@ -310,6 +317,7 @@
     <string name="settings_about_explain">Szczegóły o wersji, autorze i licencji.</string>
     <string name="settings_about">O przeglądarce</string>
     <string name="settings_adblock">Ustawienia blokowania reklam</string>
+    <string name="settings_adminingblocker">Blokowanie reklam i koparek</string>
     <string name="settings_advanced">Zaawansowane</string>
     <string name="settings_black_status_bar">Czarny pasek stanu</string>
     <string name="settings_credits">Twórcy</string>
@@ -319,9 +327,11 @@
     <string name="settings_extensions">Rozszerzenia</string>
     <string name="settings_general">Ogólne</string>
     <string name="settings_help_us">Wsparcie</string>
+    <string name="settings_mining">Koparki</string>
     <string name="settings_privacy">Prywatność</string>
     <string name="settings_reseted">Wszystkie ustawienia przywrócone</string>
     <string name="settings_summary_apps">Aktywuj aplikacje zewnętrzne</string>
+    <string name="settings_summary_adblock">Blokuj reklamy, śledzenie, koparki…</string>
     <string name="settings_summary_dark_mode_default">Zdefiniuj, czy nowe karty mają domyślnie wymuszać tryb ciemny</string>
     <string name="settings_summary_desktop_mode_default">Zdefiniuj, czy nowe karty mają domyślnie używać wersji komputerowej</string>
     <string name="settings_summary_display">Wygląd aplikacji, kolory, odświeżanie pociągnięciem…</string>
@@ -383,6 +393,7 @@
     <string name="unlisted_javascript">Zablokuj JavaScript dla witryn na liście</string>
     <string name="untitled">Bez tytułu</string>
     <string name="update_available">jest dostępne!</string>
+    <string name="update_message">Pokaż powiadomienie o aktualizacji po uruchomieniu przeglądarki</string>
     <string name="url_contents">Zawartość paska adresu</string>
     <string name="url_in_new_tab">Otwieraj adresy URL w nowej karcie</string>
     <string name="url">Adres URL</string>
