@@ -1198,7 +1198,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 iBinding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, getTabDrawer())
             }
             extraBar.setOnItemSelectedListener { item ->
-                when(item.itemId) {
+                when (item.itemId) {
                     R.id.tabs -> {
                         openTabs()
                         true
@@ -1219,7 +1219,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                         if (userPreferences.homepageInNewTab) {
                             presenter?.newTab(homePageInitializer, true)
                         } else {
-                            // Why not through presenter? We need some serious refactoring at some point
                             tabsManager.currentTab?.loadHomePage()
                         }
                         true
