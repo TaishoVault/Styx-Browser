@@ -59,6 +59,7 @@
     <string name="action_show_homepage">الصفحة الرئيسية</string>
     <string name="action_webpage">صفحة ويب</string>
     <string name="action_yes">نعم</string>
+    <string name="ad_blocker">مانع الإعلانات</string>
     <string name="ad_block_address">العنوان</string>
     <string name="ad_block_blocked_page">ازالة حجب الإعلانات في الصفحة التالية:</string>
     <string name="ad_block_blocked_filter">بسبب عوامل التصفية التالية:</string>
@@ -332,6 +333,7 @@
     <string name="settings_general">الاعدادات العامة</string>
     <string name="settings_help_us">ساعدنا</string>
     <string name="settings_mining">التعدين</string>
+    <string name="settings_portrait_landscape">عمودي &amp; أفقي</string>
     <string name="settings_privacy">إعدادات الخصوصية والأمان</string>
     <string name="settings_reseted">تم استعادة جميع الإعدادات</string>
     <string name="settings_summary_dark_mode_default">تحديد إذا كانت علامات التبويب الجديدة تستخدم الوضع المظلم بشكل افتراضي</string>

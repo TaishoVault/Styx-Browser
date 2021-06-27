@@ -333,6 +333,7 @@
     <string name="settings_general">常规设置</string>
     <string name="settings_help_us">帮助我们</string>
     <string name="settings_mining">挖矿</string>
+    <string name="settings_portrait_landscape">竖屏&amp; 横屏</string>
     <string name="settings_privacy">隐私设置</string>
     <string name="settings_reseted">所有设置已恢复</string>
     <string name="settings_summary_dark_mode_default">定义新标签是否默认使用强制深色模式</string>

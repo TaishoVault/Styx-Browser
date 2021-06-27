@@ -333,6 +333,7 @@
     <string name="settings_general">Genel ayarlar</string>
     <string name="settings_help_us">Bize yardımda bulun</string>
     <string name="settings_mining">Madencilik</string>
+    <string name="settings_portrait_landscape">Dikey &amp; Yatay</string>
     <string name="settings_privacy">Gizlilik ayarları</string>
     <string name="settings_reseted">Tüm ayarlar geri yüklendi</string>
     <string name="settings_summary_dark_mode_default">Yeni sekmelerin varsayılan olarak zorla karanlık modu kullanıp kullanmayacağını tanımlayın</string>
