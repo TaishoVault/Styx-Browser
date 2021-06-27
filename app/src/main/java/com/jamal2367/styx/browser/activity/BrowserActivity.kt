@@ -43,6 +43,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.net.toUri
+import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.customview.widget.ViewDragHelper
 import androidx.databinding.DataBindingUtil
@@ -1084,15 +1085,20 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             if (userPreferences.toolbarsBottom) {
                 // Move toolbar to the bottom
                 root.removeFromParent()?.addView(root)
+                // Move search in page to top
+                iBinding.findInPageInclude.root.let {
+                    it.removeFromParent()?.addView(it, 0)
+                }
+
                 // Rearrange it so that it is upside down
                 // Put tab bar at the bottom
                 tabBarContainer.removeFromParent()?.addView(tabBarContainer)
                 // Put progress bar at the top
-                progressView.removeFromParent()?.addView(progressView,0)
+                progressView.removeFromParent()?.addView(progressView, 0)
                 // Take care of tab drawer if any
                 (tabsView as? TabsDrawerView)?.apply {
                     // Put our tab list on top then to push toolbar to the bottom
-                    iBinding.tabsList.removeFromParent()?.addView(iBinding.tabsList,0)
+                    iBinding.tabsList.removeFromParent()?.addView(iBinding.tabsList, 0)
                     // Use reversed layout from bottom to top
                     (iBinding.tabsList.layoutManager as? LinearLayoutManager)?.apply {
                         reverseLayout = true
@@ -1104,7 +1110,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 // Take care of bookmarks drawer
                 bookmarksView?.apply {
                     // Put our list on top then to push toolbar to the bottom
-                    iBinding.listBookmarks.removeFromParent()?.addView(iBinding.listBookmarks,0)
+                    iBinding.listBookmarks.removeFromParent()?.addView(iBinding.listBookmarks, 0)
                     // Use reversed layout from bottom to top
                     (iBinding.listBookmarks.layoutManager as? LinearLayoutManager)?.reverseLayout = true
                 }
@@ -1122,6 +1128,13 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 popupMenu.animationStyle = R.style.AnimationMenuBottom
                 // Move popup menu toolbar to the bottom
                 popupMenu.iBinding.header.apply{removeFromParent()?.addView(this)}
+                // Move items above our toolbar separator
+                popupMenu.iBinding.scrollViewItems.apply{removeFromParent()?.addView(this, 0)}
+                // Reverse menu items if needed
+                if (!wasToolbarsBottom) {
+                    val children = popupMenu.iBinding.layoutMenuItems.children.toList()
+                    children.reversed().forEach { item -> item.removeFromParent()?.addView(item) }
+                }
 
                 // Set search dropdown anchor to avoid gap
                 searchView.dropDownAnchor = R.id.address_bar_include
@@ -1130,9 +1143,14 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 // Move toolbar to the top
                 root.removeFromParent()?.addView(root, 0)
                 //iBinding.uiLayout.addView(root, 0)
+                // Move search in page to bottom
+                iBinding.findInPageInclude.root.let {
+                    it.removeFromParent()?.addView(it)
+                    //iBinding.uiLayout.addView(it)
+                }
                 // Rearrange it so that it is the right way up
                 // Put tab bar at the bottom
-                tabBarContainer.removeFromParent()?.addView(tabBarContainer,0)
+                tabBarContainer.removeFromParent()?.addView(tabBarContainer, 0)
                 // Put progress bar at the top
                 progressView.removeFromParent()?.addView(progressView)
                 // Take care of tab drawer if any
@@ -1156,11 +1174,28 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     (iBinding.listBookmarks.layoutManager as? LinearLayoutManager)?.reverseLayout = false
                 }
 
+                // Deal with session menu
+                sessionsMenu.animationStyle = R.style.AnimationMenu
+                (sessionsMenu.iBinding.recyclerViewSessions.layoutManager as? LinearLayoutManager)?.apply {
+                    reverseLayout = false
+                    stackFromEnd = false
+                }
+                // Move sessions menu toolbar to the top
+                sessionsMenu.iBinding.toolbar.apply{removeFromParent()?.addView(this, 0)}
+
                 // Set popup menus animations
                 popupMenu.animationStyle = R.style.AnimationMenu
-                sessionsMenu.animationStyle = R.style.AnimationMenu
                 // Move popup menu toolbar to the top
                 popupMenu.iBinding.header.apply{removeFromParent()?.addView(this, 0)}
+                // Move items below our toolbar separator
+                popupMenu.iBinding.scrollViewItems.apply{removeFromParent()?.addView(this)}
+                // Reverse menu items if needed
+                if (wasToolbarsBottom) {
+                    val children = popupMenu.iBinding.layoutMenuItems.children.toList()
+                    children.reversed().forEach { item -> item.removeFromParent()?.addView(item) }
+                }
+                // Set search dropdown anchor to avoid gap
+                searchView.dropDownAnchor = R.id.toolbar_include
             }
         }
 
