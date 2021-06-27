@@ -24,8 +24,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 
 /**
- * The [RecyclerView.ViewHolder] for both vertical and horizontal tabs.
- * That represents an item in our list, basically one tab.
+ * The [RecyclerView.ViewHolder] for our session list.
+ * That represents an item in our list, basically one session.
  */
 @SuppressLint("InflateParams")
 class SessionViewHolder(
@@ -126,7 +126,10 @@ class SessionViewHolder(
                         sessionsMenu.dismiss()
                     } else {
                         // Update our list, notably current item
-                        iUiController.getTabModel().doAfterInitialization { sessionsMenu.updateSessions() }
+                        iUiController.getTabModel().doOnceAfterInitialization {
+                            sessionsMenu.updateSessions()
+                            sessionsMenu.scrollToCurrentSession()
+                        }
                     }
                 }
             }

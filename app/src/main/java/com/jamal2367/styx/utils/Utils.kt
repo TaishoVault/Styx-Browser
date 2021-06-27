@@ -19,13 +19,17 @@ import android.view.Gravity
 import android.view.View
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.R
 import com.jamal2367.styx.database.HistoryEntry
 import com.jamal2367.styx.dialog.BrowserDialog.setDialogSize
+import com.jamal2367.styx.extensions.canScrollVertically
 import com.jamal2367.styx.extensions.snackbar
+import com.jamal2367.styx.preference.UserPreferences
 import java.io.Closeable
 import java.io.File
 import java.io.IOException
@@ -35,9 +39,10 @@ import java.net.URISyntaxException
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 object Utils {
     private const val TAG = "Utils"
+
+    lateinit var userPreferences: UserPreferences
 
     /**
      * Creates a new intent that can launch the email
@@ -59,6 +64,29 @@ object Utils {
         intent.putExtra(Intent.EXTRA_CC, cc)
         intent.type = "message/rfc822"
         return intent
+    }
+
+    /**
+     * Workaround reversed layout bug: https://github.com/Slion/Fulguris/issues/212
+     */
+    fun fixScrollBug(aList : RecyclerView): Boolean {
+        val lm = (aList.layoutManager as LinearLayoutManager)
+        // Can't change stackFromEnd when computing layout or scrolling otherwise it throws an exception
+        if (aList.isComputingLayout) {
+            if (userPreferences.toolbarsBottom) {
+                // Workaround reversed layout bug: https://github.com/Slion/Fulguris/issues/212
+                if (lm.stackFromEnd != aList.canScrollVertically()) {
+                    lm.stackFromEnd = !lm.stackFromEnd
+                    return true
+                }
+            } else {
+                // Make sure this is set properly when not using bottom toolbars
+                // No need to check if the value is already set properly as this is already done internally
+                lm.stackFromEnd = false
+            }
+        }
+
+        return false
     }
 
     /**

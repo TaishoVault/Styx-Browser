@@ -199,10 +199,16 @@ class SessionsPopupWindow(
         updateSessions()
         if (aShowCurrent) {
             // Make sure current session is on the screen
-            iBinding.recyclerViewSessions.smoothScrollToPosition(iUiController.getTabModel().currentSessionIndex())
+            scrollToCurrentSession()
         }
     }
 
+    /**
+     *
+     */
+    fun scrollToCurrentSession() {
+        iBinding.recyclerViewSessions.smoothScrollToPosition(iUiController.getTabModel().currentSessionIndex())
+    }
 
     /**
      *

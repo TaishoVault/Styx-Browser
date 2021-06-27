@@ -16,6 +16,7 @@ import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.extensions.inflater
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.ItemDragDropSwipeHelper
+import com.jamal2367.styx.utils.Utils.fixScrollBug
 import com.jamal2367.styx.view.StyxView
 import javax.inject.Inject
 
@@ -57,7 +58,11 @@ class TabsDrawerView @JvmOverloads constructor(
             (itemAnimator as DefaultItemAnimator).supportsChangeAnimations = false
             // Reverse layout if using bottom tool bars
             // LinearLayoutManager.setReverseLayout is also adjusted from BrowserActivity.setupToolBar
-            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, userPreferences.toolbarsBottom)
+            val lm = LinearLayoutManager(context, RecyclerView.VERTICAL, userPreferences.toolbarsBottom)
+            // Though that should not be needed as it is taken care of by [fixScrollBug]
+            // See: https://github.com/Slion/Fulguris/issues/212
+            lm.stackFromEnd = userPreferences.toolbarsBottom
+            layoutManager = lm
             adapter = tabsAdapter
             setHasFixedSize(false)
         }
@@ -102,8 +107,18 @@ class TabsDrawerView @JvmOverloads constructor(
         //tabsAdapter.notifyItemChanged(position)
     }
 
+    /**
+     * TODO: this is called way to often for my taste and should be optimized somehow.
+     */
     private fun displayTabs() {
         tabsAdapter.showTabs(uiController.getTabModel().allTabs.map(StyxView::asTabViewState))
+
+        if (fixScrollBug(iBinding.tabsList)) {
+            // Scroll bug was fixed trigger a scroll to current item then
+            (context as BrowserActivity).apply {
+                mainHandler.postDelayed({ scrollToCurrentTab() }, 0)
+            }
+        }
     }
 
     override fun tabsInitialized() {
