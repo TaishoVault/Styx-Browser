@@ -41,15 +41,15 @@ import java.io.IOException
 import java.nio.charset.Charset
 import javax.inject.Inject
 
-// this is basically the update service from yuzu blocker with some stuff removed
+// this is a slightly modified part of jp.hazuki.yuzubrowser.adblock.service/AbpUpdateService.kt
+// TODO: still a bunch of unused code -> check and remove what is not needed
 class AbpListUpdater @Inject constructor(val context: Context) {
 //class AbpListUpdater @Inject constructor(val context: Context, val userPreferences: UserPreferences) {
 
     //@Inject internal lateinit var okHttpClient: OkHttpClient
     val okHttpClient = OkHttpClient() // any problems if not injecting?
 
-    //    @Inject
-//    internal lateinit var abpDatabase: AbpDatabase
+    //@Inject internal lateinit var abpDatabase: AbpDatabase
     @Inject internal lateinit var userPreferences: UserPreferences
 
     val abpDao = AbpDao(context)
@@ -196,8 +196,8 @@ class AbpListUpdater @Inject constructor(val context: Context) {
             dir.getAbpWhitePageListFile(entity).exists()) return false
 
         // lastModified is only used for HTTP and file
-        //  can't get file date for assets, so assume that size changes when blocklist changes
-        //  and (ab)use lastModified to store checksum, so update is triggered when file is changed
+        // can't get file date for assets, so assume that size changes when blocklist changes
+        // and (ab)use lastModified to store checksum, so update is triggered when file is changed
         // TODO: maybe only check if app version changed
         val checksum = context.assets.open(ASSETS_BLOCKLIST).computeMD5()
         if (checksum == entity.lastModified)

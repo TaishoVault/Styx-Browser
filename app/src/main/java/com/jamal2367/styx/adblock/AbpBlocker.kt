@@ -50,15 +50,17 @@ class AbpBlocker @Inject constructor(
     // store urls of entities, they will never be blocked
     private val entityUrls = mutableListOf<String>()
 
-    /*    // TODO: element hiding
-        //  not sure if this actually works (did not in a test - I think?), maybe it's crucial to inject the js at the right point
-        //  tried onPageFinished, might be too late (try to implement onDomFinished from yuzu?)
-    //    private var elementHideExclusionList: FilterContainer? = null
-    //    private var elementHideList: ElementContainer? = null
-        // both lists are actually inside the elementBlocker
-        private var elementBlocker: CosmeticFiltering? = null
-        var elementHide = userPreferences.elementHide
+    /*
+    // TODO: element hiding
+    // not sure if this actually works (did not in a test - I think?), maybe it's crucial to inject the js at the right point
+    // tried onPageFinished, might be too late (try to implement onDomFinished from yuzu?)
+    // private var elementHideExclusionList: FilterContainer? = null
+    // private var elementHideList: ElementContainer? = null
+    // both lists are actually inside the elementBlocker
+    private var elementBlocker: CosmeticFiltering? = null
+    var elementHide = userPreferences.elementHide
     */
+
     // cache for 3rd party check, allows significantly faster checks
     private val thirdPartyCache = mutableMapOf<String, Boolean>()
     private val thirdPartyCacheSize = 100
@@ -90,9 +92,7 @@ class AbpBlocker @Inject constructor(
         }
     }
 
-    //----------------------- from yuzu adblocker (mostly AdBlockController) --------------------//
-
-    // TODO: add info where exactly the code is taken from, should simplify handling in case yuzu code is updated
+    // from yuzu: module/adblock/src/main/java/jp/hazuki/yuzubrowser/adblock/AdBlockController.kt
     private fun createDummy(uri: Uri): WebResourceResponse {
         val mimeType = getMimeType(uri.toString())
         return if (mimeType.startsWith("image/")) {
@@ -102,6 +102,8 @@ class AbpBlocker @Inject constructor(
         }
     }
 
+    // from yuzu: jp.hazuki.yuzubrowser.adblock/AdBlockController.kt
+    // stings adjusted for Styx
     private fun createMainFrameDummy(uri: Uri, pattern: String): WebResourceResponse {
         val blocked = application.getString(R.string.ad_block_blocked_page)
         val filter = application.getString(R.string.ad_block_blocked_filter)
@@ -132,10 +134,11 @@ class AbpBlocker @Inject constructor(
         return null
     }
 
-    // copied here to allow modified 3rd party detection
+    // moved from jp.hazuki.yuzubrowser.adblock/AdBlock.kt to allow modified 3rd party detection
     private fun WebResourceRequest.getContentRequest(pageUri: Uri) =
         ContentRequest(url, pageUri, getContentType(pageUri), is3rdParty(url, pageUri))
 
+    // moved from jp.hazuki.yuzubrowser.adblock/AdBlock.kt
     // modified to use cache for the slow part, decreases average time by 50-70%
     fun is3rdParty(url: Uri, pageUri: Uri): Boolean {
         val hostName = url.host ?: return true
@@ -157,9 +160,11 @@ class AbpBlocker @Inject constructor(
         return cache3rdPartyResult(db.getEffectiveTldPlusOne(hostName) != db.getEffectiveTldPlusOne(pageHost), cacheEntry)
     }
 
-    //----------------------- not from yuzu any more ------------------------//
-
-    // TODO: probably remove
+    // TODO: on S4 mini this is ca 30% faster than running loadLists() in background
+    //  but on S4 mini plus, it's ca 30% slower than running loadLists() in background
+    //  currently not used
+    //  maybe remove, or update to provide same things as loadLists()
+    //  or understand when which is faster and always call the faster version
     fun loadListsAsync() {
         listsLoaded = false
         val abpLoader = AbpLoader(application.applicationContext.getFilterDir(), AbpDao(application.applicationContext).getAll())
@@ -192,10 +197,10 @@ class AbpBlocker @Inject constructor(
 
     // cache 3rd party check result, and remove oldest entry if cache too large
     // TODO: this can trigger concurrentModificationException
-    //   fix should not defeat purpose of cache (introduce slowdown)
-    //   simply use try and don't catch anything?
-    //    if something is not added to cache it doesn't matter
-    //    in worst case it takes another 1-2 ms to create the same result again
+    //  fix should not defeat purpose of cache (introduce slowdown)
+    //  simply use try and don't catch anything?
+    //  if something is not added to cache it doesn't matter
+    //  in worst case it takes another 1-2 ms to create the same result again
     private fun cache3rdPartyResult(is3rdParty: Boolean, cacheEntry: String): Boolean {
         runCatching {
             thirdPartyCache[cacheEntry] = is3rdParty
@@ -212,33 +217,35 @@ class AbpBlocker @Inject constructor(
         // then mining/malware (ad block allow should not override malware list)
         // then ads
 
+        // TODO: is it necessary to exclude entityUrls?
+        //  maybe not, request is probably not done by WebView -> check and (probably) remove
         if (request.url.toString().isSpecialUrl() || entityUrls.contains(request.url.toString()))
             return null
 
         // create contentRequest
         // pageUrl can be "" (usually when opening something in a new tab)
-        //  in this case everything gets blocked because of the pattern "|https://"
-        //  this is blocked for some page domains, and apparently no page domain also means it's blocked
-        //  so some workaround here (maybe do something else? check how UnifiedFilter handles domainMap stuff)
+        // in this case everything gets blocked because of the pattern "|https://"
+        // this is blocked for some page domains, and apparently no page domain also means it's blocked
+        // so some workaround here (maybe do something else? check how UnifiedFilter handles domainMap stuff)
         // TODO: check if pageUrl could be wrong but not empty in some cases
         //  like opening bookmarks, or manually entering a url
         val contentRequest = request.getContentRequest(if (pageUrl == "") request.url else Uri.parse(pageUrl))
 
-        // no need to supply pattern to block response
-        //  pattern only used if it's for main frame
-        //  and if it's for main frame and blocked by user, it's always because user chose to block entire domain
+        // no need to supply pattern to getBlockResponse
+        // pattern only used if it's for main frame
+        // and if it's for main frame and blocked by user, it's always because user chose to block entire domain
         abpUserRules.getResponse(contentRequest)?.let { response ->
             return if (response) getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_user, contentRequest.pageUrl.host ?: ""))
             else null
         }
 
         // wait until blocklists are loaded
-        //  (web request stuff does not run on main thread, so thread.sleep is ok)
+        // web request stuff does not run on main thread, so thread.sleep should be ok
         // possible reduction of wait time before lists have loaded:
-        //   load list with 'empty' tag first and check those
-        //   for the rest the bloom filter could be used, so requests without matching tags are allowed immediately
-        //   but: seems like a lot of work for maybe saving 0.5-2 seconds on browser start
-        //    'maybe' saving because ca 20-50% of all requests will have matching tags, so there will (probably) still be a delay
+        // load list with 'empty' tag first and check those
+        // for the rest the bloom filter could be used, so requests without matching tags are allowed immediately
+        // but: seems like a lot of work for maybe saving 0.5-2 seconds on browser start
+        // 'maybe' saving because ca 20-50% of all requests will have matching tags, so there will (probably) still be a delay
         while (!listsLoaded) {
             Thread.sleep(50)
         }
@@ -258,22 +265,22 @@ class AbpBlocker @Inject constructor(
             createDummy(request.url)
     }
 
-    // stuff from yuzu browser modules/core/.../utility
-    // TODO: add info where exactly the code is taken from, should simplify handling in case yuzu code is updated
     companion object {
         private const val BUFFER_SIZE = 1024 * 8
 
+        // from jp.hazuki.yuzubrowser.core.utility.utils/IOUtils.java
         @Throws(IOException::class)
-        fun readByte(inpputStream: InputStream): ByteArray {
+        fun readByte(inputStream: InputStream): ByteArray {
             val buffer = ByteArray(BUFFER_SIZE)
             val bout = ByteArrayOutputStream()
             var n: Int
-            while (inpputStream.read(buffer).also { n = it } >= 0) {
+            while (inputStream.read(buffer).also { n = it } >= 0) {
                 bout.write(buffer, 0, n)
             }
             return bout.toByteArray()
         }
 
+        // from jp.hazuki.yuzubrowser.core.utility.utils/FileUtils.kt
         private const val MIME_TYPE_UNKNOWN = "application/octet-stream"
         fun getMimeType(fileName: String): String {
             val lastDot = fileName.lastIndexOf('.')
@@ -284,6 +291,7 @@ class AbpBlocker @Inject constructor(
             return "application/octet-stream"
         }
 
+        // from jp.hazuki.yuzubrowser.core.utility.utils/FileUtils.kt
         fun getMimeTypeFromExtension(extension: String): String {
             return when (extension) {
                 "js" -> "application/javascript"
@@ -300,6 +308,7 @@ class AbpBlocker @Inject constructor(
             }
         }
 
+        // from jp.hazuki.yuzubrowser.core.utility.extensions/HtmlExtensions.kt
         fun getNoCacheResponse(mimeType: String, sequence: CharSequence): WebResourceResponse {
             return getNoCacheResponse(
                 mimeType, ByteArrayInputStream(
@@ -310,6 +319,7 @@ class AbpBlocker @Inject constructor(
             )
         }
 
+        // from jp.hazuki.yuzubrowser.core.utility.extensions/HtmlExtensions.kt
         private fun getNoCacheResponse(mimeType: String, stream: InputStream): WebResourceResponse {
             val response = WebResourceResponse(mimeType, "UTF-8", stream)
             response.responseHeaders =
