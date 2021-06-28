@@ -17,6 +17,7 @@ import com.jamal2367.styx.html.bookmark.BookmarkPageFactory
 import com.jamal2367.styx.html.download.DownloadPageFactory
 import com.jamal2367.styx.html.history.HistoryPageFactory
 import com.jamal2367.styx.html.homepage.HomePageFactory
+import com.jamal2367.styx.html.incognito.IncognitoPageFactory
 import com.jamal2367.styx.preference.UserPreferences
 import dagger.Reusable
 import io.reactivex.Scheduler
@@ -84,6 +85,32 @@ class HomePageInitializer @Inject constructor(
 }
 
 /**
+ * An initializer that displays the page set as the user's incognito homepage preference.
+ */
+@Reusable
+class IncognitoPageInitializer @Inject constructor(
+    private val userPreferences: UserPreferences,
+    private val startIncognitoPageInitializer: StartIncognitoPageInitializer,
+    private val bookmarkPageInitializer: BookmarkPageInitializer
+) : TabInitializer {
+
+    override fun initialize(webView: WebView, headers: Map<String, String>) {
+        val homepage = userPreferences.homepage
+
+        when (homepage) {
+            Uris.AboutHome -> startIncognitoPageInitializer
+            Uris.AboutBookmarks -> bookmarkPageInitializer
+            else -> UrlInitializer(homepage)
+        }.initialize(webView, headers)
+    }
+
+    override fun url(): String {
+        return Uris.StyxIncognito
+    }
+
+}
+
+/**
  * An initializer that displays the start page.
  */
 @Reusable
@@ -94,6 +121,20 @@ class StartPageInitializer @Inject constructor(
 ) : HtmlPageFactoryInitializer(homePageFactory, diskScheduler, foregroundScheduler) {
     override fun url(): String {
         return Uris.StyxStart
+    }
+}
+
+/**
+ * An initializer that displays the start incognito page.
+ */
+@Reusable
+class StartIncognitoPageInitializer @Inject constructor(
+    incognitoPageFactory: IncognitoPageFactory,
+    @DiskScheduler diskScheduler: Scheduler,
+    @MainScheduler foregroundScheduler: Scheduler
+) : HtmlPageFactoryInitializer(incognitoPageFactory, diskScheduler, foregroundScheduler) {
+    override fun url(): String {
+        return Uris.StyxIncognito
     }
 }
 

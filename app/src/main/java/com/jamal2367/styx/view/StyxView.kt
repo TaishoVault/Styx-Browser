@@ -61,6 +61,7 @@ class StyxView(
         tabInitializer: TabInitializer,
         val isIncognito: Boolean,
         private val homePageInitializer: HomePageInitializer,
+        private val incognitoPageInitializer: IncognitoPageInitializer,
         private val bookmarkPageInitializer: BookmarkPageInitializer,
         private val downloadPageInitializer: DownloadPageInitializer,
         private val historyPageInitializer: HistoryPageInitializer,
@@ -363,8 +364,13 @@ class StyxView(
      * homepage, or loads the startpage or bookmark page if either of those are set as the homepage.
      */
     fun loadHomePage() {
-        iTargetUrl = Uri.parse(Uris.StyxHome)
-        initializeContent(homePageInitializer)
+        if (isIncognito) {
+            iTargetUrl = Uri.parse(Uris.StyxIncognito)
+            initializeContent(incognitoPageInitializer)
+        } else {
+            iTargetUrl = Uri.parse(Uris.StyxHome)
+            initializeContent(homePageInitializer)
+        }
     }
 
     /**

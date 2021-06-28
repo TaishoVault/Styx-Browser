@@ -26,6 +26,7 @@ object Schemes {
 object Hosts {
     const val Home = "home"
     const val Start = "start"
+    const val Incognito = "incognito"
     const val Bookmarks = "bookmarks"
     const val History = "history"
     const val Downloads = "downloads"
@@ -36,12 +37,14 @@ object Hosts {
 object Uris {
     const val StyxHome = "${Schemes.Styx}://${Hosts.Home}"
     const val StyxStart = "${Schemes.Styx}://${Hosts.Start}"
+    const val StyxIncognito = "${Schemes.Styx}://${Hosts.Incognito}"
     const val StyxBookmarks = "${Schemes.Styx}://${Hosts.Bookmarks}"
     const val StyxDownloads = "${Schemes.Styx}://${Hosts.Downloads}"
     const val StyxHistory = "${Schemes.Styx}://${Hosts.History}"
     const val StyxNoop = "${Schemes.Styx}://${Hosts.Noop}"
     // Custom local page schemes
     const val AboutHome = "${Schemes.About}:${Hosts.Home}"
+    const val AboutIncognito = "${Schemes.About}:${Hosts.Incognito}"
     const val AboutBlank = "${Schemes.About}:${Hosts.Blank}"
     const val AboutBookmarks = "${Schemes.About}:${Hosts.Bookmarks}"
     const val AboutHistory = "${Schemes.About}:${Hosts.History}"

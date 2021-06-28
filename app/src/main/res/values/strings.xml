@@ -205,6 +205,7 @@
     <string name="import_bookmark_error">Could not import bookmarks from file</string>
     <string name="import_export_settings">Import &amp; Export</string>
     <string name="import_settings">Import settings from backup</string>
+    <string name="incognito">Incognito</string>
     <string name="incognito_cookies_pie">Incognito mode runs in a separate process that is reset after each session. Incognito cookie preferences are now controlled by the regular cookie preferences.</string>
     <string name="incognito_cookies">Enable cookies in incognito mode</string>
     <string name="inspect">Inject Javascript</string>
@@ -336,6 +337,7 @@
     <string name="search_engine_yahoo" translatable="false">Yahoo</string>
     <string name="search_engine_yandex" translatable="false">Yandex</string>
     <string name="search_homepage">Search</string>
+    <string name="search_incognito">Privat search</string>
     <string name="search_in_new_tab">Search in new tab</string>
     <string name="search_insert_suggestion">Insert suggestion</string>
     <string name="search_suggestions_off">No search suggestions</string>

@@ -13,6 +13,7 @@ import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.extensions.toast
 import com.jamal2367.styx.html.bookmark.BookmarkPageFactory
 import com.jamal2367.styx.html.homepage.HomePageFactory
+import com.jamal2367.styx.html.incognito.IncognitoPageFactory
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.isSpecialUrl
@@ -30,15 +31,16 @@ import io.reactivex.rxkotlin.subscribeBy
  * browser.
  */
 class BrowserPresenter(
-        private val view: BrowserView,
-        private val isIncognito: Boolean,
-        private val userPreferences: UserPreferences,
-        private val tabsModel: TabsManager,
-        @MainScheduler private val mainScheduler: Scheduler,
-        private val homePageFactory: HomePageFactory,
-        private val bookmarkPageFactory: BookmarkPageFactory,
-        val closedTabs: RecentTabsModel,
-        private val logger: Logger
+    private val view: BrowserView,
+    private val isIncognito: Boolean,
+    private val userPreferences: UserPreferences,
+    private val tabsModel: TabsManager,
+    @MainScheduler private val mainScheduler: Scheduler,
+    private val homePageFactory: HomePageFactory,
+    private val incognitoPageFactory: IncognitoPageFactory,
+    private val bookmarkPageFactory: BookmarkPageFactory,
+    val closedTabs: RecentTabsModel,
+    private val logger: Logger
 ) {
 
     private var currentTab: StyxView? = null
@@ -180,10 +182,9 @@ class BrowserPresenter(
      * SL: That's not quite working for some reason.
      * Close all tabs
      */
-
-
     private fun mapHomepageToCurrentUrl(): String = when (val homepage = userPreferences.homepage) {
         Uris.AboutHome -> "$FILE${homePageFactory.createHomePage()}"
+        Uris.AboutIncognito -> "$FILE${incognitoPageFactory.createIncognitoPage()}"
         Uris.AboutBookmarks -> "$FILE${bookmarkPageFactory.createBookmarkPage(null)}"
         else -> homepage
     }

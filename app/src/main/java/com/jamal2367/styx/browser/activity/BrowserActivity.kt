@@ -92,6 +92,7 @@ import com.jamal2367.styx.extensions.*
 import com.jamal2367.styx.html.bookmark.BookmarkPageFactory
 import com.jamal2367.styx.html.history.HistoryPageFactory
 import com.jamal2367.styx.html.homepage.HomePageFactory
+import com.jamal2367.styx.html.incognito.IncognitoPageFactory
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.notifications.IncognitoNotification
 import com.jamal2367.styx.preference.UserPreferences
@@ -171,6 +172,8 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     @Inject @field:MainScheduler lateinit var mainScheduler: Scheduler
     @Inject lateinit var tabsManager: TabsManager
     @Inject lateinit var homePageFactory: HomePageFactory
+    @Inject lateinit var incognitoPageFactory: IncognitoPageFactory
+    @Inject lateinit var incognitoPageInitializer: IncognitoPageInitializer
     @Inject lateinit var bookmarkPageFactory: BookmarkPageFactory
     @Inject lateinit var historyPageFactory: HistoryPageFactory
     @Inject lateinit var historyPageInitializer: HistoryPageInitializer
@@ -283,6 +286,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 tabsManager,
                 mainScheduler,
                 homePageFactory,
+                incognitoPageFactory,
                 bookmarkPageFactory,
                 RecentTabsModel(),
                 logger
@@ -755,7 +759,18 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         if (userPreferences.longClickTab) {
         iBindingToolbarContent.tabsButton.setOnLongClickListener {
-            presenter?.newTab(homePageInitializer, true)
+            if (isIncognito()) {
+                presenter?.newTab(
+                    incognitoPageInitializer,
+                    true
+                )
+            }
+            else{
+                presenter?.newTab(
+                    homePageInitializer,
+                    true
+                )
+            }
             true }
         }
     }
@@ -1264,7 +1279,19 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     }
                     R.id.home -> {
                         if (userPreferences.homepageInNewTab) {
-                            presenter?.newTab(homePageInitializer, true)
+
+                            if (isIncognito()) {
+                                presenter?.newTab(
+                                    incognitoPageInitializer,
+                                    true
+                                )
+                            }
+                            else{
+                                presenter?.newTab(
+                                    homePageInitializer,
+                                    true
+                                )
+                            }
                         } else {
                             tabsManager.currentTab?.loadHomePage()
                         }
@@ -1515,7 +1542,18 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     }
                     KeyEvent.KEYCODE_T -> {
                         // Open new tab
-                        presenter?.newTab(homePageInitializer, true)
+                        if (isIncognito()) {
+                            presenter?.newTab(
+                                incognitoPageInitializer,
+                                true
+                            )
+                        }
+                        else{
+                            presenter?.newTab(
+                                homePageInitializer,
+                                true
+                            )
+                        }
                         resetCtrlTab()
                         return true
                     }
@@ -1650,7 +1688,18 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 return true
             }
             R.id.action_new_tab -> {
-                presenter?.newTab(homePageInitializer, true)
+                if (isIncognito()) {
+                    presenter?.newTab(
+                        incognitoPageInitializer,
+                        true
+                    )
+                }
+                else{
+                    presenter?.newTab(
+                        homePageInitializer,
+                        true
+                    )
+                }
                 return true
             }
             R.id.menuShortcutRefresh -> {
@@ -2065,10 +2114,17 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         closePanels(null)
         // Then slightly delay page loading to give enough time for the drawer to close without stutter
         mainHandler.postDelayed({
-            presenter?.newTab(
+            if (isIncognito()) {
+                presenter?.newTab(
+                    incognitoPageInitializer,
+                    true
+                )
+            } else {
+                presenter?.newTab(
                     homePageInitializer,
                     true
-            )
+                )
+            }
         }, 300)
     }
 
@@ -2384,6 +2440,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             when {
                 url.isHomeUri() -> {
                     presenter?.newTab(homePageInitializer, true)
+                }
+                url.isIncognitoUri() -> {
+                    presenter?.newTab(incognitoPageInitializer, true)
                 }
                 url.isBookmarkUri() -> {
                     presenter?.newTab(bookmarkPageInitializer, true)

@@ -24,6 +24,7 @@ import com.jamal2367.styx.device.BuildType
 import com.jamal2367.styx.html.ListPageReader
 import com.jamal2367.styx.html.bookmark.BookmarkPageReader
 import com.jamal2367.styx.html.homepage.HomePageReader
+import com.jamal2367.styx.html.incognito.IncognitoPageReader
 import com.jamal2367.styx.js.*
 import com.jamal2367.styx.log.AndroidLogger
 import com.jamal2367.styx.log.Logger
@@ -171,6 +172,9 @@ class AppModule {
 
     @Provides
     fun providesHomePageReader(): HomePageReader = MezzanineGenerator.HomePageReader()
+
+    @Provides
+    fun providesIncognitoPageReader(): IncognitoPageReader = MezzanineGenerator.IncognitoPageReader()
 
     @Provides
     fun providesBookmarkPageReader(): BookmarkPageReader = MezzanineGenerator.BookmarkPageReader()

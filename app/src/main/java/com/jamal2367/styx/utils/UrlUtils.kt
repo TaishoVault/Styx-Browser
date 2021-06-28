@@ -15,6 +15,7 @@ import com.jamal2367.styx.html.bookmark.BookmarkPageFactory
 import com.jamal2367.styx.html.download.DownloadPageFactory
 import com.jamal2367.styx.html.history.HistoryPageFactory
 import com.jamal2367.styx.html.homepage.HomePageFactory
+import com.jamal2367.styx.html.incognito.IncognitoPageFactory
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.UnsupportedEncodingException
@@ -82,6 +83,14 @@ fun String?.isHomeUri(): Boolean =
  *
  * @return true if the url is a bookmark url, false otherwise.
  */
+fun String?.isIncognitoUri(): Boolean =
+    this == Uris.StyxIncognito || this == Uris.AboutIncognito
+
+/**
+ * Determines if the url is a url for the bookmark page.
+ *
+ * @return true if the url is a bookmark url, false otherwise.
+ */
 fun String?.isHistoryUri(): Boolean =
         this == Uris.StyxHistory || this == Uris.AboutHistory
 
@@ -94,7 +103,8 @@ fun String?.isSpecialUrl(): Boolean =
         && (this.endsWith(BookmarkPageFactory.FILENAME)
         || this.endsWith(DownloadPageFactory.FILENAME)
         || this.endsWith(HistoryPageFactory.FILENAME)
-        || this.endsWith(HomePageFactory.FILENAME))
+        || this.endsWith(HomePageFactory.FILENAME)
+        || this.endsWith(IncognitoPageFactory.FILENAME))
         /*|| this.startsWith(Schemes.Styx + "://")*/)
 
 /**
@@ -143,6 +153,14 @@ fun String?.isHistoryUrl(): Boolean =
  */
 fun String?.isStartPageUrl(): Boolean =
     this != null && this.startsWith(FILE) && this.endsWith(HomePageFactory.FILENAME)
+
+/**
+ * Determines if the url is a url for the incognito page.
+ *
+ * @return true if the url is a incognito page url, false otherwise.
+ */
+fun String?.isIncognitoPageUrl(): Boolean =
+    this != null && this.startsWith(FILE) && this.endsWith(IncognitoPageFactory.FILENAME)
 
 private val ACCEPTED_URI_SCHEMA = Pattern.compile("(?i)((?:http|https|file)://|(?:inline|data|about|javascript|styx):|(?:.*:.*@))(.*)")
 const val QUERY_PLACE_HOLDER = "%s"
