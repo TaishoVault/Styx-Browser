@@ -34,7 +34,7 @@
 
                 <intent
                     android:action="android.intent.action.VIEW"
-                    android:data="https://paypal.me/jamal2362">
+                    android:data="https://github.com/sponsors/jamal2362">
                     <extra
                         android:name="SOURCE"
                         android:value="SELF" />
