@@ -1279,18 +1279,10 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     }
                     R.id.home -> {
                         if (userPreferences.homepageInNewTab) {
-
                             if (isIncognito()) {
-                                presenter?.newTab(
-                                    incognitoPageInitializer,
-                                    true
-                                )
-                            }
-                            else{
-                                presenter?.newTab(
-                                    homePageInitializer,
-                                    true
-                                )
+                                presenter?.newTab(incognitoPageInitializer, true)
+                            } else {
+                                presenter?.newTab(homePageInitializer, true)
                             }
                         } else {
                             tabsManager.currentTab?.loadHomePage()
@@ -1781,7 +1773,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             R.id.menuShortcutHome -> {
                 if (userPreferences.homepageInNewTab) {
-                    presenter?.newTab(homePageInitializer, true)
+                    if (isIncognito()) {
+                        presenter?.newTab(incognitoPageInitializer, true)
+                    } else {
+                        presenter?.newTab(homePageInitializer, true)
+                    }
                 } else {
                     // Why not through presenter? We need some serious refactoring at some point
                     tabsManager.currentTab?.loadHomePage()

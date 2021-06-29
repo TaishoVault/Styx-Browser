@@ -150,6 +150,11 @@ class UserPreferences @Inject constructor(
     var homepage by preferences.stringPreference(R.string.pref_key_homepage, Uris.AboutHome)
 
     /**
+     * The URL of the selected incognito page.
+     */
+    var incognitoPage by preferences.stringPreference(R.string.pref_key_incognito, Uris.AboutIncognito)
+
+    /**
      * True if the browser should allow execution of javascript, false otherwise.
      */
     var javaScriptEnabled by preferences.booleanPreference(R.string.pref_key_javascript, R.bool.pref_default_javascript)

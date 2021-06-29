@@ -184,6 +184,11 @@ class BrowserPresenter(
      */
     private fun mapHomepageToCurrentUrl(): String = when (val homepage = userPreferences.homepage) {
         Uris.AboutHome -> "$FILE${homePageFactory.createHomePage()}"
+        Uris.AboutBookmarks -> "$FILE${bookmarkPageFactory.createBookmarkPage(null)}"
+        else -> homepage
+    }
+
+    private fun mapIncognitoToCurrentUrl(): String = when (val homepage = userPreferences.incognitoPage) {
         Uris.AboutIncognito -> "$FILE${incognitoPageFactory.createIncognitoPage()}"
         Uris.AboutBookmarks -> "$FILE${bookmarkPageFactory.createBookmarkPage(null)}"
         else -> homepage
@@ -222,11 +227,14 @@ class BrowserPresenter(
         view.notifyTabViewRemoved(position)
 
         if (afterTab == null) {
-            if(userPreferences.closeOnLastTab){
+            if (userPreferences.closeOnLastTab) {
                 view.closeBrowser()
-            }
-            else{
-                newTab(UrlInitializer(mapHomepageToCurrentUrl()), true)
+            } else {
+                if (isIncognito) {
+                    newTab(UrlInitializer(mapIncognitoToCurrentUrl()), true)
+                } else {
+                    newTab(UrlInitializer(mapHomepageToCurrentUrl()), true)
+                }
             }
             return
         } else if (afterTab !== currentTab) {

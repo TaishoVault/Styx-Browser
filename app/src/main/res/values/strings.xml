@@ -560,6 +560,7 @@
     <string name="pref_key_identifying_headers" translatable="false">pref_key_identifying_headers</string>
     <string name="pref_key_identity" translatable="false">pref_key_identity</string>
     <string name="pref_key_image_url" translatable="false">pref_key_image_url</string>
+    <string name="pref_key_incognito" translatable="false">pref_key_incognito</string>
     <string name="pref_key_invert_colors" translatable="false">pref_key_invert_colors</string>
     <string name="pref_key_javascript" translatable="false">pref_key_javascript</string>
     <string name="pref_key_landscape_desktop_width" translatable="false">pref_key_landscape_desktop_width</string>
