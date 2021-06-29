@@ -127,12 +127,14 @@ class AbpBlocker @Inject constructor(
         return getNoCacheResponse("text/html", builder)
     }
 
+    /*
     // TODO: remove if element hiding does not work
     override fun loadScript(uri: Uri): String? {
-//        val cosmetic = elementBlocker ?: return null
-//        return cosmetic.loadScript(uri)
+        val cosmetic = elementBlocker ?: return null
+        return cosmetic.loadScript(uri)
         return null
     }
+    */
 
     // moved from jp.hazuki.yuzubrowser.adblock/AdBlock.kt to allow modified 3rd party detection
     private fun WebResourceRequest.getContentRequest(pageUri: Uri) =

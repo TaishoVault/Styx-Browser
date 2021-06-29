@@ -66,7 +66,7 @@ class BrowserPopupMenu
             iBinding.menuItemDarkMode.isChecked = it.currentTab?.darkMode ?: false
 
             // And ad block
-            iBinding.menuItemAdBlock.isChecked = it.currentTab?.url?.let { url -> !abpUserRules.isWhitelisted(Uri.parse(url)) } ?: false
+            iBinding.menuItemAdBlock.isChecked = it.currentTab?.url?.let { url -> !abpUserRules.isAllowed(Uri.parse(url)) } ?: false
 
             (contentView.context as BrowserActivity).tabsManager.let { tm ->
                 tm.currentTab?.let { tab ->

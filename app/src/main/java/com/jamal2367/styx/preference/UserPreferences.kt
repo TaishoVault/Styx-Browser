@@ -484,7 +484,8 @@ class UserPreferences @Inject constructor(
     var longClickTab by preferences.booleanPreference(R.string.pref_key_long_click_tab, R.bool.pref_default_long_click_tab)
 
     /**
-     * Define auto update for Adblocker.
+     * Define behavior for blocklist updates (on, off, only on non-metered connections).
+     * Update check is only happening at browser start.
      */
     var blockListAutoUpdate by preferences.enumPreference(R.string.pref_key_blocklist_auto_update, AbpUpdateMode.WIFI_ONLY)
 
