@@ -52,7 +52,6 @@ class IncognitoPageFactory @Inject constructor(
                 ) andBuild {
                     charset { UTF8 }
                     body {
-                        id("image_url") { attr("src", "file:///android_asset/private.webp") }
                         tag("script") {
                             html(
                                 html()
