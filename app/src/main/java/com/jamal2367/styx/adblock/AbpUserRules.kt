@@ -21,11 +21,11 @@ import javax.inject.Singleton
     -> try using a lot of global filters (empty tag), each with some domain
        this is not yet implemented, but will be used for uBo style dynamic filtering
        TODO: improve loading speed
-        slow load speed is why yuzu uses storage in files instead of DB (current db is 10 times slower!
-        loading (in background) takes some 100 ms for few entries, 1.7 s for 2400 entries
+        slow load speed is why yuzu uses storage in files instead of DB (current db is 10 times slower!)
+        loading (in background) takes some 100 ms for few entries, 1.7 s for 2400 entries (S4 mini)
         ca half time if not loading at the same time as ad block lists
         -> it's not horrible, but still needs to be improved
-        first step: check which part is slow (loading from db, or
+        first step: check which part is slow -> loading from db takes twice as long as creating the filters, adding to UserFilterContainer is (currently) negligible
 */
 
 @Singleton
@@ -42,21 +42,21 @@ class AbpUserRules @Inject constructor(
         //  try:
         //   by lazy: may needlessly delay first request -> by 1.7 s for 2400 entries on S4 mini
         //    but: adblock list is loading parallel, so time loss not that bad
-        //   load blocking: may blocks for too long -> how long?
+        //   load blocking: may block for too long -> how long?
         //   load in background -> need to check every time whether it's already loaded
 //        loadUserLists()
     }
 
-    private fun loadUserLists() {
+/*    private fun loadUserLists() {
         // on S4 mine: takes 150 ms for the first time, then 6 ms for empty db
         val ur = userRulesRepository.getAllRules()
         // careful: the following line crashes (my) android studio:
 //        userRules = UserFilterContainer().also { ur.forEach(it::add) } }
         // why? it's the same way used for 'normal' filter containers
-
 //        userRules = UserFilterContainer()
         ur.forEach { userRules.add(it) }
     }
+*/
 
     // true: block
     // false: allow
@@ -65,42 +65,43 @@ class AbpUserRules @Inject constructor(
         return userRules.get(contentRequest)?.response
     }
 
-    fun addUserRule(filter: UnifiedFilterResponse) {
+    private fun addUserRule(filter: UnifiedFilterResponse) {
         userRules.add(filter)
         userRulesRepository.addRules(listOf(filter))
     }
 
-    fun removeUserRule(filter: UnifiedFilterResponse) {
+    private fun removeUserRule(filter: UnifiedFilterResponse) {
         userRules.remove(filter)
         userRulesRepository.removeRule(filter)
     }
 
-    /*
+/*
         some examples
         entire page: <page domain>, "", 0xffff, false
         everything from youtube.com: "", "youtube.com", 0xffff, false
         everything 3rd party from youtube.com: "", "youtube.com", 0xffff, true
-        all 3rd party frames: "", "", ContentRequest.TYPE_SUB_DOCUMENT, true //TODO: should be sub_document, not checked
+        all 3rd party frames: "", "", ContentRequest.TYPE_SUB_DOCUMENT, true //TODO: SHOULD be sub_document, but not checked
         find content types in ContentRequest, and how to get it from request in AdBlock -> WebResourceRequest.getContentType
-    */
+ */
 
+    // domains as returned by url.host -> should be valid, and not contains htto(s)
     private fun createUserFilter(pageDomain: String, requestDomain: String, contentType: Int, thirdParty: Boolean): UnifiedFilter {
-        // 'domains' contains (usually 3rd party) domains, but can also be same as pageDomain (or subdomain of pageDomain)
+        // 'domains' contains (usually 3rd party) domains, but can also be same as requestDomain (or subdomain of requestDomain)
         // include is always set to true (filter valid only on this domain, and any subdomain if there is no more specific rule)
-        val domains = if (requestDomain.isNotEmpty())
-            SingleDomainMap(true, requestDomain)
+        val domains = if (pageDomain.isNotEmpty())
+            SingleDomainMap(true, pageDomain)
         else null
 
         // thirdParty true means filter only applied to 3rd party content, translates to 1 in the filter
         //  0 would be only first party, -1 is for both
-        //  maybe implement 0 as well, but I think it's not used in ublock (any why would i want to block 1st, but not 3rd party stuff?)
+        //  maybe implement 0 as well, but I think it's not used in uBo (why would i want to block 1st, but not 3rd party stuff?)
         val thirdPartyInt = if (thirdParty) 1 else -1
 
-        // ContainsFilter for global rules (empty pattern), HostFilter for local rules
-        return if (pageDomain.isEmpty())
-            ContainsFilter(pageDomain, contentType, domains, thirdPartyInt)
+        // HostFilter for specific request domain, ContainsFilter with empty pattern otherwise
+        return if (requestDomain.isEmpty())
+            ContainsFilter(requestDomain, contentType, domains, thirdPartyInt)
         else
-            HostFilter(pageDomain, contentType, false, domains, thirdPartyInt)
+            HostFilter(requestDomain, contentType, false, domains, thirdPartyInt)
     }
 
     fun addUserRule(pageDomain: String, requestDomain: String, contentType: Int, thirdParty: Boolean, response: Boolean?) {
@@ -112,7 +113,8 @@ class AbpUserRules @Inject constructor(
     }
 
     fun isAllowed(pageUrl: Uri): Boolean {
-        // TODO: checking by using a fake request might be "slower than necessary"? but probably faster than DB query
+        // TODO: checking by using a fake request might be "slower than necessary"? but sure is faster a than DB query
+        //  anyway, this needs to be changed once there can be more rules for a page
         return userRules.get(ContentRequest(pageUrl, pageUrl, 0xffff, false, listOf("")))?.response == false
     }
 

@@ -195,6 +195,7 @@
     <string name="import_bookmark_error">Yer işaretleri dosyadan yüklenemedi</string>
     <string name="import_export_settings">İçe &amp; Dışa Aktar</string>
     <string name="import_settings">Ayarları yedekten içe aktar</string>
+    <string name="incognito">Gizli mod</string>
     <string name="incognito_cookies_pie">Gizli mod her oturumdan sonra sıfırlanır. Gizli çerez tercihleri ​​artık normal çerez tercihleri ​​tarafından kontrol edilmektedir.</string>
     <string name="incognito_cookies">Gizli modda çerezleri etkinleştir</string>
     <string name="inspect">JavaScript enjekte et</string>
@@ -308,6 +309,7 @@
     <string name="search_engine_startpage_mobile">StartPage Mobil</string>
     <string name="search_engine_yahoo_no_js">Yahoo - JavaScript Yok</string>
     <string name="search_homepage">Arama</string>
+    <string name="search_incognito">Özel Arama</string>
     <string name="search_in_new_tab">Yeni sekmede arat</string>
     <string name="search_insert_suggestion">Öneride bulun</string>
     <string name="search_suggestions_off">Arama önerisi yok</string>

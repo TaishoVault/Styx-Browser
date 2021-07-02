@@ -59,6 +59,8 @@
     <string name="action_show_homepage">Página inicial</string>
     <string name="action_webpage">Página web</string>
     <string name="action_yes">Sim</string>
+    <string name="ad_blocker">Bloqueador de anúncios</string>
+    <string name="ad_block_address">Endereço</string>
     <string name="ad_block_load_failure">Falha ao carregar hosts da fonte de bloqueio de anúncios.</string>
     <string name="ad_server_list">Lista de servidores AdGuard</string>
     <string name="agent_android_mobile">Android (Celular)</string>
@@ -306,6 +308,8 @@
     <string name="settings_help_us">Ajude-nos!</string>
     <string name="settings_privacy">Configurações de privacidade</string>
     <string name="settings_reseted">Todas as configurações restauradas</string>
+    <string name="settings_summary_about">Versão, autor, licença…</string>
+    <string name="settings_summary_apps">Aplicativos de terceiros…</string>
     <string name="settings_summary_dark_mode_default">Definir se novas abas devem forçar o modo escuro por padrão</string>
     <string name="settings_summary_desktop_mode_default">Definir se novas abas devem utilizar o modo área de trabalho por padrão</string>
     <string name="settings_summary_vertical_tab_bar">Desativar para usar abas na gaveta de navegação</string>

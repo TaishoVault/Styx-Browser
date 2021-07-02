@@ -18,6 +18,7 @@ import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.okhttp3.internal.publicsuffix.PublicSuffix
 import com.jamal2367.styx.utils.ThemeUtils
 import com.jamal2367.styx.utils.htmlColor
+import com.jamal2367.styx.utils.isAppScheme
 import com.jamal2367.styx.utils.isSpecialUrl
 import kotlinx.coroutines.*
 import java.io.ByteArrayInputStream
@@ -41,22 +42,16 @@ class AbpBlocker @Inject constructor(
 
     // if i want mining/malware block, it should be separate lists so they are not affected by ad-blocklist exclusions
     // TODO: any reason NOT to join those lists?
-    private var miningList = FilterContainer() // copy from yuzu?
-    private var malwareList = FilterContainer() // copy from smartcookieweb/styx?
+    private var miningList = FilterContainer()
+    private var malwareList = FilterContainer()
 
     // store whether lists are loaded (and delay any request if loading is not finished)
     private var listsLoaded = false
 
-    // store urls of entities, they will never be blocked
-    private val entityUrls = mutableListOf<String>()
-
     /*
-    // TODO: element hiding
-    // not sure if this actually works (did not in a test - I think?), maybe it's crucial to inject the js at the right point
-    // tried onPageFinished, might be too late (try to implement onDomFinished from yuzu?)
-    // private var elementHideExclusionList: FilterContainer? = null
-    // private var elementHideList: ElementContainer? = null
-    // both lists are actually inside the elementBlocker
+    // element hiding
+    //  doesn't work, but maybe it's crucial to inject the js at the right point
+    //  tried onPageFinished, might be too late (try to implement onDomFinished from yuzu?)
     private var elementBlocker: CosmeticFiltering? = null
     var elementHide = userPreferences.elementHide
     */
@@ -71,28 +66,17 @@ class AbpBlocker @Inject constructor(
     override fun isAd(url: String) = false // for now...
 
     init {
-        // TODO: ideally we should call loadLists here (blocking) if the url in current tab (on opening browser) is not special
-        //  because loadLists() here is sometimes significantly faster than inside the GlobalScope
-        //  but generally no need to block UI, better just delay the first web requests
-        //loadLists() // 320-430 ms on S4 mini plus / 550-650 ms on S4 mini -> always the fastest, but blocking
-
-        // TODO: use of globalscope is discouraged, but all reasons I found were related to stuff that is no canceled if the related UI is closed
-        //  I don't see how this would apply, a) the operations end after a few seconds anyway without needing to cancel, and b) blocker runs as log as the app runs
-        GlobalScope.launch(Dispatchers.Default) { // IO for io-intensive stuff, but here we do some IO and are mostly limited by CPU... so Default should be better?
-            // load lists here if not loaded above
-            //stufftest()
+        GlobalScope.launch(Dispatchers.Default) {
             loadLists() // 400-450 ms on S4 mini plus / 1200-1700 ms on S4 mini -> good on plus
-            //loadListsAsync() // 540-720 ms on S4 mini plus / 900-1200 ms on S4 mini -> best non-blocking on normal
-            // why is async so much faster on a dual core phone? expectation is other way round
 
-            // update all entities in AbpDao
+            // update all enabled entities/blocklists
             // may take a while depending on how many lists need update, and on internet connection
             if (abpListUpdater.updateAll(false)) // returns true if anything was updated
                 loadLists() // update again if files have changed
         }
     }
 
-    // from yuzu: module/adblock/src/main/java/jp/hazuki/yuzubrowser/adblock/AdBlockController.kt
+    // from yuzu: jp.hazuki.yuzubrowser.adblock/AdBlockController.kt
     private fun createDummy(uri: Uri): WebResourceResponse {
         val mimeType = getMimeType(uri.toString())
         return if (mimeType.startsWith("image/")) {
@@ -128,7 +112,7 @@ class AbpBlocker @Inject constructor(
     }
 
     /*
-    // TODO: remove if element hiding does not work
+    // element hiding
     override fun loadScript(uri: Uri): String? {
         val cosmetic = elementBlocker ?: return null
         return cosmetic.loadScript(uri)
@@ -191,8 +175,6 @@ class AbpBlocker @Inject constructor(
             val elementFilter = ElementContainer().also { abpLoader.loadAllElementFilter().forEach(it::plusAssign) }
             elementBlocker = CosmeticFiltering(disableCosmetic, elementFilter)
         }*/
-        entityUrls.clear()
-        entities.forEach { if (it.url.startsWith("http")) entityUrls.add(it.url) }
 
         listsLoaded = true
     }
@@ -219,9 +201,7 @@ class AbpBlocker @Inject constructor(
         // then mining/malware (ad block allow should not override malware list)
         // then ads
 
-        // TODO: is it necessary to exclude entityUrls?
-        //  maybe not, request is probably not done by WebView -> check and (probably) remove
-        if (request.url.toString().isSpecialUrl() || entityUrls.contains(request.url.toString()))
+        if (request.url.toString().isSpecialUrl() || request.url.toString().isAppScheme())
             return null
 
         // create contentRequest

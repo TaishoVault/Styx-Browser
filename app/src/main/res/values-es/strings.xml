@@ -59,9 +59,11 @@
     <string name="action_show_homepage">Página principal</string>
     <string name="action_webpage">Página web</string>
     <string name="action_yes">Sí</string>
+    <string name="ad_blocker">Bloqueador de anuncios</string>
     <string name="ad_block_address">Dirección</string>
     <string name="ad_block_blocked_page">Bloqueador de anuncios bloqueó la siguiente página:</string>
     <string name="ad_block_blocked_filter">Por el siguiente filtro:</string>
+    <string name="ad_block_blocked_list_user">%s bloqueado por regla de usuario</string>
     <string name="ad_block_edit_blocklist">Editar lista de bloqueo</string>
     <string name="ad_block_enable">Activar</string>
     <string name="ad_block_file">Archivo</string>
@@ -189,6 +191,7 @@
     <string name="import_bookmark_error">No se pudo importar los marcadores del archivo</string>
     <string name="import_export_settings">Importar &amp; Exportar</string>
     <string name="import_settings">Importar ajustes desde copia de seguridad</string>
+    <string name="incognito">Incógnito</string>
     <string name="incognito_cookies_pie">El modo Incognito se ejecuta en un proceso separado que se restablece después de cada sesión. Las preferencias de las cookies de Incognito ahora están controladas por las preferencias de las cookies.</string>
     <string name="incognito_cookies">Habilitar cookies en el modo incógnito</string>
     <string name="inspect">Inyectar JavaScript</string>
@@ -302,6 +305,7 @@
     <string name="search_engine_startpage_mobile">StartPage Mobile</string>
     <string name="search_engine_yahoo_no_js">O - Sin JavaScript</string>
     <string name="search_homepage">Buscar</string>
+    <string name="search_incognito">Búsqueda privada</string>
     <string name="search_in_new_tab">Buscar en una nueva pestaña</string>
     <string name="search_insert_suggestion">Insertar sugerencia</string>
     <string name="search_suggestions_off">Sin sugerencias de búsqueda</string>
@@ -329,8 +333,15 @@
     <string name="settings_mining">Minando</string>
     <string name="settings_privacy">Ajustes de privacidad</string>
     <string name="settings_reseted">Ajustes restaurados</string>
+    <string name="settings_summary_about">Versión, autor, licencia…</string>
+    <string name="settings_summary_apps">Aplicaciones de terceros…</string>
+    <string name="settings_summary_adminingblocker">Bloquear publicidad, rastreo, minería…</string>
     <string name="settings_summary_dark_mode_default">Definir si las nuevas pestañas usan el modo oscuro por defecto</string>
     <string name="settings_summary_desktop_mode_default">Definir si las nuevas pestañas usan el modo de escritorio por defecto</string>
+    <string name="settings_summary_display">Diseño de la app, color de acento, modo color…</string>
+    <string name="settings_summary_extensions">Instalar extensiones…</string>
+    <string name="settings_summary_import_export">Copia de seguridad, restaurar, restablecer…</string>
+    <string name="settings_summary_privacy">Cache, historial, cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Desactivar para usar pestañas en el cajón de navegación</string>
     <string name="settings_support">Apoyo</string>
     <string name="settings_title_apps">Aplicaciones</string>

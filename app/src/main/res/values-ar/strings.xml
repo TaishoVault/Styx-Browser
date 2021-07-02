@@ -195,6 +195,7 @@
     <string name="import_bookmark_error">لا يمكن استيراد الإشارات المرجعية من الملف</string>
     <string name="import_export_settings">استيراد &amp; تصدير</string>
     <string name="import_settings">استيراد الإعدادات من النسخ الاحتياطي</string>
+    <string name="incognito">متخفي</string>
     <string name="incognito_cookies_pie">يعمل وضع التخفي في عملية منفصلة يعاد تعيينها بعد كل جلسة. يتم الآن التحكم في تفضيلات ملفات تعريف الارتباط المخفية من خلال تفضيلات ملفات تعريف الارتباط العادية.</string>
     <string name="incognito_cookies">تمكين ملفات تعريف الارتباط في وضع التصفح المتخفي</string>
     <string name="inspect">حقن جافا سكريبت</string>
@@ -308,6 +309,7 @@
     <string name="search_engine_startpage_mobile">صفحة البدء</string>
     <string name="search_engine_yahoo_no_js">ياهو - بدون جافا سكريبت</string>
     <string name="search_homepage">بحث</string>
+    <string name="search_incognito">بحث خاص</string>
     <string name="search_in_new_tab">البحث في علامة التبويب الجديدة</string>
     <string name="search_insert_suggestion">إدراج اقتراح</string>
     <string name="search_suggestions_off">لا توجد اقتراحات للبحث</string>

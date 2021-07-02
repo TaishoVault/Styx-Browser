@@ -107,6 +107,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                         setNeutralButton(getString(R.string.ad_block_update_now)) {_,_ ->
                             GlobalScope.launch(Dispatchers.IO) {
                                 abpListUpdater.updateAll(true)
+                                // TODO: now AbpBlocker.loadLists (async?) should be called
                             }
                         }
                     }.resizeAndShow()
@@ -118,13 +119,15 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             newList.title = getString(R.string.ad_block_create_blocklist)
             newList.icon = requireContext().drawable(R.drawable.ic_add_oval)
             newList.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                val dialog = MaterialAlertDialogBuilder(requireContext())
+                // show only blocklist from url, change to dialog once list from file is working
+                showBlockist(AbpEntity(url = ""))
+                /*val dialog = MaterialAlertDialogBuilder(requireContext())
                     .setNegativeButton(getString(R.string.ad_block_from_file)) { _,_ -> showBlockist(AbpEntity(url = getString(R.string.ad_block_file))) }
                     .setPositiveButton(getString(R.string.ad_block_from_address)) { _,_ -> showBlockist(AbpEntity(url = "")) }
                     .setNeutralButton(getString(R.string.action_cancel), null)
                     .setTitle(getString(R.string.ad_block_create_blocklist))
                     .create()
-                dialog.show()
+                dialog.show()*/
                 true
             }
             this.preferenceScreen.addPreference(newList)
@@ -227,7 +230,11 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             if (entity.url.startsWith("http") && enabled.isChecked && !wasEnabled)
                 GlobalScope.launch(Dispatchers.IO) {
                     abpListUpdater.updateAbpEntity(entity)
+                    // TODO: now AbpBlocker.loadLists (async?) should be called (if update returns true)
                 }
+            else if (enabled.isChecked != !wasEnabled) {
+                // TODO: now AbpBlocker.loadLists (async?) should be called, to actually enable/disabled the lists in the blocker without browser restart
+            }
 
             if (newId != null && entitiyPrefs[newId] == null) { // not in entityPrefs if new
                 val pref = Preference(context)
