@@ -61,6 +61,8 @@
     <string name="action_yes">Sim</string>
     <string name="ad_blocker">Bloqueador de anúncios</string>
     <string name="ad_block_address">Endereço</string>
+    <string name="ad_block_blocked_page">O Bloqueio de anúncios bloqueou a seguinte página:</string>
+    <string name="ad_block_blocked_filter">Por causa do seguinte filtro:</string>
     <string name="ad_block_load_failure">Falha ao carregar hosts da fonte de bloqueio de anúncios.</string>
     <string name="ad_server_list">Lista de servidores AdGuard</string>
     <string name="agent_android_mobile">Android (Celular)</string>

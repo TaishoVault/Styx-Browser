@@ -59,6 +59,7 @@
     <string name="action_show_homepage">Домашняя страничка</string>
     <string name="action_webpage">Открыть адрес</string>
     <string name="action_yes">Да</string>
+    <string name="ad_blocker">Adblocker</string>
     <string name="ad_block_address">Адрес</string>
     <string name="ad_block_blocked_page">Блокировка рекламы заблокировала следующую страницу:</string>
     <string name="ad_block_blocked_filter">Из-за следующего фильтра:</string>

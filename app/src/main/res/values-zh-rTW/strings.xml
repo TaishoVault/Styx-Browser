@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <string name="accent_amber">琥珀色</string>
+    <string name="accent_blue">藍色</string>
+    <string name="accent_color">重點色調</string>
+    <string name="accent_cyan">青色</string>
+    <string name="accent_deep_orange">深橘色</string>
+    <string name="accent_deep_purple">深紫色</string>
+    <string name="accent_default">預設 (紅色)</string>
+    <string name="accent_green">綠色</string>
+    <string name="accent_indigo">靛青色</string>
+    <string name="accent_light_blue">亮藍色</string>
+    <string name="accent_light_green">淡绿色</string>
+    <string name="accent_lime">淺綠色</string>
+    <string name="accent_orange">橘色</string>
+    <string name="accent_pink">粉紅色</string>
+    <string name="accent_purple">紫色</string>
+    <string name="accent_teal">深青色</string>
+    <string name="accent_yellow">黃色</string>
+    <string name="accent_brown">棕色</string>
     <string name="action_add_bookmark">新增書籤</string>
     <string name="action_add_to_homescreen">新增至主畫面</string>
     <string name="action_allow">允許</string>
     <string name="action_back">返回</string>
     <string name="action_blank">空白頁面</string>
+    <string name="action_bookmark_edited">已編輯書籤</string>
     <string name="action_bookmarks">書籤</string>
     <string name="action_cancel">取消</string>
+    <string name="action_close_all_other_tabs">關閉所有其他分頁</string>
+    <string name="action_close_incognito">關閉隱身模式</string>
     <string name="action_delete_all_bookmarks">刪除所有書籤</string>
     <string name="action_delete">刪除</string>
     <string name="action_dont_allow">不允許</string>
     <string name="action_download">下載</string>
     <string name="action_downloads">下載</string>
+    <string name="action_edit_sessions">編輯工作</string>
     <string name="action_find">在網頁中尋找</string>
     <string name="action_folder">資料夾</string>
     <string name="action_forward">前往</string>
@@ -19,6 +41,7 @@
     <string name="action_homepage">預設</string>
     <string name="action_incognito">新增無痕式分頁</string>
     <string name="action_message_canceled">動作已取消。</string>
+    <string name="action_more">更多</string>
     <string name="action_new_tab">新增分頁</string>
     <string name="action_no">取消</string>
     <string name="action_ok">確定</string>

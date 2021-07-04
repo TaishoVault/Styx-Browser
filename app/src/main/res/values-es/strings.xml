@@ -63,6 +63,8 @@
     <string name="ad_block_address">Dirección</string>
     <string name="ad_block_blocked_page">Bloqueador de anuncios bloqueó la siguiente página:</string>
     <string name="ad_block_blocked_filter">Por el siguiente filtro:</string>
+    <string name="ad_block_blocked_list_ad">%s en lista de bloqueo de anuncios</string>
+    <string name="ad_block_blocked_list_malware">%s en lista de bloqueo de malware</string>
     <string name="ad_block_blocked_list_user">%s bloqueado por regla de usuario</string>
     <string name="ad_block_edit_blocklist">Editar lista de bloqueo</string>
     <string name="ad_block_enable">Activar</string>
@@ -78,6 +80,8 @@
     <string name="ad_block_update_list">Actualizar archivo de lista de bloqueo</string>
     <string name="ad_block_update_mode">Actualización automática</string>
     <string name="ad_block_update_now">Actualizar listas</string>
+    <string name="ad_block_update_on">Activado</string>
+    <string name="ad_block_update_off">Apagado</string>
     <string name="ad_block_update_wifi">Sólo a través de Wi-Fi</string>
     <string name="ad_server_list">Lista de AdGuard Ad-Server</string>
     <string name="agent_android_mobile">Android (Móvil)</string>
@@ -340,7 +344,10 @@
     <string name="settings_summary_desktop_mode_default">Definir si las nuevas pestañas usan el modo de escritorio por defecto</string>
     <string name="settings_summary_display">Diseño de la app, color de acento, modo color…</string>
     <string name="settings_summary_extensions">Instalar extensiones…</string>
+    <string name="settings_summary_general">Página de inicio, servicios de búsqueda, JavaScript…</string>
     <string name="settings_summary_import_export">Copia de seguridad, restaurar, restablecer…</string>
+    <string name="settings_summary_tabs">Posición de la pestaña, pestaña nueva, hojas inferiores…</string>
+    <string name="settings_summary_portraitlandscape">Arrastrar para actualizar, barra de herramientas, caja…</string>
     <string name="settings_summary_privacy">Cache, historial, cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Desactivar para usar pestañas en el cajón de navegación</string>
     <string name="settings_support">Apoyo</string>
