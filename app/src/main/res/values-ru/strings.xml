@@ -259,8 +259,6 @@
     <string name="pref_category_general">Общие</string>
     <string name="pref_category_landscape">Альбомная</string>
     <string name="pref_category_portrait">Портретная</string>
-    <string name="pref_donation_summary">Не стесняйтесь поддержать меня, если вам нравится моя работа</string>
-    <string name="pref_donation_title">Пожертвование</string>
     <string name="pref_report_issue_summary">Сообщайте об ошибках и предлагайте улучшения на GitHub.</string>
     <string name="pref_report_issue_title">Сообщить о проблеме</string>
     <string name="pref_summary_desktop_width">Ширина области просмотра в режиме настольного компьютера. Установите большее значение для уменьшения отображаемой страницы. </string>
@@ -333,7 +331,6 @@
     <string name="settings_summary_dark_mode_default">Определить, используют ли новые вкладки принудительный темный режим по умолчанию</string>
     <string name="settings_summary_desktop_mode_default">Определяет, будут ли новые вкладки использовать рабочий стол по умолчанию</string>
     <string name="settings_summary_vertical_tab_bar">Отключите, чтобы использовать вкладки в панели навигации</string>
-    <string name="settings_support">Поддержка</string>
     <string name="settings_title_apps">Приложения</string>
     <string name="settings_title_dark_mode_default">Принудительно использовать темную тему</string>
     <string name="settings_title_desktop_mode_default">Режим для настольного компьютера</string>

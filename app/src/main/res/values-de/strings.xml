@@ -265,8 +265,6 @@
     <string name="pref_category_general">Allgemein</string>
     <string name="pref_category_landscape">Querformat</string>
     <string name="pref_category_portrait">Hochformat</string>
-    <string name="pref_donation_summary">Unterstützt mich gerne, wenn euch meine Arbeit gefällt</string>
-    <string name="pref_donation_title">Spenden</string>
     <string name="pref_report_issue_summary">Fehler auf GitHub melden und Verbesserungen vorschlagen</string>
     <string name="pref_report_issue_title">Fehler melden</string>
     <string name="pref_summary_desktop_width">Breite des Desktop-Modus, für kleinere Inhalte höher einstellen</string>
@@ -351,7 +349,6 @@
     <string name="settings_summary_portraitlandscape">Pull-to-Refresh, Suchleiste, Drawer…</string>
     <string name="settings_summary_privacy">Cache, Verlauf, Cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Ausschalten um Desktop Tab-Drawer zu nutzen</string>
-    <string name="settings_support">Unterstützen</string>
     <string name="settings_title_apps">Apps</string>
     <string name="settings_title_dark_mode_default">Dunkel-Modus für Webseiten</string>
     <string name="settings_title_desktop_mode_default">Desktop-Modus</string>

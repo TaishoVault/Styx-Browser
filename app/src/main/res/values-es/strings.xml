@@ -265,8 +265,6 @@
     <string name="pref_category_general">General</string>
     <string name="pref_category_landscape">Horizontal</string>
     <string name="pref_category_portrait">Vertical</string>
-    <string name="pref_donation_summary">Siéntase libre de apoyarme si te gusta mi trabajo</string>
-    <string name="pref_donation_title">Donación</string>
     <string name="pref_report_issue_summary">Reporte errores y sugiera mejoras en GitHub.</string>
     <string name="pref_report_issue_title">Reportar un Problema</string>
     <string name="pref_summary_desktop_width">Ancho de la vista del modo de escritorio, ajustarla más alta para contenido más pequeño</string>
@@ -350,7 +348,6 @@
     <string name="settings_summary_portraitlandscape">Arrastrar para actualizar, barra de herramientas, caja…</string>
     <string name="settings_summary_privacy">Cache, historial, cookies…</string>
     <string name="settings_summary_vertical_tab_bar">Desactivar para usar pestañas en el cajón de navegación</string>
-    <string name="settings_support">Apoyo</string>
     <string name="settings_title_apps">Aplicaciones</string>
     <string name="settings_title_dark_mode_default">Forzar modo oscuro</string>
     <string name="settings_title_desktop_mode_default">Modo escritorio</string>

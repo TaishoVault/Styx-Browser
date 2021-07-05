@@ -265,8 +265,6 @@
     <string name="pref_category_general">Ogólne</string>
     <string name="pref_category_landscape">Poziomo</string>
     <string name="pref_category_portrait">Pionowo</string>
-    <string name="pref_donation_summary">Przekaż darowiznę, jeśli doceniasz moją pracę</string>
-    <string name="pref_donation_title">Darowizna</string>
     <string name="pref_report_issue_summary">Zgłaszaj błędy i sugeruj ulepszenia na GitHub.</string>
     <string name="pref_report_issue_title">Zgłoś problem</string>
     <string name="pref_summary_desktop_width">Szerokość okna trybu komputerowego, ustaw wyższą wartość dla małych treści</string>
@@ -351,7 +349,6 @@
     <string name="settings_summary_portraitlandscape">Odświeżanie przez pociągnięcie, pasek narzędzi, szuflada…</string>
     <string name="settings_summary_privacy">Pamięć podręczna, historia, pliki cookie…</string>
     <string name="settings_summary_vertical_tab_bar">Wyłącz, aby wyświetlać karty na pasku nawigacyjnym</string>
-    <string name="settings_support">Wsparcie</string>
     <string name="settings_title_apps">Aplikacje</string>
     <string name="settings_title_dark_mode_default">Wymuś tryb ciemny</string>
     <string name="settings_title_desktop_mode_default">Wersja komputerowa</string>
