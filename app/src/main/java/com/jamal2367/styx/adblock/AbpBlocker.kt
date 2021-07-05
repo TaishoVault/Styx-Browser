@@ -37,7 +37,7 @@ class AbpBlocker @Inject constructor(
     abpListUpdater: AbpListUpdater,
     private val abpUserRules: AbpUserRules
 ) : AdBlocker {
-    private lateinit var exclusionList: FilterContainer
+    private lateinit var allowList: FilterContainer
     private lateinit var blockList: FilterContainer
 
     // if i want mining/malware block, it should be separate lists so they are not affected by ad-blocklist exclusions
@@ -157,7 +157,7 @@ class AbpBlocker @Inject constructor(
         GlobalScope.launch {
             val el = async { FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::addWithTag) } }
             val bl = async { FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DENY).forEach(it::addWithTag) } }
-            exclusionList = el.await()
+            allowList = el.await()
             blockList = bl.await()
             listsLoaded = true
         }
@@ -167,7 +167,7 @@ class AbpBlocker @Inject constructor(
         listsLoaded = false
         val entities = AbpDao(application.applicationContext).getAll()
         val abpLoader = AbpLoader(application.applicationContext.getFilterDir(), entities)
-        exclusionList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::addWithTag) }
+        allowList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_ALLOW).forEach(it::addWithTag) }
         blockList = FilterContainer().also { abpLoader.loadAll(ABP_PREFIX_DENY).forEach(it::addWithTag) }
 
         /*if (elementHide) {
@@ -231,7 +231,7 @@ class AbpBlocker @Inject constructor(
 
         miningList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
         malwareList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
-        exclusionList[contentRequest]?.let { return null }
+        allowList[contentRequest]?.let { return null }
         blockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_ad, it.pattern)) }
 
         return null
