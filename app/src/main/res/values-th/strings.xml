@@ -50,6 +50,17 @@
     <string name="action_print">พิมพ์</string>
     <string name="action_reload">รีเฟรช</string>
     <string name="action_remove_bookmark">ลบบุ๊กมาร์กแล้ว</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_restore_all_tabs">เอาออก</string>
+    <string name="action_restore_tab">กู้คืนแท็ป</string>
+    <string name="action_save_session">บันทึกตำแหน่ง</string>
+    <string name="action_sessions">เซสชั่น</string>
+    <string name="action_share">แบ่งปัน</string>
+    <string name="action_show_homepage">หน้าแรก</string>
+    <string name="action_webpage">เว็บไซต์</string>
+    <string name="action_yes">ใช่</string>
+    <string name="ad_blocker">บล็อกโฆษณา</string>
+    <string name="ad_block_address">ที่อยู่</string>
     <string name="cache">ล้างแคชเมื่อออก</string>
     <string name="cannot_download">สามารถ​ดาวน์​โหลด​ได้​เฉพาะ URL ​แบบ http ​หรือ https</string>
     <string name="clean_settings">การดำเนินการนี้จะลบข้อมูลทั้งหมดที่แอปนี้เก็บไว้ ออกจากแอปเมื่อคุณยืนยัน</string>
