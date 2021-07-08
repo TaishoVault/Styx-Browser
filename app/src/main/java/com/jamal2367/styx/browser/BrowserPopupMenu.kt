@@ -28,6 +28,7 @@ class BrowserPopupMenu
     @Inject lateinit var abpUserRules: AbpUserRules
 
     var iBinding: PopupMenuBrowserBinding = aBinding
+    var iIsIncognito = false
 
     init {
         aBinding.root.context.injector.inject(this)
@@ -36,16 +37,14 @@ class BrowserPopupMenu
 
         animationStyle = R.style.AnimationMenu
 
-        aBinding.menuItemCloseIncognito.visibility = GONE
-
         setBackgroundDrawable(ColorDrawable())
 
-        if ((aBinding.root.context as BrowserActivity).isIncognito()) {
-            aBinding.menuItemIncognito.visibility = GONE
+        // Hide incognito menu item if we are already incognito
+        iIsIncognito = (aBinding.root.context as BrowserActivity).isIncognito()
+        if (iIsIncognito) {
+            aBinding.menuItemIncognito.isVisible = false
             // No sessions in incognito mode
-            aBinding.menuItemSessions.visibility = GONE
-            // Show close incognito mode button
-            aBinding.menuItemCloseIncognito.visibility = View.VISIBLE
+            aBinding.menuItemSessions.isVisible = false
         }
     }
 
@@ -83,6 +82,7 @@ class BrowserPopupMenu
                         iBinding.menuItemDarkMode.isVisible = it
                         iBinding.menuItemAdBlock.isVisible = it && userPreferences.adBlockEnabled
                         iBinding.menuItemAddBookmark.isVisible = it
+                        iBinding.menuItemExit.isVisible = userPreferences.menuShowExit || iIsIncognito
                         iBinding.divider2.isVisible = it
                         iBinding.divider3.isVisible = it
                         iBinding.divider4.isVisible = it

@@ -29,7 +29,6 @@
     <string name="action_bookmarks">Bookmarks</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_close_all_other_tabs">Close all other tabs</string>
-    <string name="action_close_incognito">Close incognito mode</string>
     <string name="action_delete_all_bookmarks">Delete all bookmarks</string>
     <string name="action_delete">Delete</string>
     <string name="action_dont_allow">Don\'t allow</string>
@@ -183,6 +182,7 @@
     <string name="error_tip4">Connection blocked!</string>
     <string name="error_title">Oh crumbs!</string>
     <string name="example_text">Example text</string>
+    <string name="exit">Exit</string>
     <string name="export_bookmarks">Export bookmarks to backup</string>
     <string name="export_settings">Export settings to backup</string>
     <string name="five" translatable="false">5</string>
@@ -283,6 +283,7 @@
     <string name="pref_report_issue_title">Report Issue</string>
     <string name="pref_summary_desktop_width">Desktop mode viewport width, set it higher for smaller content</string>
     <string name="pref_summary_locked_drawers">Tabs and Bookmarks drawers are locked</string>
+    <string name="pref_summary_menu_show_exit">Incognito mode always displays the button</string>
     <string name="pref_summary_tab_list_item_show_close_button">Display close tab buttons on tab list items</string>
     <string name="pref_summary_use_bottom_sheets">Tabs and Bookmarks are shown in bottom sheets instead of side drawers</string>
     <string name="pref_summary_webrtc">Allows Real Time Communication over the Web using your device camera and microphone</string>
@@ -290,6 +291,7 @@
     <string name="pref_title_hide_status_bar">Hide status bar</string>
     <string name="pref_title_hide_tool_bar">Hide tool bar when scrolling down</string>
     <string name="pref_title_locked_drawers">Locked drawers</string>
+    <string name="pref_title_menu_show_exit">Show \"Exit\" Button in Menu</string>
     <string name="pref_title_pull_to_refresh">Pull to refresh</string>
     <string name="pref_title_tab_list_item_show_close_button">Show close tab button</string>
     <string name="pref_title_use_bottom_sheets">Use bottom sheets</string>
@@ -575,6 +577,7 @@
     <string name="pref_key_load_images" translatable="false">pref_key_load_images</string>
     <string name="pref_key_location" translatable="false">pref_key_location</string>
     <string name="pref_key_locked_drawers" translatable="false">pref_key_locked_drawers</string>
+    <string name="pref_key_menu_show_exit" translatable="false">pref_key_menu_show_exit</string>
     <string name="pref_key_new_tab_position" translatable="false">pref_key_new_tab_position</string>
     <string name="pref_key_overview_mode" translatable="false">pref_key_overview_mode</string>
     <string name="pref_key_portrait_desktop_width" translatable="false">pref_key_portrait_desktop_width</string>

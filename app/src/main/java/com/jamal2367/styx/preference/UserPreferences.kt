@@ -493,4 +493,9 @@ class UserPreferences @Inject constructor(
      * Show "Update available" message when a update is available.
      */
     var showUpdate by preferences.booleanPreference(R.string.pref_key_show_update, R.bool.pref_default_show_update)
+
+    /**
+     * Define if user wants to show exit option in menu
+     */
+    var menuShowExit by preferences.booleanPreference(R.string.pref_key_menu_show_exit, R.bool.pref_default_menu_show_exit)
 }

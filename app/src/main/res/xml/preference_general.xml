@@ -57,6 +57,14 @@
             app:icon="@drawable/ic_action_refresh_oval" />
 
         <SwitchPreferenceCompat
+            android:defaultValue="@bool/pref_default_menu_show_exit"
+            android:key="@string/pref_key_menu_show_exit"
+            android:title="@string/pref_title_menu_show_exit"
+            android:summary="@string/pref_summary_menu_show_exit"
+            app:icon="@drawable/ic_action_delete_oval"
+            app:singleLineTitle="false" />
+
+        <SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="@string/pref_key_load_images"
             android:summary="@string/recommended"

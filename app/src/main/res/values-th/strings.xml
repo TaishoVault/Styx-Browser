@@ -27,7 +27,6 @@
     <string name="action_bookmarks">บุ๊กมาร์ก</string>
     <string name="action_cancel">ยกเลิก</string>
     <string name="action_close_all_other_tabs">ปิดแท็บอื่นๆ ทั้งหมด</string>
-    <string name="action_close_incognito">ปิดโหมดไม่ระบุตัวตน</string>
     <string name="action_delete_all_bookmarks">ลบบุ๊กมาร์กทั้งหมด</string>
     <string name="action_delete">ลบ</string>
     <string name="action_dont_allow">ไม่อนุญาต</string>

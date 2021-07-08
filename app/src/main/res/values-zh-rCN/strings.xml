@@ -27,7 +27,6 @@
     <string name="action_bookmarks">书签</string>
     <string name="action_cancel">取消</string>
     <string name="action_close_all_other_tabs">关闭所有其他标签页</string>
-    <string name="action_close_incognito">关闭隐身模式</string>
     <string name="action_delete_all_bookmarks">删除所有书签</string>
     <string name="action_delete">删除</string>
     <string name="action_dont_allow">不允许</string>

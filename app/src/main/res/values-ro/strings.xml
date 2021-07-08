@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Marcaje</string>
     <string name="action_cancel">Anulează</string>
     <string name="action_close_all_other_tabs">Închide toate celelalte file</string>
-    <string name="action_close_incognito">Închide modul incognito</string>
     <string name="action_delete_all_bookmarks">Ştergeţi toate marcajele</string>
     <string name="action_delete">Ștergere</string>
     <string name="action_dont_allow">Nu permiteţi</string>

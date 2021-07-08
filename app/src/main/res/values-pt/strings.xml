@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Marcadores</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_close_all_other_tabs">Fechar os outros separadores</string>
-    <string name="action_close_incognito">Fechar o modo incógnito</string>
     <string name="action_delete_all_bookmarks">Apagar todos os marcadores</string>
     <string name="action_delete">Apagar</string>
     <string name="action_dont_allow">Não permitir</string>

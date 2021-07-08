@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Закладки</string>
     <string name="action_cancel">Отмена</string>
     <string name="action_close_all_other_tabs">Закрыть остальные вкладки</string>
-    <string name="action_close_incognito">Закрыть режим инкогнито</string>
     <string name="action_delete_all_bookmarks">Удалить все закладки</string>
     <string name="action_delete">Удалить</string>
     <string name="action_dont_allow">Не разрешать</string>

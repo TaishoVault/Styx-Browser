@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Favoritos</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_close_all_other_tabs">Fechar todas as outras abas</string>
-    <string name="action_close_incognito">Sair do modo anônimo</string>
     <string name="action_delete_all_bookmarks">Excluir todos os favoritos</string>
     <string name="action_delete">Remover</string>
     <string name="action_dont_allow">Não</string>

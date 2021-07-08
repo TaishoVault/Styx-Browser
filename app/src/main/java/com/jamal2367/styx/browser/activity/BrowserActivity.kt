@@ -507,7 +507,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             onMenuItemClicked(iBinding.menuItemSessions) { executeAction(R.id.action_sessions) }
             onMenuItemClicked(iBinding.menuItemNewTab) { executeAction(R.id.action_new_tab) }
             onMenuItemClicked(iBinding.menuItemIncognito) { executeAction(R.id.menuItemIncognito) }
-            onMenuItemClicked(iBinding.menuItemCloseIncognito) { executeAction(R.id.menuItemCloseIncognito) }
             onMenuItemClicked(iBinding.menuItemPrint) { executeAction(R.id.menuItemPrint) }
             onMenuItemClicked(iBinding.menuItemHistory) { executeAction(R.id.menuItemHistory) }
             onMenuItemClicked(iBinding.menuItemDownloads) { executeAction(R.id.menuItemDownloads) }
@@ -519,6 +518,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             onMenuItemClicked(iBinding.menuItemTranslate) { executeAction(R.id.menuItemTranslate) }
             onMenuItemClicked(iBinding.menuItemReaderMode) { executeAction(R.id.menuItemReaderMode) }
             onMenuItemClicked(iBinding.menuItemSettings) { executeAction(R.id.menuItemSettings) }
+            onMenuItemClicked(iBinding.menuItemExit) { executeAction(R.id.menuItemExit) }
             onMenuItemClicked(iBinding.menuItemDesktopMode) { executeAction(R.id.menuItemDesktopMode) }
             onMenuItemClicked(iBinding.menuItemDarkMode) { executeAction(R.id.menuItemDarkMode) }
             onMenuItemClicked(iBinding.menuItemAdBlock) { executeAction(R.id.menuItemAdBlock) }
@@ -1706,10 +1706,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 startActivity(IncognitoActivity.createIntent(this))
                 return true
             }
-            R.id.menuItemCloseIncognito -> {
-                closeActivity()
-                return true
-            }
             R.id.menuItemShare -> {
                 IntentUtils(this).shareUrl(currentUrl, currentView?.title)
                 return true
@@ -1720,6 +1716,10 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             R.id.menuShortcutBookmarks -> {
                 openBookmarks()
+                return true
+            }
+            R.id.menuItemExit -> {
+                closeBrowser()
                 return true
             }
             R.id.menuItemSettings -> {

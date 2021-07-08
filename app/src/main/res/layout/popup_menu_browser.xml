@@ -108,14 +108,6 @@
                         android:text="@string/action_new_tab" />
 
                     <TextView
-                        android:id="@+id/menuItemCloseIncognito"
-                        style="@style/BrowserTextMenuItem"
-                        android:background="?attr/selectableItemBackground"
-                        app:drawableStartCompat="@drawable/round_clear_24"
-                        android:text="@string/action_close_incognito"
-                        android:enabled="true" />
-
-                    <TextView
                         android:id="@+id/menuItemIncognito"
                         style="@style/BrowserTextMenuItem"
                         android:background="?attr/selectableItemBackground"
@@ -273,6 +265,13 @@
                         android:background="?attr/selectableItemBackground"
                         app:drawableStartCompat="@drawable/outline_settings_24"
                         android:text="@string/settings" />
+
+                    <TextView
+                        android:id="@+id/menuItemExit"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        app:drawableStartCompat="@drawable/round_clear_24"
+                        android:text="@string/exit" />
 
                 </LinearLayout>
 

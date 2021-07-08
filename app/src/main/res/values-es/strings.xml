@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Marcadores</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_close_all_other_tabs">Cerrar las demás pestañas</string>
-    <string name="action_close_incognito">Cerrar modo incógnito</string>
     <string name="action_delete_all_bookmarks">Borrar todos los marcadores</string>
     <string name="action_delete">Eliminar</string>
     <string name="action_dont_allow">No permitir</string>

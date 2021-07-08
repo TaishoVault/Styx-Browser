@@ -27,7 +27,6 @@
     <string name="action_bookmarks">العلامات المرجعية </string>
     <string name="action_cancel">إلغاء</string>
     <string name="action_close_all_other_tabs">إغلاق كافة علامات التبويب الأخرى</string>
-    <string name="action_close_incognito">إغلاق وضع التخفي</string>
     <string name="action_delete_all_bookmarks">احذف جميع الإشارات المرجعية</string>
     <string name="action_delete">حذف</string>
     <string name="action_dont_allow">عدم السماح</string>

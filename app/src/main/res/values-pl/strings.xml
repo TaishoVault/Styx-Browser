@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Zakładki</string>
     <string name="action_cancel">Anuluj</string>
     <string name="action_close_all_other_tabs">Zamknij wszystkie pozostałe karty</string>
-    <string name="action_close_incognito">Opuść tryb incognito</string>
     <string name="action_delete_all_bookmarks">Usuń wszystkie zakładki</string>
     <string name="action_delete">Usuń</string>
     <string name="action_dont_allow">Odmów</string>

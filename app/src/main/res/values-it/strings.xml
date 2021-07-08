@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Segnalibri</string>
     <string name="action_cancel">Annulla</string>
     <string name="action_close_all_other_tabs">Chiudi tutti gli altri tab</string>
-    <string name="action_close_incognito">Chiudi modalità incognito</string>
     <string name="action_delete_all_bookmarks">Cancella tutti i segnalibri</string>
     <string name="action_delete">Elimina</string>
     <string name="action_dont_allow">Non consentire</string>

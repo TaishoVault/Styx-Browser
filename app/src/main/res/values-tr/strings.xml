@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Yer işaretleri</string>
     <string name="action_cancel">İptal</string>
     <string name="action_close_all_other_tabs">Diğer tüm sekmeleri kapat</string>
-    <string name="action_close_incognito">Gizli modu kapat</string>
     <string name="action_delete_all_bookmarks">Tüm yer işaretlerini sil</string>
     <string name="action_delete">Sil</string>
     <string name="action_dont_allow">İzin verme</string>

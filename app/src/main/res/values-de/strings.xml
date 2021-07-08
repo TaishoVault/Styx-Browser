@@ -27,7 +27,6 @@
     <string name="action_bookmarks">Lesezeichen</string>
     <string name="action_cancel">Abbrechen</string>
     <string name="action_close_all_other_tabs">Alle anderen Tabs schließen</string>
-    <string name="action_close_incognito">Inkognito beenden</string>
     <string name="action_delete_all_bookmarks">Lesezeichen zurücksetzen</string>
     <string name="action_delete">Löschen</string>
     <string name="action_dont_allow">Nicht erlauben</string>
@@ -176,6 +175,7 @@
     <string name="error_tip4">Verbindung blockiert!</string>
     <string name="error_title">Verbindung fehlgeschlagen!</string>
     <string name="example_text">Bespieltext</string>
+    <string name="exit">Beenden</string>
     <string name="export_bookmarks">Lesezeichen exportieren</string>
     <string name="export_settings">Einstellungen exportieren</string>
     <string name="folder_custom">Benutzerdefiniert</string>
@@ -269,6 +269,7 @@
     <string name="pref_report_issue_title">Fehler melden</string>
     <string name="pref_summary_desktop_width">Breite des Desktop-Modus, für kleinere Inhalte höher einstellen</string>
     <string name="pref_summary_locked_drawers">Tabs- und Lesezeichen-Drawer sperren</string>
+    <string name="pref_summary_menu_show_exit">Der Inkognito-Modus zeigt die Schaltfläche immer an</string>
     <string name="pref_summary_tab_list_item_show_close_button">Schaltfläche zum Schließen von Tabs im Tab-Drawer anzeigen</string>
     <string name="pref_summary_use_bottom_sheets">Tabs und Lesezeichen werden unten anstatt in den seitlichen Drawern angezeigt</string>
     <string name="pref_summary_webrtc">Ermöglicht die Kommunikation in Echtzeit über das Web mithilfe der Kamera und des Mikrofons Ihres Geräts</string>
@@ -276,6 +277,7 @@
     <string name="pref_title_hide_status_bar">Statusleiste ausblenden</string>
     <string name="pref_title_hide_tool_bar">Toolbar beim Scrollen ausblenden</string>
     <string name="pref_title_locked_drawers">Seitliche Drawer sperren</string>
+    <string name="pref_title_menu_show_exit">\"Beenden\" Schaltfläche im Menü anzeigen</string>
     <string name="pref_title_pull_to_refresh">Pull-to-Refresh</string>
     <string name="pref_title_tab_list_item_show_close_button">Tab schließen Schaltfläche anzeigen</string>
     <string name="pref_title_use_bottom_sheets">Bottom Sheets verwenden</string>
