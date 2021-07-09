@@ -175,6 +175,7 @@
     <string name="error_tip4">Połączenie zablokowane!</string>
     <string name="error_title">A niech to!</string>
     <string name="example_text">Przykładowy tekst</string>
+    <string name="exit">Wyjdź</string>
     <string name="export_bookmarks">Eksportuj zakładki</string>
     <string name="export_settings">Wyeksportuj ustawienia do pliku</string>
     <string name="folder_custom">Własna lokalizacja</string>
@@ -268,6 +269,7 @@
     <string name="pref_report_issue_title">Zgłoś problem</string>
     <string name="pref_summary_desktop_width">Szerokość okna trybu komputerowego, ustaw wyższą wartość dla małych treści</string>
     <string name="pref_summary_locked_drawers">Zablokuj szuflady kart i zakładek</string>
+    <string name="pref_summary_menu_show_exit">Tryb incognito zawsze wyświetla przycisk</string>
     <string name="pref_summary_tab_list_item_show_close_button">Wyświetlaj przycisk do zamknięcia karty na liście kart</string>
     <string name="pref_summary_use_bottom_sheets">Karty oraz Zakładki będą wyświetlane w dolnej szufladzie zamiast w bocznym skrzydle</string>
     <string name="pref_summary_webrtc">Umożliwia komunikację w czasie rzeczywistym poprzez Internet przy użyciu aparatu i mikrofonu Twojego urządzenia</string>
@@ -275,6 +277,7 @@
     <string name="pref_title_hide_status_bar">Ukryj pasek stanu</string>
     <string name="pref_title_hide_tool_bar">Ukryj przybornik podczas przewijania w dół</string>
     <string name="pref_title_locked_drawers">Zablokuj szuflady</string>
+    <string name="pref_title_menu_show_exit">Wyświetl przycisk \"Wyjdź\" w menu</string>
     <string name="pref_title_pull_to_refresh">Pociągnij, aby odświeżyć</string>
     <string name="pref_title_tab_list_item_show_close_button">Wyświetlaj przycisk do zamknięcia kart</string>
     <string name="pref_title_use_bottom_sheets">Używaj dolnych szuflad</string>

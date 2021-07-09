@@ -173,6 +173,7 @@
     <string name="error_tip4">Соединение заблокировано!</string>
     <string name="error_title">Ох, черт!</string>
     <string name="example_text">Пример текста</string>
+    <string name="exit">Выход</string>
     <string name="export_bookmarks">Сделать резервную копию закладок</string>
     <string name="export_settings">Экспорт настроек в резервную копию</string>
     <string name="folder_custom">Выбрать</string>
@@ -266,6 +267,7 @@
     <string name="pref_report_issue_title">Сообщить о проблеме</string>
     <string name="pref_summary_desktop_width">Ширина области просмотра в режиме настольного компьютера. Установите большее значение для уменьшения отображаемой страницы. </string>
     <string name="pref_summary_locked_drawers">Вкладки и меню закладок заблокированы</string>
+    <string name="pref_summary_menu_show_exit">Всегда отображать кнопку режима инкогнито</string>
     <string name="pref_summary_tab_list_item_show_close_button">Отображать кнопки закрытия вкладок в списке вкладок</string>
     <string name="pref_summary_use_bottom_sheets">Вкладки и закладки отображаются на нижней панели вместо боковых меню</string>
     <string name="pref_summary_webrtc">Позволяет в режиме реального времени общаться через Интернет, используя камеру и микрофон</string>
@@ -273,6 +275,7 @@
     <string name="pref_title_hide_status_bar">Скрыть строку состояния</string>
     <string name="pref_title_hide_tool_bar">Скрыть панель инструментов при прокрутке вниз</string>
     <string name="pref_title_locked_drawers">Заблокировать выдвижное меню</string>
+    <string name="pref_title_menu_show_exit">Показывать кнопку \"Выход\" в меню</string>
     <string name="pref_title_pull_to_refresh">Потянуть для обновления</string>
     <string name="pref_title_tab_list_item_show_close_button">Отображать кнопку закрытия вкладки</string>
     <string name="pref_title_use_bottom_sheets">Использовать нижний экран</string>

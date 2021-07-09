@@ -175,6 +175,7 @@
     <string name="error_tip4">Bağlantı engellendi!</string>
     <string name="error_title">Bi\' terslik var!</string>
     <string name="example_text">Örnek metin</string>
+    <string name="exit">Çıkış</string>
     <string name="export_bookmarks">Yer işaretlerini yedekle</string>
     <string name="export_settings">Ayarları yedeklemeye aktar</string>
     <string name="folder_custom">Özel</string>
@@ -268,6 +269,7 @@
     <string name="pref_report_issue_title">Sorun bildir</string>
     <string name="pref_summary_desktop_width">Masaüstü modu görüntü alanı genişliği. Görüntülenen değeri azaltmak için daha büyük bir değer ayarlayın</string>
     <string name="pref_summary_locked_drawers">Sekme ve yer işareti çekmeceleri kilitlendi</string>
+    <string name="pref_summary_menu_show_exit">Gizli mod her zaman düğmeyi görüntüler</string>
     <string name="pref_summary_tab_list_item_show_close_button">Sekme listesi öğelerinde sekmeyi kapat düğmelerini görüntüleyin</string>
     <string name="pref_summary_use_bottom_sheets">Sekmeler ve Yer İmleri yan çekmeceler yerine alt sayfalarda gösterilir</string>
     <string name="pref_summary_webrtc">Cihazınızın kamerasını ve mikrofonunu kullanarak Web üzerinden Gerçek Zamanlı İletişim sağlar</string>
@@ -275,6 +277,7 @@
     <string name="pref_title_hide_status_bar">Durum çubuğunu gizle</string>
     <string name="pref_title_hide_tool_bar">Kaydırırken araç çubuğunu gizle</string>
     <string name="pref_title_locked_drawers">Kilitli çekmeceler</string>
+    <string name="pref_title_menu_show_exit">Menüde \"Çıkış\" Düğmesini Göster</string>
     <string name="pref_title_pull_to_refresh">Yenilemek için kaydır</string>
     <string name="pref_title_tab_list_item_show_close_button">Sekmeyi kapat düğmesini göster</string>
     <string name="pref_title_use_bottom_sheets">Alt menüyü kullan</string>
