@@ -131,7 +131,8 @@ class AbpBlocker @Inject constructor(
                         else
                             allowList =
                                 FilterContainer().also { reader.readAll().forEach(it::addWithTag) }
-                        return true
+                        // check 2nd "header" at end of the file, to avoid accepting partially written file
+                        return reader.checkHeader()
                     }
                 }
             } catch(e: IOException) {}
