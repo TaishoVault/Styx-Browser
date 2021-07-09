@@ -16,7 +16,7 @@ interface AdBlocker {
      * @return true if it is an ad, false if it is not an ad.
      */
     // not used in the new blocker -> remove when bloom filter blocker is removed
-    fun isAd(url: String): Boolean
+    // fun isAd(url: String): Boolean
 
     // this is for element hiding only, which is currently not working and disabled
     //fun loadScript(uri: Uri): String?

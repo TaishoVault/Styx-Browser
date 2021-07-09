@@ -63,8 +63,6 @@ class AbpBlocker @Inject constructor(
     private val dummyImage: ByteArray by lazy { readByte(application.resources.assets.open("blank.webp")) }
     private val dummyResponse by lazy { WebResourceResponse("text/plain", "UTF-8", EmptyInputStream()) }
 
-    override fun isAd(url: String) = false // for now...
-
     init {
         GlobalScope.launch(Dispatchers.Default) {
             loadLists(false)
