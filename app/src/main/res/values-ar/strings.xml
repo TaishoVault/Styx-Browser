@@ -175,6 +175,7 @@
     <string name="error_tip4">تم حجب الاتصال!</string>
     <string name="error_title">أوه!</string>
     <string name="example_text">مثال للنص</string>
+    <string name="exit">خروج</string>
     <string name="export_bookmarks">تصدير الإشارات المرجعية إلى النسخ الاحتياطي</string>
     <string name="export_settings">تصدير الإعدادات للنسخ الاحتياطي</string>
     <string name="folder_custom">مخصص</string>
@@ -268,6 +269,7 @@
     <string name="pref_report_issue_title">بلغ عن خطأ</string>
     <string name="pref_summary_desktop_width">عرض عرض وضع سطح المكتب ، قم بتعيين قيمة عالية لعرض محتوى صغير</string>
     <string name="pref_summary_locked_drawers">علامات التبويب ودرج العلامات مقفلة</string>
+    <string name="pref_summary_menu_show_exit">الوضع المخفي دائماً يعرض الزر</string>
     <string name="pref_summary_tab_list_item_show_close_button">عرض أزرار التبويب المغلقة على عناصر قائمة التبويب</string>
     <string name="pref_summary_use_bottom_sheets">علامات التبويب والعلامات تظهر في اللوحات السفلية بدلاً من الدرج الجانبي</string>
     <string name="pref_summary_webrtc">السماح بالاتصال بالوقت الحقيقي عبر الويب باستخدام كاميرا جهازك والميكروفون</string>
@@ -275,6 +277,7 @@
     <string name="pref_title_hide_status_bar">أخفِ شريط الحالة</string>
     <string name="pref_title_hide_tool_bar">إخفاء شريط الأدوات عند التمرير لأسفل</string>
     <string name="pref_title_locked_drawers">الادراج المغلقة</string>
+    <string name="pref_title_menu_show_exit">عرض زر \"الخروج\" في القائمة</string>
     <string name="pref_title_pull_to_refresh">اسحب للتحديث</string>
     <string name="pref_title_tab_list_item_show_close_button">إظهار زر غلق التبويب</string>
     <string name="pref_title_use_bottom_sheets">استخدام اللوحات السفلية</string>
