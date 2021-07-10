@@ -46,7 +46,7 @@
                     android:background="?attr/haloColor"
                     app:itemIconTint="@drawable/toolbar_color"
                     app:itemTextColor="?attr/colorControlNormal"
-                    app:elevation="8dp"
+                    app:elevation="0dp"
                     app:labelVisibilityMode="unlabeled"
                     app:menu="@menu/bottom_menu" />
             </LinearLayout>
