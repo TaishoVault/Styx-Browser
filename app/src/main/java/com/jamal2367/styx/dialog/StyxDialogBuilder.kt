@@ -2,6 +2,7 @@ package com.jamal2367.styx.dialog
 
 import android.annotation.SuppressLint
 import android.content.ClipboardManager
+import android.view.Gravity
 import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.ArrayAdapter
@@ -189,9 +190,9 @@ class StyxDialogBuilder @Inject constructor(
                                                     onSuccess = { success ->
                                                         if (success) {
                                                             uiController.handleBookmarksChange()
-                                                            (activity).snackbar(R.string.message_bookmark_added)
+                                                            (activity).snackbar(R.string.message_bookmark_added, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
                                                         } else {
-                                                            (activity).snackbar(R.string.message_bookmark_not_added)
+                                                            (activity).snackbar(R.string.message_bookmark_not_added, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
                                                         }
                                                     }
                                             )
@@ -261,7 +262,7 @@ class StyxDialogBuilder @Inject constructor(
                                     .observeOn(mainScheduler)
                                     .subscribe(uiController::handleBookmarksChange)
                         }
-                        (activity).snackbar(R.string.action_bookmark_edited)
+                        (activity).snackbar(R.string.action_bookmark_edited, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
                     }
                     editBookmarkDialog.resizeAndShow()
                 }
@@ -324,7 +325,7 @@ class StyxDialogBuilder @Inject constructor(
         },
         DialogItem(title = R.string.dialog_copy_link) {
             clipboardManager.copyToClipboard(url)
-            (activity).snackbar(R.string.message_link_copied)
+            (activity).snackbar(R.string.message_link_copied, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
         },
         DialogItem(title = R.string.dialog_remove_from_history) {
             historyModel.deleteHistoryEntry(url)
@@ -358,7 +359,7 @@ class StyxDialogBuilder @Inject constructor(
         },
         DialogItem(title = R.string.dialog_copy_link) {
             clipboardManager.copyToClipboard(url)
-            (activity).snackbar(R.string.message_link_copied)
+            (activity).snackbar(R.string.message_link_copied, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
         },
         DialogItem(title = R.string.dialog_download_image) {
             val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(
@@ -394,7 +395,7 @@ class StyxDialogBuilder @Inject constructor(
             },
             DialogItem(title = R.string.dialog_copy_link) {
                 clipboardManager.copyToClipboard(url)
-                (activity).snackbar(R.string.message_link_copied)
+                (activity).snackbar(R.string.message_link_copied, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
             },
             // Show copy text dialog item if we have some text
             DialogItem(title = R.string.dialog_copy_text, isConditionMet = !text.isNullOrEmpty()) {

@@ -281,7 +281,6 @@ object Utils {
             addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON, favicon)
             addIntent.action = "com.android.launcher.action.INSTALL_SHORTCUT"
             activity.sendBroadcast(addIntent)
-            activity.snackbar(R.string.message_added_to_homescreen, Gravity.BOTTOM)
         } else {
             val shortcutManager = activity.getSystemService(ShortcutManager::class.java)
             if (shortcutManager.isRequestPinShortcutSupported) {
@@ -291,7 +290,6 @@ object Utils {
                         .setShortLabel(title)
                         .build()
                 shortcutManager.requestPinShortcut(pinShortcutInfo, null)
-                activity.snackbar(R.string.message_added_to_homescreen, Gravity.BOTTOM)
             } else {
                 activity.snackbar(R.string.shortcut_message_failed_to_add, Gravity.BOTTOM)
             }

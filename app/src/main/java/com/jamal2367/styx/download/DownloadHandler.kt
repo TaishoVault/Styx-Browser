@@ -29,7 +29,11 @@ constructor(private var downloadManager: DownloadManager) {
             webAddress = WebAddress(url)
             webAddress.path = encodePath(webAddress.path)
         } catch (e: Exception) {
-            context.snackbar(R.string.problem_download, Gravity.BOTTOM)
+            if (preferences.toolbarsBottom) {
+                context.snackbar(R.string.problem_download, Gravity.TOP)
+            } else {
+                context.snackbar(R.string.problem_download, Gravity.BOTTOM)
+            }
             return
         }
 
@@ -40,7 +44,11 @@ constructor(private var downloadManager: DownloadManager) {
         val request: DownloadManager.Request = try {
             DownloadManager.Request(uri)
         } catch (e: IllegalArgumentException) {
-            context.snackbar(R.string.cannot_download, Gravity.BOTTOM)
+            if (preferences.toolbarsBottom) {
+                context.snackbar(R.string.cannot_download, Gravity.TOP)
+            } else {
+                context.snackbar(R.string.cannot_download, Gravity.BOTTOM)
+            }
             return
         }
 
@@ -49,7 +57,11 @@ constructor(private var downloadManager: DownloadManager) {
         val downloadFolder = Uri.parse(location)
 
         if (!isWriteAccessAvailable(downloadFolder)) {
-            context.snackbar(R.string.problem_location_download, Gravity.BOTTOM)
+            if (preferences.toolbarsBottom) {
+                context.snackbar(R.string.problem_location_download, Gravity.TOP)
+            } else {
+                context.snackbar(R.string.problem_location_download, Gravity.BOTTOM)
+            }
             return
         }
 
@@ -65,7 +77,11 @@ constructor(private var downloadManager: DownloadManager) {
         request.addRequestHeader(USERAGENT_REQUEST_HEADER, userAgent)
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
         downloadManager.enqueue(request)
-        context.snackbar(context.getString(R.string.download_pending) + ' ' + filename, Gravity.BOTTOM)
+        if (preferences.toolbarsBottom) {
+            context.snackbar(context.getString(R.string.download_pending) + ' ' + filename, Gravity.TOP)
+        } else {
+            context.snackbar(context.getString(R.string.download_pending) + ' ' + filename, Gravity.BOTTOM)
+        }
     }
 
     companion object {
