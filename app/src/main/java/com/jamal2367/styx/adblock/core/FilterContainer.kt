@@ -17,7 +17,6 @@
 package com.jamal2367.styx.adblock.core
 
 import com.jamal2367.styx.adblock.filter.ContentFilter
-import com.jamal2367.styx.adblock.filter.unified.Tag
 
 class FilterContainer {
     private val filters = hashMapOf<String, ContentFilter>()
