@@ -1944,7 +1944,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         // Notify user a tab was closed with an option to recover it
         if (userPreferences.showUndo) {
             makeSnackbar(
-                getString(R.string.notify_tab_closed), Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
+                getString(R.string.notify_tab_closed), Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
                 .setAction(R.string.button_undo) {
                     presenter?.recoverClosedTab()
                 }.show()
@@ -2082,7 +2082,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             .resizeAndShow()
     }
 
-    override fun showSnackbar(@StringRes resource: Int) = snackbar(resource, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
+    override fun showSnackbar(@StringRes resource: Int) = snackbar(resource, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
 
     /**
      *
@@ -3464,7 +3464,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 if (latestVersion != current) {
                     // We have an update available, tell our user about it
                     makeCSnackbar(
-                        getString(R.string.app_name) + " " + latestVersion + " " + getString(R.string.update_available), 10000, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM)
+                        getString(R.string.app_name) + " " + latestVersion + " " + getString(R.string.update_available), 10000, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
                         .setAction(R.string.show) {
                             val releaseurl = getString(R.string.url_app_home_page)
                             val i = Intent(Intent.ACTION_VIEW)

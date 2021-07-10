@@ -902,7 +902,7 @@ class StyxView(
                         WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE -> {
                             // Ask user if she want to use the link or the image
                             activity.makeSnackbar(
-                                activity.getString(R.string.question_what_do_you_want_to_use), Snackbar.LENGTH_LONG, if (userPreferences.toolbarsBottom) Gravity.TOP else Gravity.BOTTOM) //Snackbar.LENGTH_LONG
+                                activity.getString(R.string.question_what_do_you_want_to_use), Snackbar.LENGTH_LONG, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM) //Snackbar.LENGTH_LONG
                                 .setAction(R.string.button_link) {
                                     // Use the link then
                                     dialogBuilder.showLongPressLinkDialog(activity, uiController, url, userAgent)
