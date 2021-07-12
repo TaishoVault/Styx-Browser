@@ -12,7 +12,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.lifecycleScope
 import androidx.preference.Preference
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.AbpBlocker
@@ -21,25 +23,17 @@ import com.jamal2367.styx.adblock.AbpUpdateMode
 import com.jamal2367.styx.adblock.BloomFilterAdBlocker
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
-import com.jamal2367.styx.adblock.source.HostsSourceType
-import com.jamal2367.styx.adblock.source.selectedHostsSource
-import com.jamal2367.styx.adblock.source.toPreferenceIndex
 import com.jamal2367.styx.constant.Schemes
 import com.jamal2367.styx.di.DiskScheduler
 import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.di.injector
-//import com.jamal2367.styx.dialog.BrowserDialog
-//import com.jamal2367.styx.dialog.DialogItem
 import com.jamal2367.styx.extensions.drawable
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.extensions.snackbar
 import com.jamal2367.styx.extensions.withSingleChoiceItems
 import com.jamal2367.styx.preference.UserPreferences
-import io.reactivex.Maybe
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.plusAssign
-import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -66,20 +60,21 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
     @Inject internal lateinit var abpListUpdater: AbpListUpdater
     @Inject internal lateinit var abpBlocker: AbpBlocker
 
-    private var recentSummaryUpdater: SummaryUpdater? = null
     private val compositeDisposable = CompositeDisposable()
-    private var forceRefreshHostsPreference: Preference? = null
 
     private lateinit var abpDao: AbpDao
     private val entitiyPrefs = mutableMapOf<Int, Preference>()
 
     // if blocklist changed, they need to be reloaded, but this should happen only once
-    //  if reloadLists is true, list reload will be launched onDestroy
+    // if reloadLists is true, list reload will be launched onDestroy
     private var reloadLists = false
 
     // updater is launched in background, and lists should not be reloaded while updater is running
-    //  int since multiple lists could be updated at the same time
+    // int since multiple lists could be updated at the same time
     private var updatesRunning = 0
+
+    // uri of temporary blocklist file
+    private var fileUri: Uri? = null
 
     override fun providePreferencesXmlResource(): Int = R.xml.preference_ad_block
 
@@ -89,9 +84,9 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         injector.inject(this)
 
         switchPreference(
-                preference = SETTINGS_BLOCKMINING,
-                isChecked = userPreferences.blockMiningEnabled,
-                onCheckChange = { userPreferences.blockMiningEnabled = it }
+            preference = SETTINGS_BLOCKMINING,
+            isChecked = userPreferences.blockMiningEnabled,
+            onCheckChange = { userPreferences.blockMiningEnabled = it }
         )
 
         switchPreference(
@@ -122,20 +117,42 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 }
             )
 
+            // TODO: where to put the update-now button?
+            clickableDynamicPreference(
+                preference = getString(R.string.pref_key_blocklist_auto_update_frequency),
+                summary = userPreferences.blockListAutoUpdateFrequency.toUpdateFrequency(),
+                onClick = { summaryUpdater ->
+                    activity?.let { MaterialAlertDialogBuilder(it) }?.apply {
+                        setTitle(R.string.ad_block_update_frequency)
+                        val values = listOf(
+                            Pair(1, resources.getString(R.string.ad_block_remote_frequency_daily)),
+                            Pair(7, resources.getString(R.string.ad_block_remote_frequency_weekly)),
+                            Pair(30, resources.getString(R.string.ad_block_remote_frequency_monthly))
+                        )
+                        withSingleChoiceItems(values, userPreferences.blockListAutoUpdateFrequency) {
+                            userPreferences.blockListAutoUpdateFrequency = it
+                            summaryUpdater.updateSummary(it.toUpdateFrequency())
+                        }
+                        setPositiveButton(resources.getString(R.string.action_ok), null)
+                        setNeutralButton(R.string.ad_block_update_now) {_,_ ->
+                            updateEntity(null)
+                        }
+                    }?.resizeAndShow()
+                }
+            )
+
             // "new list" button
             val newList = Preference(context)
             newList.title = getString(R.string.ad_block_create_blocklist)
             newList.icon = requireContext().drawable(R.drawable.ic_add_oval)
             newList.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                // show only blocklist from url, change to dialog once list from file is working
-                showBlockist(AbpEntity(url = ""))
-                /*val dialog = MaterialAlertDialogBuilder(requireContext())
-                    .setNegativeButton(getString(R.string.ad_block_from_file)) { _,_ -> showBlockist(AbpEntity(url = getString(R.string.ad_block_file))) }
-                    .setPositiveButton(getString(R.string.ad_block_from_address)) { _,_ -> showBlockist(AbpEntity(url = "")) }
+                val dialog = MaterialAlertDialogBuilder(requireContext())
+                    .setNegativeButton(R.string.ad_block_from_file) { _,_ -> showBlockList(AbpEntity(url = "file")) }
+                    .setPositiveButton(R.string.ad_block_from_address) { _,_ -> showBlockList(AbpEntity(url = "")) }
                     .setNeutralButton(getString(R.string.action_cancel), null)
                     .setTitle(getString(R.string.ad_block_create_blocklist))
                     .create()
-                dialog.show()*/
+                dialog.show()
                 true
             }
             this.preferenceScreen.addPreference(newList)
@@ -144,17 +161,21 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             for (entity in abpDao.getAll()) {
                 val entityPref = Preference(context)
                 entityPref.title = entity.title
-                if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
-                    entityPref.summary = getString(R.string.ad_block_last_update, DateFormat.getDateInstance().format(Date(entity.lastLocalUpdate)))
                 entityPref.icon = requireContext().drawable(R.drawable.ic_import_export_oval)
                 entityPref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                    showBlockist(entity)
+                    showBlockList(entity)
                     true
                 }
                 entitiyPrefs[entity.entityId] = entityPref
+                updateSummary(entity)
                 this.preferenceScreen.addPreference(entitiyPrefs[entity.entityId])
             }
         }
+    }
+
+    private fun updateSummary(entity: AbpEntity) {
+        if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
+            entitiyPrefs[entity.entityId]?.summary = resources.getString(R.string.ad_block_last_update, DateFormat.getDateInstance().format(Date(entity.lastLocalUpdate)))
     }
 
     // update entity and adjust displayed last update time
@@ -164,25 +185,22 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             val updated = if (abpEntity == null) abpListUpdater.updateAll(true) else abpListUpdater.updateAbpEntity(abpEntity)
             if (updated) {
                 // remove lists now
-                //  when it's done later there might be cases where old joint list is still used
+                // when it's done onDestroy only, it might not happen if the app is closed without leaving settings screen
                 abpBlocker.removeJointLists()
                 reloadLists = true
 
                 // update the "last updated" times
                 activity?.runOnUiThread {
                     for (entity in abpDao.getAll())
-                        if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
-                            entitiyPrefs[entity.entityId]?.summary = resources.getString(
-                                R.string.ad_block_last_update,
-                                DateFormat.getDateInstance().format(Date(entity.lastLocalUpdate))
-                            )
+                        updateSummary(entity)
                 }
             }
             --updatesRunning
         }
     }
 
-    private fun showBlockist(entity: AbpEntity) {
+    @Suppress("DEPRECATION")
+    private fun showBlockList(entity: AbpEntity) {
         val builder = MaterialAlertDialogBuilder(requireContext())
         var dialog: AlertDialog? = null
         builder.setTitle(getString(R.string.ad_block_edit_blocklist))
@@ -200,6 +218,8 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         }
         linearLayout.addView(title)
 
+        var needsUpdate = false
+
         // field for choosing file or url
         when {
             entity.url.startsWith(Schemes.Styx) -> {
@@ -207,12 +227,35 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 text.text = getString(R.string.ad_block_internal_list)
                 linearLayout.addView(text)
             }
-            entity.url.startsWith(getString(R.string.ad_block_file)) -> {
-                val updateButton = Button(context)
-                updateButton.text = getString(R.string.ad_block_update_list)
-                updateButton.setOnClickListener {
+            entity.url.startsWith("file") -> {
+                val fileChooseButton = MaterialButton(requireContext())
+                fileChooseButton.text = if (entity.url == "file") getString(R.string.title_chooser)
+                else getString(R.string.ad_block_local_file_replace)
+                fileChooseButton.setOnClickListener {
+                    // show file chooser
+                    // no storage permission necessary
+                    fileUri = null
+                    val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                        addCategory(Intent.CATEGORY_OPENABLE)
+                        type = TEXT_MIME_TYPE
+                    }
+                    startActivityForResult(intent, FILE_REQUEST_CODE)
+
+                    // wait until file was chosen
+                    lifecycleScope.launch {
+                        while (fileUri == null)
+                            delay(200)
+
+                        // don't update if it's the fake http uri provided on file chooser cancel
+                        if (fileUri?.scheme == "file") {
+                            entity.url = fileUri.toString()
+                            updateButton(dialog?.getButton(AlertDialog.BUTTON_POSITIVE), entity.url, entity.title)
+                            fileChooseButton.text = getString(R.string.ad_block_local_file_chosen)
+                            needsUpdate = true
+                        }
+                    }
                 }
-                linearLayout.addView(updateButton)
+                linearLayout.addView(fileChooseButton)
             }
             entity.url.toHttpUrlOrNull() != null || entity.url == "" -> {
                 val url = EditText(context)
@@ -244,6 +287,8 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             abpDao.delete(entity)
             dialog?.dismiss()
             preferenceScreen.removePreference(entitiyPrefs[entity.entityId])
+            abpBlocker.removeJointLists()
+            reloadLists = true
             }
         }
         builder.setNegativeButton(getString(R.string.action_cancel), null)
@@ -260,7 +305,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 entity.entityId = newId
 
             // check for update (necessary to have correct id!)
-            if (entity.url.startsWith("http") && enabled.isChecked && !wasEnabled)
+            if ((entity.url.startsWith("http") && enabled.isChecked && !wasEnabled) || needsUpdate)
                 updateEntity(entity)
             else if (enabled.isChecked != wasEnabled)
                 reloadLists = true
@@ -269,13 +314,12 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 val pref = Preference(context)
                 entity.entityId = newId
                 pref.title = entity.title
-                if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
-                    pref.summary = getString(R.string.ad_block_last_update, DateFormat.getDateInstance().format(Date(entity.lastLocalUpdate)))
                 pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                    showBlockist(entity)
+                    showBlockList(entity)
                     true
                 }
                 entitiyPrefs[newId] = pref
+                updateSummary(entity)
                 preferenceScreen.addPreference(entitiyPrefs[newId])
             } else
                 entitiyPrefs[entity.entityId]?.title = entity.title
@@ -293,8 +337,8 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             button?.isEnabled = false
             return
         }
-        if ((url.toHttpUrlOrNull() == null || url.contains("§§")) && !url.startsWith(Schemes.Styx) && !url.startsWith("file")) {
-            button?.text = resources.getText(R.string.ad_block_invalid_url)
+        if ((url.toHttpUrlOrNull() == null || url.contains("§§")) && !url.startsWith(Schemes.Styx) && !url.startsWith("file:")) {
+            button?.text = if (url.startsWith("file")) "no file chosen" else resources.getText(R.string.ad_block_invalid_url)
             button?.isEnabled = false
             return
         }
@@ -308,11 +352,12 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         AbpUpdateMode.ALWAYS -> R.string.ad_block_update_on
     })
 
-    private fun updateRefreshHostsEnabledStatus() {
-        forceRefreshHostsPreference?.isEnabled = isRefreshHostsEnabled()
+    private fun Int.toUpdateFrequency() = when(this) {
+        1 -> resources.getString(R.string.ad_block_remote_frequency_daily)
+        7 -> resources.getString(R.string.ad_block_remote_frequency_weekly)
+        30 -> resources.getString(R.string.ad_block_remote_frequency_monthly)
+        else -> "" //should not happen
     }
-
-    private fun isRefreshHostsEnabled() = userPreferences.selectedHostsSource() is HostsSourceType.Remote
 
     override fun onDestroy() {
         super.onDestroy()
@@ -328,123 +373,36 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         compositeDisposable.clear()
     }
 
-    private fun HostsSourceType.toSummary(): String = when (this) {
-        HostsSourceType.Default -> getString(R.string.block_source_default)
-        is HostsSourceType.Local -> getString(R.string.block_source_local_description, file.path)
-        is HostsSourceType.Remote -> getString(R.string.block_source_remote_description, httpUrl)
-    }
-
-    //private fun showHostsSourceChooser(summaryUpdater: SummaryUpdater) {
-    //    BrowserDialog.showListChoices(
-    //            activity as AppCompatActivity,
-    //        R.string.block_ad_source,
-    //        DialogItem(
-    //            title = R.string.block_source_default,
-    //            isConditionMet = userPreferences.selectedHostsSource() == HostsSourceType.Default,
-    //            onClick = {
-    //                userPreferences.hostsSource = HostsSourceType.Default.toPreferenceIndex()
-    //                summaryUpdater.updateSummary(userPreferences.selectedHostsSource().toSummary())
-    //                updateForNewHostsSource()
-    //            }
-    //        ),
-    //        DialogItem(
-    //            title = R.string.block_source_local,
-    //            isConditionMet = userPreferences.selectedHostsSource() is HostsSourceType.Local,
-    //            onClick = {
-    //                showFileChooser(summaryUpdater)
-    //            }
-    //        ),
-    //        DialogItem(
-    //            title = R.string.block_source_remote,
-    //            isConditionMet = userPreferences.selectedHostsSource() is HostsSourceType.Remote,
-    //            onClick = {
-    //                showUrlChooser(summaryUpdater)
-    //            }
-    //        )
-    //    )
-    //}
-
-    //@Suppress("DEPRECATION")
-    //private fun showFileChooser(summaryUpdater: SummaryUpdater) {
-    //    this.recentSummaryUpdater = summaryUpdater
-    //    val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-    //        addCategory(Intent.CATEGORY_OPENABLE)
-    //        type = TEXT_MIME_TYPE
-    //    }
-
-    //    startActivityForResult(intent, FILE_REQUEST_CODE)
-    //}
-
-    //private fun showUrlChooser(summaryUpdater: SummaryUpdater) {
-    //    BrowserDialog.showEditText(
-    //            activity as AppCompatActivity,
-    //        title = R.string.block_source_remote,
-    //        hint = R.string.hint_url,
-    //        currentText = userPreferences.hostsRemoteFile,
-    //        action = R.string.action_ok,
-    //        textInputListener = {
-    //            val url = it.toHttpUrlOrNull()
-    //                ?: return@showEditText run { (activity as AppCompatActivity).snackbar(R.string.problem_download) }
-    //            userPreferences.hostsSource = HostsSourceType.Remote(url).toPreferenceIndex()
-    //            userPreferences.hostsRemoteFile = it
-    //            summaryUpdater.updateSummary(it)
-    //            updateForNewHostsSource()
-    //        }
-    //    )
-    //}
-
     @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == FILE_REQUEST_CODE) {
             if (resultCode == AppCompatActivity.RESULT_OK) {
-                data?.data?.also { uri ->
-                    compositeDisposable += readTextFromUri(uri)
-                        .subscribeOn(diskScheduler)
-                        .observeOn(mainScheduler)
-                        .subscribeBy(
-                            onComplete = { (activity as AppCompatActivity).snackbar(R.string.action_message_canceled) },
-                            onSuccess = { file ->
-                                userPreferences.hostsSource = HostsSourceType.Local(file).toPreferenceIndex()
-                                userPreferences.hostsLocalFile = file.path
-                                recentSummaryUpdater?.updateSummary(userPreferences.selectedHostsSource().toSummary())
-                                updateForNewHostsSource()
-                            }
-                        )
+                val dataUri = data?.data ?: return
+                val cacheDir = activity?.externalCacheDir ?: return
+                val inputStream = activity?.contentResolver?.openInputStream(dataUri) ?: return
+                try {
+                    // copy file to temporary file, like done by lightning
+                    val outputFile = File(cacheDir, BLOCK_LIST_FILE)
+                    val input = inputStream.source()
+                    outputFile.sink().buffer().writeAll(input)
+                    fileUri = Uri.fromFile(outputFile)
+                    return
+                } catch (exception: IOException) {
+                    return
                 }
             } else {
                 (activity as AppCompatActivity).snackbar(R.string.action_message_canceled)
+                // set some fake uri to cancel wait-for-file loop
+                fileUri = Uri.parse("http://no.file")
             }
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    private fun updateForNewHostsSource() {
-        bloomFilterAdBlocker.populateAdBlockerFromDataSource(forceRefresh = true)
-        updateRefreshHostsEnabledStatus()
-    }
-
-    private fun readTextFromUri(uri: Uri): Maybe<File> = Maybe.create {
-        val externalFilesDir = activity?.getExternalFilesDir("")
-            ?: return@create it.onComplete()
-        val inputStream = activity?.contentResolver?.openInputStream(uri)
-            ?: return@create it.onComplete()
-
-        try {
-            val outputFile = File(externalFilesDir, AD_HOSTS_FILE)
-
-            val input = inputStream.source()
-            val output = outputFile.sink().buffer()
-            output.writeAll(input)
-            return@create it.onSuccess(outputFile)
-        } catch (exception: IOException) {
-            return@create it.onComplete()
-        }
-    }
-
     companion object {
         private const val FILE_REQUEST_CODE = 100
-        private const val AD_HOSTS_FILE = "local_hosts.txt"
-        //private const val TEXT_MIME_TYPE = "text/*"
+        private const val BLOCK_LIST_FILE = "local_blocklist.txt"
         private const val SETTINGS_BLOCKMINING = "block_mining_sites"
+        private const val TEXT_MIME_TYPE = "text/*"
     }
 }

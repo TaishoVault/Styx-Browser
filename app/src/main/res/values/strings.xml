@@ -67,6 +67,7 @@
     <string name="ad_block_blocked_list_ad">%s on ad blocklist</string>
     <string name="ad_block_blocked_list_malware">%s on malware blocklist</string>
     <string name="ad_block_blocked_list_user">%s blocked by user rule</string>
+    <string name="ad_block_create_blocklist">Create blocklist</string>
     <string name="ad_block_edit_blocklist">Edit blocklist</string>
     <string name="ad_block_enable">Enable</string>
     <string name="ad_block_file">File</string>
@@ -77,7 +78,12 @@
     <string name="ad_block_invalid_url">Invalid address</string>
     <string name="ad_block_last_update">Last update: %s</string>
     <string name="ad_block_load_failure">Failed to load hosts from ad blocking source.</string>
-    <string name="ad_block_create_blocklist">Create blocklist</string>
+    <string name="ad_block_local_file_chosen">File selected</string>
+    <string name="ad_block_local_file_replace">Replace blocklist</string>
+    <string name="ad_block_remote_frequency_daily">Daily</string>
+    <string name="ad_block_remote_frequency_weekly">Weekly</string>
+    <string name="ad_block_remote_frequency_monthly">Monthly</string>
+    <string name="ad_block_update_frequency">Automatic update frequency</string>
     <string name="ad_block_update_list">Update blocklist file</string>
     <string name="ad_block_update_mode">Automatic update</string>
     <string name="ad_block_update_now">Update lists</string>
@@ -414,6 +420,7 @@
     <string name="three" translatable="false">3</string>
     <string name="title_clear_cookies">Clear cookies</string>
     <string name="title_clear_history">Clear history</string>
+    <string name="title_chooser">Choose a file</string>
     <string name="title_custom_homepage">Custom homepage</string>
     <string name="title_download_location">Download location</string>
     <string name="title_edit_bookmark">Edit bookmark</string>
@@ -531,6 +538,7 @@
     <string name="pref_key_always_incognito" translatable="false">pref_key_always_incognito</string>
     <string name="pref_key_black_status_bar" translatable="false">pref_key_black_status_bar</string>
     <string name="pref_key_blocklist_auto_update" translatable="false">pref_key_blocklist_auto_update</string>
+    <string name="pref_key_blocklist_auto_update_frequency" translatable="false">pref_key_blocklist_auto_update_frequency</string>
     <string name="pref_key_block_ads" translatable="false">pref_key_block_ads</string>
     <string name="pref_key_block_js" translatable="false">pref_key_block_js</string>
     <string name="pref_key_block_mining" translatable="false">pref_key_block_mining</string>

@@ -78,6 +78,7 @@
         <item name="popupMenuBackground">@drawable/popup_menu_background</item>
         <item name="navigationViewStyle">@drawable/session_menu_background</item>
         <item name="enableEdgeToEdge">true</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
     <style name="Theme.App.Dark" parent="Theme.MaterialComponents">
@@ -122,6 +123,7 @@
         <item name="popupMenuBackground">@drawable/popup_menu_background</item>
         <item name="navigationViewStyle">@drawable/session_menu_background</item>
         <item name="enableEdgeToEdge">true</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
     <style name="Theme.App.Black" parent="Theme.MaterialComponents">
@@ -165,6 +167,7 @@
         <item name="popupMenuBackground">@drawable/popup_menu_background</item>
         <item name="navigationViewStyle">@drawable/session_menu_background</item>
         <item name="enableEdgeToEdge">true</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
     <style name="Theme.App.DayNight" parent="Theme.App.Light" />
@@ -287,6 +290,10 @@
 
     <style name="MaterialSnackbarTextButtonTheme.Dark" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
         <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="Widget.App.AppBarLayout.Light" parent="Widget.Design.AppBarLayout">

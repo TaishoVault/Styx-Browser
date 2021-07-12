@@ -55,6 +55,7 @@
         <item name="android:navigationBarColor">@android:color/white</item>
         <item name="android:windowLightNavigationBar">true</item>
         <item name="enableEdgeToEdge">true</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
     <style name="Theme.App.Dark" parent="Theme.MaterialComponents">
@@ -100,6 +101,7 @@
         <item name="navigationViewStyle">@drawable/session_menu_background</item>
         <item name="enableEdgeToEdge">true</item>
         <item name="android:windowLightNavigationBar">false</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
     <style name="Theme.App.Black" parent="Theme.MaterialComponents">
@@ -144,6 +146,7 @@
         <item name="navigationViewStyle">@drawable/session_menu_background</item>
         <item name="enableEdgeToEdge">true</item>
         <item name="android:windowLightNavigationBar">false</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
 </resources>

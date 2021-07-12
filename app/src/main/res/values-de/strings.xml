@@ -65,6 +65,7 @@
     <string name="ad_block_blocked_list_ad">%s in der Werbeblocker Blockliste</string>
     <string name="ad_block_blocked_list_malware">%s in der Malware Blockliste</string>
     <string name="ad_block_blocked_list_user">%s blockiert durch Benutzerregel</string>
+    <string name="ad_block_create_blocklist">Blockliste erstellen</string>
     <string name="ad_block_edit_blocklist">Blockliste bearbeiten</string>
     <string name="ad_block_enable">Aktivieren</string>
     <string name="ad_block_file">Datei</string>
@@ -75,7 +76,12 @@
     <string name="ad_block_invalid_url">Ungültige Adresse</string>
     <string name="ad_block_last_update">Letzte Aktualisierung: %s</string>
     <string name="ad_block_load_failure">Das Laden der Online-Hosts ist fehlgeschlagen.</string>
-    <string name="ad_block_create_blocklist">Blockliste erstellen</string>
+    <string name="ad_block_local_file_chosen">Datei ausgewählt</string>
+    <string name="ad_block_local_file_replace">Blockliste ersetzen</string>
+    <string name="ad_block_remote_frequency_daily">Täglich</string>
+    <string name="ad_block_remote_frequency_weekly">Wöchentlich</string>
+    <string name="ad_block_remote_frequency_monthly">Monatlich</string>
+    <string name="ad_block_update_frequency">Automatisches aktualisieren (Häufigkeit)</string>
     <string name="ad_block_update_list">Blockliste aktualisieren</string>
     <string name="ad_block_update_mode">Automatisches aktualisieren</string>
     <string name="ad_block_update_now">Listen aktualisieren</string>
@@ -381,6 +387,7 @@
     <string name="third_party">Drittanbieter Cookies blockieren</string>
     <string name="title_clear_cookies">Cookies löschen</string>
     <string name="title_clear_history">Verlauf löschen</string>
+    <string name="title_chooser">Datei wählen</string>
     <string name="title_custom_homepage">Benutzerdefinierte Startseite</string>
     <string name="title_download_location">Download-Verzeichnis festlegen</string>
     <string name="title_edit_bookmark">Lesezeichen bearbeiten</string>

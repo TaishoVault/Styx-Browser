@@ -29,6 +29,11 @@
             android:title="@string/ad_block_update_mode"
             app:icon="@drawable/ic_action_refresh_oval" />
 
+        <Preference
+            android:key="@string/pref_key_blocklist_auto_update_frequency"
+            android:title="@string/ad_block_update_frequency"
+            app:icon="@drawable/ic_update_oval" />
+
     </PreferenceCategory>
 
     <PreferenceCategory>

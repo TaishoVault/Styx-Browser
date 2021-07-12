@@ -29,6 +29,7 @@ import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
 import com.jamal2367.styx.adblock.util.hash.computeMD5
 import com.jamal2367.styx.preference.UserPreferences
+import kotlin.math.max
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -239,8 +240,18 @@ class AbpListUpdater @Inject constructor(val context: Context) {
         }
     }
 
+    private fun AbpEntity.isNeedUpdate(): Boolean {
+        val now = System.currentTimeMillis()
+        if (now - lastLocalUpdate >= max(expires * AN_HOUR, A_DAY * userPreferences.blockListAutoUpdateFrequency)) {
+            return true
+        }
+        return false
+    }
+
     companion object {
         private const val AN_HOUR = 60 * 60 * 1000
+        private const val A_DAY = 24 * AN_HOUR
+
         const val ASSETS_BLOCKLIST = "easylist.txt"
     }
 
