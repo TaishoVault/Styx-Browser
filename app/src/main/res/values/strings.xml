@@ -62,6 +62,7 @@
     <string name="action_yes">Yes</string>
     <string name="ad_blocker">Adblocker</string>
     <string name="ad_block_address">Address</string>
+    <string name="ad_block_add_blocklist_hint">Normal Ad-Hosts lists can be selected, as well as any filter lists that work with Adblock Plus rules.</string>
     <string name="ad_block_blocked_page">Ad block blocked the following page:</string>
     <string name="ad_block_blocked_filter">Because of the following filter:</string>
     <string name="ad_block_blocked_list_ad">%s on ad blocklist</string>

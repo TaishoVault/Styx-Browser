@@ -151,6 +151,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                     .setPositiveButton(R.string.ad_block_from_address) { _,_ -> showBlockList(AbpEntity(url = "")) }
                     .setNeutralButton(getString(R.string.action_cancel), null)
                     .setTitle(getString(R.string.ad_block_create_blocklist))
+                    .setMessage(R.string.ad_block_add_blocklist_hint)
                     .create()
                 dialog.show()
                 true
