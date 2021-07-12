@@ -60,11 +60,13 @@
     <string name="action_yes">Evet</string>
     <string name="ad_blocker">Reklam Engelleyici</string>
     <string name="ad_block_address">Adres</string>
+    <string name="ad_block_add_blocklist_hint">Normal reklam sunucusu listelerinin yanı sıra Adblock Plus kurallarıyla çalışan herhangi bir filtre listesi seçilebilir.</string>
     <string name="ad_block_blocked_page">Reklam engelleyici şu sayfayı engelledi:</string>
     <string name="ad_block_blocked_filter">Şu filtre nedeniyle:</string>
     <string name="ad_block_blocked_list_ad">%s reklam engelleme listesinde</string>
     <string name="ad_block_blocked_list_malware">%s malware engelleme listesinde</string>
     <string name="ad_block_blocked_list_user">%s kullanıcı tarafından engellendi</string>
+    <string name="ad_block_create_blocklist">Filtre listesi oluştur</string>
     <string name="ad_block_edit_blocklist">Filtreyi düzenle</string>
     <string name="ad_block_enable">Etkinleştir</string>
     <string name="ad_block_file">Dosya</string>
@@ -75,7 +77,12 @@
     <string name="ad_block_invalid_url">Geçersiz adres</string>
     <string name="ad_block_last_update">Son güncelleme: %s</string>
     <string name="ad_block_load_failure">Reklam engelleyiciler kaynağından indirilemedi.</string>
-    <string name="ad_block_create_blocklist">Filtre listesi oluştur</string>
+    <string name="ad_block_local_file_chosen">Dosya seçildi</string>
+    <string name="ad_block_local_file_replace">Listeyi değiştir</string>
+    <string name="ad_block_remote_frequency_daily">Günlük</string>
+    <string name="ad_block_remote_frequency_weekly">Haftalık</string>
+    <string name="ad_block_remote_frequency_monthly">Aylık</string>
+    <string name="ad_block_update_frequency">Otomatik güncelleme sıklığı</string>
     <string name="ad_block_update_list">Dosya filtresini güncelle</string>
     <string name="ad_block_update_mode">Otomatik güncelleme</string>
     <string name="ad_block_update_now">Listeleri güncelle</string>
@@ -381,6 +388,7 @@
     <string name="third_party">Üçüncü taraf çerezleri engelle</string>
     <string name="title_clear_cookies">Çerezleri temizle</string>
     <string name="title_clear_history">Geçmişi temizle</string>
+    <string name="title_chooser">Dosyadan seç</string>
     <string name="title_custom_homepage">Özel ana sayfa</string>
     <string name="title_download_location">İndirme konumu</string>
     <string name="title_edit_bookmark">Yer işaretini düzenle</string>
