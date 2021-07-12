@@ -21,13 +21,16 @@ import android.net.ConnectivityManager
 import android.net.Uri
 import com.jamal2367.styx.adblock.filter.abp.*
 import com.jamal2367.styx.adblock.filter.unified.FILTER_DIR
+import com.jamal2367.styx.adblock.filter.unified.StartEndFilter
 import com.jamal2367.styx.adblock.filter.unified.UnifiedFilter
 import com.jamal2367.styx.adblock.filter.unified.element.ElementFilter
 import com.jamal2367.styx.adblock.filter.unified.io.ElementWriter
 import com.jamal2367.styx.adblock.filter.unified.io.FilterWriter
+import com.jamal2367.styx.adblock.parser.HostsFileParser
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
 import com.jamal2367.styx.adblock.util.hash.computeMD5
+import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.preference.UserPreferences
 import kotlin.math.max
 import kotlinx.coroutines.runBlocking
@@ -47,6 +50,7 @@ class AbpListUpdater @Inject constructor(val context: Context) {
     val okHttpClient = OkHttpClient() // any problems if not injecting?
 
     @Inject internal lateinit var userPreferences: UserPreferences
+    @Inject internal lateinit var logger: Logger
 
     val abpDao = AbpDao(context)
 
@@ -188,7 +192,27 @@ class AbpListUpdater @Inject constructor(val context: Context) {
 
     private fun decode(reader: BufferedReader, charset: Charset, entity: AbpEntity): Boolean {
         val decoder = AbpFilterDecoder()
-        if (!decoder.checkHeader(reader, charset)) return false
+        val dir = getFilterDir()
+        val writer = FilterWriter()
+
+        if (!decoder.checkHeader(reader, charset)) {
+            // no adblock plus format, try hosts reader
+            //  TODO: adjust hosts parser? accepts really a lot of not really suitable lines as hosts
+            //   no real problem, but they clutter the list (mostly slows down loading)
+            val parser = HostsFileParser(logger)
+            // TODO: HostFilter or StartEndFilter?
+            //  HostFilter is exact host match, StartEndFilter also matches subdomains
+            //  if StartEndFilter is the choice, we could remove unnecessary subdomains (e.g. ads.example.com if example.com is on list)
+            //   or rather do it when loading / creating joint lists?
+            val hostsList = parser.parseInput(reader).map { StartEndFilter(it.name,0xffff, false, null, -1) }
+            if (hostsList.isEmpty())
+                return false
+            entity.lastLocalUpdate = System.currentTimeMillis()
+            writer.write(dir.getAbpBlackListFile(entity), hostsList)
+            abpDao.update(entity)
+
+            return true
+        }
 
         val set = decoder.decode(reader, entity.url)
 
@@ -200,9 +224,6 @@ class AbpListUpdater @Inject constructor(val context: Context) {
         entity.version = info.version
         entity.lastUpdate = info.lastUpdate
         entity.lastLocalUpdate = System.currentTimeMillis()
-        val dir = getFilterDir()
-
-        val writer = FilterWriter()
         writer.write(dir.getAbpBlackListFile(entity), set.blackList)
         writer.write(dir.getAbpWhiteListFile(entity), set.whiteList)
         writer.write(dir.getAbpWhitePageListFile(entity), set.elementDisableFilter)
