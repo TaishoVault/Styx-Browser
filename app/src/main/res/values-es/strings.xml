@@ -269,6 +269,7 @@
     <string name="pref_report_issue_title">Reportar un Problema</string>
     <string name="pref_summary_desktop_width">Ancho de la vista del modo de escritorio, ajustarla más alta para contenido más pequeño</string>
     <string name="pref_summary_locked_drawers">Las pestañas y los marcadores están bloqueados</string>
+    <string name="pref_summary_menu_show_exit">El modo Incognito siempre muestra el botón</string>
     <string name="pref_summary_tab_list_item_show_close_button">Mostrar botones de cerrar en la lista de pestañas</string>
     <string name="pref_summary_use_bottom_sheets">Las pestañas y marcadores se muestran en las hojas inferiores en lugar de los cajones laterales</string>
     <string name="pref_summary_webrtc">Permite la comunicación en tiempo real a través de la web usando la cámara de tu dispositivo y el micrófono</string>
@@ -334,6 +335,7 @@
     <string name="settings_general">Ajustes generales</string>
     <string name="settings_help_us">¡Ayúdanos</string>
     <string name="settings_mining">Minando</string>
+    <string name="settings_portrait_landscape">Vertical &amp; Horizontal</string>
     <string name="settings_privacy">Ajustes de privacidad</string>
     <string name="settings_reseted">Ajustes restaurados</string>
     <string name="settings_summary_about">Versión, autor, licencia…</string>
