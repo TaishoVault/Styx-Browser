@@ -176,7 +176,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
 
     private fun updateSummary(entity: AbpEntity) {
         if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
-            entitiyPrefs[entity.entityId]?.summary = resources.getString(R.string.ad_block_last_update, DateFormat.getDateInstance().format(Date(entity.lastLocalUpdate)))
+            entitiyPrefs[entity.entityId]?.summary = resources.getString(R.string.ad_block_last_update, DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(Date(entity.lastLocalUpdate)))
     }
 
     // update entity and adjust displayed last update time
