@@ -60,11 +60,13 @@
     <string name="action_yes">是</string>
     <string name="ad_blocker">广告拦截器</string>
     <string name="ad_block_address">地址</string>
+    <string name="ad_block_add_blocklist_hint">可选择正常的 Ad-Hosts 列表以及任何使用 Adblock Plus 规则的过滤列表。</string>
     <string name="ad_block_blocked_page">广告拦截屏蔽了以下页面：</string>
     <string name="ad_block_blocked_filter">由于下列筛选器：</string>
     <string name="ad_block_blocked_list_ad">%s 位于广告拦截列表</string>
     <string name="ad_block_blocked_list_malware">%s 位于恶意软件拦截列表</string>
     <string name="ad_block_blocked_list_user">%s 被用户规则屏蔽</string>
+    <string name="ad_block_create_blocklist">创建拦截列表</string>
     <string name="ad_block_edit_blocklist">编辑屏蔽列表</string>
     <string name="ad_block_enable">启用</string>
     <string name="ad_block_file">文件</string>
@@ -75,7 +77,12 @@
     <string name="ad_block_invalid_url">地址无效</string>
     <string name="ad_block_last_update">上次更新：%s</string>
     <string name="ad_block_load_failure">从广告屏蔽来源加载 Hosts 失败</string>
-    <string name="ad_block_create_blocklist">创建拦截列表</string>
+    <string name="ad_block_local_file_chosen">选中的文件</string>
+    <string name="ad_block_local_file_replace">替换拦截列表</string>
+    <string name="ad_block_remote_frequency_daily">每天</string>
+    <string name="ad_block_remote_frequency_weekly">每周</string>
+    <string name="ad_block_remote_frequency_monthly">每月</string>
+    <string name="ad_block_update_frequency">自动更新频率</string>
     <string name="ad_block_update_list">更新屏蔽列表文件</string>
     <string name="ad_block_update_mode">自动更新</string>
     <string name="ad_block_update_now">更新列表</string>
@@ -381,6 +388,7 @@
     <string name="third_party">阻止第三方 Cookie</string>
     <string name="title_clear_cookies">清除 Cookie</string>
     <string name="title_clear_history">清除历史记录</string>
+    <string name="title_chooser">选择一个文件</string>
     <string name="title_custom_homepage">自定义主页</string>
     <string name="title_download_location">下载位置</string>
     <string name="title_edit_bookmark">编辑书签</string>

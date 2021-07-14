@@ -61,6 +61,7 @@
     <string name="ad_block_address">Indirizzo</string>
     <string name="ad_block_blocked_page">L\'adblocker ha bloccato la pagina seguente:</string>
     <string name="ad_block_blocked_filter">A causa del filtro:</string>
+    <string name="ad_block_create_blocklist">Crea blocklist</string>
     <string name="ad_block_edit_blocklist">Modifica blocklist</string>
     <string name="ad_block_enable">Abilita</string>
     <string name="ad_block_file">File</string>
@@ -71,7 +72,6 @@
     <string name="ad_block_invalid_url">Indirizzo non valido</string>
     <string name="ad_block_last_update">Ultimo aggiornamento: %s</string>
     <string name="ad_block_load_failure">Caricamento degli host da fonte ad block fallito.</string>
-    <string name="ad_block_create_blocklist">Crea blocklist</string>
     <string name="ad_block_update_list">Aggiorna la blocklist</string>
     <string name="ad_block_update_mode">Aggiornamento automatico</string>
     <string name="ad_block_update_now">Aggiorna liste</string>

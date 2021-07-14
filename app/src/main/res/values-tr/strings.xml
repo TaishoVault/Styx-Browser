@@ -60,7 +60,7 @@
     <string name="action_yes">Evet</string>
     <string name="ad_blocker">Reklam Engelleyici</string>
     <string name="ad_block_address">Adres</string>
-    <string name="ad_block_add_blocklist_hint">Normal reklam sunucusu listelerinin yanı sıra Adblock Plus kurallarıyla çalışan herhangi bir filtre listesi seçilebilir.</string>
+    <string name="ad_block_add_blocklist_hint">Normal reklam sunucu listelerinin yanı sıra Adblock Plus kurallarıyla çalışan herhangi bir filtre listesi seçilebilir.</string>
     <string name="ad_block_blocked_page">Reklam engelleyici şu sayfayı engelledi:</string>
     <string name="ad_block_blocked_filter">Şu filtre nedeniyle:</string>
     <string name="ad_block_blocked_list_ad">%s reklam engelleme listesinde</string>

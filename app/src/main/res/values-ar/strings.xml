@@ -60,11 +60,13 @@
     <string name="action_yes">نعم</string>
     <string name="ad_blocker">مانع الإعلانات</string>
     <string name="ad_block_address">العنوان</string>
+    <string name="ad_block_add_blocklist_hint">يمكن تحديد قوائم مستضيفي الإعلانات العاديين، وكذلك أي قوائم تصفية تعمل مع قواعد آدبلوك بلس.</string>
     <string name="ad_block_blocked_page">ازالة حجب الإعلانات في الصفحة التالية:</string>
     <string name="ad_block_blocked_filter">بسبب عوامل التصفية التالية:</string>
     <string name="ad_block_blocked_list_ad">%s في قائمة حظر الإعلانات</string>
     <string name="ad_block_blocked_list_malware">%s في قائمة حظر البرامج الضارة</string>
     <string name="ad_block_blocked_list_user">تم حظر %s بواسطة قاعدة المستخدم</string>
+    <string name="ad_block_create_blocklist">انشاء قائمة حظر</string>
     <string name="ad_block_edit_blocklist">تعديل قائمة الحظر</string>
     <string name="ad_block_enable">تفعيل</string>
     <string name="ad_block_file">ملفّ</string>
@@ -75,7 +77,12 @@
     <string name="ad_block_invalid_url">عنوان خاطئ</string>
     <string name="ad_block_last_update">آخر تحديث: %s</string>
     <string name="ad_block_load_failure">أخفق تحميل المضيفين من مصدر منع الإعلانات.</string>
-    <string name="ad_block_create_blocklist">انشاء قائمة حظر</string>
+    <string name="ad_block_local_file_chosen">تم تحديد الملف</string>
+    <string name="ad_block_local_file_replace">استبدال قائمة الحظر</string>
+    <string name="ad_block_remote_frequency_daily">يوميا</string>
+    <string name="ad_block_remote_frequency_weekly">أسبوعيًا</string>
+    <string name="ad_block_remote_frequency_monthly">شهرياً</string>
+    <string name="ad_block_update_frequency">معدل التحديث التلقائي</string>
     <string name="ad_block_update_list">تحديث ملف قائمة الحظر</string>
     <string name="ad_block_update_mode">تحديث تلقائي</string>
     <string name="ad_block_update_now">تحديث القوائم</string>
@@ -381,6 +388,7 @@
     <string name="third_party">حظر ملفات تعريف ارتباط الخاصة بطرف ثالث</string>
     <string name="title_clear_cookies">مسح ملفات تعريف الارتباط</string>
     <string name="title_clear_history">مسح السجل</string>
+    <string name="title_chooser">اختيار ملف</string>
     <string name="title_custom_homepage">صفحة رئيسية مخصصة</string>
     <string name="title_download_location">مسار التحميلات</string>
     <string name="title_edit_bookmark">تعديل العلامة المرجعية</string>

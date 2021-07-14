@@ -60,11 +60,13 @@
     <string name="action_yes">Tak</string>
     <string name="ad_blocker">Blokowanie reklam</string>
     <string name="ad_block_address">Adres</string>
+    <string name="ad_block_add_blocklist_hint">Możesz wybrać zwykłe listy dostawców reklam, jak również jakąkolwiek listę, która współpracuje z zasadami Adblock Plus.</string>
     <string name="ad_block_blocked_page">Blokowanie reklam zablokowało następującą stronę:</string>
     <string name="ad_block_blocked_filter">Ze względu na następujący filtr:</string>
     <string name="ad_block_blocked_list_ad">%s na liście blokowania reklam</string>
     <string name="ad_block_blocked_list_malware">%s na liście blokowania złośliwych witryn</string>
     <string name="ad_block_blocked_list_user">%s zablokowane przez regułę użytkownika</string>
+    <string name="ad_block_create_blocklist">Utwórz listę blokowania</string>
     <string name="ad_block_edit_blocklist">Edytuj listę blokowania</string>
     <string name="ad_block_enable">Aktywuj</string>
     <string name="ad_block_file">Plik</string>
@@ -75,7 +77,12 @@
     <string name="ad_block_invalid_url">Nieprawidłowy adres</string>
     <string name="ad_block_last_update">Ostatnio zaktualizowano: %s</string>
     <string name="ad_block_load_failure">Nie udało się załadować hostów ze źródła blokującego reklamy.</string>
-    <string name="ad_block_create_blocklist">Utwórz listę blokowania</string>
+    <string name="ad_block_local_file_chosen">Wybrany plik</string>
+    <string name="ad_block_local_file_replace">Zastąp listę blokowania</string>
+    <string name="ad_block_remote_frequency_daily">Codziennie</string>
+    <string name="ad_block_remote_frequency_weekly">Cotygodniowo</string>
+    <string name="ad_block_remote_frequency_monthly">Comiesięcznie</string>
+    <string name="ad_block_update_frequency">Częstotliwość automatycznych aktualizacji</string>
     <string name="ad_block_update_list">Aktualizuj plik listy blokowania</string>
     <string name="ad_block_update_mode">Automatyczne aktualizowanie</string>
     <string name="ad_block_update_now">Aktualizuj listy</string>
@@ -381,6 +388,7 @@
     <string name="third_party">Blokuj ciasteczka z innych witryn</string>
     <string name="title_clear_cookies">Wyczyść ciasteczka</string>
     <string name="title_clear_history">Wyczyść historię</string>
+    <string name="title_chooser">Wybierz plik</string>
     <string name="title_custom_homepage">Adres strony głównej</string>
     <string name="title_download_location">Miejsce zapisu pobieranych plików</string>
     <string name="title_edit_bookmark">Edytuj zakładkę</string>
