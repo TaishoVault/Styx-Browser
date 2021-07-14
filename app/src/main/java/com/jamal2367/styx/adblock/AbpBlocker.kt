@@ -120,16 +120,18 @@ class AbpBlocker @Inject constructor(
     }
 
     private fun Set<Pair<String, UnifiedFilter>>.sanitize(): Collection<Pair<String, UnifiedFilter>> {
-        return this.mapNotNull { when {
-            // WebResourceRequest.getContentType(pageUri: Uri) never returns TYPE_POPUP
-            // so we can remove filters that act on popup-only
-            it.second.contentType == ContentRequest.TYPE_POPUP -> null
-            // remove other unnecessary filters?
-            // more unsupported types?
-            // relevant number of cases where there are filters "including" more specific filters?
-            // e.g. ||example.com^ and ||ads.example.com^, or ||example.com^ and ||example.com^$third-party
-            else -> it
-        } }
+        return this.mapNotNull {
+            when (// WebResourceRequest.getContentType(pageUri: Uri) never returns TYPE_POPUP
+                // so we can remove filters that act on popup-only
+                it.second.contentType) {
+                ContentRequest.TYPE_POPUP -> null
+                // remove other unnecessary filters?
+                // more unsupported types?
+                // relevant number of cases where there are filters "including" more specific filters?
+                // e.g. ||example.com^ and ||ads.example.com^, or ||example.com^ and ||example.com^$third-party
+                else -> it
+            }
+        }
     }
 
     private fun loadFile(file: File, blocks: Boolean): Boolean {
