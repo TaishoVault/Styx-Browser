@@ -30,18 +30,6 @@ object ThemeUtils {
     }
 
     /**
-     * Gets the primary dark color of the current theme.
-     *
-     * @param context the context to get the theme from.
-     * @return the primary dark color of the current theme.
-     */
-    @JvmStatic
-    @ColorInt
-    fun getPrimaryColorDark(context: Context): Int {
-        return getColor(context, R.attr.colorPrimaryDark)
-    }
-
-    /**
      * Gets the surface color of the current theme.
      *
      * @param context the context to get the theme from.
@@ -51,18 +39,6 @@ object ThemeUtils {
     @ColorInt
     fun getSurfaceColor(context: Context): Int {
         return getColor(context, R.attr.haloColor)
-    }
-
-    /**
-     * Gets on surface color of the current theme.
-     *
-     * @param context the context to get the theme from.
-     * @return the on surface color of the current theme.
-     */
-    @JvmStatic
-    @ColorInt
-    fun getOnSurfaceColor(context: Context): Int {
-        return getColor(context, R.attr.colorOnSurface)
     }
 
     /**
@@ -80,18 +56,6 @@ object ThemeUtils {
     }
 
     /**
-     * Gets the accent color of the current theme.
-     *
-     * @param context the context to get the theme from.
-     * @return the accent color of the current theme.
-     */
-    @JvmStatic
-    @ColorInt
-    fun getAccentColor(context: Context): Int {
-        return getColor(context, R.attr.colorAccent)
-    }
-
-    /**
      * Gets the color of the status bar as set in styles
      * for the current theme.
      *
@@ -103,12 +67,6 @@ object ThemeUtils {
     @TargetApi(21)
     fun getStatusBarColor(context: Context): Int {
         return getColor(context, android.R.attr.statusBarColor)
-    }
-
-    @JvmStatic
-    @ColorInt
-    fun getSearchBarColor(context: Context): Int {
-        return getColor(context, R.attr.colorSurface)
     }
 
     @JvmStatic
@@ -155,21 +113,6 @@ object ThemeUtils {
     @ColorInt
     private fun getIconDarkThemeColor(context: Context): Int {
         return ContextCompat.getColor(context, R.color.icon_dark_theme)
-    }
-
-    /**
-     * Gets the color icon for the light or
-     * dark theme.
-     *
-     * @param context the context to use.
-     * @param dark    true for the dark theme,
-     * false for the light theme.
-     * @return the color of the icon.
-     */
-    @JvmStatic
-    @ColorInt
-    fun getIconThemeColor(context: Context, dark: Boolean): Int {
-        return if (dark) getIconDarkThemeColor(context) else getIconLightThemeColor(context)
     }
 
     @JvmStatic
