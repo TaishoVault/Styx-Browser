@@ -59,13 +59,13 @@
         <com.jamal2367.styx.icon.TabCountView
             android:id="@+id/tabs_button"
             style="?android:attr/actionButtonStyle"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_gravity="center"
-            app:tabIconBorderRadius="3dp"
+            app:tabIconBorderRadius="6dp"
             app:tabIconBorderWidth="2dp"
             app:tabIconColor="?attr/colorControlNormal"
-            app:tabIconTextSize="10dp"
+            app:tabIconTextSize="9dp"
             android:contentDescription="@string/tabs"
             app:tooltipText="@{@string/tabs}"
             android:nextFocusDown="@id/web_view" />
