@@ -9,7 +9,9 @@ import com.jamal2367.styx.R
  * Creates the proper [Drawable] to represent the [SslState].
  */
 fun Context.createSslDrawableForState(sslState: SslState): Drawable? = when (sslState) {
-    is SslState.None -> null
+    is SslState.None -> {
+        ContextCompat.getDrawable(this, R.drawable.ic_unsecured)
+    }
     is SslState.Valid -> {
         ContextCompat.getDrawable(this, R.drawable.ic_secure)
     }
