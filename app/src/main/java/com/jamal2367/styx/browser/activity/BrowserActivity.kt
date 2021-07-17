@@ -95,7 +95,6 @@ import com.jamal2367.styx.html.homepage.HomePageFactory
 import com.jamal2367.styx.html.incognito.IncognitoPageFactory
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.notifications.IncognitoNotification
-import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.reading.ReadingActivity
 import com.jamal2367.styx.search.SearchEngineProvider
 import com.jamal2367.styx.search.SuggestionsAdapter
@@ -513,7 +512,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             onMenuItemClicked(iBinding.menuItemAddBookmark) { executeAction(R.id.menuItemAddBookmark) }
             onMenuItemClicked(iBinding.menuItemShare) { executeAction(R.id.menuItemShare) }
             onMenuItemClicked(iBinding.menuItemFind) { executeAction(R.id.menuItemFind) }
-            onMenuItemClicked(iBinding.menuItemPageTools) { executeAction(R.id.menuItemPageTools) }
             onMenuItemClicked(iBinding.menuItemAddToHome) { executeAction(R.id.menuItemAddToHome) }
             onMenuItemClicked(iBinding.menuItemTranslate) { executeAction(R.id.menuItemTranslate) }
             onMenuItemClicked(iBinding.menuItemReaderMode) { executeAction(R.id.menuItemReaderMode) }
@@ -772,6 +770,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 )
             }
             true }
+        }
+
+        iBindingToolbarContent.buttonMore.setOnLongClickListener {
+            showPageToolsDialog(tabsManager.positionOf(tabsManager.currentTab))
+            true
         }
     }
 
@@ -1726,10 +1729,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 startActivity(Intent(this, SettingsActivity::class.java))
                 return true
             }
-            R.id.menuItemPageTools -> {
-                showPageToolsDialog(this, userPreferences)
-                return true
-            }
             R.id.menuItemHistory -> {
                 openHistory()
                 return true
@@ -1929,10 +1928,10 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 DialogItem(title = R.string.close_tab) {
                     presenter?.deleteTab(position)
                 },
-                DialogItem(title = R.string.close_other_tabs) {
+                DialogItem(title = R.string.close_all_tabs) {
                     presenter?.closeAllOtherTabs()
                 },
-                DialogItem(title = R.string.close_all_tabs, onClick = this::closeBrowser))
+                DialogItem(title = R.string.exit, onClick = this::closeBrowser))
     }
 
     /**
@@ -3497,7 +3496,10 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      */
     @SuppressLint("CutPasteId")
     @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    fun showPageToolsDialog(context: Context, userPreferences: UserPreferences) {
+    fun showPageToolsDialog(position: Int) {
+        if (position < 0) {
+            return
+        }
         val currentTab = tabsManager.currentTab ?: return
         val arrayOfURLs = userPreferences.javaScriptBlocked
         val strgs: Array<String> = if (arrayOfURLs.contains(", ")) {
@@ -3510,12 +3512,10 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         } else{
             R.string.blocked_javascript
         }
-
-        BrowserDialog.showWithIcons(context, context.getString(R.string.dialog_tools_title),
+        BrowserDialog.showWithIcons(this, this.getString(R.string.dialog_tools_title),
             DialogItem(
-                icon = context.drawable(R.drawable.ic_baseline_code_24),
-                title = R.string.page_source
-            ) {
+                icon = this.drawable(R.drawable.ic_baseline_code_24),
+                title = R.string.page_source) {
                 currentTab.webView?.evaluateJavascript("""(function() {
                         return "<html>" + document.getElementsByTagName('html')[0].innerHTML + "</html>";
                      })()""".trimMargin()) {
@@ -3526,7 +3526,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     name = name?.replace("\\\"", "\"")
                     name = name?.substring(1, name.length - 1)
 
-                    val builder = MaterialAlertDialogBuilder(context)
+                    val builder = MaterialAlertDialogBuilder(this)
                     val inflater = this.layoutInflater
                     builder.setTitle(R.string.page_source)
                     val dialogLayout = inflater.inflate(R.layout.dialog_view_source, null)
@@ -3542,10 +3542,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 }
             },
             DialogItem(
-                icon= context.drawable(R.drawable.ic_script_add),
-                title = R.string.inspect
-            ){
-                val builder = MaterialAlertDialogBuilder(context)
+                icon= this.drawable(R.drawable.ic_script_add),
+                title = R.string.inspect){
+                val builder = MaterialAlertDialogBuilder(this)
                 val inflater = this.layoutInflater
                 builder.setTitle(R.string.inspect)
                 val dialogLayout = inflater.inflate(R.layout.dialog_code_editor, null)
@@ -3557,10 +3556,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 builder.show()
             },
             DialogItem(
-                icon = context.drawable(R.drawable.outline_script_text_key_outline),
-                colorTint = context.attrColor(R.attr.colorPrimary).takeIf { userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs) },
-                title = jsEnabledString
-            ) {
+                icon = this.drawable(R.drawable.outline_script_text_key_outline),
+                colorTint = this.attrColor(R.attr.colorPrimary).takeIf { userPreferences.javaScriptChoice == JavaScriptChoice.BLACKLIST && !stringContainsItemFromList(currentTab.url, strgs) || userPreferences.javaScriptChoice == JavaScriptChoice.WHITELIST && stringContainsItemFromList(currentTab.url, strgs) },
+                title = jsEnabledString) {
                 val url = URL(currentTab.url)
                 if (userPreferences.javaScriptChoice != JavaScriptChoice.NONE) {
                     if (!stringContainsItemFromList(currentTab.url, strgs)) {
@@ -3585,12 +3583,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 }, 250)
             },
             DialogItem(
-                icon = context.drawable(R.drawable.cookie_outline),
-                title = R.string.edit_cookies
-            ) {
+                icon = this.drawable(R.drawable.cookie_outline),
+                title = R.string.edit_cookies) {
                 val cookieManager = CookieManager.getInstance()
                 if (cookieManager.getCookie(currentTab.url) != null) {
-                    val builder = MaterialAlertDialogBuilder(context)
+                    val builder = MaterialAlertDialogBuilder(this)
                     val inflater = this.layoutInflater
                     builder.setTitle(R.string.site_cookies)
                     val dialogLayout = inflater.inflate(R.layout.dialog_code_editor, null)
@@ -3607,9 +3604,20 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     builder.show()
                 }
 
-            }
-        )
-
+            },
+            DialogItem(
+                icon = this.drawable(R.drawable.ic_tabs),
+                title = R.string.close_tab) {
+                presenter?.deleteTab(position)
+            },
+            DialogItem(
+                icon = this.drawable(R.drawable.ic_delete_forever),
+                title = R.string.close_all_tabs) {
+                presenter?.closeAllOtherTabs()
+            },
+            DialogItem(
+                icon = this.drawable(R.drawable.round_clear_24),
+                title = R.string.exit, onClick = this::closeBrowser))
     }
 
     companion object {

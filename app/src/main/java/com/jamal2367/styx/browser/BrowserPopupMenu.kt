@@ -74,7 +74,6 @@ class BrowserPopupMenu
                         iBinding.menuItemAddToHome.isVisible = it
                         iBinding.menuItemShare.isVisible = it
                         iBinding.menuItemPrint.isVisible = it
-                        iBinding.menuItemPageTools.isVisible = it
                         iBinding.menuItemFind.isVisible = it
                         iBinding.menuItemTranslate.isVisible = it
                         iBinding.menuItemReaderMode.isVisible = it
