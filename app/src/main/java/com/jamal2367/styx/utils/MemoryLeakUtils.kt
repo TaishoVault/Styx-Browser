@@ -1,5 +1,6 @@
 package com.jamal2367.styx.utils
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
@@ -25,6 +26,7 @@ object MemoryLeakUtils {
      * leaking the views.
      */
 
+    @SuppressLint("DiscouragedPrivateApi")
     fun clearNextServedView(activity: Activity, application: Application) {
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
@@ -35,7 +37,7 @@ object MemoryLeakUtils {
 
         if (sFinishInputLocked == null) {
             try {
-                sFinishInputLocked = InputMethodManager::class.java.getDeclaredMethod("release")
+                sFinishInputLocked = InputMethodManager::class.java.getDeclaredMethod("finishInputLocked")
             } catch (e: NoSuchMethodException) {
                 Log.d(TAG, "Unable to find method in clearNextServedView", e)
             }

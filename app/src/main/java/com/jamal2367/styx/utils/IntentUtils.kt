@@ -70,11 +70,6 @@ class IntentUtils(@field:NonNull @param:NonNull private val mActivity: Activity)
         return false
     }
 
-    fun startActivityForUrl(@Nullable tab: WebView?, @NonNull url: String): Boolean? {
-        val intent = intentForUrl(tab, url)
-        return intent?.let { startActivityForIntent(it) }
-    }
-
     /**
      * Search for intent handlers that are specific to this URL aka, specialized
      * apps like google maps or youtube
