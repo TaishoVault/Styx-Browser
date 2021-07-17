@@ -59,16 +59,6 @@
                 app:tooltipText="@{@string/action_bookmarks}"
                 app:srcCompat="@drawable/round_star_border_24" />
 
-            <ImageButton
-                android:id="@+id/menuShortcutHome"
-                style="?android:attr/actionButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/action_show_homepage"
-                app:tooltipText="@{@string/action_show_homepage}"
-                app:srcCompat="@drawable/outline_home_24" />
-
         </LinearLayout>
 
         <LinearLayout

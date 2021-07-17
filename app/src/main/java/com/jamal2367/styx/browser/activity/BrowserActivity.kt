@@ -523,7 +523,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
             // Popup menu action shortcut icons
             onMenuItemClicked(iBinding.menuShortcutRefresh) { executeAction(R.id.menuShortcutRefresh) }
-            onMenuItemClicked(iBinding.menuShortcutHome) { executeAction(R.id.menuShortcutHome) }
             onMenuItemClicked(iBinding.menuShortcutForward) { executeAction(R.id.menuShortcutForward) }
             onMenuItemClicked(iBinding.menuShortcutBack) { executeAction(R.id.menuShortcutBack) }
             onMenuItemClicked(iBinding.menuShortcutBookmarks) { executeAction(R.id.menuShortcutBookmarks) }
@@ -739,7 +738,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         if (verticalTabBar) {
             iBindingToolbarContent.tabsButton.isVisible = true
-            iBindingToolbarContent.homeButton.isVisible = false
+            iBindingToolbarContent.homeButton.isVisible = true
             iBinding.toolbarInclude.tabBarContainer.isVisible = false
         } else {
             iBindingToolbarContent.tabsButton.isVisible = false
@@ -749,10 +748,22 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         if (userPreferences.navbar) {
             iBindingToolbarContent.tabsButton.isVisible = false
+            iBindingToolbarContent.homeButton.isVisible = false
         }
 
         if (userPreferences.navbar && !userPreferences.verticalTabBar) {
             iBindingToolbarContent.homeButton.isVisible = false
+            iBindingToolbarContent.homeButton.isVisible = false
+        }
+
+        if (userPreferences.homepageInNewTab) {
+            iBindingToolbarContent.homeButton.setOnClickListener {
+                if (isIncognito()) {
+                    presenter?.newTab(incognitoPageInitializer, true)
+                } else {
+                    presenter?.newTab(homePageInitializer, true)
+                }
+            }
         }
 
         if (userPreferences.longClickTab) {
@@ -762,8 +773,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     incognitoPageInitializer,
                     true
                 )
-            }
-            else{
+            } else {
                 presenter?.newTab(
                     homePageInitializer,
                     true
@@ -1768,20 +1778,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
             R.id.action_close_all_tabs -> {
                 presenter?.closeAllOtherTabs()
-                return true
-            }
-            R.id.menuShortcutHome -> {
-                if (userPreferences.homepageInNewTab) {
-                    if (isIncognito()) {
-                        presenter?.newTab(incognitoPageInitializer, true)
-                    } else {
-                        presenter?.newTab(homePageInitializer, true)
-                    }
-                } else {
-                    // Why not through presenter? We need some serious refactoring at some point
-                    tabsManager.currentTab?.loadHomePage()
-                }
-                closePanels(null)
                 return true
             }
             R.id.menuItemDesktopMode -> {
@@ -3154,7 +3150,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      *
      */
     override fun onHomeButtonPressed() {
-        executeAction(R.id.menuShortcutHome)
     }
 
     /**

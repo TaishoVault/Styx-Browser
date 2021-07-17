@@ -28,7 +28,7 @@ class BrowserPopupMenu
     @Inject lateinit var abpUserRules: AbpUserRules
 
     var iBinding: PopupMenuBrowserBinding = aBinding
-    var iIsIncognito = false
+    private var iIsIncognito = false
 
     init {
         aBinding.root.context.injector.inject(this)
@@ -93,7 +93,6 @@ class BrowserPopupMenu
                 iBinding.header.visibility = GONE
                 iBinding.divider1.visibility = GONE
                 iBinding.menuShortcutRefresh.visibility = GONE
-                iBinding.menuShortcutHome.visibility = GONE
                 iBinding.menuShortcutForward.visibility = GONE
                 iBinding.menuShortcutBack.visibility = GONE
                 iBinding.menuShortcutBookmarks.visibility = GONE
