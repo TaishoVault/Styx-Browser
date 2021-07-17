@@ -43,7 +43,6 @@ import java.nio.charset.Charset
 import javax.inject.Inject
 
 // this is a slightly modified part of jp.hazuki.yuzubrowser.adblock.service/AbpUpdateService.kt
-@Suppress("BlockingMethodInNonBlockingContext")
 class AbpListUpdater @Inject constructor(val context: Context) {
 
     //@Inject internal lateinit var okHttpClient: OkHttpClient
