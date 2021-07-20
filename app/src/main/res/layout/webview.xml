@@ -7,4 +7,5 @@
     android:scrollbarThumbHorizontal="@drawable/scrollbar"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:defaultFocusHighlightEnabled="false" />
+    android:defaultFocusHighlightEnabled="false"
+    android:forceDarkAllowed="true"/>
