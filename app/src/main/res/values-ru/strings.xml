@@ -59,6 +59,7 @@
     <string name="action_webpage">Открыть адрес</string>
     <string name="action_yes">Да</string>
     <string name="ad_block_address">Адрес</string>
+    <string name="ad_block_add_blocklist_hint">Можно выбрать обычные списки рекламных хостов, а также любые списки фильтров, которые работают с правилами Adblock Plus.</string>
     <string name="ad_block_blocked_page">Блокировка рекламы заблокировала следующую страницу:</string>
     <string name="ad_block_blocked_filter">Из-за следующего фильтра:</string>
     <string name="ad_block_blocked_list_ad">%s в списке блокировки</string>
@@ -75,6 +76,12 @@
     <string name="ad_block_invalid_url">Неправильный адрес</string>
     <string name="ad_block_last_update">Последнее обновление: %s</string>
     <string name="ad_block_load_failure">Не удалось загрузить хосты из источника блокировки рекламы.</string>
+    <string name="ad_block_local_file_chosen">Выбран файл</string>
+    <string name="ad_block_local_file_replace">Заменить список блокировки</string>
+    <string name="ad_block_remote_frequency_daily">Ежедневно</string>
+    <string name="ad_block_remote_frequency_weekly">Еженедельно</string>
+    <string name="ad_block_remote_frequency_monthly">Ежемесячно</string>
+    <string name="ad_block_update_frequency">Частота автоматического обновления</string>
     <string name="ad_block_update_list">Обновить файл списка блокировки</string>
     <string name="ad_block_update_mode">Автоматическое обновление</string>
     <string name="ad_block_update_now">Обновить список</string>
@@ -380,6 +387,7 @@
     <string name="third_party">Блокировать cookie со сторонних сайтов</string>
     <string name="title_clear_cookies">Очистить cookie</string>
     <string name="title_clear_history">Очистить историю</string>
+    <string name="title_chooser">Выбрать файл</string>
     <string name="title_custom_homepage">Введите адрес</string>
     <string name="title_download_location">Путь загрузки</string>
     <string name="title_edit_bookmark">Правка закладки</string>

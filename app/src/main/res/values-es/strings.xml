@@ -60,6 +60,7 @@
     <string name="action_yes">Sí</string>
     <string name="ad_blocker">Bloqueador de anuncios</string>
     <string name="ad_block_address">Dirección</string>
+    <string name="ad_block_add_blocklist_hint">Las listas normales de Ad-Hosts pueden ser seleccionadas, así como cualquier lista de filtros que funcione con las reglas de Adblock Plus.</string>
     <string name="ad_block_blocked_page">Bloqueador de anuncios bloqueó la siguiente página:</string>
     <string name="ad_block_blocked_filter">Por el siguiente filtro:</string>
     <string name="ad_block_blocked_list_ad">%s en lista de bloqueo de anuncios</string>
@@ -76,6 +77,12 @@
     <string name="ad_block_invalid_url">Dirección no válida</string>
     <string name="ad_block_last_update">Última actualización: %s</string>
     <string name="ad_block_load_failure">Error al cargar los hosts desde la fuente de bloqueo de anuncios.</string>
+    <string name="ad_block_local_file_chosen">Archivo seleccionado</string>
+    <string name="ad_block_local_file_replace">Reemplazar lista de bloqueo</string>
+    <string name="ad_block_remote_frequency_daily">Diaria</string>
+    <string name="ad_block_remote_frequency_weekly">Semanal</string>
+    <string name="ad_block_remote_frequency_monthly">Mensual</string>
+    <string name="ad_block_update_frequency">Frecuencia de actualización automática</string>
     <string name="ad_block_update_list">Actualizar archivo de lista de bloqueo</string>
     <string name="ad_block_update_mode">Actualización automática</string>
     <string name="ad_block_update_now">Actualizar listas</string>
@@ -381,6 +388,7 @@
     <string name="third_party">Bloquear cookies de terceras partes</string>
     <string name="title_clear_cookies">Borrar cookies</string>
     <string name="title_clear_history">Borrar historial</string>
+    <string name="title_chooser">Elige un archivo</string>
     <string name="title_custom_homepage">Página de inicio personalizada</string>
     <string name="title_download_location">Ruta para las descargas</string>
     <string name="title_edit_bookmark">Editar marcador</string>
