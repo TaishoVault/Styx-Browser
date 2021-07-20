@@ -2239,7 +2239,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     override fun closeBrowser() {
         currentTabView.removeFromParent()
         performExitCleanUp()
-        finish()
+        finishAndRemoveTask()
     }
 
     /**
