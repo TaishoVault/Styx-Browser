@@ -134,9 +134,6 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                             summaryUpdater.updateSummary(it.toUpdateFrequency())
                         }
                         setPositiveButton(resources.getString(R.string.action_ok), null)
-                        setNeutralButton(R.string.ad_block_update_now) {_,_ ->
-                            updateEntity(null)
-                        }
                     }?.resizeAndShow()
                 }
             )
