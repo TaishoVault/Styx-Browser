@@ -323,6 +323,7 @@
     <string name="search_engine_ask" translatable="false">Ask</string>
     <string name="search_engine_baidu" translatable="false">Baidu</string>
     <string name="search_engine_bing" translatable="false">Bing</string>
+    <string name="search_engine_brave" translatable="false">Brave</string>
     <string name="search_engine_custom">Custom URL</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - No JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>

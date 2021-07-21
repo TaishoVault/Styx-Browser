@@ -47,22 +47,23 @@ class SearchEngineProvider @Inject constructor(
             2 -> AskSearch()
             3 -> BaiduSearch()
             4 -> BingSearch()
-            5 -> DuckSearch()
-            6 -> DuckNoJSSearch()
-            7 -> DuckLiteSearch()
-            8 -> DuckLiteNoJSSearch()
-			9 -> EcosiaSearch()
-			10 -> EkoruSearch()
-            11 -> MojeekSearch()
-            12 -> NaverSearch()
-            13 -> QwantSearch()
-            14 -> QwantLiteSearch()
-            15 -> SearxSearch()
-            16 -> StartPageSearch()
-            17 -> StartPageMobileSearch()
-            18 -> YahooSearch()
-            19 -> YahooNoJSSearch()
-            20 -> YandexSearch()
+            5 -> BraveSearch()
+            6 -> DuckSearch()
+            7 -> DuckNoJSSearch()
+            8 -> DuckLiteSearch()
+            9 -> DuckLiteNoJSSearch()
+			10 -> EcosiaSearch()
+			11 -> EkoruSearch()
+            12 -> MojeekSearch()
+            13 -> NaverSearch()
+            14 -> QwantSearch()
+            15 -> QwantLiteSearch()
+            16 -> SearxSearch()
+            17 -> StartPageSearch()
+            18 -> StartPageMobileSearch()
+            19 -> YahooSearch()
+            20 -> YahooNoJSSearch()
+            21 -> YandexSearch()
             else -> GoogleSearch()
         }
 
@@ -76,22 +77,23 @@ class SearchEngineProvider @Inject constructor(
             is AskSearch -> 2
             is BaiduSearch -> 3
             is BingSearch -> 4
-            is DuckSearch -> 5
-            is DuckNoJSSearch -> 6
-            is DuckLiteSearch -> 7
-            is DuckLiteNoJSSearch -> 8
-			is EcosiaSearch -> 9
-			is EkoruSearch -> 10
-            is MojeekSearch -> 11
-            is NaverSearch -> 12
-            is QwantSearch -> 13
-            is QwantLiteSearch -> 14
-            is SearxSearch -> 15
-            is StartPageSearch -> 16
-            is StartPageMobileSearch -> 17
-            is YahooSearch -> 18
-            is YahooNoJSSearch -> 19
-            is YandexSearch -> 20
+            is BraveSearch -> 5
+            is DuckSearch -> 6
+            is DuckNoJSSearch -> 7
+            is DuckLiteSearch -> 8
+            is DuckLiteNoJSSearch -> 9
+			is EcosiaSearch -> 10
+			is EkoruSearch -> 11
+            is MojeekSearch -> 12
+            is NaverSearch -> 13
+            is QwantSearch -> 14
+            is QwantLiteSearch -> 15
+            is SearxSearch -> 16
+            is StartPageSearch -> 17
+            is StartPageMobileSearch -> 18
+            is YahooSearch -> 19
+            is YahooNoJSSearch -> 20
+            is YandexSearch -> 21
             else -> throw UnsupportedOperationException("Unknown search engine provided: " + searchEngine.javaClass)
         }
 
@@ -104,6 +106,7 @@ class SearchEngineProvider @Inject constructor(
         AskSearch(),
         BaiduSearch(),
         BingSearch(),
+        BraveSearch(),
         DuckSearch(),
         DuckNoJSSearch(),
         DuckLiteSearch(),
