@@ -65,7 +65,7 @@ class AppModule {
 
     @Provides
     @AdBlockPrefs
-    fun provideAdBlockPreferences(application: Application): SharedPreferences = application.getSharedPreferences("ad_block_settings", 0)
+    fun provideAdBlockPreferences(application: Application): SharedPreferences = application.getSharedPreferences("content_blocker_settings", 0)
 
     @Provides
     fun providesAssetManager(application: Application): AssetManager = application.assets
