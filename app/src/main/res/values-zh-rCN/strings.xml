@@ -108,7 +108,6 @@
     <string name="black_theme">黑色 (AMOLED)</string>
     <string name="block_ads">屏蔽广告</string>
     <string name="block_javascript">屏蔽网站JavaScript</string>
-    <string name="block_mining">屏蔽挖矿站点</string>
     <string name="block_sites_title">自定义网站拦截（用逗号分隔网站）</string>
     <string name="block_source_default">默认 Hosts</string>
     <string name="block_source_local_description">文件：%1$s</string>
@@ -178,8 +177,6 @@
     <string name="error_reload">重新载入</string>
     <string name="error_tip">•检查网址是否有输入错误，比如ww.example.com而不是www.example.com</string>
     <string name="error_tip2">•如果你无法加载任何页面，检查你的设备数据或Wi-Fi连接。</string>
-    <string name="error_tip3">• 该网站似乎在挖矿。</string>
-    <string name="error_tip4">连接被阻止！</string>
     <string name="error_title">哎呀！</string>
     <string name="example_text">示例文本</string>
     <string name="exit">退出</string>
@@ -331,7 +328,7 @@
     <string name="session_switched">切换到\"%s\"</string>
     <string name="settings_about">关于</string>
     <string name="settings_adblock">广告屏蔽设置</string>
-    <string name="settings_adminingblocker">广告 &amp; 挖矿拦截器</string>
+    <string name="settings_adblocker">广告拦截</string>
     <string name="settings_advanced">高级设置</string>
     <string name="settings_black_status_bar">黑色状态栏</string>
     <string name="settings_credits">鸣谢</string>
@@ -341,7 +338,6 @@
     <string name="settings_extensions">扩展程序</string>
     <string name="settings_general">常规设置</string>
     <string name="settings_help_us">帮助我们</string>
-    <string name="settings_mining">挖矿</string>
     <string name="settings_portrait_landscape">竖屏&amp; 横屏</string>
     <string name="settings_privacy">隐私设置</string>
     <string name="settings_reseted">所有设置已恢复</string>

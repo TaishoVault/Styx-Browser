@@ -108,7 +108,6 @@
     <string name="black_theme">سمة سوداء</string>
     <string name="block_ads">منع الإعلانات وبرمجيات التتبع</string>
     <string name="block_javascript">حظر جافا سكريبت للمواقع</string>
-    <string name="block_mining">حظر مواقع التعدين</string>
     <string name="block_sites_title">حجب موقع مخصصة (مواقع منفصلة بفاصلة)</string>
     <string name="block_source_default">المضيف الافتراضي</string>
     <string name="block_source_local_description">الملف %1$s</string>
@@ -178,8 +177,6 @@
     <string name="error_reload">إعادة تحميل</string>
     <string name="error_tip">• تحقق من الاخطاء الكتابية العنوان مثل ww.example.com بدلا من www.example.com</string>
     <string name="error_tip2">• إذا كنت غير قادر على تحميل أي صفحات، تحقق من بيانات جهازك أو اتصال Wi-Fi.</string>
-    <string name="error_tip3">• يبدو أن هذا الموقع يقوم بالتعدين.</string>
-    <string name="error_tip4">تم حجب الاتصال!</string>
     <string name="error_title">أوه!</string>
     <string name="example_text">مثال للنص</string>
     <string name="exit">خروج</string>
@@ -331,7 +328,7 @@
     <string name="session_switched">تم التبديل إلى \"%s\"</string>
     <string name="settings_about">حول</string>
     <string name="settings_adblock">إعدادات حجب المحتوى</string>
-    <string name="settings_adminingblocker">منع الإعلانات &amp; التعدين</string>
+    <string name="settings_adblocker">مانع الإعلانات</string>
     <string name="settings_advanced">الإعدادات المتقدمة</string>
     <string name="settings_black_status_bar">شريط الحالة الأسود</string>
     <string name="settings_credits">شكر وتقدير</string>
@@ -341,7 +338,6 @@
     <string name="settings_extensions">الإضافات</string>
     <string name="settings_general">الاعدادات العامة</string>
     <string name="settings_help_us">ساعدنا</string>
-    <string name="settings_mining">التعدين</string>
     <string name="settings_portrait_landscape">عمودي &amp; أفقي</string>
     <string name="settings_privacy">إعدادات الخصوصية والأمان</string>
     <string name="settings_reseted">تم استعادة جميع الإعدادات</string>

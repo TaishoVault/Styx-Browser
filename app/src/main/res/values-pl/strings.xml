@@ -108,7 +108,6 @@
     <string name="black_theme">Czarny motyw (AMOLED)</string>
     <string name="block_ads">Blokuj reklamy</string>
     <string name="block_javascript">Zablokuj JavaScript na stronach</string>
-    <string name="block_mining">Blokuj witryny kopiące</string>
     <string name="block_sites_title">Niestandardowy blok witryn (oddzielne witryny przecinkami)</string>
     <string name="block_source_default">Domyślny host</string>
     <string name="block_source_local_description">Plik: %1$s</string>
@@ -178,8 +177,6 @@
     <string name="error_reload">Przeładować</string>
     <string name="error_tip">• Sprawdź adres witryny pod kątem błędów, takich jak ww.strona.pl zamiast www.strona.pl</string>
     <string name="error_tip2">• Jeśli nie możesz wczytać żadnej strony, sprawdź połączenie z siecią Wi-Fi lub dane komórkowe.</string>
-    <string name="error_tip3">• Ta witryna nie istnieje.</string>
-    <string name="error_tip4">Połączenie zablokowane!</string>
     <string name="error_title">A niech to!</string>
     <string name="example_text">Przykładowy tekst</string>
     <string name="exit">Wyjdź</string>
@@ -331,7 +328,7 @@
     <string name="session_switched">Przełączono na \"%s\"</string>
     <string name="settings_about">O przeglądarce</string>
     <string name="settings_adblock">Ustawienia blokowania reklam</string>
-    <string name="settings_adminingblocker">Blokowanie reklam i koparek</string>
+    <string name="settings_adblocker">Blokada reklam</string>
     <string name="settings_advanced">Zaawansowane</string>
     <string name="settings_black_status_bar">Czarny pasek stanu</string>
     <string name="settings_credits">Twórcy</string>
@@ -341,7 +338,6 @@
     <string name="settings_extensions">Rozszerzenia</string>
     <string name="settings_general">Ogólne</string>
     <string name="settings_help_us">Wsparcie</string>
-    <string name="settings_mining">Koparki</string>
     <string name="settings_portrait_landscape">Pionowo i poziomo</string>
     <string name="settings_privacy">Prywatność</string>
     <string name="settings_reseted">Wszystkie ustawienia przywrócone</string>

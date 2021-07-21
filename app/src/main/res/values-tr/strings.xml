@@ -108,7 +108,6 @@
     <string name="black_theme">Siyah Tema (AMOLED)</string>
     <string name="block_ads">Reklamları engelle</string>
     <string name="block_javascript">Siteler için JavaScript\'i engelle</string>
-    <string name="block_mining">Madencilik yapan siteleri engelle</string>
     <string name="block_sites_title">Özel Site Engelleme (virgül içeren ayrı siteler)</string>
     <string name="block_source_default">Varsayılan sunucu</string>
     <string name="block_source_local_description">Dosya: %1$s</string>
@@ -178,8 +177,6 @@
     <string name="error_reload">Yeniden yükle</string>
     <string name="error_tip">• www.example.com yerine ww.example.com gibi yazım hataları için adresi kontrol edin</string>
     <string name="error_tip2">• Herhangi bir sayfa yükleyemiyorsanız, mobil veriyi veya Wi-Fi bağlantısını kontrol edin.</string>
-    <string name="error_tip3">• Bu site madencilik yapıyor gibi görünüyor.</string>
-    <string name="error_tip4">Bağlantı engellendi!</string>
     <string name="error_title">Bi\' terslik var!</string>
     <string name="example_text">Örnek metin</string>
     <string name="exit">Çıkış</string>
@@ -331,7 +328,7 @@
     <string name="session_switched">\"%s\" olarak değiştirildi</string>
     <string name="settings_about">Hakkında</string>
     <string name="settings_adblock">Reklam engelleme</string>
-    <string name="settings_adminingblocker">Reklam &amp; madencilik engelleme</string>
+    <string name="settings_adblocker">Reklam Engelleyici</string>
     <string name="settings_advanced">Gelişmiş ayarlar</string>
     <string name="settings_black_status_bar">Siyah durum çubuğu</string>
     <string name="settings_credits">Teşekkürler</string>
@@ -341,13 +338,12 @@
     <string name="settings_extensions">Eklentiler</string>
     <string name="settings_general">Genel ayarlar</string>
     <string name="settings_help_us">Bize yardımda bulun</string>
-    <string name="settings_mining">Madencilik</string>
     <string name="settings_portrait_landscape">Dikey &amp; Yatay</string>
     <string name="settings_privacy">Gizlilik ayarları</string>
     <string name="settings_reseted">Tüm ayarlar geri yüklendi</string>
     <string name="settings_summary_about">Sürüm, yazar, lisans…</string>
     <string name="settings_summary_apps">Üçüncü parti uygulamalar…</string>
-    <string name="settings_summary_adblocker">Reklam, takipçi ve madencilik engelleme…</string>
+    <string name="settings_summary_adblocker">Reklamları, izleyicileri ve kötü amaçlı madenciliği engelleyin…</string>
     <string name="settings_summary_dark_mode_default">Yeni sekmelerin varsayılan olarak zorla karanlık modu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_desktop_mode_default">Yeni sekmelerin varsayılan olarak masaüstü modunu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_display">Uygulama tasarımı, vurgu rengi, renk modu…</string>

@@ -108,7 +108,6 @@
     <string name="black_theme">Tema negro (AMOLED)</string>
     <string name="block_ads">Bloquear anuncios</string>
     <string name="block_javascript">Bloquear JavaScript de los sitios</string>
-    <string name="block_mining">Bloquear sitios de minería</string>
     <string name="block_sites_title">Bloqueo de sitio personalizado (sitios separados con una coma)</string>
     <string name="block_source_default">Hosts predeterminados</string>
     <string name="block_source_local_description">Archivo: %1$s</string>
@@ -178,8 +177,6 @@
     <string name="error_reload">Recargar</string>
     <string name="error_tip">• Compruebe la dirección en busca de errores de escritura como ww.example.com en lugar de www.example.com</string>
     <string name="error_tip2">• Si no puede cargar ninguna página, compruebe la conexión Wi-Fi o datos de su dispositivo.</string>
-    <string name="error_tip3">• Parece que ese sitio está minando.</string>
-    <string name="error_tip4">¡Conexión bloqueada!</string>
     <string name="error_title">¡Oh migajas!</string>
     <string name="example_text">Texto de ejemplo</string>
     <string name="exit">Salir</string>
@@ -331,7 +328,7 @@
     <string name="session_switched">Cambiar a %s</string>
     <string name="settings_about">Acerca de</string>
     <string name="settings_adblock">Ajustes de bloqueo de anuncios</string>
-    <string name="settings_adminingblocker">Anuncio &amp; Bloqueador de Minería</string>
+    <string name="settings_adblocker">Bloqueador de anuncios</string>
     <string name="settings_advanced">Ajustes avanzados</string>
     <string name="settings_black_status_bar">Barra de estado negro</string>
     <string name="settings_credits">Créditos</string>
@@ -341,7 +338,6 @@
     <string name="settings_extensions">Extensiones</string>
     <string name="settings_general">Ajustes generales</string>
     <string name="settings_help_us">¡Ayúdanos</string>
-    <string name="settings_mining">Minando</string>
     <string name="settings_portrait_landscape">Vertical &amp; Horizontal</string>
     <string name="settings_privacy">Ajustes de privacidad</string>
     <string name="settings_reseted">Ajustes restaurados</string>

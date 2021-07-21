@@ -142,7 +142,6 @@
     <string name="error_reload">Reîncarcă</string>
     <string name="error_tip">• Verifică adresa pentru erori scriere cum ar fi ww.example.com în loc de www.example.com</string>
     <string name="error_tip2">• Dacă nu puteți încărca nicio pagină, verificați conexiunea la date sau Wi-Fi a dispozitivului.</string>
-    <string name="error_tip4">Conexiune blocată!</string>
     <string name="error_title">Oh!</string>
     <string name="example_text">Text Exemplu</string>
     <string name="export_bookmarks">Exportă semnele de carte în backup</string>

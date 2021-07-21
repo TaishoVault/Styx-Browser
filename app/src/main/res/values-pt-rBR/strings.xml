@@ -108,7 +108,6 @@
     <string name="black_theme">Tema preto</string>
     <string name="block_ads">Bloquear anúncios</string>
     <string name="block_javascript">Bloquear JavaScript</string>
-    <string name="block_mining">Bloquear sites de mineração</string>
     <string name="block_sites_title">Bloqueio personalizado (separe os sites com vírgulas)</string>
     <string name="block_source_default">Hosts padrão</string>
     <string name="block_source_local_description">Arquivo: %1$s</string>
@@ -178,8 +177,6 @@
     <string name="error_reload">Recarregar</string>
     <string name="error_tip">• Verifique se existem erros de digitação no endereço, como ww.exemplo.com ao invés de www.exemplo.com</string>
     <string name="error_tip2">• Caso não consiga carregar nenhuma página, verifique o armazenamento do seu dispositivo ou a conexão Wi-Fi.</string>
-    <string name="error_tip3">• Este site parece estar minerando.</string>
-    <string name="error_tip4">Conexão bloqueada!</string>
     <string name="error_title">Vixe!</string>
     <string name="example_text">Texto de exemplo</string>
     <string name="exit">Sair</string>
@@ -331,7 +328,7 @@
     <string name="session_switched">Alternado para \"%s\"</string>
     <string name="settings_about">Sobre</string>
     <string name="settings_adblock">Configurações de bloqueio de conteúdo</string>
-    <string name="settings_adminingblocker">Bloqueador de Anúncios &amp; Mineração</string>
+    <string name="settings_adblocker">Bloqueador de anúncios</string>
     <string name="settings_advanced">Configurações avançadas</string>
     <string name="settings_black_status_bar">Barra de status preta</string>
     <string name="settings_credits">Créditos</string>
@@ -341,7 +338,6 @@
     <string name="settings_extensions">Extensões</string>
     <string name="settings_general">Configurações gerais</string>
     <string name="settings_help_us">Ajude-nos!</string>
-    <string name="settings_mining">Mineração</string>
     <string name="settings_portrait_landscape">Retrato &amp; Paisagem</string>
     <string name="settings_privacy">Configurações de privacidade</string>
     <string name="settings_reseted">Todas as configurações restauradas</string>

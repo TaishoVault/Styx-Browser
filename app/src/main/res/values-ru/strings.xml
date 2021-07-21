@@ -58,6 +58,7 @@
     <string name="action_show_homepage">Домашняя страничка</string>
     <string name="action_webpage">Открыть адрес</string>
     <string name="action_yes">Да</string>
+    <string name="ad_blocker">Блокиратор рекламы</string>
     <string name="ad_block_address">Адрес</string>
     <string name="ad_block_add_blocklist_hint">Можно выбрать обычные списки рекламных хостов, а также любые списки фильтров, которые работают с правилами Adblock Plus.</string>
     <string name="ad_block_blocked_page">Блокировка рекламы заблокировала следующую страницу:</string>
@@ -107,7 +108,6 @@
     <string name="black_theme">Чёрная тема (AMOLED)</string>
     <string name="block_ads">Блокировать рекламу</string>
     <string name="block_javascript">Блокировать JavaScript на сайте</string>
-    <string name="block_mining">Блокировать сайты с \"майнингом\"</string>
     <string name="block_sites_title">Разделить сайты запятыми</string>
     <string name="block_source_default">Host файлы по-умолчанию</string>
     <string name="block_source_local_description">Файл: %1$s</string>
@@ -177,8 +177,6 @@
     <string name="error_reload">Обновить</string>
     <string name="error_tip">• Проверьте адрес на наличие ошибок, таких как ww.example.com вместо www.example.com</string>
     <string name="error_tip2">• Если вы не можете загрузить какие-либо страницы, проверьте подключение устройства к моб. интерненту или Wi-Fi.</string>
-    <string name="error_tip3">• Похоже, что этот сайт занимается \"майнингом\"</string>
-    <string name="error_tip4">Соединение заблокировано!</string>
     <string name="error_title">Ох, черт!</string>
     <string name="example_text">Пример текста</string>
     <string name="exit">Выход</string>
@@ -330,7 +328,7 @@
     <string name="session_switched">Переключено на \"%s\"</string>
     <string name="settings_about">О программе</string>
     <string name="settings_adblock">Настройки блокировки рекламы</string>
-    <string name="settings_adminingblocker">Блокировщик рекламы &amp; \"майнинга\"</string>
+    <string name="settings_adblocker">Блокировка рекламы</string>
     <string name="settings_advanced">Дополнительно</string>
     <string name="settings_black_status_bar">Тёмная строка состояния</string>
     <string name="settings_credits">Благодарности</string>
@@ -340,7 +338,6 @@
     <string name="settings_extensions">Расширения</string>
     <string name="settings_general">Основные настройки</string>
     <string name="settings_help_us">Помочь нам</string>
-    <string name="settings_mining">\"Майнинг\"</string>
     <string name="settings_portrait_landscape">Портретная и Альбомная</string>
     <string name="settings_privacy">Настройки приватности</string>
     <string name="settings_reseted">Все настройки восстановлены</string>

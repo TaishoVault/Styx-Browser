@@ -101,7 +101,6 @@
     <string name="black_theme">Thème noir (AMOLED)</string>
     <string name="block_ads">Bloquer les publicités</string>
     <string name="block_javascript">Bloquer JavaScript pour ce site</string>
-    <string name="block_mining">Bloquer les sites de minage</string>
     <string name="block_sites_title">Sites à bloquer (séparés par une virgule)</string>
     <string name="block_source_default">Fichier \'hosts\' par défaut</string>
     <string name="block_source_local_description">Fichier : %1$s</string>
