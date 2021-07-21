@@ -347,7 +347,7 @@
     <string name="settings_reseted">Wszystkie ustawienia przywrócone</string>
     <string name="settings_summary_about">Wersja, autor, licencja…</string>
     <string name="settings_summary_apps">Aplikacje zewnętrzne…</string>
-    <string name="settings_summary_adminingblocker">Blokowanie reklam, śledzenia, koparek…</string>
+    <string name="settings_summary_adblocker">Blokowanie reklam, śledzenia, koparek…</string>
     <string name="settings_summary_dark_mode_default">Zdefiniuj, czy nowe karty mają domyślnie wymuszać tryb ciemny</string>
     <string name="settings_summary_desktop_mode_default">Zdefiniuj, czy nowe karty mają domyślnie używać wersji komputerowej</string>
     <string name="settings_summary_display">Wygląd aplikacji, kolor akcentu, tryb kolorów…</string>

@@ -347,7 +347,7 @@
     <string name="settings_reseted">تم استعادة جميع الإعدادات</string>
     <string name="settings_summary_about">الإصدار، المؤلف، الرخص…</string>
     <string name="settings_summary_apps">تطبيقات الطرف الثالث…</string>
-    <string name="settings_summary_adminingblocker">حظر الإعلانات والتعقب والتعدين…</string>
+    <string name="settings_summary_adblocker">حظر الإعلانات والتعقب والتعدين…</string>
     <string name="settings_summary_dark_mode_default">تحديد إذا كانت علامات التبويب الجديدة تستخدم الوضع المظلم بشكل افتراضي</string>
     <string name="settings_summary_desktop_mode_default">تحديد ما إذا كانت علامات التبويب الجديدة تستخدم وضع سطح المكتب بشكل افتراضي</string>
     <string name="settings_summary_display">تصميم التطبيق، اللكنة ، وضع اللون…</string>

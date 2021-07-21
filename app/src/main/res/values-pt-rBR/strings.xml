@@ -347,7 +347,7 @@
     <string name="settings_reseted">Todas as configurações restauradas</string>
     <string name="settings_summary_about">Versão, autor, licença…</string>
     <string name="settings_summary_apps">Aplicativos de terceiros…</string>
-    <string name="settings_summary_adminingblocker">Bloquear anúncio, rastreamento, mineração…</string>
+    <string name="settings_summary_adblocker">Bloquear anúncio, rastreamento, mineração…</string>
     <string name="settings_summary_dark_mode_default">Definir se novas abas devem forçar o modo escuro por padrão</string>
     <string name="settings_summary_desktop_mode_default">Definir se novas abas devem utilizar o modo área de trabalho por padrão</string>
     <string name="settings_summary_display">Tema do app, cor de realce, modo de cor…</string>

@@ -4,17 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:title="@string/settings_mining">
-
-    <SwitchPreferenceCompat
-        android:defaultValue="true"
-        android:key="block_mining_sites"
-        android:title="@string/block_mining"
-        app:icon="@drawable/ic_mining_oval" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/settings_adblock">
 
         <SwitchPreferenceCompat

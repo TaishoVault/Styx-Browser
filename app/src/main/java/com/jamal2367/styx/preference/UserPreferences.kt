@@ -419,11 +419,6 @@ class UserPreferences @Inject constructor(
     var siteBlockNames by preferences.stringPreference(R.string.pref_key_use_site_block, "")
 
     /**
-     * Malware blocker
-     */
-    var blockMiningEnabled by preferences.booleanPreference(R.string.pref_key_block_mining, R.bool.pref_default_block_mining)
-
-    /**
      * Force Zoom for Websites
      */
     var forceZoom by preferences.booleanPreference(R.string.pref_key_force_zoom, R.bool.pref_default_force_zoom)

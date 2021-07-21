@@ -347,7 +347,7 @@
     <string name="settings_reseted">Ajustes restaurados</string>
     <string name="settings_summary_about">Versión, autor, licencia…</string>
     <string name="settings_summary_apps">Aplicaciones de terceros…</string>
-    <string name="settings_summary_adminingblocker">Bloquear publicidad, rastreo, minería…</string>
+    <string name="settings_summary_adblocker">Bloquear publicidad, rastreo, minería…</string>
     <string name="settings_summary_dark_mode_default">Definir si las nuevas pestañas usan el modo oscuro por defecto</string>
     <string name="settings_summary_desktop_mode_default">Definir si las nuevas pestañas usan el modo de escritorio por defecto</string>
     <string name="settings_summary_display">Diseño de la app, color de acento, modo color…</string>

@@ -347,7 +347,7 @@
     <string name="settings_reseted">Tüm ayarlar geri yüklendi</string>
     <string name="settings_summary_about">Sürüm, yazar, lisans…</string>
     <string name="settings_summary_apps">Üçüncü parti uygulamalar…</string>
-    <string name="settings_summary_adminingblocker">Reklam, takipçi ve madencilik engelleme…</string>
+    <string name="settings_summary_adblocker">Reklam, takipçi ve madencilik engelleme…</string>
     <string name="settings_summary_dark_mode_default">Yeni sekmelerin varsayılan olarak zorla karanlık modu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_desktop_mode_default">Yeni sekmelerin varsayılan olarak masaüstü modunu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_display">Uygulama tasarımı, vurgu rengi, renk modu…</string>

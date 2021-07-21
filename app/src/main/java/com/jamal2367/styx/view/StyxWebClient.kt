@@ -49,7 +49,6 @@ import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.ssl.SslState
 import com.jamal2367.styx.ssl.SslWarningPreferences
 import com.jamal2367.styx.utils.*
-import com.jamal2367.styx.utils.Utils.buildMiningPage
 import com.jamal2367.styx.view.StyxView.Companion.KFetchMetaThemeColorTries
 import io.reactivex.Observable
 import io.reactivex.Scheduler
@@ -92,8 +91,6 @@ class StyxWebClient(
     private var currentUrl: String = ""
 
     //private var elementHide = userPreferences.elementHide
-
-    private var color = ""
 
     var sslState: SslState = SslState.None
         private set(value) {
@@ -362,22 +359,6 @@ class StyxWebClient(
                                     .replace("""\\""""", """\"""""), null)
                     break
                 }
-            }
-        }
-
-        if (userPreferences.blockMiningEnabled) {
-            val tip3 = activity.getString(R.string.error_tip3)
-            val inputStream: InputStream = activity.assets.open("mining.txt")
-            val inputString = inputStream.bufferedReader().use { it.readText() }
-            val lines =  inputString.split(",").toTypedArray()
-            if (stringContainsItemFromList(url, lines)) {
-                view.settings.javaScriptEnabled = true
-                val title = activity.getString(R.string.error_title)
-                val reload = activity.getString(R.string.error_reload)
-                val error = activity.getString(R.string.error_tip4)
-                view.loadDataWithBaseURL(null, buildMiningPage(color, title, error, tip3, reload, false), "text/html; charset=utf-8", "UTF-8", null)
-                view.invalidate()
-                view.settings.javaScriptEnabled = userPreferences.javaScriptEnabled
             }
         }
 

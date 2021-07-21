@@ -84,19 +84,13 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         injector.inject(this)
 
         switchPreference(
-            preference = SETTINGS_BLOCKMINING,
-            isChecked = userPreferences.blockMiningEnabled,
+            preference = "cb_block_ads",
+            isChecked = userPreferences.adBlockEnabled,
             onCheckChange = {
                 userPreferences.adBlockEnabled = it
                 // update enabled lists when enabling blocker
                 if (it) updateEntity(null, false)
             }
-        )
-
-        switchPreference(
-            preference = "cb_block_ads",
-            isChecked = userPreferences.adBlockEnabled,
-            onCheckChange = { userPreferences.adBlockEnabled = it }
         )
 
         if (context != null) {
@@ -412,7 +406,6 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
     companion object {
         private const val FILE_REQUEST_CODE = 100
         private const val BLOCK_LIST_FILE = "local_blocklist.txt"
-        private const val SETTINGS_BLOCKMINING = "block_mining_sites"
         private const val TEXT_MIME_TYPE = "text/*"
     }
 }

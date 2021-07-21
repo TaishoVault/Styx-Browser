@@ -347,7 +347,7 @@
     <string name="settings_reseted">所有设置已恢复</string>
     <string name="settings_summary_about">版本号、 作者、许可证…</string>
     <string name="settings_summary_apps">第三方程序…</string>
-    <string name="settings_summary_adminingblocker">阻止广告、跟踪、挖矿…</string>
+    <string name="settings_summary_adblocker">阻止广告、跟踪、挖矿…</string>
     <string name="settings_summary_dark_mode_default">定义新标签是否默认使用强制深色模式</string>
     <string name="settings_summary_desktop_mode_default">定义新选项卡是否默认使用桌面模式</string>
     <string name="settings_summary_display">应用设计，高亮颜色，颜色模式…</string>

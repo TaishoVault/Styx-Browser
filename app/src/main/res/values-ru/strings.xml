@@ -346,7 +346,7 @@
     <string name="settings_reseted">Все настройки восстановлены</string>
     <string name="settings_summary_about">Версия, автор, лицензия…</string>
     <string name="settings_summary_apps">Сторонние приложения…</string>
-    <string name="settings_summary_adminingblocker">Блокировка рекламы, отслеживания, \"майнинга\"…</string>
+    <string name="settings_summary_adblocker">Блокировка рекламы, отслеживания, \"майнинга\"…</string>
     <string name="settings_summary_dark_mode_default">Определить, используют ли новые вкладки принудительный темный режим по умолчанию</string>
     <string name="settings_summary_desktop_mode_default">Определяет, будут ли новые вкладки использовать рабочий стол по умолчанию</string>
     <string name="settings_summary_display">Дизайн приложения, цвет акцента, цветовое оформление…</string>

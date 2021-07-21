@@ -109,7 +109,6 @@
     <string name="black_theme">Schwarzes Design (AMOLED)</string>
     <string name="block_ads">Werbeblocker aktivieren</string>
     <string name="block_javascript">JavaScript für Webseiten blockieren</string>
-    <string name="block_mining">Webseiten mit Mining blockieren</string>
     <string name="block_sites_title">Webseiten mit einem Komma trennen!</string>
     <string name="block_source_default">Standard Hosts-Datei</string>
     <string name="block_source_local_description">Datei: %1$s</string>
@@ -179,8 +178,6 @@
     <string name="error_reload">Neu laden</string>
     <string name="error_tip">• Bitte überprüfen Sie die Adresse auf Tippfehler, wie ww.example.com statt www.example.com</string>
     <string name="error_tip2">• Wenn Sie auch keine andere Website aufrufen können, überprüfen Sie bitte die Daten- oder WLAN-Verbindung.</string>
-    <string name="error_tip3">• Diese Webseite scheint Mining zu betreiben.</string>
-    <string name="error_tip4">Verbindung blockiert!</string>
     <string name="error_title">Verbindung fehlgeschlagen!</string>
     <string name="example_text">Bespieltext</string>
     <string name="exit">Beenden</string>
@@ -332,7 +329,7 @@
     <string name="session_switched">Zu \"%s\" gewechselt</string>
     <string name="settings_about">Über</string>
     <string name="settings_adblock">Werbeblocker</string>
-    <string name="settings_adminingblocker">Werbe &amp; Miningblocker</string>
+    <string name="settings_adblocker">Werbeblocker</string>
     <string name="settings_advanced">Erweitert</string>
     <string name="settings_black_status_bar">Schwarze Statusleiste</string>
     <string name="settings_credits">Danksagungen</string>
@@ -342,13 +339,12 @@
     <string name="settings_extensions">Erweiterungen</string>
     <string name="settings_general">Allgemein</string>
     <string name="settings_help_us">Hilf uns</string>
-    <string name="settings_mining">Mining</string>
     <string name="settings_portrait_landscape">Hoch &amp; Querformat</string>
     <string name="settings_privacy">Privatsphäre</string>
     <string name="settings_reseted">Alle Einstellungen wiederhergestellt</string>
     <string name="settings_summary_about">Version, Entwickler, Lizenzen…</string>
     <string name="settings_summary_apps">Anwendungen von Drittanbietern…</string>
-    <string name="settings_summary_adminingblocker">Werbeblocker, Tracking, Mining…</string>
+    <string name="settings_summary_adblocker">Werbeblocker, Tracking, Mining…</string>
     <string name="settings_summary_dark_mode_default">Neue Tabs standardmäßig im Dunkel Modus verwenden</string>
     <string name="settings_summary_desktop_mode_default">Neue Tabs standardmäßig im Desktop Modus verwenden</string>
     <string name="settings_summary_display">App-Design, Akzentfarbe, Farbmodus…</string>
