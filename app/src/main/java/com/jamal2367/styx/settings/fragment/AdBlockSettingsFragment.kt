@@ -182,10 +182,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             ++updatesRunning
             val updated = if (abpEntity == null) abpListUpdater.updateAll(true) else abpListUpdater.updateAbpEntity(abpEntity)
             if (updated) {
-                // remove lists now
-                // when it's done onDestroy only, it might not happen if the app is closed without leaving settings screen
-                abpBlocker.removeJointLists()
-                reloadLists = true
+                reloadBlockLists()
 
                 // update the "last updated" times
                 activity?.runOnUiThread {
@@ -285,8 +282,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             abpDao.delete(entity)
             dialog?.dismiss()
             preferenceScreen.removePreference(entitiyPrefs[entity.entityId])
-            abpBlocker.removeJointLists()
-            reloadLists = true
+            reloadBlockLists()
             }
         }
         builder.setNegativeButton(getString(R.string.action_cancel), null)
@@ -305,8 +301,8 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             // check for update (necessary to have correct id!)
             if ((entity.url.startsWith("http") && enabled.isChecked && !wasEnabled) || needsUpdate)
                 updateEntity(entity)
-            else if (enabled.isChecked != wasEnabled)
-                reloadLists = true
+            if (enabled.isChecked != wasEnabled)
+                reloadBlockLists()
 
             if (entitiyPrefs[newId] == null) { // not in entityPrefs if new
                 val pref = Preference(context)
@@ -327,6 +323,16 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         dialog.show()
         updateButton(dialog.getButton(AlertDialog.BUTTON_POSITIVE), entity.url, entity.title)
     }
+
+    // list should be reloaded only once
+    // this is done when leaving settings screen
+    // joint lists are removed immediately to avoid using them if app is stopped without leaving the setting screen
+    private fun reloadBlockLists() {
+        reloadLists = true
+        abpBlocker.removeJointLists()
+    }
+
+
 
     // disable ok button if url or title not valid
     private fun updateButton(button: Button?, url: String, title: String?) {
