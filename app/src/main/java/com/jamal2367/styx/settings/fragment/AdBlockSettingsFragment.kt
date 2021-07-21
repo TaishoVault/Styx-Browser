@@ -127,7 +127,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 onClick = { summaryUpdater ->
                     activity?.let { MaterialAlertDialogBuilder(it) }?.apply {
                         setTitle(R.string.ad_block_update_frequency)
-                        setMessage(R.string.ad_block_update_description)
+                        //setMessage(R.string.ad_block_update_description)
                         val values = listOf(
                             Pair(1, resources.getString(R.string.ad_block_remote_frequency_daily)),
                             Pair(7, resources.getString(R.string.ad_block_remote_frequency_weekly)),
