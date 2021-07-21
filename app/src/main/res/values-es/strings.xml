@@ -82,6 +82,7 @@
     <string name="ad_block_remote_frequency_daily">Diaria</string>
     <string name="ad_block_remote_frequency_weekly">Semanal</string>
     <string name="ad_block_remote_frequency_monthly">Mensual</string>
+    <string name="ad_block_update_description">Las actualizaciones se harán con la frecuencia elegida, a menos que la lista de bloqueo especifique un intervalo más largo.</string>
     <string name="ad_block_update_frequency">Frecuencia de actualización automática</string>
     <string name="ad_block_update_list">Actualizar archivo de lista de bloqueo</string>
     <string name="ad_block_update_mode">Actualización automática</string>

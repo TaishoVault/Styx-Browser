@@ -82,6 +82,7 @@
     <string name="ad_block_remote_frequency_daily">Ежедневно</string>
     <string name="ad_block_remote_frequency_weekly">Еженедельно</string>
     <string name="ad_block_remote_frequency_monthly">Ежемесячно</string>
+    <string name="ad_block_update_description">Обновления будут выполняться с выбранной частотой, если в списке блокировки не указан более длительный интервал.</string>
     <string name="ad_block_update_frequency">Частота автоматического обновления</string>
     <string name="ad_block_update_list">Обновить файл списка блокировки</string>
     <string name="ad_block_update_mode">Автоматическое обновление</string>
