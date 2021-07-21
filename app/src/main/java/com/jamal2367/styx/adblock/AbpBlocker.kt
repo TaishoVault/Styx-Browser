@@ -40,10 +40,9 @@ class AbpBlocker @Inject constructor(
     private lateinit var allowList: FilterContainer
     private lateinit var blockList: FilterContainer
 
-    // if i want mining/malware block, it should be separate lists so they are not affected by ad-blocklist exclusions
-    // TODO: any reason NOT to join those lists?
-    private var miningList = FilterContainer()
-    private var malwareList = FilterContainer()
+    // contains filters that should not be overridden by allowList
+    //  like mining list, malware list or maybe later the 'important' filter rules from AdGuard/uBo
+    private var importantBlockList = FilterContainer()
 
     // store whether lists are loaded (and delay any request until loading is done)
     private var listsLoaded = false
@@ -267,6 +266,9 @@ class AbpBlocker @Inject constructor(
         // if switching pages (via link or pressing back), pageUrl is still the old url, messing up 3rd party checks
         // -> fix both by setting pageUrl to requestUrl if request.isForMainFrame
         //  is there any way a request for main frame can be a 3rd party request? then a different fix would be required
+        // TODO: currently this can trigger some CORS error on startup
+        //  this is avoided when using 'pageUrl == ""' instead of 'request.isForMainFrame'
+        //  not sure why, can't reproduce it
         val contentRequest = request.getContentRequest(if (pageUrl == "") request.url else Uri.parse(pageUrl))
 
         // no need to supply pattern to getBlockResponse
@@ -283,8 +285,7 @@ class AbpBlocker @Inject constructor(
             Thread.sleep(50)
         }
 
-        miningList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
-        malwareList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
+        importantBlockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
         allowList[contentRequest]?.let { return null }
         blockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_ad, it.pattern)) }
 
