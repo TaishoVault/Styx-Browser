@@ -117,13 +117,13 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 }
             )
 
-            // TODO: where to put the update-now button?
             clickableDynamicPreference(
                 preference = getString(R.string.pref_key_blocklist_auto_update_frequency),
                 summary = userPreferences.blockListAutoUpdateFrequency.toUpdateFrequency(),
                 onClick = { summaryUpdater ->
                     activity?.let { MaterialAlertDialogBuilder(it) }?.apply {
                         setTitle(R.string.ad_block_update_frequency)
+                        setMessage(R.string.ad_block_update_description)
                         val values = listOf(
                             Pair(1, resources.getString(R.string.ad_block_remote_frequency_daily)),
                             Pair(7, resources.getString(R.string.ad_block_remote_frequency_weekly)),

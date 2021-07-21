@@ -84,6 +84,7 @@
     <string name="ad_block_remote_frequency_daily">Daily</string>
     <string name="ad_block_remote_frequency_weekly">Weekly</string>
     <string name="ad_block_remote_frequency_monthly">Monthly</string>
+    <string name="ad_block_update_description">Updates will be done with the chosen frequency, unless the blocklist specifies a longer interval.</string>
     <string name="ad_block_update_frequency">Automatic update frequency</string>
     <string name="ad_block_update_list">Update blocklist file</string>
     <string name="ad_block_update_mode">Automatic update</string>

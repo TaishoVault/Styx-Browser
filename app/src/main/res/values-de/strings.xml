@@ -82,6 +82,7 @@
     <string name="ad_block_remote_frequency_daily">Täglich</string>
     <string name="ad_block_remote_frequency_weekly">Wöchentlich</string>
     <string name="ad_block_remote_frequency_monthly">Monatlich</string>
+    <string name="ad_block_update_description">Die Aktualisierung erfolgt mit der gewählten Häufigkeit, es sei denn, in der Blockliste ist ein längeres Intervall angegeben.</string>
     <string name="ad_block_update_frequency">Automatisches aktualisieren (Häufigkeit)</string>
     <string name="ad_block_update_list">Blockliste aktualisieren</string>
     <string name="ad_block_update_mode">Automatisches aktualisieren</string>
