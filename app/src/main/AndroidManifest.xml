@@ -138,11 +138,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
-            <intent-filter>
-                <action android:name="info.guardianproject.panic.action.TRIGGER" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
         </activity>
 
         <activity
