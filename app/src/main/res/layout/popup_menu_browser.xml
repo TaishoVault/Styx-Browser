@@ -210,7 +210,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:button="@null"
-                        android:text="@string/ad_blocker"
+                        android:text="@string/settings_content_blocking"
                         android:gravity="center_vertical"
                         android:enabled="true"
                         android:background="?attr/selectableItemBackground"

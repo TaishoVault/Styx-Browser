@@ -25,7 +25,6 @@
     <string name="action_share">Chia sẻ</string>
     <string name="action_webpage">Trang web</string>
     <string name="action_yes">Có</string>
-    <string name="ad_block_load_failure">Tải máy chủ từ nguồn chặn quảng cáo thất bại.</string>
     <string name="agent_custom">Tùy chỉnh</string>
     <string name="agent_default">Mặc định</string>
     <string name="agent_desktop">Máy tính</string>
@@ -127,7 +126,6 @@
     <string name="search_suggestions_off">Không có đề xuất tìm kiếm</string>
     <string name="search_suggestions">Đề xuất tìm kiếm</string>
     <string name="search">Công cụ tìm kiếm</string>
-    <string name="settings_adblock">Content block settings</string>
     <string name="settings_advanced">Cài đặt nâng cao</string>
     <string name="settings_display">Cài đặt hiển thị</string>
     <string name="settings_general">Cài đặt chung</string>

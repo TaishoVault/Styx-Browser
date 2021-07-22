@@ -42,7 +42,7 @@ class UserPreferences @Inject constructor(
     /**
      * True if the browser should block ads, false otherwise.
      */
-    var adBlockEnabled by preferences.booleanPreference(R.string.pref_key_block_ads, R.bool.pref_default_block_ads)
+    var contentBlockerEnabled by preferences.booleanPreference(R.string.pref_key_block_ads, R.bool.pref_default_block_content)
 
     /**
      * True if the browser should block images from being loaded, false otherwise.
@@ -479,11 +479,11 @@ class UserPreferences @Inject constructor(
     var longClickTab by preferences.booleanPreference(R.string.pref_key_long_click_tab, R.bool.pref_default_long_click_tab)
 
     /**
-     * Define behavior for blocklist updates (on, off, only on non-metered connections).
+     * Define behavior for filterlist updates (on, off, only on non-metered connections).
      * Update check is only happening at browser start.
      */
-    var blockListAutoUpdate by preferences.enumPreference(R.string.pref_key_blocklist_auto_update, AbpUpdateMode.WIFI_ONLY)
-    var blockListAutoUpdateFrequency by preferences.intPreference(R.string.pref_key_blocklist_auto_update_frequency, 7)
+    var filterListAutoUpdate by preferences.enumPreference(R.string.pref_key_filterlist_auto_update, AbpUpdateMode.WIFI_ONLY)
+    var filterListAutoUpdateFrequency by preferences.intPreference(R.string.pref_key_filterlist_auto_update_frequency, 7)
 
     /**
      * Show "Update available" message when a update is available.

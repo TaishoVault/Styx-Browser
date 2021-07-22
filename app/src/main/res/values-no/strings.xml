@@ -25,7 +25,6 @@
     <string name="action_share">Del</string>
     <string name="action_webpage">Nettside</string>
     <string name="action_yes">Ja</string>
-    <string name="ad_block_load_failure">Kunne ikke laste verter fra annonseblokkeringskilde.</string>
     <string name="agent_custom">Egendefinert</string>
     <string name="agent_default">Standard</string>
     <string name="agent_desktop">Skrivebord</string>
@@ -145,7 +144,6 @@
     <string name="search_suggestions">Søk forslag</string>
     <string name="search">Søkemotor</string>
     <string name="settings_about">Om</string>
-    <string name="settings_adblock">Innholdsblokk innstillinger</string>
     <string name="settings_advanced">Avanserte innstillinger</string>
     <string name="settings_black_status_bar">Svart statuslinje</string>
     <string name="settings_display">Skjerm innstillinger</string>

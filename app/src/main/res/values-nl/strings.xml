@@ -23,7 +23,6 @@
     <string name="action_share">Deel</string>
     <string name="action_webpage">Webpagina</string>
     <string name="action_yes">Ja</string>
-    <string name="ad_block_load_failure">Kan hosts niet laden van bron voor advertentieblokkering.</string>
     <string name="agent_custom">Aangepast</string>
     <string name="agent_default">Standaard</string>
     <string name="agent_desktop">Bureaublad</string>
@@ -145,7 +144,6 @@
     <string name="search_suggestions">Suggesties zoeken</string>
     <string name="search">Zoekmachine</string>
     <string name="settings_about">Over</string>
-    <string name="settings_adblock">Advertentie blokkeer instellingen</string>
     <string name="settings_advanced">Geavanceerde instellingen</string>
     <string name="settings_black_status_bar">Zwarte statusbalk</string>
     <string name="settings_display">Scherm instellingen</string>

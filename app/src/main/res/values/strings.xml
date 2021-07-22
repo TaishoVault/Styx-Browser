@@ -60,38 +60,37 @@
     <string name="action_show_homepage">Homepage</string>
     <string name="action_webpage">Website</string>
     <string name="action_yes">Yes</string>
-    <string name="ad_blocker">Adblocker</string>
-    <string name="ad_block_address">Address</string>
-    <string name="ad_block_add_blocklist_hint">Normal Ad-Hosts lists can be selected, as well as any filter lists that work with Adblock Plus rules.</string>
-    <string name="ad_block_blocked_page">Ad block blocked the following page:</string>
-    <string name="ad_block_blocked_filter">Because of the following filter:</string>
-    <string name="ad_block_blocked_list_ad">%s on ad blocklist</string>
-    <string name="ad_block_blocked_list_malware">%s on malware blocklist</string>
-    <string name="ad_block_blocked_list_user">%s blocked by user rule</string>
-    <string name="ad_block_create_blocklist">Create blocklist</string>
-    <string name="ad_block_edit_blocklist">Edit blocklist</string>
-    <string name="ad_block_enable">Enable</string>
-    <string name="ad_block_file">File</string>
-    <string name="ad_block_from_file">Local</string>
-    <string name="ad_block_from_address">Remote</string>
-    <string name="ad_block_internal_list">Internal list</string>
-    <string name="ad_block_invalid_title">Invalid title</string>
-    <string name="ad_block_invalid_url">Invalid address</string>
-    <string name="ad_block_last_update">Last update: %s</string>
-    <string name="ad_block_load_failure">Failed to load hosts from ad blocking source.</string>
-    <string name="ad_block_local_file_chosen">File selected</string>
-    <string name="ad_block_local_file_replace">Replace blocklist</string>
-    <string name="ad_block_remote_frequency_daily">Daily</string>
-    <string name="ad_block_remote_frequency_weekly">Weekly</string>
-    <string name="ad_block_remote_frequency_monthly">Monthly</string>
-    <string name="ad_block_update_description">Updates will be done with the chosen frequency, unless the blocklist specifies a longer interval.</string>
-    <string name="ad_block_update_frequency">Automatic update frequency</string>
-    <string name="ad_block_update_list">Update blocklist file</string>
-    <string name="ad_block_update_mode">Automatic update</string>
-    <string name="ad_block_update_now">Update lists</string>
-    <string name="ad_block_update_on">On</string>
-    <string name="ad_block_update_off">Off</string>
-    <string name="ad_block_update_wifi">Only via WLAN</string>
+    <string name="content_control_address">Address</string>
+    <string name="content_control_add_filterlist_hint">Normal Ad-Hosts lists can be selected, as well as any filter lists that work with Adblock Plus rules.</string>
+    <string name="content_control_blocked_page">Content blocker blocked the following page:</string>
+    <string name="content_control_blocked_filter">Because of the following filter:</string>
+    <string name="content_control_blocked_list_ad">%s on ad filterlist</string>
+    <string name="content_control_blocked_list_malware">%s on malware filterlist</string>
+    <string name="content_control_blocked_list_user">%s blocked by user rule</string>
+    <string name="content_control_create_filterlist">Create filterlist</string>
+    <string name="content_control_edit_filterlist">Edit filterlist</string>
+    <string name="content_control_enable">Enable</string>
+    <string name="content_control_file">File</string>
+    <string name="content_control_from_file">Local</string>
+    <string name="content_control_from_address">Remote</string>
+    <string name="content_control_internal_list">Internal list</string>
+    <string name="content_control_invalid_title">Invalid title</string>
+    <string name="content_control_invalid_url">Invalid address</string>
+    <string name="content_control_last_update">Last update: %s</string>
+    <string name="content_control_load_failure">Failed to load hosts from content blocking source.</string>
+    <string name="content_control_local_file_chosen">File selected</string>
+    <string name="content_control_local_file_replace">Replace filterlist</string>
+    <string name="content_control_remote_frequency_daily">Daily</string>
+    <string name="content_control_remote_frequency_weekly">Weekly</string>
+    <string name="content_control_remote_frequency_monthly">Monthly</string>
+    <string name="content_control_update_description">Updates will be done with the chosen frequency, unless the filterlist specifies a longer interval.</string>
+    <string name="content_control_update_frequency">Automatic update frequency</string>
+    <string name="content_control_update_list">Update filterlist file</string>
+    <string name="content_control_update_mode">Automatic update</string>
+    <string name="content_control_update_now">Update lists</string>
+    <string name="content_control_update_on">On</string>
+    <string name="content_control_update_off">Off</string>
+    <string name="content_control_update_wifi">Only via WLAN</string>
     <string name="ad_server_list">AdGuard Ad-Server List</string>
     <string name="agent_android_mobile">Android (Mobile)</string>
     <string name="agent_custom">Custom</string>
@@ -182,6 +181,7 @@
     <string name="edit_cookies">Show site cookies</string>
     <string name="edit_shortcuts">Edit Shortcuts</string>
     <string name="eight" translatable="false">8</string>
+    <string name="enable">Enable</string>
     <string name="error_reload">Reload</string>
     <string name="error_tip">• Check the Address for typing errors such as ww.example.com instead of www.example.com</string>
     <string name="error_tip2">• If you are unable to load any pages, check your devices data or Wi-Fi connection.</string>
@@ -281,8 +281,10 @@
     <string name="powered_by_google">Powered by Google</string>
     <string name="powered_by_naver">Powered by Naver</string>
     <string name="pref_app_version_summary">Version:</string>
+    <string name="pref_category_filters">Filters</string>
     <string name="pref_category_general">General</string>
     <string name="pref_category_landscape">Landscape</string>
+    <string name="pref_category_summary_filters">Local or remote files defining your content control rules</string>
     <string name="pref_category_portrait">Portrait</string>
     <string name="pref_report_issue_summary">Report bugs and suggest improvements on GitHub</string>
     <string name="pref_report_issue_title">Report Issue</string>
@@ -357,11 +359,11 @@
     <string name="session_prompt_confirm_deletion_title">Confirm deletion</string>
     <string name="session_switched">Switched to \"%s\"</string>
     <string name="settings_about">About</string>
-    <string name="settings_adblock">Ad Block</string>
-    <string name="settings_adblocker">Ad Blocker</string>
+    <string name="settings_content_control">Content control</string>
     <string name="settings_advanced">Advanced</string>
     <string name="settings_app_prefix" translatable="false">app_for_</string>
     <string name="settings_black_status_bar">Black status bar</string>
+    <string name="settings_content_blocking">Content Blocking</string>
     <string name="settings_credits">Credits</string>
     <string name="settings_display">Look &amp; feel</string>
     <string name="settings_export_failure">Sorry, settings could not be exported!</string>
@@ -374,7 +376,8 @@
     <string name="settings_reseted">All settings restored</string>
     <string name="settings_summary_about">Version, author, license…</string>
     <string name="settings_summary_apps">Third party applications…</string>
-    <string name="settings_summary_adblocker">Block advertising, tracking, mining…</string>
+    <string name="settings_summary_content_control">Ads blocker and content filtering</string>
+    <string name="settings_summary_content_control_toggle">Activate ads blocker and content filtering</string>
     <string name="settings_summary_dark_mode_default">Define if new tabs use force dark mode by default</string>
     <string name="settings_summary_desktop_mode_default">Define if new tabs use desktop mode by default</string>
     <string name="settings_summary_display">App design, accent color, color mode…</string>
@@ -536,8 +539,8 @@
     <string name="pref_key_accent" translatable="false">pref_key_accent</string>
     <string name="pref_key_always_incognito" translatable="false">pref_key_always_incognito</string>
     <string name="pref_key_black_status_bar" translatable="false">pref_key_black_status_bar</string>
-    <string name="pref_key_blocklist_auto_update" translatable="false">pref_key_blocklist_auto_update</string>
-    <string name="pref_key_blocklist_auto_update_frequency" translatable="false">pref_key_blocklist_auto_update_frequency</string>
+    <string name="pref_key_filterlist_auto_update" translatable="false">pref_key_filterlist_auto_update</string>
+    <string name="pref_key_filterlist_auto_update_frequency" translatable="false">pref_key_filterlist_auto_update_frequency</string>
     <string name="pref_key_block_ads" translatable="false">pref_key_block_ads</string>
     <string name="pref_key_block_js" translatable="false">pref_key_block_js</string>
     <string name="pref_key_block_third_party" translatable="false">pref_key_block_third_party</string>
@@ -549,6 +552,8 @@
     <string name="pref_key_clear_history_exit" translatable="false">pref_key_clear_history_exit</string>
     <string name="pref_key_clear_web_storage_exit" translatable="false">pref_key_clear_web_storage_exit</string>
     <string name="pref_key_close_on_last_tab" translatable="false">pref_key_close_on_last_tab</string>
+    <string name="pref_key_content_control" translatable="false">pref_key_content_control</string>
+    <string name="pref_key_content_control_filters" translatable="false">pref_key_content_control_filters</string>
     <string name="pref_key_cookies_incognito" translatable="false">pref_key_cookies_incognito</string>
     <string name="pref_key_cookies" translatable="false">pref_key_cookies</string>
     <string name="pref_key_dark_mode_default" translatable="false">pref_key_dark_mode_default</string>

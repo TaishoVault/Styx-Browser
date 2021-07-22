@@ -25,7 +25,6 @@
     <string name="action_share">Sdílet</string>
     <string name="action_webpage">Webová stránka</string>
     <string name="action_yes">Ano</string>
-    <string name="ad_block_load_failure">Nepodařilo se načíst hostitele ze zdroje blokování reklam.</string>
     <string name="agent_custom">Vlastní</string>
     <string name="agent_default">Výchozí</string>
     <string name="agent_desktop">Stolní počítače</string>
@@ -148,7 +147,6 @@
     <string name="search_suggestions">Hledat návrhy</string>
     <string name="search">Vyhledávač</string>
     <string name="settings_about">O aplikaci</string>
-    <string name="settings_adblock">Nastavení blokování obsahu</string>
     <string name="settings_advanced">Pokročilé nastavení</string>
     <string name="settings_black_status_bar">Černý stavový řádek</string>
     <string name="settings_display">Nastavení zobrazení</string>

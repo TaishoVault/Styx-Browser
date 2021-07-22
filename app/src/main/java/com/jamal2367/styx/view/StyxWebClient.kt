@@ -112,7 +112,7 @@ class StyxWebClient(
         adBlock = chooseAdBlocker()
     }
 
-    private fun chooseAdBlocker(): AdBlocker = if (userPreferences.adBlockEnabled) {
+    private fun chooseAdBlocker(): AdBlocker = if (userPreferences.contentBlockerEnabled) {
         activity.injector.provideAbpAdBlocker()
     } else {
         activity.injector.provideNoOpAdBlocker()

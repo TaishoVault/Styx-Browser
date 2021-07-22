@@ -48,7 +48,6 @@
     <string name="action_share">分享</string>
     <string name="action_webpage">網頁</string>
     <string name="action_yes">確定</string>
-    <string name="ad_block_load_failure">無法從廣告攔截源加載主機。</string>
     <string name="agent_custom">自訂</string>
     <string name="agent_default">預設</string>
     <string name="agent_desktop">桌上型電腦</string>
@@ -171,7 +170,6 @@
     <string name="search_suggestions">搜尋建議</string>
     <string name="search">搜尋引擎</string>
     <string name="settings_about">關於</string>
-    <string name="settings_adblock">廣告封鎖設定</string>
     <string name="settings_advanced">進階設定</string>
     <string name="settings_black_status_bar">黑色狀態列</string>
     <string name="settings_display">顯示設定</string>

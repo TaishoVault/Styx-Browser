@@ -110,7 +110,7 @@ class BloomFilterAdBlocker @Inject constructor(
                     logger.log(TAG, "Finished loading bloom filter")
                 },
                 onComplete = {
-                    application.toast(R.string.ad_block_load_failure)
+                    application.toast(R.string.content_control_load_failure)
                 }
             )
     }

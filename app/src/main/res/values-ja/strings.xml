@@ -45,7 +45,6 @@
     <string name="action_show_homepage">ホームページ</string>
     <string name="action_webpage">ウェブページ</string>
     <string name="action_yes">はい</string>
-    <string name="ad_block_load_failure">広告ブロックソースからホストを読み込めませんでした。</string>
     <string name="agent_custom">カスタム</string>
     <string name="agent_default">デフォルト</string>
     <string name="agent_desktop">デスクトップ</string>
@@ -178,7 +177,6 @@
     <string name="search_suggestions">検索候補表示</string>
     <string name="search">検索エンジン</string>
     <string name="settings_about">このアプリについて</string>
-    <string name="settings_adblock">広告ブロック</string>
     <string name="settings_advanced">詳細</string>
     <string name="settings_black_status_bar">ステータスバーを暗色にする</string>
     <string name="settings_display">表示</string>

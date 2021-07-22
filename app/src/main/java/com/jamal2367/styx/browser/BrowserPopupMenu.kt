@@ -79,7 +79,7 @@ class BrowserPopupMenu
                         iBinding.menuItemReaderMode.isVisible = it
                         iBinding.menuItemDesktopMode.isVisible = it
                         iBinding.menuItemDarkMode.isVisible = it
-                        iBinding.menuItemAdBlock.isVisible = it && userPreferences.adBlockEnabled
+                        iBinding.menuItemAdBlock.isVisible = it && userPreferences.contentBlockerEnabled
                         iBinding.menuItemAddBookmark.isVisible = it
                         iBinding.menuItemExit.isVisible = userPreferences.menuShowExit || iIsIncognito
                         iBinding.divider2.isVisible = it

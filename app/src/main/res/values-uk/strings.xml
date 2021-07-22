@@ -25,7 +25,6 @@
     <string name="action_share">Поділитись</string>
     <string name="action_webpage">Веб-сторінка</string>
     <string name="action_yes">Так</string>
-    <string name="ad_block_load_failure">Не вдалося завантажити хости з джерела блокування реклами.</string>
     <string name="agent_custom">Користувацька</string>
     <string name="agent_default">Типово</string>
     <string name="agent_desktop">Стільниця</string>
@@ -147,7 +146,6 @@
     <string name="search_suggestions">Пошук пропозицій</string>
     <string name="search">Пошукова система</string>
     <string name="settings_about">Про програму</string>
-    <string name="settings_adblock">Налаштування блоку вмісту</string>
     <string name="settings_advanced">Розширені налаштування</string>
     <string name="settings_black_status_bar">Чорний рядок стану</string>
     <string name="settings_display">Налаштування екрану</string>

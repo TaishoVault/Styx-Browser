@@ -24,7 +24,7 @@ class AbpEntity(
         // shown in adblock settings
         var title: String? = null,
 
-        // same as last modified? read from header of the blocklist, but does not exist in easylist
+        // same as last modified? read from header of the filterlist, but does not exist in easylist
         var lastUpdate: String? = null,
 
         // when the local files were last updated

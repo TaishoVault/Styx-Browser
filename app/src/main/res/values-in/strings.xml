@@ -177,7 +177,6 @@
     <string name="session_prompt_confirm_deletion_message">Sudah pasti mau menghapus sesi \"%s\"?</string>
     <string name="session_prompt_confirm_deletion_title">Lanjutkan penghapusan</string>
     <string name="session_switched">Berganti ke \"%s\"</string>
-    <string name="settings_adblock">Pemblokir iklan</string>
     <string name="settings_advanced">Selanjutnya</string>
     <string name="settings_black_status_bar">Hitamkan status bar</string>
     <string name="settings_display">Tampilan &amp; nuansa</string>

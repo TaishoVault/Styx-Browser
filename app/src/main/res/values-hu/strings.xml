@@ -25,7 +25,6 @@
     <string name="action_share">Megosztás</string>
     <string name="action_webpage">Honlap</string>
     <string name="action_yes">Igen</string>
-    <string name="ad_block_load_failure">Nem sikerült betölteni a gazdagépeket a hirdetést blokkoló forrásból.</string>
     <string name="agent_custom">Egyéni</string>
     <string name="agent_default">Alapértelmezett</string>
     <string name="agent_desktop">Asztali</string>
@@ -141,7 +140,6 @@
     <string name="search_suggestions">Keresési javaslatok</string>
     <string name="search">Keresőmotor</string>
     <string name="settings_about">Névjegy</string>
-    <string name="settings_adblock">Reklámblokkoló beállítások</string>
     <string name="settings_advanced">Speciális Beállítások</string>
     <string name="settings_black_status_bar">Fekete állapotsor</string>
     <string name="settings_display">Megjelenítési Beállítások</string>

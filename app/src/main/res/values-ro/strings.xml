@@ -58,7 +58,6 @@
     <string name="action_show_homepage">Pagina principală</string>
     <string name="action_webpage">Pagină</string>
     <string name="action_yes">Da</string>
-    <string name="ad_block_load_failure">Încărcarea gazdelor de la sursa de blocare a reclamelor a eșuat.</string>
     <string name="ad_server_list">Lista de AdGuard Ad-Server</string>
     <string name="agent_android_mobile">Android (Mobil)</string>
     <string name="agent_custom">Personalizat</string>
@@ -282,7 +281,6 @@
     <string name="session_prompt_confirm_deletion_title">Confirmă ștergerea</string>
     <string name="session_switched">Schimbat la \"%s\"</string>
     <string name="settings_about">Despre</string>
-    <string name="settings_adblock">Setări bloc de conținut</string>
     <string name="settings_advanced">Setări avansate</string>
     <string name="settings_black_status_bar">Bară de stare neagră</string>
     <string name="settings_credits">Recunoștințe</string>

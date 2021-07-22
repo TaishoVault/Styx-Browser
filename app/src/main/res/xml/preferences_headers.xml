@@ -33,9 +33,9 @@
         app:icon="@drawable/ic_security_oval" />
 
     <androidx.preference.Preference
-        app:fragment="com.jamal2367.styx.settings.fragment.AdBlockSettingsFragment"
-        app:title="@string/settings_adblocker"
-        app:summary="@string/settings_summary_adblocker"
+        app:fragment="com.jamal2367.styx.settings.fragment.ContentControlSettingsFragment"
+        app:title="@string/settings_content_control"
+        app:summary="@string/settings_summary_content_control"
         app:icon="@drawable/ic_block_oval" />
 
     <androidx.preference.Preference

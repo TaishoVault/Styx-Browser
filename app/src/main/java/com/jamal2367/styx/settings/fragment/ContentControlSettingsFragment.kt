@@ -11,9 +11,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.Preference
+import androidx.preference.PreferenceGroup
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.R
@@ -49,9 +51,9 @@ import java.util.*
 import javax.inject.Inject
 
 /**
- * Settings for the ad block mechanic.
+ * Settings for the content control mechanic.
  */
-class AdBlockSettingsFragment : AbstractSettingsFragment() {
+class ContentControlSettingsFragment : AbstractSettingsFragment() {
 
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject @field:MainScheduler internal lateinit var mainScheduler: Scheduler
@@ -65,7 +67,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
     private lateinit var abpDao: AbpDao
     private val entitiyPrefs = mutableMapOf<Int, Preference>()
 
-    // if blocklist changed, they need to be reloaded, but this should happen only once
+    // if filterlist changed, they need to be reloaded, but this should happen only once
     // if reloadLists is true, list reload will be launched onDestroy
     private var reloadLists = false
 
@@ -73,10 +75,13 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
     // int since multiple lists could be updated at the same time
     private var updatesRunning = 0
 
-    // uri of temporary blocklist file
+    // uri of temporary filterlist file
     private var fileUri: Uri? = null
 
-    override fun providePreferencesXmlResource(): Int = R.xml.preference_ad_block
+    // Our preferences filters category, will contains our filters file entries
+    private lateinit var filtersCategory: PreferenceGroup
+
+    override fun providePreferencesXmlResource(): Int = R.xml.preference_content_control
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         super.onCreatePreferences(savedInstanceState, rootKey)
@@ -84,31 +89,34 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         injector.inject(this)
 
         switchPreference(
-            preference = "cb_block_ads",
-            isChecked = userPreferences.adBlockEnabled,
+            preference = getString(R.string.pref_key_content_control),
+            isChecked = userPreferences.contentBlockerEnabled,
             onCheckChange = {
-                userPreferences.adBlockEnabled = it
+                userPreferences.contentBlockerEnabled = it
                 // update enabled lists when enabling blocker
                 if (it) updateEntity(null, false)
             }
         )
 
+        filtersCategory = findPreference(getString(R.string.pref_key_content_control_filters))!!
+
         if (context != null) {
+
             abpDao = AbpDao(requireContext())
 
             clickableDynamicPreference(
-                preference = getString(R.string.pref_key_blocklist_auto_update),
-                summary = userPreferences.blockListAutoUpdate.toDisplayString(),
+                preference = getString(R.string.pref_key_filterlist_auto_update),
+                summary = userPreferences.filterListAutoUpdate.toDisplayString(),
                 onClick = { summaryUpdater ->
                     MaterialAlertDialogBuilder(activity as AppCompatActivity).apply {
-                        setTitle(R.string.ad_block_update_mode)
+                        setTitle(R.string.content_control_update_mode)
                         val values = AbpUpdateMode.values().map { Pair(it, it.toDisplayString()) }
-                        withSingleChoiceItems(values, userPreferences.blockListAutoUpdate) {
-                            userPreferences.blockListAutoUpdate = it
+                        withSingleChoiceItems(values, userPreferences.filterListAutoUpdate) {
+                            userPreferences.filterListAutoUpdate = it
                             summaryUpdater.updateSummary(it.toDisplayString())
                         }
                         setPositiveButton(getString(R.string.action_ok), null)
-                        setNeutralButton(getString(R.string.ad_block_update_now)) {_,_ ->
+                        setNeutralButton(getString(R.string.content_control_update_now)) {_,_ ->
                             updateEntity(null, true)
                         }
                     }.resizeAndShow()
@@ -116,19 +124,19 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
             )
 
             clickableDynamicPreference(
-                preference = getString(R.string.pref_key_blocklist_auto_update_frequency),
-                summary = userPreferences.blockListAutoUpdateFrequency.toUpdateFrequency(),
+                preference = getString(R.string.pref_key_filterlist_auto_update_frequency),
+                summary = userPreferences.filterListAutoUpdateFrequency.toUpdateFrequency(),
                 onClick = { summaryUpdater ->
                     activity?.let { MaterialAlertDialogBuilder(it) }?.apply {
-                        setTitle(R.string.ad_block_update_frequency)
-                        //setMessage(R.string.ad_block_update_description)
+                        setTitle(R.string.content_control_update_frequency)
+                        //setMessage(R.string.content_control_update_description)
                         val values = listOf(
-                            Pair(1, resources.getString(R.string.ad_block_remote_frequency_daily)),
-                            Pair(7, resources.getString(R.string.ad_block_remote_frequency_weekly)),
-                            Pair(30, resources.getString(R.string.ad_block_remote_frequency_monthly))
+                            Pair(1, resources.getString(R.string.content_control_remote_frequency_daily)),
+                            Pair(7, resources.getString(R.string.content_control_remote_frequency_weekly)),
+                            Pair(30, resources.getString(R.string.content_control_remote_frequency_monthly))
                         )
-                        withSingleChoiceItems(values, userPreferences.blockListAutoUpdateFrequency) {
-                            userPreferences.blockListAutoUpdateFrequency = it
+                        withSingleChoiceItems(values, userPreferences.filterListAutoUpdateFrequency) {
+                            userPreferences.filterListAutoUpdateFrequency = it
                             summaryUpdater.updateSummary(it.toUpdateFrequency())
                         }
                         setPositiveButton(resources.getString(R.string.action_ok), null)
@@ -138,22 +146,23 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
 
             // "new list" button
             val newList = Preference(context)
-            newList.title = getString(R.string.ad_block_create_blocklist)
-            newList.icon = requireContext().drawable(R.drawable.ic_add_oval)
+            newList.title = getString(R.string.content_control_create_filterlist)
+            newList.icon = ResourcesCompat.getDrawable(resources, R.drawable.ic_add_oval, requireActivity().theme)
             newList.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 val dialog = MaterialAlertDialogBuilder(requireContext())
-                    .setNegativeButton(R.string.ad_block_from_file) { _,_ -> showBlockList(AbpEntity(url = "file")) }
-                    .setPositiveButton(R.string.ad_block_from_address) { _,_ -> showBlockList(AbpEntity(url = "")) }
+                    .setNegativeButton(R.string.content_control_from_file) { _,_ -> showBlockList(AbpEntity(url = "file")) }
+                    .setPositiveButton(R.string.content_control_from_address) { _,_ -> showBlockList(AbpEntity(url = "")) }
                     .setNeutralButton(getString(R.string.action_cancel), null)
-                    .setTitle(getString(R.string.ad_block_create_blocklist))
-                    .setMessage(R.string.ad_block_add_blocklist_hint)
+                    .setTitle(getString(R.string.content_control_create_filterlist))
+                    .setMessage(R.string.content_control_add_filterlist_hint)
                     .create()
                 dialog.show()
                 true
             }
-            this.preferenceScreen.addPreference(newList)
+            filtersCategory.addPreference(newList)
+            newList.dependency = getString(R.string.pref_key_content_control)
 
-            // list of blocklists/entities
+            // list of filterlists/entities
             for (entity in abpDao.getAll()) {
                 val entityPref = Preference(context)
                 entityPref.title = entity.title
@@ -164,14 +173,15 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 }
                 entitiyPrefs[entity.entityId] = entityPref
                 updateSummary(entity)
-                this.preferenceScreen.addPreference(entitiyPrefs[entity.entityId])
+                filtersCategory.addPreference(entitiyPrefs[entity.entityId])
+                entityPref.dependency = getString(R.string.pref_key_content_control)
             }
         }
     }
 
     private fun updateSummary(entity: AbpEntity) {
         if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
-            entitiyPrefs[entity.entityId]?.summary = resources.getString(R.string.ad_block_last_update, DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(Date(entity.lastLocalUpdate)))
+            entitiyPrefs[entity.entityId]?.summary = resources.getString(R.string.content_control_last_update, DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(Date(entity.lastLocalUpdate)))
     }
 
     // update entity and adjust displayed last update time
@@ -196,11 +206,11 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
     private fun showBlockList(entity: AbpEntity) {
         val builder = MaterialAlertDialogBuilder(requireContext())
         var dialog: AlertDialog? = null
-        builder.setTitle(getString(R.string.ad_block_edit_blocklist))
+        builder.setTitle(getString(R.string.content_control_edit_filterlist))
         val linearLayout = LinearLayout(context)
         linearLayout.orientation = LinearLayout.VERTICAL
 
-        // edit field for blocklist title
+        // edit field for filterlist title
         val title = EditText(context)
         title.inputType = InputType.TYPE_CLASS_TEXT
         title.setText(entity.title)
@@ -217,13 +227,13 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
         when {
             entity.url.startsWith(Schemes.Styx) -> {
                 val text = TextView(context)
-                text.text = getString(R.string.ad_block_internal_list)
+                text.text = getString(R.string.content_control_internal_list)
                 linearLayout.addView(text)
             }
             entity.url.startsWith("file") -> {
                 val fileChooseButton = MaterialButton(requireContext())
                 fileChooseButton.text = if (entity.url == "file") getString(R.string.title_chooser)
-                else getString(R.string.ad_block_local_file_replace)
+                else getString(R.string.content_control_local_file_replace)
                 fileChooseButton.setOnClickListener {
                     // show file chooser
                     // no storage permission necessary
@@ -243,7 +253,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                         if (fileUri?.scheme == "file") {
                             entity.url = fileUri.toString()
                             updateButton(dialog?.getButton(AlertDialog.BUTTON_POSITIVE), entity.url, entity.title)
-                            fileChooseButton.text = getString(R.string.ad_block_local_file_chosen)
+                            fileChooseButton.text = getString(R.string.content_control_local_file_chosen)
                             needsUpdate = true
                         }
                     }
@@ -254,7 +264,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 val url = EditText(context)
                 url.inputType = InputType.TYPE_TEXT_VARIATION_URI
                 url.setText(entity.url)
-                url.hint = getString(R.string.ad_block_address)
+                url.hint = getString(R.string.content_control_address)
                 url.addTextChangedListener {
                     entity.url = it.toString()
                     updateButton(dialog?.getButton(AlertDialog.BUTTON_POSITIVE), entity.url, entity.title)
@@ -265,7 +275,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
 
         // enabled switch
         val enabled = SwitchCompat(requireContext())
-        enabled.text = getString(R.string.ad_block_enable)
+        enabled.text = getString(R.string.content_control_enable)
         enabled.isChecked = entity.enabled
         linearLayout.addView(enabled)
 
@@ -314,7 +324,8 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
                 }
                 entitiyPrefs[newId] = pref
                 updateSummary(entity)
-                preferenceScreen.addPreference(entitiyPrefs[newId])
+                filtersCategory.addPreference(pref)
+                pref.dependency = getString(R.string.pref_key_content_control)
             } else
                 entitiyPrefs[entity.entityId]?.title = entity.title
 
@@ -337,12 +348,12 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
     // disable ok button if url or title not valid
     private fun updateButton(button: Button?, url: String, title: String?) {
         if (title?.contains("§§") == true || title.isNullOrBlank()) {
-            button?.text = resources.getText(R.string.ad_block_invalid_title)
+            button?.text = resources.getText(R.string.content_control_invalid_title)
             button?.isEnabled = false
             return
         }
         if ((url.toHttpUrlOrNull() == null || url.contains("§§")) && !url.startsWith(Schemes.Styx) && !url.startsWith("file:")) {
-            button?.text = if (url.startsWith("file")) "no file chosen" else resources.getText(R.string.ad_block_invalid_url)
+            button?.text = if (url.startsWith("file")) "no file chosen" else resources.getText(R.string.content_control_invalid_url)
             button?.isEnabled = false
             return
         }
@@ -351,15 +362,15 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
     }
 
     private fun AbpUpdateMode.toDisplayString(): String = getString(when (this) {
-        AbpUpdateMode.NONE -> R.string.ad_block_update_off
-        AbpUpdateMode.WIFI_ONLY -> R.string.ad_block_update_wifi
-        AbpUpdateMode.ALWAYS -> R.string.ad_block_update_on
+        AbpUpdateMode.NONE -> R.string.content_control_update_off
+        AbpUpdateMode.WIFI_ONLY -> R.string.content_control_update_wifi
+        AbpUpdateMode.ALWAYS -> R.string.content_control_update_on
     })
 
     private fun Int.toUpdateFrequency() = when(this) {
-        1 -> resources.getString(R.string.ad_block_remote_frequency_daily)
-        7 -> resources.getString(R.string.ad_block_remote_frequency_weekly)
-        30 -> resources.getString(R.string.ad_block_remote_frequency_monthly)
+        1 -> resources.getString(R.string.content_control_remote_frequency_daily)
+        7 -> resources.getString(R.string.content_control_remote_frequency_weekly)
+        30 -> resources.getString(R.string.content_control_remote_frequency_monthly)
         else -> "" //should not happen
     }
 
@@ -405,7 +416,7 @@ class AdBlockSettingsFragment : AbstractSettingsFragment() {
 
     companion object {
         private const val FILE_REQUEST_CODE = 100
-        private const val BLOCK_LIST_FILE = "local_blocklist.txt"
+        private const val BLOCK_LIST_FILE = "local_filterlist.txt"
         private const val TEXT_MIME_TYPE = "text/*"
     }
 }

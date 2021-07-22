@@ -66,7 +66,7 @@ class AbpBlocker @Inject constructor(
         GlobalScope.launch(Dispatchers.Default) {
             loadLists()
 
-            // update all enabled entities/blocklists
+            // update all enabled entities/filterlists
             // may take a while depending on how many lists need update, and on internet connection
             if (abpListUpdater.updateAll(false)) { // returns true if anything was updated
                 removeJointLists()
@@ -175,8 +175,8 @@ class AbpBlocker @Inject constructor(
     // from yuzu: jp.hazuki.yuzubrowser.adblock/AdBlockController.kt
     // stings adjusted for Styx
     private fun createMainFrameDummy(uri: Uri, pattern: String): WebResourceResponse {
-        val blocked = application.getString(R.string.ad_block_blocked_page)
-        val filter = application.getString(R.string.ad_block_blocked_filter)
+        val blocked = application.getString(R.string.content_control_blocked_page)
+        val filter = application.getString(R.string.content_control_blocked_filter)
         val background = htmlColor(ThemeUtils.getSurfaceColor(BrowserApp.currentContext()))
         val background1 = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.trackColor))
         val text = htmlColor(ThemeUtils.getColor(BrowserApp.currentContext(),R.attr.colorOnPrimary))
@@ -275,19 +275,19 @@ class AbpBlocker @Inject constructor(
         // pattern only used if it's for main frame
         // and if it's for main frame and blocked by user, it's always because user chose to block entire domain
         abpUserRules.getResponse(contentRequest)?.let { response ->
-            return if (response) getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_user, contentRequest.pageUrl.host ?: ""))
+            return if (response) getBlockResponse(request, application.resources.getString(R.string.content_control_blocked_list_user, contentRequest.pageUrl.host ?: ""))
             else null
         }
 
-        // wait until blocklists are loaded
+        // wait until filterlists are loaded
         // web request stuff does not run on main thread, so thread.sleep should be ok
         while (!listsLoaded) {
             Thread.sleep(50)
         }
 
-        importantBlockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_malware, it.pattern)) }
+        importantBlockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.content_control_blocked_list_malware, it.pattern)) }
         allowList[contentRequest]?.let { return null }
-        blockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.ad_block_blocked_list_ad, it.pattern)) }
+        blockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.content_control_blocked_list_ad, it.pattern)) }
 
         return null
     }

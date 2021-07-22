@@ -27,7 +27,6 @@
     <string name="action_share">Κοινοποίηση</string>
     <string name="action_webpage">Σελίδα</string>
     <string name="action_yes">Ναί</string>
-    <string name="ad_block_load_failure">Αποτυχία φόρτωσης hosts από την πηγή αποκλεισμού διαφημίσεων.</string>
     <string name="agent_custom">Συγκεκριμένο</string>
     <string name="agent_default">Προεπιλογή</string>
     <string name="agent_desktop">Υπολογιστής</string>
@@ -149,7 +148,6 @@
     <string name="search_suggestions">Προτάσεις αναζήτησης</string>
     <string name="search">Μηχανή αναζήτησης</string>
     <string name="settings_about">Σχετικά</string>
-    <string name="settings_adblock">Ρυθμίσεις αποκλεισμού περιεχομένου</string>
     <string name="settings_advanced">Προχωρημένες ρυθμίσεις</string>
     <string name="settings_black_status_bar">Μαύρη γραμμή κατάστασης</string>
     <string name="settings_display">Ρυθμίσεις προβολής</string>

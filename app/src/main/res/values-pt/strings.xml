@@ -58,7 +58,6 @@
     <string name="action_show_homepage">Página inicial</string>
     <string name="action_webpage">Página Web</string>
     <string name="action_yes">Sim</string>
-    <string name="ad_block_load_failure">Falha ao carregar o ficheiro hosts tendo por base a origem.</string>
     <string name="ad_server_list">Lista de servidores AdGuard</string>
     <string name="agent_android_mobile">Android (Móvel)</string>
     <string name="agent_custom">Personalizado</string>
@@ -264,7 +263,6 @@
     <string name="session_prompt_confirm_deletion_title">Confirme a eliminação</string>
     <string name="session_switched">Mudou para \"%s\"</string>
     <string name="settings_about">Acerca</string>
-    <string name="settings_adblock">Definições AdBlock</string>
     <string name="settings_advanced">Definições avançadas</string>
     <string name="settings_black_status_bar">Barra de estado escura</string>
     <string name="settings_credits">Créditos</string>

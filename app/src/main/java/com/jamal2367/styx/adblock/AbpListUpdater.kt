@@ -103,8 +103,8 @@ class AbpListUpdater @Inject constructor(val context: Context) {
         // don't update if auto-update settings don't allow
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (!forceUpdate
-            && ((userPreferences.blockListAutoUpdate == AbpUpdateMode.WIFI_ONLY && cm.isActiveNetworkMetered)
-                    || userPreferences.blockListAutoUpdate == AbpUpdateMode.NONE))
+            && ((userPreferences.filterListAutoUpdate == AbpUpdateMode.WIFI_ONLY && cm.isActiveNetworkMetered)
+                    || userPreferences.filterListAutoUpdate == AbpUpdateMode.NONE))
             return false
 
         val request = try {
@@ -176,7 +176,7 @@ class AbpListUpdater @Inject constructor(val context: Context) {
             dir.getAbpWhitePageListFile(entity).exists()) return false
 
         // lastModified is only used for HTTP and file
-        // can't get file date for assets, so assume that size changes when blocklist changes
+        // can't get file date for assets, so assume that size changes when filterlist changes
         // and (ab)use lastModified to store checksum, so update is triggered when file is changed
         // TODO: maybe only check if app version changed
         val checksum = context.assets.open(ASSETS_BLOCKLIST).computeMD5()
@@ -262,7 +262,7 @@ class AbpListUpdater @Inject constructor(val context: Context) {
 
     private fun AbpEntity.isNeedUpdate(): Boolean {
         val now = System.currentTimeMillis()
-        if (now - lastLocalUpdate >= max(expires * AN_HOUR, A_DAY * userPreferences.blockListAutoUpdateFrequency)) {
+        if (now - lastLocalUpdate >= max(expires * AN_HOUR, A_DAY * userPreferences.filterListAutoUpdateFrequency)) {
             return true
         }
         return false

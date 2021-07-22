@@ -25,7 +25,6 @@
     <string name="action_share">Dela</string>
     <string name="action_webpage">Webbsida</string>
     <string name="action_yes">Ja</string>
-    <string name="ad_block_load_failure">Det gick inte att ladda värdar från annonsblockeringskälla.</string>
     <string name="agent_custom">Anpassad</string>
     <string name="agent_default">Standard</string>
     <string name="agent_desktop">Skrivbord</string>
@@ -141,7 +140,6 @@
     <string name="search_suggestions">Sök förslag</string>
     <string name="search">Sökmotor</string>
     <string name="settings_about">Om</string>
-    <string name="settings_adblock">Inställningar för innehållsblock</string>
     <string name="settings_advanced">Avancerade inställningar</string>
     <string name="settings_black_status_bar">Svart statusfält</string>
     <string name="settings_display">Visa inställningar</string>
