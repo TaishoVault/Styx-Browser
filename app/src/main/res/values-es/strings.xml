@@ -60,6 +60,7 @@
     <string name="action_yes">Sí</string>
     <string name="content_control_address">Dirección</string>
     <string name="content_control_add_filterlist_hint">Las listas normales de Ad-Hosts pueden ser seleccionadas, así como cualquier lista de filtros que funcione con las reglas de Adblock Plus.</string>
+    <string name="content_control_blocked_page">El bloqueador de contenido bloqueó la siguiente página:</string>
     <string name="content_control_blocked_filter">Por el siguiente filtro:</string>
     <string name="content_control_blocked_list_user">%s bloqueado por regla de usuario</string>
     <string name="content_control_enable">Activar</string>
@@ -72,7 +73,9 @@
     <string name="content_control_last_update">Última actualización: %s</string>
     <string name="content_control_local_file_chosen">Archivo seleccionado</string>
     <string name="content_control_remote_frequency_daily">Diaria</string>
+    <string name="content_control_remote_frequency_weekly">Semanal</string>
     <string name="content_control_remote_frequency_monthly">Mensual</string>
+    <string name="content_control_update_description">Las actualizaciones se harán con la frecuencia elegida, a menos que la lista de bloqueo especifique un intervalo más largo.</string>
     <string name="content_control_update_frequency">Frecuencia de actualización automática</string>
     <string name="content_control_update_mode">Actualización automática</string>
     <string name="content_control_update_now">Actualizar listas</string>
@@ -257,6 +260,7 @@
     <string name="powered_by_google">Proporcionadas por Google</string>
     <string name="powered_by_naver">Naver</string>
     <string name="pref_app_version_summary">Versión:</string>
+    <string name="pref_category_filters">Filtros</string>
     <string name="pref_category_general">General</string>
     <string name="pref_category_landscape">Horizontal</string>
     <string name="pref_category_portrait">Vertical</string>
@@ -318,8 +322,10 @@
     <string name="session_prompt_confirm_deletion_title">Confirmar eliminación</string>
     <string name="session_switched">Cambiar a %s</string>
     <string name="settings_about">Acerca de</string>
+    <string name="settings_content_control">Control de contenido</string>
     <string name="settings_advanced">Ajustes avanzados</string>
     <string name="settings_black_status_bar">Barra de estado negro</string>
+    <string name="settings_content_blocking">Bloqueo de contenido</string>
     <string name="settings_credits">Créditos</string>
     <string name="settings_display">Ajustes de pantalla</string>
     <string name="settings_export_failure">¡Lo sentimos, no se pudo exportar la configuración!</string>
@@ -332,6 +338,8 @@
     <string name="settings_reseted">Ajustes restaurados</string>
     <string name="settings_summary_about">Versión, autor, licencia…</string>
     <string name="settings_summary_apps">Aplicaciones de terceros…</string>
+    <string name="settings_summary_content_control">Bloqueador de anuncios y filtrado de contenido</string>
+    <string name="settings_summary_content_control_toggle">Activar bloqueador de anuncios y filtrado de contenido</string>
     <string name="settings_summary_dark_mode_default">Definir si las nuevas pestañas usan el modo oscuro por defecto</string>
     <string name="settings_summary_desktop_mode_default">Definir si las nuevas pestañas usan el modo de escritorio por defecto</string>
     <string name="settings_summary_display">Diseño de la app, color de acento, modo color…</string>
