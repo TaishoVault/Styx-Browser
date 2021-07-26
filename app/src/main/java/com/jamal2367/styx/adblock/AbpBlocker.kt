@@ -266,10 +266,7 @@ class AbpBlocker @Inject constructor(
         // if switching pages (via link or pressing back), pageUrl is still the old url, messing up 3rd party checks
         // -> fix both by setting pageUrl to requestUrl if request.isForMainFrame
         //  is there any way a request for main frame can be a 3rd party request? then a different fix would be required
-        // TODO: currently this can trigger some CORS error on startup
-        //  this is avoided when using 'pageUrl == ""' instead of 'request.isForMainFrame'
-        //  not sure why, can't reproduce it
-        val contentRequest = request.getContentRequest(if (pageUrl == "") request.url else Uri.parse(pageUrl))
+        val contentRequest = request.getContentRequest(if (request.isForMainFrame || pageUrl == "") request.url else Uri.parse(pageUrl))
 
         // no need to supply pattern to getBlockResponse
         // pattern only used if it's for main frame
