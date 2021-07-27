@@ -1755,8 +1755,8 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             R.id.menuItemTranslate -> {
                 val locale = Locale.getDefault()
-                currentView?.loadUrl("https://www.translatetheweb.com/?from=&to=$locale&dl=$locale&a=$currentUrl")
-                //currentView?.loadUrl("https://translate.google.com/translate?sl=auto&tl=$locale&u=" + currentUrl!!)
+                //currentView?.loadUrl("https://www.translatetheweb.com/?from=&to=$locale&dl=$locale&a=$currentUrl")
+                currentView?.loadUrl("https://translate.google.com/translate?sl=auto&tl=$locale&u=$currentUrl")
                 return true
             }
             R.id.menuItemReaderMode -> {
