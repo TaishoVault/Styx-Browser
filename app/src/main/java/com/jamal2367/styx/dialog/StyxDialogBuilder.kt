@@ -108,7 +108,7 @@ class StyxDialogBuilder @Inject constructor(
         },
         DialogItem(title = R.string.dialog_copy_link) {
             clipboardManager.copyToClipboard(entry.url)
-            (activity).snackbar(R.string.message_link_copied)
+            (activity).snackbar(R.string.message_link_copied, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
         },
         DialogItem(title = R.string.dialog_remove_bookmark) {
             bookmarkManager.deleteBookmark(entry)
@@ -117,7 +117,7 @@ class StyxDialogBuilder @Inject constructor(
                 .subscribe { success ->
                     if (success) {
                         uiController.handleBookmarkDeleted(entry)
-                        (activity).snackbar(R.string.action_remove_bookmark)
+                        (activity).snackbar(R.string.action_remove_bookmark, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
                     }
                 }
         },
@@ -332,7 +332,7 @@ class StyxDialogBuilder @Inject constructor(
                 .subscribeOn(databaseScheduler)
                 .observeOn(mainScheduler)
                 .subscribe(uiController::handleHistoryChange)
-            (activity).snackbar(R.string.dialog_removed_from_history)
+            (activity).snackbar(R.string.dialog_removed_from_history, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
         })
 
     fun showLongPressImageDialog(
