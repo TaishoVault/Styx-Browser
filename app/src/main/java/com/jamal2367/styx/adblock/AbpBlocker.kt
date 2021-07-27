@@ -18,6 +18,7 @@ import com.jamal2367.styx.adblock.filter.unified.getFilterDir
 import com.jamal2367.styx.adblock.filter.unified.io.FilterReader
 import com.jamal2367.styx.adblock.filter.unified.io.FilterWriter
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
+//import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.okhttp3.internal.publicsuffix.PublicSuffix
 import com.jamal2367.styx.utils.ThemeUtils
 import com.jamal2367.styx.utils.htmlColor
@@ -35,7 +36,8 @@ import kotlin.collections.HashMap
 class AbpBlocker @Inject constructor(
     private val application: Application,
     abpListUpdater: AbpListUpdater,
-    private val abpUserRules: AbpUserRules
+    private val abpUserRules: AbpUserRules,
+    //private val logger: Logger
 ) : AdBlocker {
     private lateinit var allowList: FilterContainer
     private lateinit var blockList: FilterContainer
@@ -257,6 +259,10 @@ class AbpBlocker @Inject constructor(
         if (request.url.toString().isSpecialUrl() || request.url.toString().isAppScheme())
             return null
 
+        //logger.log(TAG,"request.isForMainFrame: " + request.isForMainFrame)
+        //logger.log(TAG,"request.url: " + request.url)
+        //logger.log(TAG,"pageUrl: " + pageUrl)
+
         // create contentRequest
         // pageUrl can be "" (when opening something in a new tab, or manually entering a URL)
         // in this case everything gets blocked because of the pattern "|https://"
@@ -266,7 +272,7 @@ class AbpBlocker @Inject constructor(
         // if switching pages (via link or pressing back), pageUrl is still the old url, messing up 3rd party checks
         // -> fix both by setting pageUrl to requestUrl if request.isForMainFrame
         //  is there any way a request for main frame can be a 3rd party request? then a different fix would be required
-        val contentRequest = request.getContentRequest(if (request.isForMainFrame || pageUrl == "") request.url else Uri.parse(pageUrl))
+        val contentRequest = request.getContentRequest(if (request.isForMainFrame || pageUrl.isBlank()) request.url else Uri.parse(pageUrl))
 
         // no need to supply pattern to getBlockResponse
         // pattern only used if it's for main frame
@@ -284,20 +290,35 @@ class AbpBlocker @Inject constructor(
 
         importantBlockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.content_control_blocked_list_malware, it.pattern)) }
         allowList[contentRequest]?.let { return null }
-        blockList[contentRequest]?.let { return getBlockResponse(request, application.resources.getString(R.string.content_control_blocked_list_ad, it.pattern)) }
+        blockList[contentRequest]?.let {
+            //if (it.pattern.isNotBlank()) {
+            return getBlockResponse(
+                request,
+                application.resources.getString(R.string.content_control_blocked_list_ad, it.pattern)
+            )
+            //}
+        }
 
         return null
     }
 
     private fun getBlockResponse(request: WebResourceRequest, pattern: String): WebResourceResponse {
-        return if (request.isForMainFrame)
+        var response = if (request.isForMainFrame) {
             createMainFrameDummy(request.url, pattern)
-        else
+        } else {
             createDummy(request.url)
+        }
+
+        //SL: We used when debugging
+        // See: https://github.com/Slion/Fulguris/issues/225
+        // TODO: Though we should really set a status code TBH, could be 200 or 404 depending of our needs I guess
+        //response.setStatusCodeAndReasonPhrase(404, pattern)
+        return response
     }
 
     companion object {
         private const val BUFFER_SIZE = 1024 * 8
+        //private const val TAG = "AbpBlocker"
 
         // from jp.hazuki.yuzubrowser.core.utility.utils/IOUtils.java
         @Throws(IOException::class)

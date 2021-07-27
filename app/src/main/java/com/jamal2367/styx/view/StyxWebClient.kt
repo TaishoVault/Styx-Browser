@@ -125,7 +125,19 @@ class StyxWebClient(
      */
     override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
         // returns some dummy response if blocked, null if not blocked
-        return adBlock.shouldBlock(request, currentUrl)
+        val response = adBlock.shouldBlock(request, currentUrl)
+
+        //SL: Use this when debugging
+        // TODO: We should really collect all intercepts to be able to display them to the user
+//        if (response!=null)
+//        {
+//            logger.log(TAG, "Request hijacked: " + request.url
+//                    + "\n Reason phrase:" + response.reasonPhrase
+//                    + "\n Status code:" + response.statusCode
+//            )
+//        }
+
+        return response
     }
 
     var name: String? = null
@@ -387,7 +399,7 @@ class StyxWebClient(
         // Try to fetch meta theme color a few times
         styxView.fetchMetaThemeColorTries = KFetchMetaThemeColorTries
 
-        if(url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")){
+        if (url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")) {
             view.evaluateJavascript("""(function() {
                 return localStorage.getItem("shouldUpdate");})()""".trimMargin()) { it ->
                 if(it.substring(1, it.length - 1) == "yes"){
