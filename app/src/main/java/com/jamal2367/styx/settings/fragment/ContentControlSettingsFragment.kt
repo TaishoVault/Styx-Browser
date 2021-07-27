@@ -25,16 +25,12 @@ import com.jamal2367.styx.adblock.AbpUpdateMode
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
 import com.jamal2367.styx.constant.Schemes
-import com.jamal2367.styx.di.DiskScheduler
-import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.extensions.drawable
 import com.jamal2367.styx.extensions.resizeAndShow
 import com.jamal2367.styx.extensions.snackbar
 import com.jamal2367.styx.extensions.withSingleChoiceItems
 import com.jamal2367.styx.preference.UserPreferences
-import io.reactivex.Scheduler
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
