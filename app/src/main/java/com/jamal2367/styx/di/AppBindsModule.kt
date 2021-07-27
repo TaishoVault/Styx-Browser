@@ -2,12 +2,8 @@ package com.jamal2367.styx.di
 
 import com.jamal2367.styx.database.adblock.UserRulesDatabase
 import com.jamal2367.styx.database.adblock.UserRulesRepository
-import com.jamal2367.styx.adblock.allowlist.AllowListModel
-import com.jamal2367.styx.adblock.allowlist.SessionAllowListModel
 import com.jamal2367.styx.browser.cleanup.DelegatingExitCleanup
 import com.jamal2367.styx.browser.cleanup.ExitCleanup
-import com.jamal2367.styx.database.allowlist.AdBlockAllowListDatabase
-import com.jamal2367.styx.database.allowlist.AdBlockAllowListRepository
 import com.jamal2367.styx.database.bookmark.BookmarkDatabase
 import com.jamal2367.styx.database.bookmark.BookmarkRepository
 import com.jamal2367.styx.database.downloads.DownloadsDatabase
@@ -41,12 +37,6 @@ interface AppBindsModule {
 
     @Binds
     fun bindsJavaScriptModel(javaScriptDatabase: JavaScriptDatabase): JavaScriptRepository
-
-    @Binds
-    fun bindsAdBlockAllowListModel(adBlockAllowListDatabase: AdBlockAllowListDatabase): AdBlockAllowListRepository
-
-    @Binds
-    fun bindsAllowListModel(sessionAllowListModel: SessionAllowListModel): AllowListModel
 
     @Binds
     fun bindsSslWarningPreferences(sessionSslWarningPreferences: SessionSslWarningPreferences): SslWarningPreferences
