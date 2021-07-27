@@ -320,7 +320,7 @@
     <string name="search_in_new_tab">Caută în filă nouă</string>
     <string name="search_insert_suggestion">Inserați sugestia</string>
     <string name="search_suggestions_off">Nicio sugestie de căutare</string>
-    <string name="search_suggestions">Cauta sugestii</string>
+    <string name="search_suggestions">Sugestii pentru căutare</string>
     <string name="search">Motor de căutare</string>
     <string name="session_already_exists">O sesiune cu acest nume există deja!</string>
     <string name="session_cant_delete_current">Nu se poate șterge sesiunea curentă!</string>
