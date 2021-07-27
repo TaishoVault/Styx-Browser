@@ -564,9 +564,6 @@
     <string name="pref_key_force_zoom" translatable="false">pref_key_force_zoom</string>
     <string name="pref_key_homepage_in_new_tab" translatable="false">pref_key_homepage_in_new_tab</string>
     <string name="pref_key_homepage" translatable="false">pref_key_homepage</string>
-    <string name="pref_key_hosts_local_file" translatable="false">pref_key_hosts_local_file</string>
-    <string name="pref_key_hosts_remote_file" translatable="false">pref_key_hosts_remote_file</string>
-    <string name="pref_key_hosts_source" translatable="false">pref_key_hosts_source</string>
     <string name="pref_key_identifying_headers" translatable="false">pref_key_identifying_headers</string>
     <string name="pref_key_identity" translatable="false">pref_key_identity</string>
     <string name="pref_key_image_url" translatable="false">pref_key_image_url</string>

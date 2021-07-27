@@ -4,7 +4,6 @@ import android.app.Application
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.ThemedActivity
 import com.jamal2367.styx.adblock.AbpBlocker
-import com.jamal2367.styx.adblock.BloomFilterAdBlocker
 import com.jamal2367.styx.adblock.NoOpAdBlocker
 import com.jamal2367.styx.browser.BrowserPopupMenu
 import com.jamal2367.styx.browser.SearchBoxModel
@@ -100,8 +99,6 @@ interface AppComponent {
     fun inject(tabsDrawerView: TabsDrawerView)
 
     fun inject(bookmarksAdapter: BookmarksAdapter)
-
-    fun provideBloomFilterAdBlocker(): BloomFilterAdBlocker
 
     fun provideAbpAdBlocker(): AbpBlocker
 

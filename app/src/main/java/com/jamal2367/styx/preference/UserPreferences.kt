@@ -375,21 +375,6 @@ class UserPreferences @Inject constructor(
     var searchSuggestionChoice by preferences.intPreference(R.string.pref_key_search_suggestions, 1)
 
     /**
-     * The index of the ad blocking hosts file source.
-     */
-    var hostsSource by preferences.intPreference(R.string.pref_key_hosts_source, 0)
-
-    /**
-     * The local file from which ad blocking hosts should be read, depending on the [hostsSource].
-     */
-    var hostsLocalFile by preferences.nullableStringPreference(R.string.pref_key_hosts_local_file)
-
-    /**
-     * The remote URL from which ad blocking hosts should be read, depending on the [hostsSource].
-     */
-    var hostsRemoteFile by preferences.nullableStringPreference(R.string.pref_key_hosts_remote_file)
-
-    /**
      * Toggle visibility of close tab button on drawer tab list items.
      */
     var showCloseTabButton by preferences.booleanPreference(R.string.pref_key_tab_list_item_show_close_button, if (screenSize.isTablet())  R.bool.pref_default_tab_list_item_show_close_buttons else R.bool.pref_default_tab_list_item_show_close_button)

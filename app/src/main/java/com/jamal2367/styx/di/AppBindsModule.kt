@@ -4,14 +4,8 @@ import com.jamal2367.styx.database.adblock.UserRulesDatabase
 import com.jamal2367.styx.database.adblock.UserRulesRepository
 import com.jamal2367.styx.adblock.allowlist.AllowListModel
 import com.jamal2367.styx.adblock.allowlist.SessionAllowListModel
-import com.jamal2367.styx.adblock.source.AssetsHostsDataSource
-import com.jamal2367.styx.adblock.source.HostsDataSource
-import com.jamal2367.styx.adblock.source.HostsDataSourceProvider
-import com.jamal2367.styx.adblock.source.PreferencesHostsDataSourceProvider
 import com.jamal2367.styx.browser.cleanup.DelegatingExitCleanup
 import com.jamal2367.styx.browser.cleanup.ExitCleanup
-import com.jamal2367.styx.database.adblock.HostsDatabase
-import com.jamal2367.styx.database.adblock.HostsRepository
 import com.jamal2367.styx.database.allowlist.AdBlockAllowListDatabase
 import com.jamal2367.styx.database.allowlist.AdBlockAllowListRepository
 import com.jamal2367.styx.database.bookmark.BookmarkDatabase
@@ -58,14 +52,5 @@ interface AppBindsModule {
     fun bindsSslWarningPreferences(sessionSslWarningPreferences: SessionSslWarningPreferences): SslWarningPreferences
 
     @Binds
-    fun bindsHostsDataSource(assetsHostsDataSource: AssetsHostsDataSource): HostsDataSource
-
-    @Binds
-    fun bindsHostsRepository(hostsDatabase: HostsDatabase): HostsRepository
-
-    @Binds
     fun bindsAbpRulesRepository(apbRulesDatabase: UserRulesDatabase): UserRulesRepository
-
-    @Binds
-    fun bindsHostsDataSourceProvider(preferencesHostsDataSourceProvider: PreferencesHostsDataSourceProvider): HostsDataSourceProvider
 }

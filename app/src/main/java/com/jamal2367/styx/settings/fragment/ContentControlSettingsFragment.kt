@@ -22,7 +22,6 @@ import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.AbpBlocker
 import com.jamal2367.styx.adblock.AbpListUpdater
 import com.jamal2367.styx.adblock.AbpUpdateMode
-import com.jamal2367.styx.adblock.BloomFilterAdBlocker
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
 import com.jamal2367.styx.constant.Schemes
@@ -56,16 +55,11 @@ import javax.inject.Inject
 class ContentControlSettingsFragment : AbstractSettingsFragment() {
 
     @Inject internal lateinit var userPreferences: UserPreferences
-    @Inject @field:MainScheduler internal lateinit var mainScheduler: Scheduler
-    @Inject @field:DiskScheduler internal lateinit var diskScheduler: Scheduler
-    @Inject internal lateinit var bloomFilterAdBlocker: BloomFilterAdBlocker
     @Inject internal lateinit var abpListUpdater: AbpListUpdater
     @Inject internal lateinit var abpBlocker: AbpBlocker
 
-    private val compositeDisposable = CompositeDisposable()
-
     private lateinit var abpDao: AbpDao
-    private val entitiyPrefs = mutableMapOf<Int, Preference>()
+    private val entityPrefs = mutableMapOf<Int, Preference>()
 
     // if filterlist changed, they need to be reloaded, but this should happen only once
     // if reloadLists is true, list reload will be launched onDestroy
@@ -171,9 +165,9 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
                     showBlockList(entity)
                     true
                 }
-                entitiyPrefs[entity.entityId] = entityPref
+                entityPrefs[entity.entityId] = entityPref
                 updateSummary(entity)
-                filtersCategory.addPreference(entitiyPrefs[entity.entityId])
+                filtersCategory.addPreference(entityPrefs[entity.entityId])
                 entityPref.dependency = getString(R.string.pref_key_content_control)
             }
         }
@@ -181,7 +175,7 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
 
     private fun updateSummary(entity: AbpEntity) {
         if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
-            entitiyPrefs[entity.entityId]?.summary = resources.getString(R.string.content_control_last_update, DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(Date(entity.lastLocalUpdate)))
+            entityPrefs[entity.entityId]?.summary = resources.getString(R.string.content_control_last_update, DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(Date(entity.lastLocalUpdate)))
     }
 
     // update entity and adjust displayed last update time
@@ -289,7 +283,7 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
         builder.setNeutralButton(getString(R.string.action_delete)) { _, _ ->
             abpDao.delete(entity)
             dialog?.dismiss()
-            preferenceScreen.removePreference(entitiyPrefs[entity.entityId])
+            preferenceScreen.removePreference(entityPrefs[entity.entityId])
             reloadBlockLists()
             }
         }
@@ -314,7 +308,7 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
             if (enabled.isChecked != wasEnabled)
                 reloadBlockLists()
 
-            if (entitiyPrefs[newId] == null) { // not in entityPrefs if new
+            if (entityPrefs[newId] == null) { // not in entityPrefs if new
                 val pref = Preference(context)
                 entity.entityId = newId
                 pref.title = entity.title
@@ -322,12 +316,12 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
                     showBlockList(entity)
                     true
                 }
-                entitiyPrefs[newId] = pref
+                entityPrefs[newId] = pref
                 updateSummary(entity)
                 filtersCategory.addPreference(pref)
                 pref.dependency = getString(R.string.pref_key_content_control)
             } else
-                entitiyPrefs[entity.entityId]?.title = entity.title
+                entityPrefs[entity.entityId]?.title = entity.title
 
         }
         dialog = builder.create()
@@ -385,7 +379,6 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
                     abpBlocker.loadLists()
             }
         }
-        compositeDisposable.clear()
     }
 
     @Suppress("DEPRECATION")
