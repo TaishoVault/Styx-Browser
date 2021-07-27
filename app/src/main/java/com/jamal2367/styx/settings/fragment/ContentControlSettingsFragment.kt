@@ -7,7 +7,6 @@ import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
@@ -24,7 +23,6 @@ import com.jamal2367.styx.adblock.AbpListUpdater
 import com.jamal2367.styx.adblock.AbpUpdateMode
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
-import com.jamal2367.styx.constant.Schemes
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.extensions.drawable
 import com.jamal2367.styx.extensions.resizeAndShow
@@ -170,7 +168,7 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
     }
 
     private fun updateSummary(entity: AbpEntity) {
-        if (!entity.url.startsWith(Schemes.Styx) && entity.lastLocalUpdate > 0)
+        if (entity.lastLocalUpdate > 0)
             entityPrefs[entity.entityId]?.summary = resources.getString(R.string.content_control_last_update, DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(Date(entity.lastLocalUpdate)))
     }
 
@@ -179,6 +177,12 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
         GlobalScope.launch(Dispatchers.IO) {
             ++updatesRunning
             val updated = if (abpEntity == null) abpListUpdater.updateAll(forceUpdate) else abpListUpdater.updateAbpEntity(abpEntity, forceUpdate)
+
+            // delete temporary file
+            //  this is necessary because all local blocklists use the same temporary file (uri)
+            //  so it could happen that lists get mixed up via an old temporary blocklist file
+            activity?.externalCacheDir?.let { File(it, BLOCK_LIST_FILE).delete() }
+
             if (updated) {
                 reloadBlockLists()
 
@@ -215,11 +219,6 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
 
         // field for choosing file or url
         when {
-            entity.url.startsWith(Schemes.Styx) -> {
-                val text = TextView(context)
-                text.text = getString(R.string.content_control_internal_list)
-                linearLayout.addView(text)
-            }
             entity.url.startsWith("file") -> {
                 val fileChooseButton = MaterialButton(requireContext())
                 fileChooseButton.text = if (entity.url == "file") getString(R.string.title_chooser)
@@ -275,7 +274,7 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
 
         // delete button
         // don't show for internal list or when creating a new entity
-        if (entity.entityId != 0 && !entity.url.startsWith(Schemes.Styx)) {
+        if (entity.entityId != 0) {
         builder.setNeutralButton(getString(R.string.action_delete)) { _, _ ->
             abpDao.delete(entity)
             dialog?.dismiss()
@@ -342,7 +341,7 @@ class ContentControlSettingsFragment : AbstractSettingsFragment() {
             button?.isEnabled = false
             return
         }
-        if ((url.toHttpUrlOrNull() == null || url.contains("§§")) && !url.startsWith(Schemes.Styx) && !url.startsWith("file:")) {
+        if ((url.toHttpUrlOrNull() == null || url.contains("§§")) && !url.startsWith("file:")) {
             button?.text = if (url.startsWith("file")) "no file chosen" else resources.getText(R.string.content_control_invalid_url)
             button?.isEnabled = false
             return

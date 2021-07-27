@@ -29,7 +29,6 @@ import com.jamal2367.styx.adblock.filter.unified.io.FilterWriter
 import com.jamal2367.styx.adblock.parser.HostsFileParser
 import com.jamal2367.styx.adblock.repository.abp.AbpDao
 import com.jamal2367.styx.adblock.repository.abp.AbpEntity
-import com.jamal2367.styx.adblock.util.hash.computeMD5
 import com.jamal2367.styx.log.Logger
 import com.jamal2367.styx.preference.UserPreferences
 import kotlin.math.max
@@ -90,7 +89,6 @@ class AbpListUpdater @Inject constructor(val context: Context) {
 
     private fun updateInternal(entity: AbpEntity, forceUpdate: Boolean = false): Boolean {
         return when {
-            entity.url == "styx://easylist" -> updateAssets(entity)
             entity.url.startsWith("http") -> updateHttp(entity, forceUpdate)
             entity.url.startsWith("file") -> updateFile(entity)
             else -> false
@@ -165,28 +163,6 @@ class AbpListUpdater @Inject constructor(val context: Context) {
             e.printStackTrace()
         }
         return false
-    }
-
-    private fun updateAssets(entity: AbpEntity): Boolean {
-        val dir = getFilterDir()
-
-        // changed to not update if any file exists, as the list does not need to have all kinds of filters
-        if (dir.getAbpBlackListFile(entity).exists() ||
-            dir.getAbpWhiteListFile(entity).exists() ||
-            dir.getAbpWhitePageListFile(entity).exists()) return false
-
-        // lastModified is only used for HTTP and file
-        // can't get file date for assets, so assume that size changes when filterlist changes
-        // and (ab)use lastModified to store checksum, so update is triggered when file is changed
-        // TODO: maybe only check if app version changed
-        val checksum = context.assets.open(ASSETS_BLOCKLIST).computeMD5()
-        if (checksum == entity.lastModified)
-            return false
-
-        entity.lastModified = checksum // checksum set now, but written to entity only at the end of decode -> should be safe
-        context.assets.open(ASSETS_BLOCKLIST).bufferedReader().use {
-            return decode(it, Charsets.UTF_8, entity)
-        }
     }
 
     private fun decode(reader: BufferedReader, charset: Charset, entity: AbpEntity): Boolean {
@@ -271,8 +247,6 @@ class AbpListUpdater @Inject constructor(val context: Context) {
     companion object {
         private const val AN_HOUR = 60 * 60 * 1000
         private const val A_DAY = 24 * AN_HOUR
-
-        const val ASSETS_BLOCKLIST = "easylist.txt"
     }
 
 }
