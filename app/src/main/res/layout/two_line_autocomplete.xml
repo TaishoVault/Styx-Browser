@@ -34,7 +34,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="?attr/autoCompleteTitleColor"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/url"
@@ -43,8 +43,7 @@
             android:layout_weight="1"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textColor="?attr/autoCompleteUrlColor"
-            android:textSize="12sp"/>
+            android:textColor="?attr/autoCompleteUrlColor" />
     </LinearLayout>
 
     <ImageView
