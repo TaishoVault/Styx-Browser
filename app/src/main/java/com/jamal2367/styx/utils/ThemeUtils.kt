@@ -179,10 +179,10 @@ object ThemeUtils {
         val luminance = ColorUtils.calculateLuminance(requestedColor)
         return if (luminance > 0.9) {
             // Too bright, make it darker then
-            DrawableUtils.mixColor(0.00f, requestedColor, Color.BLACK)
+            DrawableUtils.mixColor(0.05f, requestedColor, Color.BLACK)
         } else {
             // Make search text field background lighter
-            DrawableUtils.mixColor(0.20f, requestedColor, Color.WHITE)
+            DrawableUtils.mixColor(0.10f, requestedColor, Color.WHITE)
         }
     }
 
