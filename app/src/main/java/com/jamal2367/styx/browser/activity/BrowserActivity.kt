@@ -68,7 +68,6 @@ import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.IncognitoActivity
 import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.AbpUserRules
-import com.jamal2367.styx.adblock.allowlist.AllowListModel
 import com.jamal2367.styx.browser.*
 import com.jamal2367.styx.browser.bookmarks.BookmarksDrawerView
 import com.jamal2367.styx.browser.cleanup.ExitCleanup
@@ -183,7 +182,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     @Inject lateinit var logger: Logger
     @Inject lateinit var bookmarksDialogBuilder: StyxDialogBuilder
     @Inject lateinit var exitCleanup: ExitCleanup
-    @Inject internal lateinit var allowListModel: AllowListModel
     @Inject lateinit var abpUserRules: AbpUserRules
 
     // HTTP
