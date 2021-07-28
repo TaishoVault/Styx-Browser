@@ -39,6 +39,13 @@
             app:icon="@drawable/ic_tab_oval" />
 
         <SwitchPreferenceCompat
+            android:defaultValue="@bool/pref_default_close_drawer"
+            android:key="@string/pref_key_close_drawer"
+            android:title="@string/pref_title_close_drawer"
+            android:summary="@string/pref_summary_close_drawer"
+            app:icon="@drawable/ic_arrow_left_oval" />
+
+        <SwitchPreferenceCompat
             android:defaultValue="@bool/pref_default_tab_list_item_show_close_button"
             android:key="@string/pref_key_tab_list_item_show_close_button"
             android:title="@string/pref_title_tab_list_item_show_close_button"

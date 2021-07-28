@@ -274,12 +274,14 @@
     <string name="pref_category_portrait">Hochformat</string>
     <string name="pref_report_issue_summary">Fehler auf GitHub melden und Verbesserungen vorschlagen</string>
     <string name="pref_report_issue_title">Fehler melden</string>
+    <string name="pref_summary_close_drawer">Drawer nach dem Erstellen oder Löschen eines Tabs automatisch schließen</string>
     <string name="pref_summary_desktop_width">Breite des Desktop-Modus, für kleinere Inhalte höher einstellen</string>
     <string name="pref_summary_locked_drawers">Tabs- und Lesezeichen-Drawer sperren</string>
     <string name="pref_summary_menu_show_exit">Der Inkognito-Modus zeigt die Schaltfläche immer an</string>
     <string name="pref_summary_tab_list_item_show_close_button">Schaltfläche zum Schließen von Tabs im Tab-Drawer anzeigen</string>
     <string name="pref_summary_use_bottom_sheets">Tabs und Lesezeichen werden unten anstatt in den seitlichen Drawern angezeigt</string>
     <string name="pref_summary_webrtc">Ermöglicht die Kommunikation in Echtzeit über das Web mithilfe der Kamera und des Mikrofons Ihres Geräts</string>
+    <string name="pref_title_close_drawer">Drawer schließen</string>
     <string name="pref_title_desktop_width">Desktop-Breite</string>
     <string name="pref_title_hide_status_bar">Statusleiste ausblenden</string>
     <string name="pref_title_hide_tool_bar">Toolbar beim Scrollen ausblenden</string>

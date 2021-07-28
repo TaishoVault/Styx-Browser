@@ -479,4 +479,9 @@ class UserPreferences @Inject constructor(
      * Define if user wants to show exit option in menu
      */
     var menuShowExit by preferences.booleanPreference(R.string.pref_key_menu_show_exit, R.bool.pref_default_menu_show_exit)
+
+    /**
+     * Define if user wants to close the drawer after delete or create an tab automatically.
+     */
+    var closeDrawer by preferences.booleanPreference(R.string.pref_key_close_drawer, R.bool.pref_default_close_drawer)
 }

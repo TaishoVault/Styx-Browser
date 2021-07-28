@@ -1934,6 +1934,14 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     override fun notifyTabViewRemoved(position: Int) {
         logger.log(TAG, "Notify Tab Removed: $position")
         tabsView?.tabRemoved(position)
+
+        // Use a delayed handler to make the transition smooth
+        // otherwise it will get caught up with the showTab code
+        // and cause a janky motion
+        if (userPreferences.closeDrawer) {
+            mainHandler.postDelayed({ closePanels(null) }, 500)
+        }
+
         // Notify user a tab was closed with an option to recover it
         if (userPreferences.showUndo) {
             makeSnackbar(
@@ -2028,6 +2036,13 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         currentTabView.removeFromParent()
         currentTabView?.onFocusChangeListener = null
         currentTabView = null
+
+        // Use a delayed handler to make the transition smooth
+        // otherwise it will get caught up with the showTab code
+        // and cause a janky motion
+        if (userPreferences.closeDrawer) {
+            mainHandler.postDelayed({ closePanels(null) }, 200)
+        }
     }
 
     /**
@@ -2037,6 +2052,14 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      * @param view Input is in fact a WebViewEx.
      */
     override fun setTabView(view: View) {
+
+        // Use a delayed handler to make the transition smooth
+        // otherwise it will get caught up with the showTab code
+        // and cause a janky motion
+        if (userPreferences.closeDrawer) {
+            mainHandler.postDelayed({ closePanels(null) }, 200)
+        }
+
         if (currentTabView == view) {
             return
         }

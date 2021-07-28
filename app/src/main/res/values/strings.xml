@@ -288,12 +288,14 @@
     <string name="pref_category_portrait">Portrait</string>
     <string name="pref_report_issue_summary">Report bugs and suggest improvements on GitHub</string>
     <string name="pref_report_issue_title">Report Issue</string>
+    <string name="pref_summary_close_drawer">Automatically close Drawer after creating or deleting a tab</string>
     <string name="pref_summary_desktop_width">Desktop mode viewport width, set it higher for smaller content</string>
     <string name="pref_summary_locked_drawers">Tabs and Bookmarks drawers are locked</string>
     <string name="pref_summary_menu_show_exit">Incognito mode always displays the button</string>
     <string name="pref_summary_tab_list_item_show_close_button">Display close tab buttons on tab list items</string>
     <string name="pref_summary_use_bottom_sheets">Tabs and Bookmarks are shown in bottom sheets instead of side drawers</string>
     <string name="pref_summary_webrtc">Allows Real Time Communication over the Web using your device camera and microphone</string>
+    <string name="pref_title_close_drawer">Close drawer</string>
     <string name="pref_title_desktop_width">Desktop width</string>
     <string name="pref_title_hide_status_bar">Hide status bar</string>
     <string name="pref_title_hide_tool_bar">Hide tool bar when scrolling down</string>
@@ -551,6 +553,7 @@
     <string name="pref_key_clear_cookies_exit" translatable="false">pref_key_clear_cookies_exit</string>
     <string name="pref_key_clear_history_exit" translatable="false">pref_key_clear_history_exit</string>
     <string name="pref_key_clear_web_storage_exit" translatable="false">pref_key_clear_web_storage_exit</string>
+    <string name="pref_key_close_drawer" translatable="false">pref_key_close_drawer</string>
     <string name="pref_key_close_on_last_tab" translatable="false">pref_key_close_on_last_tab</string>
     <string name="pref_key_content_control" translatable="false">pref_key_content_control</string>
     <string name="pref_key_content_control_filters" translatable="false">pref_key_content_control_filters</string>
