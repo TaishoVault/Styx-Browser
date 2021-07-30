@@ -45,6 +45,8 @@ class BrowserPopupMenu
             aBinding.menuItemIncognito.isVisible = false
             // No sessions in incognito mode
             aBinding.menuItemSessions.isVisible = false
+            // No settings in incognito mode
+            aBinding.menuItemSettings.isVisible = false
         }
     }
 
