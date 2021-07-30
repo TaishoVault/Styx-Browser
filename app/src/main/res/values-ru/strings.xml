@@ -274,12 +274,14 @@
     <string name="pref_category_portrait">Портретная</string>
     <string name="pref_report_issue_summary">Сообщайте об ошибках и предлагайте улучшения на GitHub.</string>
     <string name="pref_report_issue_title">Сообщить о проблеме</string>
+    <string name="pref_summary_close_drawer">Автоматически закрыть панель инструментов после создания или удаления вкладки</string>
     <string name="pref_summary_desktop_width">Ширина области просмотра в режиме настольного компьютера. Установите большее значение для уменьшения отображаемой страницы. </string>
     <string name="pref_summary_locked_drawers">Вкладки и меню закладок заблокированы</string>
     <string name="pref_summary_menu_show_exit">Всегда отображать кнопку режима инкогнито</string>
     <string name="pref_summary_tab_list_item_show_close_button">Отображать кнопки закрытия вкладок в списке вкладок</string>
     <string name="pref_summary_use_bottom_sheets">Вкладки и закладки отображаются на нижней панели вместо боковых меню</string>
     <string name="pref_summary_webrtc">Позволяет в режиме реального времени общаться через Интернет, используя камеру и микрофон</string>
+    <string name="pref_title_close_drawer">Закрыть панель инструментов</string>
     <string name="pref_title_desktop_width">Ширина экрана</string>
     <string name="pref_title_hide_status_bar">Скрыть строку состояния</string>
     <string name="pref_title_hide_tool_bar">Скрыть панель инструментов при прокрутке вниз</string>
@@ -311,7 +313,7 @@
     <string name="search_engine_custom">Пользовательский URL</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - без JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
-    <string name="search_engine_duckduckgo_no_js">DuckDuckGo Lite - без JavaScript</string>
+    <string name="search_engine_duckduckgo_no_js">DuckDuckGo - без JavaScript</string>
     <string name="search_engine_qwant_lite">Qwant Lite</string>
     <string name="search_engine_startpage_mobile">StartPage Mobile</string>
     <string name="search_engine_yahoo_no_js">Yahoo - без JavaScript</string>

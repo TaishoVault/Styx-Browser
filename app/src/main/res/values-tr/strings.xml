@@ -274,12 +274,14 @@
     <string name="pref_category_portrait">Dikey</string>
     <string name="pref_report_issue_summary">GitHub\'da hataları bildirin ve iyileştirmeler önerin.</string>
     <string name="pref_report_issue_title">Sorun bildir</string>
+    <string name="pref_summary_close_drawer">Bir sekme açıldıktan/kapatıldıktan sonra çekmeceyi otomatik olarak kapat</string>
     <string name="pref_summary_desktop_width">Masaüstü modu görüntü alanı genişliği. Görüntülenen değeri azaltmak için daha büyük bir değer ayarlayın</string>
     <string name="pref_summary_locked_drawers">Sekme ve yer işareti çekmeceleri kilitlendi</string>
     <string name="pref_summary_menu_show_exit">Gizli mod her zaman düğmeyi görüntüler</string>
     <string name="pref_summary_tab_list_item_show_close_button">Sekme listesi öğelerinde sekmeyi kapat düğmelerini görüntüleyin</string>
     <string name="pref_summary_use_bottom_sheets">Sekmeler ve Yer İmleri yan çekmeceler yerine alt sayfalarda gösterilir</string>
     <string name="pref_summary_webrtc">Cihazınızın kamerasını ve mikrofonunu kullanarak Web üzerinden Gerçek Zamanlı İletişim sağlar</string>
+    <string name="pref_title_close_drawer">Çekmeceyi kapat</string>
     <string name="pref_title_desktop_width">Masaüstü genişliği</string>
     <string name="pref_title_hide_status_bar">Durum çubuğunu gizle</string>
     <string name="pref_title_hide_tool_bar">Kaydırırken araç çubuğunu gizle</string>

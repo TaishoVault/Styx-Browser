@@ -274,12 +274,14 @@
     <string name="pref_category_portrait">竖屏模式</string>
     <string name="pref_report_issue_summary">在GitHub上报告bug并提出改进建议。</string>
     <string name="pref_report_issue_title">报告问题</string>
+    <string name="pref_summary_close_drawer">创建或删除标签后自动关闭抽屉栏</string>
     <string name="pref_summary_desktop_width">桌面模式视口宽度，为较小的内容设置更高的宽度</string>
     <string name="pref_summary_locked_drawers">标签和书签抽屉被锁定</string>
     <string name="pref_summary_menu_show_exit">隐身模式总是显示按钮</string>
     <string name="pref_summary_tab_list_item_show_close_button">在标签列表项中显示关闭标签按钮</string>
     <string name="pref_summary_use_bottom_sheets">标签和书签显示在底页而不是侧边抽屉</string>
     <string name="pref_summary_webrtc">允许使用你设备的摄像头和麦克风在Web上进行实时通信</string>
+    <string name="pref_title_close_drawer">关闭抽屉栏</string>
     <string name="pref_title_desktop_width">桌面宽度</string>
     <string name="pref_title_hide_status_bar">隐藏状态栏</string>
     <string name="pref_title_hide_tool_bar">向下移动时隐藏工具栏</string>

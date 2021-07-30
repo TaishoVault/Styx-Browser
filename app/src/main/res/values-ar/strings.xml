@@ -274,12 +274,14 @@
     <string name="pref_category_portrait">رأسي</string>
     <string name="pref_report_issue_summary">الإبلاغ عن الأخطاء واقتراح تحسينات على GitHub.</string>
     <string name="pref_report_issue_title">بلغ عن خطأ</string>
+    <string name="pref_summary_close_drawer">إغلاق القائمة تلقائيًا بعد إنشاء أو حذف علامة التبويب</string>
     <string name="pref_summary_desktop_width">عرض عرض وضع سطح المكتب ، قم بتعيين قيمة عالية لعرض محتوى صغير</string>
     <string name="pref_summary_locked_drawers">علامات التبويب ودرج العلامات مقفلة</string>
     <string name="pref_summary_menu_show_exit">الوضع المخفي دائماً يعرض الزر</string>
     <string name="pref_summary_tab_list_item_show_close_button">عرض أزرار التبويب المغلقة على عناصر قائمة التبويب</string>
     <string name="pref_summary_use_bottom_sheets">علامات التبويب والعلامات تظهر في اللوحات السفلية بدلاً من الدرج الجانبي</string>
     <string name="pref_summary_webrtc">السماح بالاتصال بالوقت الحقيقي عبر الويب باستخدام كاميرا جهازك والميكروفون</string>
+    <string name="pref_title_close_drawer">أغلق الدرج</string>
     <string name="pref_title_desktop_width">عرض سطح المكتب</string>
     <string name="pref_title_hide_status_bar">أخفِ شريط الحالة</string>
     <string name="pref_title_hide_tool_bar">إخفاء شريط الأدوات عند التمرير لأسفل</string>
