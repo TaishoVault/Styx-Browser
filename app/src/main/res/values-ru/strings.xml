@@ -199,7 +199,7 @@
     <string name="import_backup">Восстановить закладки из резервной копии</string>
     <string name="import_bookmark_error">Не удалось импортировать закладки из файла</string>
     <string name="import_export_settings">Импорт и экспорт</string>
-    <string name="import_settings">Импорт закладок из резервной копии</string>
+    <string name="import_settings">Импорт настроек из резервной копии</string>
     <string name="incognito">Инкогнито</string>
     <string name="incognito_cookies_pie">Режим инкогнито запускается в отдельном процессе, который будет сброшен после каждой сессии. Настройки cookie инкогнито теперь контролируются обычными настройками cookie.</string>
     <string name="incognito_cookies">Включить cookie в режиме инкогнито</string>
