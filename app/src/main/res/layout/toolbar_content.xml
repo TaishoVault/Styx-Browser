@@ -68,7 +68,6 @@
             app:tabIconColor="?attr/colorControlNormal"
             app:tabIconTextSize="9dp"
             android:contentDescription="@string/tabs"
-            app:tooltipText="@{@string/tabs}"
             android:nextFocusDown="@id/web_view" />
 
         <ImageButton
@@ -79,7 +78,6 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/ic_more_vertical"
             android:contentDescription="@string/action_more"
-            app:tooltipText="@{@string/action_more}"
             android:nextFocusDown="@id/web_view" />
     </LinearLayout>
 </layout>
