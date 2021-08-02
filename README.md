@@ -33,8 +33,7 @@ or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/rel
 * Android desktop support (Samsung Dex, EMUI Desktop). 
 * Multiple search engines (Google, Bing, Yahoo, StartPage, DuckDuckGo, Mojeek, Searx etc.).
 * Incognito mode.
-* Ad-blocker.
-* Mining blocker.
+* Filterlist based Adblocker. (AdGuard)
 * Reader mode with Text To Speech (TTS).
 * Dark Mode for Websites.
 * Backup/Restore for Settings and Bookmarks.
