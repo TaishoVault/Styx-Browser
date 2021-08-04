@@ -108,8 +108,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceListItemSmall"
             android:textDirection="locale"
-            tools:text="tomorrow"
-            android:textStyle="bold"/>
+            tools:text="tomorrow" />
 
     </LinearLayout>
 
