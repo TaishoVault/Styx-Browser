@@ -274,12 +274,14 @@
     <string name="pref_category_portrait">Retrato</string>
     <string name="pref_report_issue_summary">Relatar erros e sugerir melhorias no GitHub.</string>
     <string name="pref_report_issue_title">Informar Problema</string>
+    <string name="pref_summary_close_drawer">Fechar gaveta automaticamente após criar ou excluir uma aba</string>
     <string name="pref_summary_desktop_width">Largura do modo área de trabalho, aumentar caso o conteúdo seja pequeno</string>
     <string name="pref_summary_locked_drawers">Menus de abas e favoritos estão bloqueados</string>
     <string name="pref_summary_menu_show_exit">Modo anônimo sempre exibe um botão</string>
     <string name="pref_summary_tab_list_item_show_close_button">Mostrar botões de fechar nos itens da lista de abas</string>
     <string name="pref_summary_use_bottom_sheets">Abas e Favoritos são exibidos nas folhas inferiores em vez de nos menus laterais</string>
     <string name="pref_summary_webrtc">Permite Comunicação em Tempo Real pela Web utilizando a câmera e o microfone do seu dispositivo</string>
+    <string name="pref_title_close_drawer">Fechar gaveta</string>
     <string name="pref_title_desktop_width">Largura da área de trabalho</string>
     <string name="pref_title_hide_status_bar">Ocultar a barra de status</string>
     <string name="pref_title_hide_tool_bar">Ocultar barra de ferramentas ao rolar para baixo</string>
