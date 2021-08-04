@@ -78,6 +78,7 @@
 -dontwarn org.apache.http.conn.ssl.DefaultHostnameVerifier
 -dontwarn org.apache.http.HttpHost
 -dontwarn org.conscrypt.**
+-dontwarn org.slf4j.impl.StaticLoggerBinder
 -dontwarn javax.annotation.**
 -dontwarn javax.lang.model.util.**
 -dontwarn javax.tools.**
