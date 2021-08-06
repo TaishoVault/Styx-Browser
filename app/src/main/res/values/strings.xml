@@ -103,7 +103,7 @@
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Windows (Desktop)</string>
     <string name="agent">User agent</string>
-    <string name="algorithm">Algorithm &amp; OID:</string>
+    <string name="algorithm">Algorithm:</string>
     <string name="allow_javascript">Allow JavaScript for this site</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apache" translatable="false">Apache License 2.0</string>
@@ -271,6 +271,7 @@
     <string name="notification_incognito_running_description">Ongoing incognito notification</string>
     <string name="notification_incognito_running_message">Touch to open</string>
     <string name="notify_tab_closed">Tab closed</string>
+    <string name="oid">Object Identifier (OID):</string>
     <string name="one">%1$d incognito tab open</string>
     <string name="other">%1$d incognito tabs open</string>
     <string name="overViewMode">Load pages in overview mode</string>
