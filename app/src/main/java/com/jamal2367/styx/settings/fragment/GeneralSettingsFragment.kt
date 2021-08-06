@@ -559,7 +559,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         private const val SETTINGS_BLOCK_JAVASCRIPT = "block_javascript"
         private const val SETTINGS_FORCE_ZOOM = "force_zoom"
         private const val SETTINGS_SHOW_SSL = "show_ssl"
-        private const val SETTINGS_LAST_TAB = "last_tab"
         private const val SETTINGS_IMAGE_URL = "image_url"
         private const val SETTINGS_SHORTCUTS = "show_shortcuts"
     }
