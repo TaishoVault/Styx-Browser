@@ -57,9 +57,8 @@
         android:title="@string/settings_general">
 
     <SwitchPreferenceCompat
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:key="clear_cache_exit"
-        android:summary="@string/recommended"
         android:title="@string/cache"
         app:icon="@drawable/ic_cache_oval" />
 

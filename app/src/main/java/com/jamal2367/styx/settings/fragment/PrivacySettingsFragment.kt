@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.webkit.WebView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.jamal2367.styx.Capabilities
 import com.jamal2367.styx.R
@@ -204,7 +205,27 @@ class PrivacySettingsFragment : AbstractSettingsFragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun deleteData(context: Context) {
+        try {
+            val dir = context.dataDir
+            deleteDir(dir)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
     private fun clearWebStorage() {
+        WebView(requireNotNull(activity)).apply {
+            clearFormData()
+            clearSslPreferences()
+            destroy()
+        }
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
+            context?.let { deleteData(it) }
+        }
+
         WebUtils.clearWebStorage()
         (activity as AppCompatActivity).snackbar(R.string.message_web_storage_cleared)
     }
