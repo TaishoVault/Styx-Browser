@@ -119,6 +119,7 @@ import javax.inject.Inject
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.system.exitProcess
+import android.os.Vibrator
 
 abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIController, OnClickListener, OnKeyboardVisibilityListener {
 
@@ -1931,9 +1932,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     /**
      *
      */
+    @Suppress("DEPRECATION")
     override fun notifyTabViewRemoved(position: Int) {
         logger.log(TAG, "Notify Tab Removed: $position")
         tabsView?.tabRemoved(position)
+        val v = getSystemService(VIBRATOR_SERVICE) as Vibrator
 
         // Use a delayed handler to make the transition smooth
         // otherwise it will get caught up with the showTab code
@@ -1949,6 +1952,12 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 .setAction(R.string.button_undo) {
                     presenter?.recoverClosedTab()
                 }.show()
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(75, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            v.vibrate(75)
         }
     }
 
