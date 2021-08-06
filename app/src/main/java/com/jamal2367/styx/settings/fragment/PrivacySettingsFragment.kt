@@ -158,7 +158,7 @@ class PrivacySettingsFragment : AbstractSettingsFragment() {
         (activity as AppCompatActivity).snackbar(R.string.message_cache_cleared)
     }
 
-    fun deleteCache(context: Context) {
+    private fun deleteCache(context: Context) {
         try {
             val dir = context.cacheDir
             deleteDir(dir)
