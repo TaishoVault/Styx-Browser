@@ -70,7 +70,6 @@
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Windows (bureau)</string>
     <string name="agent">Agent utilisateur</string>
-    <string name="algorithm">Algorithme</string>
     <string name="allow_javascript">Autoriser le JavaScript pour ce site</string>
     <string name="android_open_source_project">Projet Open Source Android</string>
     <string name="apply">Valider</string>

@@ -101,7 +101,6 @@
     <string name="agent_web_view">معرض الويب</string>
     <string name="agent_windows_desktop">ويندوز (سطح المكتب)</string>
     <string name="agent">وكيل المستخدم</string>
-    <string name="algorithm">الخوارزمية</string>
     <string name="allow_javascript">السماح بجافا سكريبت لهذا الموقع</string>
     <string name="android_open_source_project">مشروع أندرويد مفتوح المصدر</string>
     <string name="apply">تطبيق</string>

@@ -101,7 +101,7 @@
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Windows (Настольный компьютер)</string>
     <string name="agent">User Agent</string>
-    <string name="algorithm">Алгоритм</string>
+    <string name="algorithm">Алгоритм:</string>
     <string name="allow_javascript">Разрешить JavaScript для этого сайта</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apply">Применить</string>
@@ -117,7 +117,7 @@
     <string name="bookmark_export_path">Экспортировать закладки:</string>
     <string name="bookmark_in_new_tab">Закладка в новой вкладке</string>
     <string name="bookmark_restore">Закладки восстановлены</string>
-    <string name="bookmark_settings">Настройки закладок</string>
+    <string name="bookmark_settings">Закладки</string>
     <string name="busy">Занято, попробуйте еще раз в ближайшее время.\"</string>
     <string name="button_image">Изображение</string>
     <string name="button_link">Ссылка</string>
@@ -257,6 +257,7 @@
     <string name="notification_incognito_running_description">Постоянное уведомление инкогнито</string>
     <string name="notification_incognito_running_message">Нажмите, чтобы открыть</string>
     <string name="notify_tab_closed">Вкладка закрыта</string>
+    <string name="oid">Идентификатор объекта (OID):</string>
     <string name="one">%1$d инкогнито вкладка открыта</string>
     <string name="other">%1$d инкогнито вкладки открыто</string>
     <string name="overViewMode">Загружать обзор</string>

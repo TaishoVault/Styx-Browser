@@ -101,7 +101,7 @@
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Windows (Desktop)</string>
     <string name="agent">Agent utilizator</string>
-    <string name="algorithm">Algoritm</string>
+    <string name="algorithm">Algoritm:</string>
     <string name="allow_javascript">Permite JavaScript pentru acest site</string>
     <string name="android_open_source_project">Proiect Open Source Android</string>
     <string name="apply">Aplică</string>
@@ -257,6 +257,7 @@
     <string name="notification_incognito_running_description">Notificare în filă privată în desfășurare</string>
     <string name="notification_incognito_running_message">Atingeți pentru a deschide</string>
     <string name="notify_tab_closed">Filă închisă</string>
+    <string name="oid">Identificator de obiect (OID):</string>
     <string name="one">%1$d filă incognito deschisă</string>
     <string name="other">%1$d file incognito deschise</string>
     <string name="overViewMode">Încarcă paginile în modul de prezentare</string>
@@ -274,12 +275,14 @@
     <string name="pref_category_portrait">Portret</string>
     <string name="pref_report_issue_summary">Raportează erori și sugerează îmbunătățiri pe GitHub.</string>
     <string name="pref_report_issue_title">Raportează o problemă</string>
+    <string name="pref_summary_close_drawer">Închide sertarul automat după ce s-a închis sau creat o filă nouă</string>
     <string name="pref_summary_desktop_width">Lățimea pentru modul desktop, setați-o mai mare pentru conținut mai mic</string>
     <string name="pref_summary_locked_drawers">Sertarele filelor și cele ale marcajelor sunt blocate</string>
     <string name="pref_summary_menu_show_exit">Modul Incognito afișează întotdeauna butonul</string>
     <string name="pref_summary_tab_list_item_show_close_button">Afişează butoanele de închidere a filelor în elementele listei de file</string>
     <string name="pref_summary_use_bottom_sheets">Filele și marcajele sunt afișate în foile de jos în loc de sertarele laterale</string>
     <string name="pref_summary_webrtc">Permite comunicarea în timp real pe web folosind camera și microfonul dispozitivului</string>
+    <string name="pref_title_close_drawer">Închide sertarul</string>
     <string name="pref_title_desktop_width">Lățime desktop</string>
     <string name="pref_title_hide_status_bar">Ascunde bara de stare</string>
     <string name="pref_title_hide_tool_bar">Ascunde bara de unelte când derulezi în jos</string>

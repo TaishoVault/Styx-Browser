@@ -101,7 +101,7 @@
     <string name="agent_web_view">Web Görünümü</string>
     <string name="agent_windows_desktop">Windows (Bilgisayar)</string>
     <string name="agent">Tarayıcı kimliği</string>
-    <string name="algorithm">Algoritma</string>
+    <string name="algorithm">Algoritma:</string>
     <string name="allow_javascript">Bu site için JavaScript\'e izin ver</string>
     <string name="android_open_source_project">Android Açık Kaynak Projesi</string>
     <string name="apply">Uygula</string>
@@ -257,6 +257,7 @@
     <string name="notification_incognito_running_description">Devam eden gizli bildirim</string>
     <string name="notification_incognito_running_message">Açmak için dokunun</string>
     <string name="notify_tab_closed">Sekme kapatıldı</string>
+    <string name="oid">Nesne Tanımlayıcı (OID):</string>
     <string name="one">%1$d gizli sekme açık</string>
     <string name="other">%1$d gizli sekmeler açık</string>
     <string name="overViewMode">Sayfaları önizleme modunda göster</string>

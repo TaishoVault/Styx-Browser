@@ -86,7 +86,6 @@
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Windows (Desktop)</string>
     <string name="agent">User Agent</string>
-    <string name="algorithm">Algoritmo</string>
     <string name="allow_javascript">Permetti JavaScript per questo sito</string>
     <string name="android_open_source_project">Android Open Source Project</string>
     <string name="apply">Applica</string>

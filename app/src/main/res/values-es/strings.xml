@@ -94,7 +94,6 @@
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Escritorio de Windows</string>
     <string name="agent">Agente de usuario</string>
-    <string name="algorithm">Algoritmo</string>
     <string name="allow_javascript">Permitir JavaScript para este sitio</string>
     <string name="android_open_source_project">Proyecto de código abierto de Android</string>
     <string name="apply">Aplicar</string>

@@ -101,7 +101,6 @@
     <string name="agent_web_view">WebView</string>
     <string name="agent_windows_desktop">Windows (Desktop)</string>
     <string name="agent">Agente</string>
-    <string name="algorithm">Algoritmo</string>
     <string name="allow_javascript">Permitir JavaScript para este site</string>
     <string name="android_open_source_project">Projeto de Código Aberto Android</string>
     <string name="apply">Confirmar</string>
