@@ -182,7 +182,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         bookmarkExportFilePicker.launch(intent)
     }
 
-    val bookmarkExportFilePicker = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+    private val bookmarkExportFilePicker = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
 
@@ -239,7 +239,7 @@ class ImportExportSettingsFragment : AbstractSettingsFragment() {
         bookmarkImportFilePicker.launch(intent)
     }
 
-    val bookmarkImportFilePicker = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+    private val bookmarkImportFilePicker = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
             // Using content resolver to get an input stream from selected URI
