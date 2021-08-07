@@ -97,7 +97,6 @@ import com.jamal2367.styx.notifications.IncognitoNotification
 import com.jamal2367.styx.reading.ReadingActivity
 import com.jamal2367.styx.search.SearchEngineProvider
 import com.jamal2367.styx.search.SuggestionsAdapter
-import com.jamal2367.styx.settings.NewTabPosition
 import com.jamal2367.styx.settings.activity.SettingsActivity
 import com.jamal2367.styx.settings.fragment.DisplaySettingsFragment.Companion.MAX_BROWSER_TEXT_SIZE
 import com.jamal2367.styx.settings.fragment.DisplaySettingsFragment.Companion.MIN_BROWSER_TEXT_SIZE
@@ -118,7 +117,6 @@ import java.util.*
 import javax.inject.Inject
 import kotlin.math.max
 import kotlin.math.min
-import kotlin.system.exitProcess
 import android.os.Vibrator
 
 abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIController, OnClickListener, OnKeyboardVisibilityListener {
@@ -848,23 +846,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         iBinding.rightDrawer
     } else {
         iBinding.leftDrawer
-    }
-
-    /**
-     *
-     */
-    protected fun panicClean() {
-        logger.log(TAG, "Closing browser")
-        tabsManager.newTab(this, NoOpInitializer(), false, NewTabPosition.END_OF_TAB_LIST)
-        tabsManager.switchToTab(0)
-        tabsManager.clearSavedState()
-
-        historyPageFactory.deleteHistoryPage().subscribe()
-        closeBrowser()
-        // System exit needed in the case of receiving
-        // the panic intent since finish() isn't completely
-        // closing the browser
-        exitProcess(1)
     }
 
     /**
