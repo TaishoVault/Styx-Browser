@@ -1,5 +1,6 @@
 package com.jamal2367.styx.settings.fragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
@@ -113,6 +114,7 @@ class PrivacySettingsFragment : AbstractSettingsFragment() {
 
     }
 
+    @SuppressLint("CheckResult")
     private fun clearHistoryDialog() {
         BrowserDialog.showPositiveNegativeDialog(
             activity = activity as AppCompatActivity,
@@ -131,6 +133,7 @@ class PrivacySettingsFragment : AbstractSettingsFragment() {
         )
     }
 
+    @SuppressLint("CheckResult")
     private fun clearCookiesDialog() {
         BrowserDialog.showPositiveNegativeDialog(
             activity = activity as AppCompatActivity,
@@ -167,6 +170,7 @@ class PrivacySettingsFragment : AbstractSettingsFragment() {
         }
     }
 
+    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     private fun deleteDir(dir: File?): Boolean {
         return if (dir != null && dir.isDirectory) {
             val children = dir.list()
