@@ -186,8 +186,6 @@
     <string name="incognito_cookies_pie">La modalità incognito esegue un processo separato che è resettato dopo ogni sessione. Le preferenze dei cookie in incognito sono ora controllate dalle preferente dei cookie normali.</string>
     <string name="incognito_cookies">Abilita i cookie nella modalità incognito</string>
     <string name="inspect">Inietta Javascript</string>
-    <string name="install_userscript_description">Vuoi installare questo UserScript?</string>
-    <string name="install_userscript">Installa UserScript</string>
     <string name="invalid_character_removed">Carattere invalido rimosso!</string>
     <string name="invalid_characters_removed">Caratteri invalidi rimossi!</string>
     <string name="invert_color">Inverti colori</string>
@@ -230,7 +228,6 @@
     <string name="name_normal">Normale</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">Nel tab successivo</string>
-    <string name="new_tab_position_before">Nel tab precedente</string>
     <string name="new_tab_position_end">Fine lista tab</string>
     <string name="new_tab_position_start">Inizio lista tab</string>
     <string name="new_tab_position">Nuova posizione tab</string>
@@ -278,14 +275,11 @@
     <string name="recommended">Consigliato</string>
     <string name="reflow">Abilità il reflow del testo</string>
     <string name="remove_identifying_headers">Rimuovi header di identificazione</string>
-    <string name="remove_userscript">Rimuovi UserScript</string>
     <string name="rendering_mode">Modalità Rendering</string>
     <string name="reopening_recent_tab">Scheda precedente riaperta</string>
     <string name="reset_settings">Ripristina impostazioni</string>
     <string name="restore_tabs_on_startup">Ripristina schede chiuse all\'avvio</string>
     <string name="save_data">Richiedi \'Salva dati\'</string>
-    <string name="scripts_store">Store UserScript</string>
-    <string name="scripts">UserScripts</string>
     <string name="search_engine_custom">URL personalizzato</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - No JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
@@ -313,7 +307,6 @@
     <string name="settings_display">Visualizzazione</string>
     <string name="settings_export_failure">Scusa, le impostazioni non possono essere esportate!</string>
     <string name="settings_exported">Impostazioni esportate:</string>
-    <string name="settings_extensions">Estensioni</string>
     <string name="settings_general">Generale</string>
     <string name="settings_help_us">Aiutaci</string>
     <string name="settings_privacy">Privacy</string>

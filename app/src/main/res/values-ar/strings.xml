@@ -101,6 +101,7 @@
     <string name="agent_web_view">معرض الويب</string>
     <string name="agent_windows_desktop">ويندوز (سطح المكتب)</string>
     <string name="agent">وكيل المستخدم</string>
+    <string name="algorithm">الخوارزمية:</string>
     <string name="allow_javascript">السماح بجافا سكريبت لهذا الموقع</string>
     <string name="android_open_source_project">مشروع أندرويد مفتوح المصدر</string>
     <string name="apply">تطبيق</string>
@@ -203,8 +204,6 @@
     <string name="incognito_cookies_pie">يعمل وضع التخفي في عملية منفصلة يعاد تعيينها بعد كل جلسة. يتم الآن التحكم في تفضيلات ملفات تعريف الارتباط المخفية من خلال تفضيلات ملفات تعريف الارتباط العادية.</string>
     <string name="incognito_cookies">تمكين ملفات تعريف الارتباط في وضع التصفح المتخفي</string>
     <string name="inspect">حقن جافا سكريبت</string>
-    <string name="install_userscript_description">هل ترغب في تثبيت هذا البرنامج النصي للمستخدم؟</string>
-    <string name="install_userscript">تثبيت البرنامج النصي المستخدم</string>
     <string name="invalid_character_removed">تم إزالة حرف غير صالح!</string>
     <string name="invalid_characters_removed">تم إزالة الأحرف غير صالحة!</string>
     <string name="invert_color">عكس الألوان</string>
@@ -247,7 +246,6 @@
     <string name="name_normal">عادي</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">بعد التبويب الحالي</string>
-    <string name="new_tab_position_before">قبل التبويب الحالي</string>
     <string name="new_tab_position_end">نهاية قائمة علامات التبويب</string>
     <string name="new_tab_position_start">بدء قائمة التبويب</string>
     <string name="new_tab_position">موضع علامة التبويب الجديدة</string>
@@ -256,6 +254,7 @@
     <string name="notification_incognito_running_description">إشعار علامة التبويب الخاصة المستمرة</string>
     <string name="notification_incognito_running_message">المس لفتح</string>
     <string name="notify_tab_closed">التبويب مغلق</string>
+    <string name="oid">معرف الكائن (OID):</string>
     <string name="one">%1$d تبويب مخفي مفتوح</string>
     <string name="other">%1$d تبويبات مخفية مفتوحة</string>
     <string name="overViewMode">تحميل الصفحات في نظرة عامة</string>
@@ -301,14 +300,11 @@
     <string name="recommended">(مستحسن)</string>
     <string name="reflow">تفعيل إلتفاف النص</string>
     <string name="remove_identifying_headers">إزالة رؤوس التحديد HTTP</string>
-    <string name="remove_userscript">إزالة البرنامج النصي المستخدم</string>
     <string name="rendering_mode">وضع التقديم</string>
     <string name="reopening_recent_tab">فتح علامة التبويب القديمة</string>
     <string name="reset_settings">إعادة تعيين الإعدادات</string>
     <string name="restore_tabs_on_startup">استعادة علامات التبويب المفقودة عند  البدء</string>
     <string name="save_data">طلب \ \"حفظ البيانات \"</string>
-    <string name="scripts_store">متجر البرنامج النصية للمستخدم</string>
-    <string name="scripts">سكريبت المستخدم</string>
     <string name="search_engine_custom">عنوان URL مخصص</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo الخفيف - بدون جافا سكريبت</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo لايت</string>
@@ -339,7 +335,6 @@
     <string name="settings_display">اعدادات العرض</string>
     <string name="settings_export_failure">عذراً، لا يمكن تصدير الإعدادات!</string>
     <string name="settings_exported">تم تصدير الإعدادات:</string>
-    <string name="settings_extensions">الإضافات</string>
     <string name="settings_general">الاعدادات العامة</string>
     <string name="settings_help_us">ساعدنا</string>
     <string name="settings_portrait_landscape">عمودي &amp; أفقي</string>
@@ -352,7 +347,6 @@
     <string name="settings_summary_dark_mode_default">تحديد إذا كانت علامات التبويب الجديدة تستخدم الوضع المظلم بشكل افتراضي</string>
     <string name="settings_summary_desktop_mode_default">تحديد ما إذا كانت علامات التبويب الجديدة تستخدم وضع سطح المكتب بشكل افتراضي</string>
     <string name="settings_summary_display">تصميم التطبيق، اللكنة ، وضع اللون…</string>
-    <string name="settings_summary_extensions">تثبيت الإضافات…</string>
     <string name="settings_summary_general">الصفحة الرئيسية, خدمات البحث, جافا سكريبت…</string>
     <string name="settings_summary_import_export">النسخ الاحتياطي، الاستعادة، إعادة تعيين…</string>
     <string name="settings_summary_tabs">موضع التبويب ، علامة تبويب جديدة، الأوراق السفلية…</string>

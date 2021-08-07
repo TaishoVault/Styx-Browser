@@ -133,7 +133,6 @@
     <string name="name_normal">Normal</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">หลังจากแท็บปัจจุบัน</string>
-    <string name="new_tab_position_before">ก่อนแท็บปัจจุบัน</string>
     <string name="new_tab_position_end">จุดสิ้นสุดรายการแท็บ</string>
     <string name="new_tab_position_start">จุดเริ่มต้นของรายการแท็บ</string>
     <string name="new_tab_position">ตำแหน่งแท็บใหม่</string>
@@ -167,7 +166,6 @@
     <string name="settings_display">ลักษณะที่ปรากฏ</string>
     <string name="settings_export_failure">ขออภัย ไม่สามารถส่งออกการตั้งค่าได้!</string>
     <string name="settings_exported">การตั้งค่าที่ส่งออก:</string>
-    <string name="settings_extensions">ส่วนขยาย</string>
     <string name="settings_general">ทั่วไป</string>
     <string name="settings_help_us">สนับสนุน</string>
     <string name="settings_privacy">ความเป็นส่วนตัว</string>

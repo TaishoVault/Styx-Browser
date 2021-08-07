@@ -196,8 +196,6 @@
     <string name="incognito_cookies_pie">El modo Incognito se ejecuta en un proceso separado que se restablece después de cada sesión. Las preferencias de las cookies de Incognito ahora están controladas por las preferencias de las cookies.</string>
     <string name="incognito_cookies">Habilitar cookies en el modo incógnito</string>
     <string name="inspect">Inyectar JavaScript</string>
-    <string name="install_userscript_description">¿Deseas instalar este UserScript?</string>
-    <string name="install_userscript">Instalar UserScript</string>
     <string name="invalid_character_removed">¡Carácter no válido eliminado!</string>
     <string name="invalid_characters_removed">¡Caracteres inválidos eliminados!</string>
     <string name="invert_color">Invertir color</string>
@@ -240,7 +238,6 @@
     <string name="name_normal">Normal</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">Cerrar pestaña actual</string>
-    <string name="new_tab_position_before">Cerrar pestaña actual</string>
     <string name="new_tab_position_end">Final de la lista</string>
     <string name="new_tab_position_start">Inicio de la lista</string>
     <string name="new_tab_position">Nueva posición de pestaña</string>
@@ -291,14 +288,11 @@
     <string name="recommended">(Recomendado)</string>
     <string name="reflow">Activar la recolocación dinámica de texto</string>
     <string name="remove_identifying_headers">Remover encabezados de identificación</string>
-    <string name="remove_userscript">Remover UserScript</string>
     <string name="rendering_mode">Modo de renderizado</string>
     <string name="reopening_recent_tab">Pestaña reabierta</string>
     <string name="reset_settings">Reestablecer ajustes</string>
     <string name="restore_tabs_on_startup">Restaurar pestañas cerradas al iniciar</string>
     <string name="save_data">Solicitar \'Guardar datos \'</string>
-    <string name="scripts_store">Tienda UserScript</string>
-    <string name="scripts">Scripts de usuario</string>
     <string name="search_engine_custom">Dirección personalizada</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - Sin JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
@@ -329,7 +323,6 @@
     <string name="settings_display">Ajustes de pantalla</string>
     <string name="settings_export_failure">¡Lo sentimos, no se pudo exportar la configuración!</string>
     <string name="settings_exported">Se han exportado los ajustes:</string>
-    <string name="settings_extensions">Extensiones</string>
     <string name="settings_general">Ajustes generales</string>
     <string name="settings_help_us">¡Ayúdanos</string>
     <string name="settings_portrait_landscape">Vertical &amp; Horizontal</string>
@@ -342,7 +335,6 @@
     <string name="settings_summary_dark_mode_default">Definir si las nuevas pestañas usan el modo oscuro por defecto</string>
     <string name="settings_summary_desktop_mode_default">Definir si las nuevas pestañas usan el modo de escritorio por defecto</string>
     <string name="settings_summary_display">Diseño de la app, color de acento, modo color…</string>
-    <string name="settings_summary_extensions">Instalar extensiones…</string>
     <string name="settings_summary_general">Página de inicio, servicios de búsqueda, JavaScript…</string>
     <string name="settings_summary_import_export">Copia de seguridad, restaurar, restablecer…</string>
     <string name="settings_summary_tabs">Posición de la pestaña, pestaña nueva, hojas inferiores…</string>

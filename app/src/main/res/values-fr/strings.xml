@@ -153,8 +153,6 @@
     <string name="import_settings">Importer les paramètres</string>
     <string name="incognito_cookies">Activer les cookies en mode incognito</string>
     <string name="inspect">Exécuter du code JavaScript</string>
-    <string name="install_userscript_description">Voulez-vous installer cet userscript ?</string>
-    <string name="install_userscript">Installer un userscript</string>
     <string name="invert_color">Inverser les couleurs</string>
     <string name="java">Activer JavaScript</string>
     <string name="jsoup">jsoup : analyseur HTML Java</string>
@@ -206,12 +204,10 @@
     <string name="recommended">Recommandé</string>
     <string name="reflow">Activer repositionnement du texte</string>
     <string name="remove_identifying_headers">Supprimer les en-têtes d\'dentification</string>
-    <string name="remove_userscript">Désinstaller cet userscript</string>
     <string name="rendering_mode">Mode de rendu</string>
     <string name="reopening_recent_tab">Réouvrir l\'ancien onglet</string>
     <string name="restore_tabs_on_startup">Restaurer les onglets perdus au démarrage</string>
     <string name="save_data">Envoyer l’en-tête \'Save-Data\'</string>
-    <string name="scripts">Userscripts / Scripts utilisateur</string>
     <string name="search_engine_custom">Adresse personnalisée</string>
     <string name="search_suggestions_off">Pas de suggestions de recherche</string>
     <string name="search_suggestions">Suggestions de recherche</string>

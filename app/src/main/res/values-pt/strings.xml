@@ -160,8 +160,6 @@
     <string name="import_settings">Importar definições de um backup</string>
     <string name="incognito_cookies">Permitir cookies no modo incógnito</string>
     <string name="inspect">Injetar JavaScript</string>
-    <string name="install_userscript_description">Deseja instalar este UserScript?</string>
-    <string name="install_userscript">Instalar UserScript</string>
     <string name="invalid_character_removed">Caracter inválido removido!</string>
     <string name="invalid_characters_removed">Caracteres inválidos removidos!</string>
     <string name="invert_color">Inverter cores</string>
@@ -203,7 +201,6 @@
     <string name="name_normal">Normal</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">Após a separador atual</string>
-    <string name="new_tab_position_before">Antes do separador atual</string>
     <string name="new_tab_position_end">Fim de lista de separadores</string>
     <string name="new_tab_position_start">Início da lista de separadores</string>
     <string name="new_tab_position">Posição do novo separador</string>
@@ -233,14 +230,11 @@
     <string name="recommended">Recomendado</string>
     <string name="reflow">Ativar ajuste de texto</string>
     <string name="remove_identifying_headers">Remover cabeçalhos de identificação</string>
-    <string name="remove_userscript">Remover UserScript</string>
     <string name="rendering_mode">Modo de processamento</string>
     <string name="reopening_recent_tab">Reabrir último separador</string>
     <string name="reset_settings">Repor definições</string>
     <string name="restore_tabs_on_startup">Restaurar separadores ao iniciar</string>
     <string name="save_data">Solicitar \'Save-Data\'</string>
-    <string name="scripts_store">Loja de UserScripts</string>
-    <string name="scripts">UserScripts</string>
     <string name="search_engine_custom">URL personalizado</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - Sem JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
@@ -268,7 +262,6 @@
     <string name="settings_display">Definições de exibição</string>
     <string name="settings_export_failure">Desculpe, as definições não puderam ser exportadas!</string>
     <string name="settings_exported">Definições exportadas:</string>
-    <string name="settings_extensions">Extensões</string>
     <string name="settings_general">Definições gerais</string>
     <string name="settings_help_us">Ajude-nos</string>
     <string name="settings_privacy">Definições de privacidade</string>

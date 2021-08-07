@@ -76,6 +76,7 @@
     <string name="agent_default">Standaard</string>
     <string name="agent_desktop">Bureaublad</string>
     <string name="agent">Gebruikersagent</string>
+    <string name="algorithm">Algoritme:</string>
     <string name="black_theme">Zwart Thema (AMOLED)</string>
     <string name="block_ads">Blokkeer advertenties</string>
     <string name="block_javascript">Blokkeer JavaScript voor websites</string>
@@ -177,6 +178,7 @@
     <string name="no">Nee</string>
     <string name="notification_incognito_running_description">Lopende incognito melding</string>
     <string name="notification_incognito_running_message">Tik om te openen</string>
+    <string name="oid">Object Identificatie (OID):</string>
     <string name="overViewMode">Laad pagina\'s in overzichtsweergave</string>
     <string name="page_source">Paginabron weergeven</string>
     <string name="password">Bewaar jouw paswoord</string>

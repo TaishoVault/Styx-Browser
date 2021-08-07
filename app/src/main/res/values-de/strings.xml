@@ -204,8 +204,6 @@
     <string name="incognito_cookies_pie">Der Inkognito-Modus läuft in einem separaten Prozess, der nach jeder Sitzung zurückgesetzt wird. Die Incognito-Cookie-Einstellungen werden jetzt durch die regulären Cookie-Einstellungen gesteuert.</string>
     <string name="incognito_cookies">Cookies im Inkognito-Modus aktivieren</string>
     <string name="inspect">Javascript injizieren</string>
-    <string name="install_userscript_description">Möchten Sie dieses UserScript installieren?</string>
-    <string name="install_userscript">UserScript installieren</string>
     <string name="invalid_character_removed">Ungültiges Zeichen entfernt!</string>
     <string name="invalid_characters_removed">Ungültige Zeichen entfernt!</string>
     <string name="invert_color">Farben invertieren</string>
@@ -248,7 +246,6 @@
     <string name="name_normal">Normal</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">Nach dem aktuellen Tab</string>
-    <string name="new_tab_position_before">Vor dem aktuellen Tab</string>
     <string name="new_tab_position_end">Am Ende der Tabliste</string>
     <string name="new_tab_position_start">Am Start der Tabliste</string>
     <string name="new_tab_position">Neue Tabposition</string>
@@ -303,14 +300,11 @@
     <string name="recommended">(Empfohlen)</string>
     <string name="reflow">Textfluss anpassen</string>
     <string name="remove_identifying_headers">Identifizierbare Header entfernen</string>
-    <string name="remove_userscript">UserScript entfernen</string>
     <string name="rendering_mode">Rendering Modus</string>
     <string name="reopening_recent_tab">Alten Tab geöffnet</string>
     <string name="reset_settings">Einstellungen zurücksetzen</string>
     <string name="restore_tabs_on_startup">Tab beim Start wiederherstellen</string>
     <string name="save_data">\'Daten sparen\' anfragen</string>
-    <string name="scripts_store">UserScript Store</string>
-    <string name="scripts">UserScripts</string>
     <string name="search_engine_custom">Benutzerdefiniert</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - Kein JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
@@ -341,7 +335,6 @@
     <string name="settings_display">Darstellung</string>
     <string name="settings_export_failure">Einstellungen konnten nicht exportiert werden</string>
     <string name="settings_exported">Einstellungen exportiert:</string>
-    <string name="settings_extensions">Erweiterungen</string>
     <string name="settings_general">Allgemein</string>
     <string name="settings_help_us">Hilf uns</string>
     <string name="settings_portrait_landscape">Hoch &amp; Querformat</string>
@@ -354,7 +347,6 @@
     <string name="settings_summary_dark_mode_default">Neue Tabs standardmäßig im Dunkel Modus verwenden</string>
     <string name="settings_summary_desktop_mode_default">Neue Tabs standardmäßig im Desktop Modus verwenden</string>
     <string name="settings_summary_display">App-Design, Akzentfarbe, Farbmodus…</string>
-    <string name="settings_summary_extensions">Erweiterungen installieren…</string>
     <string name="settings_summary_general">Startseite, Suchdienste, JavaScript…</string>
     <string name="settings_summary_import_export">Sichern, Wiederherstellen, Zurücksetzen…</string>
     <string name="settings_summary_tabs">Tabposition, Neuer Tab, Bottom Sheets…</string>

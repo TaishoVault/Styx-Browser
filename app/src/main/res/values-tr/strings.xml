@@ -204,8 +204,6 @@
     <string name="incognito_cookies_pie">Gizli mod her oturumdan sonra sıfırlanır. Gizli çerez tercihleri ​​artık normal çerez tercihleri ​​tarafından kontrol edilmektedir.</string>
     <string name="incognito_cookies">Gizli modda çerezleri etkinleştir</string>
     <string name="inspect">JavaScript enjekte et</string>
-    <string name="install_userscript_description">Bu Kullanıcı Betiğini kurmak istiyor musunuz?</string>
-    <string name="install_userscript">Kullanıcı Betiği Kur</string>
     <string name="invalid_character_removed">Geçersiz karakter kaldırıldı!</string>
     <string name="invalid_characters_removed">Geçersiz karakterler kaldırıldı!</string>
     <string name="invert_color">Rengi ters çevir</string>
@@ -248,7 +246,6 @@
     <string name="name_normal">Normal</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">Geçerli sekmeden sonra</string>
-    <string name="new_tab_position_before">Geçerli sekmeden önce</string>
     <string name="new_tab_position_end">Sekme listesinin sonu</string>
     <string name="new_tab_position_start">Sekme listesinin başlangıcı</string>
     <string name="new_tab_position">Yeni sekme konumu</string>
@@ -303,14 +300,11 @@
     <string name="recommended">Önerilen</string>
     <string name="reflow">Yazıyı sayfaya göre ayarla</string>
     <string name="remove_identifying_headers">Tanımlayıcı başlıkları kaldır</string>
-    <string name="remove_userscript">Eklentiyi Kaldır</string>
     <string name="rendering_mode">İşleme modu</string>
     <string name="reopening_recent_tab">Önceki sekmeler yeniden açıldı</string>
     <string name="reset_settings">Ayarları sıfırla</string>
     <string name="restore_tabs_on_startup">Açılırken önceki sekmeleri geri yükle</string>
     <string name="save_data">İstek \'Veri-Kaydet\'</string>
-    <string name="scripts_store">Eklenti Mağazası</string>
-    <string name="scripts">Eklenti</string>
     <string name="search_engine_custom">Özel URL</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - JavaScript Yok</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
@@ -341,7 +335,6 @@
     <string name="settings_display">Görüntü ayarları</string>
     <string name="settings_export_failure">Üzgünüm, ayarlar dışa aktarılamadı!</string>
     <string name="settings_exported">Ayarlar dışa aktarıldı:</string>
-    <string name="settings_extensions">Eklentiler</string>
     <string name="settings_general">Genel ayarlar</string>
     <string name="settings_help_us">Bize yardımda bulun</string>
     <string name="settings_portrait_landscape">Dikey &amp; Yatay</string>
@@ -354,7 +347,6 @@
     <string name="settings_summary_dark_mode_default">Yeni sekmelerin varsayılan olarak zorla karanlık modu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_desktop_mode_default">Yeni sekmelerin varsayılan olarak masaüstü modunu kullanıp kullanmayacağını tanımlayın</string>
     <string name="settings_summary_display">Uygulama tasarımı, vurgu rengi, renk modu…</string>
-    <string name="settings_summary_extensions">Eklentileri indir…</string>
     <string name="settings_summary_general">Anasayfa, arama servisleri, JavaScript…</string>
     <string name="settings_summary_import_export">Yedekle, geri yükle, sıfırla…</string>
     <string name="settings_summary_tabs">Sekme konumu, yeni sekme, alt menüler…</string>

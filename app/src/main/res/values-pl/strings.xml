@@ -194,8 +194,6 @@
     <string name="incognito_cookies_pie">Tryb incognito działa jako osobny proces, który jest resetowany z końcem każdej sesji. Preferencje plików cookie w trybie incognito są teraz kontrolowane przez ogólne preferencje plików cookie.</string>
     <string name="incognito_cookies">Włącz ciasteczka w trybie Incognito</string>
     <string name="inspect">Włącz JavaScript</string>
-    <string name="install_userscript_description">Czy chcesz zainstalować UserScript?</string>
-    <string name="install_userscript">Zainstaluj UserScript</string>
     <string name="invalid_character_removed">Usunięto nieprawidłowy znak!</string>
     <string name="invalid_characters_removed">Usunięto nieprawidłowe znaki!</string>
     <string name="invert_color">Odwróć kolory</string>
@@ -238,7 +236,6 @@
     <string name="name_normal">Normalny</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">Poniżej bieżącej karty</string>
-    <string name="new_tab_position_before">Powyżej bieżącej karty</string>
     <string name="new_tab_position_end">Na końcu listy kart</string>
     <string name="new_tab_position_start">Na początku listy kart</string>
     <string name="new_tab_position">Położenie nowej karty</string>
@@ -289,14 +286,11 @@
     <string name="recommended">Zalecane</string>
     <string name="reflow">Zawijaj tekst do rozmiaru ekranu</string>
     <string name="remove_identifying_headers">Usuwaj śledzące nagłówki</string>
-    <string name="remove_userscript">Usuń UserScript</string>
     <string name="rendering_mode">Tryb renderowania</string>
     <string name="reopening_recent_tab">Przywrócono kartę</string>
     <string name="reset_settings">Wyzeruj ustawienia</string>
     <string name="restore_tabs_on_startup">Przywróć poprzednio otwarte karty przy uruchomieniu</string>
     <string name="save_data">Wysyłaj żądanie \'Oszczędzaj-Dane\'</string>
-    <string name="scripts_store">Sklep UserScript</string>
-    <string name="scripts">UserScript</string>
     <string name="search_engine_custom">Własny URL</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - Bez JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
@@ -325,7 +319,6 @@
     <string name="settings_display">Wyświetlanie</string>
     <string name="settings_export_failure">Niestety, ale nie udało się wyeksportować ustawień!</string>
     <string name="settings_exported">Ustawienia wyeksportowane:</string>
-    <string name="settings_extensions">Rozszerzenia</string>
     <string name="settings_general">Ogólne</string>
     <string name="settings_help_us">Wsparcie</string>
     <string name="settings_portrait_landscape">Pionowo i poziomo</string>
@@ -336,7 +329,6 @@
     <string name="settings_summary_dark_mode_default">Zdefiniuj, czy nowe karty mają domyślnie wymuszać tryb ciemny</string>
     <string name="settings_summary_desktop_mode_default">Zdefiniuj, czy nowe karty mają domyślnie używać wersji komputerowej</string>
     <string name="settings_summary_display">Wygląd aplikacji, kolor akcentu, tryb kolorów…</string>
-    <string name="settings_summary_extensions">Instalacja rozszerzeń…</string>
     <string name="settings_summary_general">Strona główna, wyszukiwarka, JavaScript…</string>
     <string name="settings_summary_import_export">Kopia zapasowa, przywracanie, zerowanie…</string>
     <string name="settings_summary_tabs">Położenie kart, nowe karty, dolne szuflady…</string>

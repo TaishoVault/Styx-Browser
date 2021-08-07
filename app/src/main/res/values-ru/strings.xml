@@ -204,8 +204,6 @@
     <string name="incognito_cookies_pie">Режим инкогнито запускается в отдельном процессе, который будет сброшен после каждой сессии. Настройки cookie инкогнито теперь контролируются обычными настройками cookie.</string>
     <string name="incognito_cookies">Включить cookie в режиме инкогнито</string>
     <string name="inspect">Вставить Javascript</string>
-    <string name="install_userscript_description">Вы действительно хотите установить этот UserScript?</string>
-    <string name="install_userscript">Установка UserScript</string>
     <string name="invalid_character_removed">Недопустимый символ удален!</string>
     <string name="invalid_characters_removed">Недопустимые символы удалены!</string>
     <string name="invert_color">Инвертировать цвета</string>
@@ -248,7 +246,6 @@
     <string name="name_normal">Нормальный</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">После текущей вкладки</string>
-    <string name="new_tab_position_before">Перед текущей вкладкой</string>
     <string name="new_tab_position_end">В конце списка вкладок</string>
     <string name="new_tab_position_start">В начале списка вкладок</string>
     <string name="new_tab_position">Положение новой вкладки</string>
@@ -303,14 +300,11 @@
     <string name="recommended">Рекомендуется</string>
     <string name="reflow">Перекомпоновка</string>
     <string name="remove_identifying_headers">Удалять идентифиц. заголовки</string>
-    <string name="remove_userscript">Удаление UserScript</string>
     <string name="rendering_mode">Режим отображения страниц</string>
     <string name="reopening_recent_tab">Восстановить закрытую вкладку</string>
     <string name="reset_settings">Сброс настроек</string>
     <string name="restore_tabs_on_startup">Восстановление предыдущей сессии</string>
     <string name="save_data">Запрос «Сохранение данных»</string>
-    <string name="scripts_store">Магазин UserScripts</string>
-    <string name="scripts">UserScripts</string>
     <string name="search_engine_custom">Пользовательский URL</string>
     <string name="search_engine_duckduckgo_lite_no_js">DuckDuckGo Lite - без JavaScript</string>
     <string name="search_engine_duckduckgo_lite">DuckDuckGo Lite</string>
@@ -341,7 +335,6 @@
     <string name="settings_display">Настройки отображения</string>
     <string name="settings_export_failure">К сожалению, настройки не могут быть экспортированы!</string>
     <string name="settings_exported">Настройки экспортированы:</string>
-    <string name="settings_extensions">Расширения</string>
     <string name="settings_general">Основные настройки</string>
     <string name="settings_help_us">Помочь нам</string>
     <string name="settings_portrait_landscape">Портретная и Альбомная</string>
@@ -354,7 +347,6 @@
     <string name="settings_summary_dark_mode_default">Определить, используют ли новые вкладки принудительный темный режим по умолчанию</string>
     <string name="settings_summary_desktop_mode_default">Определяет, будут ли новые вкладки использовать рабочий стол по умолчанию</string>
     <string name="settings_summary_display">Дизайн приложения, цвет акцента, цветовое оформление…</string>
-    <string name="settings_summary_extensions">Установка расширений...</string>
     <string name="settings_summary_general">Домашняя страница, службы поиска, JavaScript…</string>
     <string name="settings_summary_import_export">Резервное копирование, восстановление, сброс…</string>
     <string name="settings_summary_tabs">Позиция вкладок, новая вкладка, нижняя панель…</string>
