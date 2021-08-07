@@ -12,7 +12,7 @@ android {
         targetSdkVersion 31
         versionCode 151
         versionName '15.1'
-        resConfigs 'ar', 'cs', 'de', 'el', 'en', 'es', 'fr', 'hu', 'in', 'it', 'iw', 'ja', 'ko', 'lt', 'nl', 'no', 'pl', 'pt', 'pt-rBR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rTW'
+        resConfigs 'ar', 'cs', 'de', 'el', 'en', 'es', 'fr', 'hu', 'in', 'it', 'iw', 'ja', 'ko', 'lt', 'my', 'nl', 'no', 'pl', 'pt', 'pt-rBR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rTW'
         setProperty('archivesBaseName', 'Styx_' + versionName)
     }
 
