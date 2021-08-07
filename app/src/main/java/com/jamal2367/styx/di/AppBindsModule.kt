@@ -10,8 +10,6 @@ import com.jamal2367.styx.database.downloads.DownloadsDatabase
 import com.jamal2367.styx.database.downloads.DownloadsRepository
 import com.jamal2367.styx.database.history.HistoryDatabase
 import com.jamal2367.styx.database.history.HistoryRepository
-import com.jamal2367.styx.database.javascript.JavaScriptDatabase
-import com.jamal2367.styx.database.javascript.JavaScriptRepository
 import com.jamal2367.styx.ssl.SessionSslWarningPreferences
 import com.jamal2367.styx.ssl.SslWarningPreferences
 import dagger.Binds
@@ -34,9 +32,6 @@ interface AppBindsModule {
 
     @Binds
     fun bindsHistoryModel(historyDatabase: HistoryDatabase): HistoryRepository
-
-    @Binds
-    fun bindsJavaScriptModel(javaScriptDatabase: JavaScriptDatabase): JavaScriptRepository
 
     @Binds
     fun bindsSslWarningPreferences(sessionSslWarningPreferences: SessionSslWarningPreferences): SslWarningPreferences

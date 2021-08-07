@@ -14,8 +14,7 @@ data class TabViewState(
         val title: String = "",
         val favicon: Bitmap? = null,
         val isForeground: Boolean = false,
-        val themeColor: Int = Color.TRANSPARENT,
-        val isFrozen: Boolean = true
+        val themeColor: Int = Color.TRANSPARENT
 )
 
 /**

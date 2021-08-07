@@ -214,8 +214,6 @@
     <string name="incognito_cookies_pie">Incognito mode runs in a separate process that is reset after each session. Incognito cookie preferences are now controlled by the regular cookie preferences.</string>
     <string name="incognito_cookies">Enable cookies in incognito mode</string>
     <string name="inspect">Inject Javascript</string>
-    <string name="install_userscript_description">Do you want to install this UserScript?</string>
-    <string name="install_userscript">Install UserScript</string>
     <string name="invalid_character_removed">Invalid character removed!</string>
     <string name="invalid_characters_removed">Invalid characters removed!</string>
     <string name="invert_color">Invert color</string>
@@ -316,14 +314,11 @@
     <string name="recommended">Recommended</string>
     <string name="reflow">Enable text reflow</string>
     <string name="remove_identifying_headers">Remove identifying headers</string>
-    <string name="remove_userscript">Remove UserScript</string>
     <string name="rendering_mode">Rendering mode</string>
     <string name="reopening_recent_tab">Tab recovered</string>
     <string name="reset_settings">Reset settings</string>
     <string name="restore_tabs_on_startup">Restore tabs on startup</string>
     <string name="save_data">Request \'Save-Data\'</string>
-    <string name="scripts_store">UserScript Store</string>
-    <string name="scripts">UserScripts</string>
     <string name="search_engine_ask" translatable="false">Ask</string>
     <string name="search_engine_baidu" translatable="false">Baidu</string>
     <string name="search_engine_bing" translatable="false">Bing</string>
@@ -370,7 +365,6 @@
     <string name="settings_display">Look &amp; feel</string>
     <string name="settings_export_failure">Sorry, settings could not be exported!</string>
     <string name="settings_exported">Settings exported:</string>
-    <string name="settings_extensions">Extensions</string>
     <string name="settings_general">General</string>
     <string name="settings_help_us">Help us</string>
     <string name="settings_portrait_landscape">Portrait &amp; Landscape</string>
@@ -383,7 +377,6 @@
     <string name="settings_summary_dark_mode_default">Define if new tabs use force dark mode by default</string>
     <string name="settings_summary_desktop_mode_default">Define if new tabs use desktop mode by default</string>
     <string name="settings_summary_display">App design, accent color, color mode…</string>
-    <string name="settings_summary_extensions">Install extensions…</string>
     <string name="settings_summary_general">Homepage, search services, JavaScript…</string>
     <string name="settings_summary_import_export">Backup, restore, reset…</string>
     <string name="settings_summary_tabs">Tab position, new tab, bottom sheets…</string>

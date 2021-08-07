@@ -68,8 +68,6 @@ interface AppComponent {
 
     fun inject(fragment: PrivacySettingsFragment)
 
-    fun inject(fragment: ExtensionsSettingsFragment)
-
     fun inject(fragment: TabsSettingsFragment)
 
     fun inject(suggestionsAdapter: SuggestionsAdapter)

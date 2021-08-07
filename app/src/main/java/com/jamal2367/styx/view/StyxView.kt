@@ -272,12 +272,6 @@ class StyxView(
     var iHideActualUrl = false
 
     /**
-     * Return true if this tab is frozen, meaning it was not yet loaded from its bundle
-     */
-    val isFrozen : Boolean
-        get() = latentTabInitializer?.tabModel?.webView != null
-
-    /**
      * We had forgotten to unregisterReceiver our download listener thus leaking them all whenever we switched between sessions.
      * It turns out android as a hardcoded limit of 1000 per application.
      * So after a while switching between sessions with many tabs we would get an exception saying:
@@ -552,6 +546,7 @@ class StyxView(
      * Initialize the settings of the WebView that are intrinsic to Styx and cannot be altered
      * by the user. Distinguish between Incognito and Regular tabs here.
      */
+    @SuppressLint("CheckResult")
     @Suppress("DEPRECATION")
     private fun WebView.initializeSettings() {
         settings.apply {
@@ -699,16 +694,6 @@ class StyxView(
     }
 
     /**
-     * This method forces the layer type to software, which
-     * disables hardware rendering on the WebView instance
-     * of the current StyxView and makes the CPU render
-     * the view.
-     */
-    fun setSoftwareRendering() {
-        webView?.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
-    }
-
-    /**
      * Sets the current rendering color of the WebView instance
      * of the current StyxView. The for modes are normal
      * rendering, inverted rendering, grayscale rendering,
@@ -723,12 +708,6 @@ class StyxView(
         when (mode) {
             RenderingMode.NORMAL -> {
                 paint.colorFilter = null
-                // setSoftwareRendering(); // Some devices get segfaults
-                // in the WebView with Hardware Acceleration enabled,
-                // the only fix is to disable hardware rendering
-                //setNormalRendering()
-                // SL: enabled that and the performance gain is very noticeable on  F(x)tec Pro1
-                // Notably on: https://www.bbc.com/worklife
                 setHardwareRendering()
             }
             RenderingMode.INVERTED -> {

@@ -13,9 +13,7 @@ import android.net.http.SslError
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import android.text.TextUtils
 import android.util.Base64
-import android.util.Log
 import android.view.LayoutInflater
 import android.webkit.*
 import android.widget.CheckBox
@@ -35,9 +33,6 @@ import com.jamal2367.styx.browser.JavaScriptChoice
 import com.jamal2367.styx.browser.activity.BrowserActivity
 import com.jamal2367.styx.constant.FILE
 import com.jamal2367.styx.controller.UIController
-import com.jamal2367.styx.database.javascript.JavaScriptDatabase
-import com.jamal2367.styx.database.javascript.JavaScriptRepository
-import com.jamal2367.styx.di.DatabaseScheduler
 import com.jamal2367.styx.di.UserPrefs
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.extensions.resizeAndShow
@@ -51,14 +46,10 @@ import com.jamal2367.styx.ssl.SslWarningPreferences
 import com.jamal2367.styx.utils.*
 import com.jamal2367.styx.view.StyxView.Companion.KFetchMetaThemeColorTries
 import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.subjects.PublishSubject
 import java.io.*
 import java.net.URISyntaxException
 import java.util.*
-import java.util.regex.Matcher
-import java.util.regex.Pattern
-import java.util.regex.PatternSyntaxException
 import javax.inject.Inject
 import kotlin.math.abs
 
@@ -78,8 +69,6 @@ class StyxWebClient(
     @Inject internal lateinit var invertPageJs: InvertPage
     @Inject internal lateinit var setMetaViewport: SetMetaViewport
     @Inject internal lateinit var homePageFactory: HomePageFactory
-    @Inject internal lateinit var javascriptRepository: JavaScriptRepository
-    @Inject @field:DatabaseScheduler internal lateinit var databaseScheduler: Scheduler
 
     private var adBlock: AdBlocker
 
@@ -126,150 +115,7 @@ class StyxWebClient(
     override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
         // returns some dummy response if blocked, null if not blocked
         val response = adBlock.shouldBlock(request, currentUrl)
-
-        //SL: Use this when debugging
-        // TODO: We should really collect all intercepts to be able to display them to the user
-//        if (response!=null)
-//        {
-//            logger.log(TAG, "Request hijacked: " + request.url
-//                    + "\n Reason phrase:" + response.reasonPhrase
-//                    + "\n Status code:" + response.statusCode
-//            )
-//        }
-
         return response
-    }
-
-    var name: String? = null
-    var version: String? = null
-    var author: String? = null
-    var description: String? = null
-    var requirements = ArrayList<String>(0)
-    val include = ArrayList<Pattern>(0)
-
-    @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    @SuppressLint("CheckResult")
-    private fun installExtension(text: String){
-        val tx = text.replace("""\"""", """"""")
-                .replace("\\n", System.lineSeparator())
-                .replace("\\t", "")
-                .replace("\\u003C", "<")
-                .replace("""/"""", """"""")
-                .replace("""//"""", """/"""")
-                .replace("""\\'""", """\'""")
-                .replace("""\\""""", """\""""")
-
-        val headerRegex = Pattern.compile("\\s*//\\s*==UserScript==\\s*", Pattern.CASE_INSENSITIVE)
-        val headerEndRegex = Pattern.compile("\\s*//\\s*==/UserScript==\\s*", Pattern.CASE_INSENSITIVE)
-        val mainRegex = Pattern.compile("\\s*//\\s*@(\\S+)(?:\\s+(.*))?", Pattern.CASE_INSENSITIVE)
-
-        val reader = BufferedReader(StringReader(tx))
-
-        if (reader.readLine()?.let { headerRegex.matcher(it).matches() } != true) {
-            Log.d(TAG, "Header (start) parser error")
-        }
-
-        reader.forEachLine { line ->
-            val matcher = mainRegex.matcher(line)
-            if (!matcher.matches()) {
-                if (headerEndRegex.matcher(line).matches()) {
-                    return@forEachLine
-                }
-            } else {
-                val field = matcher.group(1)
-                val value = matcher.group(2)
-                if(field != null){
-                    parseLine(field, value)
-                }
-            }
-        }
-
-        val metadataRegex: Pattern = Pattern.compile("==UserScript==(.*?)==\\/UserScript==", Pattern.DOTALL)
-
-        val metadataMatcher: Matcher = metadataRegex.matcher(text)
-        var code = ""
-
-        if (metadataMatcher.find()) {
-            code = text.replace(metadataMatcher.group(0), "")
-        }
-
-        val inc = TextUtils.join(",", include)
-        val reqs = TextUtils.join(",", requirements)
-
-        javascriptRepository.addJavaScriptIfNotExists(JavaScriptDatabase.JavaScriptEntry(name!!, "", version, author, inc, "", "", "", code, reqs))
-                .subscribeOn(databaseScheduler)
-                .subscribe { aBoolean: Boolean? ->
-                    if (!aBoolean!!) {
-                        logger.log("StyxWebClient", "error saving script to database")
-                    }
-                }
-    }
-
-    private fun parseLine(field: String?, value: String?) {
-        if ("name".equals(field, ignoreCase = true)) {
-            name = value
-        } else if ("version".equals(field, ignoreCase = true)) {
-            version = value
-        } else if ("author".equals(field, ignoreCase = true)) {
-            author = value
-        } else if ("description".equals(field, ignoreCase = true)) {
-            description = value
-        } else if ("require".equals(field, ignoreCase = true)) {
-            if (value != null) {
-                requirements.add(value)
-            }
-        } else if ("include".equals(field, ignoreCase = true)) {
-            urlToPattern(value)?.let {
-                include.add(it)
-            }
-        } else if ("match".equals(field, ignoreCase = true) && value != null) {
-            val urlPattern = "^" + value.replace("?", "\\?").replace(".", "\\.")
-                    .replace("*", ".*").replace("+", ".+")
-                    .replace("://.*\\.", "://((?![\\./]).)*\\.").replace("^\\.\\*://".toRegex(), "https?://")
-            urlToParsedPattern(urlPattern)?.let {
-                include.add(it)
-            }
-        }
-    }
-
-    private val tldregex = "^([^:]+://[^/]+)\\\\.tld(/.*)?\$".toRegex()
-    private val schemeContainsPattern: Pattern = Pattern.compile("^\\w+:", Pattern.CASE_INSENSITIVE)
-
-    private fun urlToPattern(patternUrl: String?): Pattern? {
-        if (patternUrl == null) return null
-        try {
-            val builder = StringBuilder(patternUrl)
-            builder.toString().replace("?", "\\?").replace(".", "\\.").replace("*", ".*?").replace("+", ".+?")
-            var converted = builder.toString()
-
-            if (converted.contains(".tld", true)) {
-                converted = tldregex.replaceFirst(converted, "$1(.[a-z]{1,6}){1,3}$2")
-            }
-
-            return if (schemeContainsPattern.matcher(converted).find())
-                Pattern.compile("^$converted")
-            else
-                Pattern.compile("^\\w+://$converted")
-        } catch (e: PatternSyntaxException) {
-            Log.d(TAG, "Error: $e")
-        }
-
-        return null
-    }
-
-    private fun urlToParsedPattern(patternUrl: String): Pattern? {
-        try {
-            val converted = if (patternUrl.contains(".tld", true)) {
-                tldregex.replaceFirst(patternUrl, "$1(.[a-z]{1,6}){1,3}$2")
-            } else {
-                patternUrl
-            }
-            return Pattern.compile(converted)
-        } catch (e: PatternSyntaxException) {
-            Log.d(TAG, "Error: $e")
-        }
-
-        return null
     }
 
     override fun onLoadResource(view: WebView, url: String?) {
@@ -307,14 +153,17 @@ class StyxWebClient(
             uiController.setForwardButtonEnabled(view.canGoForward())
             view.postInvalidate()
         }
+
         if (view.title == null || view.title!!.isEmpty()) {
             styxView.titleInfo.setTitle(activity.getString(R.string.untitled))
         } else {
             styxView.titleInfo.setTitle(view.title)
         }
+
         if (styxView.invertPage) {
             view.evaluateJavascript(invertPageJs.provideJs(), null)
         }
+
         /*
         if (elementHide) {
             adBlock.loadScript(Uri.parse(currentUrl))?.let {
@@ -322,56 +171,18 @@ class StyxWebClient(
             }
             // takes around half a second, but not sure what that tells me
         }*/
+
         if (url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")) {
             view.evaluateJavascript("javascript:(function() {" + "link1var = '" + userPreferences.link1  + "';" + "})();", null)
             view.evaluateJavascript("javascript:(function() {" + "link2var = '" + userPreferences.link2 + "';" + "})();", null)
             view.evaluateJavascript("javascript:(function() {" + "link3var = '" + userPreferences.link3 + "';" + "})();", null)
             view.evaluateJavascript("javascript:(function() {" + "link4var = '" + userPreferences.link4  + "';" + "})();", null)
         }
-        if (userPreferences.forceZoom){
+
+        if (userPreferences.forceZoom) {
             view.loadUrl(
                     "javascript:(function() { document.querySelector('meta[name=\"viewport\"]').setAttribute(\"content\",\"width=device-width\"); })();"
             )
-        }
-        if (url.contains(".user.js") && view.isShown){
-            val builder = MaterialAlertDialogBuilder(activity)
-            builder.setTitle(activity.resources.getString(R.string.install_userscript))
-            builder.setMessage(activity.resources.getString(R.string.install_userscript_description))
-            builder.setPositiveButton(R.string.yes){ _, _ ->
-                view.evaluateJavascript("""(function() {
-                return document.body.innerText;
-                })()""".trimMargin()) {
-                    val extensionSource = it.substring(1, it.length - 1)
-                    installExtension(extensionSource)
-                }
-            }
-            builder.setNegativeButton(R.string.no){ _, _ ->
-            }
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
-        }
-
-        var jsList = emptyList<JavaScriptDatabase.JavaScriptEntry>()
-        javascriptRepository.lastHundredVisitedJavaScriptEntries()
-            .subscribe { list ->
-            jsList = list
-        }
-
-        for (i in jsList) {
-            for (x in i.include!!.split(",")) {
-                if (url.matches(x.toRegex())) {
-                    view.evaluateJavascript(
-                            i.code.replace("""\"""", """"""")
-                                    .replace("\\n", System.lineSeparator())
-                                    .replace("\\t", "")
-                                    .replace("\\u003C", "<")
-                                    .replace("""/"""", """"""")
-                                    .replace("""//"""", """/"""")
-                                    .replace("""\\'""", """\'""")
-                                    .replace("""\\""""", """\"""""), null)
-                    break
-                }
-            }
         }
 
         uiController.tabChanged(styxView)
@@ -468,7 +279,7 @@ class StyxWebClient(
         uiController.tabChanged(styxView)
     }
 
-    fun stringContainsItemFromList(inputStr: String, items: Array<String>): Boolean {
+    private fun stringContainsItemFromList(inputStr: String, items: Array<String>): Boolean {
         for (i in items.indices) {
             if (inputStr.contains(items[i])) {
                 return true
