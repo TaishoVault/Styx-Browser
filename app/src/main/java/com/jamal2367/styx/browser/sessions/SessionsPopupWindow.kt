@@ -34,10 +34,10 @@ class SessionsPopupWindow(
     aBinding: SessionListBinding = SessionListBinding.inflate(layoutInflater)
 ) : PopupWindow(aBinding.root, WRAP_CONTENT, WRAP_CONTENT, true) {
 
-    var iUiController: UIController
-    var iAdapter: SessionsAdapter
+    private var iUiController: UIController
+    private var iAdapter: SessionsAdapter
     var iBinding: SessionListBinding = aBinding
-    var iAnchor: View? = null
+    private var iAnchor: View? = null
     private var iItemTouchHelper: ItemTouchHelper? = null
 
     @Inject lateinit var userPreferences: UserPreferences

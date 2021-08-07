@@ -1,7 +1,6 @@
 package com.jamal2367.styx.browser.bookmarks
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.ImageView
@@ -36,11 +35,10 @@ import javax.inject.Inject
  */
 @SuppressLint("ViewConstructor")
 class BookmarksDrawerView @JvmOverloads constructor(
-        context: Context,
-        private val activity: Activity,
-        attrs: AttributeSet? = null,
-        defStyleAttr: Int = 0,
-        userPreferences: UserPreferences
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0,
+    userPreferences: UserPreferences
 ) : LinearLayout(context, attrs, defStyleAttr), BookmarksView {
 
     @Inject internal lateinit var bookmarkModel: BookmarkRepository

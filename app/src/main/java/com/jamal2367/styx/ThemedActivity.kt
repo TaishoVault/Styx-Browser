@@ -82,7 +82,7 @@ abstract class ThemedActivity : AppCompatActivity() {
     /**
      *
      */
-    protected fun applyAccent() {
+    private fun applyAccent() {
         accentStyle(accentId)?.let { setTheme(it) }
     }
 

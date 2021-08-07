@@ -21,7 +21,7 @@ import android.content.SharedPreferences
 import com.jamal2367.styx.adblock.AbpListUpdater
 
 class AbpDao(val context: Context) {
-    val prefs: SharedPreferences = context.getSharedPreferences("content_blocker_settings", Context.MODE_PRIVATE)
+    private val prefs: SharedPreferences = context.getSharedPreferences("content_blocker_settings", Context.MODE_PRIVATE)
 
     fun getAll(): List<AbpEntity> {
         val set = prefs.getStringSet(ABP_ENTITIES, ABP_DEFAULT_ENTITIES)

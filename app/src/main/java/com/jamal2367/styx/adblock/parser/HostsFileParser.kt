@@ -4,7 +4,6 @@ import com.jamal2367.styx.database.adblock.Host
 import com.jamal2367.styx.extensions.*
 import com.jamal2367.styx.log.Logger
 import java.io.BufferedReader
-import java.io.InputStreamReader
 
 /**
  * A single threaded parser for a hosts file.
@@ -33,11 +32,6 @@ class HostsFileParser(
         logger.log(TAG, "Parsed ad list in: ${(System.currentTimeMillis() - time)} ms")
 
         return domains
-    }
-
-    // not really necessary, can be removed once the "source" part of old ad blocker is removed
-    fun parseInput(input: InputStreamReader): List<Host> {
-        return parseInput(input.buffered())
     }
 
     /**

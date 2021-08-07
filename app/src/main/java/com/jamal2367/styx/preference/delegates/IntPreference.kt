@@ -27,15 +27,6 @@ private class IntPreferenceDelegate(
  * Creates a [Int] from [SharedPreferences] with the provide arguments.
  */
 fun SharedPreferences.intPreference(
-    name: String,
-    defaultValue: Int
-): ReadWriteProperty<Any, Int> = IntPreferenceDelegate(name, defaultValue, this)
-
-
-/**
- * Creates a [Int] from [SharedPreferences] with the provide arguments.
- */
-fun SharedPreferences.intPreference(
         @StringRes stringRes: Int,
         defaultValue: Int
 ): ReadWriteProperty<Any, Int> = IntPreferenceDelegate(BrowserApp.instance.resources.getString(stringRes), defaultValue, this)

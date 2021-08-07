@@ -33,19 +33,6 @@ class EnumPreference<T>(
  * Creates a [T] enum from [SharedPreferences] with the provide arguments.
  */
 inline fun <reified T> SharedPreferences.enumPreference(
-    name: String,
-    defaultValue: T
-): ReadWriteProperty<Any, T> where T : Enum<T>, T : IntEnum = EnumPreference(
-    name,
-    defaultValue,
-    T::class.java,
-    this
-)
-
-/**
- * Creates a [T] enum from [SharedPreferences] with the provide arguments.
- */
-inline fun <reified T> SharedPreferences.enumPreference(
         @StringRes stringRes: Int,
         defaultValue: T
 ): ReadWriteProperty<Any, T> where T : Enum<T>, T : IntEnum = EnumPreference(

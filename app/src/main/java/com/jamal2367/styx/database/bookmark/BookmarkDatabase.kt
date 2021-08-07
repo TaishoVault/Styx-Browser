@@ -221,7 +221,7 @@ class BookmarkDatabase @Inject constructor(
         ).useMap { it.bindToBookmarkEntry() }
     }
 
-    @SuppressLint("Recycle")
+    @SuppressLint("Recycle", "Range")
     override fun getFoldersSorted(): Single<List<Bookmark.Folder>> = Single.fromCallable {
         return@fromCallable database
                 .query(
@@ -240,7 +240,7 @@ class BookmarkDatabase @Inject constructor(
                 .map(String::asFolder)
     }
 
-    @SuppressLint("Recycle")
+    @SuppressLint("Recycle", "Range")
     override fun getFolderNames(): Single<List<String>> = Single.fromCallable {
         return@fromCallable database.query(
                 true,
@@ -278,6 +278,7 @@ class BookmarkDatabase @Inject constructor(
      *
      * @return a valid item containing all the pertinent information.
      */
+    @SuppressLint("Range")
     private fun Cursor.bindToBookmarkEntry() = Bookmark.Entry(
             url = getString(getColumnIndex(KEY_URL)),
             title = getString(getColumnIndex(KEY_TITLE)),

@@ -27,14 +27,6 @@ private class BooleanPreferenceDelegate(
 
 /**
  * Creates a [Boolean] from [SharedPreferences] with the provided arguments.
- */
-fun SharedPreferences.booleanPreference(
-    name: String,
-    defaultValue: Boolean
-): ReadWriteProperty<Any, Boolean> = BooleanPreferenceDelegate(name, defaultValue, this)
-
-/**
- * Creates a [Boolean] from [SharedPreferences] with the provided arguments.
  * NOTE: Using Resources.getSystems from here is not working so we need our app instance to access resources.
  */
 fun SharedPreferences.booleanPreference(

@@ -34,33 +34,6 @@ abstract class AbstractSettingsFragment : PreferenceFragmentCompat() {
     }
 
     /**
-     * Creates a [CheckBoxPreference] with the provided options and listener.
-     *
-     * @param preference the preference to create.
-     * @param isChecked true if it should be initialized as checked, false otherwise.
-     * @param isEnabled true if the preference should be enabled, false otherwise. Defaults to true.
-     * @param summary the summary to display. Defaults to null, which results in no summary.
-     * @param onCheckChange the function that should be called when the check box is toggled.
-     */
-    protected fun checkBoxPreference(
-        preference: String,
-        isChecked: Boolean,
-        isEnabled: Boolean = true,
-        summary: String? = null,
-        onCheckChange: (Boolean) -> Unit
-    ): CheckBoxPreference = (findPreference<CheckBoxPreference>(preference) as CheckBoxPreference).apply {
-        this.isChecked = isChecked
-        this.isEnabled = isEnabled
-        summary?.let {
-            this.summary = summary
-        }
-        onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, any: Any ->
-            onCheckChange(any as Boolean)
-            true
-        }
-    }
-
-    /**
      * Creates a simple [Preference] which reacts to clicks with the provided options and listener.
      *
      * @param preference the preference to create.
@@ -135,28 +108,6 @@ abstract class AbstractSettingsFragment : PreferenceFragmentCompat() {
         }
         onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, any: Any ->
             onCheckChange(any as Boolean)
-            true
-        }
-    }
-
-    /**
-     * Setup a [ListPreference] with the provided options and listener.
-     *
-     * @param preference Preference key.
-     * @param value Default string value, typically an enum class value converted to string.
-     * @param isEnabled true if the preference should be enabled, false otherwise. Defaults to true.
-     * @param onPreferenceChange Callback function used when that preference value is changed.
-     */
-    protected fun listPreference(
-            preference: String,
-            value: String,
-            isEnabled: Boolean = true,
-            onPreferenceChange: (String) -> Unit
-    ): ListPreference = (findPreference<ListPreference>(preference) as ListPreference).apply {
-        this.value = value
-        this.isEnabled = isEnabled
-        onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, any: Any ->
-            onPreferenceChange(any as String)
             true
         }
     }

@@ -11,7 +11,6 @@ import com.jamal2367.styx.html.jsoup.*
 import com.jamal2367.styx.utils.ThemeUtils
 import com.jamal2367.styx.utils.htmlColor
 import dagger.Reusable
-import io.reactivex.Completable
 import io.reactivex.Single
 import java.io.File
 import java.io.FileWriter
@@ -59,20 +58,6 @@ class HistoryPageFactory @Inject constructor(
             FileWriter(page, false).use { it.write(content) }
         }
         .map { (page, _) -> "$FILE$page" }
-
-    /**
-     * Use this observable to immediately delete the history page. This will clear the cached
-     * history page that was stored on file.
-     *
-     * @return a completable that deletes the history page when subscribed to.
-     */
-    fun deleteHistoryPage(): Completable = Completable.fromAction {
-        with(createHistoryPage()) {
-            if (exists()) {
-                delete()
-            }
-        }
-    }
 
     private fun createHistoryPage() = File(application.filesDir, FILENAME)
 

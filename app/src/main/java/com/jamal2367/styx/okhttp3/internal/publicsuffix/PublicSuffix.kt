@@ -84,21 +84,6 @@ class PublicSuffix {
         return splitDomain(domain).asSequence().drop(firstLabelOffset).joinToString(".")
     }
 
-    fun isIncludeSuffix(domain: String): Boolean {
-        val unicodeDomain = IDN.toUnicode(domain)
-        val domainLabels = splitDomain(unicodeDomain)
-
-        val rule = findMatchingRule(domainLabels)
-        if (rule.size == 1 && rule[0] == "*") {
-            return false
-        }
-        if (domainLabels.size == rule.size && rule[0][0] != EXCEPTION_MARKER) {
-            return false // The domain is a public suffix.
-        }
-
-        return true
-    }
-
     private fun splitDomain(domain: String): List<String> {
         val domainLabels = domain.split('.')
 
@@ -239,17 +224,6 @@ class PublicSuffix {
             this.publicSuffixExceptionListBytes = publicSuffixExceptionListBytes!!
         }
 
-        readCompleteLatch.countDown()
-    }
-
-    /** Visible for testing. */
-    fun setListBytes(
-        publicSuffixListBytes: ByteArray,
-        publicSuffixExceptionListBytes: ByteArray
-    ) {
-        this.publicSuffixListBytes = publicSuffixListBytes
-        this.publicSuffixExceptionListBytes = publicSuffixExceptionListBytes
-        listRead.set(true)
         readCompleteLatch.countDown()
     }
 

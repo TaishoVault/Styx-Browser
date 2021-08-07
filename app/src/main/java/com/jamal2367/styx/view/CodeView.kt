@@ -19,11 +19,9 @@ import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 import kotlin.math.max
-import kotlin.math.roundToInt
 
 class CodeView : AppCompatMultiAutoCompleteTextView {
     private var tabWidth = 0
-    private var tabWidthInCharacters = 0
     private var mUpdateDelayTime = 500
     private var modified = true
     private var hasErrors = false
@@ -187,24 +185,6 @@ class CodeView : AppCompatMultiAutoCompleteTextView {
         modified = true
     }
 
-    fun setTextHighlighted(text: CharSequence?) {
-        var texts = text
-        if (text == null) texts = ""
-        cancelHighlighterRender()
-        removeAllErrorLines()
-        modified = false
-        setText(highlight(SpannableStringBuilder(texts)))
-        modified = true
-    }
-
-    fun setTabWidth(characters: Int) {
-        if (tabWidthInCharacters == characters) {
-            return
-        }
-        tabWidthInCharacters = characters
-        tabWidth = (paint.measureText("m") * characters).roundToInt()
-    }
-
     private fun clearSpans(editable: Editable) {
         val length = editable.length
         val foregroundSpans = editable.getSpans(
@@ -246,84 +226,13 @@ class CodeView : AppCompatMultiAutoCompleteTextView {
         }
     }
 
-    fun setSyntaxPatternsMap(syntaxPatterns: Map<Pattern, Int>?) {
-        if (mSyntaxPatternMap.isNotEmpty()) mSyntaxPatternMap.clear()
-        mSyntaxPatternMap.putAll(syntaxPatterns!!)
-    }
-
-    fun addSyntaxPattern(pattern: Pattern, @ColorInt Color: Int) {
-        mSyntaxPatternMap[pattern] = Color
-    }
-
-    fun removeSyntaxPattern(pattern: Pattern) {
-        mSyntaxPatternMap.remove(pattern)
-    }
-
     fun getSyntaxPatternsSize(): Int {
         return mSyntaxPatternMap.size
-    }
-
-    fun resetSyntaxPatternList() {
-        mSyntaxPatternMap.clear()
-    }
-
-    fun setAutoIndentCharacterList(characterList: MutableList<Char>) {
-        mIndentCharacterList = characterList
-    }
-
-    fun clearAutoIndentCharacterList() {
-        mIndentCharacterList.clear()
-    }
-
-    fun getAutoIndentCharacterList(): List<Char> {
-        return mIndentCharacterList
-    }
-
-    fun addErrorLine(lineNum: Int, color: Int) {
-        mErrorHashSet[lineNum] = color
-        hasErrors = true
-    }
-
-    fun removeErrorLine(lineNum: Int) {
-        mErrorHashSet.remove(lineNum)
-        hasErrors = mErrorHashSet.size > 0
     }
 
     fun removeAllErrorLines() {
         mErrorHashSet.clear()
         hasErrors = false
-    }
-
-    fun getErrorsSize(): Int {
-        return mErrorHashSet.size
-    }
-
-    fun setAutoCompleteTokenizer(tokenizer: Tokenizer?) {
-        mAutoCompleteTokenizer = tokenizer
-    }
-
-    fun setRemoveErrorsWhenTextChanged(removeErrors: Boolean) {
-        mRemoveErrorsWhenTextChanged = removeErrors
-    }
-
-    fun reHighlightSyntax() {
-        highlightSyntax(editableText)
-    }
-
-    fun reHighlightErrors() {
-        highlightErrorLines(editableText)
-    }
-
-    fun isHasError(): Boolean {
-        return hasErrors
-    }
-
-    fun setUpdateDelayTime(time: Int) {
-        mUpdateDelayTime = time
-    }
-
-    fun getUpdateDelayTime(): Int {
-        return mUpdateDelayTime
     }
 
     override fun showDropDown() {

@@ -266,12 +266,6 @@ class StyxView(
         }
 
     /**
-     * Set that flag when the displayed URL differs from the actual URL loaded in our webView?.
-     * That's notably the case for error pages.
-     */
-    var iHideActualUrl = false
-
-    /**
      * We had forgotten to unregisterReceiver our download listener thus leaking them all whenever we switched between sessions.
      * It turns out android as a hardcoded limit of 1000 per application.
      * So after a while switching between sessions with many tabs we would get an exception saying:

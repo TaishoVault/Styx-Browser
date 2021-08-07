@@ -201,16 +201,6 @@ class StyxChromeClient(
 
     override fun onCloseWindow(window: WebView) = uiController.onCloseWindow(styxView)
 
-    fun openFileChooser(uploadMsg: ValueCallback<Uri>) = uiController.openFileChooser(uploadMsg)
-
-    @Suppress("UNUSED_PARAMETER")
-    fun openFileChooser(uploadMsg: ValueCallback<Uri>, acceptType: String) =
-        uiController.openFileChooser(uploadMsg)
-
-    @Suppress("UNUSED_PARAMETER")
-    fun openFileChooser(uploadMsg: ValueCallback<Uri>, acceptType: String, capture: String) =
-        uiController.openFileChooser(uploadMsg)
-
     override fun onShowFileChooser(webView: WebView, filePathCallback: ValueCallback<Array<Uri>>,
                                    fileChooserParams: FileChooserParams): Boolean {
         uiController.showFileChooser(filePathCallback)

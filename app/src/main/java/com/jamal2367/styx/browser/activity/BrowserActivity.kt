@@ -615,7 +615,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         createTabsView()
 
         //createTabsDialog()
-        bookmarksView = BookmarksDrawerView(this, this, userPreferences = userPreferences)
+        bookmarksView = BookmarksDrawerView(this, userPreferences = userPreferences)
         //createBookmarksDialog()
 
         // create the search EditText in the ToolBar

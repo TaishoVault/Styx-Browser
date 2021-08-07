@@ -1,5 +1,6 @@
 package com.jamal2367.styx.extensions
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.provider.OpenableColumns
 import com.jamal2367.styx.BrowserApp
@@ -9,6 +10,7 @@ import com.jamal2367.styx.BrowserApp
  * See: https://stackoverflow.com/a/25005243/3969362
  */
 var Uri.fileName : String?
+    @SuppressLint("Range")
     get() {
         var result: String? = null
         if (scheme.equals("content")) {

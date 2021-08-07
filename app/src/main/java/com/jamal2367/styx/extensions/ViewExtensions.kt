@@ -1,17 +1,13 @@
 package com.jamal2367.styx.extensions
 
-import android.content.Context
 import android.graphics.*
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
-import android.view.WindowManager
 import android.widget.ImageView
-import android.widget.PopupWindow
 import androidx.appcompat.widget.TooltipCompat
 import androidx.core.graphics.ColorUtils
 import androidx.databinding.BindingAdapter
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -52,21 +48,6 @@ inline fun View?.doOnLayout(crossinline runnable: () -> Unit) = this?.let {
     })
 }
 
-/**
- * Performs an action once next time this view is pre drawn.
- *
- * @param runnable the runnable to run.
- */
-inline fun View?.doOnPreDraw(crossinline runnable: () -> Unit) = this?.let {
-    viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
-        override fun onPreDraw() : Boolean {
-            viewTreeObserver.removeOnPreDrawListener(this)
-            runnable()
-            return true
-        }
-    })
-}
-
 
 /**
  * Performs an action whenever this view is loosing focus.
@@ -95,30 +76,6 @@ inline fun View?.onFocusGained(crossinline runnable: () -> Unit) = this?.let {
 }
 
 /**
- * Performs an action once next time this view layout is changing.
- *
- * @param runnable the runnable to run.
- */
-inline fun View?.onceOnLayoutChange(crossinline runnable: () -> Unit) = this?.apply {
-    addOnLayoutChangeListener(object : View.OnLayoutChangeListener {
-        override fun onLayoutChange(v: View?, left: Int, top: Int, right: Int, bottom: Int,
-                                    oldLeft: Int, oldTop: Int, oldRight: Int, oldBottom: Int)
-        {
-            runnable(); removeOnLayoutChangeListener(this)
-        }
-    })
-}
-
-/**
- * Performs an action whenever view layout is changing.
- *
- * @param runnable the runnable to run.
- */
-inline fun View?.onLayoutChange(crossinline runnable: () -> Unit) = this?.apply {
-    addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ -> runnable(); }
-}
-
-/**
  * Performs an action whenever view layout size is changing.
  *
  * @param runnable the runnable to run.
@@ -133,35 +90,6 @@ inline fun View?.onSizeChange(crossinline runnable: () -> Unit) = this?.apply {
     }
 }
 
-
-
-/**
- * Performs an action once next time a drawer is opened.
- *
- * @param runnable the runnable to run.
- */
-inline fun DrawerLayout?.onceOnDrawerOpened(crossinline runnable: () -> Unit) = this?.apply {
-    addDrawerListener(object : DrawerLayout.DrawerListener {
-        override fun onDrawerSlide(drawerView: View, slideOffset: Float) = Unit
-        override fun onDrawerOpened(drawerView: View) { runnable(); removeDrawerListener(this) }
-        override fun onDrawerClosed(drawerView: View) = Unit
-        override fun onDrawerStateChanged(newState: Int) = Unit
-    })
-}
-
-/**
- * Performs an action once next time a drawer is closed.
- *
- * @param runnable the runnable to run.
- */
-inline fun DrawerLayout?.onceOnDrawerClosed(crossinline runnable: () -> Unit) = this?.apply {
-        addDrawerListener(object : DrawerLayout.DrawerListener {
-        override fun onDrawerSlide(drawerView: View, slideOffset: Float) = Unit
-        override fun onDrawerOpened(drawerView: View) = Unit
-        override fun onDrawerClosed(drawerView: View) { runnable();removeDrawerListener(this) }
-        override fun onDrawerStateChanged(newState: Int) = Unit
-    })
-}
 
 /**
  * Performs an action once next time a recycler view goes idle.
@@ -247,16 +175,3 @@ fun RectF.scale(factor: Float) {
     bottom -= (oldHeight - newHeight) / 2f
 }
 
-/**
- *  Dim screen behind a pop-up by the given [aDimAmout].
- *  See: https://stackoverflow.com/a/46711174/3969362
- */
-fun PopupWindow.dimBehind(aDimAmout: Float = 0.3f) {
-    val container = contentView.rootView
-    val context: Context = contentView.context
-    val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-    val p = container.layoutParams as WindowManager.LayoutParams
-    p.flags = p.flags or WindowManager.LayoutParams.FLAG_DIM_BEHIND
-    p.dimAmount = aDimAmout
-    wm.updateViewLayout(container, p)
-}

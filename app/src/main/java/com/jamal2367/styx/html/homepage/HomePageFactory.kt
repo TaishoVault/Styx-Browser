@@ -111,10 +111,10 @@ class HomePageFactory @Inject constructor(
      */
     fun createHomePage() = File(application.filesDir, FILENAME)
 
-    fun createIconByName(name: Char): Bitmap {
+    private fun createIconByName(name: Char): Bitmap {
         return DrawableUtils.createRoundedLetterImage(name, 64, 64, Color.GRAY)
     }
-    fun bitmapToBase64(bitmap: Bitmap): String {
+    private fun bitmapToBase64(bitmap: Bitmap): String {
         val byteArrayOutputStream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
         val byteArray: ByteArray = byteArrayOutputStream.toByteArray()

@@ -50,7 +50,7 @@ class AbpListUpdater @Inject constructor(val context: Context) {
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject internal lateinit var logger: Logger
 
-    val abpDao = AbpDao(context)
+    private val abpDao = AbpDao(context)
 
     fun updateAll(forceUpdate: Boolean): Boolean {
         var result = false

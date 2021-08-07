@@ -6,7 +6,7 @@ import dagger.Reusable
 import javax.inject.Inject
 
 /**
- * A no-op ad blocker implementation. Always returns false for [isAd].
+ * A no-op ad blocker implementation. Always returns false for [//isAd].
  */
 @Reusable
 class NoOpAdBlocker @Inject constructor() : AdBlocker {

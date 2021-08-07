@@ -297,17 +297,4 @@ object Utils {
         val fieldBottomField = BottomSheetDialog::class.java.getDeclaredField("bottomSheet")
         fieldBottomField.isAccessible = true
     }
-
-    fun startActivityForFolder(aContext: Context, aFolder: String?) {
-        // This is the solution from there: https://stackoverflow.com/a/26651827/3969362
-        // Build an intent to open our download folder in a file explorer app
-        val intent =
-            Intent(Intent.ACTION_VIEW).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        intent.setDataAndType(Uri.parse(aFolder), "resource/folder")
-        // Check that there is an app activity handling that intent on our system
-        if (intent.resolveActivityInfo(aContext.packageManager, 0) != null) {
-            // Yes, there is one, use it then
-            aContext.startActivity(intent)
-        }
-    }
 }

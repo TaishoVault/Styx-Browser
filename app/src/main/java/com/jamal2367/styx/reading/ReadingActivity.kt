@@ -180,7 +180,7 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
         }
     }
 
-    protected fun makeLinkClickable(strBuilder: SpannableStringBuilder, span: URLSpan?) {
+    private fun makeLinkClickable(strBuilder: SpannableStringBuilder, span: URLSpan?) {
         val start: Int = strBuilder.getSpanStart(span)
         val end: Int = strBuilder.getSpanEnd(span)
         val flags: Int = strBuilder.getSpanFlags(span)

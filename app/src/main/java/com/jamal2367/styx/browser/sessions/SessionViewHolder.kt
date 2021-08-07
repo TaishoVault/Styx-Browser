@@ -195,6 +195,6 @@ class SessionViewHolder(
     /**
      * Tell if edit mode is currently enabled
      */
-    fun isEditModeEnabled() = buttonEdit.visibility == View.VISIBLE
+    private fun isEditModeEnabled() = buttonEdit.visibility == View.VISIBLE
 
 }

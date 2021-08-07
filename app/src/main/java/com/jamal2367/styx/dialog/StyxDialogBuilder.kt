@@ -86,6 +86,7 @@ class StyxDialogBuilder @Inject constructor(
         }
     }
 
+    @SuppressLint("CheckResult")
     fun showLongPressedDialogForBookmarkUrl(
             activity: AppCompatActivity,
             uiController: UIController,
@@ -130,6 +131,7 @@ class StyxDialogBuilder @Inject constructor(
      *
      * @param activity used to show the dialog
      */
+    @SuppressLint("CheckResult")
     fun showLongPressedDialogForDownloadUrl(
             activity: AppCompatActivity,
             uiController: UIController
@@ -268,6 +270,7 @@ class StyxDialogBuilder @Inject constructor(
                 }
     }
 
+    @SuppressLint("CheckResult")
     fun showBookmarkFolderLongPressedDialog(
             activity: AppCompatActivity,
             uiController: UIController,
@@ -285,6 +288,7 @@ class StyxDialogBuilder @Inject constructor(
                 }
         })
 
+    @SuppressLint("CheckResult")
     private fun showRenameFolderDialog(
             activity: AppCompatActivity,
             uiController: UIController,
@@ -303,6 +307,7 @@ class StyxDialogBuilder @Inject constructor(
         }
     }
 
+    @SuppressLint("CheckResult")
     fun showLongPressedHistoryLinkDialog(
             activity: AppCompatActivity,
             uiController: UIController,

@@ -22,6 +22,6 @@ sealed class SslState {
      *
      * @param sslError The error that is causing the invalid SSL state.
      */
-    class Invalid(val sslError: SslError) : SslState()
+    class Invalid(private val sslError: SslError) : SslState()
 
 }

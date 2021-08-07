@@ -24,7 +24,7 @@ class BackgroundDrawable(
 )
 {
 
-    var isSelected: Boolean = false
+    private var isSelected: Boolean = false
 
     override fun startTransition(durationMillis: Int) {
         if (!isSelected) {

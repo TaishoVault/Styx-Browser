@@ -214,7 +214,7 @@ class AbpBlocker @Inject constructor(
 
     // moved from jp.hazuki.yuzubrowser.adblock/AdBlock.kt
     // modified to use cache for the slow part, decreases average time by 50-70%
-    fun is3rdParty(url: Uri, pageUri: Uri): Boolean {
+    private fun is3rdParty(url: Uri, pageUri: Uri): Boolean {
         val hostName = url.host ?: return true
         val pageHost = pageUri.host ?: return true
 

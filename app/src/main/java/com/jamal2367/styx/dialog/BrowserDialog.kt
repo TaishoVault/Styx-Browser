@@ -75,26 +75,6 @@ object BrowserDialog {
         }
     }
 
-    /**
-     * Show a singly selectable list of [DialogItem] with the provided [title]. All items will be
-     * shown, and the first [DialogItem] where [DialogItem.isConditionMet] returns `true` will be
-     * the selected item when the dialog is shown. The dialog has an OK button which just dismisses
-     * the dialog.
-     */
-    fun showListChoices(activity: AppCompatActivity, @StringRes title: Int, vararg items: DialogItem) {
-        MaterialAlertDialogBuilder(activity).apply {
-            setTitle(title)
-
-            val choices = items.map { activity.getString(it.title) }.toTypedArray()
-            val currentChoice = items.indexOfFirst(DialogItem::isConditionMet)
-
-            setSingleChoiceItems(choices, currentChoice) { _, which ->
-                items[which].onClick()
-            }
-            setPositiveButton(activity.getString(R.string.action_ok), null)
-        }.resizeAndShow()
-    }
-
     @JvmStatic
     fun show(activity: AppCompatActivity, title: String?, vararg items: DialogItem) {
         val builder = MaterialAlertDialogBuilder(activity)

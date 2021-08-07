@@ -107,7 +107,7 @@ class IncognitoPageFactory @Inject constructor(
      */
     fun createIncognitoPage() = File(application.filesDir, FILENAME)
 
-    fun createIconByName(name: Char): Bitmap {
+    private fun createIconByName(name: Char): Bitmap {
         return DrawableUtils.createRoundedLetterImage(name, 64, 64, Color.GRAY)
     }
     private fun bitmapToBase64(bitmap: Bitmap): String {

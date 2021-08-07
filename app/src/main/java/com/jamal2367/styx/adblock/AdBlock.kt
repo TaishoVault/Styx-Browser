@@ -22,7 +22,7 @@ import com.jamal2367.styx.adblock.AbpBlocker.Companion.getMimeTypeFromExtension
 import com.jamal2367.styx.adblock.core.ContentRequest
 import java.util.*
 
-const val BROADCAST_ACTION_UPDATE_AD_BLOCK_DATA = "com.jamal2367.styx.adblock.broadcast.update.adblock"
+//const val BROADCAST_ACTION_UPDATE_AD_BLOCK_DATA = "com.jamal2367.styx.adblock.broadcast.update.adblock"
 
 /*
 fun WebResourceRequest.isThirdParty(pageUri: Uri): Boolean {

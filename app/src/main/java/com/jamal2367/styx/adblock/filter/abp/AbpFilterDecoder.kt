@@ -53,7 +53,7 @@ class AbpFilterDecoder {
     }
 
     // taken from jp.hazuki.yuzubrowser.core.utility.extensions.forEachLine
-    inline fun BufferedReader.forEachLine(block: (String) -> Unit) {
+    private inline fun BufferedReader.forEachLine(block: (String) -> Unit) {
         while (true) {
             block(readLine() ?: return)
         }
