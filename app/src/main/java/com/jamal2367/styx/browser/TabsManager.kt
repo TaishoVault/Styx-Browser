@@ -183,8 +183,7 @@ class TabsManager @Inject constructor(
         }
     }
 
-    fun resetRecentTabsList()
-    {
+    private fun resetRecentTabsList() {
         // Reset recent tabs list to arbitrary order
         iRecentTabs.clear()
         iRecentTabs.addAll(allTabs)
@@ -484,8 +483,7 @@ class TabsManager @Inject constructor(
         )
 
         // Add our new tab at the specified position
-        when(newTabPosition){
-            NewTabPosition.BEFORE_CURRENT_TAB -> tabList.add(indexOfCurrentTab(), tab)
+        when (newTabPosition) {
             NewTabPosition.AFTER_CURRENT_TAB -> tabList.add(indexOfCurrentTab() + 1, tab)
             NewTabPosition.START_OF_TAB_LIST -> tabList.add(0, tab)
             NewTabPosition.END_OF_TAB_LIST -> tabList.add(tab)

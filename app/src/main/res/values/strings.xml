@@ -261,7 +261,6 @@
     <string name="name_normal">Normal</string>
     <string name="name">Jamal2367</string>
     <string name="new_tab_position_after">After current tab</string>
-    <string name="new_tab_position_before">Before current tab</string>
     <string name="new_tab_position_end">End of tab list</string>
     <string name="new_tab_position_start">Start of tab list</string>
     <string name="new_tab_position">New tab position</string>
@@ -484,14 +483,12 @@
     </string-array>
 
     <string-array name="new_tab_positions">
-        <item>@string/new_tab_position_before</item>
         <item>@string/new_tab_position_after</item>
         <item>@string/new_tab_position_start</item>
         <item>@string/new_tab_position_end</item>
     </string-array>
 
     <string-array name="new_tab_position_values">
-        <item>@string/new_tab_position_before_value</item>
         <item>@string/new_tab_position_after_value</item>
         <item>@string/new_tab_position_start_value</item>
         <item>@string/new_tab_position_end_value</item>
@@ -536,7 +533,6 @@
     </string-array>
 
     <string name="new_tab_position_after_value" translatable="false">AFTER_CURRENT_TAB</string>
-    <string name="new_tab_position_before_value" translatable="false">BEFORE_CURRENT_TAB</string>
     <string name="new_tab_position_end_value" translatable="false">END_OF_TAB_LIST</string>
     <string name="new_tab_position_start_value" translatable="false">START_OF_TAB_LIST</string>
     <string name="pref_key_accent" translatable="false">pref_key_accent</string>
