@@ -1955,9 +1955,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            v.vibrate(VibrationEffect.createOneShot(75, VibrationEffect.DEFAULT_AMPLITUDE))
+            v.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
         } else {
-            v.vibrate(75)
+            v.vibrate(50)
         }
     }
 
