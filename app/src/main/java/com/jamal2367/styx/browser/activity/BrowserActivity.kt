@@ -3281,8 +3281,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
     private fun isToolBarVisible() = iBinding.toolbarInclude.toolbarLayout.visibility == VISIBLE
 
-    private fun toggleToolBar() : Boolean
-    {
+    private fun toggleToolBar() : Boolean {
         return if (isToolBarVisible()) {
             doHideToolBar()
             currentTabView?.requestFocus()
