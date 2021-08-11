@@ -1650,7 +1650,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 }
                 return true
             }
-
             R.id.menuShortcutBack -> {
                 if (currentView?.canGoBack() == true) {
                     currentView.goBack()
