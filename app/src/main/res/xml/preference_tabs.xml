@@ -31,6 +31,12 @@
             app:icon="@drawable/ic_undo_oval" />
 
         <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/pref_key_vibrate_on_tab_close"
+            android:title="@string/vibrate_on_tab_close"
+            app:icon="@drawable/ic_vibrate_oval" />
+
+        <SwitchPreferenceCompat
             app:key="@string/pref_key_long_click_tab"
             app:title="@string/long_press_tab"
             android:summary="@string/recommended"
@@ -123,13 +129,6 @@
             app:singleLineTitle="false"
             android:dependency="@string/pref_key_use_bottom_sheets"
             app:icon="@drawable/ic_cache_oval" />
-
-        <SwitchPreferenceCompat
-            android:defaultValue="true"
-            android:key="@string/pref_key_vibrate_on_tab_close"
-            android:title="@string/vibrate_on_tab_close"
-            app:singleLineTitle="false"
-            app:icon="@drawable/ic_vibrate_oval" />
 
     </PreferenceCategory>
 
