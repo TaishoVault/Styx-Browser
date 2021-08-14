@@ -34,6 +34,7 @@
             android:defaultValue="true"
             android:key="@string/pref_key_vibrate_on_tab_close"
             android:title="@string/vibrate_on_tab_close"
+            app:singleLineTitle="false"
             app:icon="@drawable/ic_vibrate_oval" />
 
         <SwitchPreferenceCompat
