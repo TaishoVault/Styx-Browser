@@ -411,6 +411,7 @@
     <string name="url_in_new_tab">URL în filă nouă</string>
     <string name="url">URL</string>
     <string name="version">Versiunea aplicației</string>
+    <string name="vibrate_on_tab_close">Vibrează când o filă este inchisă</string>
     <string name="webview_version">Versiune WebView</string>
     <string name="wideViewPort">Utilizare vizionare largă</string>
     <string name="window">Permite site-urilor să deschidă ferestre noi</string>
