@@ -1934,10 +1934,12 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 }.show()
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            v.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
-        } else {
-            v.vibrate(50)
+        if (userPreferences.vibrateOnTabClose) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                v.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                v.vibrate(50)
+            }
         }
     }
 

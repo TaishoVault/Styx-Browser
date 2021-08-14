@@ -447,6 +447,7 @@
     <string name="url_in_new_tab">URL in new tab</string>
     <string name="url">URL</string>
     <string name="version">Application version</string>
+    <string name="vibrate_on_tab_close">Vibrate when a tab is closed</string>
     <string name="webview_version">WebView version</string>
     <string name="wideViewPort">Use wide viewport</string>
     <string name="window">Allow sites to open new windows</string>
@@ -618,6 +619,7 @@
     <string name="pref_key_use_site_block" translatable="false">pref_key_use_site_block</string>
     <string name="pref_key_user_agent_string" translatable="false">pref_key_user_agent_string</string>
     <string name="pref_key_user_agent" translatable="false">pref_key_user_agent</string>
+    <string name="pref_key_vibrate_on_tab_close" translatable="false">pref_key_vibrate_on_tab_close</string>
     <string name="pref_key_web_page_theme" translatable="false">pref_key_web_page_theme</string>
     <string name="pref_key_webrtc" translatable="false">pref_key_webrtc</string>
     <string name="pref_key_wide_viewport" translatable="false">pref_key_wide_viewport</string>

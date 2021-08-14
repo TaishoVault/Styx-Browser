@@ -431,6 +431,11 @@ class UserPreferences @Inject constructor(
     var imageUrlString by preferences.stringPreference(R.string.pref_key_image_url, "")
 
     /**
+     * Toggle device vibration on tab-close action
+     */
+    var vibrateOnTabClose by preferences.booleanPreference(R.string.pref_key_vibrate_on_tab_close, R.bool.pref_default_vibrate_on_tab_close)
+
+    /**
      * Define Suggestion number Choice
      */
     var suggestionChoice by preferences.enumPreference(R.string.pref_key_search_suggestions_number, SuggestionNumChoice.FIVE)

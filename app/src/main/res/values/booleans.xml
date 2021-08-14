@@ -56,6 +56,7 @@
     <bool name="pref_default_toolbars_bottom">false</bool>
     <bool name="pref_default_url_in_new_tab">false</bool>
     <bool name="pref_default_use_bottom_sheets">false</bool>
+    <bool name="pref_default_vibrate_on_tab_close">true</bool>
     <bool name="pref_default_webrtc">false</bool>
     <bool name="pref_default_wide_viewport">true</bool>
     <integer name="pref_default_landscape_desktop_width">1440</integer>
