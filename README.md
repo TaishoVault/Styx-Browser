@@ -19,7 +19,6 @@ or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/rel
 
 ## Fulguris
 Styx is based on [Fulguris](https://github.com/Slion/Fulguris).  
-. 
 Make sure you support [Fulguris](https://github.com/Slion/Fulguris) so that Styx can benefit from it.
 
 ## Features
