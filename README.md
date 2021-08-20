@@ -17,6 +17,10 @@ We would be very happy if you help us with the translation.
 [<img src="https://abload.de/img/izzyondroidkek5i.png" alt="Get it on IzzyOnDroid" height="80">](https://android.izzysoft.de/repo/apk/com.jamal2367.styx)  
 or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
 
+## Fulguris
+Styx is based on Fulguris. 
+Make sure you support Fulguris so that Styx can benefit from it.
+
 ## Features
 * Sessions.
 * Tabs manager.
