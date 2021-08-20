@@ -18,8 +18,9 @@ We would be very happy if you help us with the translation.
 or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
 
 ## Fulguris
-Styx is based on Fulguris. 
-Make sure you support Fulguris so that Styx can benefit from it.
+Styx is based on [Fulguris](https://github.com/Slion/Fulguris).  
+. 
+Make sure you support [Fulguris](https://github.com/Slion/Fulguris) so that Styx can benefit from it.
 
 ## Features
 * Sessions.
