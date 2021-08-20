@@ -87,3 +87,20 @@ or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/rel
 * `CAMERA`: needed to support WebRTC, requires "WebRTC Support" option to be enabled (default disabled).
 * `MODIFY_AUDIO_SETTINGS`: needed to support WebRTC, requires "WebRTC Support" option to be enabled (default disabled).
 * `REQUEST_INSTALL_PACKAGES`: needed to support APK install, after download is finished.
+
+## License
+```
+© Copyright 2014 Anthony Restaino
+© Copyright 2021 Stéphane Lenclud
+© Copyright 2021 CookieJarApps
+© Copyright 2021 Jamal Rothfuchs
+Lightning Browser
+Fulguris Browser
+SmartCookieWeb
+Styx Browser
+   This Source Code Form is subject to the terms of the 
+   Mozilla Public License, v. 2.0. If a copy of the MPL 
+   was not distributed with this file, You can obtain one at 
+   
+   http://mozilla.org/MPL/2.0/
+```
