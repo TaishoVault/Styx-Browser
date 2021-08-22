@@ -300,7 +300,7 @@
     <string name="recommended">(مستحسن)</string>
     <string name="reflow">تفعيل إلتفاف النص</string>
     <string name="remove_identifying_headers">إزالة رؤوس التحديد HTTP</string>
-    <string name="rendering_mode">وضع التقديم</string>
+    <string name="rendering_mode">وضع العرض(صفحة الويب)</string>
     <string name="reopening_recent_tab">فتح علامة التبويب القديمة</string>
     <string name="reset_settings">إعادة تعيين الإعدادات</string>
     <string name="restore_tabs_on_startup">استعادة علامات التبويب المفقودة عند  البدء</string>
