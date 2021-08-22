@@ -38,7 +38,7 @@
     <string name="action_forward">Přeposlat</string>
     <string name="action_history">Historie</string>
     <string name="action_homepage">Výchozí</string>
-    <string name="action_incognito">Nová soukromá karta</string>
+    <string name="action_incognito">Nová anonymní karta</string>
     <string name="action_message_canceled">Akce zrušena.</string>
     <string name="action_more">Více</string>
     <string name="action_new_session">Nová relace</string>
@@ -46,7 +46,7 @@
     <string name="action_no">Ne</string>
     <string name="action_ok">OK</string>
     <string name="action_open">Otevřít</string>
-    <string name="action_print">Tisk</string>
+    <string name="action_print">Tisknout</string>
     <string name="action_reload">Obnovit</string>
     <string name="action_remove_bookmark">Záložka odstraněna</string>
     <string name="action_remove">Odstranit</string>
@@ -93,7 +93,7 @@
     <string name="agent_android_mobile">Android (Mobil)</string>
     <string name="agent_custom">Vlastní</string>
     <string name="agent_default">Výchozí</string>
-    <string name="agent_desktop">Stolní počítače</string>
+    <string name="agent_desktop">Počítač</string>
     <string name="agent_ios_mobile">iOS (mobil)</string>
     <string name="agent_linux_desktop">Linux (Počítač)</string>
     <string name="agent_macos_desktop">macOS (Počítač)</string>
@@ -154,7 +154,7 @@
     <string name="dialog_history">Chcete vymazat historii prohlížeče?</string>
     <string name="dialog_message_third_party_app">Chcete spustit aplikaci spojenou s touto webovou stránkou?</string>
     <string name="dialog_open_background_tab">Otevřít v záložce na pozadí</string>
-    <string name="dialog_open_incognito_tab">Otevřít v soukromé kartě</string>
+    <string name="dialog_open_incognito_tab">Otevřít v anonymní kartě</string>
     <string name="dialog_open_new_tab">Otevřít v nové kartě</string>
     <string name="dialog_remove_bookmark">Odstranit záložku</string>
     <string name="dialog_remove_folder">Odstranit složku</string>
@@ -202,7 +202,7 @@
     <string name="import_settings">Importovat nastavení ze zálohy</string>
     <string name="incognito">Anonymní</string>
     <string name="incognito_cookies_pie">Anonymní režim běží v odděleném procesu, který je resetován po každé relaci. Nastavení anonymních cookie jsou nyní řízena běžnými nastaveními cookie.</string>
-    <string name="incognito_cookies">Povolit soubory cookie v soukromých kartách</string>
+    <string name="incognito_cookies">Povolit soubory cookie v anonymních kartách</string>
     <string name="inspect">Vložit JavaScript</string>
     <string name="invalid_character_removed">Neplatný znak odstraněn!</string>
     <string name="invalid_characters_removed">Neplatné znaky odstraněny!</string>
@@ -251,7 +251,7 @@
     <string name="new_tab_position">Nové umístění karty</string>
     <string name="no_tts">Jazyk není podporován</string>
     <string name="no">Ne</string>
-    <string name="notification_incognito_running_description">Probíhající upozornění na soukromou kartu</string>
+    <string name="notification_incognito_running_description">Probíhající upozornění na anonymní kartu</string>
     <string name="notification_incognito_running_message">Klepnutím otevřete</string>
     <string name="notify_tab_closed">Karta zavřena</string>
     <string name="oid">Identifikátor objektu (OID):</string>
@@ -301,7 +301,7 @@
     <string name="reflow">Povolit přeformátování textu</string>
     <string name="remove_identifying_headers">Odstranit identifikující HTTP hlavičky</string>
     <string name="rendering_mode">Režim vykreslení</string>
-    <string name="reopening_recent_tab">Znovu otevřen starý panel</string>
+    <string name="reopening_recent_tab">Karta obnovena</string>
     <string name="reset_settings">Obnovit nastavení</string>
     <string name="restore_tabs_on_startup">Obnovit karty při spuštění</string>
     <string name="save_data">Požádat o \'Uložit\'</string>
@@ -371,12 +371,12 @@
     <string name="ssl_info_issued_on">Vydáno dne</string>
     <string name="ssl_info_issued_to">Vydáno</string>
     <string name="ssl_warning_dont_ask_again">Znovu se neptat na tuto relaci.</string>
-    <string name="start_incognito">Vždy se chovat jako soukromý režim</string>
+    <string name="start_incognito">Vždy se chovat jako v anonymním režimu</string>
     <string name="stop_tts">Zastavit čtení</string>
     <string name="suggest">Návrhy vyhledávání (počet)</string>
     <string name="suggestion">Hledat</string>
-    <string name="swap_bookmarks_and_tabs">Prohodit záložky a zásuvky</string>
-    <string name="tabs_in_drawer">Zobrazit panely v navigační liště</string>
+    <string name="swap_bookmarks_and_tabs">Prohodit panely záložek a karet</string>
+    <string name="tabs_in_drawer">Zobrazit karty v navigační liště</string>
     <string name="tabs">Karty</string>
     <string name="text_encoding">Kódování textu</string>
     <string name="theme">Motiv aplikace</string>
