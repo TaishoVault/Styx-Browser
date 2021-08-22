@@ -411,6 +411,7 @@
     <string name="url_in_new_tab">在新标签页中打开 URL</string>
     <string name="url">URL</string>
     <string name="version">应用版本</string>
+    <string name="vibrate_on_tab_close">关闭标签时振动</string>
     <string name="webview_version">WebView 版本</string>
     <string name="wideViewPort">使用宽视口</string>
     <string name="window">允许网页打开新窗口</string>

@@ -411,6 +411,7 @@
     <string name="url_in_new_tab">Otwieraj adresy URL w nowej karcie</string>
     <string name="url">Adres URL</string>
     <string name="version">Wersja aplikacji</string>
+    <string name="vibrate_on_tab_close">Wibracja przy zamknięciu karty</string>
     <string name="webview_version">Wersja WebView</string>
     <string name="wideViewPort">Dopasowywuj strony mobilne do ekranu</string>
     <string name="window">Zezwalaj witrynom na otwieranie nowych okien</string>

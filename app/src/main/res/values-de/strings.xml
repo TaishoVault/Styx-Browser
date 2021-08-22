@@ -411,8 +411,8 @@
     <string name="url_in_new_tab">URL in neuem Tab öffnen</string>
     <string name="url">URL</string>
     <string name="version">App-Version</string>
-    <string name="webview_version">WebView-Version</string>
     <string name="vibrate_on_tab_close">\"Vibrieren\" wenn ein Tab geschlossen wird</string>
+    <string name="webview_version">WebView-Version</string>
     <string name="wideViewPort">Breiten Anzeigebereich verwenden</string>
     <string name="window">Seiten erlauben einen neuen Tab zu öffnen</string>
     <string name="yes">Ja</string>

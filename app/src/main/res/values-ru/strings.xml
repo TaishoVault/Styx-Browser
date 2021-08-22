@@ -411,6 +411,7 @@
     <string name="url_in_new_tab">Ссылка в новой вкладке</string>
     <string name="url">Ссылка</string>
     <string name="version">Версия</string>
+    <string name="vibrate_on_tab_close">Вибрация при закрытии вкладки</string>
     <string name="webview_version">Версия WebViewer</string>
     <string name="wideViewPort">Широкий вид</string>
     <string name="window">Разрешить всплывающие окна</string>

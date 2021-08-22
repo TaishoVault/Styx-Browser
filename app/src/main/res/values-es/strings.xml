@@ -411,6 +411,7 @@
     <string name="url_in_new_tab">Abrir en nueva pestaña</string>
     <string name="url">Dirección URL</string>
     <string name="version">Versión</string>
+    <string name="vibrate_on_tab_close">Vibrar cuando se cierra una pestaña</string>
     <string name="webview_version">Versión de Webview</string>
     <string name="wideViewPort">Utilizar viewport normal</string>
     <string name="window">Permitir a los sitios abrir nuevas ventanas</string>

@@ -411,6 +411,7 @@
     <string name="url_in_new_tab">عنوان URL في علامة تبويب جديدة</string>
     <string name="url">URL</string>
     <string name="version">إصدار التطبيق</string>
+    <string name="vibrate_on_tab_close">اهتزاز عند إغلاق علامة التبويب</string>
     <string name="webview_version">إصدار WebView</string>
     <string name="wideViewPort">استخدام إطار عرض واسع</string>
     <string name="window">السماح للمواقع بالفتح في نوافذ جديدة</string>

@@ -411,6 +411,7 @@
     <string name="url_in_new_tab">Abrir em uma nova aba</string>
     <string name="url">URL</string>
     <string name="version">Versão da aplicação</string>
+    <string name="vibrate_on_tab_close">Vibrar quando uma aba é fechada</string>
     <string name="webview_version">Versão do WebView</string>
     <string name="wideViewPort">Utilizar viewport amplo</string>
     <string name="window">Permitir que sites abram novas janelas</string>

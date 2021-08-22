@@ -71,6 +71,9 @@
     <string name="content_control_invalid_url">Indirizzo non valido</string>
     <string name="content_control_last_update">Ultimo aggiornamento: %s</string>
     <string name="content_control_local_file_chosen">File selezionato</string>
+    <string name="content_control_remote_frequency_daily">Giornaliero</string>
+    <string name="content_control_remote_frequency_weekly">Settimanale</string>
+    <string name="content_control_remote_frequency_monthly">Mensile</string>
     <string name="content_control_update_mode">Aggiornamento automatico</string>
     <string name="content_control_update_now">Aggiorna liste</string>
     <string name="content_control_update_wifi">Solo tramite Wi-Fi</string>
