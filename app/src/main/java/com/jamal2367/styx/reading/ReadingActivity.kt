@@ -277,6 +277,12 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
             mProgressDialog!!.dismiss()
             mProgressDialog = null
         }
+
+        if (iTtsEngine != null) {
+            iTtsEngine.stop()
+            iTtsEngine.shutdown()
+        }
+
         super.onDestroy()
     }
 
