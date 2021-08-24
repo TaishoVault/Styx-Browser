@@ -159,7 +159,6 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.INCOGNITO" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
@@ -186,6 +185,7 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.READING" />
+                <action android:name="android.intent.action.TTS_SERVICE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
