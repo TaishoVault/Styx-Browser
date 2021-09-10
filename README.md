@@ -17,10 +17,6 @@ We would be very happy if you help us with the translation.
 [<img src="https://abload.de/img/izzyondroidkek5i.png" alt="Get it on IzzyOnDroid" height="80">](https://android.izzysoft.de/repo/apk/com.jamal2367.styx)  
 or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
 
-## Fulguris
-Styx is based on [Fulguris](https://github.com/Slion/Fulguris).  
-Make sure you support [Fulguris](https://github.com/Slion/Fulguris) so that Styx can benefit from it.
-
 ## Features
 * Sessions.
 * Tabs manager.
@@ -94,14 +90,6 @@ Make sure you support [Fulguris](https://github.com/Slion/Fulguris) so that Styx
 
 ## License
 ```
-© Copyright 2014 Anthony Restaino
-© Copyright 2021 Stéphane Lenclud
-© Copyright 2021 CookieJarApps
-© Copyright 2021 Jamal Rothfuchs
-Lightning Browser
-Fulguris Browser
-SmartCookieWeb
-Styx Browser
    This Source Code Form is subject to the terms of the 
    Mozilla Public License, v. 2.0. If a copy of the MPL 
    was not distributed with this file, You can obtain one at 
