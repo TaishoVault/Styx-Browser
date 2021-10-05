@@ -51,7 +51,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
     // Google Stuff //
-    implementation 'com.google.android.material:material:1.5.0-alpha02'
+    implementation 'com.google.android.material:material:1.5.0-alpha04'
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation 'com.google.re2j:re2j:1.6'
 
@@ -84,7 +84,7 @@ dependencies {
     kapt 'com.anthonycr.mezzanine:mezzanine-compiler:1.1.1'
 
     // Volley HTTP //
-    implementation 'com.android.volley:volley:1.2.0'
+    implementation 'com.android.volley:volley:1.2.1'
 
     // Code Editor //
     implementation 'com.github.jamal2362:CodeEditor:3.0.0'
