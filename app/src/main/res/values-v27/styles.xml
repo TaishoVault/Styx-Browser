@@ -5,15 +5,15 @@
         <item name="android:windowBackground">?android:attr/colorBackground</item>
         <item name="android:navigationBarColor">?android:attr/colorBackground</item>
         <item name="android:windowLightNavigationBar">true</item>
-        <item name="colorPrimary">?android:attr/colorBackground</item>
         <item name="colorPrimaryDark">?android:attr/colorBackground</item>
         <item name="actionBarWidgetTheme">@null</item>
-        <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
         <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_dark</item>
     </style>
 
-    <style name="Theme.App.Light" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.App.Light" parent="Theme.Material3.Light">
         <item name="colorPrimary">@color/red_500</item>
+        <item name="colorPrimaryContainer">@color/red_transparent</item>
         <item name="colorPrimaryVariant">@color/grey_1</item>
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorSecondary">@color/red_500</item>
@@ -24,7 +24,6 @@
         <item name="trackColor">@color/grey_0</item>
         <item name="colorSurface">@color/white</item>
         <item name="colorPrimarySurface">@color/grey_00</item>
-        <item name="colorOnSurface">@color/black</item>
         <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
         <item name="appColorControlEnabled">@color/grey_5</item>
@@ -58,8 +57,9 @@
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
-    <style name="Theme.App.Dark" parent="Theme.MaterialComponents">
+    <style name="Theme.App.Dark" parent="Theme.Material3.Dark">
         <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryContainer">@color/red_transparent_light</item>
         <item name="colorPrimaryVariant">@color/grey_6</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/red_300</item>
@@ -71,7 +71,6 @@
         <item name="trackColor">@color/grey_7</item>
         <item name="colorSurface">@color/grey_6</item>
         <item name="colorPrimarySurface">@color/grey_6</item>
-        <item name="colorOnSurface">@color/white</item>
         <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
         <item name="appColorControlEnabled">@color/grey_2</item>
@@ -104,8 +103,9 @@
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
-    <style name="Theme.App.Black" parent="Theme.MaterialComponents">
+    <style name="Theme.App.Black" parent="Theme.Material3.Dark">
         <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryContainer">@color/red_transparent_light</item>
         <item name="colorPrimaryVariant">@color/grey_8</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/red_300</item>
@@ -116,7 +116,6 @@
         <item name="trackColor">@color/grey_9</item>
         <item name="colorSurface">@color/grey_9</item>
         <item name="colorPrimarySurface">@color/grey_8</item>
-        <item name="colorOnSurface">@color/white</item>
         <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
         <item name="appColorControlEnabled">@color/grey_2</item>

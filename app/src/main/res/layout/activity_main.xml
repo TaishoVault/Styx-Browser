@@ -46,6 +46,7 @@
                     android:background="?attr/haloColor"
                     app:itemIconTint="@drawable/toolbar_color"
                     app:itemTextColor="?attr/colorControlNormal"
+                    app:itemActiveIndicatorStyle="@color/transparent"
                     app:elevation="0dp"
                     app:labelVisibilityMode="unlabeled"
                     app:menu="@menu/bottom_menu" />

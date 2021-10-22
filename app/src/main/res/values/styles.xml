@@ -3,7 +3,6 @@
 
     <style name="Theme.App.Light.Settings" parent="Theme.App.Light">
         <item name="android:windowBackground">?android:attr/colorBackground</item>
-        <item name="colorPrimary">?android:attr/colorBackground</item>
         <item name="colorPrimaryDark">?android:attr/colorBackground</item>
         <item name="actionBarWidgetTheme">@null</item>
         <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
@@ -12,7 +11,6 @@
 
     <style name="Theme.App.Dark.Settings" parent="Theme.App.Dark">
         <item name="android:windowBackground">?android:attr/colorBackground</item>
-        <item name="colorPrimary">?android:attr/colorBackground</item>
         <item name="colorPrimaryDark">?android:attr/colorBackground</item>
         <item name="actionBarWidgetTheme">@null</item>
         <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
@@ -21,7 +19,6 @@
 
     <style name="Theme.App.Black.Settings" parent="Theme.App.Black">
         <item name="android:windowBackground">?android:attr/colorBackground</item>
-        <item name="colorPrimary">?android:attr/colorBackground</item>
         <item name="colorPrimaryDark">?android:attr/colorBackground</item>
         <item name="actionBarWidgetTheme">@null</item>
         <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
@@ -30,15 +27,15 @@
 
     <style name="Theme.App.DayNight.Settings" parent="Theme.App.DayNight">
         <item name="android:windowBackground">?android:attr/colorBackground</item>
-        <item name="colorPrimary">?android:attr/colorBackground</item>
         <item name="colorPrimaryDark">?android:attr/colorBackground</item>
         <item name="actionBarWidgetTheme">@null</item>
         <item name="actionBarTheme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
         <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_dark</item>
     </style>
 
-    <style name="Theme.App.Light" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.App.Light" parent="Theme.Material3.Light">
         <item name="colorPrimary">@color/red_500</item>
+        <item name="colorPrimaryContainer">@color/red_transparent</item>
         <item name="colorPrimaryVariant">@color/grey_1</item>
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorSecondary">@color/red_500</item>
@@ -49,7 +46,6 @@
         <item name="trackColor">@color/grey_0</item>
         <item name="colorSurface">@color/white</item>
         <item name="colorPrimarySurface">@color/grey_00</item>
-        <item name="colorOnSurface">@color/black</item>
         <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
         <item name="appColorControlEnabled">@color/grey_5</item>
@@ -81,8 +77,9 @@
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
-    <style name="Theme.App.Dark" parent="Theme.MaterialComponents">
+    <style name="Theme.App.Dark" parent="Theme.Material3.Dark">
         <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryContainer">@color/red_transparent_light</item>
         <item name="colorPrimaryVariant">@color/grey_6</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/red_300</item>
@@ -94,7 +91,6 @@
         <item name="trackColor">@color/grey_7</item>
         <item name="colorSurface">@color/grey_6</item>
         <item name="colorPrimarySurface">@color/grey_6</item>
-        <item name="colorOnSurface">@color/white</item>
         <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
         <item name="appColorControlEnabled">@color/grey_2</item>
@@ -126,8 +122,9 @@
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
-    <style name="Theme.App.Black" parent="Theme.MaterialComponents">
+    <style name="Theme.App.Black" parent="Theme.Material3.Dark">
         <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryContainer">@color/red_transparent_light</item>
         <item name="colorPrimaryVariant">@color/grey_8</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/red_300</item>
@@ -138,7 +135,6 @@
         <item name="trackColor">@color/grey_9</item>
         <item name="colorSurface">@color/grey_9</item>
         <item name="colorPrimarySurface">@color/grey_8</item>
-        <item name="colorOnSurface">@color/white</item>
         <item name="colorError">@color/red_500</item>
         <item name="colorOnError">@color/white</item>
         <item name="appColorControlEnabled">@color/grey_2</item>
@@ -210,27 +206,27 @@
         <item name="android:windowExitAnimation">@anim/menu_close_bottom</item>
     </style>
 
-    <style name="ThemeOverlay.App.Dialog.Alert.Light" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
+    <style name="ThemeOverlay.App.Dialog.Alert.Light" parent="@style/ThemeOverlay.Material3.Dialog.Alert">
         <item name="android:background">?attr/trackColor</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle.Light</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle.Light</item>
     </style>
 
-    <style name="ThemeOverlay.App.Dialog.Alert" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
+    <style name="ThemeOverlay.App.Dialog.Alert" parent="@style/ThemeOverlay.Material3.Dialog.Alert">
         <item name="android:background">?attr/trackColor</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
     </style>
 
-    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle.Light</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle.Light</item>
     </style>
 
-    <style name="ThemeOverlay.App.MaterialAlertDialog.Dark" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+    <style name="ThemeOverlay.App.MaterialAlertDialog.Dark" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
@@ -238,7 +234,7 @@
         <item name="elevationOverlayEnabled">false</item>
     </style>
 
-    <style name="ThemeOverlay.App.MaterialAlertDialog.Black" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+    <style name="ThemeOverlay.App.MaterialAlertDialog.Black" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
@@ -246,53 +242,53 @@
         <item name="elevationOverlayEnabled">false</item>
     </style>
 
-    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <style name="PositiveButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
         <item name="android:textColor">?attr/colorSecondary</item>
         <item name="rippleColor">?attr/colorSecondary</item>
     </style>
 
-    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <style name="NegativeButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
         <item name="android:textColor">@color/white</item>
         <item name="rippleColor">@color/grey_5</item>
     </style>
 
-    <style name="NeutralButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <style name="NeutralButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
         <item name="android:textColor">@color/white</item>
         <item name="rippleColor">@color/grey_5</item>
     </style>
 
-    <style name="NegativeButtonStyle.Light" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <style name="NegativeButtonStyle.Light" parent="Widget.Material3.Button.TextButton.Dialog">
         <item name="android:textColor">@color/black</item>
         <item name="rippleColor">@color/grey_3</item>
     </style>
 
-    <style name="NeutralButtonStyle.Light" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <style name="NeutralButtonStyle.Light" parent="Widget.Material3.Button.TextButton.Dialog">
         <item name="android:textColor">@color/black</item>
         <item name="rippleColor">@color/grey_3</item>
     </style>
 
-    <style name="MaterialSnackbarTheme" parent="@style/Widget.MaterialComponents.Snackbar">
+    <style name="MaterialSnackbarTheme" parent="@style/Widget.Material3.Snackbar">
         <item name="actionTextColorAlpha">1</item>
     </style>
 
-    <style name="MaterialSnackbarTheme.Dark" parent="@style/Widget.MaterialComponents.Snackbar">
+    <style name="MaterialSnackbarTheme.Dark" parent="@style/Widget.Material3.Snackbar">
         <item name="android:backgroundTint">?attr/colorSurface</item>
         <item name="actionTextColorAlpha">1</item>
     </style>
 
-    <style name="MaterialSnackbarTextViewTheme.Dark" parent="@style/Widget.MaterialComponents.Snackbar.TextView">
+    <style name="MaterialSnackbarTextViewTheme.Dark" parent="@style/Widget.Material3.Snackbar.TextView">
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="MaterialSnackbarTextButtonTheme" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+    <style name="MaterialSnackbarTextButtonTheme" parent="@style/Widget.Material3.Button.TextButton.Snackbar">
         <item name="android:textColor">?attr/colorSecondary</item>
     </style>
 
-    <style name="MaterialSnackbarTextButtonTheme.Dark" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+    <style name="MaterialSnackbarTextButtonTheme.Dark" parent="@style/Widget.Material3.Button.TextButton.Snackbar">
         <item name="android:textColor">?attr/colorSecondary</item>
     </style>
 
-    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
         <item name="backgroundTint">?attr/colorPrimaryVariant</item>
     </style>
 
@@ -308,113 +304,129 @@
         <item name="cardForegroundColor">@color/card_view_foreground</item>
     </style>
 
-    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
 
-    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
 
-    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
 
     <style name="Accent_Pink">
         <item name="colorPrimary">#E91E63</item>
+        <item name="colorPrimaryContainer">#42E91E63</item>
         <item name="colorSecondary">#E91E63</item>
         <item name="colorAccent">#E91E63</item>
     </style>
 
     <style name="Accent_Puple">
         <item name="colorPrimary">#9C27B0</item>
+        <item name="colorPrimaryContainer">#429C27B0</item>
         <item name="colorSecondary">#9C27B0</item>
         <item name="colorAccent">#9C27B0</item>
     </style>
 
     <style name="Accent_Deep_Purple">
         <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryContainer">#42673AB7</item>
         <item name="colorSecondary">#673AB7</item>
         <item name="colorAccent">#673AB7</item>
     </style>
 
     <style name="Accent_Indigo">
         <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryContainer">#423F51B5</item>
         <item name="colorSecondary">#3F51B5</item>
         <item name="colorAccent">#3F51B5</item>
     </style>
 
     <style name="Accent_Blue">
         <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryContainer">#422196F3</item>
         <item name="colorSecondary">#2196F3</item>
         <item name="colorAccent">#2196F3</item>
     </style>
 
     <style name="Accent_Light_Blue">
         <item name="colorPrimary">#03A9F4</item>
+        <item name="colorPrimaryContainer">#4203A9F4</item>
         <item name="colorSecondary">#03A9F4</item>
         <item name="colorAccent">#03A9F4</item>
     </style>
 
     <style name="Accent_Cyan">
         <item name="colorPrimary">#00BCD4</item>
+        <item name="colorPrimaryContainer">#4200BCD4</item>
         <item name="colorSecondary">#00BCD4</item>
         <item name="colorAccent">#00BCD4</item>
     </style>
 
     <style name="Accent_Teal">
         <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryContainer">#42009688</item>
         <item name="colorSecondary">#009688</item>
         <item name="colorAccent">#009688</item>
     </style>
 
     <style name="Accent_Green">
         <item name="colorPrimary">#4CAF50</item>
+        <item name="colorPrimaryContainer">#424CAF50</item>
         <item name="colorSecondary">#4CAF50</item>
         <item name="colorAccent">#4CAF50</item>
     </style>
 
     <style name="Accent_Light_Green">
         <item name="colorPrimary">#8BC34A</item>
+        <item name="colorPrimaryContainer">#428BC34A</item>
         <item name="colorSecondary">#8BC34A</item>
         <item name="colorAccent">#8BC34A</item>
     </style>
 
     <style name="Accent_Lime">
         <item name="colorPrimary">#C0CA33</item>
+        <item name="colorPrimaryContainer">#42C0CA33</item>
         <item name="colorSecondary">#C0CA33</item>
         <item name="colorAccent">#C0CA33</item>
     </style>
 
     <style name="Accent_Yellow">
         <item name="colorPrimary">#FDD835</item>
+        <item name="colorPrimaryContainer">#42FDD835</item>
         <item name="colorSecondary">#FDD835</item>
         <item name="colorAccent">#FDD835</item>
     </style>
 
     <style name="Accent_Amber">
         <item name="colorPrimary">#FFB300</item>
+        <item name="colorPrimaryContainer">#42FFB300</item>
         <item name="colorSecondary">#FFB300</item>
         <item name="colorAccent">#FFB300</item>
     </style>
 
     <style name="Accent_Orange">
         <item name="colorPrimary">#FF9800</item>
+        <item name="colorPrimaryContainer">#42FF9800</item>
         <item name="colorSecondary">#FF9800</item>
         <item name="colorAccent">#FF9800</item>
     </style>
 
     <style name="Accent_Deep_Orange">
         <item name="colorPrimary">#FF5722</item>
+        <item name="colorPrimaryContainer">#42FF5722</item>
         <item name="colorSecondary">#FF5722</item>
         <item name="colorAccent">#FF5722</item>
     </style>
 
     <style name="Accent_Brown">
         <item name="colorPrimary">#795548</item>
+        <item name="colorPrimaryContainer">#42795548</item>
         <item name="colorSecondary">#795548</item>
         <item name="colorAccent">#795548</item>
     </style>

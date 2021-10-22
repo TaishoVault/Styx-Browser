@@ -39,4 +39,6 @@
     <color name="red_300">#FFE57373</color>
     <color name="red_500">#FFF44336</color>
     <color name="red_700">#FFD32F2F</color>
+    <color name="red_transparent">#42F44336</color>
+    <color name="red_transparent_light">#42E57373</color>
 </resources>
