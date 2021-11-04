@@ -5,8 +5,10 @@ README
 
 [![GitHub license](https://img.shields.io/github/license/jamal2362/Styx)](https://github.com/jamal2362/Styx/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
 
-## Fulguris
-https://github.com/Slion/Fulguris
+## Support Fulguris
+If you like the Styx Browser, please support Fulguris.
+[<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=net.slions.fulguris.full.playstore)  
+or you can look on [GitHub](https://github.com/Slion/Fulguris).  
 
 ## Help to Translate
 To help us translate Styx, press the image below.  
@@ -90,6 +92,10 @@ or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/rel
 * `REQUEST_INSTALL_PACKAGES`: needed to support APK install, after download is finished.
 
 ## License
+Copyright 2014 Anthony Restaino
+Copyright 2020 Stéphane Lenclud
+Copyright 2020 Jamal Rothfuchs
+
 ```
    This Source Code Form is subject to the terms of the 
    Mozilla Public License, v. 2.0. If a copy of the MPL 
