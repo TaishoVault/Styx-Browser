@@ -1,10 +1,12 @@
 README
 ======
 
-# Styx Browser
+# Styx Browser - A fork of Fulguris
 
 [![GitHub license](https://img.shields.io/github/license/jamal2362/Styx)](https://github.com/jamal2362/Styx/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
 
+## Fulguris
+https://github.com/Slion/Fulguris
 
 ## Help to Translate
 To help us translate Styx, press the image below.  
@@ -31,7 +33,7 @@ or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/rel
 * 3rd party app forwarding.
 * Android desktop support (Samsung Dex, EMUI Desktop). 
 * Multiple search engines (Google, Bing, Yahoo, StartPage, DuckDuckGo, Mojeek, Searx etc.).
-* Incognito mode.
+* Incognito mode.hg 
 * Filterlist based Adblocker. (AdGuard)
 * Reader mode with Text To Speech (TTS).
 * Dark Mode for Websites.
