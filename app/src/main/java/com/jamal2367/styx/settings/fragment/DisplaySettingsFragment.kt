@@ -260,7 +260,7 @@ class DisplaySettingsFragment : AbstractSettingsFragment() {
         private const val X_SMALL = 10.0f
 
         // I guess those are percent
-        const val MAX_BROWSER_TEXT_SIZE = 250
+        const val MAX_BROWSER_TEXT_SIZE = 500
         const val MIN_BROWSER_TEXT_SIZE = 50
 
         private fun getTextSize(size: Int): Float {
