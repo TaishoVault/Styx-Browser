@@ -150,6 +150,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="?android:attr/listDivider" />
+                    
+                    <TextView
+                        android:id="@+id/menuItemCopyLink"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        app:drawableStartCompat="@drawable/ic_content_copy"
+                        android:text="@android:string/copyUrl" />
 
                     <TextView
                         android:id="@+id/menuItemShare"

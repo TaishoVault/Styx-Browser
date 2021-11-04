@@ -75,6 +75,7 @@ class BrowserPopupMenu
                         // Those menu items won't be displayed for special URLs
                         iBinding.menuItemAddToHome.isVisible = it
                         iBinding.menuItemShare.isVisible = it
+                        iBinding.menuItemCopyLink.isVisible = it
                         iBinding.menuItemPrint.isVisible = it
                         iBinding.menuItemFind.isVisible = it
                         iBinding.menuItemTranslate.isVisible = it

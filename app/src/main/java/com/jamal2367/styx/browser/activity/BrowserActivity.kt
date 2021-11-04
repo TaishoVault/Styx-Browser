@@ -508,6 +508,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             onMenuItemClicked(iBinding.menuItemDownloads) { executeAction(R.id.menuItemDownloads) }
             onMenuItemClicked(iBinding.menuItemAddBookmark) { executeAction(R.id.menuItemAddBookmark) }
             onMenuItemClicked(iBinding.menuItemShare) { executeAction(R.id.menuItemShare) }
+            onMenuItemClicked(iBinding.menuItemCopyLink) { executeAction(R.id.menuItemCopyLink) }
             onMenuItemClicked(iBinding.menuItemFind) { executeAction(R.id.menuItemFind) }
             onMenuItemClicked(iBinding.menuItemAddToHome) { executeAction(R.id.menuItemAddToHome) }
             onMenuItemClicked(iBinding.menuItemTranslate) { executeAction(R.id.menuItemTranslate) }
@@ -1702,6 +1703,11 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 IntentUtils(this).shareUrl(currentUrl, currentView?.title)
                 return true
             }
+            R.id.menuItemCopyLink -> {
+                clipboardManager.copyToClipboard(currentUrl!!)
+                snackbar(R.string.message_link_copied)
+                return true
+            }
             R.id.menuItemPrint -> {
                 (currentTabView as WebViewEx).print()
                 return true
@@ -1784,7 +1790,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 showSessions()
                 return true
             }
-
             else -> return false
         }
     }
