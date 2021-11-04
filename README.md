@@ -1,25 +1,26 @@
 README
 ======
 
+[![GitHub license](https://img.shields.io/github/license/jamal2362/Styx)](https://github.com/jamal2362/Styx/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
+
 # Styx Browser - A fork of Fulguris with additional functions.
 
 ## Support Fulguris
+The full credit goes to @Slion  
+Thank you for your hard work!  
 If you like the Styx Browser, please support Fulguris too.  
 [<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=net.slions.fulguris.full.playstore)  
 or you can look on [GitHub](https://github.com/Slion/Fulguris).  
 
-##
-[![GitHub license](https://img.shields.io/github/license/jamal2362/Styx)](https://github.com/jamal2362/Styx/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
+## Install Styx
+[<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.jamal2367.styx)  
+or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
 
 ## Help to Translate
 To help us translate Styx, press the image below.  
 We would be very happy if you help us with the translation.
 
 [<img src="https://user-images.githubusercontent.com/15986930/117266967-12c12380-ae56-11eb-8ae0-d7914c402e74.png" alt="Crowdin" height="60">](https://crowdin.com/project/styx-browser)  
-
-## Install Styx
-[<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.jamal2367.styx)  
-or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
 
 ## Features
 * Sessions.
