@@ -48,6 +48,7 @@
     <string name="action_no">No</string>
     <string name="action_ok">OK</string>
     <string name="action_open">Open</string>
+    <string name="action_open_in_app">Open in app</string>
     <string name="action_print">Print</string>
     <string name="action_reload">Reload</string>
     <string name="action_remove_bookmark">Bookmark removed</string>

@@ -150,13 +150,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="?android:attr/listDivider" />
-                    
+
                     <TextView
                         android:id="@+id/menuItemCopyLink"
                         style="@style/BrowserTextMenuItem"
                         android:background="?attr/selectableItemBackground"
                         app:drawableStartCompat="@drawable/ic_content_copy"
                         android:text="@android:string/copyUrl" />
+
+                    <TextView
+                        android:id="@+id/menuItemOpenInApp"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        app:drawableStartCompat="@drawable/ic_baseline_open_in_new_24"
+                        android:text="@string/action_open_in_app" />
 
                     <TextView
                         android:id="@+id/menuItemShare"
