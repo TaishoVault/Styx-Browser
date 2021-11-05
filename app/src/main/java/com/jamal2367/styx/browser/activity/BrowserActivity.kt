@@ -11,7 +11,6 @@ import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ClipboardManager
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
@@ -549,7 +548,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             // Popup menu action shortcut icons
             onMenuItemClicked(iBinding.menuShortcutRefresh) { executeAction(R.id.menuShortcutRefresh) }
             onMenuItemClicked(iBinding.menuShortcutForward) { executeAction(R.id.menuShortcutForward) }
-            onMenuItemClicked(iBinding.menuItemOpenInApp) { executeAction(R.id.menuItemOpenInApp) }
             onMenuItemClicked(iBinding.menuShortcutBack) { executeAction(R.id.menuShortcutBack) }
             onMenuItemClicked(iBinding.menuShortcutBookmarks) { executeAction(R.id.menuShortcutBookmarks) }
 
@@ -1671,9 +1669,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         val currentView = tabsManager.currentTab
         val currentUrl = currentView?.url
-        val uri = Uri.parse(currentUrl)
-        val components = arrayOf(ComponentName(this, BrowserActivity::class.java))
-        val openinapp = Intent(Intent.ACTION_VIEW, uri)
 
         when (id) {
             android.R.id.home -> {
@@ -1692,12 +1687,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 if (currentView?.canGoForward() == true) {
                     currentView.goForward()
                 }
-                return true
-            }
-            R.id.menuItemOpenInApp -> {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                    startActivity(Intent.createChooser(openinapp, null).putExtra(Intent.EXTRA_EXCLUDE_COMPONENTS, components))
-                else startActivity(openinapp)
                 return true
             }
             R.id.menuItemAddToHome -> {
