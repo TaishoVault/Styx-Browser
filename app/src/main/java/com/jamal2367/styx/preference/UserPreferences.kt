@@ -481,6 +481,11 @@ class UserPreferences @Inject constructor(
     var showUpdate by preferences.booleanPreference(R.string.pref_key_show_update, R.bool.pref_default_show_update)
 
     /**
+     * Used to enable version update check and first run detection.
+     */
+    var versionCode by preferences.intPreference(R.string.pref_key_version_code, 0)
+
+    /**
      * Define if user wants to show exit option in menu
      */
     var menuShowExit by preferences.booleanPreference(R.string.pref_key_menu_show_exit, R.bool.pref_default_menu_show_exit)

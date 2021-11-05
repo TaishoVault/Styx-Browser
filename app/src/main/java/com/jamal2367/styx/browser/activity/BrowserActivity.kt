@@ -67,6 +67,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.IncognitoActivity
+import com.jamal2367.styx.BuildConfig
 import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.AbpUserRules
 import com.jamal2367.styx.browser.*
@@ -303,6 +304,25 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 }
             }
             mainHandler.postDelayed({ checkForUpdates(this) }, 1000)
+        }
+
+        // Welcome new users or notify of updates
+        tabsManager.doOnceAfterInitialization {
+            // If our version code was changed
+            if (userPreferences.versionCode != BuildConfig.VERSION_CODE) {
+                if (userPreferences.versionCode==0
+                    // Added this check to avoid show welcome message to existing installation
+                    // TODO: Remove that a few versions down the road
+                    && tabsManager.iSessions.count()==1 && tabsManager.allTabs.count()==1) {
+                    // First run
+                    welcomeToStyx()
+                } else {
+                    // Version was updated
+                    notifyVersionUpdate()
+                }
+                // Persist our current version so that we don't kick in next time
+                userPreferences.versionCode = BuildConfig.VERSION_CODE
+            }
         }
 
         // Hook in buttons with onClick handler
@@ -3502,6 +3522,44 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         request.tag = TAG
         queue.add(request)
         }
+    }
+
+    /**
+     * Welcome user after first installation.
+     */
+    private fun welcomeToStyx() {
+        MaterialAlertDialogBuilder(this)
+            .setCancelable(true)
+            .setTitle(R.string.title_welcome)
+            .setMessage(R.string.message_welcome)
+            .setNegativeButton(R.string.no, null)
+            .setPositiveButton(R.string.yes) { _, _ -> val url = getString(R.string.url_app_updates)
+                val i = Intent(Intent.ACTION_VIEW)
+                i.data = Uri.parse(url)
+                // Not sure that does anything
+                i.putExtra("SOURCE", "SELF")
+                startActivity(i)}
+            .show()
+    }
+
+
+    /**
+     * Notify user about application update.
+     */
+    private fun notifyVersionUpdate() {
+        // TODO: Consider using snackbar instead to be less intrusive, make it a settings option?
+        MaterialAlertDialogBuilder(this)
+            .setCancelable(true)
+            .setTitle(R.string.title_updated)
+            .setMessage(getString(R.string.message_updated, BuildConfig.VERSION_NAME))
+            .setNegativeButton(R.string.no, null)
+            .setPositiveButton(R.string.yes) { _, _ -> val url = getString(R.string.url_app_updates)
+                val i = Intent(Intent.ACTION_VIEW)
+                i.data = Uri.parse(url)
+                // Not sure that does anything
+                i.putExtra("SOURCE", "SELF")
+                startActivity(i)}
+            .show()
     }
 
     private fun stringContainsItemFromList(inputStr: String, items: Array<String>): Boolean {
