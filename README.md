@@ -9,8 +9,7 @@ README
 The full credit goes to @Slion  
 Thank you for your hard work!  
 If you like the Styx Browser, please support Fulguris too.  
-[<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=net.slions.fulguris.full.playstore)  
-or you can look on [GitHub](https://github.com/Slion/Fulguris).  
+you can find the awesome project on [GitHub](https://github.com/Slion/Fulguris).  
 
 ## Install Styx
 [<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.jamal2367.styx)  
