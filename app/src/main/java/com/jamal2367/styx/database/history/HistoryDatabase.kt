@@ -1,6 +1,9 @@
 /*
- * Copyright 2014 A.C.R. Development
+ * Copyright © 2020-2021 Jamal Rothfuchs
+ * Copyright © 2020-2021 Stéphane Lenclud
+ * Copyright © 2015 Anthony Restaino
  */
+
 package com.jamal2367.styx.database.history
 
 import android.annotation.SuppressLint
@@ -19,7 +22,6 @@ import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
-
 
 /**
  * The disk backed download database. See [HistoryRepository] for function documentation.

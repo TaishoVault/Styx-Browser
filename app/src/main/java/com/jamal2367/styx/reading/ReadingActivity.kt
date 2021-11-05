@@ -1,3 +1,9 @@
+/*
+ * Copyright © 2020-2021 Jamal Rothfuchs
+ * Copyright © 2020-2021 Stéphane Lenclud
+ * Copyright © 2015 Anthony Restaino
+ */
+
 @file:Suppress("DEPRECATION")
 package com.jamal2367.styx.reading
 
