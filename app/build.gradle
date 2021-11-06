@@ -77,7 +77,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
 
     // Reading mode //
-    implementation 'net.dankito.readability4j:readability4j:1.0.6'
+    implementation 'net.dankito.readability4j:readability4j:1.0.8'
 
     // File Reading //
     implementation 'com.anthonycr.mezzanine:mezzanine:1.1.1'

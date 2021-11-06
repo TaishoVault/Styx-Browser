@@ -170,11 +170,11 @@ open class ReadingActivity : ThemedSettingsActivity(), TextToSpeech.OnInitListen
                     stringBuffer.append(input)
                 }
                 line.close()
-                val htmlData = stringBuffer.toString()
+                val htmlData = "$stringBuffer"
                 val readability4J = Readability4J(mUrl!!, htmlData) // url is just needed to resolve relative urls
                 val article = readability4J.parse()
                 extractedContentHtml = article.content
-                extractedContentHtmlWithUtf8Encoding = article.contentWithUtf8Encoding
+                extractedContentHtmlWithUtf8Encoding = article.contentWithDocumentsCharsetOrUtf8
                 extractedContentPlainText = article.textContent
                 title = article.title
                 byline = article.byline
