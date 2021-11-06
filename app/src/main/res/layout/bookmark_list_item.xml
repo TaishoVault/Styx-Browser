@@ -11,8 +11,7 @@
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        android:focusableInTouchMode="false"
-        app:cardElevation="4dp">
+        android:focusableInTouchMode="false">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -296,9 +296,9 @@
         <item name="android:background">@color/grey_1</item>
     </style>
 
-    <style name="Widget.App.CardView" parent="Widget.Material3.CardView.Elevated">
+    <style name="Widget.App.CardView" parent="Widget.Material3.CardView.Filled">
         <item name="checkedIconMargin">4dp</item>
-        <item name="checkedIconSize">6dp</item>
+        <item name="checkedIconSize">8dp</item>
         <item name="checkedIcon">@drawable/ic_circle</item>
         <item name="checkedIconTint">?attr/colorSecondary</item>
         <item name="cardForegroundColor">@color/card_view_foreground</item>
