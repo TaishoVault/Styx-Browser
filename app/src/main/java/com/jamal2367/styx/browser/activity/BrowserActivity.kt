@@ -317,7 +317,6 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             if (userPreferences.versionCode != BuildConfig.VERSION_CODE) {
                 if (userPreferences.versionCode==0
                     // Added this check to avoid show welcome message to existing installation
-                    // TODO: Remove that a few versions down the road
                     && tabsManager.iSessions.count()==1 && tabsManager.allTabs.count()==1) {
                     // First run
                     welcomeToStyx()
@@ -1731,7 +1730,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             }
             R.id.menuItemCopyLink -> {
                 clipboardManager.copyToClipboard(currentUrl!!)
-                snackbar(R.string.message_link_copied)
+                makeSnackbar(getString(R.string.message_link_copied), Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
                 return true
             }
             R.id.menuItemPrint -> {
@@ -3520,38 +3519,28 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     }
 
     /**
-     * Welcome user after first installation.
+     * Welcome user with snackbar after first installation.
      */
     private fun welcomeToStyx() {
-        MaterialAlertDialogBuilder(this)
-            .setCancelable(true)
-            .setTitle(R.string.title_welcome)
-            .setMessage(R.string.message_welcome)
-            .setNegativeButton(R.string.no, null)
-            .setPositiveButton(R.string.yes) { _, _ -> val url = getString(R.string.url_app_updates)
+        makeSnackbar("", Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
+            .setAction(R.string.message_powered_by_fulguris) {
+                val url = getString(R.string.url_app_updates)
                 val i = Intent(Intent.ACTION_VIEW)
                 i.data = Uri.parse(url)
-                // Not sure that does anything
                 i.putExtra("SOURCE", "SELF")
                 startActivity(i)}
             .show()
     }
 
-
     /**
-     * Notify user about application update.
+     * Notify user with snackbar after application update.
      */
     private fun notifyVersionUpdate() {
-        // TODO: Consider using snackbar instead to be less intrusive, make it a settings option?
-        MaterialAlertDialogBuilder(this)
-            .setCancelable(true)
-            .setTitle(R.string.title_updated)
-            .setMessage(getString(R.string.message_updated, BuildConfig.VERSION_NAME))
-            .setNegativeButton(R.string.no, null)
-            .setPositiveButton(R.string.yes) { _, _ -> val url = getString(R.string.url_app_updates)
+        makeSnackbar("", Snackbar.LENGTH_SHORT, if (userPreferences.toolbarsBottom || userPreferences.navbar) Gravity.TOP else Gravity.BOTTOM)
+            .setAction(R.string.message_powered_by_fulguris) {
+                val url = getString(R.string.url_app_updates)
                 val i = Intent(Intent.ACTION_VIEW)
                 i.data = Uri.parse(url)
-                // Not sure that does anything
                 i.putExtra("SOURCE", "SELF")
                 startActivity(i)}
             .show()

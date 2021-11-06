@@ -249,10 +249,9 @@
     <string name="message_link_copied">Link copied to clipboard</string>
     <string name="message_location">\nWould like to use your location</string>
     <string name="message_open_download_fail">This file doesn\'t exist anymore</string>
-    <string name="message_updated">The Styx Browser has been updated to %s. This browser is \"Powered by Fulguris\". Do you want to be redirected to Fulguris?</string>
     <string name="message_permission_request">%1$s\n\nwould like to use:\n\n%2$s</string>
+    <string name="message_powered_by_fulguris" translatable="false">Powered by ⚡ Fulguris</string>
     <string name="message_web_storage_cleared">Web storage cleared</string>
-    <string name="message_welcome">This browser is \"Powered by Fulguris\". Do you want to be redirected to Fulguris?</string>
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="mpl_license" translatable="false">Mozilla Public License v2.0</string>
     <string name="name_grayscale">Grayscale</string>
@@ -434,9 +433,7 @@
     <string name="title_standard">Title (Standard)</string>
     <string name="title_text_size">Text size</string>
     <string name="title_user_agent">User agent</string>
-    <string name="title_updated">Styx was updated</string>
     <string name="title_warning">Warning</string>
-    <string name="title_welcome">Welcome to Styx</string>
     <string name="translator">Translate</string>
     <string name="tts_initilization_failed">Initilization failed</string>
     <string name="tts">Read page</string>
