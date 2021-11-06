@@ -292,11 +292,11 @@
         <item name="backgroundTint">?attr/colorPrimaryVariant</item>
     </style>
 
-    <style name="Widget.App.AppBarLayout.Light" parent="Widget.Design.AppBarLayout">
+    <style name="Widget.App.AppBarLayout.Light" parent="Widget.Material3.AppBarLayout">
         <item name="android:background">@color/grey_1</item>
     </style>
 
-    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+    <style name="Widget.App.CardView" parent="Widget.Material3.CardView.Elevated">
         <item name="checkedIconMargin">4dp</item>
         <item name="checkedIconSize">6dp</item>
         <item name="checkedIcon">@drawable/ic_circle</item>
