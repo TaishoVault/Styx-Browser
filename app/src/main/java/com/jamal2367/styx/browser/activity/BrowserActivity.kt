@@ -3070,6 +3070,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
 
         fullscreenContainerView = FrameLayout(this)
         fullscreenContainerView?.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
+
+        view.systemUiVisibility = SYSTEM_UI_FLAG_HIDE_NAVIGATION
+
         if (view is FrameLayout) {
             val child = view.focusedChild
             if (child is VideoView) {
