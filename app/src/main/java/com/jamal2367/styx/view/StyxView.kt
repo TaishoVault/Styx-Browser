@@ -33,7 +33,6 @@ import com.jamal2367.styx.ThemedActivity
 import com.jamal2367.styx.browser.TabModel
 import com.jamal2367.styx.constant.*
 import com.jamal2367.styx.controller.UIController
-import com.jamal2367.styx.database.DomainSettings
 import com.jamal2367.styx.di.DatabaseScheduler
 import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.di.injector
@@ -180,9 +179,6 @@ class StyxView(
             applyDarkMode()
         }
 
-    val domainSettings: DomainSettings
-        get() = DomainSettings(activity.applicationContext, url)
-
     /**
      *
      */
@@ -296,8 +292,8 @@ class StyxView(
             // Create our WebView now
             createWebView()
             initializeContent(tabInitializer)
-            desktopMode = domainSettings.get(DomainSettings.DESKTOP_MODE, userPreferences.desktopModeDefault)
-            darkMode = domainSettings.get(DomainSettings.DARK_MODE, userPreferences.darkModeDefault)
+            desktopMode = userPreferences.desktopModeDefault
+            darkMode = userPreferences.darkModeDefault
         } else {
             // Our WebView will only be created whenever our tab goes to the foreground
             latentTabInitializer = tabInitializer
@@ -607,16 +603,6 @@ class StyxView(
     fun toggleDarkMode() {
         // Toggle dark mode
         darkMode = !darkMode
-        if (darkMode != userPreferences.darkModeDefault)
-            domainSettings.set(DomainSettings.DARK_MODE, darkMode)
-        else
-            domainSettings.remove(DomainSettings.DARK_MODE)
-    }
-
-    fun updateDarkMode() {
-        val newDarkMode = domainSettings.get(DomainSettings.DARK_MODE, userPreferences.darkModeDefault)
-        if (newDarkMode != darkMode)
-            darkMode = newDarkMode
     }
 
     /**
@@ -626,16 +612,6 @@ class StyxView(
     fun toggleDesktopUserAgent() {
         // Toggle desktop mode
         desktopMode = !desktopMode
-        if (desktopMode != userPreferences.desktopModeDefault)
-            domainSettings.set(DomainSettings.DESKTOP_MODE, desktopMode)
-        else
-            domainSettings.remove(DomainSettings.DESKTOP_MODE)
-    }
-
-    fun updateDesktopMode() {
-        val newDesktopMode = domainSettings.get(DomainSettings.DESKTOP_MODE, userPreferences.desktopModeDefault)
-        if (newDesktopMode != desktopMode)
-            desktopMode = newDesktopMode
     }
 
     /**

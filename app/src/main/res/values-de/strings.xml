@@ -46,7 +46,6 @@
     <string name="action_no">Nein</string>
     <string name="action_ok">OK</string>
     <string name="action_open">Öffnen</string>
-    <string name="action_open_in_app">In der App öffnen</string>
     <string name="action_print">Drucken</string>
     <string name="action_reload">Neu laden</string>
     <string name="action_remove_bookmark">Lesezeichen entfernt</string>
