@@ -230,21 +230,16 @@
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
-        <item name="colorSurface">@color/dark_0</item>
-        <item name="elevationOverlayEnabled">false</item>
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog.Black" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
-        <item name="colorSurface">@color/grey_9</item>
-        <item name="elevationOverlayEnabled">false</item>
     </style>
 
     <style name="PositiveButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
         <item name="android:textColor">?attr/colorSecondary</item>
-        <item name="rippleColor">?attr/colorSecondary</item>
     </style>
 
     <style name="NegativeButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
