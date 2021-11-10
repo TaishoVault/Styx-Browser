@@ -154,7 +154,6 @@
     <string name="dialog_tools_title">Strumenti pagina</string>
     <string name="do_not_track">\"Non tenere traccia\"</string>
     <string name="domain">Dominio</string>
-    <string name="dont_ask_again">Non chiedere di nuovo</string>
     <string name="download_pending">Download in corso:</string>
     <string name="download">Percorso Download</string>
     <string name="downloads_notification_description">Attivato in seguito al completamento del download</string>

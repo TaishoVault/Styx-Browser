@@ -167,7 +167,6 @@
     <string name="dialog_tools_title">Ferramentas de página</string>
     <string name="do_not_track">Solicitar \'Não Rastrear\'</string>
     <string name="domain">Domínio</string>
-    <string name="dont_ask_again">Não perguntar novamente</string>
     <string name="download_pending">Baixando:</string>
     <string name="download">Pasta de download</string>
     <string name="downloads_notification_description">Disparado ao concluir o download</string>

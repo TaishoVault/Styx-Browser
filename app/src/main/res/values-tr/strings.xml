@@ -167,7 +167,6 @@
     <string name="dialog_tools_title">Sayfa araçları</string>
     <string name="do_not_track">\'Beni İzleme İsteği\' gönder</string>
     <string name="domain">Alan adı</string>
-    <string name="dont_ask_again">Bir daha sorma</string>
     <string name="download_pending">İndiriliyor:</string>
     <string name="download">İndirme konumu</string>
     <string name="downloads_notification_description">İndirme tamamlandığında tetikler</string>

@@ -167,7 +167,6 @@
     <string name="dialog_tools_title">Інструменти сторінки</string>
     <string name="do_not_track">Запит «Не відстежувати»</string>
     <string name="domain">Домен</string>
-    <string name="dont_ask_again">Більше не запитувати</string>
     <string name="download_pending">Завантажується:</string>
     <string name="download">Шлях завантаження</string>
     <string name="downloads_notification_description">Сповіщення після закінчення завантаження</string>

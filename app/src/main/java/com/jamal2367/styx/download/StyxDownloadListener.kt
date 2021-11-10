@@ -61,10 +61,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                         } else {
                             mActivity.getString(R.string.unknown_size)
                         }
-                        val checkBoxView = View.inflate(mActivity, R.layout.download_dialog, null)
-                        val checkBox = checkBoxView.findViewById<View>(R.id.checkbox) as CheckBox
-                        checkBox.setOnCheckedChangeListener { _, isChecked -> userPreferences!!.showDownloadConfirmation = !isChecked }
-                        checkBox.text = mActivity.resources.getString(R.string.dont_ask_again)
+
                         val dialogClickListener = DialogInterface.OnClickListener { _: DialogInterface?, which: Int ->
                             when (which) {
                                 DialogInterface.BUTTON_POSITIVE ->
@@ -73,12 +70,12 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                                 }
                             }
                         }
+
                         if (userPreferences!!.showDownloadConfirmation) {
                             val builder = MaterialAlertDialogBuilder(mActivity) // dialog
                             val message = mActivity.getString(R.string.dialog_download, downloadSize)
                             val dialog: Dialog = builder.setTitle(fileName)
                                     .setMessage(message)
-                                    .setView(checkBoxView)
                                     .setPositiveButton(mActivity.resources.getString(R.string.action_download),
                                             dialogClickListener)
                                     .setNegativeButton(mActivity.resources.getString(R.string.action_cancel),
@@ -94,6 +91,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                         //
                     }
                 })
+
             // Some download link spawn an empty tab, just close it then
             if (mActivity is BrowserActivity) {
                 mActivity.closeCurrentTabIfEmpty()
@@ -105,10 +103,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
             } else {
                 mActivity.getString(R.string.unknown_size)
             }
-            val checkBoxView = View.inflate(mActivity, R.layout.download_dialog, null)
-            val checkBox = checkBoxView.findViewById<View>(R.id.checkbox) as CheckBox
-            checkBox.setOnCheckedChangeListener { _, isChecked -> userPreferences!!.showDownloadConfirmation = !isChecked }
-            checkBox.text = mActivity.resources.getString(R.string.dont_ask_again)
+
             val dialogClickListener = DialogInterface.OnClickListener { _: DialogInterface?, which: Int ->
                 when (which) {
                     DialogInterface.BUTTON_POSITIVE ->
@@ -117,12 +112,12 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
                     }
                 }
             }
+
             if (userPreferences!!.showDownloadConfirmation) {
                 val builder = MaterialAlertDialogBuilder(mActivity) // dialog
                 val message = mActivity.getString(R.string.dialog_download, downloadSize)
                 val dialog: Dialog = builder.setTitle(fileName)
                     .setMessage(message)
-                    .setView(checkBoxView)
                     .setPositiveButton(mActivity.resources.getString(R.string.action_download),
                         dialogClickListener)
                     .setNegativeButton(mActivity.resources.getString(R.string.action_cancel),
@@ -132,6 +127,7 @@ class StyxDownloadListener(context: Activity) : DownloadListener {
             } else {
                 downloadHandler!!.onDownloadStartNoStream(mActivity as AppCompatActivity, userPreferences!!, url, userAgent, contentDisposition, mimetype)
             }
+
             // Some download link spawn an empty tab, just close it then
             if (mActivity is BrowserActivity) {
                 mActivity.closeCurrentTabIfEmpty()

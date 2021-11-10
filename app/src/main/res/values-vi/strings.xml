@@ -117,7 +117,6 @@
     <string name="dialog_title_share">Chia sẻ trang này</string>
     <string name="dialog_tools_title">Công cụ trang</string>
     <string name="domain">Tên miền</string>
-    <string name="dont_ask_again">Đừng hỏi lại</string>
     <string name="download_pending">Đang tải xuống:</string>
     <string name="download">Vị trí tải xuống</string>
     <string name="downloads_notification_description">Kích hoạt khi hoàn tất tải xuống</string>

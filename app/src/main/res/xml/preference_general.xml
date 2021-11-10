@@ -50,6 +50,13 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="true"
+            android:key="@string/pref_key_show_download_confirmation"
+            android:title="@string/pref_title_download_dialog"
+            android:summary="@string/recommended"
+            app:singleLineTitle="false"
+            app:icon="@drawable/ic_cloud_download_oval" />
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
             android:key="@string/pref_key_show_update"
             android:title="@string/update_message"
             android:summary="@string/recommended"

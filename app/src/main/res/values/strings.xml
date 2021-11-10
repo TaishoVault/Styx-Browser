@@ -173,7 +173,6 @@
     <string name="dialog_tools_title">Page tools</string>
     <string name="do_not_track">Request \'Do Not Track\'</string>
     <string name="domain">Domain</string>
-    <string name="dont_ask_again">Don\'t ask again</string>
     <string name="download_pending">Downloading:</string>
     <string name="download">Download location</string>
     <string name="downloads_notification_description">Triggers upon download completion</string>
@@ -296,6 +295,7 @@
     <string name="pref_summary_webrtc">Allows Real Time Communication over the Web using your device camera and microphone</string>
     <string name="pref_title_close_drawer">Close drawer</string>
     <string name="pref_title_desktop_width">Desktop width</string>
+    <string name="pref_title_download_dialog">Show download dialog</string>
     <string name="pref_title_hide_status_bar">Hide status bar</string>
     <string name="pref_title_hide_tool_bar">Hide tool bar when scrolling down</string>
     <string name="pref_title_locked_drawers">Locked drawers</string>

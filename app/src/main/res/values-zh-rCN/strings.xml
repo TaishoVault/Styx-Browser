@@ -167,7 +167,6 @@
     <string name="dialog_tools_title">页面工具</string>
     <string name="do_not_track">请求“Do Not Track”</string>
     <string name="domain">域名</string>
-    <string name="dont_ask_again">不要再询问</string>
     <string name="download_pending">正在开始下载</string>
     <string name="download">下载位置</string>
     <string name="downloads_notification_description">下载完成时触发</string>

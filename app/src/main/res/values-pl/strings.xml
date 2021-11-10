@@ -167,7 +167,6 @@
     <string name="dialog_tools_title">Narzędzia strony</string>
     <string name="do_not_track">Wysyłaj żądanie \"Nie śledź\"</string>
     <string name="domain">Domena</string>
-    <string name="dont_ask_again">Nie pytaj ponownie</string>
     <string name="download_pending">Pobieranie:</string>
     <string name="download">Miejsce zapisu pobieranych plików</string>
     <string name="downloads_notification_description">Pojawia się po zakończeniu pobierania</string>

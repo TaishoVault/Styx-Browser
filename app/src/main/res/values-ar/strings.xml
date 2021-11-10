@@ -167,7 +167,6 @@
     <string name="dialog_tools_title">أدوات الصفحة</string>
     <string name="do_not_track">طلب \ \"لا تتبع \"</string>
     <string name="domain">النطـاق</string>
-    <string name="dont_ask_again">لا تسأل مرة أخري</string>
     <string name="download_pending">يتم التحميل:</string>
     <string name="download">مسار التحميلات</string>
     <string name="downloads_notification_description">تشغيل عند اكتمال التحميل</string>

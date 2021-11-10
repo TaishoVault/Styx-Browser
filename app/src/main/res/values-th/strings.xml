@@ -103,7 +103,6 @@
     <string name="dialog_tools_title">เครื่องมือ</string>
     <string name="do_not_track">ไม่ติดตาม</string>
     <string name="domain">โดเมน</string>
-    <string name="dont_ask_again">ไม่ต้องถามอีก</string>
     <string name="download_pending">กำลังดาวน์โหลด:</string>
     <string name="download">ตำแหน่งที่ดาวน์โหลด</string>
     <string name="message_blocked_local">ไฟล์ถูกบล็อกจากการโหลด</string>
