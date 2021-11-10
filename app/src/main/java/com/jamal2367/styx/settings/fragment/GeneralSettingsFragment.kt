@@ -8,17 +8,10 @@ package com.jamal2367.styx.settings.fragment
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.LayoutInflater
 import android.webkit.URLUtil
-import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamal2367.styx.Capabilities
 import com.jamal2367.styx.R
@@ -37,8 +30,6 @@ import com.jamal2367.styx.search.SearchEngineProvider
 import com.jamal2367.styx.search.Suggestions
 import com.jamal2367.styx.search.engine.BaseSearchEngine
 import com.jamal2367.styx.search.engine.CustomSearch
-import com.jamal2367.styx.utils.FileUtils
-import com.jamal2367.styx.utils.ThemeUtils
 import javax.inject.Inject
 
 /**
@@ -61,12 +52,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
             summary = userAgentSummary(),
             onClick = ::showUserAgentChooserDialog
         )
-
-        clickableDynamicPreference(
-            preference = SETTINGS_DOWNLOAD,
-            summary = userPreferences.downloadDirectory,
-            onClick = ::showDownloadLocationDialog
-        ).isVisible = Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q
 
         clickableDynamicPreference(
             preference = SETTINGS_HOME,
@@ -261,75 +246,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
                 userPreferences.userAgentString,
                 R.string.action_ok) { s ->
                 userPreferences.userAgentString = s
-            }
-        }
-    }
-
-    private fun showDownloadLocationDialog(summaryUpdater: SummaryUpdater) {
-        activity?.let {
-            BrowserDialog.showCustomDialog(it as AppCompatActivity) {
-            setTitle(resources.getString(R.string.title_download_location))
-            val n: Int = if (userPreferences.downloadDirectory.contains(Environment.DIRECTORY_DOWNLOADS)) {
-                0
-            } else {
-                1
-            }
-
-            setSingleChoiceItems(R.array.download_folder, n) { _, which ->
-                when (which) {
-                    0 -> {
-                        userPreferences.downloadDirectory = FileUtils.DEFAULT_DOWNLOAD_PATH
-                        summaryUpdater.updateSummary(FileUtils.DEFAULT_DOWNLOAD_PATH)
-                    }
-                    1 -> {
-                        showCustomDownloadLocationPicker(summaryUpdater)
-                    }
-                }
-            }
-            setPositiveButton(resources.getString(R.string.action_ok), null)
-        }
-        }
-    }
-
-    @SuppressLint("InflateParams")
-    private fun showCustomDownloadLocationPicker(summaryUpdater: SummaryUpdater) {
-        activity?.let { activity ->
-            val dialogView = LayoutInflater.from(activity).inflate(R.layout.dialog_edit_text, null)
-            val getDownload = dialogView.findViewById<EditText>(R.id.dialog_edit_text)
-            val errorColor = ContextCompat.getColor(activity, R.color.red_500)
-            val regularColor = ThemeUtils.getTextColor(activity)
-            getDownload.setTextColor(regularColor)
-            getDownload.addTextChangedListener(DownloadLocationTextWatcher(getDownload, errorColor, regularColor))
-            getDownload.setText(userPreferences.downloadDirectory)
-
-            BrowserDialog.showCustomDialog(activity as AppCompatActivity) {
-                setTitle(R.string.title_download_location)
-                setView(dialogView)
-                setPositiveButton(R.string.action_ok) { _, _ ->
-                    var text = getDownload.text.toString()
-                    text = FileUtils.addNecessarySlashes(text)
-                    userPreferences.downloadDirectory = text
-                    summaryUpdater.updateSummary(text)
-                }
-            }
-        }
-    }
-
-    private class DownloadLocationTextWatcher(
-        private val getDownload: EditText,
-        private val errorColor: Int,
-        private val regularColor: Int
-    ) : TextWatcher {
-
-        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
-        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-        override fun afterTextChanged(s: Editable) {
-            if (!FileUtils.isWriteAccessAvailable(s.toString())) {
-                this.getDownload.setTextColor(this.errorColor)
-            } else {
-                this.getDownload.setTextColor(this.regularColor)
             }
         }
     }
@@ -558,7 +474,6 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
     companion object {
         private const val SETTINGS_SUGGESTIONS_NUM = "suggestions_number"
         private const val SETTINGS_USER_AGENT = "agent"
-        private const val SETTINGS_DOWNLOAD = "download"
         private const val SETTINGS_HOME = "home"
         private const val SETTINGS_SEARCH_ENGINE = "search"
         private const val SETTINGS_SUGGESTIONS = "suggestions_choice"

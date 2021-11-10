@@ -132,11 +132,6 @@
             app:icon="@drawable/ic_script_key_oval"/>
 
         <Preference
-            android:key="download"
-            android:title="@string/download"
-            app:icon="@drawable/ic_cloud_download_oval" />
-
-        <Preference
             android:key="agent"
             android:title="@string/agent"
             app:icon="@drawable/ic_about_oval" />
