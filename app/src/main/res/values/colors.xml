@@ -18,6 +18,10 @@
     <color name="bookmark_brown">#FF8D6E63</color>
     <color name="bookmark_blue_grey">#FF78909C</color>
 
+    <color name="dark_0">#FF202125</color>
+    <color name="dark_1">#FF2C2D33</color>
+    <color name="dark_2">#FF383940</color>
+
     <color name="grey_00">#FFEBEBEB</color>
     <color name="grey_0">#FFF5F5F5</color>
     <color name="grey_1">#FFE0E0E0</color>

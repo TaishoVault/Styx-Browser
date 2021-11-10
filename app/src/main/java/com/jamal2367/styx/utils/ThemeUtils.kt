@@ -188,7 +188,7 @@ object ThemeUtils {
             DrawableUtils.mixColor(0.05f, requestedColor, Color.BLACK)
         } else {
             // Make search text field background lighter
-            DrawableUtils.mixColor(0.10f, requestedColor, Color.WHITE)
+            DrawableUtils.mixColor(0.07f, requestedColor, Color.WHITE)
         }
     }
 
