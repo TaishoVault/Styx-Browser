@@ -308,7 +308,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                     }, 100 )
                 }
             }
-            mainHandler.postDelayed({ checkForUpdates(this) }, 1000)
+            mainHandler.postDelayed({ checkForUpdates(this) }, 5000)
         }
 
         // Welcome new users or notify of updates
